@@ -2,7 +2,7 @@
 
 On fait référence ici aux documents utiles au groupe de travail.
 
-|    Standards à refondre      |
+|  #  Standards à refondre      |
 | --------- |:--------:|:------:|
 | Titre     | Auteur   | date  |                                    Lien                                                                  |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
