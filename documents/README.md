@@ -4,4 +4,4 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 | Titre     | Auteur   | date  | Lien |
 | --------- |:--------:|:------:|----:|
-| DI | COVADIS | 15 MARS 2018 |
+| DI | COVADIS | 15 mars 2018 |
