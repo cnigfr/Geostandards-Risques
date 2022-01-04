@@ -2,4 +2,4 @@
 
 On fait référence ici aux documents utiles au groupe de travail.
 
-| Titre | Auteur | date |
+| Titre | Auteur | date ||----------|:-------------:|------:| |
