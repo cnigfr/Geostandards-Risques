@@ -3,9 +3,9 @@
 On fait référence ici aux documents utiles au groupe de travail.
 
 # **Standards à refondre**
-| Titre     | Auteur   | date  |                                    Lien                                                                  |
+| Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
-| DI | COVADIS | 15 mars 2018 | https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/COVADIS_standard_DI_v2.1_cle84e119.pdf |
+| Standard de données COVADIS du thème [Directive Innondation](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/COVADIS_standard_DI_v2.1_cle84e119.pdf)| COVADIS | 15 mars 2018 | (https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/COVADIS_standard_DI_v2.1_cle84e119.pdf) |
 | TRI| COVADIS | 27 novembre 2019 | https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/_var_validator-site_docs_Doc-Utilisateurs-Validateur-TRI.pdf |
 | PPR| COVADIS | 31 octobre 2012 | http://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/COVADIS_standard_PPR_v1_cor_cle2262bf.pdf?arg=177828737&cle=c4bb441d752f719a912f13fdc4253227725c4292&file=pdf%2FCOVADIS_standard_PPR_v1_cor_cle2262bf.pdf |
 | PPRM | COVADIS | 16 septembre 2015 | http://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/covadis_standard_pprm_v1_cle5f1867.pdf?arg=177834903&cle=03199730531ea94d495483756e49e70eca96a58a&file=pdf%2Fcovadis_standard_pprm_v1_cle5f1867.pdf |
