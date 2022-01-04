@@ -6,7 +6,7 @@ Dépot des documents et travaux du groupe de travail pour la refonte des Géosta
 
 Le Groupe de travail pour la refonte des Géostandards Risques a pour objectif de moderniser les géostandards COVADIS existants liés aux risques en prenant en compte les aspects liés à la diffusion, en cohérence avec les autres standards existants au niveau national et européen pour facilité l'intéropérabilité entre systèmes, la consultation nationale, le croisement de données et le rapportage.       
 
-Il oeuvre sous mandat de la Commission Standards du Conseil National de l'Information Géolocalisée (CNIG). Le mandat peut être consulté [ici](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf). La page dédiée de ce groupe sur le site du CNIG est accessible [ici](http://cnig.gouv.fr/?page_id=25378). 
+Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Information Géolocalisée** (CNIG). Le **mandat du Groupe de Travail** peut être consulté [ici](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf). La page dédiée de ce groupe sur le **site du CNIG** est accessible [ici](http://cnig.gouv.fr/?page_id=25378). 
 
 ## Organisation du dépot
 
