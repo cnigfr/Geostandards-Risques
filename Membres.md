@@ -10,7 +10,6 @@
  
   * DGPR/SRNH/SDCAP/BRNT - Ariane Stephan
   * DGPR/SRNH/SCHAPI - Félicien ZUBER
-  * DGPR/SRNH/SCHAPI - Christophe ASTIER
   * DGPR/DAGSI - Pascal LAGRABE
   * DGPR/DAGSI - Nicolas Bonnin
 
@@ -24,6 +23,7 @@
   * DDT 47 - Guillaume BECHAMEIL
   * DDT 38 - Ségolène Naville 
   * DDTM 76 - Guillaume Chrétien
+  * DREAL NA - Christophe ASTIER
 
 ## Cerema
 
