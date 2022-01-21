@@ -2,12 +2,12 @@
 
 On fait référence ici aux documents utiles au groupe de travail.
 
-* Documents de cadrage
+* [Documents de cadrage](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#documents-de-cadrage)
 * [Standards à refondre](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-%C3%A0-refondre)
 * [Standards en adhérence](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-en-adh%C3%A9rence)
 * [Standards dans le thème](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-dans-le-th%C3%A8me)
 * [Documents utiles](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#documents-utiles)
-* Jeux de données exemples
+* [Jeux de données exemples](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#jeux-de-donn%C3%A9es-exemples)
 
 ## Documents de cadrage
 
