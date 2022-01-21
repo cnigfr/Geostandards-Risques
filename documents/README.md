@@ -2,7 +2,23 @@
 
 On fait référence ici aux documents utiles au groupe de travail.
 
-# **Standards à refondre**
+* Documents de cadrage
+* [Standards à refondre](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-%C3%A0-refondre)
+* [Standards en adhérence](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-en-adh%C3%A9rence)
+* [Standards dans le thème](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#standards-dans-le-th%C3%A8me)
+* [Documents utiles](https://github.com/cnigfr/Geostandards-Risques/tree/main/documents#documents-utiles)
+* Jeux de données exemples
+
+## Documents de cadrage
+
+|Titre|Auteur|Date|Description|
+|-|:-:|:-:|:-:|
+| [Note de Cadrage sur la modernisation des Géostandards de risque](https://github.com/cnigfr/Geostandards-Risques/raw/main/documents/Cadrage/20210930_DGPR_Urba_Livrable%20G%C3%A9ostandards_vf.pdf) | DGPR - Bearing Point | Septembre 2021 | Livrable de l'étude de cadrage pour la refonte des Géostandards réalisée par Bearing Point pour la DGPR |
+| Mandat du GT [« modernisation des standards risques »](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf) | CNIG | 13 octobre 2021 | L'objectif est de faire évoluer les géostandards d’une logique orientée procédure, à une logique plus orientée objets métier, notamment en définissant des nouveaux modèles de données et, le cas échéant, des représentations cartographiques associées, en prenant en compte les processus de circulation des données et en évaluant les impacts sur les systèmes existants. |
+
+
+## Standards à refondre
+
 | Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
 | Standard de données COVADIS du thème [Directive Innondation](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/COVADIS_standard_DI_v2.1_cle84e119.pdf)| COVADIS | 15 mars 2018 | Il concerne les données géographiques produites sur environ 120 territoires à risque important d’inondation en lien avec la directive européenne. Le géostandard Directive inondation a pour objectif d’homogénéiser la production des données utilisées pour établir les cartes des surfaces inondables et des risques d’inondation sur chaque TRI ; et de faciliter la mise en place d’un SIG par TRI qui doit servir pour élaborer les plans de gestion des risques d’inondation (PGRI).|
@@ -10,7 +26,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 |Standard de données COVADIS [Plan de prévention des risques miniers](http://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/covadis_standard_pprm_v1_cle5f1867.pdf?arg=177834903&cle=03199730531ea94d495483756e49e70eca96a58a&file=pdf%2Fcovadis_standard_pprm_v1_cle5f1867.pdf)| COVADIS | 16 novembre 2015 | Ce présent document comporte les spécifications des données géographiques représentées dans les plans de prévention des risques miniers. Ces spécifications visent à standardiser les données géographiques des PPRM utilisées sous forme numérique par les services du ministère en charge de l'écologie, du développement durable, d'autre part. Il répond à la priorité de standardiser les données géoréférençant les zones réglementées des PPRM, tout en offrant la possibilité de traiter les cartes des zones d'aléas fournies par GEODERIS au moment de l'étude détaillée d'aléas et les enjeux qui ont été croisés au moment de l'analyse du risque. Le standard PPRM ne traite pas de la connaissance des aléas matérialisée dans diverses autres sources de données.|
 
 
-# **Standards en adhérence**
+## Standards en adhérence
+
 | Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
 | Standard CNIG [Servitudes d'utilité publique](http://cnig.gouv.fr/wp-content/uploads/2019/04/190321_Standard_CNIG_SUP.pdf) | CNIG |05 mars 2019 | Ce standard national de données a pour but d'harmoniser les informations minimales de description des SUP. Il est commun à toutes les catégories de servitudes et vise à assurer l'interopérabilité des données géographiques et textuelles sur les SUP. Le périmètre du modèle conceptuel de données englobe les notions relatives aux servitudes elles-mêmes, aux actes juridiques les instituant, les gestionnaires, les générateurs et les assiettes. Il est qualifié de "générique" car commun à toutes les catégories de SUP, environ 62. Il n'entre en adhérence avec le standard COVADIS PPR que pour les SUP de catégories PM1 (PPR naturels et miniers), PM1bis (Inondations pour la rétention des crues du Rhin) et PM3 (PPR technologiques), par le fait que le générateur et l'assiette de ces SUP sont définis comme l'enveloppe du PPR. Pour ces catégories de SUP, il véhicule les codes GASPAR et ALEA des PPR.|
@@ -22,14 +39,20 @@ On fait référence ici aux documents utiles au groupe de travail.
 | INSPIRE DataSpecification [Area Management/Restriction/Regulation Zones and Reporting Units](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_AM_v3.0.pdf) | INSPIRE Thematic Working Group Area Management/Restriction/Regulation Zones and Reporting Units | 10 décembre 2013 | Les zones d'aléas et zones réglementées des plans de prévention des risques naturels, technologiques ou miniers sont des données concernées par le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III de la directive INSPIRE. | 
 | INSPIRE DataSpecification [Natural Risk](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE Thematic Working Group Natural Risk Zones | 10 décembre 2013 |Les zones d'aléas et zones réglementées des plans de prévention des risques naturels sont des données concernées par le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE. Ce thème est considéré comme le thème dominant et sera celui référencé dans les métadonnées.|
 
-# **Standards dans le thème**
+## Standards dans le thème
+
 | Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
 | Standard OGC [Water ML](https://www.ogc.org/standards/waterml) | OGC | 06 mars 2017 | WaterML 2.0 est un modèle d’information standard pour la représentation des données d’observation de l’eau, dans le but de permettre l’échange de tels ensembles de données entre les systèmes d’information. Grâce à l’utilisation des normes OGC existantes, il vise à être un format d’échange interopérable qui peut être réutilisé pour répondre à une série d’exigences d’échange, dont certaines sont décrites plus loin dans le présent document.
 
-# **Documents utiles**
+## Documents utiles
+
 | Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
 |[Porter à connaissance sur les risques naturels](https://www.cerema.fr/system/files/documents/2017/07/Porter_a_connaissance_sur_les_risques_naturels_retour_d_experienes_approche_juridique_et_recommandations.pdf) | CEREMA | Aout 2015 | L’étude a pour objectif de mettre en évidence les leviers possibles du « porter à connaissance » (P.A.C.) pour améliorer la prise en compte de la prévention des risques naturels dans les documents d’urbanisme. Pour cela, la compréhension des enjeux qui reposent sur ce « porter à connaissance » (P.A.C.) était nécessaire.|
 | Le [Validateur](https://validateur-tri.ign.fr/documentation) TRI| COVADIS | 27 novembre 2019 | Le validateur TRI permet d’évaluer la conformité d’un jeu de données géographiques vis-à-vis du standard COVADIS Directive Inondation v2. Il s’inscrit dans le cadre du deuxième cycle de mise en œuvre de la directive européenne relative à l’évaluation et à la gestion des inondations. Il a pour but d’aider les acteurs du processus de réalisation des TRI dans les phases de production et de validation. |
-| Mandat du GT [« modernisation des standards risques »](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf) | CNIG | 13 octobre 2021 | L'objectif est de faire évoluer les géostandards d’une logique orientée procédure, à une logique plus orientée objets métier, notamment en définissant des nouveaux modèles de données et, le cas échéant, des représentations cartographiques associées, en prenant en compte les processus de circulation des données et en évaluant les impacts sur les systèmes existants. |
+
+## Jeux de données exemples
+
+| Identification | Description | Format | Zone Géographique | Standard |
+|-|-|-|-|-|
