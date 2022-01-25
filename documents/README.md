@@ -43,8 +43,14 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 | Titre     | Auteur   | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
-| Standard OGC [Water ML](https://www.ogc.org/standards/waterml) | OGC | 06 mars 2017 | WaterML 2.0 est un modèle d’information standard pour la représentation des données d’observation de l’eau, dans le but de permettre l’échange de tels ensembles de données entre les systèmes d’information. Grâce à l’utilisation des normes OGC existantes, il vise à être un format d’échange interopérable qui peut être réutilisé pour répondre à une série d’exigences d’échange, dont certaines sont décrites plus loin dans le présent document.
+| Standard OGC [Water ML](https://www.ogc.org/standards/waterml) | OGC | 06 mars 2017 | WaterML 2.0 est un modèle d’information standard pour la représentation des données d’observation de l’eau, dans le but de permettre l’échange de tels ensembles de données entre les systèmes d’information. Grâce à l’utilisation des normes OGC existantes, il vise à être un format d’échange interopérable qui peut être réutilisé pour répondre à une série d’exigences d’échange. Il se décline en plusieurs famille de spécifications, précisées ci-dessous:|
+| [Water ML 2.0 Part 1 - Time Series](https://portal.ogc.org/files/?artifact_id=57222) | OGC | 02 février 2014 | Représentation des données d'observation hydrologiques. Focus sur les séries temporelles. |
+| [WaterML2.0: Part 2 - Ratings, Gaugings and Sections](http://docs.opengeospatial.org/is/15-018r2/15-018r2.html) | OGC | 03 février 2016 | Modèle d'information pour décrire les côtes hydrologiques, les observations de jaugeage et les observations d'arpentage |
+| [WaterML 2: Part 3 - Surface Hydrology Features (HY_Features) - Conceptual Model](http://docs.opengeospatial.org/is/14-111r6/14-111r6.html) | OGC | 03 février 2016 | Modèle conceptuel de données pour l'identification des objets dans le domaine hydrologique concernant les eaux de surface. |
+|  [WaterML 2: Part 4 – GroundWaterML 2 (GWML2)](http://docs.opengeospatial.org/is/16-032r2/16-032r2.html#1) | OGC | 06 mars 2017 | Modèle de données logique et d'implémentation pour la représentation des données relatives aux eaux souterraines. |
 
+
+ : 
 ## Documents utiles
 
 | Titre     | Auteur   | date  |                                  Description                                                              |
