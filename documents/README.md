@@ -50,7 +50,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 |  [WaterML 2: Part 4 – GroundWaterML 2 (GWML2)](http://docs.opengeospatial.org/is/16-032r2/16-032r2.html#1) | OGC | 06 mars 2017 | Modèle de données logique et d'implémentation pour la représentation des données relatives aux eaux souterraines. |
 
 
- : 
+
 ## Documents utiles
 
 | Titre     | Auteur   | date  |                                  Description                                                              |
@@ -58,6 +58,11 @@ On fait référence ici aux documents utiles au groupe de travail.
 |[Porter à connaissance sur les risques naturels](https://www.cerema.fr/system/files/documents/2017/07/Porter_a_connaissance_sur_les_risques_naturels_retour_d_experienes_approche_juridique_et_recommandations.pdf) | CEREMA | Aout 2015 | L’étude a pour objectif de mettre en évidence les leviers possibles du « porter à connaissance » (P.A.C.) pour améliorer la prise en compte de la prévention des risques naturels dans les documents d’urbanisme. Pour cela, la compréhension des enjeux qui reposent sur ce « porter à connaissance » (P.A.C.) était nécessaire.|
 | Le [Validateur](https://validateur-tri.ign.fr/documentation) TRI| COVADIS | 27 novembre 2019 | Le validateur TRI permet d’évaluer la conformité d’un jeu de données géographiques vis-à-vis du standard COVADIS Directive Inondation v2. Il s’inscrit dans le cadre du deuxième cycle de mise en œuvre de la directive européenne relative à l’évaluation et à la gestion des inondations. Il a pour but d’aider les acteurs du processus de réalisation des TRI dans les phases de production et de validation. |
 | [Modèle pour les chapitres Qualité et Métadonnées des Géostandards](http://cnig.gouv.fr/wp-content/uploads/2021/10/211015-Mod%C3%A8le-de-parties-Qualit%C3%A9-et-M%C3%A9tadonn%C3%A9es-des-g%C3%A9ostandards.pdf) | Arnauld Gallais, et participants au GT CNIG QuaDoGéo | ocotbre 2021 (Projet) | Ce document produit par le groupe national du CNIG vise à spécifier les rubriques "Qualité" et "Métadonnées" d'un géostandard |
+
+## Références documentaires
+| Titre     | Auteur   | date  |                                  Description                                                              |
+| --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
+| Article L 562-1 à L 562-9 et R 562-1 à R562-11-9 du code de l'environnement  
 
 ## Jeux de données exemples
 
