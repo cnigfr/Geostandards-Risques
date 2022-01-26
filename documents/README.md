@@ -59,6 +59,14 @@ On fait référence ici aux documents utiles au groupe de travail.
 | Le [Validateur](https://validateur-tri.ign.fr/documentation) TRI| COVADIS | 27 novembre 2019 | Le validateur TRI permet d’évaluer la conformité d’un jeu de données géographiques vis-à-vis du standard COVADIS Directive Inondation v2. Il s’inscrit dans le cadre du deuxième cycle de mise en œuvre de la directive européenne relative à l’évaluation et à la gestion des inondations. Il a pour but d’aider les acteurs du processus de réalisation des TRI dans les phases de production et de validation. |
 | [Modèle pour les chapitres Qualité et Métadonnées des Géostandards](http://cnig.gouv.fr/wp-content/uploads/2021/10/211015-Mod%C3%A8le-de-parties-Qualit%C3%A9-et-M%C3%A9tadonn%C3%A9es-des-g%C3%A9ostandards.pdf) | Arnauld Gallais, et participants au GT CNIG QuaDoGéo | ocotbre 2021 (Projet) | Ce document produit par le groupe national du CNIG vise à spécifier les rubriques "Qualité" et "Métadonnées" d'un géostandard |
 
+## Références Réglementaires 
+
+| Titre     | Auteur   | date  |                                  Description                                                              |
+| --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
+| [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296)| Code de l'environnement | version en vigueur au 26 janvier 2022 | Articles régelementaires portant sur l'élaboration des plans de prévention des risques naturels prévisibles (Chapitre II : Section 1 du code de l'environnement | 
+| Circulaire sur les [ICPEA] (https://aida.ineris.fr/consultation_document/23068#23069) | 19/11/12 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement.
+  
+
 ## Jeux de données exemples
 
 | Identification | Description | Format | Zone Géographique | Standard |
