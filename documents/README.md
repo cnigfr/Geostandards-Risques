@@ -65,7 +65,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
 | [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296)| Code de l'environnement | version en vigueur au 26 janvier 2022 | Articles régelementaires portant sur l'élaboration des plans de prévention des risques naturels prévisibles (Chapitre II : Section 1 du code de l'environnement | 
 | Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)| Code de l'environnement | 19/11/12 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
-| Circulaire sur les [ITMD]((https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04/05/07 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
+| Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04/05/07 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
   
 
 ## Jeux de données exemples
