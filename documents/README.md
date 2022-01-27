@@ -72,7 +72,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 | [PAC Hérault](https://www.herault.gouv.fr/Politiques-publiques/Environnement-risques-naturels-et-technologiques/Risques-naturels-et-technologiques/Transmission-des-informations-aux-maires-TIM/Les-Porter-a-connaissance-PAC-de-l-Herault)|Préfet de l'Hérault| 20 Décembre 2021 |Les "Porter-à-connaissance" (PAC) de l’Hérault |
 | [GASPAR](https://gasparng.e2.rie.gouv.fr/aide/co/700_Rapports.html) | DGPR |26 Janvier 2022 | Aide Gaspar sur les types d'export possible | 
 | [Cartes PAPI](https://www.ecologie.gouv.fr/sites/default/files/Cahier%20des%20charges%20PAPI%203%202021_0.pdf) | Ministère de la tranisition écologique | 2021 | Cahier des charges PAPI 3 |
-| [Séismes](https://www.georisques.gouv.fr/risques/seismes) | BGRM | 26 Janvier 2022 | Information sur le phénomène |
+| [Séismes](https://www.georisques.gouv.fr/risques/seismes) | BGRM | 26 Janvier 2022 | Informations sur le phénomène |
+| [Cartes de remontée de nappes](https://www.georisques.gouv.fr/articles-risques/les-inondations-par-remontee-de-nappe) | BGRM | 26 Janvier 2022 | Description du phénomène des inondations par remontée de nappe |
 
 
 ## Références Réglementaires 
