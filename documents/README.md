@@ -52,7 +52,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 |  [WaterML 2: Part 4 – GroundWaterML 2 (GWML2)](http://docs.opengeospatial.org/is/16-032r2/16-032r2.html#1) | OGC | 06 mars 2017 | Modèle de données logique et d'implémentation pour la représentation des données relatives aux eaux souterraines. |
 
 
- : 
+
 ## Documents utiles
 
 | Titre     | Auteur   | date  |                                  Description                                                              |
@@ -84,9 +84,9 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 | Identification | Description | Format | Zone Géographique | Standard |
 |-|-|-|-|-|
-| [Plans de Prévention des Risques naturels](https://www.georisques.gouv.fr/donnees/bases-de-donnees/plans-de-prevention-des-risques-naturels) | Ce jeu de données correspond aux Plans de Préventions des Risques naturels (PPRN) réalisés par les services instructeurs départementaux. Les données sont normalisées et suivent le standard de données PPRN / PPRT |  L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93) |  Téléchargeable par départements | PPRN 
-| [Retrait / gonflement des argiles](https://www.georisques.gouv.fr/donnees/bases-de-donnees/retrait-gonflement-des-argiles) | La carte d'exposition au phénomène de retrait-gonflement des argiles couvre la France métropolitaine (hors ville de Paris).| L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93).| Téléchargeable par départements | PPRN 
-| [Plans de Prévention des Risques technologiques](https://www.georisques.gouv.fr/donnees/bases-de-donnees/plans-de-prevention-des-risques-technologiques) | Ce jeu de données correspond aux Plans de Préventions des Risques naturels (PPRN) réalisés par les services instructeurs départementaux. Les données sont normalisées et suivent le standard de données PPRN / PPRT |  L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93) |  Téléchargeable par départements | PPRT
-| [Inventaire des cavités souterraines](https://www.georisques.gouv.fr/donnees/bases-de-donnees/inventaire-des-cavites-souterraines) | Ce jeu de données s'appuie sur l'inventaire des cavités souterraines (BDCavités), opéré par le BRGM avec la participation de l'Université Gustave Eiffel, l'INERIS, le CEREMA et la fédération française de spéléologie.| Format CSV | Téléchargeable par départements | PPRN | 
-| [Exemple couche de repères de crues](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/Exemple_Couche_Repere_Crue.zip) | Zones inondables hors PPRI  | L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93).| Téléchargeable par départements | PPRI |
-
+| [Plans de Prévention des Risques naturels](https://www.georisques.gouv.fr/donnees/bases-de-donnees/plans-de-prevention-des-risques-naturels) | Ce jeu de données correspond aux Plans de Préventions des Risques naturels (PPRN) réalisés par les services instructeurs départementaux. Les données sont normalisées et suivent le standard de données PPRN / PPRT |  L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93) |  Téléchargeable par départements | PPRN |
+| [Retrait / gonflement des argiles](https://www.georisques.gouv.fr/donnees/bases-de-donnees/retrait-gonflement-des-argiles) | La carte d'exposition au phénomène de retrait-gonflement des argiles couvre la France métropolitaine (hors ville de Paris).| L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93).| Téléchargeable par départements | Non applicable |
+| [Plans de Prévention des Risques technologiques](https://www.georisques.gouv.fr/donnees/bases-de-donnees/plans-de-prevention-des-risques-technologiques) | Ce jeu de données correspond aux Plans de Préventions des Risques naturels (PPRN) réalisés par les services instructeurs départementaux. Les données sont normalisées et suivent le standard de données PPRN / PPRT |  L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93) |  Téléchargeable par départements | PPRT |
+| [Inventaire des cavités souterraines](https://www.georisques.gouv.fr/donnees/bases-de-donnees/inventaire-des-cavites-souterraines) | Ce jeu de données s'appuie sur l'inventaire des cavités souterraines (BDCavités), opéré par le BRGM avec la participation de l'Université Gustave Eiffel, l'INERIS, le CEREMA et la fédération française de spéléologie.| Format CSV | Téléchargeable par départements | Non applicable |
+| [Exemple couches de repères de crues](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/Jeux%20de%20donn%C3%A9es/Exemple_Couche_Repere_Crue.zip) | Couches repères de crues  | L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93).| DDTM34| PPRI |
+| Exemple couches PAC | Couches de suivi des PAC |L'information est disponible en format SIG Shapefile (Lambert 93 - système RGF93).| DDTM34| PPRI |
