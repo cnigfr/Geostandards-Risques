@@ -1,0 +1,181 @@
+Fichier utilisé pour suivre les PAC de l'Hérault.
+Les documents sont publiés sur le site IDE  Risques naturels et etchnologiques/TIM/PAC.
+
+
+Mise à jour 06/01/2015
+Ajout d'un PAC minier du 03/10/2008 qui concerne 79 communes.
+Ajout de la catégorie Minier dans le type de PAC et dans l'analyse catégorisée.
+
+Mise à jour du 09/01/2015
+Modification du PAC minier indiqué pour les communes de AGEL AIGNE AIGUES-VIVES AZILLANET BEAUFORT CESSERAS LA CAUNETTE LA LIVINIERE MINERVE OLONZAC OUPIA SIRAN
+Ajout du PAC minier de GORNIES
+Modification du PAC minier et ajout d'un PAC pour LOUPIAN MEZE VILLEVEYRAC
+
+Mise à jour du 18/02/2015
+PAC Camplong risque minier
+
+Mise à jour du 23/03/2015
+PAC de Montpellier
+PAC de Pérols
+PAC de Castelnau-le-Lez
+
+Mise à jour du 30/06/2015
+PAC de Grabels
+
+Mise à jour du 07/08/2015
+PAC Lunel suite à annulation du PPRI
+ajout de 121 PAC du BV de l'Hérault
+
+Mise à jour du 08/08/2015
+ajout PAc Juvignac
+
+Mise à jour du 03/09/2015
+ajout PAC Lamalou-les-bains
+
+Mise à jour du 23/09/2015
+ajout PAC Belarga
+
+Mise à jour du 20/10/2015
+Ajouts des PAC de Portiragnes et Valras-Plage
+
+Mise à jour du 13/11/2015
+Ajout du PAC de Vendres en date du 14/04/2015
+
+Mise à jour du 24/12/2015
+Ajout du PAc de Nizas en date du 24/12/2015
+
+Mise à jour du 26/01/2016
+Porter à connaissance (PAC) complémentaire au PAC du 01/09/2015
+
+Mise à jour du 22/03/2016
+Ajout d'une colonne RUB_PAC afin de modifier l'action pour qu'elle puisse pointer directement sur la rubrique du PAC concernés.
+Le colonne RUB_PAC contient le nom de la commune tel que dans le champ COMMUNE mais tous les espaces sont remplacés par -.
+
+Mise à jour du 08/04/2016
+Ajout du PAC des PLANS
+Ajout du PAC Lodève Soubés Le Puech Le Bosc
+
+Mise à jour du 03/06/2016
+Suppression des objets liées aux communes du Libron dont le PPR a été approuvé
+Autignac
+Laurens
+Magalas
+Boujan sur Libron
+Corneilhan
+Bassan
+Lieuran les Béziers
+Saint Genies de Fontedit
+
+Mise à jour du 19/09/2016
+Ajout du PAC Feu de forêt du Triadou
+Ajout des PAC Inondation
+
+Avène
+Le Bousquet d'Orb
+Brignac
+Ceyras
+Clermont l'Hérault
+La Tour sur Orb
+Le Bosc
+Le Puech
+Lodève
+Lunas
+Pézenas
+Poujols
+Saint Etienne de Gourgas
+Saint Etienne Estrechoux
+Soubès
+Saint Gervais sur Mare
+
+Renommage de la couche de N_PAC_S_034 en N_PAC_RISQUES_S_034
+
+Mise à jour du 06/10/2016
+Ajout des PAC Inondation
+Saint Etienne Estrechoux
+Correction du PAC Pézènes les Mines affecté par erreur à Pézénas
+
+Mise à jour du 10/11/2016
+Ajout PAC Tressan
+Ajout PAC Palavas-les-flots 2016
+
+Mise à jour du 16/12/2016
+Ajout de 26 PAC des relevés PHE des crues de 2014.
+L'objet ID=60 correspondant au PAC de Palavas, a été supprimé et remplacé par le nouveau PAC, objet ID=317.
+
+Mise à jour du 03/01/2017
+Ajout de 7 PAC Inondation pour St Gervais sur Mare, Clermont l'Hérault, Lodève, Le Bosc, Olmet et Villecun, Le Puech et Ceyras sans lien vers site Internet IDE (pas d'article).
+Ajout d'1 PAC Mouvement de terrain pour Cournonterral
+
+Mise à jour du 21/03/2017
+Ajout des PAC de Cazilhac et Soubés
+Correction du libellé du PAC de Saint Gervais sur mare
+
+
+Mise à jour du 12/04/2017
+Modification du PAC de Nizas
+
+Mise à jour du 20/04/2017
+Renseignement de liens internet oubliés lors de la précédente mise à jour
+
+Mise à jour du 11/05/2017
+PAC Mouvement de terrain Lodève
+
+Mise à jour du 21/06/2017
+Ajout de 91 PAC Campings
+Ajout du type Multirisque
+
+Mise à jour du 07/07/2017
+Suppression des PAC des PPRi approuvés de la Bénovie
+St Hilaire de Beauvoir Buzignargues et Campagne
+Beaulieu
+Saussines et Boisseron
+Galargues Garrigues Fontanès Ste Croix de Quintillargues St Bauzille de Montmel
+
+Mise à jour du 10-07-2017
+Suppression des 2 PAC de Vendres suite à l'approbation du PPRI
+
+Mise à jour du 25/07/2017
+Pac Inondation et submar Mauguio
+Suppression de 3 PAC de Vendres suite à l'aprobation du PPRI
+Suppression des APC AZI SM ou Inondation intégrés dans les PPRI de 
+Agde Frontignan Gde Motte Lattes Lespignan Meze Sete Vias Vic la Gardiole
+
+Mise à jour du 20/02/2018
+Ajout de 13 PAC miniers secteur Graissessac Villecelle Etude Géodéris
+
+Mise à jour du 21/02/2017
+Suppression des PAC de Palavas antérieurs à l'appro du PPRI de 2018
+
+Mise à jour du 16/04/2018
+Suppression des PAC d'Agde 2010, Magalas 2010 et Montaud 2013 car intégrés au PPRI.
+
+Mise à jour du 30/04/2018
+Mise à jour des PAC de Pérols et Mauguio
+
+Mise à jour du 29/11/2018
+Ajout PAC Valras-Plage
+Actualisation PAC Le Triadou
+Corrections d'erreurs d'orthographe
+
+Mise à jour du 29/10/2019
+Suppression du PAC Valras Plage 2015 qui a été actualisé par celui de 2018
+
+Mise à jour du 27/02/2020
+Ajout d'un PAC technologique sur Frontignan entreprise SCORI
+Ajout de la catégorie d'aléa Technologique
+Modification du QML
+
+Mise à jour du 15/07/2020
+Suppression des PAC de Valras-plage suite à l'approbation du PPRI
+
+Mise à jour du 08/09/2020
+Ajout de 2 PAC Saint-Jean-de-Cornies et Vacquières
+
+Mise à jour du 28/09/2020
+Ajout de 2 PAC Inondation Béziers et Villeneuve les Béziers
+
+Mise à jour du 09/07/2021
+Suppression de 2 PAC sur Pérols suite à l'approbation du PPRi
+
+Mise à jour du 06/12/2021
+Supression de 2 PAC sur Mauguion suite au nouveau PAC du 26/11/2021

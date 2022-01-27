@@ -1,0 +1,125 @@
+2012_07_27
+
+Rajout de Riols et St Pons de Thomière PPRI annulé par TA
+
+2013_04_04
+
+Suppression des zonages des communes de 
+Cazevieille 
+Le Triadou 
+Saint Jean de Cuculles 
+Saint Mathieu de Tréviers
+
+suite à l'approbation de leur PPRi le 28/02/2013
+
+2013_09_30
+
+Suppression de Capestang Montels et Nissan lez Enserune suite à l'approbation des PPRI
+
+2015_08_06
+
+Ajout du zonage du PPRI de Lunel approuvé le 15/09/2009 suite à l'annulation du 09/06/2015.
+
+2016_05_20
+Saisie des dates d'annulation des PPRI anciennement annulés par le TA
+
+2016_06_03
+Suppression des objets liées aux communes du Libron dont le PPR a été approuvé
+Autignac
+Laurens
+Magalas
+Boujan sur Libron
+Corneilhan
+Bassan
+Lieuran les Béziers
+saint Genies de Fontedit
+
+2016_11_02
+L'annulation du PPRI de Lunel ayant été annulée, le PPRi est à nouveau applicable et le zonage correspondant a été copié dans la table des zonages.
+
+2017_04_12
+Suppression des objets relatifs à Lespignan suite à l'approbation du PPRI.
+
+2017_07_11
+Annulation du PPRI de Lunel le 20/06/2017. Ajout du zonage du PPRI annulé
+
+2017_07_19
+Suppression des zonages apprès approbation du PPRI de Vendres
+
+04_11_2019
+Reprise complète de la couche
+
+Intégration des ZI des "porter-à-connaissance" (Montpellier Castelnau Libron Grabels juvignac Portiragnes Nizas Lunel Lodève...)
+Ajout dez ZI liées à des études BV Or, Inondation de 2015
+Ajout d'un champ Source qui indique si la ZI est à confirmer ou non (PPRI annulé/PA/Etude/A confirmer)
+
+20_02_2020
+Correction d'erreur d'affectation de niveau d'aléa PAC Lunel objets intervertis fort/modéré
+
+24_04_2020
+Ajout de l'étude de 2018 sur les 9 communes du Brestalou
+Ajout d'un champ Id
+Modification du qml pour afficher toutes les étiquettes
+
+15_07_2020
+Suppression des PAC sur Valras-Plage après approbation de la révision du PPRI
+Correction sur Claret de la ZI du PLU
+
+11_08_2020
+Mise à jour des références des études en attente d'identification
+Suppression d'études obsolètes
+
+25_09_25
+Mise à jour des références d'études de Poilhes
+
+28_09_2020
+Ajout de 2 PAC Inondation Béziers et Villeneuve les Béziers
+
+12_11_2020
+Suppression de l'étude sur Poilhes
+
+16_11_2020
+Correction PAC Lunel
+
+20_11_2020
+Suppression de 3 objets PLU de Claret
+
+22_01_2021
+interversion des aléas forts et modérés sur le BV Libron
+suppression de la ZI de Moulés et Baucels dont l'origine n'est pas identifiée
+
+10_02_2021
+numérisation etude SIEE de 1995 sur St Etienne de Gourgas et Soubès
+
+19/02/2021
+suppression du zonage PPRI annulé de Baillargues car emprise plus petite que le PAC de 2017
+
+06/05/2021
+Ajout de la ZI La Caunette (Etude 1153)
+Suppression de la ZI de Villepassans (inf à l'AZI et origine non identifiée)
+Suppression de la ZI de Cassagnoles (inf à l'AZI et origine non identifiée)
+Suppression de la ZI de Saint-gervais-sur-Mare (inf à l'AZI et origine non identifiée)
+Suppression de la ZI de Saint-Etienne-Estrechoux (inf à l'AZI et origine non identifiée)
+Suppression de la ZI de Camplong (sup à l'AZI et origine non identifiée, semble correspondre à un tampon très large)
+
+11/05/2021
+Re-numerisation de la ZI de la CC de la Montagne du Haut Languedoc ( correction sur la Salvetat et ajout sur Le Soulié)
+Il y a une discontinuite de la ZI dans l'étude sur La Salvetat au niveau du lac de la Raviège.
+Suppression des ZI sur oupia Beaufort et Verreries de Moussans (origine non identifiée)
+
+25/05/2021
+Remplacement sur Clermont l'Hérault d'une ZI non identifiée par la ZI de l'étude 1111
+Suppression des Zi sur Puilacher-Belargua-Vendémian-Adissan
+car identiques à l'AZI
+
+26/05/2021
+Suppression de ZI non identifiée Brignac Ceyras Clermont-l'Hérault Lacoste Soubès La Vacquerie Popian
+
+11/06/2021
+Remplacement de la ZI mondélisée 2014 sur Grabels qui ne s'affichait pas.
+
+09/07/2021
+Suppression d'un PAC sur Pérols suite à l'appro du PPRI
+
+06/12/2021
+Suppression d'une étude et du PAC de 2018 sur Mauguio, remplacé par le PAC de 2021.
