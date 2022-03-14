@@ -48,7 +48,6 @@
   * IPR (Insitut Paris Région) - Simon Carrage (Département Environnement Urbain et Rural) 
 
 
-
 *En italique* les participations à confirmer.
 
 
