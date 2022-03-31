@@ -78,6 +78,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 | [Systèmes d'informations géographiques et PPRT](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/annexe3__fiche_sig_v2_codes_couleurs_040211_cle81bca1.pdf)| Centre d''études Techniques de l'équipement Normandie Centre | Février 2011 | Le présent document reprend les **codes couleurs pour les différentes étapes du PPRT** en commençant par ceux destinés à l'analyse et la synthèse des enjeux et en terminant par ceux destinés au plan de zonage règlementaire. | 
 | [Nouvelle sémiologie de la carto DI](http://icar.dgpr.e2.rie.gouv.fr/icar/article.php3?id_article=3716) | DGPR | Juin 2013 (MàJ juin 2019) | Page ICAR référençant les notes méthodologiques concernant la sémiologie de la cartographie Directive Inondations : notes relatives aux premier et second cycles. |
 | [Passage du format PPR COVADIS au standard SUP CNIG PM1/PM3](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/20200815_AccompagnementDDT_passage_PPR-COVADIS_SUP-CNIG-v1.0.pdf) | IGN / DGPR | Aout 2020 | Fiche pratique pour le passage du format PPR COVADIS au standard SUP CNIG PM1/PM3 |
+| [Méthode élaboration des couches hors aléa des PPR et sémiologie dans le 34](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/.Methode_PPRI_Qgis.pdf) | DDTM 34 | Aout 2014 | Méthode élaboration des couches hors aléa des PPR et sémiologie dans le 34. Exemple pour la commune de Palavas. |
 
 
 ## Références Réglementaires 
