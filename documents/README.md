@@ -16,6 +16,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 |-|:-:|:-:|:-:|
 | [Note de Cadrage sur la modernisation des Géostandards de risque](https://github.com/cnigfr/Geostandards-Risques/raw/main/documents/Cadrage/20210930_DGPR_Urba_Livrable%20G%C3%A9ostandards_vf.pdf) | DGPR - Bearing Point | Septembre 2021 | Livrable de l'étude de cadrage pour la refonte des Géostandards réalisée par Bearing Point pour la DGPR |
 | Mandat du GT [« modernisation des standards risques »](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf) | CNIG | 13 octobre 2021 | L'objectif est de faire évoluer les géostandards d’une logique orientée procédure, à une logique plus orientée objets métier, notamment en définissant des nouveaux modèles de données et, le cas échéant, des représentations cartographiques associées, en prenant en compte les processus de circulation des données et en évaluant les impacts sur les systèmes existants. |
+| [Synthèse des travaux prélimnaires du GT](https://github.com/cnigfr/Geostandards-Risques/blob/main/documents/Cadrage/CNIG_GT-Risques_Synthese-Cadrage-v0.1.docx?raw=true) | IGN - GT Risques | 3 Juin 2022 | Ce présent document a pour objectif de faire la synthèse des travaux préliminaires du Groupe de Travail CNIG sur la refonte des Géostandards risques visant à préciser le périmètre et les besoin pour ces nouveaux standards. Il définit ensuite les livrables et propose une méthode de travail pour le groupe pour parvenir à la rédaction de ces derniers |
 
 
 ## Standards à refondre
