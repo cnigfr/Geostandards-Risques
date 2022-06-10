@@ -92,9 +92,46 @@ On fait référence ici aux documents utiles au groupe de travail.
 | Arrêté relatif à la [détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Légisfrance | 5 juillet 2019 | Cet arrêté est relatif à la détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance 100 ans s'agissant de la submersion marine, dans le cadre de l'élaboration ou de la révision des plans de prévention des risques concernant les « aléas débordement de cours d'eau et submersion marine »|
 
 ### Références Réglementaires PPRN
+
 |Type|Date|Description|
 |-|-|-|
-|Loi n°87-565|22 juillet 1987|Relative à l'organisation de la sécurité civile, à la protection de la forêt contre l'incendie et à la prévention des risques majeurs|
+|[Loi n°87-565](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000551804/)|2 février 1995|relative au renforcement de la protection de l'environnement|
+|Loi n° 2012-1460|27 décembre 2012|relative à la mise en œuvre du principe de participation du public|
+|Décret n°95-1089 [(Art.L562-1 et suivants Code de l'Environnement)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) |5 octobre 1995|relatif aux plans de prévention des risques naturels prévisibles|
+|Loi n° 2010-788| 12 juillet 2010| portant engagement national pour l'environnement|
+|Circulaire|1er février 2002|relative à la connaissance du risque d'inondation - programmation pluriannuelle de la réalisation des atlas des zones inondables|
+|Circulaire|14 octobre 2003|relative à la politique de l'État en matière d'établissement des atlas des zones inondables|
+|Circulaire MEDD/DPPR|4 juillet 2006|relative à la diffusion des cartes des risques|
+
+### Références Réglementaires PPRT
+
+|Type|Date|Description|
+|-|-|-|
+|[Loi n°2003-699](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000604335/)|30 juillet 2003|relative à la prévention des risques technologiques et naturels et à la réparation des dommages|
+|Décret n° 2012-189[Art L515-15 et suivants du code de l'environnement](https://www.legifrance.gouv.fr/loda/id/LEGIARTI000025345107/2012-02-10/)|relatif aux commissions de suivi de site|
+|Décret n° 2017-780[Art.R515-39 et suivants du code l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034622161)|
+
+### Références Réglementaires PPRT
+
+|Type|Date|Description|
+|-|-|-|
+|Loi n° 99-245 [(article l’article 94 du Code Minier)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000759770/#:~:text=Dans%20les%20r%C3%A9sum%C3%A9s-,Loi%20n%C2%B0%2099%2D245%20du%2030%20mars%201999%20relative,la%20fin%20de%20l%27exploitation) |30 mars 1999|relative à la responsabilité en matière de dommages consécutifs à l'exploitation minière et à la prévention des risques miniers après la fin de l'exploitation|
+|[Circulaire](https://www.legifrance.gouv.fr/circulaire/id/34871)|6 janvier 2012|relative à la prévention des risques miniers résiduels|
+
+### Références Réglementaires DI/TRI
+
+|Type|Date|Description|
+|-|-|-|
+|La directive inondation, ou Directive n° 2007/60/CE | 23 octobre 2007 | relative à l’évaluation et à la gestion des risques d’inondation |
+|Arrêté [(l'article R. 566-4 du code de l'environnement)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000025835029) |27 avril 2012 | relatif aux critères nationaux de caractérisation de l'importance du risque d'inondation |
+|[Circulaire](https://www.legifrance.gouv.fr/circulaire/id/35706)|16 juillet 2012 | relative à la mise en oeuvre de la phase « cartographie » de la directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
+
+### Références Réglementaires PàC
+
+|Type|Date|Description|
+|-|-|-|
+|[Loi ALUR n° 2014-366 artcile 171](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000028772256/) et [article L132-2 du code de l'urbanisme](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031210796/) | 24 mars 2014| pour l'accès au logement et un urbanisme rénové|
+|[Ordonnance n° 2015-1174](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031204500/)|  23 septembre 2015 | relative à la partie législative du livre Ier du code de l'urbanisme |
 
 ## Jeux de données exemples
 
