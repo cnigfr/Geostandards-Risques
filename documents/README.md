@@ -111,7 +111,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 |Décret n° 2012-189[Art L515-15 et suivants du code de l'environnement](https://www.legifrance.gouv.fr/loda/id/LEGIARTI000025345107/2012-02-10/)|relatif aux commissions de suivi de site|
 |Décret n° 2017-780[Art.R515-39 et suivants du code l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034622161)|
 
-### Références Réglementaires PPRT
+### Références Réglementaires PPRM
 
 |Type|Date|Description|
 |-|-|-|
