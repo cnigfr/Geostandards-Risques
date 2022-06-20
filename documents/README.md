@@ -128,8 +128,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 |-|-|-|
 |[Loi ALUR n° 2014-366 artcile 171](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000028772256/) et [article L132-2 du code de l'urbanisme](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031210796/) | 24 mars 2014| pour l'accès au logement et un urbanisme rénové|
 |[Ordonnance n° 2015-1174](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031204500/)|  23 septembre 2015 | relative à la partie législative du livre Ier du code de l'urbanisme |
-| Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)| Code de l'environnement | 19 novembre 2012 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
-| Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04 mai 2007 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
+| Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)|19 novembre 2012 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
+| Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) |04 mai 2007 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
 
 ## Jeux de données exemples
 
