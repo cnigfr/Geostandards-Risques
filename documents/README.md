@@ -86,19 +86,20 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 | Titre     | Source  | date  |                                  Description                                                              |
 | --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
-| [Articles R562-1 à R562-9-11](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296)| Code de l'environnement | version en vigueur au 26 janvier 2022 | Articles réglementaires portant sur l'élaboration des plans de prévention des risques naturels prévisibles | 
 | Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)| Code de l'environnement | 19 novembre 2012 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
 | Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04 mai 2007 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
-| Arrêté relatif à la [détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Légisfrance | 5 juillet 2019 | Cet arrêté est relatif à la détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance 100 ans s'agissant de la submersion marine, dans le cadre de l'élaboration ou de la révision des plans de prévention des risques concernant les « aléas débordement de cours d'eau et submersion marine »|
+
 
 ### Références Réglementaires PPRN
 
 |Type|Date|Description|
 |-|-|-|
 |[Loi n°87-565](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000551804/)|2 février 1995|relative au renforcement de la protection de l'environnement|
-|Loi n° 2012-1460|27 décembre 2012|relative à la mise en œuvre du principe de participation du public|
+|[Loi n° 2012-1460](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000026843093/)|27 décembre 2012|relative à la mise en œuvre du principe de participation du public|
 |Décret n°95-1089 [(Art.L562-1 et suivants Code de l'Environnement)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) |5 octobre 1995|relatif aux plans de prévention des risques naturels prévisibles|
 |[Loi n° 2010-788](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000022470434/)| 12 juillet 2010| portant engagement national pour l'environnement|
+| [Articles R562-1 à R562-9-11](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296)| Code de l'environnement | version en vigueur au 26 janvier 2022 | Articles réglementaires portant sur l'élaboration des plans de prévention des risques naturels prévisibles | 
+| Arrêté relatif à la [détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Légisfrance | 5 juillet 2019 | Cet arrêté est relatif à la détermination, qualification et représentation cartographique de l'aléa de référence et de l'aléa à échéance 100 ans s'agissant de la submersion marine, dans le cadre de l'élaboration ou de la révision des plans de prévention des risques concernant les « aléas débordement de cours d'eau et submersion marine »|
 |[Circulaire](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0001616/A0040016.pdf;jsessionid=8BBDE4A67E145C9BA7E69AB4FF760E81)|1er février 2002|relative à la connaissance du risque d'inondation - programmation pluriannuelle de la réalisation des atlas des zones inondables|
 |[Circulaire] (https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0002499/A0240027.pdf)|14 octobre 2003|relative à la politique de l'État en matière d'établissement des atlas des zones inondables|
 |[Circulaire MEDD/DPPR](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0004609/A0180031.pdf)|4 juillet 2006|relative à la diffusion des cartes des risques|
