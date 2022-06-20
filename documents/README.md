@@ -84,12 +84,6 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 ## Références Réglementaires 
 
-| Titre     | Source  | date  |                                  Description                                                              |
-| --------- |:--------:|:------:|:--------------------------------------------------------------------------------------------------------:|
-| Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)| Code de l'environnement | 19 novembre 2012 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
-| Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04 mai 2007 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
-
-
 ### Références Réglementaires PPRN
 
 |Type|Date|Description|
@@ -110,8 +104,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 |Type|Date|Description|
 |-|-|-|
 |[Loi n°2003-699](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000604335/)|30 juillet 2003|relative à la prévention des risques technologiques et naturels et à la réparation des dommages|
-|Décret n° 2012-189[Art L515-15 et suivants du code de l'environnement](https://www.legifrance.gouv.fr/loda/id/LEGIARTI000025345107/2012-02-10/)|relatif aux commissions de suivi de site|
-|Décret n° 2017-780[Art.R515-39 et suivants du code l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034622161)|
+|Décret n° 2012-189[Art L515-15 et suivants du code de l'environnement](https://www.legifrance.gouv.fr/loda/id/LEGIARTI000025345107/2012-02-10/)|7 février 2012| relatif aux commissions de suivi de site|
+|Décret n° 2017-780[Art.R515-39 et suivants du code l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034622161)| 5 mai 2017 |relatif aux plans de prévention des risques technologiques
 
 ### Références Réglementaires PPRM
 
@@ -134,6 +128,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 |-|-|-|
 |[Loi ALUR n° 2014-366 artcile 171](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000028772256/) et [article L132-2 du code de l'urbanisme](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031210796/) | 24 mars 2014| pour l'accès au logement et un urbanisme rénové|
 |[Ordonnance n° 2015-1174](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031204500/)|  23 septembre 2015 | relative à la partie législative du livre Ier du code de l'urbanisme |
+| Circulaire sur les [ICPEA](https://aida.ineris.fr/consultation_document/7287)| Code de l'environnement | 19 novembre 2012 | Relative aux mesures de maîtrise des risques et au porter à connaissance à mettre en oeuvre dans le cadre des études de dangers remises en application de l’article L. 551-2 du code de l’environnement |
+| Circulaire sur les [ITMD](https://aida.ineris.fr/consultation_document/23068#23069) | Code de l'environnement | 04 mai 2007 | Circulaire relative DPPR/SEI2/FA-07-0066 au porter à la connaissance " risques technologiques " et maîtrise de l’urbanisation autour des installations classées |
 
 ## Jeux de données exemples
 
