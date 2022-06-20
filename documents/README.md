@@ -98,10 +98,11 @@ On fait référence ici aux documents utiles au groupe de travail.
 |[Loi n°87-565](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000551804/)|2 février 1995|relative au renforcement de la protection de l'environnement|
 |Loi n° 2012-1460|27 décembre 2012|relative à la mise en œuvre du principe de participation du public|
 |Décret n°95-1089 [(Art.L562-1 et suivants Code de l'Environnement)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) |5 octobre 1995|relatif aux plans de prévention des risques naturels prévisibles|
-|Loi n° 2010-788| 12 juillet 2010| portant engagement national pour l'environnement|
-|Circulaire|1er février 2002|relative à la connaissance du risque d'inondation - programmation pluriannuelle de la réalisation des atlas des zones inondables|
-|Circulaire|14 octobre 2003|relative à la politique de l'État en matière d'établissement des atlas des zones inondables|
-|Circulaire MEDD/DPPR|4 juillet 2006|relative à la diffusion des cartes des risques|
+|[Loi n° 2010-788](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000022470434/)| 12 juillet 2010| portant engagement national pour l'environnement|
+|[Circulaire](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0001616/A0040016.pdf;jsessionid=8BBDE4A67E145C9BA7E69AB4FF760E81)|1er février 2002|relative à la connaissance du risque d'inondation - programmation pluriannuelle de la réalisation des atlas des zones inondables|
+|[Circulaire] (https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0002499/A0240027.pdf)|14 octobre 2003|relative à la politique de l'État en matière d'établissement des atlas des zones inondables|
+|[Circulaire MEDD/DPPR](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0004609/A0180031.pdf)|4 juillet 2006|relative à la diffusion des cartes des risques|
+|[Guide méthodologique PPRN général](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf)| 2016 | Guide méthologique|
 
 ### Références Réglementaires PPRT
 
@@ -122,7 +123,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 
 |Type|Date|Description|
 |-|-|-|
-|La directive inondation, ou Directive n° 2007/60/CE | 23 octobre 2007 | relative à l’évaluation et à la gestion des risques d’inondation |
+|[La directive inondation, ou Directive n° 2007/60/CE](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817) | 23 octobre 2007 | relative à l’évaluation et à la gestion des risques d’inondation |
 |Arrêté [(l'article R. 566-4 du code de l'environnement)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000025835029) |27 avril 2012 | relatif aux critères nationaux de caractérisation de l'importance du risque d'inondation |
 |[Circulaire](https://www.legifrance.gouv.fr/circulaire/id/35706)|16 juillet 2012 | relative à la mise en oeuvre de la phase « cartographie » de la directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
 
