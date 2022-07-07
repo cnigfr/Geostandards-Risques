@@ -98,6 +98,7 @@ On fait référence ici aux documents utiles au groupe de travail.
 |[Circulaire](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0002499/A0240027.pdf)|14 octobre 2003|relative à la politique de l'État en matière d'établissement des atlas des zones inondables|
 |[Circulaire MEDD/DPPR](https://www.bulletin-officiel.developpement-durable.gouv.fr/documents/Bulletinofficiel-0004609/A0180031.pdf)|4 juillet 2006|relative à la diffusion des cartes des risques|
 |[Guide méthodologique PPRN général](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf)| 2016 | Guide méthologique|
+| [Modalités d'application du décret 2019-715 du 5 juillet 2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf) | Novembre 2019 | Modalité d'application du décrt "PPRi" relatifs aux risques concernant les "aléas débordement de cours d'eau et submersion marine" |
 
 ### Références Réglementaires PPRT
 
