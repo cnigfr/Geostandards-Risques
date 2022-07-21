@@ -41,12 +41,12 @@
 > *Cette partie constitue le cœur du standard de définition du modèle commun de donnée. Elle doit permettre de définir pour chacune des thématiques :*
 > 
 > *- Les classes d’objets, les relations entre elles et leurs attributs ;* 
+> 
+> *- Les définitions des attributs, leur type, leur cardinalité, leur caractère obligatoire ou non ;*
 >
-> *- Les définitions des attributs, leur type, leur cardinalité, leur caractère obligatoire ou non ; *
+> *- Les contraintes sémantiques, géométriques et topologiques qui peuvent s’appliquer ;*
 >
-> *- Les contraintes sémantiques, géométriques et topologiques qui peuvent s’appliquer ; *
->
-> *- Les attentes de qualité sur des données (exhaustivité, précision, …) ; *
+> *- Les attentes de qualité sur des données (exhaustivité, précision, …) ;*
 >
 > *- Les éléments de métadonnées au niveau général ou des jeux de données.*
 
