@@ -41,9 +41,13 @@
 > *Cette partie constitue le cœur du standard de définition du modèle commun de donnée. Elle doit permettre de définir pour chacune des thématiques :*
 > 
 > *- Les classes d’objets, les relations entre elles et leurs attributs ;* 
+>
 > *- Les définitions des attributs, leur type, leur cardinalité, leur caractère obligatoire ou non ; *
+>
 > *- Les contraintes sémantiques, géométriques et topologiques qui peuvent s’appliquer ; *
+>
 > *- Les attentes de qualité sur des données (exhaustivité, précision, …) ; *
+>
 > *- Les éléments de métadonnées au niveau général ou des jeux de données.*
 
 ## Correspondances INSPIRE
@@ -51,8 +55,11 @@
 > *Cette partie doit permettre de faire le lien entre le modèle de données et les modèles de données des thématiques INSPIRE en lien avec les standards risques, à savoir :*
 > 
 > *- le thème 4 Usage des sols de l'annexe III de la directive ;*
+>
 > *- le thème 8 Lieux de production et sites industriels de l'annexe III de la directive INSPIRE ;*
+>
 > *- Le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III de la directive INSPIRE ;*
+>
 > *- le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
 
 ## Autres correspondances
