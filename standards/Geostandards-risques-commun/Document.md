@@ -4,6 +4,27 @@
 
 > *Tableau de présentation du document ici*
 
+| ![Logo CNIG](./ressources/logo-cnig.png)| Conseil National de l'Information Géolocalisée |
+|-|-|
+| **Titre** | Géostandards Risques - Modèle Commun |
+| **Sous-titre** | |
+| **Description** | |
+| **Date** | xx |
+| **Versions** | xx |
+| **Résumé** | |
+| **Statut juridique** |  |
+| **Sources** |  |
+| **Rédacteurs** | |
+| **Contributeurs** | Membres du Groupe de Travail sur la refonte des Géostandards Risques |
+| **Relecteurs** | Membres du Groupe de Travail sur la refonte des Géostandards Risques |
+| **Format** | |
+| **Diffusion** | |
+| **Organisme** | Conseil National de l'Information Géolocalisée ([CNIG](http://cnig.gouv.fr/)) |
+| **Langue** | français |
+| **Mots-clés** | |
+| **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
+
 
 
 ### Historique du document
