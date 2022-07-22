@@ -10,21 +10,21 @@
 | ![Logo CNIG](./ressources/logo-cnig.png)| Conseil National de l'Information Géolocalisée |
 |-|-|
 | **Titre** | Géostandards Risques - Modèle Commun |
-| **Sous-titre** | |
-| **Description** | |
-| **Date** | xx |
-| **Versions** | xx |
-| **Résumé** | |
-| **Statut juridique** |  |
-| **Sources** |  |
-| **Rédacteurs** | |
-| **Contributeurs** | Membres du Groupe de Travail sur la refonte des Géostandards Risques |
-| **Relecteurs** | Membres du Groupe de Travail sur la refonte des Géostandards Risques |
-| **Format** | |
-| **Diffusion** | |
+| **Sous-titre** | *à remplir si besoin* |
+| **Description** | *à remplir* |
+| **Date** | *xx/xx/xxxx* |
+| **Versions** | *0.1* |
+| **Résumé** | *à remplir* |
+| **Statut juridique** | *à remplir si besoin* |
+| **Sources** | *à remplir si besoin* |
+| **Rédacteurs** | *Gilles Cébélieu et les membres du Groupe de Travail CNIG Géostandards Risques* |
+| **Contributeurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
+| **Relecteurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
+| **Format** | *remplir* |
+| **Diffusion** | *à remplir* |
 | **Organisme** | Conseil National de l'Information Géolocalisée ([CNIG](http://cnig.gouv.fr/)) |
 | **Langue** | français |
-| **Mots-clés** | |
+| **Mots-clés** | *à remplir* |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 
@@ -44,13 +44,23 @@
 
 > Liste des contributeurs au document ici (précision par rapport au tableau du début)
 
-| Nom | Prénoom |Affiliation |
-| - | - | - |
-| Cébélieu | Gilles | IGN  |
-| Lenain | Alison | IGN |
+| Nom |Affiliation |
+| - | - |
+| Besson Stanislas | DDT de l'Isère (38) |
+| Bonnin Nicolas | MTE / DGPR / DAGSI |
+| Boudesseul Nicolas | DREAL Pays de la Loire |
+| Cébélieu Gilles | IGN  | 
+| Chrétien Guillaume | DDTM de la Seine Maritime (76) |
+| Di Salvo Magali | DREAL Auvergne Rhone Alpes |
+| Lenain Alison | IGN |
+| Perehin Céline | Cerema |
+| Tardivo Bénédicte | MTE / DGPR / BRIL |
+| Teixeira Anthony | MTE / DGPR / BRIEC |
+
 
 ### Table des matières
 
+> A générer
 
 
 ### Glossaire
@@ -61,7 +71,26 @@
 
 ### Acronymes et abréviations
 
-**CNIG** Comité National de l'Information Géolocalisée
+**BRIL** Bureau des risques d'inondation et littoraux
+
+**BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
+
+**Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
+
+**CNIG** Comité national de l'information géolocalisée
+
+**DAGSI** Département des affaires générales et des systèmes d’information
+
+**DDT(M)** Direction départementale des territoires (et de la mer) 
+
+**DGPR** Direction générale de la prévention des risques
+
+**DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
+
+**IGN** Institut national de l'information géographique et forestière
+
+**MTE** Ministère de la transition écologique et de la cohésion des territoires 
+
 
 ### Clés de lecture
 
