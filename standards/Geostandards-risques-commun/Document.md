@@ -1,11 +1,11 @@
 # Géostandards Risques - Modèle Commun
 
-> *Version XX - Date*
+> *Version 0.1 - Date*
 
 
 ---
 
-> *Tableau de présentation du document ici*
+> *Tableau de présentation du document à compléter...*
 
 | ![Logo CNIG](./ressources/logo-cnig.png)| Conseil National de l'Information Géolocalisée |
 |-|-|
@@ -32,12 +32,22 @@
 
 ### Historique du document
 
+| Version | Date | Raison |
+| - | - | - |
+| 0.1 | xx | Première rédaction en cours |
 
 ### Objet du document
 
+> Résumé et objectif du document.
 
 ### Contributeurs
 
+> Liste des contributeurs au document ici (précision par rapport au tableau du début)
+
+| Nom | Prénoom |Affiliation |
+| - | - | - |
+| Cébélieu | Gilles | IGN  |
+| Lenain | Alison | IGN |
 
 ### Table des matières
 
@@ -45,14 +55,17 @@
 
 ### Glossaire
 
+| Terme | Définition|
+|-|-|
+| Risque | *défintion du terme "risque"* |
 
 ### Acronymes et abréviations
 
-
+**CNIG** Comité National de l'Information Géolocalisée
 
 ### Clés de lecture
 
-
+> Si besoin, présentation de la structure du document
 
 ## Domaine d'application
 
