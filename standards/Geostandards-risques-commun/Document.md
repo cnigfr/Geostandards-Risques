@@ -2,6 +2,9 @@
 
 > *Version XX - Date*
 
+
+---
+
 > *Tableau de présentation du document ici*
 
 | ![Logo CNIG](./ressources/logo-cnig.png)| Conseil National de l'Information Géolocalisée |
@@ -25,7 +28,7 @@
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 
-
+---
 
 ### Historique du document
 
