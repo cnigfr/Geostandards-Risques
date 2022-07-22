@@ -19,7 +19,7 @@
 | **Résumé** | *à remplir* |
 | **Statut juridique** | *à remplir si besoin* |
 | **Sources** | *à remplir si besoin* |
-| **Rapporteur** | Gilles Cébélieu (IGN) |
+| **Rapporteurs** | Gilles Cébélieu et Alison Lenain (IGN) |
 | **Contributeurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
 | **Relecteurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
 | **Format** | *à remplir* |
@@ -36,7 +36,7 @@
 
 | Version | Date | Raison |
 | - | - | - |
-| 0.1 | xx | Première rédaction en cours |
+| 0.1 | *xx* | Première rédaction en cours |
 
 ### Objet du document
 
@@ -58,6 +58,9 @@
 | Perehin Céline | Cerema |
 | Tardivo Bénédicte | MTE / DGPR / BRIL |
 | Teixeira Anthony | MTE / DGPR / BRIEC |
+
+
+Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR).
 
 
 ### Table des matières
