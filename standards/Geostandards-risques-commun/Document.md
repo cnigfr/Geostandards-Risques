@@ -17,7 +17,7 @@
 | **Résumé** | *à remplir* |
 | **Statut juridique** | *à remplir si besoin* |
 | **Sources** | *à remplir si besoin* |
-| **Rédacteurs** | *Gilles Cébélieu et les membres du Groupe de Travail CNIG Géostandards Risques* |
+| **Rédacteurs** | Gilles Cébélieu et les membres du Groupe de Travail CNIG Géostandards Risques |
 | **Contributeurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
 | **Relecteurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
 | **Format** | *remplir* |
