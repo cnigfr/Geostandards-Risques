@@ -1,6 +1,8 @@
 # Géostandards Risques - Modèle Commun
 
-> *Version 0.1 - Date*
+
+
+*Version 0.1 - Date*
 
 
 ---
@@ -17,10 +19,10 @@
 | **Résumé** | *à remplir* |
 | **Statut juridique** | *à remplir si besoin* |
 | **Sources** | *à remplir si besoin* |
-| **Rédacteurs** | Gilles Cébélieu et les membres du Groupe de Travail CNIG Géostandards Risques |
+| **Rapporteur** | Gilles Cébélieu (IGN) |
 | **Contributeurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
 | **Relecteurs** | Membres du Groupe de Travail CNIG Géostandards Risques |
-| **Format** | *remplir* |
+| **Format** | *à remplir* |
 | **Diffusion** | *à remplir* |
 | **Organisme** | Conseil National de l'Information Géolocalisée ([CNIG](http://cnig.gouv.fr/)) |
 | **Langue** | français |
@@ -38,11 +40,11 @@
 
 ### Objet du document
 
-> Résumé et objectif du document.
+> *Résumé et objectif du document.*
 
 ### Contributeurs
 
-> Liste des contributeurs au document ici (précision par rapport au tableau du début)
+> *Liste des contributeurs au document ici (précision par rapport au tableau du début)*
 
 | Nom |Affiliation |
 | - | - |
@@ -60,7 +62,7 @@
 
 ### Table des matières
 
-> A générer
+> *A générer*
 
 
 ### Glossaire
@@ -94,7 +96,7 @@
 
 ### Clés de lecture
 
-> Si besoin, présentation de la structure du document
+> *Si besoin, présentation de la structure du document*
 
 ## Domaine d'application
 
