@@ -1,6 +1,6 @@
-# GéoStandards Risques - Modèle commun
+# GéoStandards Risques - Profil applicatif PPR
 
-Ce répertoire contient les éléments constitutifs du standard définissant le profil applicatif des Géostandards Risques pour les procédures des Plans de Prévention des Risques.
+Ce répertoire contient les éléments constitutifs du standard définissant le profil applicatif des Géostandards Risques pour les procédures d'élaboration de Plans de Prévention des Risques.
 
 - Le fichier [Document.md](./Document.md) contient le contenu littéral du document ;
 - le répertoire [ressources/](./ressources) contient les ressources graphiques à inclure dans le document
