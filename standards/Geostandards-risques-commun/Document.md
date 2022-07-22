@@ -2,11 +2,11 @@
 
 > *Version XX - Date*
 
-> *Tableau de présentation du docuement ici*
+> *Tableau de présentation du document ici*
 
 
 
-### Historique du docuement
+### Historique du document
 
 
 ### Objet du document
