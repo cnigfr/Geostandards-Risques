@@ -105,6 +105,16 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 > *Cette partie permet de préciser le contexte dans lequel s’inscrit le standard, ce que couvrent et décrivent les données et ce à quoi les données qu’il décrit sont amenées à servir. On y précisera notamment le cadre réglementaire des données de prévention des risques concernées, ainsi que le cycle de vie des données. Dans le domaine d’application on pourra aussi préciser l’étendue géographique couverte par les données (les territoires concernés).*
 
+### Cadre réglementaire des Géostandards
+
+#### Cadre réglementaire des Plans de Prévention des Risques
+
+#### Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
+
+Le cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles est défini dans le code de l'environnement [Chapitre II : Plans de prévention des risques naturels prévisibles](Articles L562-1 à L562-9).
+
+> *à continuer*
+
 
 ## Modèle commun de données
 
