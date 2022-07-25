@@ -199,7 +199,7 @@ A noter que le modèle de données de ce standard ne reprend que les information
 | codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR | 1..1  |
 | libelleProcedure | Nom de la procédure lisible par un être humain. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. *A noter une bonne pratique de nommage est la suivante : xxx* | 1..1  |
 | typeProcedure | Type de procédure selon la classification dans le système GASPAR | CharacterString | Le tableau TypeProcedureGASPAR fait la liste des valeurs possibles pour les procédures décrites dans GASPAR | 1..1 |
-| referencesInternet | Points d'accès internet aux données relatives à la procédure (Lien vers les pièces écrites sur les sites des préfectures par exemple) | ReferenceInternet | N/A | 0..* |
+| referencesInternet | Points d'accès internet aux données relatives à la procédure (Lien vers les pièces écrites sur le site web de la préfecture de département concernée par exemple) | ReferenceInternet | N/A | 1..* |
 
 
 **Associations** :
