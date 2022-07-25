@@ -96,6 +96,8 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 **MTE** Ministère de la transition écologique et de la cohésion des territoires 
 
+**PPRN** Plan de Prévention des Risques Naturels
+
 
 ### Clés de lecture
 
@@ -111,7 +113,13 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 #### Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
-Le cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles est défini dans le code de l'environnement [Chapitre II : Plans de prévention des risques naturels prévisibles](Articles L562-1 à L562-9).
+La mise en oeuvre des Plans de prevention des risques naturels et prévisibles est définie dans le code de l'environnement par :
+
+* Les [articles L562-1 à L562-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) pour la partie législative ;
+* Les [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
+
+Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
+
 
 > *à continuer*
 
