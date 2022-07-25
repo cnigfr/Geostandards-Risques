@@ -111,7 +111,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 #### Cadre réglementaire des Plans de Prévention des Risques
 
-#### Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
+##### Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
 La mise en oeuvre des Plans de prevention des risques naturels et prévisibles est définie dans le code de l'environnement par :
 
@@ -120,24 +120,29 @@ La mise en oeuvre des Plans de prevention des risques naturels et prévisibles e
 
 Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
-#### Cadre réglementaire des Plans de Prévention des Risques Technologiques
+##### Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
 > *à écrire*
 
-#### Cadre réglementaire des Plans de Prévention des Risques Miniers
+##### Cadre réglementaire des Plans de Prévention des Risques Miniers
 
 > *à écrire*
 
-### Cadre réglementaire des Territoires à Risques d'Inondation
-
-> *à écrire*
-
-
-### Cadre réglementaire des Porter à Connaissance
+#### Cadre réglementaire des Territoires à Risques d'Inondation
 
 > *à écrire*
 
 
+#### Cadre réglementaire des Porter à Connaissance
+
+> *à écrire*
+
+
+### Cycle de vie des données de prévention des risques
+
+#### Les différents états d'une procédure de Plan de Prévention des risques
+
+> *à écrire : cf. les différents états d'une procédure GASPAR*
 
 
 ## Modèle commun de données
@@ -155,6 +160,66 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 >
 > *- Les éléments de métadonnées au niveau général ou des jeux de données.*
 
+
+> *Insérer un schéma global des thématiques ici*
+
+
+
+### Thématique Procédures
+
+La thématique "Procédures" regroupe les informations sur les dates d’arrêtés de prescriptions et d’approbations, les supports de numérisations, et les liens vers les documents administratifs officiels. Ces informations de suivi sont saisies par les services déconcéntrés dans le système GASPAR du MTE qui permet de répertorier et suivre la vie des procédures de prévention des risques.
+
+A noter que le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
+
+> *Insérer modèle UML des classes liées à la thématique procédure ici.*
+
+
+#### Classe d'objets *ProcedureGASPAR*
+
+**Nom de la classe** : ProcedureGASPAR
+
+**Titre** : Procdure GASPAR
+
+**Définition** : La classe "Procédure GASPAR" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
+
+**Modélisation** : Cette classe n'a pas de géométrie.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR | 1..1  |
+| libelleProcedure | Nom de la procédure lisible par un être humain. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. *A noter une bonne pratique de nommage est la suivante : xxx* | 1..1  |
+| typeProcedure | Type de procédure selon la classification dans le système GASPAR | CharacterString | Le tableau TypeProcedureGASPAR fait la liste des valeurs possibles pour les procédures décrites dans GASPAR | 1..1 |
+
+
+**Associations** :
+
+
+#### Classe d'objets *ReferenceInternet*
+
+**Nom de la classe** : ReferenceInternet
+
+**Titre** : Référence Internet
+
+**Définition** : 
+
+**Modélisation** : Cette classe n'a pas de géométrie.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+
+
+
+
+### Thématique Périmètre
+
+
+
 ## Correspondances INSPIRE
 
 > *Cette partie doit permettre de faire le lien entre le modèle de données et les modèles de données des thématiques INSPIRE en lien avec les standards risques, à savoir :*
@@ -167,6 +232,9 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 >
 > *- le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
 
+
 ## Autres correspondances
 
 > *D’autres correspondances pourront aussi être proposées dans ce document dans un but d’harmonisation et de cohérence, notamment avec le modèle de données de GASPAR et ceux des standards Vigilance crues et inondations, ou, sous forme de références, avec des standards dédiés à des types de risques particuliers.*
+
+### Correspondances avec le modèle de données GASPAR
