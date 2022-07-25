@@ -73,6 +73,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 | Terme | Définition|
 |-|-|
 | Risque | *défintion du terme "risque"* |
+| Aléa | *définition du terme aléa* |
 
 ### Acronymes et abréviations
 
@@ -102,6 +103,8 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 ### Clés de lecture
 
 > *Si besoin, présentation de la structure du document*
+
+---
 
 ## Domaine d'application
 
@@ -143,7 +146,10 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 #### Les différents états d'une procédure de Plan de Prévention des risques
 
 > *à écrire : cf. les différents états d'une procédure GASPAR*
+> *Notions de procédures révisantes et révisées dans GASPAR*
 
+
+---
 
 ## Modèle commun de données
 
@@ -178,23 +184,28 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 **Nom de la classe** : ProcedureGASPAR
 
-**Titre** : Procdure GASPAR
+**Titre** : Procédure GASPAR
 
 **Définition** : La classe "Procédure GASPAR" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
 
-**Modélisation** : Cette classe n'a pas de géométrie.
+**Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
 **Propriétés** : 
-
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR | 1..1  |
 | libelleProcedure | Nom de la procédure lisible par un être humain. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. *A noter une bonne pratique de nommage est la suivante : xxx* | 1..1  |
 | typeProcedure | Type de procédure selon la classification dans le système GASPAR | CharacterString | Le tableau TypeProcedureGASPAR fait la liste des valeurs possibles pour les procédures décrites dans GASPAR | 1..1 |
+| referencesInternet | Points d'accès internet aux données relatives à la procédure (Lien vers les pièces écrites sur les sites des préfectures par exemple) | ReferenceInternet | N/A | 0..* |
 
 
 **Associations** :
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| revise | Association | Relation sémantique permettant d'indiquer qu'un procédure est la révision de zéro ou plusieurs procédures GASPAR existantes et inversement une procédure GASPAR peut être révisée par zéro ou plusieurs procédures GASPAR. | ProcedureGASPAR (0..\*) | ProcedureGASPAR (0..\*) |
+
 
 
 #### Classe d'objets *ReferenceInternet*
@@ -205,20 +216,24 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 **Définition** : 
 
-**Modélisation** : Cette classe n'a pas de géométrie.
+**Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
 **Propriétés** : 
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-
+| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+| nomRessource | Nom de la ressource référencée sur Internet | CharacterString | Saisie Libre | 0..1 (Saisie recommandée) |
+| description | Description de la ressource référencée sur Internet | CharacterString | Saisie libre | 0..1 |
 
 
 
 ### Thématique Périmètre
 
 
+
+---
 
 ## Correspondances INSPIRE
 
