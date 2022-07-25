@@ -93,6 +93,8 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 **DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
 
+**GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
+
 **IGN** Institut national de l'information géographique et forestière
 
 **MTE** Ministère de la transition écologique et de la cohésion des territoires 
