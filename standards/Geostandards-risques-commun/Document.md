@@ -120,8 +120,24 @@ La mise en oeuvre des Plans de prevention des risques naturels et prévisibles e
 
 Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
+#### Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
-> *à continuer*
+> *à écrire*
+
+#### Cadre réglementaire des Plans de Prévention des Risques Miniers
+
+> *à écrire*
+
+### Cadre réglementaire des Territoires à Risques d'Inondation
+
+> *à écrire*
+
+
+### Cadre réglementaire des Porter à Connaissance
+
+> *à écrire*
+
+
 
 
 ## Modèle commun de données
