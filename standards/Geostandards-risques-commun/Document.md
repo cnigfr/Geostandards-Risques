@@ -265,7 +265,9 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 #### Nomenclature des risques et de leurs codes dans GASPAR
 
-Le tableau suivant présente la classification des risques en trois niveaux croissants de spécialisation par l'application GASPAR et les codes qui y sont associés.
+Le tableau suivant présente la classification des risques en trois niveaux croissants de spécialisation par l'application GASPAR et les codes qui y sont associés. 
+
+A noter que seuls les codes de plus haut niveau sont utilisables pour qualiifier un risque.
 
 > *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
 
