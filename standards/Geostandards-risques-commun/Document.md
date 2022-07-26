@@ -206,7 +206,7 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| revise | Association | Relation sémantique permettant d'indiquer qu'un procédure est la révision de zéro ou plusieurs procédures GASPAR existantes et inversement une procédure GASPAR peut être révisée par zéro ou plusieurs procédures GASPAR. | ProcedureGASPAR (0..\*) | ProcedureGASPAR (0..\*) |
+| revise | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | ProcedureGASPAR (0..\*) | ProcedureGASPAR (0..\*) |
 
 
 
