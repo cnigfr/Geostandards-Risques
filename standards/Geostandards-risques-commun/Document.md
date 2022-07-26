@@ -257,9 +257,17 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 ### Correspondances avec le modèle de données GASPAR
 
+#### Nomenclature des identifiants dans GASPAR
+
+> *Expliquer ici comment sont structurés les identifiants GASPAR*
+
+
+
 #### Nomenclature des risques et de leurs codes dans GASPAR
 
 Le tableau suivant présente la classification des risques en trois niveaux croissants de spécialisation par l'application GASPAR et les codes qui y sont associés.
+
+> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
 
 | Code | Niveau | Libellé Risque
 | - | - | - |
@@ -314,4 +322,58 @@ Le tableau suivant présente la classification des risques en trois niveaux croi
 | 34 | 2 | Echauffement des terrains de dépôts |
 
 
+
+#### Types de procédures GASPAR
+
+Le tableau suivant liste les différents types de procédures gérées dans GASPAR et en lien avec les Géostandards risques
+
+> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
+
+
+| Code | Libellé |
+|-|-|
+| PPRN | Plan de Prévention des Risques Naturels |
+| PPRN-I | Plan de Prévention des Risques Naturels Innondation |
+| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
+| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
+| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
+| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
+| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
+| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
+| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
+| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
+| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
+| PPRT | Plan de Prévention des Risques Technologiques |
+| PPRM | Plan de Prévention des Risques Miniers |
+| TRI	| Territoires à Risque Important d’Inondations |
+
+
+
+#### Etats d'une procédure GASPAR
+
+Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR.
+
+> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
+
+
+| Code Etat | Libellé Etat | Code sous-état | Libellé sous-état |
+|-|-|-|-|
+| PRG_MTG	| Programmation et montage | DEB_PRG | Début programmation |
+| PRG_MTG | Programmation et montage | FIN_PRG |Fin programmation |
+| PRG_MTG | Programmation et montage | DEB_MTG | Début montage |
+| PRG_MTG	| Programmation et montage | FIN_MTG | Fin montage |
+| PRESCRIT | Prescrit | PRECRIT | Prescrit |
+| PRESCRIT | Prescrit | PROROGE | Prorogé |
+| OPPOSABLE | Opposable | ANTICIPE | Anticipé |
+| OPPOSABLE | Opposable | APPROUVE | Approuvé |
+| CADUQUE | Caduque | DEPRESCRIT | Déprescrit |
+| CADUQUE | Caduque | ANNULE | Annulé |
+| CADUQUE | Caduque | ABROGE | Abrogé |
+
+
+
+
+
+
+ 
 
