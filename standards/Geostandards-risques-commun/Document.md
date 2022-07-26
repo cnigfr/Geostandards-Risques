@@ -75,6 +75,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 | Risque | *défintion du terme "risque"* |
 | Aléa | *définition du terme aléa* |
 
+
 ### Acronymes et abréviations
 
 **BRIL** Bureau des risques d'inondation et littoraux
@@ -175,20 +176,20 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 
 ### Thématique Procédures
 
-La thématique "Procédures" regroupe les informations sur les dates d’arrêtés de prescriptions et d’approbations, les supports de numérisations, et les liens vers les documents administratifs officiels. Ces informations de suivi sont saisies par les services déconcéntrés dans le système GASPAR du MTE qui permet de répertorier et suivre la vie des procédures de prévention des risques.
+La thématique "Procédures" regroupe les informations sur les dates d’arrêtés de prescriptions et d’approbations, les supports de numérisations, et les liens vers les documents administratifs officiels. Ces informations de suivi sont saisies par les services déconcéntrés dans l'application GASPAR du MTE qui permet de répertorier et suivre la vie des procédures administratives de prévention des risques.
 
 A noter que le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
 
 > *Insérer modèle UML des classes liées à la thématique procédure ici.*
 
 
-#### Classe d'objets *ProcedureGASPAR*
+#### Classe d'objets *Procedure*
 
-**Nom de la classe** : ProcedureGASPAR
+**Nom de la classe** : Procedure
 
-**Titre** : Procédure GASPAR
+**Titre** : Procédure Adminsitrative
 
-**Définition** : La classe "Procédure GASPAR" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
+**Définition** : La classe "Procedure" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
 
 **Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
@@ -255,3 +256,62 @@ A noter que le modèle de données de ce standard ne reprend que les information
 > *D’autres correspondances pourront aussi être proposées dans ce document dans un but d’harmonisation et de cohérence, notamment avec le modèle de données de GASPAR et ceux des standards Vigilance crues et inondations, ou, sous forme de références, avec des standards dédiés à des types de risques particuliers.*
 
 ### Correspondances avec le modèle de données GASPAR
+
+#### Nomenclature des risques et de leurs codes dans GASPAR
+
+Le tableau suivant présente la classification des risques en trois niveaux croissants de spécialisation par l'application GASPAR et les codes qui y sont associés.
+
+| Code | Niveau | Libellé Risque
+| - | - | - |
+| **1** | **1** | **Risque Naturel** |
+| 11 | 2 | Inondation |
+| 112	| 3 | Par une crue à débordement lent de cours d'eau |
+| 113	| 3 | Par une crue torrentielle ou à montée rapide de cours d'eau |
+| 114	| 3 | Par ruissellement et coulée de boue |
+| 115	| 3 | Par lave torrentielle (torrent et talweg)  |
+| 116 | 3 | Par remontées de nappes naturelles |
+| 117	| 3 | Par submersion marine |
+| 12 | 2 | Mouvement de terrain |
+| 121	| 3 | Affaissement et effondrements (cavités souterraines hors mines) |
+| 123	| 3 | Eboulement ou chutes de pierres et de blocs |
+| 124	| 3 | Glissement de terrain |
+| 125	| 3 | Avancée dunaire |
+| 126	| 3 | Recul du trait de côte et de falaises |
+| 127	| 3 | Tassement différentiels |
+| 13 | 2 | Séisme |
+| 14 | 2 | Avalanche |
+| 15 | 2 | Eruption volcanique |
+| 16 | 2 | Feu de forêt |
+| 17 | 2 | Phénomène lié à l'atmosphère |
+| 171 |	3 | Cyclone / Ouragan |
+| 172	| 3 | Tempête et grains (vent) |
+| 174	| 3 | Foudre |
+| 175	| 3 | Grêle | 
+| 176	| 3 | Neige et pluies verglaçantes |
+| 18 | 2 | Radon |
+| **2** | **1** | **Risque technologique** |
+| 211	| 3 | Effet thermique |
+| 212	| 3 | Effet de surpression | 
+| 213	| 3 | Effet toxique  |
+| 214	| 3 | Effet de projection |
+| 22	| 2 | Nucléaire |
+| 23	| 2 | Rupture de barrage |
+| 24	| 2 | Transport de marchandises dangereuses |
+| 25	| 2 | Engins de guerre |
+| **3** | **1** | **Risque minier** |
+| 31 | 2 | Affaissement minier |
+| 311	| 3 | Effondrements généralisés | 
+| 312	| 3 | Effondrements localisés | 
+| 313	| 3 | Affaissements progressifs | 
+| 314	| 3 | Tassements | 
+| 315	| 3 | Glissements ou mouvements de pente | 
+| 316	| 3 | Coulées | 
+| 317	| 3 | Ecroulements rocheux | 
+| 32 | 2 | Inondations de terrains miniers |
+| 321	| 3 | Pollution des eaux souterraines et de surface |
+| 322	| 3 | Pollution des sédiments et des sols |
+| 33 | 2 | Emissions en surface de gaz de mine |
+| 34 | 2 | Echauffement des terrains de dépôts |
+
+
+
