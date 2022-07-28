@@ -299,7 +299,8 @@ A noter que seuls les codes de plus haut niveau sont utilisables pour qualiifier
 | 175	| 3 | Grêle | 
 | 176	| 3 | Neige et pluies verglaçantes |
 | 18 | 2 | Radon |
-| **2** | **1** | **Risque technologique** |
+| **2** | **1** | **Risque industriel** |
+| 21	| 2 | Risque industriel |
 | 211	| 3 | Effet thermique |
 | 212	| 3 | Effet de surpression | 
 | 213	| 3 | Effet toxique  |
