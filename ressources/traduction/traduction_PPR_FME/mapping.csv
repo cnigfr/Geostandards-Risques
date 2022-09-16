@@ -1,0 +1,17 @@
+classe_ancien,Classe_ancien_value,Attribut_ancien,Valeur_attribut_ancien,Attribut_filtre1,Valeur_Attribut_filtre1,Classe_new,Attribut_new,Valeur_attribut_new,Attribut_supp,Attribut_supp_valeur
+fme_feature_type,n_document_pprn_,ID_GASPAR,,,,procedure,codeProcedure,,typeProcedure,PPRN-I
+fme_feature_type,n_document_pprn_,NOM,,,,procedure,libelleProcedure,,,
+fme_feature_type,referenceinternet,ID_GASPAR,,,,referenceinternet,codeProcedure,,,
+fme_feature_type,referenceinternet,,,,,referenceinternet,,,nomRessoure,test_nomRessource
+fme_feature_type,referenceinternet,,,,,referenceinternet,,,Description,test_description
+fme_feature_type,referenceinternet,SITE_WEB,,,,referenceinternet,adresse,,,
+fme_feature_type,n_perimetre_pprn_,'Geometry (MultiPolygon),,,,perimetre,geometrie,,,
+fme_feature_type,n_perimetre_pprn_,,,ETAT,01,perimetre,,,etatPerimetre,PRESCRIT
+fme_feature_type,n_perimetre_pprn_,,,ETAT,02,perimetre,,,etatPerimetre,APPROUVE
+fme_feature_type,n_perimetre_pprn_,,,ETAT,03,perimetre,,,etatPerimetre,ABROGE
+fme_feature_type,n_perimetre_pprn_,,,ETAT,04,perimetre,,,etatPerimetre,ANTICIPE
+fme_feature_type,n_perimetre_pprn_,ID_GASPAR,,,,perimetre,codeProcedure,,,
+fme_feature_type,n_perimetre_pprn_,DATEPRESCR,,ETAT,01,perimetre,dateEtatPerimetre,,,
+fme_feature_type,n_perimetre_pprn_,DATEPRESCR,,ETAT,03,perimetre,dateEtatPerimetre,,,
+fme_feature_type,n_perimetre_pprn_,DATEAPPRO,,ETAT,02,perimetre,dateEtatPerimetre,,,
+fme_feature_type,n_perimetre_pprn_,DATEAPPRO,,ETAT,04,perimetre,dateEtatPerimetre,,,
