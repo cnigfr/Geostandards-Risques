@@ -20,6 +20,8 @@ Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Info
 
 * Le répertoire [standards](/standards) contient les éléments constitutifs des nouveaux standards risques en cours de rédaction.
 
+* Le répertoire [ressources](/ressources) contient des ressources diverses (scripts, jeux tests, ...) pour la mise en oeuvre des géostandards
+
 ## Liste de diffusion
 
 Pour être tenu au courant et/ou participer aux échanges des membres du groupe de travail, merci de vous inscrire à la liste de diffusion [geostandards-risques-gt-cnig@framalistes.org](https://framalistes.org/sympa/info/geostandards-risques-gt-cnig). Toutes les communications / annonces sont faites sur cette liste.
