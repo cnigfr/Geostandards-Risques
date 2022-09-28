@@ -7,7 +7,8 @@ Il contient :
 
 * Les données au projet de nouveau standard (commençant par refonte_)
 
-Pour passer d'un standard à l'autre, les fonctions suivantes (à l'état de brouillon) sont proposées :
+Pour passer d'un standard à l'autre, les fonctions suivantes (à l'état de brouillon) sont proposées.
+A noter, une table (non géométrique, ici appelé gaspar_procedure_ppr) exporté de GASPAR est utilisée pour récupérer les noms des PPRT et les type de procédures. Cette table contient les attributs code_modele, libelle_modele, code_procedure, libelle_procedure.
 
 ## PROCEDURE
 ~~~~sql
@@ -117,9 +118,105 @@ Begin
 				 end,
 				per.geom
 		FROM ppr_scie.n_document_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$ as doc
-			left join ppr_scie.n_perimetre_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$ per on doc.id_gaspar=per.id_gaspar			
+			left join ppr_scie.n_perimetre_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$ per on doc.id_gaspar=per.id_gaspar		
 		$sql$;
 
+end;
+$BODY$;
+~~~~
+
+## REFERENCEINTERNET
+~~~~sql
+CREATE OR REPLACE FUNCTION ppr_scie.fn_ref_internet(
+	codegaspar text,
+	dpt text)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+
+Begin
+--- pour lancer la fonction :
+--- select * from ppr_scie.fn_ref_internet('20120001','076')
+	
+	--------------------------------------------------------------------------------------
+	-- 1/Création de l'architecture de la table REFERENCEINTERNET
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		drop table if exists ppr_scie.refonte_n_referenceinternet_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$;
+		create table ppr_scie.refonte_n_referenceinternet_pprn_$sql$||codegaspar||$sql$_s_076 
+			(
+				codeprocedure character varying(18),
+				adresse character varying,
+				nomressource character varying,
+				description character varying
+			);
+		$sql$;
+	--------------------------------------------------------------------------------------
+	-- 2/Alimentation de la table REFERENCEINTERNET à partir des tables DOCUMENTS et PERIMETRES
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		insert into ppr_scie.refonte_n_referenceinternet_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		SELECT id_gaspar, 
+				'https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs', 
+				'Information Acquéreur Locataire sur le site internet de l''Etat',
+				'Cette page permet de faire une recherche par commune ou par PPR, elle contient les documents officiels signés par le préfet (règlements, zonages etc...)'
+		FROM ppr_scie.n_document_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+			left join ppr_scie.gaspar_procedure_ppr on id_gaspar=code_procedure
+		$sql$;
+
+end;
+$BODY$;
+~~~~
+
+## ZONEALEA
+~~~~sql
+CREATE OR REPLACE FUNCTION ppr_scie.fn_zonealea(
+	codegaspar text,
+	dpt text)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+
+Begin
+--- pour lancer la fonction :
+--- select * from ppr_scie.fn_zonealea('20120001','076')
+	
+	--------------------------------------------------------------------------------------
+	-- 1/Création de l'architecture de la table ZONEALEA
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		drop table if exists ppr_scie.refonte_n_zonealea_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$;
+		create table ppr_scie.refonte_n_zonealea_pprn_$sql$||codegaspar||$sql$_s_076 
+			(
+				codeprocedure character varying(18),
+				typealea character varying(3),
+				niveaualea character varying(2),
+				description character varying,
+				geometrie geometry(MultiPolygon,2154),
+			);
+		$sql$;
+	--------------------------------------------------------------------------------------
+	-- 2/Alimentation de la table ZONEALEA à partir de la table ZONE_ALEA
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		insert into ppr_scie.refonte_n_zonealea_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		SELECT id_gaspar, 
+			    left(coderisque,3), 
+				nivalea_st,
+				descript,
+				geom
+		FROM ppr_scie.n_zone_alea_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		$sql$;
 end;
 $BODY$;
 ~~~~
