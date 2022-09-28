@@ -14,22 +14,32 @@ typeProcedure,TypeProcedureGASPAR,"Type de procédure (selon les modèles identi
 ReferenceInternet,,,,,,
 ,,,,,,
 NomAttribut,Type,Description,"exemple de valeur","Classe ancien PPRN","Attribut ancien PPRN",
+codeProcedure,CharacterString,"Lien vers la table Procédure",44DDTM20110017,n_document_pprn_s_xxx,ID_GASPAR,"Peut-on mettre cet attribut en 1er ?"
 adresse,CharacterString,"url d'accès à la ressource","https://www.loire-atlantique.gouv.fr/Politiques-publiques/Risques-naturels-et-technologiques/Prevention-des-risques-naturels/Plans-Prevention-Risques-Naturels-Previsibles/Les-Plans-de-Prevention-des-Risques-Littoraux-en-Loire-Atlantique/Le-PPRL-Baie-de-Bourgneuf-Nord ",n_document_pprn_x_xxx,site_web,
-nomRessoure,CharacterString,"nom de la ressource","Le PPRL Baie de Bourgneuf Nord ",N/A,N/A,
+nomRessource,CharacterString,"nom de la ressource","Le PPRL Baie de Bourgneuf Nord ",N/A,N/A,"Gilles, j'ai corrigé nomRessouce en nomRessource (il manquait le r)"
 description,CharacterString,"description de la ressource","Page web d'accès au dossier du PPRL sur le site de la préfecture de la Loire Atlantique",N/A,N/A,
-codeProcedure,CharacterString,"Lien vers la table Procédure",44DDTM20110017,n_document_pprn_s_xxx,ID_GASPAR,
 ,,,,,,
 ,,,,,,
 Perimetre,,,,,,
 ,,,,,,
 NomAttribut,Type,Description,"exemple de valeur","Classe ancien PPRN","Attribut ancien PPRN",
+codeProcedure,CharacterString,"Lien vers la table Procédure",44DDTM20110017,n_document_pprn_x_xxx,ID_GASPAR,"Peut-on mettre cet attribut en 1er ?"
 etatPerimetre,TypeEtatProcedure,"Etat d'avancement de la procédure sur le périmètre",APPROUVE,n_document_pprn_s_xxx,"APPROUVE si etat= ""Approuvé"" (02)
 PRECRIT si etat=""Prescrit"" (01)
 ABROGE si etat =""Abrogé"" (03)
 ANTICIPE si etat = ""Anticipe"" (04)",
 dateEtatPerimetre,Date,"Date du début de l'état de la procédure sur le périmètre",42564,n_document_pprn_x_xxx,"DateAppro (si Approuvé) ; DatePrescrit (si Prescrit)",
-geometrie,"Geometry (MultiPolygon)","Géométrie du Périmètre",N/A,n_perimetre_pprn_xxxx_x_xxx,Geometry,
-codeProcedure,CharacterString,"Lien vers la table Procédure",44DDTM20110017,n_document_pprn_x_xxx,ID_GASPAR,
+geometrie,"Geometry (MultiPolygon)","Géométrie du Périmètre",N/A,n_perimetre_pprn_xxxx_x_xxx,Geometry,"pourrait-on l'appeler geom ?"
+,,,,,,
+,,,,,,
+ZoneAlea,,,,,,
+,,,,,,
+NomAttribut,Type,Description,"exemple de valeur","Classe ancien PPRN","Attribut ancien PPRN",
+codeProcedure,CharacterString,"Identifiant de la procédure dans GASPAR",44DDTM20110017,n_document_pprn_s_xxx,ID_GASPAR,"Peut-on mettre cet attribut en 1er ?"
+typeAlea,TypeAlea,"Type de l'aléa",112,n_zone_alea_pprn_x_xxx,coderisque,"01 n'est pas un vrai exemple de valeur. Il me semble qu'on a proposé le niveau 3 de précision du type d'aléa ? Ne faudrait-il pas un code à 3 chiffres qd c'est possible et à 2 chiffres pour les catégories qui n'ont pas de 3ème niveau de précision ? C'est un point qui n'était pas très clair dans l'ancien standard et il faudrait un commentaire pour bien préciser la nomenclature attendue"
+geometrie,"Geometry (MultiPolygon)","Géométrie de l'aléa",N/A,n_zone_alea_pprn_x_xxx,geom,"non l'ancien attribut covadis c'était geom et non srce_geom était un attribut texte. pourrait-on l'appeler geom ?"
+niveauAlea,TypeNiveauAlea,"Niveau d'intensité de l'aléa",01,n_zone_alea_pprn_x_xxx,nivalea_st,
+description,CharacterString,"Description de l'aléa",N/A,n_zone_alea_pprn_x_xxx,descipt,"il y avait un champ descipt qui pourrait être repris"
 ,,,,,,
 ,,,,,,
 TypeEtatProcedure,,,,,,
@@ -40,7 +50,7 @@ DEB_PRG,"Début programmation",,,,,
 FIN_PRG,"Fin programmation",,,,,
 DEB_MTG,"Début montage",,,,,
 FIN_MTG,"Fin montage",,,,,
-PRECRIT,Prescrit,,,,,
+PRESCRIT,Prescrit,,,,,
 PROROGE,Prorogé,,,,,
 ANTICIPE,Anticipé,,,,,
 DEPRESCRIT,Déprescrit,,,,,
@@ -112,3 +122,14 @@ code,Libellé,,,,,
 322,"Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols",,,,,
 33,"Risque minier ; Emissions en surface de gaz de mine",,,,,
 34,"Risque minier ; Echauffement des terrains de dépôts",,,,,
+,,,,,,
+TypeNiveauAlea,,,,,,
+,,,,,,
+Code,Libellé,"Il faudrait caractériser ces niveaux d'aléas (règles qui permettent de déterminer de façon ""objective"" quel niveau attribuer à quelle situation)",,,,
+07,"Très fort plus",,,,,
+06,"Très fort","Utilisé par PPRI",,,,
+05,"Fort plus",,,,,
+04,Fort,"Utilisé par PPRI",,,,
+03,"Moyen plus",,,,,
+02,Moyen,"Utilisé par PPRI (Modéré)",,,,
+01,"Faible ","Utilisé par PPRI",,,,
