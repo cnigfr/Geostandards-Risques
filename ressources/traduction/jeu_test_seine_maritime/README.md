@@ -180,11 +180,9 @@ CREATE OR REPLACE FUNCTION ppr_scie.fn_zonealea(
 	dpt text)
     RETURNS void
     LANGUAGE 'plpgsql'
-
     COST 100
-    VOLATILE 
+    VOLATILE PARALLEL UNSAFE
 AS $BODY$
-
 Begin
 --- pour lancer la fonction :
 --- select * from ppr_scie.fn_zonealea('20120001','076')
@@ -201,7 +199,8 @@ Begin
 				typealea character varying(3),
 				niveaualea character varying(2),
 				description character varying,
-				geometrie geometry(MultiPolygon,2154),
+				perioderetour character varying,
+				geometrie geometry(MultiPolygon,2154)
 			);
 		$sql$;
 	--------------------------------------------------------------------------------------
@@ -214,6 +213,7 @@ Begin
 			    left(coderisque,3), 
 				nivalea_st,
 				descript,
+				'non renseigné dans l''ancien standard',
 				geom
 		FROM ppr_scie.n_zone_alea_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
 		$sql$;
