@@ -199,9 +199,9 @@ La thématique "Procédures et périmètre" regroupe les informations relatives 
 
 Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
 
-La liste des types de procédures prises en charge par ce standard est établie par le type énuméré [Type Procédure](*lien à rejouter*) et correspond à des types de procédures gérés dans GASPAR. 
+La liste des types de procédures prises en charge par ce standard est établie par le type énuméré [TypeProcedure](#enumeration-typeprocedure) et correspond à des types de procédures gérés dans GASPAR. 
 
-Un objet de la classe [Procédre](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champs "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
+Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champs "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
 
 Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](*lien à rajouter*).
 
@@ -241,7 +241,7 @@ A une procédure donnée peuvent être associés plusieurs périmètres sur lesq
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| revise | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | ProcedureGASPAR (0..\*) | ProcedureGASPAR (0..\*) |
+| revise | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | [Procedure](#classe-dobjets-procedure) (0..\*) | [Procedure](#classe-dobjets-procedure) (0..\*) |
 
 
 
