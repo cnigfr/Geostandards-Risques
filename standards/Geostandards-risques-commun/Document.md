@@ -195,11 +195,24 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 
 ### Thématiques Procédures et périmètres
 
-La thématique "Procédures" regroupe les informations sur les dates d’arrêtés de prescriptions et d’approbations, les supports de numérisations, et les liens vers les documents administratifs officiels. Ces informations de suivi sont saisies par les services déconcéntrés dans l'application GASPAR du MTE qui permet de répertorier et suivre la vie des procédures administratives de prévention des risques.
+La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'Etat dans l'application GASPAR du MTE.
 
-A noter que le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
+Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
 
-Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.
+La liste des types de procédures prises en charge par ce standard est établie par le type énuméré [Type Procédure](*lien à rejouter*) et correspond à des types de procédures gérés dans GASPAR. 
+
+Un objet de la classe [Procédre](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champs "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
+
+Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](*lien à rajouter*).
+
+A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](*lien à rajouter*) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](*lien à rajouter*) et correspond aux diférents états d'avancements d'une procédure identifiés dans GASPAR.
+
+
+> *TODO* Description Reference Internet
+
+
+
+**Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.**
 
 ![Modele UML Procedure et Perimetre](./ressources/UML-Procedure-Perimetre.png)
 
@@ -218,9 +231,9 @@ Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR | 1..1  |
+| codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR. | 1..1  |
 | libelleProcedure | Nom de la procédure lisible par un être humain. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. *A noter une bonne pratique de nommage est la suivante : xxx* | 1..1  |
-| typeProcedure | Type de procédure selon la classification dans le système GASPAR | CharacterString | Le tableau TypeProcedureGASPAR fait la liste des valeurs possibles pour les procédures décrites dans GASPAR | 1..1 |
+| typeProcedure | Type de procédure selon la classification dans le système GASPAR | Enumeration [TypeProcedure](#enumeration-typeprocedure) | Celles de l'énumération | 1..1 |
 | referencesInternet | Points d'accès internet aux données relatives à la procédure (Lien vers les pièces écrites sur le site web de la préfecture de département concernée par exemple) | ReferenceInternet | N/A | 1..* |
 
 
@@ -252,12 +265,37 @@ Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.
 | description | Description de la ressource référencée sur Internet | CharacterString | Saisie libre | 0..1 |
 
 
+#### Enumeration *TypeProcedure*
+
+Le tableau suivant liste les différents types de procédures
+
+
+| Code | Libellé |
+|-|-|
+| PPRN | Plan de Prévention des Risques Naturels |
+| PPRN-I | Plan de Prévention des Risques Naturels Innondation |
+| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
+| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
+| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
+| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
+| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
+| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
+| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
+| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
+| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
+| PPRT | Plan de Prévention des Risques Technologiques |
+| PPRM | Plan de Prévention des Risques Miniers |
+| TRI	| Territoires à Risque Important d’Inondations |
+
+
+
+
 
 
 
 ### Thématique Aléas
 
-Fig. *xx* Modèle UML des classes relatives aux aléas.
+**Fig. *xx* Modèle UML des classes relatives aux aléas.**
 
 ![Modele UML Aléas](./ressources/UML-Procedure-Alea.png)
 
