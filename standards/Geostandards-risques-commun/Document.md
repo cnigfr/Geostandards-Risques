@@ -113,6 +113,25 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 > *Cette partie permet de préciser le contexte dans lequel s’inscrit le standard, ce que couvrent et décrivent les données et ce à quoi les données qu’il décrit sont amenées à servir. On y précisera notamment le cadre réglementaire des données de prévention des risques concernées, ainsi que le cycle de vie des données. Dans le domaine d’application on pourra aussi préciser l’étendue géographique couverte par les données (les territoires concernés).*
 
+### Description et exigences générales
+
+Ce standard propose une description de l'information géographique liée à une procédure de prévention des risques (*definir ou préciser "procédure de prévention des risques"*) et au cadre réglementaire dans lequel elle s'inscrit. Il définit un modèle conceptuel commun décrivant les concepts mis en oeuvre dans (cette liste pouvant être étendue par la suite):
+
+* les plans de prévention des risques, naturels prévisibles, technologiques et miniers
+* la description des Territoire à Risques d'Inondation (TRI) dans le cadre de l'application de la Directive Inondation
+* les procédures de porter à connaissance
+
+L'application de ce modèle dans le cadre de ces procédures est définie dans les profils applicatifs dédiés qui accompagnent ce standard (*références à fournir*).
+
+Ce standard et les profils applicatifs dédiés se substituent et rendent obsolètes les dernières version des standards COVADIS suivants :
+
+* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
+* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
+* Directive Inondation, version 2.1 – juillet 2019
+
+
+
+
 ### Cadre réglementaire des Géostandards
 
 #### Cadre réglementaire des Plans de Prévention des Risques
@@ -235,20 +254,53 @@ A noter que le modèle de données de ce standard ne reprend que les information
 ### Thématique Périmètre
 
 
+### Thématique Aléas
+
+
+### Thématique Origine du Risque
+
+
+### Thématique Enjeux
+
+
+
+### Thématique Zone réglementaire
+
+
+---
+
+## Métadonnées
+
+> *Elements de métadonnées relatifs aux series et dataset*
+
+
 
 ---
 
 ## Correspondances INSPIRE
 
 > *Cette partie doit permettre de faire le lien entre le modèle de données et les modèles de données des thématiques INSPIRE en lien avec les standards risques, à savoir :*
-> 
-> *- le thème 4 Usage des sols de l'annexe III de la directive ;*
->
-> *- le thème 8 Lieux de production et sites industriels de l'annexe III de la directive INSPIRE ;*
->
-> *- Le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III de la directive INSPIRE ;*
->
-> *- le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
+ 
+
+### Lien avec le thème 4 Usage des sols de l'annexe III
+
+
+> *classes concernées et mapping à écrire* 
+
+
+### Lien avec le thème 8 Lieux de production et sites industriels de l'Annexe III 
+
+> *classes concernées et mapping à écrire* 
+
+
+### Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III*
+
+> *classes concernées et mapping à écrire* 
+
+### Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
+
+> *classes concernées et mapping à écrire* 
+
 
 
 ## Autres correspondances
