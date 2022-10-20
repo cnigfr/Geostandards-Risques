@@ -193,20 +193,22 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 
 
 
-### Thématique Procédures
+### Thématiques Procédures et périmètres
 
 La thématique "Procédures" regroupe les informations sur les dates d’arrêtés de prescriptions et d’approbations, les supports de numérisations, et les liens vers les documents administratifs officiels. Ces informations de suivi sont saisies par les services déconcéntrés dans l'application GASPAR du MTE qui permet de répertorier et suivre la vie des procédures administratives de prévention des risques.
 
 A noter que le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
 
-> *Insérer modèle UML des classes liées à la thématique procédure ici.*
+Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.
+
+![Modele UML Procedure et Perimetre](./ressources/UML-Procedure-Perimetre.png)
 
 
 #### Classe d'objets *Procedure*
 
 **Nom de la classe** : Procedure
 
-**Titre** : Procédure Adminsitrative
+**Titre** : Procédure Administrative
 
 **Définition** : La classe "Procedure" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
 
@@ -251,10 +253,14 @@ A noter que le modèle de données de ce standard ne reprend que les information
 
 
 
-### Thématique Périmètre
 
 
 ### Thématique Aléas
+
+Fig. *xx* Modèle UML des classes relatives aux aléas.
+
+![Modele UML Aléas](./ressources/UML-Procedure-Alea.png)
+
 
 
 ### Thématique Origine du Risque
