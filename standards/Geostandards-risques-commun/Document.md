@@ -239,8 +239,29 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **revise** | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | [Procedure](#classe-dobjets-procedure) (0..\*) | [Procedure](#classe-dobjets-procedure) (0..\*) |
-| **est decrit par** | Association | Relation sémantique permettant d'indiquer qu'une procédure est documentée par une ou plusieurs référennces sur internet. | [Procedure](#classe-dobjets-procedure) (1..1) | [RefrenceInternet](##classe-dobjets-referenceinternet) (1..\*) |
+| **est decrit par** | Association | Relation sémantique permettant d'indiquer qu'une procédure est documentée par une ou plusieurs référennces sur internet. | [Procedure](#classe-dobjets-procedure) (1..1) | [ReferenceInternet](#classe-dobjets-referenceinternet) (1..\*) |
 
+
+
+#### Classe d'objets *Perimetre*
+
+**Nom de la classe** : Perimetre
+
+**Titre** : Périmètre
+
+**Définition** : La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur une zone géographique donnée. Pour une même procédure donnée à un instant donné, plusieurs périmètres peuvent exister dans des états d'avancement différents.
+
+**Modélisation géométrique** : Multi-Polygone. Les éléments relatifs à l'origine de saisie de la géométrie, sa précision ou sa qualité sont précisés dans les [métadonnées](#métadonnées).
+
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correpsondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la proprété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
+| etatProcedure | Etat d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeEtatProcedure](#etats-dune-procédure) | Celles de l'énumération | 1..1 |
+| dateEtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
 
 #### Classe d'objets *ReferenceInternet*
@@ -249,7 +270,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 **Titre** : Référence Internet
 
-**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de docuements téléchargeables. Un objet de cette classe représente un telle ressource, coaractérisée de manière unique par son adresse sur internet (URL).
+**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de docuements téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
 
 **Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
@@ -265,25 +286,43 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 #### Enumeration *TypeProcedure*
 
-Le tableau suivant liste les différents types de procédures
+Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites. Les correspondances avec les types de procédures gérés dans GASPAR sont précisées dans le [paragraphe dédié](#types-de-procédures-gaspar).
 
 
-| Code | Libellé |
+| Libellé | Description |
 |-|-|
-| PPRN | Plan de Prévention des Risques Naturels |
-| PPRN-I | Plan de Prévention des Risques Naturels Innondation |
-| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
-| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
-| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
-| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
-| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
-| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
-| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
-| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
-| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
-| PPRT | Plan de Prévention des Risques Technologiques |
-| PPRM | Plan de Prévention des Risques Miniers |
-| TRI	| Territoires à Risque Important d’Inondations |
+| Plan de Prévention des Risques Naturels | *Vraiment applicable ? => à supprimer si non* |
+| Plan de Prévention des Risques Naturels Innondation | |
+| Plan de Prévention des Risques Naturels Littoral | |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | |
+| Plan de Prévention des Risques Naturels Multirisques | |
+| Plan de Prévention des Risques Naturels Séisme | |
+| Plan de Prévention des Risques Naturels Avalanches | |
+| Plan de Prévention des Risques Naturels Eruption volcanique | |
+| Plan de Prévention des Risques Naturels Incendie de forêt | |
+| Plan de Prévention des Risques Naturels Cyclone | |
+| Plan de Prévention des Risques Naturels Radon | |
+| Plan de Prévention des Risques Technologiques | |
+| Plan de Prévention des Risques Miniers | |
+| Territoires à Risque Important d’Inondations | |
+
+
+#### Etats d'une procédure
+
+Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisiés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
+
+
+| Libellé Etat | Description |
+|-|-|
+| Début programmation | |
+| Début montage | |
+| Prescrit | |
+| Prorogé | |
+| Anticipé | |
+| Approuvé | |
+| Déprescrit | |
+| Annulé | |
+| Abrogé | |
 
 
 
