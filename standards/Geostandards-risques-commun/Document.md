@@ -193,7 +193,7 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 
 
 
-### Thématiques Procédures et périmètres
+### Thématique Procédures et périmètres
 
 La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'Etat dans l'application GASPAR du MTE.
 
@@ -207,9 +207,7 @@ Une procédure peut être la révision d'une ou de plusieurs anciennes procédur
 
 A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](*lien à rajouter*) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](*lien à rajouter*) et correspond aux diférents états d'avancements d'une procédure identifiés dans GASPAR.
 
-
-> *TODO* Description Reference Internet
-
+Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la descriptoon de la ressource.  
 
 
 **Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.**
