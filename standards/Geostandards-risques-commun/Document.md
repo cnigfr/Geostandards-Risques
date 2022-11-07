@@ -232,14 +232,14 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 | codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR. | 1..1  |
 | libelleProcedure | Nom de la procédure lisible par un être humain. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. *A noter une bonne pratique de nommage est la suivante : xxx* | 1..1  |
 | typeProcedure | Type de procédure selon la classification dans le système GASPAR | Enumeration [TypeProcedure](#enumeration-typeprocedure) | Celles de l'énumération | 1..1 |
-| referencesInternet | Points d'accès internet aux données relatives à la procédure (Lien vers les pièces écrites sur le site web de la préfecture de département concernée par exemple) | ReferenceInternet | N/A | 1..* |
 
 
-**Associations** :
+#### Associations de la classe procedure
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| revise | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | [Procedure](#classe-dobjets-procedure) (0..\*) | [Procedure](#classe-dobjets-procedure) (0..\*) |
+| **revise** | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | [Procedure](#classe-dobjets-procedure) (0..\*) | [Procedure](#classe-dobjets-procedure) (0..\*) |
+| **est decrit par** | Association | Relation sémantique permettant d'indiquer qu'une procédure est documentée par une ou plusieurs référennces sur internet. | [Procedure](#classe-dobjets-procedure) (1..1) | [RefrenceInternet](##classe-dobjets-referenceinternet) (1..\*) |
 
 
 
@@ -249,7 +249,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 **Titre** : Référence Internet
 
-**Définition** : 
+**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de docuements téléchargeables. Un objet de cette classe représente un telle ressource, coaractérisée de manière unique par son adresse sur internet (URL).
 
 **Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
@@ -260,7 +260,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 |-|-|-|-|-|
 | adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
 | nomRessource | Nom de la ressource référencée sur Internet | CharacterString | Saisie Libre | 0..1 (Saisie recommandée) |
-| description | Description de la ressource référencée sur Internet | CharacterString | Saisie libre | 0..1 |
+| description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
 
 
 #### Enumeration *TypeProcedure*
