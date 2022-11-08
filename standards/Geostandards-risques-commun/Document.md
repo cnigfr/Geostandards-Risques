@@ -291,10 +291,11 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels | *Vraiment applicable ? => à supprimer si non* |
-| Plan de Prévention des Risques Naturels Innondation | |
-| Plan de Prévention des Risques Naturels Littoral | |
-| Plan de Prévention des Risques Naturels Mouvement de Terrain | |
+| Plan de Prévention des Risques Naturels |Les plans de prévention des risques (PPR) ont été institués par la loi du 2 février 1995 relative au
+renforcement de la protection de l'environnement. L'élaboration d'un PPR relève de la compétence de l'État. Elle est décidée par le Préfet. |
+| Plan de Prévention des Risques Naturels Innondation | Document cartographique et réglementaire définissant les zones exposées au risque d'inondation et préconisant les mesures à prendre (en particulier en matière de constructibilité pour y faire face. |
+| Plan de Prévention des Risques Naturels Littoral |Le Plan de Prévention des Risques Littoraux est un outil de gestion des risques naturels qui cartographie les risques de submersion marine et qui réglemente l'urbanisation dans les zones exposées. |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | Le Plan de Prévention des Risques mouvements de terrain a pour principal objectif de prendre en compte dans l’aménagement du territoire les phénomènes naturels suivants : éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et l’aléa retrait-gonflement des argiles |
 | Plan de Prévention des Risques Naturels Multirisques | |
 | Plan de Prévention des Risques Naturels Séisme | |
 | Plan de Prévention des Risques Naturels Avalanches | |
@@ -302,9 +303,11 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Plan de Prévention des Risques Naturels Incendie de forêt | |
 | Plan de Prévention des Risques Naturels Cyclone | |
 | Plan de Prévention des Risques Naturels Radon | |
-| Plan de Prévention des Risques Technologiques | |
-| Plan de Prévention des Risques Miniers | |
-| Territoires à Risque Important d’Inondations | |
+| Plan de Prévention des Risques Technologiques |Outil mis en place suite à la loi relative à la prévention des risques technologiques et naturels et à la réparation des dommages du 30 juillet 2003. Ces plans ont pour objectif de limiter l’exposition de la population aux conséquences des accidents, dont l’impact est notamment appréhendé au travers des études de danger réalisées par l’industriel. |
+| Plan de Prévention des Risques Miniers |Les plans de prévention des risques miniers sont élaborés en application de l'article L.174-5 du code minier. Ces Plans sont donc élaborés suivant la même procédure et dans les mêmes conditions que les PPRN à l'exception des dispositions concernant l'utilisation du Fond de
+Prévention des Risques Naturels Majeurs dit Fond Barnier. 
+| Territoires à Risque Important d’Inondations | l'objectif de la cartographie des surfaces inondables et des risques d'inondation pour les TRI est de contribuer, en homogénéisant et en objectivant la connaissance de l'exposition des enjeux aux inondations, à la rédaction des PGRI, à la définition des objectifs de ce plan et à l’élaboration des stratégies locales par TRI. Il est également attendu que les données produites respectent la directive INSPIRE en matière de diffusion des
+données.|
 
 
 #### Enumeration *Etats d'une procédure*
