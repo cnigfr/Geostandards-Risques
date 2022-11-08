@@ -205,9 +205,9 @@ Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une p
 
 Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](*lien à rajouter*).
 
-A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](*lien à rajouter*) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](*lien à rajouter*) et correspond aux diférents états d'avancements d'une procédure identifiés dans GASPAR.
+A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](*lien à rajouter*) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](*lien à rajouter*) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
 
-Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la descriptoon de la ressource.  
+Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la description de la ressource.  
 
 
 **Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.**
@@ -259,7 +259,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correpsondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la proprété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
+| codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correpsondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
 | etatProcedure | Etat d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeEtatProcedure](#etats-dune-procédure) | Celles de l'énumération | 1..1 |
 | dateEtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
@@ -270,7 +270,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 **Titre** : Référence Internet
 
-**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de docuements téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
+**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
 
 **Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
@@ -307,9 +307,9 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Territoires à Risque Important d’Inondations | |
 
 
-#### Enumeation *Etats d'une procédure*
+#### Enumeration *Etats d'une procédure*
 
-Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisiés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
+Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
 
 
 | Libellé Etat | Description |
@@ -334,7 +334,7 @@ La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soum
 
 Dans certains cas (essentiellement issus du risque inondation) une zone d'aléa peut être liée à des ouvrages de protection et dans ce cas être caractérisées comme aléa spécifique (défini par l'énumération [TypeZoneAlea](#enumeration-typezonalea). Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
 
-Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose un classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer.
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer.
 
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
@@ -398,7 +398,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 #### Enumeration *TypeAlea*
 
-Le tableau suivant liste ... iles correspondances avec la nomenclature définie dans GASPAR sont précisés dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar).
+Le tableau suivant liste ... les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar).
 
 
 | Libellé Etat | Description |
@@ -414,7 +414,7 @@ Le tableau suivant liste ...
 |-|-|
 
 
-#### Enumeration *TypeiZoneAlea*
+#### Enumeration *TypeZoneAlea*
 
 Le tableau suivant liste ... 
 
