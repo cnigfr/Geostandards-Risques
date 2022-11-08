@@ -307,7 +307,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Territoires à Risque Important d’Inondations | |
 
 
-#### Etats d'une procédure
+#### Enumeation *Etats d'une procédure*
 
 Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisiés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
 
@@ -326,15 +326,101 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 
 
 
-
-
-
-
 ### Thématique Aléas
+
+La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et leurs intensités.
+
+La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son intensité (classifiée selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité. Les zones d'aléas sont définies par rapport à une procédure donnée.
+
+Dans certains cas (essentiellement issus du risque inondation) une zone d'aléa peut être liée à des ouvrages de protection et dans ce cas être caractérisées comme aléa spécifique (défini par l'énumération [TypeZoneAlea](#enumeration-typezonalea). Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
+
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose un classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer.
+
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
 
 ![Modele UML Aléas](./ressources/UML-Procedure-Alea.png)
+
+
+#### Classe d'objets *ZoneAlea*
+
+**Nom de la classe** : ZoneAlea
+
+**Titre** : Zone d'aléa
+
+**Définition** : La classe Zone d'aléa xxxx
+
+**Modélisation géométrique** : Multi polygone.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+
+
+#### Classe d'objets *OuvrageProtection*
+
+**Nom de la classe** : OuvrageProtection
+
+**Titre** : Ouvrage de protection
+
+**Définition** : La classe Ouvrage de protection ...
+
+**Modélisation géométrique** : Pas de géométrie. La géométrie est portée par les objets vers lesquels cette classe permet de pointer.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+
+
+#### Classe d'objets *ElementDeterminationAlea*
+
+**Nom de la classe** : ElementDeterminationAlea
+
+**Titre** : Element de détermination d'aléa
+
+**Définition** : La classe Element de détermination d'aléa ...
+
+**Modélisation géométrique** : Classe générique ne portant pas de géométrie à priori. Ses classes dérivées peuvent en porter selon les cas.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+
+
+#### Enumeration *TypeAlea*
+
+Le tableau suivant liste ... iles correspondances avec la nomenclature définie dans GASPAR sont précisés dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar).
+
+
+| Libellé Etat | Description |
+|-|-|
+
+
+#### Enumeration *TypeNiveauAlea*
+
+Le tableau suivant liste ... 
+
+
+| Libellé Etat | Description |
+|-|-|
+
+
+#### Enumeration *TypeiZoneAlea*
+
+Le tableau suivant liste ... 
+
+
+| Libellé Etat | Description |
+|-|-|
 
 
 
