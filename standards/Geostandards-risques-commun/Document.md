@@ -348,16 +348,24 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Titre** : Zone d'aléa
 
-**Définition** : La classe Zone d'aléa xxxx
+**Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son intensité, et sa probabilité d'occurence. Un objet de la classe représente une zone associée en particulier à un type d'aléa donné, avec une intensité et potentiellement une occurence. De ce fait, différentes zones d'aléas peuvent se recouvrir entre elles à partir du moment où certaines de ces propriétés sont différentes.
 
-**Modélisation géométrique** : Multi polygone.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
 
 **Propriétés** : 
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+| idZoneAlea | Identifiant unique d'un objet zone d'aléa | CharacterString | Deux objets de la classe ZoneAlea ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle la zone d'aléas a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
+| typeAlea | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
+| niveauAlea | Caractérisation du niveau d'intensité de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Enumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1.1 |
+| occurence | Ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon le type d'aléa, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
+| description | Description textuelle de la zone d'aléa | CharacterString | Saisie libre | 0..1 |
+| aleaSpecifique | Cette propriété permet d'indiquer que la zone d'aléa correspond à un type d'aléa particulier listé parmi les valeurs possibles de l'énumération [TypeZoneAlea](#enumeration-typezonalea), en lien avec la présence d'un ouvrage de protection. Ce champ est facultatif. S'il n'est pas renseigné, alors la zone d'aléa est déterminée par un aléa non spécifique. | Enumération [TypeZoneAlea](#enumeration-typezonalea) | Celles de l'énumération ou non renseigné | 0..1 |
+
+
 
 
 #### Classe d'objets *OuvrageProtection*
