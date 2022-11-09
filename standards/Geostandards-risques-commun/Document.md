@@ -296,7 +296,7 @@ renforcement de la protection de l'environnement. L'élaboration d'un PPR relèv
 | Plan de Prévention des Risques Naturels Innondation | Document cartographique et réglementaire définissant les zones exposées au risque d'inondation et préconisant les mesures à prendre (en particulier en matière de constructibilité pour y faire face. |
 | Plan de Prévention des Risques Naturels Littoral |Le Plan de Prévention des Risques Littoraux est un outil de gestion des risques naturels qui cartographie les risques de submersion marine et qui réglemente l'urbanisation dans les zones exposées. |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain | Le Plan de Prévention des Risques mouvements de terrain a pour principal objectif de prendre en compte dans l’aménagement du territoire les phénomènes naturels suivants : éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et l’aléa retrait-gonflement des argiles |
-| Plan de Prévention des Risques Naturels Multirisques | |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels uniquement. |
 | Plan de Prévention des Risques Naturels Séisme | |
 | Plan de Prévention des Risques Naturels Avalanches | |
 | Plan de Prévention des Risques Naturels Eruption volcanique | |
