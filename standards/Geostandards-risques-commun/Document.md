@@ -292,16 +292,16 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Libellé | Description |
 |-|-|
 | Plan de Prévention des Risques Naturels | |
-| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels suivant : les inondations par ruissellement, par débordement de cours d'eau, submersion marine et par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels suivant : le retrait du trait de cote et la submersion marine |
+| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels suivants : les inondations par ruissellement, par débordement de cours d'eau, submersion marine et par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels suivants : le retrait du trait de cote et la submersion marine |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain |  Ce type de procédure couvre les risques naturels suivants : éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et l’aléa retrait-gonflement des argiles |
-| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels uniquement |
-| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels suivant : tsunamis, mouvements de terrain, et la liquéfaction des sols|
-| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels suivant : l’avalanche spontanée,  l’avalanche provoquée naturellement, l’avalanche provoquée accidentellement, et l’avalanche provoquée artificiellement |
-| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels suivant : glissements de terrain, modification du cours des rivières, tsunamis, destruction des réseaux d’eau, d’énergie ou de communication |
-| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels suivant :  |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels (uniquement) |
+| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels suivants : tsunamis, mouvements de terrain, et la liquéfaction des sols|
+| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels suivants : l’avalanche spontanée,  l’avalanche provoquée naturellement, l’avalanche provoquée accidentellement, et l’avalanche provoquée artificiellement |
+| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels suivants : glissements de terrain, modification du cours des rivières, tsunamis, destruction des réseaux d’eau, d’énergie ou de communication |
+| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels suivants :  |
 | Plan de Prévention des Risques Naturels Cyclone | |
-| Plan de Prévention des Risques Naturels Radon |Ce type de procédure couvre les risques naturels suivant : formation géologique, failles, ouvrages miniers, et sources hydrothermales |
+| Plan de Prévention des Risques Naturels Radon |Ce type de procédure couvre les risques naturels suivants : formation géologique, failles, ouvrages miniers, et sources hydrothermales |
 | Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques suivants : le risque nucléaire, le risque industriel, le risque de transport de matières dangereuses et le risque de rupture de barrage |
 | Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques suivants les mouvements de terrains liés aux ouvrages souterrains ou aux ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
 | Territoires à Risque Important d’Inondations | Les TRI couvre les zones où les enjeux potentiellement exposés aux inondations sont les plus importants |
