@@ -314,15 +314,15 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 
 | Libellé Etat | Description |
 |-|-|
-| Début programmation | |
-| Début montage | |
-| Prescrit | |
-| Prorogé | |
-| Anticipé | |
-| Approuvé | |
-| Déprescrit | |
-| Annulé | |
-| Abrogé | |
+| Début programmation | Date de début de la programmation |
+| Début montage | Date de début dud montage |
+| Prescrit | Le primètre est opposable |
+| Prorogé | la durée de validité du périmètre est prolongée au delà de la date initialement fixée |
+| Anticipé | Le périmètre peut être opposable avant sa publication grâce à un arrêté du préfet qui approuve par anticipation |
+| Approuvé | Le périmètre est validé par l'autorité compétente et il est opposable |
+| Déprescrit | Le périmètre n'est plus opposable |
+| Annulé | Le périmètre n'est plus opposable avec effet rétroactif |
+| Abrogé | Le périmètren'est plus opposable sans effet rétroactif |
 
 
 
