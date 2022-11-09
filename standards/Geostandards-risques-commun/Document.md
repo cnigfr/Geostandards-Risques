@@ -192,7 +192,6 @@ Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des 
 > *Insérer un schéma global des thématiques ici*
 
 
-
 ### Thématique Procédures et périmètres
 
 La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'Etat dans l'application GASPAR du MTE.
