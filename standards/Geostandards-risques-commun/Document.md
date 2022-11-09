@@ -291,23 +291,20 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels |Les plans de prévention des risques (PPR) ont été institués par la loi du 2 février 1995 relative au
-renforcement de la protection de l'environnement. L'élaboration d'un PPR relève de la compétence de l'État. Elle est décidée par le Préfet. |
-| Plan de Prévention des Risques Naturels Innondation | Document cartographique et réglementaire définissant les zones exposées au risque d'inondation et préconisant les mesures à prendre (en particulier en matière de constructibilité pour y faire face. |
-| Plan de Prévention des Risques Naturels Littoral |Le Plan de Prévention des Risques Littoraux est un outil de gestion des risques naturels qui cartographie les risques de submersion marine et qui réglemente l'urbanisation dans les zones exposées. |
-| Plan de Prévention des Risques Naturels Mouvement de Terrain | Le Plan de Prévention des Risques mouvements de terrain a pour principal objectif de prendre en compte dans l’aménagement du territoire les phénomènes naturels suivants : éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et l’aléa retrait-gonflement des argiles |
-| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels uniquement. |
-| Plan de Prévention des Risques Naturels Séisme | |
-| Plan de Prévention des Risques Naturels Avalanches | |
-| Plan de Prévention des Risques Naturels Eruption volcanique | |
-| Plan de Prévention des Risques Naturels Incendie de forêt | |
-| Plan de Prévention des Risques Naturels Cyclone | |
-| Plan de Prévention des Risques Naturels Radon | |
-| Plan de Prévention des Risques Technologiques |Outil mis en place suite à la loi relative à la prévention des risques technologiques et naturels et à la réparation des dommages du 30 juillet 2003. Ces plans ont pour objectif de limiter l’exposition de la population aux conséquences des accidents, dont l’impact est notamment appréhendé au travers des études de danger réalisées par l’industriel. |
-| Plan de Prévention des Risques Miniers |Les plans de prévention des risques miniers sont élaborés en application de l'article L.174-5 du code minier. Ces Plans sont donc élaborés suivant la même procédure et dans les mêmes conditions que les PPRN à l'exception des dispositions concernant l'utilisation du Fond de
-Prévention des Risques Naturels Majeurs dit Fond Barnier. 
-| Territoires à Risque Important d’Inondations | l'objectif de la cartographie des surfaces inondables et des risques d'inondation pour les TRI est de contribuer, en homogénéisant et en objectivant la connaissance de l'exposition des enjeux aux inondations, à la rédaction des PGRI, à la définition des objectifs de ce plan et à l’élaboration des stratégies locales par TRI. Il est également attendu que les données produites respectent la directive INSPIRE en matière de diffusion des
-données.|
+| Plan de Prévention des Risques Naturels | |
+| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
+| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
+| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels liés aux avalanches spontanées, avalanches provoquées naturellement, avalanches provoquées accidentellement, et aux avalanches provoquées artificiellement |
+| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
+| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
+| Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
+| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques naturels liés aux formations géologique, failles, ouvrages miniers, et aux sources hydrothermales |
+| Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
+| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
+| Territoires à Risque Important d’Inondations |Ce type de procédure couvre le risque inondation. Il est lié à la mise en œuvre de la Directive Inondation |
 
 
 #### Enumeration *Etats d'une procédure*
