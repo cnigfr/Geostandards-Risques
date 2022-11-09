@@ -367,6 +367,14 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 
 
+#### Associations de la classe ZoneAlea
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) (0..\*) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone d'aléa qui serait la conséquence de d'un ouvrage de protection avec l'objet décrivant l'ouvrage en question. | [ZoneAlea](#classe-dobjets-zonealea) (0..1) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (0..1) |
+
+
 
 #### Classe d'objets *OuvrageProtection*
 
@@ -374,7 +382,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Titre** : Ouvrage de protection
 
-**Définition** : La classe Ouvrage de protection ...
+**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que le Référentiel des Obstacles à l'Ecoulement ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus.
 
 **Modélisation géométrique** : Pas de géométrie. La géométrie est portée par les objets vers lesquels cette classe permet de pointer.
 
@@ -383,7 +391,8 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+| refExterne | Nom du référentiel externe d'où est extrait l'objet | CharacterString | La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé | 1..1 | 
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
 
 
 #### Classe d'objets *ElementDeterminationAlea*
@@ -392,7 +401,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Titre** : Element de détermination d'aléa
 
-**Définition** : La classe Element de détermination d'aléa ...
+**Définition** : La classe Element de détermination d'aléa est une classe générique (abstraite) qui permet de lier des objets spécifiques (issus d'études hydrauliques par exemple) ayant permis de déterminer une zone d'aléa. Elle a vocation à être spécialisée en fonction de l'application de ce modèle.
 
 **Modélisation géométrique** : Classe générique ne portant pas de géométrie à priori. Ses classes dérivées peuvent en porter selon les cas.
 
@@ -401,34 +410,83 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+| idZoneAlea | Identifiant de la zone d'aléa qui a été déterminée par cet élément | CharacterString | Valeur d'un identifiant porté par un objet de classe zoneAlea | 1..1 | 
 
 
 #### Enumeration *TypeAlea*
 
-Le tableau suivant liste ... les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar).
+Le tableau suivant liste les différents types d'aléas applicables les zones d'Aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que Les libellés intègrent la hiérarchisation à trois niveau proposée par la nomenclature GASPAR.
 
-
-| Libellé Etat | Description |
-|-|-|
+| Libellé Aléa |
+|-|
+| Risque naturel ; Inondation ; Par une crue à débordement lent de cours d'eau |
+| Risque naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau |
+| Risque naturel ; Inondation ; Par ruissellement et coulée de boue |
+| Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg) |
+| Risque naturel ; Inondation ; Par remontées de nappes naturelles |
+| Risque naturel ; Inondation ; Par submersion marine |
+| Risque naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
+| Risque naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
+| Risque naturel ; Mouvement de terrain; Glissement de terrain |
+| Risque naturel ; Mouvement de terrain; Avancée dunaire |
+| Risque naturel ; Mouvement de terrain; Recul du trait de côte et de falaises |
+| Risque naturel ; Séisme |
+| Risque naturel ; Avalanche |
+| Risque naturel ; Eruption volcanique |
+| Risque naturel ; Feu de forêt |
+| Risque naturel ; Phénomène lié à l'atmosphère ; Cyclone / Ouragan |
+| Risque naturel ; Phénomène lié à l'atmosphère ; Tempête et grains (vent) |
+| Risque naturel ; Phénomène lié à l'atmosphère ; Foudre |
+| Risque naturel ; Phénomène lié à l'atmosphère; Grêle |
+| Risque naturel ; Phénomène lié à l'atmosphère; Neige et pluies verglaçantes |
+| Risque naturel ; Radon  |
+| Risque technologique ; Risque industriel ; Effet thermique |
+| Risque technologique ; Risque industriel ; Effet de surpression |
+| Risque technologique ; Risque industriel ; Effet toxique |
+| Risque technologique ; Risque industriel ; Effet de projection |
+| Risque technologique ; Nucléaire |
+| Risque technologique ; Rupture de barrage |
+| Risque technologique ; Transport de marchandises dangereuses |
+| Risque technologique ; Engins de guerre |
+| Risque minier ; Affaissement minier ; Effondrements généralisés |
+| Risque minier ; Affaissement minier ; Effondrements localisés |
+| Risque minier ; Affaissement minier ; Affaissements progressifs |
+| Risque minier ; Affaissement minier ; Tassements |
+| Risque minier ; Affaissement minier ; Glissements ou mouvements de pente |
+| Risque minier ; Affaissement minier ; Coulées |
+| Risque minier ; Affaissement minier ; Ecroulements rocheux |
+| Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface |
+| Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols |
+| Risque minier ; Emissions en surface de gaz de mine |
+| Risque minier ; Echauffement des terrains de dépôts |
 
 
 #### Enumeration *TypeNiveauAlea*
 
-Le tableau suivant liste ... 
+Le tableau suivant liste les valeurs possibles pour caractériser l'intensité des aléas. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau varient en fonction de la zone et du type d'aléa et sont précisées dans des guides dédiés qui sont référencés dans les métadonnées associées au jeu de données.
 
 
-| Libellé Etat | Description |
+| Code | Libellé Etat | 
 |-|-|
+| 01 | Faible |
+| 02 | Moyen |
+| 03 | Moyen plus |
+| 04 | Fort |
+| 05 | Fort plus |
+| 06 | Très fort |
+| 07 | Très fort plus |
 
 
 #### Enumeration *TypeZoneAlea*
 
-Le tableau suivant liste ... 
+Le tableau suivant liste les valeurs possibles permettant de caractériser les zones d'aléas lorsqu'elles sont engendrées par des ouvrages de protection. 
 
 
 | Libellé Etat | Description |
 |-|-|
+| zone de sur-aléa | Zone où le risque est plus important si l’ouvrage de protection cède que si l’ouvrage de protection n’avait pas existé |
+| zone de projection | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans le guide PPRL |
+
 
 
 
@@ -492,22 +550,29 @@ Le tableau suivant liste ...
 
 #### Nomenclature des risques et de leurs codes dans GASPAR
 
-Le tableau suivant présente la classification des risques en trois niveaux croissants de spécialisation par l'application GASPAR et les codes qui y sont associés.
+GASPAR propose une nomenclature des risques hiérarchisée sur trois niveaux croissants de spécialisation du risque, avec une codification correspondante preséntée dans le tableau suivant. 
 
-> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
+L'énumération [TypeAlea](#enumeration-typealea) présentée définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les aléas utilsés par le standard sont représentés en **gras** dans le tableau. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
+
+Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" est : "Risque naturel ; Inondation ; Par ruissellement et coulée de boue" car il est hiérarchisé ainsi dans la nomenclature :
+
+- niveau 1 : "Risque naturel"
+- niveau 2 : "Inondation"
+- niveau 3 : "Par ruissellement ert coulée de boue"
+
 
 | Code | Niveau | Libellé Risque
 | - | - | - |
-| **1** | **1** | **Risque Naturel** |
+| 1 | 1 | Risque Naturel |
 | 11 | 2 | Inondation |
-| 112	| 3 | Par une crue à débordement lent de cours d'eau |
+| **112	| 3 | Par une crue à débordement lent de cours d'eau |
 | 113	| 3 | Par une crue torrentielle ou à montée rapide de cours d'eau |
 | 114	| 3 | Par ruissellement et coulée de boue |
 | 115	| 3 | Par lave torrentielle (torrent et talweg)  |
 | 116 | 3 | Par remontées de nappes naturelles |
-| 117	| 3 | Par submersion marine |
+| 117	| 3 | Par submersion marine** |
 | 12 | 2 | Mouvement de terrain |
-| 121	| 3 | Affaissement et effondrements (cavités souterraines hors mines) |
+| **121	| 3 | Affaissement et effondrements (cavités souterraines hors mines) |
 | 123	| 3 | Eboulement ou chutes de pierres et de blocs |
 | 124	| 3 | Glissement de terrain |
 | 125	| 3 | Avancée dunaire |
@@ -516,37 +581,38 @@ Le tableau suivant présente la classification des risques en trois niveaux croi
 | 13 | 2 | Séisme |
 | 14 | 2 | Avalanche |
 | 15 | 2 | Eruption volcanique |
-| 16 | 2 | Feu de forêt |
+| 16 | 2 | Feu de forêt** |
 | 17 | 2 | Phénomène lié à l'atmosphère |
-| 171 |	3 | Cyclone / Ouragan |
+| **171 |	3 | Cyclone / Ouragan |
 | 172	| 3 | Tempête et grains (vent) |
 | 174	| 3 | Foudre |
 | 175	| 3 | Grêle | 
 | 176	| 3 | Neige et pluies verglaçantes |
-| 18 | 2 | Radon |
-| **2** | **1** | **Risque technologique** |
-| 211	| 3 | Effet thermique |
+| 18 | 2 | Radon** |
+| 2 | 1 | Risque technologique |
+| 21	| 2 | Risque Industriel |
+| **211	| 3 | Effet thermique |
 | 212	| 3 | Effet de surpression | 
 | 213	| 3 | Effet toxique  |
 | 214	| 3 | Effet de projection |
 | 22	| 2 | Nucléaire |
 | 23	| 2 | Rupture de barrage |
 | 24	| 2 | Transport de marchandises dangereuses |
-| 25	| 2 | Engins de guerre |
-| **3** | **1** | **Risque minier** |
+| 25	| 2 | Engins de guerre** |
+| 3 | 1 | Risque minier |
 | 31 | 2 | Affaissement minier |
-| 311	| 3 | Effondrements généralisés | 
+| **311	| 3 | Effondrements généralisés | 
 | 312	| 3 | Effondrements localisés | 
 | 313	| 3 | Affaissements progressifs | 
 | 314	| 3 | Tassements | 
 | 315	| 3 | Glissements ou mouvements de pente | 
 | 316	| 3 | Coulées | 
-| 317	| 3 | Ecroulements rocheux | 
+| 317	| 3 | Ecroulements rocheux** | 
 | 32 | 2 | Inondations de terrains miniers |
-| 321	| 3 | Pollution des eaux souterraines et de surface |
+| **321	| 3 | Pollution des eaux souterraines et de surface |
 | 322	| 3 | Pollution des sédiments et des sols |
 | 33 | 2 | Emissions en surface de gaz de mine |
-| 34 | 2 | Echauffement des terrains de dépôts |
+| 34 | 2 | Echauffement des terrains de dépôts** |
 
 
 
