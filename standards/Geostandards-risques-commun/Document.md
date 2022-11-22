@@ -74,6 +74,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 |-|-|
 | Risque | *défintion du terme "risque"* |
 | Aléa | *définition du terme aléa* |
+| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, s'applique a des périmètres associés à procédures validé par une autorité publique ce qui entraine des contraintes réglementaires |
 
 
 ### Acronymes et abréviations
@@ -316,11 +317,11 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 |-|-|
 | Début programmation | Date de début de la programmation |
 | Début montage | Date de début du montage |
-| Prescrit | Le périmètre est opposable |
+| Prescrit | La procédure a été validée par le préfet, ce qui rend le périmètre opposable aux tiers |
 | Prorogé | La durée de validité du périmètre est prolongée au delà de la date initialement fixée |
 | Anticipé | Le périmètre peut être opposable avant sa publication grâce à un arrêté du préfet qui approuve par anticipation |
 | Approuvé | Le périmètre est validé par l'autorité compétente et il est opposable |
-| Déprescrit | Le périmètre n'est plus opposable |
+| Déprescrit | Le périmètre n'est plus opposable *pour quelle raison (différence avec les états "Annulé" et "Abrogé") ?* |
 | Annulé | Le périmètre n'est plus opposable avec effet rétroactif |
 | Abrogé | Le périmètren'est plus opposable sans effet rétroactif |
 
