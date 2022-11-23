@@ -74,7 +74,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 |-|-|
 | Risque | *défintion du terme "risque"* |
 | Aléa | *définition du terme aléa* |
-| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, s'applique a des périmètres associés à procédures validé par une autorité publique ce qui entraine des contraintes réglementaires |
+| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
 
 
 ### Acronymes et abréviations
