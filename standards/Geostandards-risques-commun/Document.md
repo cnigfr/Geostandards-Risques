@@ -72,8 +72,8 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 | Terme | Définition|
 |-|-|
-| Risque | *défintion du terme "risque"* |
-| Aléa | *définition du terme aléa* |
+| Risque | *défintion du terme "risque"*. (INSPIRE "Natural Risk Zones" reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
+| Aléa | *définition du terme aléa*. (INSPIRE "Natural Risk Zones" reprise de UNISDR 2009 - Terminologie pour la Prévention des risques de catastrophe) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
 
 
