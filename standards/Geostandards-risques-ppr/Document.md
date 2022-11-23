@@ -104,10 +104,6 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 > *Si besoin, présentation de la structure du document*
 
-## Cadre d'application des PPR
-
-> *Indiquer ici les* 
-
 
 ## Application du Modèle de données aux PPR
 
