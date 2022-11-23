@@ -72,8 +72,9 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 | Terme | Définition|
 |-|-|
-| Risque | *défintion du terme "risque"*. (INSPIRE "Natural Risk Zones" reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
-| Aléa | *définition du terme aléa*. (INSPIRE "Natural Risk Zones" reprise de UNISDR 2009 - Terminologie pour la Prévention des risques de catastrophe) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
+| Risque | (INSPIRE "Natural Risk Zones" reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
+| Aléa | (INSPIRE "Natural Risk Zones" reprise de UNISDR 2009 - Terminologie pour la Prévention des risques de catastrophe) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
+| Aléa de référence | (Article R562-11-3 du Code de l'environnement) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
 
 
@@ -141,8 +142,10 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 La mise en oeuvre des Plans de prevention des risques naturels et prévisibles est définie dans le code de l'environnement par :
 
-* Les [articles L562-1 à L562-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) pour la partie législative ;
+* Les [articles L562-1 à L562-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) pour la partie législative ;
 * Les [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
+
+L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) précise la définition du niveau de protection d'une zone protégée par un système d'endiguement.
 
 Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
@@ -330,11 +333,22 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 
 La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et leurs intensités.
 
-La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son intensité (classifiée selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité. Les zones d'aléas sont définies par rapport à une procédure donnée.
+Dans cette thématique sont définies : 
 
-Dans certains cas (essentiellement issus du risque inondation) une zone d'aléa peut être liée à des ouvrages de protection et dans ce cas être caractérisées comme aléa spécifique (défini par l'énumération [TypeZoneAlea](#enumeration-typezonalea). Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
+* trois classes pour décrire des zones définies relativement aux aléas ([ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) et [ZoneProtegee](#classe-dobjets-zoneprotegee)) ;
+* une classe pour décrire les ouvrages de protection [OuvrageProtection](#classe-dobjets-ouvrageprotection) ;
+* une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) ;
+* Trois énumérations permettant de classifier les Types d'aléas ([TypeAlea](#enumeration-typealea)), les niveaux d'aléas ([TypeNiveauAlea](#enumeration-typeniveaualea)) et les types de sur-aléas ([TypeSurAlea](#enumeration-typesuralea)) ;
 
-Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer.
+La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau (classifié selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité d'occurence. Les zones d'aléas sont définies par rapport à une procédure donnée.
+
+La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Decret PPRI:2019](*ref documentaire à rajouter*)) et le [Guide PPRL:2014](*ref documentaire à rajouter*). Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il sagit d'une bande de protection. 
+
+La classe [ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+
+Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
+
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
 
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
@@ -348,7 +362,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Titre** : Zone d'aléa
 
-**Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son intensité, et sa probabilité d'occurence. Un objet de la classe représente une zone associée en particulier à un type d'aléa donné, avec une intensité et potentiellement une occurence. De ce fait, différentes zones d'aléas peuvent se recouvrir entre elles à partir du moment où certaines de ces propriétés sont différentes.
+**Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence.
 
 **Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
 
@@ -360,10 +374,9 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 | idZoneAlea | Identifiant unique d'un objet zone d'aléa | CharacterString | Deux objets de la classe ZoneAlea ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
 | codeProcedure | Identifiant de la procédure pour laquelle la zone d'aléas a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | typeAlea | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
-| niveauAlea | Caractérisation du niveau d'intensité de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Enumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1.1 |
+| niveauAlea | Caractérisation du niveau de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Enumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
 | occurence | Ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon le type d'aléa, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
 | description | Description textuelle de la zone d'aléa | CharacterString | Saisie libre | 0..1 |
-| aleaSpecifique | Cette propriété permet d'indiquer que la zone d'aléa correspond à un type d'aléa particulier listé parmi les valeurs possibles de l'énumération [TypeZoneAlea](#enumeration-typezonalea), en lien avec la présence d'un ouvrage de protection. Ce champ est facultatif. S'il n'est pas renseigné, alors la zone d'aléa est déterminée par un aléa non spécifique. | Enumération [TypeZoneAlea](#enumeration-typezonalea) | Celles de l'énumération ou non renseigné | 0..1 |
 
 
 
@@ -372,7 +385,69 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) (0..\*) |
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone d'aléa qui serait la conséquence de d'un ouvrage de protection avec l'objet décrivant l'ouvrage en question. | [ZoneAlea](#classe-dobjets-zonealea) (0..1) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (0..1) |
+
+
+#### Classe d'objets *ZoneProtegee*
+
+**Nom de la classe** : ZoneProtegee
+
+**Titre** : Zone Protégée
+
+**Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idZoneProtegee | Identifiant unique d'un objet zone protégée | CharacterString | Deux objets de la classe ZoneProtegee ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle la zone protégée a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
+| typeAlea | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
+| niveauProtection | '(Article R214-119-1 code de l'environnement) Pour un système d'endiguement au sens de l'article R. 562-13, le niveau de protection d'une zone exposée au risque d'inondation ou de submersion marine est déterminé par la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. | Numérique (hauteur d'eau en mêtre) | valeur positive | 0..1 |
+| occurence | Ce champ permet d'indiquer l'occurence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. | CharacterString | Saisie libre | 0..1 |
+| description | Description textuelle de la zone protégée | CharacterString | Saisie libre | 0..1 |
+
+
+
+#### Associations de la classe ZoneProtégée
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
+
+
+#### Classe d'objets *ZoneDangerSpecifique*
+
+**Nom de la classe** : ZoneDangerSpecifique
+
+**Titre** : Zone de danger spécifique
+
+**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Decret PPRI:2019](*ref documentaire à rajouter*)) et le [Guide PPRL:2014](*ref documentaire à rajouter*). Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il sagit d'une bande de protection.
+
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idZoneDanger | Identifiant unique d'un objet zone de danger spécifique | CharacterString | Deux objets de la classe ZoneDangerSpecifique ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
+| typeAlea | Type de l'alea associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
+| niveauAlea | Caractérisation du niveau de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). D'après le [Decret PPRi:2019](*ref documentaire à rajouter*) : pour les bandes de précautions, le niveau d'aléa est systématiquement "Très fort". Pour les bandes particulières, il est classé en zone d’aléa de référence modéré à très fort, en fonction de l’intensité du phénomène | Enumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
+| typeSuralea | Ce champ permet d'indiquer le type de zone de danger spécifique. | Enumération [TypeSuralea](#enumeration-typesuralea) | Celles de l'énumération | 0..1 |
+| description | Description textuelle de la zone de danger spécifique | CharacterString | Saisie libre | 0..1 |
+
+
+
+#### Associations de la classe ZoneDangerSpecifique
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone de danger spécifique avec un ouvrage de protection qui la génère. | [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (0..1) |
 
 
 
@@ -477,15 +552,14 @@ Le tableau suivant liste les valeurs possibles pour caractériser l'intensité d
 | 07 | Très fort plus |
 
 
-#### Enumeration *TypeZoneAlea*
+#### Enumeration *TypeSurAlea*
 
-Le tableau suivant liste les valeurs possibles permettant de caractériser les zones d'aléas lorsqu'elles sont engendrées par des ouvrages de protection. 
-
+Le tableau suivant liste les valeurs possibles permettant de caractériser les zones de danger spécifiques. 
 
 | Libellé Etat | Description |
 |-|-|
-| zone de sur-aléa | Zone où le risque est plus important si l’ouvrage de protection cède que si l’ouvrage de protection n’avait pas existé |
-| zone de projection | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans le guide PPRL |
+| bande de précaution | Bande de précaution située à l'arrière d'un système d'endiguement, telle que définie dans le [Décret PPRi:2019](*reference documentaire à indiquer*) |
+| bande particulière | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans le [Guide PPRL:2014](*reference documentaire à indiquer*) |
 
 
 
