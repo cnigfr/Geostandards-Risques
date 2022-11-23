@@ -284,6 +284,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 |-|-|-|-|-|
 | adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
 | nomRessource | Nom de la ressource référencée sur Internet | CharacterString | Saisie Libre | 0..1 (Saisie recommandée) |
+| typeReference | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures | Enumeration [TypeReference](#enumeration-typereference) | Celles de l'énumération | 1..1 |
 | description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
 
 
@@ -327,6 +328,19 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Annulé | Le périmètre n'est plus opposable avec effet rétroactif |
 | Abrogé | Le périmètren'est plus opposable sans effet rétroactif |
 
+
+#### Enumeration *TypeReference*
+
+Le tableau suivant liste les différents types de documents qui peuvent être référencés dans le cadre d'une procédure
+
+
+| Libellé | Description |
+|-|-|
+| Règlement signé | (Utilisation dans le cdre d'un PPR) |
+| Zonage réglementaire signé | (Utilisation dans le cdre d'un PPR) |
+| Cartes signées | (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
+| Autres cartes | (Utilisation dans toutes les procédures) |
+| Autres | Tout autre document (Utilisation dans toutes les procédures) |
 
 
 ### Thématique Aléas
