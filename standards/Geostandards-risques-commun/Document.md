@@ -515,6 +515,7 @@ Le tableau suivant liste les différents types d'aléas applicables les zones d'
 | Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg) |
 | Risque naturel ; Inondation ; Par remontées de nappes naturelles |
 | Risque naturel ; Inondation ; Par submersion marine |
+| Risque naturel ; Inondation ; Choc mécanique des vagues |
 | Risque naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
 | Risque naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
 | Risque naturel ; Mouvement de terrain; Glissement de terrain |
