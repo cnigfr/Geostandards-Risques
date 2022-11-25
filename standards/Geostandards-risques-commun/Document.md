@@ -206,9 +206,9 @@ La liste des types de procédures prises en charge par ce standard est établie 
 
 Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champs "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
 
-Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](*lien à rajouter*).
+Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](#associations-de-la-classe-procedure).
 
-A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](*lien à rajouter*) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](*lien à rajouter*) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
+A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](#classe-dobjets-perimetre) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](#enumeration-etats-dune-procédure) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
 
 Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la description de la ressource.  
 
@@ -263,7 +263,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
-| etatProcedure | Etat d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeEtatProcedure](#etats-dune-procédure) | Celles de l'énumération | 1..1 |
+| etatProcedure | Etat d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeEtatProcedure](#enumeration-etats-dune-procédure) | Celles de l'énumération | 1..1 |
 | dateEtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
 
