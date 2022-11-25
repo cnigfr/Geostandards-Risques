@@ -321,6 +321,7 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Début programmation | Date de début de la programmation |
 | Début montage | Date de début du montage |
 | Prescrit | La procédure a été validée par le préfet, ce qui rend le périmètre opposable aux tiers |
+| Porté à connaissance | La procédure a été portée à connaissance des collectivités |
 | Prorogé | La durée de validité du périmètre est prolongée au delà de la date initialement fixée |
 | Anticipé | Le périmètre peut être opposable avant sa publication grâce à un arrêté du préfet qui approuve par anticipation |
 | Approuvé | Le périmètre est validé par l'autorité compétente et il est opposable |
