@@ -8,6 +8,6 @@ Le workbench FME est disponible [ici](https://github.com/cnigfr/Geostandards-Ris
 
 ![Workbench FME](./traduction_PPR_FME/workbenchFME.GIF)
 
-|Workbench FME|![Workbench FME](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/workbenchFME.GIF)|
+|Workbench FME|![Workbench FME](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/workbenchFME.GIF)
 
 
