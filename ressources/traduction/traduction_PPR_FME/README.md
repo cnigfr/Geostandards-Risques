@@ -4,5 +4,5 @@ Ce dossier expose un workbench FME (demo_mapping.fmw) permettant d'expérimenter
 
 Le workbench FME est disponible [ici](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/demo_mapping.fmw), il s'appuie sur un fichier de règles de passage disponible [ici](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/mapping.csv).
 
-|![Workbench FME](./ressources/workbenchFME.GIF)|
+|![Workbench FME](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/workbenchFME.GIF)|
 
