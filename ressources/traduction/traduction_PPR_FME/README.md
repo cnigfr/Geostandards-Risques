@@ -7,6 +7,7 @@ Le jeu de donnée en entrée sont celles d'un PPR conforme à l'ancien standard 
 Le workbench FME est disponible [ici](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/demo_mapping.fmw), il s'appuie sur un fichier de règles de passage disponible [ici](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/mapping.csv).
 
 ![Workbench FME](./traduction_PPR_FME/workbenchFME.GIF)
+
 ![Workbench FME](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/traduction/traduction_PPR_FME/workbenchFME.GIF)
 
 
