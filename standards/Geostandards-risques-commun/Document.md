@@ -369,7 +369,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
 
-![Modele UML Aléas](./ressources/UML-Procedure-Alea.png)
+![Modele UML Aléas](./ressources/UML-Procedure-Alea.PNG)
 
 
 #### Classe d'objets *ZoneAlea*
