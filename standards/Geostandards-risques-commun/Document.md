@@ -364,7 +364,7 @@ La classe [ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les z
 
 Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
 
-Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
 
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
@@ -492,7 +492,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 **Titre** : Element de caractérisation d'aléa
 
-**Définition** : La classe Element de détermination d'aléa est une classe générique (abstraite) qui permet de lier des objets spécifiques (issus d'études hydrauliques par exemple) ayant permis de déterminer une zone d'aléa. Elle a vocation à être spécialisée en fonction de l'application de ce modèle.
+**Définition** : La classe Element de caractérisation d'aléa est une classe générique (abstraite) qui permet de lier des objets spécifiques (issus d'études hydrauliques par exemple) ayant permis de déterminer une zone d'aléa. Elle a vocation à être spécialisée en fonction de l'application de ce modèle.
 
 **Modélisation géométrique** : Classe générique ne portant pas de géométrie à priori. Ses classes dérivées peuvent en porter selon les cas.
 
