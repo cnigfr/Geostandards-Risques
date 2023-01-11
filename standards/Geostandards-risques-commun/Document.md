@@ -353,7 +353,7 @@ Dans cette thématique sont définies :
 
 * trois classes pour décrire des zones définies relativement aux aléas ([ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) et [ZoneProtegee](#classe-dobjets-zoneprotegee)) ;
 * une classe pour décrire les ouvrages de protection [OuvrageProtection](#classe-dobjets-ouvrageprotection) ;
-* une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) ;
+* une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) ;
 * Trois énumérations permettant de classifier les Types d'aléas ([TypeAlea](#enumeration-typealea)), les niveaux d'aléas ([TypeNiveauAlea](#enumeration-typeniveaualea)) et les types de sur-aléas ([TypeSurAlea](#enumeration-typesuralea)) ;
 
 La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau (classifié selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité d'occurence. Les zones d'aléas sont définies par rapport à une procédure donnée.
@@ -364,7 +364,7 @@ La classe [ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les z
 
 Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (*références à inclure*). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet de pointer vers les objets de ces référentiels lorsqu'ils doivent être inclus dans une cartographie de prévention des risques.
 
-Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les surfaces iso-hauteur d'eau permettant de déterminer les surfaces inondables. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementdeterminationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
 
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
@@ -400,7 +400,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementDeterminationAlea](#classe-dobjets-elementdeterminationalea) (0..\*) |
+| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementDeterminationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
 
 
 #### Classe d'objets *ZoneProtegee*
@@ -486,11 +486,11 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
 
 
-#### Classe d'objets *ElementDeterminationAlea*
+#### Classe d'objets *ElementCaracterisationAlea*
 
-**Nom de la classe** : ElementDeterminationAlea
+**Nom de la classe** : ElementCaracterisationAlea
 
-**Titre** : Element de détermination d'aléa
+**Titre** : Element de caractérisation d'aléa
 
 **Définition** : La classe Element de détermination d'aléa est une classe générique (abstraite) qui permet de lier des objets spécifiques (issus d'études hydrauliques par exemple) ayant permis de déterminer une zone d'aléa. Elle a vocation à être spécialisée en fonction de l'application de ce modèle.
 
