@@ -134,7 +134,7 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 **Titre** : Zone d'aléa de référence
 
-**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
@@ -148,7 +148,7 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 **Titre** : Zone d'aléa à échéance 100 ans.
 
-**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa à échéance 100 ans** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa à échéance 100 ans** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
