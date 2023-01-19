@@ -74,7 +74,8 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 | Terme | Définition |
 |-|-|
-| Risques | *cf. définition du terme dans le modèle commun* |
+| Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
+| Aléa à échéance 100 ans | ([Article R562-11-4](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733755). S'agissant de la submersion marine, l'aléa à échéance 100 ans correspond à l'aléa de référence auquel est ajoutée une marge supplémentaire, précisée par arrêté du ministre chargé de la prévention des risques majeurs. Cet aléa supplémentaire correspond à la prise en compte des impacts du changement climatique à échéance 100 ans. | 
 
 
 ### Acronymes et abréviations
@@ -110,6 +111,48 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 > *Utilisation du modèle de données commun aux procédures de PPR (données et métadonnées).*
 
 
+### Utilisation et spécialisation de la thématique Procédures et Périmètre
+
+> *Précisions de l'utilisation du modèle dans le cadre des PPR*
+
+
+### Utilisation et spécialisation de la thématique Aléa
+
+
+
+Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). Dans ce cadre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par deux classes [ZoneAleaReference](#classe-dobjets-zonealeareference) et [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant respectivement à l'aléa de référence et à l'aléa  à échéance 100 ans. L'implémentation de la classe ZoneAleaEcheance100ans n'est obligatoire que dans le cadre de l'aléa submersion marine.
+
+
+**Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR.**
+
+![Modele UML Aléas](./ressources/UML-Alea-PPR.png)
+
+
+#### Classe d'objets *ZoneAleaReference*
+
+**Nom de la classe** : ZoneAleaReference
+
+**Titre** : Zone d'aléa de référence
+
+**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Propriétés** : Cf. propriétés de la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+
+
+#### Classe d'objets *ZoneAleaEcheance100ans*
+
+**Nom de la classe** : ZoneAleaEcheance100ans
+
+**Titre** : Zone d'aléa à échéance 100 ans.
+
+**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa à échéance 100 ans** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Propriétés** : Cf. propriétés de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 
 ## Modalités de diffusion
