@@ -59,7 +59,7 @@ $BODY$;
 
 ALTER FUNCTION ppr_scie.fn_doc_to_procedure(text, text)
     OWNER TO postgres;
-
+~~~~
 
 ## PERIMETRE
 ~~~~sql
