@@ -114,7 +114,13 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 
 **MTE** Ministère de la transition écologique et de la cohésion des territoires 
 
+**PPRM** Plan de Prévention des Risques Miniers
+
 **PPRN** Plan de Prévention des Risques Naturels
+
+**PPRT** Plan de Prévention des Risques Technologiques
+
+**TRI** Territoire à risque important d'inondation
 
 
 ### Clés de lecture
@@ -152,26 +158,35 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 ##### Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
-La mise en oeuvre des Plans de prevention des risques naturels et prévisibles est définie dans le code de l'environnement par :
+La mise en oeuvre des Plans de prevention des risques naturels prévisibles est définie dans le code de l'environnement par :
 
 * Les [articles L562-1 à L562-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) pour la partie législative ;
 * Les [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
 
 L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) précise la définition du niveau de protection d'une zone protégée par un système d'endiguement.
 
-Le [décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRI », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
+Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
 ##### Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
-> *à écrire*
+La mise en oeuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
+
+* Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
+* Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
 
 ##### Cadre réglementaire des Plans de Prévention des Risques Miniers
 
-> *à écrire*
+La mise en oeuvre des Plans de prévention des risques miniers est définie par :
 
-#### Cadre réglementaire des Territoires à Risques d'Inondation
+* L'[article L174-5 du code minier](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046554903?init=true&page=1&query=L174-5&searchField=ALL&tab_selection=all) pour la partie législative ;
+* Les [Articles R562-1 à R562-11-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
 
-> *à écrire*
+#### Cadre réglementaire des Territoires à Risque Important d'Inondation
+
+La mise en oeuvre des Territoires à Risque Important d'Inondation est définie dans le code de l'environnement par :
+
+* Les [articles L566-1 à L566-13](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) pour la partie législative ;
+* Les [articles R566-5 à R566-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) pour la partie réglementaire ;
 
 
 #### Cadre réglementaire des Porter à Connaissance
