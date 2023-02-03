@@ -197,18 +197,22 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 * [TypeReglementFoncier](#enumeration-typereglementfoncier) pour caractériser les zones décrites par la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) ;
 * [TypeObligationTravaux](#enumeration-typeobligationtravaux) pour caractériser les zones décrites par la classe [ZoneObligationTravaux](#classe-dobjets-zoneobligationtravaux) ;
 
+**Fig. *xx* Modèle UML des classes relatives au zonage réglementaire dans le cadre des PPR.**
+
+![Modele UML ZoneReg PPR](./ressources/UML-ZoneReg-PPR.png)
+
 
 #### Classe d'objets ZoneReglementaireUrba
 
 **Nom de la classe** : ZoneReglementaireUrba
 
-**Titre** : Zone réglementaire en matière d'urbanisme
+**Titre** : Zones réglementaires en matière d'urbanisme
 
-**Définition** : 'La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
+**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
-**Propriétés** : Les propriétés ci-dessous sotn celles qui s'ajoutent ou modifient la définition des propriétés de l'interface [ZoneReglementaire](#interface-zonereglementaire)
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
@@ -216,15 +220,49 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | typeReglement | Nature du reglement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
 
 
-**Fig. *xx* Modèle UML des classes relatives au zonage réglementaire dans le cadre des PPR.**
+#### Classe d'objets ZoneReglementaireFoncier
 
-![Modele UML ZoneReg PPR](./ressources/UML-ZoneReg-PPR.png)
+**Nom de la classe** : ZoneReglementaireFoncier
+
+**Titre** : Zones réglementaires de type foncier
+
+**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
+
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
+
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeReglementFoncier](#enumeration-typereglementfoncier) | Les valeurs possibles de l'énumération | 1..1 |
+
+
+#### Classe d'objets ZoneObligationTravaux
+
+**Nom de la classe** : ZoneObligationTravaux
+
+**Titre** : Zones d'Obligation de travaux
+
+**Définition** : La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de travaux dans le cadre des Plans de prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeObligationTravaux](#enumeration-typeobligationtravaux) et permet de préciser les types de biens concernés par ces obligations de travaux.
+
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
+
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeObligationTravaux](#enumeration-typeobligationtravaux) | Les valeurs possibles de l'énumération | 1..1 |
+| typeBienConcerne | Type de bien immobilier concerné par les obligations de travaux. | CharacterString | Saisie libre | 1..1 |
+
+
 
 
 
 #### Enumeration *TypeReglementUrba*
 
-Le tableau suivant liste les différents types de réglementation possible pouvant s'appliquer en matière d'urbanisme
+Le tableau suivant liste les différents types de réglementations possibles pouvant s'appliquer en matière d'urbanisme
 
 
 | Libellé | Description |
@@ -235,6 +273,26 @@ Le tableau suivant liste les différents types de réglementation possible pouva
 | Interdiction stricte | Réglementation imposant une interdiction stricte. |
 | Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'urbanisme. |
 | Zone grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout batiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
+
+
+#### Enumeration *TypeReglementFoncier*
+
+Le tableau suivant liste les différents types de réglementations foncières possibles.
+
+| Libellé | Description |
+|-|-|
+| Délaissement possible | Réglementation autorisant le maire à prendre un arrêté instaurant la possibilité de mettre en oeuvre des mesures de délaissement. |
+| Expropriation possible | Réglementation autorisant le maire ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
+
+
+#### Enumeration *TypeObligationTravaux*
+
+Le tableau suivant liste les réglementations possibles instaurant l'obligation de travaux.
+
+
+| Libellé | Description |
+|-|-|
+| Obligation de travaux | Réglementation imposant la réalisation de travaux sur des biens fonciers / immobiliers. |
 
 
 
