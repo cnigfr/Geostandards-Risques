@@ -619,9 +619,44 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | autre | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 
-
-
 ### Thématique Origine du Risque
+
+La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de préventions.
+
+Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui porte les informations minimales permettant d'intégrer les entités issues de référenciels externes variés dans une cartographie des risques.
+
+**Fig. *xx* Modèle UML des classes relatives à lorigine du risque.**
+
+![Modele UML Zonage Réglementaire](./ressources/UML-Procedure-OrigineRisque.png)
+
+
+#### Classe d'objets *OrigineRisque*
+
+**Nom de la classe** : OrigineRisque
+
+**Titre** : Origine du Risque
+
+**Définition** : La classe Origine du Risque permet de faire état des objets qui engendrent les risques ayant motivé la procédure concernée. Elle permet d'intégrer des objets issus de référentiels externes spécifiques selon le type de risque ou d'objet en indiquant à minima un nom et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
+
+**Modélisation géométrique** : Les objets de la classe origine du risque peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés dans leurs référentiels d'orgine.
+
+**Propriétés** : 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
+| refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 1..1 | 
+| nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
+
+
+#### Associations de la classe OrigineRisque
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est engendré par** | Association | Relation sémantique permettant d'associer une procédure avec un objet origine du risque qui la motive. | [Procedure](#classe-dobjets-procedure) (1..1) |  [OrigineRisque](#classe-dobjets-originerisque) (0..\*) |
+
+
+
 
 
 ### Thématique Enjeux
