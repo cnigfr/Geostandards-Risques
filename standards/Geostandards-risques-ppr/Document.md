@@ -75,8 +75,9 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 | Terme | Définition |
 |-|-|
 | Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
-| Aléa à échéance 100 ans | ([Article R562-11-4](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733755). S'agissant de la submersion marine, l'aléa à échéance 100 ans correspond à l'aléa de référence auquel est ajoutée une marge supplémentaire, précisée par arrêté du ministre chargé de la prévention des risques majeurs. Cet aléa supplémentaire correspond à la prise en compte des impacts du changement climatique à échéance 100 ans. | 
+| Aléa à échéance 100 ans | ([Article R562-11-4](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733755)) S'agissant de la submersion marine, l'aléa à échéance 100 ans correspond à l'aléa de référence auquel est ajoutée une marge supplémentaire, précisée par arrêté du ministre chargé de la prévention des risques majeurs. Cet aléa supplémentaire correspond à la prise en compte des impacts du changement climatique à échéance 100 ans. | 
 | Délaissement | Dans le contexte du "Droit de délaissement" : Le droit de délaissement est une procédure administrative. Elle permet au propriétaire d’un bien immobilier soumis à des prescriptions d’urbanisme l’empêchant d’en jouir, d’inciter le bénéficiaire de la servitude à acquérir le bien. |
+| Expropriation | ([Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/N326)) L'expropriation est une procédure qui permet à une personne publique (État, collectivités territoriales...) de contraindre un particulier ou une personne morale (entreprise) à céder la propriété de son bien, moyennant le paiement d'une indemnité. |
 
 
 ### Acronymes et abréviations
@@ -122,7 +123,7 @@ La mise en oeuvre des Plans de prevention des risques naturels prévisibles est 
 
 L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) précise la définition du niveau de protection d'une zone protégée par un système d'endiguement.
 
-Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRi », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
+Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRI », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
 #### Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
@@ -187,9 +188,9 @@ Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonag
 
 Pour représenter ce zonage, l'interface ZoneReglementaire est implémentée par trois classes qui décrivent trois types de zonages qui peuvent se superposer les uns aux autres :
 
-* La classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) permet de définir les zones sur lesquelles s'applique un réglement particulier en matière d'urbanisme.
-* La classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) permet de définir les zones sur lesquelles s'applique un réglement particulier en terme de mesures foncières.
-* La classe [ZoneObligationTravaux](#classe-dobjets-zoneobligationtravaux) permet de définir les zones sur lesquelles s'appliquent des obligations de travaux.
+* La classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) permet de définir les zones sur lesquelles s'applique un réglement spécifique en matière d'urbanisme.
+* La classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) permet de définir les zones sur lesquelles s'applique un réglement spécifique en terme de mesures foncières.
+* La classe [ZoneObligationTravaux](#classe-dobjets-zoneobligationtravaux) permet de définir les zones sur lesquelles s'appliquent des obligations de réalisations de travaux.
  
 Pour chacun de ces types de zonages une liste de valeurs possibles est établie pour caractériser la nature de la réglementation qui s'applique. Ces listes sont définies par les énumérations suivantes :
 
@@ -208,16 +209,16 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Zones réglementaires en matière d'urbanisme
 
-**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
+**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| typeReglement | Nature du reglement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
+| typeReglement | Nature du réglement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
 
 
 #### Classe d'objets ZoneReglementaireFoncier
@@ -226,11 +227,11 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Zones réglementaires de type foncier
 
-**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
+**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
@@ -244,17 +245,17 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Zones d'Obligation de travaux
 
-**Définition** : La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de travaux dans le cadre des Plans de prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeObligationTravaux](#enumeration-typeobligationtravaux) et permet de préciser les types de biens concernés par ces obligations de travaux.
+**Définition** : La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de réalisation de travaux dans le cadre des Plans de Prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeObligationTravaux](#enumeration-typeobligationtravaux) et permet de préciser les types de biens concernés par ces obligations de réalisation de travaux.
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). DLes propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeObligationTravaux](#enumeration-typeobligationtravaux) | Les valeurs possibles de l'énumération | 1..1 |
-| typeBienConcerne | Type de bien immobilier concerné par les obligations de travaux. | CharacterString | Saisie libre | 1..1 |
+| typeBienConcerne | Type de bien immobilier concerné par les obligations de réalisation de travaux. | CharacterString | Saisie libre | 1..1 |
 
 
 
@@ -271,7 +272,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 | Prescriptions | Réglementation faisant prévaloir le principe d'autorisation assorti de l'obligation de respect de prescriptions. |
 | Interdiction | Réglementation faisant prévaloir le principe d'interdiction mais où certaines constructions peuvent être autorisées sous réserve du respect de prescriptions strictes |
 | Interdiction stricte | Réglementation imposant une interdiction stricte. |
-| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'urbanisme. |
+| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'aménagement. |
 | Zone grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout batiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
 
 
@@ -287,7 +288,7 @@ Le tableau suivant liste les différents types de réglementations foncières po
 
 #### Enumeration *TypeObligationTravaux*
 
-Le tableau suivant liste les réglementations possibles instaurant l'obligation de travaux.
+Le tableau suivant liste les réglementations possibles instaurant l'obligation de réalisation de travaux.
 
 
 | Libellé | Description |
