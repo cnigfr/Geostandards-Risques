@@ -128,6 +128,8 @@ On fait référence ici aux documents utiles au groupe de travail.
 |Type|Date|Description|
 |-|-|-|
 |[La directive inondation, ou Directive n° 2007/60/CE](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817) | 23 octobre 2007 | relative à l’évaluation et à la gestion des risques d’inondation |
+| Législatif : [Articles L566-1 à L566-13 du code de l'environnment](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) | 12 Juillet 2010 | Evaluation et gestion des risques d'inondation |
+| Réglementaire : [Articles R566-1 à R566-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) | 12 juillet 2010 | Evaluation et gestion des risques d'inondation |
 |Arrêté [(l'article R. 566-4 du code de l'environnement)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000025835029) |27 avril 2012 | relatif aux critères nationaux de caractérisation de l'importance du risque d'inondation |
 |[Circulaire](https://www.legifrance.gouv.fr/circulaire/id/35706)|16 juillet 2012 | relative à la mise en oeuvre de la phase « cartographie » de la directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
 
