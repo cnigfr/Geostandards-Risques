@@ -619,16 +619,94 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | autre | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 
-
-
 ### Thématique Origine du Risque
+
+La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de préventions.
+
+Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui porte les informations minimales permettant d'intégrer les entités issues de référenciels externes variés dans une cartographie des risques.
+
+**Fig. *xx* Modèle UML des classes relatives à lorigine du risque.**
+
+![Modele UML Zonage Réglementaire](./ressources/UML-Procedure-OrigineRisque.png)
+
+
+#### Classe d'objets *OrigineRisque*
+
+**Nom de la classe** : OrigineRisque
+
+**Titre** : Origine du Risque
+
+**Définition** : La classe Origine du Risque permet de faire état des objets qui engendrent les risques ayant motivé la procédure concernée. Elle permet d'intégrer des objets issus de référentiels externes spécifiques selon le type de risque ou d'objet en indiquant à minima un nom et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
+
+**Modélisation géométrique** : Les objets de la classe origine du risque peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés dans leurs référentiels d'orgine.
+
+**Propriétés** : 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
+| refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 1..1 | 
+| nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
+
+
+#### Associations de la classe OrigineRisque
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est engendré par** | Association | Relation sémantique permettant d'associer une procédure avec un objet origine du risque qui la motive. | [Procedure](#classe-dobjets-procedure) (1..1) |  [OrigineRisque](#classe-dobjets-originerisque) (0..\*) |
+
+
+
 
 
 ### Thématique Enjeux
 
 
 
-### Thématique Zone réglementaire
+### Thématique Zonage réglementaire
+
+La thématique zonage reglementaire permet de définir les zones sur lesquelles un réglement spécifique peut s'appliquer du fait de la présence d'un risque. Il peut s'agir de zones exposées aux risques ou de zones qui n'y sont pas directement exposées mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
+
+Au niveau du modèle commun cette thématique définit une interface [ZoneReglementaire](#interface-zonereglementaire) qui permet de décrire les élements génériques d'une zone réglementaire. Cette interface sera implémentée spécifiquement selon les profils applicatifs.
+
+Il est à noter que certaines procédures n'impliquent pas obligatoirement la mise en place d'un zonage réglementaire et cette interface pourra ne pas être implémentée dans certains profils applicatifs.
+
+**Fig. *xx* Modèle UML des classes relatives au zonage réglementaire.**
+
+![Modele UML Zonage Réglementaire](./ressources/UML-Procedure-ZoneReg.png)
+
+
+
+#### Interface ZoneReglementaire
+
+**Nom de l'interface** : ZoneReglementaire
+
+**Titre** : Zone réglementaire
+
+**Définition** : L'interface Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des réglements du fait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
+
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idZoneReglementaire | Identifiant unique d'un objet zone réglementaire | CharacterString | Deux objets d'une classe implémentant l'interface ZoneRéglementaire ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle la zone réglementaire a été définie. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
+| codeZoneReglement | Code attribué à la zone dans le cadre du réglement qui s'applique. La définition du code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
+| libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. La définition du libellé associé au code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
+| typeReglement | Type de réglement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
+
+
+
+#### Associations de l'interface ZoneReglementaire
+
+| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
+|-|-|-|-|-|
+| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
+
+
 
 
 ---
