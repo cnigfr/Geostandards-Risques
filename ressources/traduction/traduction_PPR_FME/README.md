@@ -18,3 +18,4 @@ Ce script FME implémente les règles de passage détaillées ci-dessous pour ch
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
+|codeProcedure|Identifiant de la procédure dans GASPAR|44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
