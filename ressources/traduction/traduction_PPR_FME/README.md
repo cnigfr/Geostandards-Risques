@@ -12,4 +12,8 @@ Ce workbench a été réalisé avec la version 2022.0.0.2 de FME. Il n'est pas g
 
 ![Workbench FME](./workbenchFME.GIF)
 
+Ce script FME implémente les règles de passage détaillées ci-dessous pour chaque classe du nouveaux standards : 
 
+## Procédure
+
+|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
