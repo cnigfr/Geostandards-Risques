@@ -96,26 +96,6 @@ La classe Zone de danger spécifique permet de représenter des zones de danger 
 |typeSuralea|Ce champ permet d'indiquer le type de zone de danger spécifique.|01|N/A|N/A|
 |geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|n_zone_alea_pprn_x_xxx|geom|
 
-## ElementCaracterisationAlea
-
-La classe Element de caractérisation d'aléa est une classe générique (abstraite) qui permet de lier des objets spécifiques (issus d'études hydrauliques par exemple) ayant permis de définir une zone d'aléa. Elle a vocation à être spécialisée en fonction de l'application de ce modèle.
-
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|idZoneAlea|Identifiant de la zone alea|RNATA000000000607190|n_zone_alea_pprn_x_xxx|id_zone|
-
-## OuvrageProtection 
-
-La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que le Référentiel des Obstacles à l'Ecoulement ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus.
-
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|idRefExterne|Identifiant de l'objet dans le référentiel externe d'où il est extrait. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe|N/A|N/A|N/A|
-|refExterne|Référentiel externe d'où est extrait l'objet|N/A|N/A|N/A|
-|refExterneAutre|Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.|
-|typeOuvrageProtection|Désignation du type d'ouvrage que représente cet objet. Saisie libre, cependant o n veillera à s'appuyer sur des nomenclatures existantes, notamment celles des référentiels dont sont issus les objets.|N/A|N/A|N/A|
-|geometrie|géométrie de l'ouvrage de protection |N/A|N/A|N/A|
-
 ## ZoneReglementaire
 
 L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'appliquent des réglements dufait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
@@ -123,4 +103,8 @@ L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'app
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-
+|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|n_zone_reg_pprn_x_xxx|idZonePPR ("id_zone")|
+|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|n_zone_reg_pprn_x_xxx|codeZoneReglement ("codeZone")|
+|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|n_zone_reg_pprn_x_xxx|libelleZone ("nom")|
+|typeReglement|Type de reglement caractérisant la nature de la reglementation sur la zone selon le reglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Prescriptions|n_zone_reg_pprn_x_xxx|typeReglementStandardise ("typereg")|
+|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|N/A|N/A|N/A|
