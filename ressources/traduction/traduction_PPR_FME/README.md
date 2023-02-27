@@ -44,8 +44,8 @@ La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
 |etatProcedure |Etat d'avancement de la procédure sur le périmètre|APPROUVE|n_document_pprn_s_xxx|"APPROUVE si etat= ""Approuvé"" (02); PRECRIT si etat=""Prescrit"" (01); ABROGE si etat =""Abrogé"" (03); ANTICIPE si etat = ""Anticipe"" (04)"|
-|dateEtatPerimetre|Date|Date du début de l'état de la procédure sur le périmètre|13/07/2016|n_document_pprn_x_xxx|DateAppro (si Approuvé) ; DatePrescrit (si Prescrit)|
-|geometrie|Geometry (MultiPolygon)|Géométrie du Périmètre|N/A|n_perimetre_pprn_xxxx_x_xxx|
+|dateEtatPerimetre|Date du début de l'état de la procédure sur le périmètre|13/07/2016|n_document_pprn_x_xxx|DateAppro (si Approuvé) ; DatePrescrit (si Prescrit)|
+|geometrie|Geometry (MultiPolygon)|Géométrie du Périmètre|n_perimetre_pprn_xxxx_x_xxx|N/A|
 
 ## ZoneAlea
 
