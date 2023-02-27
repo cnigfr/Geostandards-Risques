@@ -12,7 +12,7 @@ Ce workbench a été réalisé avec la version 2022.0.0.2 de FME. Il n'est pas g
 
 ![Workbench FME](./workbenchFME.GIF)
 
-Ce script FME implémente les règles de passage détaillées ci-dessous pour chaque classe du nouveau standard : 
+Ce script FME implémente les règles de passage détaillées ci-dessous pour chaque classe du nouveau standard. Les règles de passages détaille les transformations des objets provenant des anciennes classes du précédent standard (n_document_PPRN, n_perimetre_pprn, n_zone_alea_pprn, n_zonenreg_pprn) en les objets du nouveau standard. 
 
 ## Procedure
 
@@ -27,6 +27,7 @@ La classe "Procedure" permet de faire le lien entre un jeu de données du Standa
 ## ReferenceInternet
 
 La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
+Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les besoins du nouveau standard. La génération de ses objets est effectuée à partir des objets de l'ancienne classe Document. 
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
@@ -50,6 +51,7 @@ La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur
 ## ZoneAlea
 
 La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence.
+L'ancien standard ne définissait qu'une classe Aléa par défaut à la différence du nouveau standard qui en définit plusieurs. Par défaut, un objet de l'ancienne classe ZoneAlea sera converti en ZoneAleaReference. 
 
 ## ZoneAleaReference
 
