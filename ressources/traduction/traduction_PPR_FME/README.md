@@ -1,10 +1,10 @@
 # Traduction PPR vers nouveaux standards
 
-Ce dossier expose un workbench [FME](https://www.veremes.com/produits/fme/fme-desktop) ([demo_mapping.fmw](./demo_mapping.fmw)) permettant d'expérimenter le passage de jeux tests PPR vers les nouveaux standards. 
+Ce dossier expose un workbench [FME](https://www.veremes.com/produits/fme/fme-desktop) ([demo_mapping.fmw](./demo_mapping.fmw)) permettant d'expérimenter le passage d'un jeu de données tests PPR vers le profil applicatif PPR des nouveaux Géostandards Risques. 
 
 Le workbench prend en entrée :
 * un jeu de donnée PPR conforme à l'ancien standard COVADIS ([PPRN du bassin de la Scie](./76DDTM20120001.zip))
-* un fichier de règles de passages au format CSV ([mapping.csv](./mapping.csv))
+* un fichier de règles de passages au format CSV ([mapping.csv](./mapping.csv)) dont le principe est documenté [ci-dessous](#r%C3%A8gles-de-passage)
 
 Il génère en sortie un jeu de données selon le nouveau standard ([PPRN_result.gpkg](./PPRN_result.gpkg)) au format Geopackage (choix de format par défaut pour l'instant).
 
@@ -12,78 +12,110 @@ Ce workbench a été réalisé avec la version 2022.0.0.2 de FME. Il n'est pas g
 
 ![Workbench FME](./workbenchFME.GIF)
 
-Ce script FME implémente les règles de passage détaillées ci-dessous pour chaque classe du nouveau standard. Les règles de passages détaille les transformations des objets provenant des anciennes classes du précédent standard (n_document_PPRN, n_perimetre_pprn, n_zone_alea_pprn, n_zonenreg_pprn) en les objets du nouveau standard. 
+## Règles de passage
 
-## Procedure
+Les règles de passage ci-dessous détaillent la façon dont les objets des classes du nouveau standard sont créés et renseignés à partir des objets provenant des classes du modèle de conceptuel de données de l'ancien standard COVADIS PPRN (DocumentPPR, PerimetrePPR, ZonePPR, ZoneAleaPPR, EnjeuPPR et OrigineRisque).
+
+Ce classes sont implémentées de la manière suivante dans le jeu de données Shapefile représnetant le PPRN du bassin de la Scie
+
+| Classe modèle Covadis | Table(s) Shapefile |
+|-|-|
+| DocumentPPR | n_document_pprn_s_DDD |
+| PerimetrePPR | n_perimetre_pprn_AAAANNNN_s_DDD |
+| ZonePPR | n_zone_reg_pprn_AAAANNNN_s_DDD, n_zone_reg_pprn_AAAANNNN_l_DDD, n_zone_reg_pprn_AAAANNNN_p_DDD |
+| ZoneAleaPPR | n_zone_alea_pprn_AAAANNNN_s_DDD |
+| EnjeuPPR | n_enjeu_pprn_AAAANNNN_s_DDD, n_enjeu_pprn_AAAANNNN_l_DDD, n_enjeu_pprn_AAAANNNN_p_DDD |
+| OrigineRisque | n_orig_risq_pprn_AAAANNNN_s_DDD, n_orig_risq_pprn_AAAANNNN_l_DDD, n_orig_risq_pprn_AAAANNNN_p_DDD |
+
+où :
+
+* DDD représent le département (ici : "076")
+* AAAANNNN représente les 8 derniers caractères de l'identifiant GASPAR du PPRN (ici : "20120001" )
+* le caractère _s_, _l_ ou _p_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
+
+
+### Remplissage des objets de la classe Procedure
 
 La classe "Procedure" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|codeProcedure|Identifiant de la procédure dans GASPAR|44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|libelleProcedure|Description de textuelle de la procédure (cf. Libellé procédure dans GASPAR)|PPRL-Baie Bourgneuf Nord|n_document_pprn_s_xxx|NOM|
-|typeProcedure|Type de procédure (selon les modèles identifiés dans GASPAR)|PPRN-L|N/A|N/A|
+Les objets de la classe "Procedure" sont créés à partir de ceux de la classe "DocumentPPR" avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procédure. 
 
-## ReferenceInternet
+Les attributs sont renseignés selon les correspondances suivantes :
+
+|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation) |
+|-|:-:|:-:|:-:|:-:|
+|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPRN| idGASPAR (ID_GASPAR) |
+|libelleProcedure|Description textuelle de la procédure (cf. Libellé procédure dans GASPAR)|Plan de Prévention des Risques Naturels du bassin versant  de la Scie|DocumentPPRN|nomDocPPR (NOM) |
+|typeProcedure|Type de procédure (selon les modèles identifiés dans GASPAR)|PPRN-I|N/A|N/A|
+
+### ReferenceInternet
 
 La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
-Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les besoins du nouveau standard. La génération de ses objets est effectuée à partir des objets de l'ancienne classe Document. 
+
+Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les besoins du nouveau standard. La génération de ses objets est effectuée à partir des objets de l'ancienne classe Document avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe ReferenceInternet. 
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|adresse| Url d'accès à la ressource url|https://www.loire-atlantique.gouv.fr/Politiques-publiques/Risques-naturels-et-technologiques/Prevention-des-risques-naturels/Plans-Prevention-Risques-Naturels-Previsibles/Les-Plans-de-Prevention-des-Risques-Littoraux-en-Loire-Atlantique/Le-PPRL-Baie-de-Bourgneuf-Nord |n_document_pprn_x_xxx|site_web|
-|nomRessource |Nom de la ressource|Le PPRL Baie de Bourgneuf Nord |N/A|N/A|
-|description|Description de la ressource|Page web d'accès au dossier du PPRL sur le site de la préfecture de la Loire Atlantique|N/A|N/A|
-|typeReference|Indique le type de document auquel on fait référence|Réglement signé | N/A|N/A|
+|codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPRN| idGASPAR (ID_GASPAR)|
+|adresse| Url d'accès à la ressource url|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPRN | serviceInternet (SITE_WEB) |
+|nomRessource |Nom de la ressource| - |N/A|N/A|
+|description|Description de la ressource| - |N/A|N/A|
+|typeReference|Indique le type de document auquel on fait référence| - | N/A|N/A|
 
-## Perimetre
+### Perimetre
 
 La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur une zone géographique donnée. Pour une même procédure donnée à un instant donné, plusieurs périmètres peuvent exister dans des états d'avancement différents.
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|etatProcedure |Etat d'avancement de la procédure sur le périmètre|APPROUVE|n_document_pprn_s_xxx|"APPROUVE si etat= ""Approuvé"" (02); PRECRIT si etat=""Prescrit"" (01); ABROGE si etat =""Abrogé"" (03); ANTICIPE si etat = ""Anticipe"" (04)"|
-|dateEtatPerimetre|Date du début de l'état de la procédure sur le périmètre|13/07/2016|n_document_pprn_x_xxx|DateAppro (si Approuvé) ; DatePrescrit (si Prescrit)|
-|geometrie|Géométrie du Périmètre|Geometry (MultiPolygon)|N/A|n_perimetre_pprn_xxxx_x_xxx|Geometry|
+Les objets de la classe Perimetre sont créés à partir ceux de la classe Perimetre PPRN avec une correspondance exacte : un objet de la classe PerimetrePPRN génère un objet de classe Perimetre.
 
-## ZoneAlea
+A noter que dans l'ancien standard, l'avancement de la procédure était porté par la classe DocumentPPR (attribut "etat") et non le périmètre. Pour la traduction des données de l'ancien standard, la valeur de l'attribut "etat" de l'objet DocumentPPR rattaché au perimetre sera donc utilisée pour les périmètres générés pour le nouveau standard.
+
+Les attributs de la classe Perimetre sont renseignés selon les correspondances suivantes :
+
+|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation) |
+|-|:-:|:-:|:-:|:-:|
+|codeProcedure|Lien vers la table procédure | 76DDTM20120001 | PerimetrePPRN | idGASPAR (ID_GASPAR)|
+|etatProcedure |Etat d'avancement de la procédure sur le périmètre|"APPROUVE si etat= ""Approuvé"" (02); PRECRIT si etat=""Prescrit"" (01); ABROGE si etat =""Abrogé"" (03); ANTICIPE si etat = ""Anticipe"" (04)"|DocumentPPRN| etat (ETAT) |
+|dateEtatPerimetre|Date du début de l'état de la procédure sur le périmètre|29/05/2020|DocumentPPRN|dateApprobation, si Approuvé (DATEAPPRO)|
+|geometrie|Géométrie du Périmètre| MultiPolygone |PerimetrePPRN|geometry|
+
+### ZoneAlea
 
 La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence.
+
 L'ancien standard ne définissait qu'une classe Aléa par défaut à la différence du nouveau standard qui en définit plusieurs. Par défaut, un objet de l'ancienne classe ZoneAlea sera converti en ZoneAleaReference. 
 
-## ZoneAleaReference
+### ZoneAleaReference
 
 La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
 
-## ZoneAleaEcheance100ans
+### ZoneAleaEcheance100ans
 
 La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa à échéance 100 ans et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
-|idZoneAlea|Identifiant de la zone alea|RNATA000000000607190|n_zone_alea_pprn_x_xxx|id_zone|
-|codeProcedure|Identifiant de la procédure dans GASPAR|44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|n_zone_alea_pprn_x_xxx|coderisque|
-|niveauAlea|Niveau d'aléa|01|n_zone_alea_pprn_x_xxx|nivalea_st|
-|description|Description de l'aléa|N/A|n_zone_alea_pprn_x_xxx|descript|
+|idZoneAlea|Identifiant de la zone alea|RNATA000000000607190|ZoneAleaPPR|id_zone|
+|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPRN|ID_GASPAR|
+|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|coderisque|
+|niveauAlea|Niveau d'aléa|01|ZoneAleaPPR|nivalea_st|
+|description|Description de l'aléa|N/A|ZoneAleaPPR|descript|
 |occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.|Q100|N/A|N/A|
-|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|n_zone_alea_pprn_x_xxx|geom|
+|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|ZoneAleaPPR|geom|
 
-## ZoneProtegee
+### ZoneProtegee
 
 La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection (OuvrageProtection) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa (TypeAlea), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
 |idZoneProtegee|Identifiant de la zone alea protegee|N/A|N/A|N/A|
-|codeProcedure|Identifiant de la procédure dans GASPAR|44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|n_zone_alea_pprn_x_xxx|coderisque|
+|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPRN|ID_GASPAR|
+|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|coderisque|
 |occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.|Q100|N/A|N/A|
-|description|Description de l'aléa|N/A|n_zone_alea_pprn_x_xxx|descript|
+|description|Description de l'aléa|N/A|ZoneAleaPPR|descript|
 |niveauProtection|Indique le niveau de protection en application des articles R214-119-1 et R 562-13 du code de l'environnement|N/A|N/A|N/A|
-|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|n_zone_alea_pprn_x_xxx|geom|
+|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|ZoneAleaPPR|geom|
 
 ## ZoneDangerSpecifique
 
@@ -92,11 +124,11 @@ La classe Zone de danger spécifique permet de représenter des zones de danger 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
 |idZoneDanger|Identifiant unique d'un objet zone de danger spécifique|N/A|N/A|N/A|
-|codeProcedure|Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe Procedure|44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|typeAlea|Type de l'alea associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération TypeAlea|112|n_zone_alea_pprn_x_xxx|coderisque||description|Description de l'aléa|N/A|n_zone_alea_pprn_x_xxx|descript|
-|niveauAlea|Niveau d'aléa|01|n_zone_alea_pprn_x_xxx|nivalea_st|
+|codeProcedure|Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe Procedure|76DDTM20120001|DocumentPPRN|ID_GASPAR|
+|typeAlea|Type de l'alea associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération TypeAlea|112|ZoneAleaPPR|coderisque||description|Description de l'aléa|N/A|ZoneAleaPPR|descript|
+|niveauAlea|Niveau d'aléa|01|ZoneAleaPPR|nivalea_st|
 |typeSuralea|Ce champ permet d'indiquer le type de zone de danger spécifique.|01|N/A|N/A|
-|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|n_zone_alea_pprn_x_xxx|geom|
+|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|ZoneAleaPPR|geom|
 
 ## ZoneReglementaire
 
@@ -104,9 +136,9 @@ L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'app
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |44DDTM20110017|n_document_pprn_s_xxx|ID_GASPAR|
-|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|n_zone_reg_pprn_x_xxx|idZonePPR ("id_zone")|
-|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|n_zone_reg_pprn_x_xxx|codeZoneReglement ("codeZone")|
-|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|n_zone_reg_pprn_x_xxx|libelleZone ("nom")|
-|typeReglement|Type de reglement caractérisant la nature de la reglementation sur la zone selon le reglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Prescriptions|n_zone_reg_pprn_x_xxx|typeReglementStandardise ("typereg")|
+|codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPRN|ID_GASPAR|
+|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
+|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
+|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
+|typeReglement|Type de reglement caractérisant la nature de la reglementation sur la zone selon le reglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Prescriptions|ZonePPR|typeReglementStandardise ("typereg")|
 |geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|N/A|N/A|N/A|
