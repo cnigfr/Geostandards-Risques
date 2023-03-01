@@ -16,7 +16,7 @@ Ce workbench a été réalisé avec la version 2022.0.0.2 de FME. Il n'est pas g
 
 Les règles de passage ci-dessous détaillent la façon dont les objets des classes du nouveau standard sont créés et renseignés à partir des objets provenant des classes du modèle de conceptuel de données de l'ancien standard COVADIS PPRN (DocumentPPR, PerimetrePPR, ZonePPR, ZoneAleaPPR, EnjeuPPR et OrigineRisque).
 
-Ce classes sont implémentées de la manière suivante dans le jeu de données Shapefile représnetant le PPRN du bassin de la Scie
+Ce classes sont implémentées de la manière suivante dans le jeu de données Shapefile représentant le PPRN du bassin de la Scie
 
 | Classe modèle Covadis | Table(s) Shapefile |
 |-|-|
@@ -48,7 +48,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |libelleProcedure|Description textuelle de la procédure (cf. Libellé procédure dans GASPAR)|Plan de Prévention des Risques Naturels du bassin versant  de la Scie|DocumentPPRN|nomDocPPR (NOM) |
 |typeProcedure|Type de procédure (selon les modèles identifiés dans GASPAR)|PPRN-I|N/A|N/A|
 
-### ReferenceInternet
+### Remplissage des objets de la classe ReferenceInternet
 
 La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
 
@@ -62,7 +62,7 @@ Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les
 |description|Description de la ressource| - |N/A|N/A|
 |typeReference|Indique le type de document auquel on fait référence| - | N/A|N/A|
 
-### Perimetre
+### Remplissage des objets de la classe Perimetre
 
 La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur une zone géographique donnée. Pour une même procédure donnée à un instant donné, plusieurs périmètres peuvent exister dans des états d'avancement différents.
 
@@ -79,43 +79,42 @@ Les attributs de la classe Perimetre sont renseignés selon les correspondances 
 |dateEtatPerimetre|Date du début de l'état de la procédure sur le périmètre|29/05/2020|DocumentPPRN|dateApprobation, si Approuvé (DATEAPPRO)|
 |geometrie|Géométrie du Périmètre| MultiPolygone |PerimetrePPRN|geometry|
 
-### ZoneAlea
+### Remplissage des objets de la classe ZoneAlea
 
-La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence.
+La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. 
 
-L'ancien standard ne définissait qu'une classe Aléa par défaut à la différence du nouveau standard qui en définit plusieurs. Par défaut, un objet de l'ancienne classe ZoneAlea sera converti en ZoneAleaReference. 
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard. 
 
-### ZoneAleaReference
 
-La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
+### Remplissage des objets de la classe ZoneAleaReference
+
+La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
+
+L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence et un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
+
+Les attributs sont renseignés selon les correspondances suivantes :
+
+ |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implementation)|
+|-|:-:|:-:|:-:|:-:|
+|idZoneAlea|Identifiant de la zone alea|20120001R000003|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
+|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
+|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|codeRisque (CODERISQUE)|
+|niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
+|description|Description de l'aléa|Inondation - Par submersion marine|ZoneAleaPPR|descriptionZone (DESCRIPT)|
+|occurence|ce champ permet d'indiquer l'occurence de survenue de l'Inondation - ar submersion marinealéa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.| - |N/A|N/A|
+|geometrie|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
 
 ### ZoneAleaEcheance100ans
 
 La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa à échéance 100 ans et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|idZoneAlea|Identifiant de la zone alea|RNATA000000000607190|ZoneAleaPPR|id_zone|
-|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPRN|ID_GASPAR|
-|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|coderisque|
-|niveauAlea|Niveau d'aléa|01|ZoneAleaPPR|nivalea_st|
-|description|Description de l'aléa|N/A|ZoneAleaPPR|descript|
-|occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.|Q100|N/A|N/A|
-|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|ZoneAleaPPR|geom|
 
-### ZoneProtegee
+
+### Remplissage des objets de la classe ZoneProtegee
 
 La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection (OuvrageProtection) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa (TypeAlea), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
-|-|:-:|:-:|:-:|:-:|
-|idZoneProtegee|Identifiant de la zone alea protegee|N/A|N/A|N/A|
-|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPRN|ID_GASPAR|
-|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|coderisque|
-|occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.|Q100|N/A|N/A|
-|description|Description de l'aléa|N/A|ZoneAleaPPR|descript|
-|niveauProtection|Indique le niveau de protection en application des articles R214-119-1 et R 562-13 du code de l'environnement|N/A|N/A|N/A|
-|geometrie|Multipolygone mais restreint à la géométrie la plus élémentaire de l'aléa|N/A|ZoneAleaPPR|geom|
+Dans l'ancien standard PPR, les zones protégées n'étaient pas représentées. Cette table ne sera donc pas générée à lors de la transposition d'un ancien PPR vers le nouveau modèle. 
 
 ## ZoneDangerSpecifique
 
