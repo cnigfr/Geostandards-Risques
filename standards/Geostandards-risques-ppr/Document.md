@@ -215,9 +215,9 @@ Le [Guide PPRN:2016] propose une classification sur laquelle s'appuyer pour l'an
 
 **Titre** : Nomenclature Enjeux PPR
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2015]. Il s'agit d'une classification hiérarchique qui orgnaise les types d'enjeux en trois gandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2015]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois gandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
 
-Elle accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
+Elle est accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
 
 ##### Enjeux incontournables
 
@@ -229,6 +229,9 @@ Les enjeux incontournables caractérisent les différents types d'occupation du 
 | espaces urbanisés | enjeux incontourables |  La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
 | centres urbains | enjeux incontourables | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
 | espaces spécifiques au type d’aléa étudié | enjeux incontourables | Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes tels que les zones d’expansion des crues pour les inondations, les zones d’atterrissement pour les crues torrentielles, les zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs... |
+| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les inondations. |
+| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les crues torrentielles. |
+| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ...pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
 | projets des collectivités | enjeux incontourables | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
 
 La [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) précise la caractérisation des zones de centre urbains.
