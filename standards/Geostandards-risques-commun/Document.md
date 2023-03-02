@@ -669,7 +669,7 @@ Les données d'enjeux sont de nature diverses et définies dans des référentie
 
 Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-donnees-typeenjeu).
 
-La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers du codeList [ExposedElementCategoryValue](#codelist-exposedelementcategoryvalue). 
+La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
 
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux.**
@@ -712,6 +712,37 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 | codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | CharacterString | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature à laquelle appartient le code. | 1..1 | 
 | nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'Enjeu. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des élémetns exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
 
+
+#### Liste de codes ExposedElementCategoryValue
+
+**Nom de la liste de codes** : ExposedElementCategoryValue
+
+**Titre français** : Catégorie de l'élément exposé
+
+**Définition** : La liste de codes "ExposedElementCategoryValue" est la classification des enjeux définie par [INSPIRE NZ:2013]. Il s'agit d'une classification hiérarchique a deux niveaux qui peut être étendue à tous niveaux selon les besoins par les fournisseurs de données.  
+
+Elle accessible dans le [Système de publication de registres pour INSPIRE](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue) et propose les valeurs suivantes (rappelées ici à titre informatif) :
+
+| Code | Code Parent | Définition |
+|-|-|-|
+| [environnemental](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/environmental) | - | Zone soumise à un niveau de protection donné, comme un parc naturel. |
+| [eau de surface](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/waterBody) | [environnemental](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/environmental) | Toute accumulation importante d'eau. | 
+| [source de pollution](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/pollutionSource) | [environnemental](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/environmental) | Objet qui contient des polluants. | 
+| [zone protégée](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/protectedArea) | [environnemental](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/environmental) | Zone qui est protégée. | 
+| [patrimoine](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/heritage) | - | Tout ce qui est lié à des objets présentant un intérêt du point de vue culturel ou du patrimoine. |
+| [bien culturel](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/culturalAsset) | [patrimoine](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/heritage) | Tout objet considéré comme présentant un intérêt d'un point de vue culturel, comme un stade, un théâtre, un musée, etc. |
+| [bien historique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/historicalAsset) | [patrimoine](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/heritage) | Tout objet présentant un intérêt historique. |
+| [site du patrimoine mondial](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/worldHeritageSite) | [patrimoine](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/heritage) | Lieu (forêt, montagne, lac, désert, monument, bâtiment, complexe ou ville par exemple) qui est répertorié par l'UNESCO comme présentant une valeur culturelle ou matérielle spéciale. |
+| [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | - |  |
+| [communauté](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/community) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Relation complexe entre des êtres humains agissant en tant qu'ensemble ou en tant qu'unité. |
+| [personnes](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/people) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Présence d'êtres humains. |
+| [politique](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/political) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Tout objet concernant les affaires politiques. |
+| [service social](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/socialService) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Tout service fourni à des personnes. |
+| [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | - | Tout objet concernant des biens ou lié à l'économie ou à la finance. |
+| [activité économique](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economicActivity) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet représentant une activité économique tel qu'une industrie. |
+| [bien](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/property) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet susceptible d'appropriation, comme une maison. |
+| [infrastructure](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/infrastructure) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet considéré comme une structure fournissant un service tel qu'une route, un pont, une installation militaire, etc. |
+| [utilisation des terres rurales](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/ruralLandUse) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet non urbain destiné à une utilisation donnée, quelle qu’elle soit. |
 
 
 
@@ -757,8 +788,6 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
-
-
 
 
 ---
