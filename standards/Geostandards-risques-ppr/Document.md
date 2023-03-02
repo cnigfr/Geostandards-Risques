@@ -68,6 +68,19 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 > *A générer*
 
 
+### Références documentaires
+
+> *Indiquer ici les documents auquel il est fait références (normes, guides, lois, ...)*
+
+
+| Accronyme | Titre | Auteur | Année |
+|-|-|-|-|
+| [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
+| [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
+| [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) | Plans de prévention des risques naturels prévisibles (PPRN) - Guide général | MEEM / Cerema | 2016 |
+| [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
+
+
 ### Glossaire
 
 > Indiquer ici les termes à définir dans le cadre de ce document et faire référence aux termes définis ddans le modèle commun. 
@@ -181,6 +194,91 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Propriétés** : Cf. propriétés de la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+
+
+### Utilisation et spécialisation de la thématique Enjeu
+
+Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analyse des enjeux est réalisée afin de pouvoir établir le zonage réglementaire. A cette fin, la collecte des enjeux est réalisée au moment de l'élaboration du PPR et dont la date est renseignée par l'intermédiaire du champ "dateEnjeu"  de la classe [Enjeu](#classe-dobjets-enjeu) définie dans le modèle commun.
+
+Le [Guide PPRN:2016] propose une classification sur laquelle s'appuyer pour l'analyse des enjeux et que ce standard reprend sous la forme d'une liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
+
+
+**Fig. *xx* Modèle UML des classes relatives aux enjeux dans le cadre des PPR.**
+
+![Modele UML Enjeux](./ressources/UML-Enjeu-PPR.png)
+
+
+#### Liste de codes NomenclatureEnjeuPPR
+
+**Nom de la liste de codes** : NomenclatureEnjeuPPR
+
+**Titre** : Nomenclature Enjeux PPR
+
+**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2015]. Il s'agit d'une classification hiérarchique qui orgnaise les types d'enjeux en trois gandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
+
+Elle accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
+
+##### Enjeux incontournables
+
+Les enjeux incontournables caractérisent les différents types d'occupation du sol. Il se répartissent en quatre catégories principales qui, pour certaines peuvent être précisées en sous-catégories. 
+
+
+| Code | Code Parent | Définition |
+|-|-|-|
+| espaces urbanisés | enjeux incontourables |  La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| centres urbains | enjeux incontourables | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| espaces spécifiques au type d’aléa étudié | enjeux incontourables | Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes tels que les zones d’expansion des crues pour les inondations, les zones d’atterrissement pour les crues torrentielles, les zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs... |
+| projets des collectivités | enjeux incontourables | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+
+La [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) précise la caractérisation des zones de centre urbains.
+
+
+##### Enjeux complémentaires
+
+Les enjeux complémentaires permettent d’identifier les points particulièrement vulnérables au sein des zones définies dans les enjeux incontournables. L'étude des enjeux complémentaires est conseillée puisqu’elle permet d’obtenir une connaissance du territoire et de son fonctionnement relativement fine, ce qui est essentiel pour que les mesures prescrites soient cohérentes avec les enjeux en présence. Elle est également utile à la préparation de la gestion de crise.
+
+Les enjeux complémentaires se répartissent dans les catégories suivantes :
+
+| Code | Code Parent | Définition |
+|-|-|-|
+| typologie du bâti | Enjeux complémentaires | zones homogènes careactérisées par leur fonction, ou par des caractéristiques constructives similaires |
+| habitat | typologie du bâti | *A DEFINIR* |
+| habitat individuel | habitat | *A DEFINIR* |
+| habitat collectif | habitat | *A DEFINIR*  |
+| habitat | typologie du bâti | *A DEFINIR*  |
+| industrie | typologie du bâti | *A DEFINIR*  |
+| service | typologie du bâti | *A DEFINIR*  |
+| artisanat | typologie du bâti | *A DEFINIR*  |
+| infrastructures et équipements particuliers | Enjeux complémentaires | éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires |
+| équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  |
+| équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | ils regroupent ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes dont les conditions d’évacuation ou de mise en sécurité doivent être étudiées. |
+| campings et hôtellerie de plein air | infrastructures et équipements particuliers | ces établissements accueillent, dans une forme d'occupation du sol particulièrement exposée aux risques, une population vulnérable en raison de sa méconnaissance des aléas locaux. Les campings situés au bord des cours d’eau et sur la frange littorale sont nombreux et très fréquentés. Ils sont d’autant plus vulnérables qu’ils sont parfois localisés dans des secteurs difficilement accessibles et évacuables. La tendance actuelle à l’occupation à l’année des campings augmente encore ce risque. |
+| infrastructures de transport | infrastructures et équipements particuliers | Elles sont essentielles pour assurer la desserte du territoire à la fois pour l’évacuation des personnes et l'acheminement des secours. Elles peuvent également être à l’origine d’un sur-aléa tel qu’un accident de transport de matière dangereuse. |
+| réseaux et équipements sensibles | infrastructures et équipements particuliers | réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+
+
+##### Autres éléments de contexte
+
+Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les évolutions du territoire.
+
+*A voir s'il est possible de caractériser des types d'enjeu d'après la définition du [Guide PPRN:2016] :
+
+> Ce sont par exemple :
+> 
+> * les enjeux stratégiques pour la gestion de crise : PC crise, centres de secours, ERP pouvant servir d’hébergement, centraux téléphoniques, centrales électriques... ;
+> * la vulnérabilité des différents réseaux et les effets de leurs dysfonctionnements ;
+>  * les procédures réglementaires existantes ou à venir connues ;
+> * les mises en perspective : évolution démographique, contexte socio-économique, place du territoire considéré au sein d’ensembles territoriaux plus vastes ;
+> * l’évaluation quantitative des populations menacées ;
+> * les alternatives d’urbanisation ;
+> * les dents creuses (c’est-à-dire en urbanisme, des espaces non construits entourés de parcelles
+bâties).
+
+
+
 
 ### Utilisation et spécialisation de la thématique Zonage Réglementaire
 
