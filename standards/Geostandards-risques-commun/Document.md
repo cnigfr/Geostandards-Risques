@@ -667,7 +667,7 @@ La thématique "Enjeux" permet de décrire les personnes, biens, activités, él
 
 Les données d'enjeux sont de nature diverses et définies dans des référentiels externes, nationaux ou locaux. La nature et les caractristiques de ces données à reporter dans les données de prévention des risques va dépendre des utilisations visées de ces données et de la procédure concernée.
 
-Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-donnees-typeenjeu).
+Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
 
 La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
 
