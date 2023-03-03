@@ -267,7 +267,7 @@ Les enjeux complémentaires se répartissent dans les catégories suivantes :
 
 Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les évolutions du territoire.
 
-*A voir s'il est possible de caractériser des types d'enjeu d'après la définition du [Guide PPRN:2016] :
+*A voir s'il est possible de caractériser des types d'enjeu d'après la définition du [Guide PPRN:2016] :*
 
 > Ce sont par exemple :
 > 
