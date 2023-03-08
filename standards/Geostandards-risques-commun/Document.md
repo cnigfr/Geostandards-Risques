@@ -667,7 +667,7 @@ La thématique "Enjeux" permet de décrire les personnes, biens, activités, él
 
 Les données d'enjeux sont de nature diverses et définies dans des référentiels externes, nationaux ou locaux. La nature et les caractéristiques de ces données à reporter dans les données de prévention des risques va dépendre des utilisations visées de ces données et de la procédure concernée.
 
-Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
+Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données, une information sur leur(s) vulnérabilités à l'aide du type de données [TypeVulnerabilite](#type-de-données-typevulnerabilite) ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
 
 La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
 
@@ -694,8 +694,8 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre. Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
-| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | [TypeEnjeu](#type-de-donnees-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..\* |
-| vulnerabilite | Information sur les vulnérabilités de l'enjeu | [TypeVulnerabilite](#type-de-donnees-typevulnerabilite) | Valeurs selon les types de vulnérabilités dont on veut attester. | 0..\* |
+| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | [TypeEnjeu](#type-de-données-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..\* |
+| vulnerabilite | Information sur les vulnérabilités de l'enjeu | [TypeVulnerabilite](#type-de-données-typevulnerabilite) | Valeurs selon les types de vulnérabilités dont on veut attester. | 0..\* |
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | Date | Valeur représentant une date : jour(optionnel), mois(optionnel), année. | 1..1 |
 
 
