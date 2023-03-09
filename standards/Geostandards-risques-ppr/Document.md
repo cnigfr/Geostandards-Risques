@@ -359,7 +359,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeObligationTravaux](#enumeration-typeobligationtravaux) | Les valeurs possibles de l'énumération | 1..1 |
+| typeReglement | Nature de l'obligation de travaux qui peut s'appliquer sur la zone. | [TypeObligationTravaux](#enumeration-typeobligationtravaux) | Les valeurs possibles de l'énumération | 1..1 |
 | typeBienConcerne | Type de bien immobilier concerné par les obligations de réalisation de travaux. | CharacterString | Saisie libre | 1..1 |
 
 
