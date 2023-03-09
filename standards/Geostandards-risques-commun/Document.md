@@ -90,7 +90,7 @@ Le groupe de travail CNIG sur la refonte des Géostandards risques rassemble les
 | Aléa | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
 | Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
-| Enjeux | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) : Personnes, biens, systèmes, ou autres éléments présents dans les zones de risque et qui sont ainsi soumis à des pertes potentielles. *Commentaire : : L’exposition peut inclure le nombre de personnes ou les types de bien dans une région. Elle peut être combinée avec la vulnérabilité spécifique des éléments exposés pour un risque particulier, afin d’estimer le risque associé en cette zone.* |
+| Enjeux | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) : Personnes, biens, systèmes, ou autres éléments présents dans les zones de risque et qui sont ainsi soumis à des pertes potentielles. *Commentaire : L’exposition peut inclure le nombre de personnes ou les types de bien dans une région. Elle peut être combinée avec la vulnérabilité spécifique des éléments exposés pour un risque particulier, afin d’estimer le risque associé en cette zone.* |
 | Vulnérabilité | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) : Les caractéristiques et les circonstances d’une communauté ou d’un système qui le rendent susceptible de subir les effets d’un danger. *Commentaire: Il existe de nombreux aspects de la vulnérabilité, découlant de divers facteurs physiques, sociaux, économiques et environnementaux. Par exemple, il peut s’agir de la mauvaise conception et construction de bâtiments, de l’insuffisance de la protection de l’actif, du manque d’information du public et de sa sensibilisation, de la reconnaissance officielle de limiter les risques et des mesures de préparation, ou du mépris de sage gestion de l’environnement. La vulnérabilité varie sensiblement au sein d’une communauté et dans le temps. Cette définition identifie la vulnérabilité comme une caractéristique de l’élément d’intérêt (de la communauté ou du système) qui est indépendante de son exposition. Toutefois, dans l’usage commun, le mot est souvent utilisé plus largement pour inclure l’élément de l’exposition.* |
 
 
@@ -663,11 +663,11 @@ Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui port
 
 ### Thématique Enjeux
 
-La thématique "Enjeux" permet de décrire les personnes, biens, activités, éléments de patrimoine culturel ou environnemntal, menacés par un aléa et susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise.
+La thématique "Enjeux" permet de décrire les personnes, biens, activités, éléments de patrimoine culturel ou environnemental, menacés par un aléa et susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise.
 
-Les données d'enjeux sont de nature diverses et définies dans des référentiels externes, nationaux ou locaux. La nature et les caractristiques de ces données à reporter dans les données de prévention des risques va dépendre des utilisations visées de ces données et de la procédure concernée.
+Les données d'enjeux sont de nature diverses et définies dans des référentiels externes, nationaux ou locaux. La nature et les caractéristiques de ces données à reporter dans les données de prévention des risques va dépendre des utilisations visées de ces données et de la procédure concernée.
 
-Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
+Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données, une information sur leur(s) vulnérabilités à l'aide du type de données [TypeVulnerabilite](#type-de-données-typevulnerabilite) ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
 
 La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
 
@@ -683,7 +683,7 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 
 **Titre** : Enjeu
 
-**Définition** : La classe Enjeu permet de faire état des objets d'enjeu qui sont à représenter dans le cadre de la procédure de prévention des risques. Elle permet d'intégrer des objets issus de référentiels externes ou d'objet en indiquant à minima un nom, le rattachement à une ou plusieurs nomenclatures d'enjeu, une date de collecte et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
+**Définition** : La classe Enjeu permet de faire état des objets d'enjeu qui sont à représenter dans le cadre de la procédure de prévention des risques. Elle permet d'intégrer des objets issus de référentiels externes ou d'objet en indiquant à minima un nom, le rattachement à une ou plusieurs nomenclatures d'enjeu, une date de collecte, une information sur les vulnérabilités de l'enjeu et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
 
 **Modélisation géométrique** : Les objets de la classe Enjeu peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés dans leurs référentiels d'orgine.
 
@@ -694,12 +694,12 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre. Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
-| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | [TypeEnjeu](#type-de-donnees-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..\* |
+| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | [TypeEnjeu](#type-de-données-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..\* |
+| vulnerabilite | Information sur les vulnérabilités de l'enjeu | [TypeVulnerabilite](#type-de-données-typevulnerabilite) | Valeurs selon les types de vulnérabilités dont on veut attester. | 0..\* |
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | Date | Valeur représentant une date : jour(optionnel), mois(optionnel), année. | 1..1 |
 
 
 #### Type de données *TypeEnjeu*
-
 
 **Nom du type de données** : TypeEnjeu
 
@@ -710,7 +710,23 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | CharacterString | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature à laquelle appartient le code. | 1..1 | 
-| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'Enjeu. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des élémetns exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
+| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des élémetns exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
+
+
+#### Type de données *TypeVulnerabilite*
+
+**Nom du type de données** : TypeVulnerabilite
+
+**Définition** : Le type de données TypeVulnerabilite permet de relater une vulnérabilité relative à un enjeu. Les champs nom et description permettent de qualifier le type de vulnérabilité dont il s'agit (par exemple au travers d'une nomenclature de types de mesures) et le champs valeur porte la valeur de la vulnérabilité (par exemple un nombre d'habitants ou une appréciation littérale).    
+
+
+**Propriétés** : 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| nom | nom de la vulnérabilité relatée | CharacterString | Saisie libre pouvant être restreinte par les profils applicatifs selon les types de vulnérabilité qui doivent y être représentées. | 1..1 | 
+| description | Description de la vulnérabilité relatée. | CharacterString | Saisie libre pouvant être contrainte par les profils applicatifs selon les types de vulnérabilité qui doivent y être représentées. | 0..1 |
+| valeur | valeur quantitative ou qualitative de la vulnérabilité | Tout type possible à ce stade | Saisie libre. Le type et les éventuelles restrictions de valeurs seront précisés en fonction des vulnérabilités que l'on souhaite représenter dans les profils applicatifs. | 
 
 
 #### Liste de codes ExposedElementCategoryValue

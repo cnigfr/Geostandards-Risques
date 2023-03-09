@@ -203,6 +203,10 @@ Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analys
 
 Le [Guide PPRN:2016] propose une classification sur laquelle s'appuyer pour l'analyse des enjeux et que ce standard reprend sous la forme d'une liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
 
+Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'information relative à la vulnérabilité autre que celle pouvant être intrinsèquement relatée par la classification. 
+
+La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifiés dans la nomenclature des enjeux PPR peut nécessiter de saisir des informations de vulnérabilité. *A PRECISER* ou *A SUPPRIMER*
+
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux dans le cadre des PPR.**
 
