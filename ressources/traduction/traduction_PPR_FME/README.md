@@ -138,15 +138,44 @@ Les attributs sont renseignés selon les correspondances suivantes :
 
 ### Remplissage des objets de la classe ZoneReglementaire
 
-*A faire*
-
 L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'appliquent des réglements dufait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type du réglement que l'on veut renseigner : ZoneReglementaireUrba, ZoneRegelementaireFoncier et ZoneObligationTravaux. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
+
+### Remplissage des objets de la classe ZoneReglementaireUrba
+
+La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement.Elle a les mêmes propriétés de que la classe ZoneReglementaire.
+
+L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : 'Interdiction stricte", "Interdiction", "Prescriptions" ou "Prescriptions hors zone d'aléa".
+
+
+Les attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPR|ID_GASPAR|
+|codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
 |idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
 |codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
 |libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
-|typeReglement|Type de reglement caractérisant la nature de la reglementation sur la zone selon le reglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Prescriptions|ZonePPR|typeReglementStandardise ("typereg")|
-|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|N/A|N/A|N/A|
+|typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Interdiction stricte, Interdiction, Prescriptions ou Prescriptions hors zone d'aléa.|ZonePPR|typeReglementStandardise ("typereg")|
+|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+
+### Remplissage des objets de la classe ZoneReglementaireFoncier
+
+La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement.Elle a les mêmes propriétés de que la classe ZoneReglementaire.
+
+Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
+
+Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
+|-|:-:|:-:|:-:|:-:|
+|codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
+|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
+|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
+|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
+|typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Délaissement possible ou Expropriation possible.|ZonePPR|typeReglementStandardise ("typereg")|
+|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+
+### Remplissage des objets de la classe ZoneObligationTravaux
+
+'La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de travaux dans le cadre des Plans de prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement et permet de préciser les types de biens concernés par ces obligations de travaux.
+
+Dans l'ancien standard PPR, les obligations de réalisation de travaux n'étaient pas représentées. Cette table ne sera donc pas générée à lors de la transposition d'un ancien PPR vers le nouveau modèle. 
