@@ -157,7 +157,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
 |libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Interdiction stricte, Interdiction, Prescriptions ou Prescriptions hors zone d'aléa.|ZonePPR|typeReglementStandardise ("typereg")|
-|geometrie|Geometrie de la zone.|Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|ZonePPR|geometry|
+|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
 
 ### Remplissage des objets de la classe ZoneReglementaireFoncier
 
@@ -172,9 +172,9 @@ Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien P
 |codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
 |libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Délaissement possible ou Expropriation possible.|ZonePPR|typeReglementStandardise ("typereg")|
-|geometrie|Geometrie de la zone|Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|ZonePPR|geometry|
+|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
 
-### Remplissage des objets de la classe ObligationTravaux
+### Remplissage des objets de la classe ZoneObligationTravaux
 
 'La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de travaux dans le cadre des Plans de prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement et permet de préciser les types de biens concernés par ces obligations de travaux.
 
