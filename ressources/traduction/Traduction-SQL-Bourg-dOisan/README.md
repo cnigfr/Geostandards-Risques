@@ -10,3 +10,5 @@ Date : créée le 31 mai 2023
 - Zonage : oui
 - Aléa : Oui
 - Enjeux : Non
+
+Consulter le Script : [20230531_REQ_convPprCovadis2Cnig.sql](./20230531_REQ_convPprCovadis2Cnig.sql)
