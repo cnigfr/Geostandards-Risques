@@ -7,7 +7,7 @@ Il contient :
 
 * Les données au projet de nouveau standard (commençant par refonte_)
 
-Pour passer d'un standard à l'autre, les fonctions suivantes (à l'état de brouillon) sont proposées :
+Pour passer d'un standard à l'autre pour un cas précis (exemple PPR de la SCIE), les fonctions suivantes (à l'état de brouillon) sont proposées :
 
 ## PROCEDURE
 ~~~~sql
@@ -327,4 +327,106 @@ $BODY$;
 ALTER FUNCTION ppr_scie.fn_zonealea(text, text)
     OWNER TO postgres;
 
+~~~~
+
+## ZONAGE REGLEMENTAIRE URBA et OBLIGATION DE TRAVAUX
+~~~~sql
+-- FUNCTION: ppr_scie.fn_zone_reg(text, text)
+
+-- DROP FUNCTION ppr_scie.fn_zone_reg(text, text);
+
+CREATE OR REPLACE FUNCTION ppr_scie.fn_zone_reg(
+	codegaspar text,
+	dpt text)
+    RETURNS void
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+Begin
+--- pour lancer la fonction :
+--- select * from ppr_scie.fn_zone_reg('20120001','076')
+	
+	--------------------------------------------------------------------------------------
+	-- 1/Création de l'architecture de la table ZONE REGLEMENTAIRE URBA
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		drop table if exists ppr_scie.refonte_n_zone_reglementaire_urba_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$;
+		create table ppr_scie.refonte_n_zone_reglementaire_urba_pprn_$sql$||codegaspar||$sql$_s_076 
+			(
+				idzonereglementaire character varying,
+				codeprocedure character varying(18),
+				codezonereglement character varying,
+				libellezonereglement character varying,
+				typereglement character varying,
+				geometrie geometry(MultiPolygon,2154)
+				
+			);
+		$sql$;
+	--------------------------------------------------------------------------------------
+	-- 2/Alimentation de la table ZONE REGLEMENTAIRE URBA à partir de la table ZONE REG
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		insert into ppr_scie.refonte_n_zone_reglementaire_urba_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		SELECT 
+			id_zone,
+			id_gaspar,
+			codezone,
+			nom, 
+			typereg,
+			geom
+			
+		FROM ppr_scie.n_zone_reg_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		$sql$;
+		-- à rajouter : where c'est pas égal à mesure foncière car il faudra créer une deuxième table pour ça !
+
+
+	--------------------------------------------------------------------------------------
+	-- 5/Création de l'architecture de la table ZONE OBLIGATION TRAVAUX
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		drop table if exists ppr_scie.refonte_n_zone_obligation_travaux_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$;
+		create table ppr_scie.refonte_n_zone_obligation_travaux_pprn_$sql$||codegaspar||$sql$_s_076 
+			(
+				idzonereglementaire character varying,
+				codeprocedure character varying(18),
+				codezonereglement character varying,
+				libellezonereglement character varying,
+				typereglement character varying,
+				typeBienConcerne character varying,
+				geometrie geometry(MultiPolygon,2154)
+				
+			);
+		$sql$;
+	--------------------------------------------------------------------------------------
+	-- 6/Alimentation de la table ZONE OBLIGATION TRAVAUX à partir de la table ZONE REG
+	--------------------------------------------------------------------------------------
+	execute
+		$sql$
+		insert into ppr_scie.refonte_n_zone_obligation_travaux_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		SELECT 
+			id_zone,
+			id_gaspar,
+			codezone,
+			nom, 
+			'9', -- je met pour l'instant mais à voir selon énumération du standard
+			case 
+				when codezone ilike ('%rouge%') then 'habitation ne disposant pas de zone refuge ; ERP de 1ère, 2e, 3e et 4e catégorie ; installations'
+				when codezone ilike ('%bleu foncé%') then 'habitation ne disposant pas de zone refuge ; installations'
+				else 'installations'
+			end, 
+			geom
+			
+		FROM ppr_scie.n_zone_reg_pprn_$sql$||codegaspar||$sql$_s_$sql$||dpt||$sql$
+		where codezone not in ('blanche')
+		$sql$;
+
+end;
+$BODY$;
+
+ALTER FUNCTION ppr_scie.fn_zone_reg(text, text)
+    OWNER TO postgres;
 ~~~~
