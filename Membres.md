@@ -50,4 +50,3 @@
 
 *En italique* les participations à confirmer.
 
-
