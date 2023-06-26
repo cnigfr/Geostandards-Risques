@@ -1,0 +1,84 @@
+classe_ancien;Classe_ancien_value;Attribut_ancien;Valeur_attribut_ancien;Attribut_filtre1;Valeur_Attribut_filtre1;Classe_new;Attribut_new;Valeur_attribut_new;Attribut_supp;Attribut_supp_valeur
+fme_feature_type;n_document_pprn_;ID_GASPAR;;;;procedure;codeProcedure;;typeProcedure;PPRN-I
+fme_feature_type;n_document_pprn_;NOM;;;;procedure;libelleProcedure;;;
+fme_feature_type;referenceinternet;ID_GASPAR;;;;referenceinternet;codeProcedure;;;
+fme_feature_type;referenceinternet;;;;;referenceinternet;;;nomRessource;test_nomRessource
+fme_feature_type;referenceinternet;;;;;referenceinternet;;;Description;test_description
+fme_feature_type;referenceinternet;SITE_WEB;;;;referenceinternet;adresse;;;
+fme_feature_type;referenceinternet;;;;;referenceinternet;;;typeReference;
+fme_feature_type;n_perimetre_pprn_;Geometry (MultiPolygon);;;;perimetre;geometrie;;;
+fme_feature_type;n_perimetre_pprn_;;;ETAT;1;perimetre;;;etatProcedure;PRESCRIT
+fme_feature_type;n_perimetre_pprn_;;;ETAT;2;perimetre;;;etatProcedure;APPROUVE
+fme_feature_type;n_perimetre_pprn_;;;ETAT;3;perimetre;;;etatProcedure;ABROGE
+fme_feature_type;n_perimetre_pprn_;;;ETAT;4;perimetre;;;etatProcedure;ANTICIPE
+fme_feature_type;n_perimetre_pprn_;ID_GASPAR;;;;perimetre;codeProcedure;;;
+fme_feature_type;n_perimetre_pprn_;DATEPRESCR;;ETAT;1;perimetre;dateEtatPerimetre;;;
+fme_feature_type;n_perimetre_pprn_;DATEPRESCR;;ETAT;3;perimetre;dateEtatPerimetre;;;
+fme_feature_type;n_perimetre_pprn_;DATEAPPRO;;ETAT;2;perimetre;dateEtatPerimetre;;;
+fme_feature_type;n_perimetre_pprn_;DATEAPPRO;;ETAT;4;perimetre;dateEtatPerimetre;;;
+fme_feature_type;zoneAleaReference;;;;;zonealeareference;;;occurrence;
+fme_feature_type;n_zone_alea_pprn_;ID_ZONE;;;;zonealeareference;idZoneAlea;;occurrence;
+fme_feature_type;n_zone_alea_pprn_;ID_GASPAR;;;;zonealeareference;codeProcedure;;;
+fme_feature_type;n_zone_alea_pprn_;CODERISQUE;;;;zonealeareference;typeAlea;;;
+fme_feature_type;n_zone_alea_pprn_;'Geometry (MultiPolygon);;;;zonealeareference;geometrie;;;
+fme_feature_type;n_zone_alea_pprn_;NIVALEA_ST;;;;zonealeareference;niveauAlea;;;
+fme_feature_type;n_zone_alea_pprn_;DESCRIPT;;;;zonealeareference;description;;;
+fme_feature_type;zoneAleaReference;;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;;;occurrence;
+fme_feature_type;n_zone_alea_pprn_;ID_ZONE;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;idZoneAlea;;occurrence;
+fme_feature_type;n_zone_alea_pprn_;ID_GASPAR;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;codeProcedure;;;
+fme_feature_type;n_zone_alea_pprn_;CODERISQUE;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;typeAlea;;;
+fme_feature_type;n_zone_alea_pprn_;'Geometry (MultiPolygon);;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;geometrie;;;
+fme_feature_type;n_zone_alea_pprn_;NIVALEA_ST;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;niveauAlea;;;
+fme_feature_type;n_zone_alea_pprn_;DESCRIPT;;DESCRIPT;SUBMERSION POUR UN EVENEMENT DE SUBMERSION MARINE CENTENNAL A HORIZON 2100;zonealeareferenceechance100ans;description;;;
+fme_feature_type;n_zone_alea_pprn_;ID_ZONE;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;idZonedanger;;;
+fme_feature_type;n_zone_alea_pprn_;ID_GASPAR;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;codeProcedure;;;
+fme_feature_type;n_zone_alea_pprn_;CODERISQUE;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;typeAlea;;;
+fme_feature_type;n_zone_alea_pprn_;DESCRIPT;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;description;;;
+fme_feature_type;n_zone_alea_pprn_;NIVALEA_ST;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;niveauAlea;;;
+fme_feature_type;n_zone_alea_pprn_;geom;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;geometrie;;;
+fme_feature_type;n_zone_alea_pprn_;ID_ZONE;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;idZonedanger;;;
+fme_feature_type;n_zone_alea_pprn_;ID_GASPAR;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;codeProcedure;;;
+fme_feature_type;n_zone_alea_pprn_;CODERISQUE;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;typeAlea;;;
+fme_feature_type;n_zone_alea_pprn_;DESCRIPT;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;description;;;
+fme_feature_type;n_zone_alea_pprn_;NIVALEA_ST;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;niveauAlea;;;
+fme_feature_type;n_zone_alea_pprn_;;;DESCRIPT;BANDE DE PRECAUTION;zonedangerspecifique;;;typeSurAlea;BANDE DE PRECAUTION
+fme_feature_type;n_zone_alea_pprn_;;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;;;typeSurAlea;BANDE PARTICULIERE
+fme_feature_type;n_zone_alea_pprn_;geom;;DESCRIPT;SECTEUR SOUMIS AUX CHOCS DE VAGUES ET DE PROJECTION;zonedangerspecifique;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;codeProcedure;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;idZoneReglementaire;;;
+fme_feature_type;n_zone_reg_pprn_;CODEZONE;;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;codeZoneReglement;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;libelleZoneReglement;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;;;typeReglement;INTERDICTION STRICTE
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;INTERDICTION STRICTE;zonereglementaireurba;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;3;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;3;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;CODEZONE;;TYPEREG;3;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;3;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;3;zonereglementaireurba;;;typeReglement;INTERDICTION
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;3;zonereglementaireurba;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;2;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;2;zonereglementaireurba;;;;
+,;n_zone_reg_pprn_;CODEZONE;;TYPEREG;2;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;2;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;2;zonereglementaireurba;;;typeReglement;PRESCRIPTION
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;2;zonereglementaireurba;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;CODEZONE;;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;;;typeReglement;PRESCRIPTIONS HORS ZONE D'ALEA
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;PRESCRIPTIONS HORS ZONE D'ALEA;zonereglementaireurba;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;codeProcedure;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;idZoneReglementaire;;;
+fme_feature_type;n_zone_reg_pprn_;CODEZONE;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;codeZoneReglement;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;libelleZoneReglement;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;;;typeReglement;DELAISSEMENT POSSIBLE 
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;;;typeReglement;EXPROPRIATION POSSIBLE 
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;DELAISSEMENT POSSIBLE ;zonereglementairefoncier;geometrie;;;
+fme_feature_type;n_zone_reg_pprn_;ID_GASPAR;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;ID_ZONE;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;CODEZONE;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;NOM;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;TYPEREG;;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
+fme_feature_type;n_zone_reg_pprn_;'Geometry (MultiPolygon);;TYPEREG;EXPROPRIATION POSSIBLE ;zonereglementairefoncier;;;;
