@@ -10,7 +10,7 @@ Il génère en sortie un jeu de données selon le nouveau standard ([PPRN_result
 
 Ce workbench a été réalisé avec la version 2022.0.0.2 de FME. Il n'est pas garanti qu'il fonctionne avec les versions précédentes.
 
-![Workbench FME](./workbenchFME.GIF)
+![Workbench FME](./workbenchFME.png)
 
 ## Règles de passage
 
