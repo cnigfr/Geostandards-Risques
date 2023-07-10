@@ -301,7 +301,6 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 * [TypeReglementUrba](#enumeration-typereglementurba) pour caractériser les zones décrites par la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) ;
 * [TypeReglementFoncier](#enumeration-typereglementfoncier) pour caractériser les zones décrites par la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) ;
-* [TypeObligationTravaux](#enumeration-typeobligationtravaux) pour caractériser les zones décrites par la classe [ZoneObligationTravaux](#classe-dobjets-zoneobligationtravaux) ;
 
 **Fig. *xx* Modèle UML des classes relatives au zonage réglementaire dans le cadre des PPR.**
 
@@ -324,6 +323,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature du réglement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
+| obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors l'obligation de travaux est inconnue. | 0..1 |
 
 
 #### Classe d'objets ZoneReglementaireFoncier
@@ -342,28 +342,6 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeReglementFoncier](#enumeration-typereglementfoncier) | Les valeurs possibles de l'énumération | 1..1 |
-
-
-#### Classe d'objets ZoneObligationTravaux
-
-**Nom de la classe** : ZoneObligationTravaux
-
-**Titre** : Zones d'Obligation de travaux
-
-**Définition** : La classe ZoneObligationTravaux définit les zones sur lesquelles s'appliquent des obligations de réalisation de travaux dans le cadre des Plans de Prévention des Risques. Elle implémente l'interface ZoneReglementaire, spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeObligationTravaux](#enumeration-typeobligationtravaux) et permet de préciser les types de biens concernés par ces obligations de réalisation de travaux.
-
-**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
-
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
-
-
-| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
-|-|-|-|-|-|
-| typeReglement | Nature de l'obligation de travaux qui peut s'appliquer sur la zone. | [TypeObligationTravaux](#enumeration-typeobligationtravaux) | Les valeurs possibles de l'énumération | 1..1 |
-| typeBienConcerne | Type de bien immobilier concerné par les obligations de réalisation de travaux. | CharacterString | Saisie libre | 1..1 |
-
-
-
 
 
 #### Enumeration *TypeReglementUrba*
@@ -389,17 +367,6 @@ Le tableau suivant liste les différents types de réglementations foncières po
 |-|-|
 | Délaissement possible | Réglementation autorisant le maire à prendre un arrêté instaurant la possibilité de mettre en oeuvre des mesures de délaissement. |
 | Expropriation possible | Réglementation autorisant le maire ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
-
-
-#### Enumeration *TypeObligationTravaux*
-
-Le tableau suivant liste les réglementations possibles instaurant l'obligation de réalisation de travaux.
-
-
-| Libellé | Description |
-|-|-|
-| Obligation de travaux | Réglementation imposant la réalisation de travaux sur des biens fonciers / immobiliers. |
-
 
 
 ## Modalités de diffusion
