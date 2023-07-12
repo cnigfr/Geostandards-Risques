@@ -12,5 +12,5 @@ Ce répertoire contient les éléments constitutifs du standard définissant le 
 Avec l'outil [pandoc](https://pandoc.org/index.html), la ligne de commande suivante permet de générer le standard au format .docx en s'appuyant sur les styles du modèle de document : Modele-document-CNIG.docx
 
 ````
-$ pandoc -s -f gfm -t docx -o Document.docx --template=./modele/Modele-document-CNIG.docx Document.md
+$ pandoc -s -f gfm -t docx -o Document.docx --reference-doc=./modele/ModeleV3.docx Document.md
 ````
