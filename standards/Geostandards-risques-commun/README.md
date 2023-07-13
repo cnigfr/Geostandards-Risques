@@ -9,7 +9,7 @@ Ce répertoire contient les éléments constitutifs du standard définissant le 
 
 ## Génaration d'un document word à partir du dépot
 
-Avec l'outil [pandoc](https://pandoc.org/index.html), la ligne de commande suivante permet de générer le standard au format .docx en s'appuyant sur les styles du modèle de document : Modele-document-CNIG.docx
+Avec l'outil [pandoc](https://pandoc.org/index.html), la ligne de commande suivante permet de générer le standard au format .docx en s'appuyant sur les styles du modèle de document : ModeleV3.docx
 
 ````
 $ pandoc -s -f gfm -t docx -o Document.docx --reference-doc=./modele/ModeleV3.docx Document.md
