@@ -61,9 +61,9 @@ Groupe de travail refonte des Géostandards Risques
 
 ### 3.2. Participation à l'écriture
 
-Ce standard est le fruit des réunions du groupe de travail CNIG sur la refonte des Géostandards risques. Ce dernier rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR). 
+Ce standard est le fruit des travaux du groupe de travail CNIG sur la refonte des Géostandards risques. Ce dernier rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR). 
 
-Ce standard a été rédigé par Gilles Cébélieu (IGN) avec les contributions majeures et les relectures de Alison Lenain (IGN) et des membres du Groupe de travail.
+Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) avec les contributions majeures et les relectures des membres du Groupe de travail listés ci-dessous.
 
 | Nom |Affiliation 
 | - | - |
