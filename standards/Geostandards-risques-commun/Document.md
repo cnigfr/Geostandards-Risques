@@ -1,6 +1,6 @@
 | | |
 |-|-|
-| ![Logo CNIG](./ressources/logo-cnig.png)| ![Logo DGPR à rajouter](./ressources/logo) |
+| ![Logo CNIG](./ressources/logo-cnig.png)| ![Logo DGPR](./ressources/ministere-de-la-transition-ecologique-et-solidaire_logo.png) |
 
 
 # Conseil national de l'information Géolocalisée
