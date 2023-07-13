@@ -230,13 +230,6 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 ### 5.1. Scope et périmètre d'application
 
-#### Cycle de vie des données de prévention des risques
-
-##### Les différents états d'une procédure de Plan de Prévention des risques
-
-> *à écrire : cf. les différents états d'une procédure GASPAR*
-> *Notions de procédures révisantes et révisées dans GASPAR*
-
 
 #### Périmètre d'application
 
@@ -945,7 +938,6 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 
 #### 8.3.3. Mesures Conditionnelles 
-
 
 ## 9. Cycle de vie des données 
 
