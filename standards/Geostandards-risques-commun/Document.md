@@ -27,8 +27,8 @@ Groupe de travail refonte des Géostandards Risques
 
 | | |
 |-|-|
-| **Titre** | Géostandards Risques - Modèle Commun |
-| **Sous-titre** | *à remplir si besoin* |
+| **Titre** | Géostandards Risques |
+| **Sous-titre** | Modèle Commun |
 | **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
 | **Résumé** | *à remplir* |
 | **Objectif** | *à remplir* |
