@@ -598,7 +598,7 @@ GeoPackage est un format standard défini par l'[OGC](https://www.ogc.org/) (Ope
 
 Les données échangées peuvent être de type vecteur, raster ou simplement attributaires (sans géométries) et aussi des extensions qui permettent d'ajouter des fonctionnalités supplémentaires au format de base.
 
-Ce format est largement adopté par les outils SIG libres et commerciaux, ce qui a contribué à son adoption par le groupe de travail sur la refonte des géostandards risques à l'adopter comme format de livraison.
+Ce format est largement adopté par les outils SIG libres et commerciaux, ce qui a contribué à son adoption par le groupe de travail sur la refonte des géostandards risques comme format de livraison.
 
 
 #### 11.1.2. Versions de GeoPackage supportées
@@ -606,12 +606,68 @@ Ce format est largement adopté par les outils SIG libres et commerciaux, ce qui
 A la date de rédaction de ce document, la version la plus récente du standard GeoPackage est la 1.3.1 (2021). Les versions précédentes 1.3, 1.2.1, 1.2 et 1.1 sont encore maintenues et reposent toutes sur la version 3 du format SQLite. Elles sont toutes compatibles avec les exigences définies dans les clauses suivantes pour la livraison des données de ce standard.
 
 **Exigence** 
-Les livraisons des données de plan de préventions des risques seront faites au format GeoPackage dans les versions supérieures ou égales à la 1.1.
+Les livraisons des données de plan de préventions des risques seront faites au format GeoPackage dans les versions supérieures ou égales à 1.1.
 
 
 #### 11.1.3. Contenu de la livraison
 
-##### 11.1.3.1. Tables GeoPackage
+Le modèle physique implémenté avec GeoPackage est un modèle de données relationnel à l'instar de SQLite sur lequel il s'appuie. De ce fait, l'implémentation des données proposées pour la livraison se fera sous forme de tables comme décrit dans les paragraphes qui suivent : 
+- les tables intrinsèques au format GeoPackage
+- les tables implémentant les données décrites dans ce standard.
+
+**Exigence**
+La granularité d'une livraison est celle d'une procédure associée à un plan de prévention des risques (un code de procédure). Autrement dit une livraison comprend l'ensemble des tables associées à une procédure identifée dans GASPAR par son code procédure.
+
+
+##### 11.1.3.1. Nom du fichier de livraison
+
+Afin de normaliser et d'identifier les fichiers de livraisons entre eux, le nommage de fichiers de livraison s'appuiera sur le type de PPR, l'identifiant de la procédure associée dans GASPAR et l'extension de fichier associée au format Geopackage.
+
+**Exigence**
+La livraison d'un plan de prévention des risques au format GeoPackage se fera sous la forme d'un seul et ununique fichier comprenant les données et les métadonnées.
+
+Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
+
+>  `[TypePPR]_[Code Procédure GASPAR Complet].gpkg`
+
+La liste des valeurs possibles pour `TypePPR` est déterminée dans la table XXX. La nomenclature des codes procédures GASPAR est expliquée ici : YYY
+
+A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn_76ddtm20120001`
+
+
+
+##### 11.1.3.1. Tables intrinsèques à GeoPackage
+
+Le format GeoPackage définit un certain nombre de tables "systèmes" qui lui permettent d'organiser les données de façon structurée et efficace, dont le caractère obligatoire ou non de l'implémentation dépend du type de données échangées et l'utilisation qui peut en être faite. Le schéma qui suit, issu du standard GeoPackage version 1.3.1, illustre la structure des tables intrinsèques à ce format.
+
+
+**Fig. *xx* Structure des tables GeoPackage**
+
+![Geopackage Tables Overview](./ressources/geopackage-overview.png)
+
+
+**Exigence**
+Dans le cadre des Géostandards risques les tables suivantes doivent être implémentées et non vides dans la livraison en GeoPackage :
+
+- gpkg_contents
+- gpkg_geometry_columns
+- gpkg_spatial_ref_sys
+- gpkg_metadata
+- gpkg_metadata_reference
+
+La structure et le contenu de ces tables est défini dans les paragraphes qui suivent.
+
+###### Table gpkg_contents
+
+###### Table gpkg_geometry_columns
+
+###### Table gpkg_spatial_ref_sys
+
+###### Table gpkg_metadata
+
+###### Table gpkg_metadata_reference
+
+
 
 ##### 11.1.3.2. Tables du Standard
 
