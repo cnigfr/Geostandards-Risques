@@ -888,7 +888,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 > *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
 > *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
 
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée." 
+> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
 
 > *Ces mesures peuvent être :*
 > *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
@@ -943,8 +943,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 ## 11. Livraison
 
-> *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
-
+La description des livraisons est faite dans les profils applicatifs.
 
 ## 12. Métadonnées
 

@@ -111,6 +111,8 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
+| [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
+
 
 
 ### 4.5. Cadre réglementaire des Plans de Prévention des Risques
@@ -183,11 +185,15 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **MTE** Ministère de la transition écologique et de la cohésion des territoires 
 
+**OGC** Open Geospatial Consortium
+
 **PPRM** Plan de Prévention des Risques Miniers
 
 **PPRN** Plan de Prévention des Risques Naturels
 
 **PPRT** Plan de Prévention des Risques Technologiques
+
+**SIG** Système d'Information Géographique
 
 ---
 
@@ -524,7 +530,7 @@ Le tableau suivant liste les différents types de réglementations foncières po
 > *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
 > *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
 
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée." 
+> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
 
 > *Ces mesures peuvent être :*
 > *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
@@ -581,6 +587,36 @@ Le tableau suivant liste les différents types de réglementations foncières po
 ## 11. Livraison
 
 > *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
+
+Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie qui suit en précise les modalités.
+
+### 11.1. Livraison en GeoPackage
+
+#### 11.1.1. Généralités sur GeoPackage
+
+GeoPackage est un format standard défini par l'[OGC](https://www.ogc.org/) (Open Geospatial Consortium). C'est un format ouvert, indépendant de toute plateforme et autodescriptif pour échanger de l'information géographique. Il s'appuie sur le format de fichier de base de données [SQLite](https://sqlite.org/fileformat2.html) pour décrire des tables de données et de métadonnées pour lesquelles il définit un ensemble de conventions. 
+
+Les données échangées peuvent être de type vecteur, raster ou simplement attributaires (sans géométries) et aussi des extensions qui permettent d'ajouter des fonctionnalités supplémentaires au format de base.
+
+Ce format est largement adopté par les outils SIG libres et commerciaux, ce qui a contribué à son adoption par le groupe de travail sur la refonte des géostandards risques à l'adopter comme format de livraison.
+
+
+#### 11.1.2. Versions de GeoPackage supportées
+
+A la date de rédaction de ce document, la version la plus récente du standard GeoPackage est la 1.3.1 (2021). Les versions précédentes 1.3, 1.2.1, 1.2 et 1.1 sont encore maintenues et reposent toutes sur la version 3 du format SQLite. Elles sont toutes compatibles avec les exigences définies dans les clauses suivantes pour la livraison des données de ce standard.
+
+**Exigence** 
+Les livraisons des données de plan de préventions des risques seront faites au format GeoPackage dans les versions supérieures ou égales à la 1.1.
+
+
+#### 11.1.3. Contenu de la livraison
+
+##### 11.1.3.1. Tables GeoPackage
+
+##### 11.1.3.2. Tables du Standard
+
+
+
 
 
 ## 12. Métadonnées
