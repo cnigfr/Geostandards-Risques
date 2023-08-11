@@ -1010,8 +1010,16 @@ La description des livraisons est faite dans les profils applicatifs.
 
 #### Nomenclature des identifiants dans GASPAR
 
-> *Expliquer ici comment sont structurés les identifiants GASPAR*
+Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
 
+Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
+
+- numéro de département [ddd]
+- nom du service instructeur `PREF`, `DDT`, `DDTM` ou `DREAL`
+- année de prescription : [AAAA]
+- numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
+
+A tire d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
 
 
 #### Nomenclature des risques et de leurs codes dans GASPAR
