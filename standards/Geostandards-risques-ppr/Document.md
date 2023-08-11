@@ -628,9 +628,9 @@ La livraison d'un plan de prévention des risques au format GeoPackage se fera s
 
 Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
->  `[TypePPR]_[Code Procédure GASPAR Complet].gpkg`
+>  `[type ppr]_[code procédure gaspar complet].gpkg`
 
-La liste des valeurs possibles pour `TypePPR` est déterminée dans la table XXX. La nomenclature des codes procédures GASPAR est expliquée ici : YYY
+La liste des valeurs possibles pour `type ppr` est déterminée dans la table XXX. La nomenclature des codes procédures GASPAR est expliquée ici : YYY
 
 A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn_76ddtm20120001`
 
@@ -638,7 +638,7 @@ A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pou
 
 ##### 11.1.3.1. Tables intrinsèques à GeoPackage
 
-Le format GeoPackage définit un certain nombre de tables "systèmes" qui lui permettent d'organiser les données de façon structurée et efficace, dont le caractère obligatoire ou non de l'implémentation dépend du type de données échangées et l'utilisation qui peut en être faite. Le schéma qui suit, issu du standard GeoPackage version 1.3.1, illustre la structure des tables intrinsèques à ce format.
+Le format GeoPackage définit un certain nombre de tables "système" qui lui permettent d'organiser les données de façon structurée et efficace et dont le caractère obligatoire ou non de leur implémentation dépend du type de données échangées et de l'utilisation qui peut en être faite. Le schéma qui suit, issu du standard GeoPackage version 1.3.1, illustre la structure des tables intrinsèques à ce format.
 
 
 **Fig. *xx* Structure des tables GeoPackage**
@@ -655,9 +655,38 @@ Dans le cadre des Géostandards risques les tables suivantes doivent être impl�
 - gpkg_metadata
 - gpkg_metadata_reference
 
-La structure et le contenu de ces tables est défini dans les paragraphes qui suivent.
+La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
+
 
 ###### Table gpkg_contents
+
+La table `gpkg_contents` est la table dictionnaire des tables de données (hors tables "systèmes") présentes dans la livraison. Elle liste l'ensemble de ces tables en indiquant pour chacune : 
+
+- son nom (`table_name`) ;
+- son type de données (`data_type`), à savoir vecteur (`features`), raster (`tiles`) ou sémantique (`attributes`)
+- un identifiant optionnel (`identifier`) 
+- sa description optionnelle (`description`)
+- la date de dernière modification (`last_change`)
+- l'emprise géographique de la table (si elle est de type vecteur ou raster) : `min_x`, `min_y`, `max_x`, `max_y`
+- l'identifiant du système de coordonnées pour la géométrie s'il y en a une (`srs_id`) indiqué dans la table [`gpkg_spatial_ref_sys.srs_id`]([#table-gpkg_spatial_ref_sys) 
+
+La présence de cette table dans un fichier GeoPackage est obligatoire.
+
+Sa structure est définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#_contents). 
+
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des risques doit contenir une table `gpkg_contents` conforme au format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
+
+La table suivante reprend la structure de la table `gpkg_contents` avec l'ensemble des tables du standard décrites dans le paragraphe [Tables du Standard](#11132-tables-du-standard).
+
+
+| table_name | data_type | identifier | description | last_change | min_x | min_y | max_x | max_y | srs_id |
+|-|-|-|-|-|-|-|-|-|-|
+| `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` |  |  | *à remplir* | NA | NA | NA | NA | NA |
+| `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` |  |  | *à remplir* |  *à remplir* | *à remplir* | *à remplir* | *à remplir* | 2154 |
+
+
+
 
 ###### Table gpkg_geometry_columns
 
