@@ -744,7 +744,7 @@ Les paragraphes qui suivent précisent pour chacune des tables listées ci-dessu
 - les éventuelles précisions par rapport à la définition du modèle conceptuel.
 
 
-###### Table xxx
+###### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
 La table xxx bla bla bla
 
