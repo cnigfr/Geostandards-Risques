@@ -654,7 +654,7 @@ Dans le cadre des Géostandards risques les tables suivantes doivent être impl�
 - gpkg_spatial_ref_sys
 - gpkg_metadata
 - gpkg_metadata_reference
-
+,
 La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
 
 
@@ -674,16 +674,10 @@ La présence de cette table dans un fichier GeoPackage est obligatoire.
 
 Sa structure est définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#_contents). 
 
+
 **Exigence**
 La livraison en Geopackage d'un Plan de Prevention des risques doit contenir une table `gpkg_contents` conforme au format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
 
-La table suivante reprend la structure de la table `gpkg_contents` avec l'ensemble des tables du standard décrites dans le paragraphe [Tables du Standard](#11132-tables-du-standard).
-
-
-| table_name | data_type | identifier | description | last_change | min_x | min_y | max_x | max_y | srs_id |
-|-|-|-|-|-|-|-|-|-|-|
-| `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` |  |  | *à remplir* | NA | NA | NA | NA | NA |
-| `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` |  |  | *à remplir* |  *à remplir* | *à remplir* | *à remplir* | *à remplir* | 2154 |
 
 
 
@@ -700,8 +694,63 @@ La table suivante reprend la structure de la table `gpkg_contents` avec l'ensemb
 
 ##### 11.1.3.2. Tables du Standard
 
+La livraison en GeoPackage implique une implémentation du modèle conceptuel (classes et relations) défini par ce standard en modèle relationnel, sous forme de tables. Cette partie décrit l'ensemble des tables de ce standard dérivées du modèle conceptuel qui peuvent faire partie de la livraison en s'appuyant sur le formalisme et les types définis par le format GeoPackage.
 
 
+###### Nomenclature des tables
+
+Les noms des tables intègrent des éléments d'identification du PPR (type et code GASPAR de la procédure) et sont écrits intégralement en minuscules ce qui permet de ne pas avoir à mettre ces noms entre côtes lorsqu'on les manipule dans des systèmes comme PostgreSQL.
+
+Le format GeoPackage ne permet d'avoir qu'un seul type de géométrie par table. De ce fait, pour les tables avec géométrie, le nom sera suffixé par son type de géométrie :
+- `s` pour une géométrie surfacique ;
+- `l` pour une géométrie linéaire ;
+- `p` pour une géométrie ponctuelle
+
+Dans le cas des tables d'aléas, il est convenu de ne représenter qu'un seul aléa par table. De ce fait, les tables représentant des aléas porteront dans leur nom le code d'alea de la nomenclature risque défini [ici XXX](xxx) précisé avant le suffixe d'identification du type de géométrie.
+
+Le nom d'une table du standard suit donc le modèle suivant (en minuscules) :
+
+>  `[type ppr]_[code procédure gaspar complet]_[nom table]_[code aléa si table d'alea]_[type de geometrie].gpkg`
+
+La liste des valeurs possibles pour `type ppr` est déterminée dans la [table XXX](xxx). La nomenclature des codes procédures GASPAR est expliquée ici : [YYY](yyy)
+
+A titre d'exemples :
+
+- la table perimetre du PPRN du Bassin de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
+- la table aleareference du PPRN du Bassin de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_aleareference_117_s`
+
+
+###### Dictionnaire des tables
+
+Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livriason en précisant :
+
+- le nom de la table (valeur de `table_name` dans la table `gpkg_contents`)
+- le type de la table selon la nomenclature de GeoPackage (valeur de `data_type` dans la table `gpkg_contents`)
+- le type de Géométrie de la table dans la nomenclature de GeoPackage (valeur de `geometry_type_name` dans la table `gpkg_geometry_columns`). Les types de Géométries possibles sont précisés dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#geometry_types).
+- Les références aux entités du modèle conceptuel implémentées par la table.
+
+
+
+| nom de la table | type de table (GPKG) | type de géométrie (GPKG) | Référence entité(s) modèle conceptuel |
+|-|-|-|-|
+| `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
+
+
+Les paragraphes qui suivent précisent pour chacune des tables listées ci-dessus :
+- les noms des colonnes
+- leur type des selon la [nomenclature GeoPackage](https://www.geopackage.org/spec131/#table_column_data_types), 
+- les éventuelles restrictions sur les valeurs possibles
+- les éventuelles précisions par rapport à la définition du modèle conceptuel.
+
+
+###### Table xxx
+
+La table xxx bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
 
 
 ## 12. Métadonnées
