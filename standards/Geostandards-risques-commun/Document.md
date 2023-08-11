@@ -1018,7 +1018,7 @@ La description des livraisons est faite dans les profils applicatifs.
 
 GASPAR propose une nomenclature des risques hiérarchisée sur trois niveaux croissants de spécialisation du risque, avec une codification correspondante preséntée dans le tableau suivant. 
 
-L'énumération [TypeAlea](#enumeration-typealea) présentée définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les aléas utilsés par le standard sont représentés en **gras** dans le tableau. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
+L'énumération [TypeAlea](#enumeration-typealea) définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
 
 Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" est : "Risque naturel ; Inondation ; Par ruissellement et coulée de boue" car il est hiérarchisé ainsi dans la nomenclature :
 
@@ -1029,56 +1029,47 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 
 | Code | Niveau | Libellé Risque
 | - | - | - |
-| 1 | 1 | Risque Naturel |
-| 11 | 2 | Inondation |
-| **112	| 3 | Par une crue à débordement lent de cours d'eau |
-| 113	| 3 | Par une crue torrentielle ou à montée rapide de cours d'eau |
-| 114	| 3 | Par ruissellement et coulée de boue |
-| 115	| 3 | Par lave torrentielle (torrent et talweg)  |
-| 116 | 3 | Par remontées de nappes naturelles |
-| 117	| 3 | Par submersion marine** |
-| 12 | 2 | Mouvement de terrain |
-| **121	| 3 | Affaissement et effondrements (cavités souterraines hors mines) |
-| 123	| 3 | Eboulement ou chutes de pierres et de blocs |
-| 124	| 3 | Glissement de terrain |
-| 125	| 3 | Avancée dunaire |
-| 126	| 3 | Recul du trait de côte et de falaises |
-| 127	| 3 | Tassement différentiels |
-| 13 | 2 | Séisme |
-| 14 | 2 | Avalanche |
-| 15 | 2 | Eruption volcanique |
-| 16 | 2 | Feu de forêt** |
-| 17 | 2 | Phénomène lié à l'atmosphère |
-| **171 |	3 | Cyclone / Ouragan |
-| 172	| 3 | Tempête et grains (vent) |
-| 174	| 3 | Foudre |
-| 175	| 3 | Grêle | 
-| 176	| 3 | Neige et pluies verglaçantes |
-| 18 | 2 | Radon** |
-| 2 | 1 | Risque technologique |
-| 21	| 2 | Risque Industriel |
-| **211	| 3 | Effet thermique |
-| 212	| 3 | Effet de surpression | 
-| 213	| 3 | Effet toxique  |
-| 214	| 3 | Effet de projection |
-| 22	| 2 | Nucléaire |
-| 23	| 2 | Rupture de barrage |
-| 24	| 2 | Transport de marchandises dangereuses |
-| 25	| 2 | Engins de guerre** |
-| 3 | 1 | Risque minier |
-| 31 | 2 | Affaissement minier |
-| **311	| 3 | Effondrements généralisés | 
-| 312	| 3 | Effondrements localisés | 
-| 313	| 3 | Affaissements progressifs | 
-| 314	| 3 | Tassements | 
-| 315	| 3 | Glissements ou mouvements de pente | 
-| 316	| 3 | Coulées | 
-| 317	| 3 | Ecroulements rocheux** | 
-| 32 | 2 | Inondations de terrains miniers |
-| **321	| 3 | Pollution des eaux souterraines et de surface |
-| 322	| 3 | Pollution des sédiments et des sols |
-| 33 | 2 | Emissions en surface de gaz de mine |
-| 34 | 2 | Echauffement des terrains de dépôts** |
+| 112 | 3 |  Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d'eau |
+| 113 | 3 |  Risque Naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau |
+| 114 | 3 |  Risque Naturel ; Inondation ; Par ruissellement et coulée de boue |
+| 115 | 3 |  Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg)  |
+| 116 | 3 |  Risque Naturel ; Inondation ; Par remontées de nappes naturelles |
+| 117 | 3 |  Risque Naturel ; Inondation ; Par submersion marine |
+| 121 | 3 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
+| 123 | 3 | Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
+| 124 | 3 | Risque Naturel ; Mouvement de terrain ; Glissement de terrain |
+| 125 | 3 | Risque Naturel ; Mouvement de terrain ; Avancée dunaire |
+| 126 | 3 | Risque Naturel ; Mouvement de terrain ; Recul du trait de côte et de falaises |
+| 127 | 3 | Risque Naturel ; Mouvement de terrain ; Tassement différentiels |
+| 13 | 2 |  Risque Naturel ; Séisme |
+| 14 | 2 |  Risque Naturel ; Avalanche |
+| 15 | 2 |  Risque Naturel ; Eruption volcanique |
+| 16 | 2 |  Risque Naturel ; Feu de forêt |
+| 171 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Cyclone / Ouragan |
+| 172 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Tempête et grains (vent) |
+| 174 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Foudre |
+| 175 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Grêle | 
+| 176 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Neige et pluies verglaçantes |
+| 18 | 2 | Risque Naturel ; Radon |
+| 211	| 3 | Risque technologique ; Risque Industriel ; Effet thermique |
+| 212	| 3 | Risque technologique ; Risque Industriel ; Effet de surpression | 
+| 213	| 3 | Risque technologique ; Risque Industriel ; Effet toxique  |
+| 214	| 3 | Risque technologique ; Risque Industriel ; Effet de projection |
+| 22	| 2 | Risque technologique ; Nucléaire |
+| 23	| 2 | Risque technologique ; Rupture de barrage |
+| 24	| 2 | Risque technologique ; Transport de marchandises dangereuses |
+| 25	| 2 | Risque technologique ; Engins de guerre |
+| 311	| 3 | Risque minier ; Affaissement minier ; Effondrements généralisés | 
+| 312	| 3 | Risque minier ; Affaissement minier ; Effondrements localisés | 
+| 313	| 3 | Risque minier ; Affaissement minier ; Affaissements progressifs | 
+| 314	| 3 | Risque minier ; Affaissement minier ; Tassements | 
+| 315	| 3 | Risque minier ; Affaissement minier ; Glissements ou mouvements de pente | 
+| 316	| 3 | Risque minier ; Affaissement minier ; Coulées | 
+| 317	| 3 | Risque minier ; Affaissement minier ; Ecroulements rocheux | 
+| 321	| 3 | Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface |
+| 322	| 3 | Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols |
+| 33 | 2 | Risque minier ; Emissions en surface de gaz de mine |
+| 34 | 2 | Risque minier ; Echauffement des terrains de dépôts |
 
 
 

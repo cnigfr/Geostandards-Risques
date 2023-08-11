@@ -454,7 +454,7 @@ bâties).
 
 #### Thématique Zonage réglementaire
 
-#### Classe d'objets ZoneReglementaireUrba
+##### Classe d'objets ZoneReglementaireUrba
 
 **Nom de la classe** : ZoneReglementaireUrba
 
@@ -473,7 +473,7 @@ bâties).
 | obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors l'obligation de travaux est inconnue. | 0..1 |
 
 
-#### Classe d'objets ZoneReglementaireFoncier
+##### Classe d'objets ZoneReglementaireFoncier
 
 **Nom de la classe** : ZoneReglementaireFoncier
 
@@ -491,7 +491,7 @@ bâties).
 | typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeReglementFoncier](#enumeration-typereglementfoncier) | Les valeurs possibles de l'énumération | 1..1 |
 
 
-#### Enumeration *TypeReglementUrba*
+##### Enumeration *TypeReglementUrba*
 
 Le tableau suivant liste les différents types de réglementations possibles pouvant s'appliquer en matière d'urbanisme
 
@@ -506,7 +506,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 | Zone grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout batiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
 
 
-#### Enumeration *TypeReglementFoncier*
+##### Enumeration *TypeReglementFoncier*
 
 Le tableau suivant liste les différents types de réglementations foncières possibles.
 
@@ -628,9 +628,9 @@ La livraison d'un plan de prévention des risques au format GeoPackage se fera s
 
 Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
->  `[type ppr]_[code procédure gaspar complet].gpkg`
+>  `[TypePPR]_[CodeGASPARComplet].gpkg`
 
-La liste des valeurs possibles pour `type ppr` est déterminée dans la table XXX. La nomenclature des codes procédures GASPAR est expliquée ici : YYY
+La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table des types de procédures GASPAR](../Geostandards-risques-commun/Document.md#types-de-procédures-gaspar). La nomenclature des identifiants des procédures GASPAR est expliquée [ici](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)
 
 A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn_76ddtm20120001`
 
@@ -706,18 +706,18 @@ Le format GeoPackage ne permet d'avoir qu'un seul type de géométrie par table.
 - `l` pour une géométrie linéaire ;
 - `p` pour une géométrie ponctuelle
 
-Dans le cas des tables d'aléas, il est convenu de ne représenter qu'un seul aléa par table. De ce fait, les tables représentant des aléas porteront dans leur nom le code d'alea de la nomenclature risque défini [ici XXX](xxx) précisé avant le suffixe d'identification du type de géométrie.
+Dans le cas des tables d'aléas, il est convenu de ne représenter qu'un seul aléa par table. De ce fait, les tables représentant des aléas porteront dans leur nom le code d'alea de la [nomenclature risque définie dans GASPAR](../Geostandards-risques-commun/Document.md#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar) qui sera indiqué avant le suffixe d'identification du type de géométrie.
 
 Le nom d'une table du standard suit donc le modèle suivant (en minuscules) :
 
->  `[type ppr]_[code procédure gaspar complet]_[nom table]_[code aléa si table d'alea]_[type de geometrie].gpkg`
+>  `[TypePPR]_[CodeGASPARComplet]_[nom table]_[code aléa si table d'alea]_[type de geometrie].gpkg`
 
-La liste des valeurs possibles pour `type ppr` est déterminée dans la [table XXX](xxx). La nomenclature des codes procédures GASPAR est expliquée ici : [YYY](yyy)
+La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table des types de procédures GASPAR](../Geostandards-risques-commun/Document.md#types-de-procédures-gaspar). La nomenclature des identifiants des procédures GASPAR est expliquée [ici](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)
 
 A titre d'exemples :
 
 - la table perimetre du PPRN du Bassin de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
-- la table aleareference du PPRN du Bassin de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_aleareference_117_s`
+- la table zonealeareference du PPRN du Bassin de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
 
 
 ###### Dictionnaire des tables
@@ -734,23 +734,267 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | nom de la table | type de table (GPKG) | type de géométrie (GPKG) | Référence entité(s) modèle conceptuel |
 |-|-|-|-|
 | `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
 | `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
+| `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
+| `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
+| `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-ZoneAleaEcheance100ans) |
+| `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
+| `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
+| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_l` | `features` | `LINESTRING` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_p` | `features` | `POINT` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| `[TypePPR]_[CodeGASPARComplet]_originerisque_s` | `features` | `MULTIPOLYGON` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| `[TypePPR]_[CodeGASPARComplet]_originerisque_l` | `features` | `LINESTRING` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| `[TypePPR]_[CodeGASPARComplet]_originerisque_p` | `features` | `POINT` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| `[TypePPR]_[CodeGASPARComplet]_enjeu_s` | `features` | `MULTIPOLYGON` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| `[TypePPR]_[CodeGASPARComplet]_enjeu_l` | `features` | `LINESTRING` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| `[TypePPR]_[CodeGASPARComplet]_enjeu_p` | `features` | `POINT` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu` | `attributes` | N.A. | Type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) |
+| `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` | `features` | `POINT` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` | `features` | `POINT` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
+| `typeprocedure` | `attributes` | N.A. | Enumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) |
+| `etatsprocedure` | `attributes` | N.A. | Enumeration [Etats d'une procédure](../Geostandards-risques-commun/Document.md#enumeration-etats-dune-procédure) |
+| `typereference` | `attributes` | N.A. | Enumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) |
+| `typealea` | `attributes` | N.A. | Enumeration [TypeAlea](../Geostandards-risques-commun/Document.md#enumeration-typealea) |
+| `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
+| `typealea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
+| `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
+| `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](../Geostandards-risques-commun/Document.md#enumeration-typereglementurba) |
+| `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](../Geostandards-risques-commun/Document.md#enumeration-typereglementfoncier) |
 
 
-Les paragraphes qui suivent précisent pour chacune des tables listées ci-dessus :
+Les paragraphes qui suivent précisent pour chacune de ces tables :
 - les noms des colonnes
-- leur type des selon la [nomenclature GeoPackage](https://www.geopackage.org/spec131/#table_column_data_types), 
-- les éventuelles restrictions sur les valeurs possibles
-- les éventuelles précisions par rapport à la définition du modèle conceptuel.
+- le type des colonnes selon la [nomenclature GeoPackage](https://www.geopackage.org/spec131/#table_column_data_types), 
+- les éventuelles restrictions sur les valeurs possibles pour chaque colonne
+- les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel.
 
 
 ###### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
-La table xxx bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_procedure` bla bla bla
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_revise`
+
+La table `[TypePPR]_[CodeGASPARComplet]_revise` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
+
+La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu`
+
+La table `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite`
+
+La table `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+
+###### Table d'enumeration `typeprocedure`
+
+La table `typeprocedure` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `etatsprocedure`
+
+La table `etatsprocedure` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typereference`
+
+La table `typereference` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typealea`
+
+La table `typealea` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typeniveaualea`
+
+La table `typeniveaualea` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typesuralea`
+
+La table `typesuralea` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typerefexterneouvrage`
+
+La table `typerefexterneouvrage` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typereglementurba`
+
+La table `typereglementurba` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+###### Table d'enumeration `typereglementfoncier`
+
+La table `typereglementfoncier` bla bla bla
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+|  |  |  | cf. définition du modèle conceptuel |
+
+
+
+
 
 
 ## 12. Métadonnées
