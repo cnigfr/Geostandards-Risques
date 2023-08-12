@@ -818,12 +818,25 @@ Les paragraphes qui suivent précisent pour chacune de ces tables :
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
-La table `[TypePPR]_[CodeGASPARComplet]_procedure` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `codeprocedure` | TEXT(16) | **Clef Primaire** | Code identifant de la procédure dans GASPAR |
+| `libelleprocedure` | TEXT | Pas de restriction | Nom de la procédure lisible par un être humain. | 
+| `typeprocedure` | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table d'enumeration [typeprocedure](#table-denumeration-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_procedure ( 
+  codeprocedure TEXT(16) NOT NULL PRIMARY KEY, 
+  libelleprocedure TEXT NOT NULL, 
+  typeprocedure TEXT(10) NOT NULL,
+  CONSTRAINT fk_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
+);
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
 
@@ -954,11 +967,33 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bl
 
 ##### Table d'enumeration `typeprocedure`
 
-La table `typeprocedure` bla bla bla
+La table d'énumération `typeprocedure` implémente l'énumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants:
+
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| PPRN | Plan de Prévention des Risques Naturels |
+| PPRN-I | Plan de Prévention des Risques Naturels Innondation |
+| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
+| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
+| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
+| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
+| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
+| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
+| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
+| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
+| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
+| PPRT | Plan de Prévention des Risques Technologiques |
+| PPRM | Plan de Prévention des Risques Miniers |
+
+
+``` SQL
+CREATE TABLE typeprocedure (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+```
 
 
 ##### Table d'enumeration `etatsprocedure`
