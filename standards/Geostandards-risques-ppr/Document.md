@@ -805,8 +805,8 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
 | `typealea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
 | `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
-| `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](../Geostandards-risques-commun/Document.md#enumeration-typereglementurba) |
-| `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](../Geostandards-risques-commun/Document.md#enumeration-typereglementfoncier) |
+| `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
+| `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
 
 
 Les paragraphes qui suivent précisent pour chacune de ces tables :
@@ -969,7 +969,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bl
 
 La table d'énumération `typeprocedure` implémente l'énumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
 
-Elle a la structure et le contenu suivants:
+Elle a la structure et le contenu suivants :
 
 | `code` TEXT(10) | `libelle` TEXT(80) |
 |-|-|
@@ -988,84 +988,369 @@ Elle a la structure et le contenu suivants:
 | PPRM | Plan de Prévention des Risques Miniers |
 
 
+
+La définition de la table en SQL est la suivante :
+
 ``` SQL
 CREATE TABLE typeprocedure (
   code TEXT(10) NOT NULL PRIMARY KEY,
   libelle TEXT(80) NOT NULL
 );
+INSERT INTO typeprocedure VALUES 
+  ('PPRN','Plan de Prévention des Risques Naturels'),
+  ('PPRN-I','Plan de Prévention des Risques Naturels Innondation'),
+  ('PPRN-L','Plan de Prévention des Risques Naturels Littoral'),
+  ('PPRN-Mvt','Plan de Prévention des Risques Naturels Mouvement de Terrain'),
+  ('PPRN-Multi','Plan de Prévention des Risques Naturels Multirisques'),
+  ('PPRN-S','Plan de Prévention des Risques Naturels Séisme'),
+  ('PPRN-Av','Plan de Prévention des Risques Naturels Avalanches'),
+  ('PPRN-Ev','Plan de Prévention des Risques Naturels Eruption volcanique'),
+  ('PPRN-If','Plan de Prévention des Risques Naturels Incendie de forêt'),
+  ('PPRN-Cy','Plan de Prévention des Risques Naturels Cyclone'),
+  ('PPRN-Rad','Plan de Prévention des Risques Naturels Radon'),
+  ('PPRT','Plan de Prévention des Risques Technologiques'),
+  ('PPRM','Plan de Prévention des Risques Miniers')
+ ;
 ```
 
 
 ##### Table d'enumeration `etatsprocedure`
 
-La table `etatsprocedure` bla bla bla
+La table `etatsprocedure` implémente l'énumeration [Etats d'une procédure](../Geostandards-risques-commun/Document.md#enumeration-etats-dune-procédure) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(25) |
+|-|-|
+| DEB_PRG | Début programmation |
+| DEB_MTG | Début montage |
+| PRECRIT | Prescrit |
+| PAC | Porté à connaissance |
+| PROROGE | Prorogé |
+| ANTICIPE | Anticipé |
+| APPROUVE | Approuvé |
+| DEPRESCRIT | Déprescrit |
+| ANNULE | Annulé |
+| ABROGE | Abrogé |
+
+
+La définition de la table en SQL est la suivante :
+
+
+``` SQL
+CREATE TABLE etatsprocedure (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(25) NOT NULL
+);
+INSERT INTO etatsprocedure VALUES 
+  ('DEB_PRG','Début programmation'),
+  ('DEB_MTG','Début montage'),
+  ('PRECRIT','Prescrit'),
+  ('PAC','Porté à connaissance'),
+  ('PROROGE','Prorogé'),
+  ('ANTICIPE','Anticipé'),
+  ('APPROUVE','Approuvé'),
+  ('DEPRESCRIT','Déprescrit'),
+  ('ANNULE','Annulé'),
+  ('ABROGE','Abrogé')
+ ;
+```
 
 
 ##### Table d'enumeration `typereference`
 
-La table `typereference` bla bla bla
+La table `typereference` implémente l'énumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(20) |
+|-|-|
+| 01 | Règlement signé |
+| 02 | Zonage réglementaire signé |
+| 03 | Cartes signées |
+| 98 | Autres cartes |
+| 99 | Autres |
+
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typereference (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(20) NOT NULL
+);
+INSERT INTO typereference VALUES 
+  ('01','Règlement signé'),
+  ('02','Zonage réglementaire signé'),
+  ('03','Cartes signées'),
+  ('98','Autres cartes'),
+  ('99','Autres')
+ ;
+```
 
 
 ##### Table d'enumeration `typealea`
 
 La table `typealea` bla bla bla
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(3) | `libelle` TEXT(120) |
+|-|-|
+| 112 |  Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d'eau |
+| 113 |  Risque Naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau |
+| 114 |  Risque Naturel ; Inondation ; Par ruissellement et coulée de boue |
+| 115 |  Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg)  |
+| 116 |  Risque Naturel ; Inondation ; Par remontées de nappes naturelles |
+| 117 |  Risque Naturel ; Inondation ; Par submersion marine |
+| 121 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
+| 123 | Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
+| 124 | Risque Naturel ; Mouvement de terrain ; Glissement de terrain |
+| 125 | Risque Naturel ; Mouvement de terrain ; Avancée dunaire |
+| 126 | Risque Naturel ; Mouvement de terrain ; Recul du trait de côte et de falaises |
+| 127 | Risque Naturel ; Mouvement de terrain ; Tassement différentiels |
+| 13 |  Risque Naturel ; Séisme |
+| 14 |  Risque Naturel ; Avalanche |
+| 15 |  Risque Naturel ; Eruption volcanique |
+| 16 |  Risque Naturel ; Feu de forêt |
+| 171 | Risque Naturel ; Phénomène lié à l'atmosphère ; Cyclone / Ouragan |
+| 172 | Risque Naturel ; Phénomène lié à l'atmosphère ; Tempête et grains (vent) |
+| 174 | Risque Naturel ; Phénomène lié à l'atmosphère ; Foudre |
+| 175 | Risque Naturel ; Phénomène lié à l'atmosphère ; Grêle | 
+| 176 | Risque Naturel ; Phénomène lié à l'atmosphère ; Neige et pluies verglaçantes |
+| 18 | Risque Naturel ; Radon |
+| 211	| Risque technologique ; Risque Industriel ; Effet thermique |
+| 212	| Risque technologique ; Risque Industriel ; Effet de surpression | 
+| 213	| Risque technologique ; Risque Industriel ; Effet toxique  |
+| 214	| Risque technologique ; Risque Industriel ; Effet de projection |
+| 22	| Risque technologique ; Nucléaire |
+| 23	| Risque technologique ; Rupture de barrage |
+| 24	| Risque technologique ; Transport de marchandises dangereuses |
+| 25	| Risque technologique ; Engins de guerre |
+| 311	| Risque minier ; Affaissement minier ; Effondrements généralisés | 
+| 312	| Risque minier ; Affaissement minier ; Effondrements localisés | 
+| 313	| Risque minier ; Affaissement minier ; Affaissements progressifs | 
+| 314	| Risque minier ; Affaissement minier ; Tassements | 
+| 315	| Risque minier ; Affaissement minier ; Glissements ou mouvements de pente | 
+| 316	| Risque minier ; Affaissement minier ; Coulées | 
+| 317	| Risque minier ; Affaissement minier ; Ecroulements rocheux | 
+| 321	| Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface |
+| 322	| Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols |
+| 33 | Risque minier ; Emissions en surface de gaz de mine |
+| 34 | Risque minier ; Echauffement des terrains de dépôts |
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typealea (
+  code TEXT(3) NOT NULL PRIMARY KEY,
+  libelle TEXT(120) NOT NULL
+);
+INSERT INTO typealea VALUES 
+  ('112','Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d''eau'),
+  ('113','Risque Naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d''eau'),
+  ('114','Risque Naturel ; Inondation ; Par ruissellement et coulée de boue'),
+  ('115','Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg) '),
+  ('116','Risque Naturel ; Inondation ; Par remontées de nappes naturelles'),
+  ('117','Risque Naturel ; Inondation ; Par submersion marine'),
+  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines)'),
+  ('123','Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs'),
+  ('124','Risque Naturel ; Mouvement de terrain ; Glissement de terrain'),
+  ('125','Risque Naturel ; Mouvement de terrain ; Avancée dunaire'),
+  ('126','Risque Naturel ; Mouvement de terrain ; Recul du trait de côte et de falaises'),
+  ('127','Risque Naturel ; Mouvement de terrain ; Tassement différentiels'),
+  ('13','Risque Naturel ; Séisme'),
+  ('14','Risque Naturel ; Avalanche'),
+  ('15','Risque Naturel ; Eruption volcanique'),
+  ('16','Risque Naturel ; Feu de forêt'),
+  ('171','Risque Naturel ; Phénomène lié à l''atmosphère ; Cyclone / Ouragan'),
+  ('172','Risque Naturel ; Phénomène lié à l''atmosphère ; Tempête et grains (vent)'),
+  ('174','Risque Naturel ; Phénomène lié à l''atmosphère ; Foudre'),
+  ('175','Risque Naturel ; Phénomène lié à l''atmosphère ; Grêle'), 
+  ('176','Risque Naturel ; Phénomène lié à l''atmosphère ; Neige et pluies verglaçantes'),
+  ('18','Risque Naturel ; Radon'),
+  ('211','Risque technologique ; Risque Industriel ; Effet thermique'),
+  ('212','Risque technologique ; Risque Industriel ; Effet de surpression'), 
+  ('213','Risque technologique ; Risque Industriel ; Effet toxique '),
+  ('214','Risque technologique ; Risque Industriel ; Effet de projection'),
+  ('22','Risque technologique ; Nucléaire'),
+  ('23','Risque technologique ; Rupture de barrage'),
+  ('24','Risque technologique ; Transport de marchandises dangereuses'),
+  ('25','Risque technologique ; Engins de guerre'),
+  ('311','Risque minier ; Affaissement minier ; Effondrements généralisés'), 
+  ('312','Risque minier ; Affaissement minier ; Effondrements localisés'), 
+  ('313','Risque minier ; Affaissement minier ; Affaissements progressifs'), 
+  ('314','Risque minier ; Affaissement minier ; Tassements'), 
+  ('315','Risque minier ; Affaissement minier ; Glissements ou mouvements de pente'), 
+  ('316','Risque minier ; Affaissement minier ; Coulées'), 
+  ('317','Risque minier ; Affaissement minier ; Ecroulements rocheux'), 
+  ('321','Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface'),
+  ('322','Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols'),
+  ('33','Risque minier ; Emissions en surface de gaz de mine'),
+  ('34','Risque minier ; Echauffement des terrains de dépôts')
+ ;
+```
 
 
 ##### Table d'enumeration `typeniveaualea`
 
-La table `typeniveaualea` bla bla bla
+La table `typeniveaualea` implémente l'énumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(02) | `libelle` TEXT(15) |
+|-|-|
+| 01 | Faible |
+| 02 | Moyen |
+| 03 | Moyen plus |
+| 04 | Fort |
+| 05 | Fort plus |
+| 06 | Très fort |
+| 07 | Très fort plus |
+
+
+La définition de la table en SQL est la suivante :
+
+
+``` SQL
+CREATE TABLE typeniveaualea (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+INSERT INTO typeniveaualea VALUES 
+  ('01','Faible'),
+  ('02','Moyen'),
+  ('03','Moyen plus'),
+  ('04','Fort'),
+  ('05','Fort plus'),
+  ('06','Très fort'),
+  ('07','Très fort plus')
+ ;
+```
 
 
 ##### Table d'enumeration `typesuralea`
 
-La table `typesuralea` bla bla bla
+La table `typesuralea` implémente l'énumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| 01 | bande de précaution | 
+| 02 | bande particulière |
+| 99 | autre |
+
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typesuralea (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+INSERT INTO typesuralea VALUES 
+  ('01','bande de précaution'), 
+  ('02','bande particulière'),
+  ('99','autre')
+ ;
+```
 
 
 ##### Table d'enumeration `typerefexterneouvrage`
 
-La table `typerefexterneouvrage` bla bla bla
+La table `typerefexterneouvrage` implémente l'énumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) définie dans le modèle commun.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| 01 | ROE | 
+| 02 | SIOUH | 
+| 99 | autre |
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typerefexterneouvrage (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+INSERT INTO typerefexterneouvrage VALUES 
+  ('01','ROE'), 
+  ('02','SIOUH'), 
+  ('99','autre')
+ ;
+```
 
 
 ##### Table d'enumeration `typereglementurba`
 
-La table `typereglementurba` bla bla bla
+La table `typereglementurba` implémente l'énumeration [TypeReglementUrba](#enumeration-typereglementurba) définie dans ce profil applicatif.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
 
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| 01 | Prescriptions hors zone d'aléa |
+| 02 | Prescriptions |
+| 03 | Interdiction |
+| 04 | Interdiction stricte |
+| 05 | Recommandations |
+| 06 | Zone grisées |
+
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typereglementurba (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+INSERT INTO typereglementurba VALUES 
+  ('01','Prescriptions hors zone d''aléa'),
+  ('02','Prescriptions'),
+  ('03','Interdiction'),
+  ('04','Interdiction stricte'),
+  ('05','Recommandations'),
+  ('06','Zone grisées')
+ ;
+```
+
+
+
+La définition de la table en SQL est la suivante :
 
 ##### Table d'enumeration `typereglementfoncier`
 
-La table `typereglementfoncier` bla bla bla
+La table `typereglementfoncier` implémente l'énumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) définie dans ce profil applicatif.
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| 01 | Délaissement possible |
+| 02 | Expropriation possible |
+
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typereglementfoncier (
+  code TEXT(10) NOT NULL PRIMARY KEY,
+  libelle TEXT(80) NOT NULL
+);
+INSERT INTO typereglementfoncier VALUES 
+  ('01','Délaissement possible'),
+  ('02','Expropriation possible')
+ ;
+```
 
 
 
