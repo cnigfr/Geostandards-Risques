@@ -3,13 +3,13 @@
 | ![Logo CNIG](./ressources/logo-cnig.png)| ![Logo DGPR](./ressources/ministere-de-la-transition-ecologique-et-solidaire_logo.png) |
 
 
-# Conseil national de l'information Géolocalisée
+ Conseil national de l'information Géolocalisée
 
 
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
-# Géostandards Risques - Profil applicatif PPR
+ Géostandards Risques - Profil applicatif PPR
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -21,7 +21,7 @@ Groupe de travail refonte des Géostandards Risques
 
 ---
 
-## 1. Fiche analytique
+#  Fiche analytique
 
 > *Tableau de présentation du document à compléter...*
 
@@ -46,20 +46,20 @@ Groupe de travail refonte des Géostandards Risques
 
 ---
 
-## 2. Sommaire
+#  Sommaire
 
 > *A générer*
 
 
-## 3. Préface
+#  Préface
 
-### 3.1. Historique du document
+##  Historique du document
 
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | *xx* | Première rédaction en cours |
 
-### 3.2. Participation à l'écriture
+##  Participation à l'écriture
 
 Ce standard est le fruit des travaux du groupe de travail CNIG sur la refonte des Géostandards risques. Ce dernier rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR). 
 
@@ -79,26 +79,26 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 > *liste à compléter et actualiser*
 
 
-## 4. Présentation du document
+#  Présentation du document
 
 
-### 4.1. Objectif et raison d'être du standard
+##  Objectif et raison d'être du standard
 
 > *Résumé et objectif du document.*
 
 
 
-### 4.2. A qui s'adresse ce document ?
+##  A qui s'adresse ce document ?
 
 > *à remplir* 
 
 
-### 4.3. Comment lire le document
+##  Comment lire le document
 
 > *Si besoin, présentation de la structure du document*
 
 
-### 4.4. Références à d'autres normes
+##  Références à d'autres normes
 
 Le document ci-présent s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l’édition citée compte. Pour les autres, la dernière édition de la norme s’applique.
 
@@ -115,9 +115,9 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 
 
-### 4.5. Cadre réglementaire des Plans de Prévention des Risques
+##  Cadre réglementaire des Plans de Prévention des Risques
 
-#### 4.5.1. Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
+###  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
 La mise en oeuvre des Plans de prevention des risques naturels prévisibles est définie dans le code de l'environnement par :
 
@@ -128,14 +128,14 @@ L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001
 
 Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRI », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
-#### 4.5.2. Cadre réglementaire des Plans de Prévention des Risques Technologiques
+###  Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
 La mise en oeuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
 
 * Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
 
-#### 4.5.3. Cadre réglementaire des Plans de Prévention des Risques Miniers
+###  Cadre réglementaire des Plans de Prévention des Risques Miniers
 
 La mise en oeuvre des Plans de prévention des risques miniers est définie par :
 
@@ -144,9 +144,9 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 
 
-### 4.5. Compréhension du document
+##  Compréhension du document
 
-#### 4.5.1. Termes spécifiques et définitions
+###  Termes spécifiques et définitions
 
 | Terme | Définition|
 |-|-|
@@ -160,7 +160,7 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 | Expropriation | ([Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/N326)) L'expropriation est une procédure qui permet à une personne publique (État, collectivités territoriales...) de contraindre un particulier ou une personne morale (entreprise) à céder la propriété de son bien, moyennant le paiement d'une indemnité. |
 
 
-#### 4.5.2. Abréviations
+###  Abréviations
 
 
 **BRIL** Bureau des risques d'inondation et littoraux
@@ -200,7 +200,7 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 ---
 
 
-## 5. Concepts généraux
+#  Concepts généraux
 
 > *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
 
@@ -219,9 +219,9 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 * Directive Inondation, version 2.1 – juillet 2019
 
 
-### 5.1. Scope et périmètre d'application
+##  Scope et périmètre d'application
 
-#### Périmètre d'application
+### Périmètre d'application
 
 | **Nom du périmètre d'application** | |
 |-|-|
@@ -236,7 +236,7 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 
 
-### 5.2. Les acteurs et rôles concernés 
+##  Les acteurs et rôles concernés 
 
 > *à compléter: Par leurs missions, les différents intervenants (ou utilisateurs) liés au <thème> peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.*
 
@@ -249,11 +249,11 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 | *<Nom du rôle 1>* | *Contient une description du rôle* |
 
 
-### 5.3. Cas d'utilisation
+##  Cas d'utilisation
 
 > *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
 
-#### 5.3.1. Cas d’utilisation « Nom du cas 1 »
+###  Cas d’utilisation « Nom du cas 1 »
 
 | Nom du cas 1 | |
 |-|-|
@@ -268,23 +268,23 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 
 
-## 6. Contenu et structure de la donnée
+#  Contenu et structure de la donnée
 
 > *La section relative au contenu et à la structure des données décrit l’intégration de <objet du standard>. conception des schémas d'application (ISO 19109) qui utilise un catalogue d'entités (ISO 19110) pour fournir une description lisible par un humain des types et des caractéristiques des entités, et un dictionnaire de concepts d'entités (ISO 19126) pour décrire et publier les concepts d'entités.* 
 
 Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [*Ref. à fournir*]() dans le cadre des procédures de Plans de Prévention des Risques.
 
 
-### 6.1. Modèle conceptuel de données
+##  Modèle conceptuel de données
 
 
-#### Thématique Procédures et périmètres
+### Thématique Procédures et périmètres
 
 > *A remplir : Spécialisation du modèle de cette thématique.*
 
 
 
-#### Thématique Aléas
+### Thématique Aléas
 
 Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). Dans ce cadre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par deux classes [ZoneAleaReference](#classe-dobjets-zonealeareference) et [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant respectivement à l'aléa de référence et à l'aléa  à échéance 100 ans. L'implémentation de la classe ZoneAleaEcheance100ans n'est obligatoire que dans le cadre de l'aléa submersion marine.
 
@@ -296,12 +296,12 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 
 
-#### Thématique Origine du Risque
+### Thématique Origine du Risque
 
 > *A remplir : Spécialisation du modèle de cette thématique.*
 
 
-#### Thématique Enjeux
+### Thématique Enjeux
 
 > *A remplir : Spécialisation du modèle de cette thématique.*
 
@@ -319,7 +319,7 @@ La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifi�
 ![Modele UML Enjeux](./ressources/UML-Enjeu-PPR.png)
 
 
-#### Thématique Zonage réglementaire
+### Thématique Zonage réglementaire
 
 > *A remplir : Spécialisation du modèle de cette thématique.*
 
@@ -341,14 +341,14 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ![Modele UML ZoneReg PPR](./ressources/UML-ZoneReg-PPR.png)
 
 
-### 6.2. Catalogue d'objets
+##  Catalogue d'objets
 
-#### Thématique Procédures et périmètres
+### Thématique Procédures et périmètres
 
 
-#### Thématique Aléas
+### Thématique Aléas
 
-##### Classe d'objets *ZoneAleaReference*
+#### Classe d'objets *ZoneAleaReference*
 
 **Nom de la classe** : ZoneAleaReference
 
@@ -362,7 +362,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 
 
-##### Classe d'objets *ZoneAleaEcheance100ans*
+#### Classe d'objets *ZoneAleaEcheance100ans*
 
 **Nom de la classe** : ZoneAleaEcheance100ans
 
@@ -376,13 +376,13 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 
 
-#### Thématique Origine du Risque
+### Thématique Origine du Risque
 
 
-#### Thématique Enjeux
+### Thématique Enjeux
 
 
-##### Liste de codes NomenclatureEnjeuPPR
+#### Liste de codes NomenclatureEnjeuPPR
 
 **Nom de la liste de codes** : NomenclatureEnjeuPPR
 
@@ -392,7 +392,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 Elle est accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
 
-###### Enjeux incontournables
+##### Enjeux incontournables
 
 Les enjeux incontournables caractérisent les différents types d'occupation du sol. Il se répartissent en quatre catégories principales qui, pour certaines peuvent être précisées en sous-catégories. 
 
@@ -410,7 +410,7 @@ Les enjeux incontournables caractérisent les différents types d'occupation du 
 La [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) précise la caractérisation des zones de centre urbains.
 
 
-###### Enjeux complémentaires
+##### Enjeux complémentaires
 
 Les enjeux complémentaires permettent d’identifier les points particulièrement vulnérables au sein des zones définies dans les enjeux incontournables. L'étude des enjeux complémentaires est conseillée puisqu’elle permet d’obtenir une connaissance du territoire et de son fonctionnement relativement fine, ce qui est essentiel pour que les mesures prescrites soient cohérentes avec les enjeux en présence. Elle est également utile à la préparation de la gestion de crise.
 
@@ -436,7 +436,7 @@ Les enjeux complémentaires se répartissent dans les catégories suivantes :
 | enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
-###### Autres éléments de contexte
+##### Autres éléments de contexte
 
 Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les évolutions du territoire.
 
@@ -454,9 +454,9 @@ Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les �
 bâties).
 
 
-#### Thématique Zonage réglementaire
+### Thématique Zonage réglementaire
 
-##### Classe d'objets ZoneReglementaireUrba
+#### Classe d'objets ZoneReglementaireUrba
 
 **Nom de la classe** : ZoneReglementaireUrba
 
@@ -475,7 +475,7 @@ bâties).
 | obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors l'obligation de travaux est inconnue. | 0..1 |
 
 
-##### Classe d'objets ZoneReglementaireFoncier
+#### Classe d'objets ZoneReglementaireFoncier
 
 **Nom de la classe** : ZoneReglementaireFoncier
 
@@ -493,7 +493,7 @@ bâties).
 | typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeReglementFoncier](#enumeration-typereglementfoncier) | Les valeurs possibles de l'énumération | 1..1 |
 
 
-##### Enumeration *TypeReglementUrba*
+#### Enumeration *TypeReglementUrba*
 
 Le tableau suivant liste les différents types de réglementations possibles pouvant s'appliquer en matière d'urbanisme
 
@@ -508,7 +508,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 | Zone grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout batiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
 
 
-##### Enumeration *TypeReglementFoncier*
+#### Enumeration *TypeReglementFoncier*
 
 Le tableau suivant liste les différents types de réglementations foncières possibles.
 
@@ -518,16 +518,16 @@ Le tableau suivant liste les différents types de réglementations foncières po
 | Expropriation possible | Réglementation autorisant le maire ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
 
 
-## 7. Systèmes de référence
+#  Systèmes de référence
 
 
 > *Cette section vise à identifier les systèmes de référence spatiaux et temporels utilisés par les des données <de la thématique>.*
 
 
 
-## 8. Qualité
+#  Qualité
 
-### 8.1. Enjeux
+##  Enjeux
 
 > *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
 > *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
@@ -542,7 +542,7 @@ Le tableau suivant liste les différents types de réglementations foncières po
 > *Les différentes mesures de la qualité des données de <la thématique> sont définies ci-dessous  et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit  (cf Mesures de qualité complémentaires).*
 
 
-### 8.2. Référence normative
+##  Référence normative
 
 > *La référence internationale est la norme ISO 19157 sur la qualité des données géographiques.*
  
@@ -551,50 +551,50 @@ Le tableau suivant liste les différents types de réglementations foncières po
 > *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
 > *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
 
-### 8.3. Mesures de la qualité
+##  Mesures de la qualité
 
-#### 8.3.1. Mesures obligatoires
-
-
-#### 8.3.2. Mesures Recommandées
+###  Mesures obligatoires
 
 
-#### 8.3.3. Mesures Conditionnelles 
+###  Mesures Recommandées
 
 
-## 9. Cycle de vie des données 
+###  Mesures Conditionnelles 
 
-### Les différents états d'une procédure de Plan de Prévention des risques
+
+#  Cycle de vie des données 
+
+## Les différents états d'une procédure de Plan de Prévention des risques
 
 > *à écrire : cf. les différents états d'une procédure GASPAR*
 > *Notions de procédures révisantes et révisées dans GASPAR*
 
-### 9.1. Saisie et production des données
+##  Saisie et production des données
 
 > *La section relative à la saisie et à la production de données vise à fournir des instructions, des exigences et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.*
 
 
 
-### 9.2. Maintenance
+##  Maintenance
 
 > *Cette section vise à fournir des instructions, des exigences, des descriptions, des principes et/ou des critères de gestion des données après la saisie. Cela inclut la fréquence des modifications, de la mise à jour et des ajouts dont le contenu fait l'objet.*
 > *Une maintenance peut donner une nouvelle version ou la mise à jour d’un jeu de donnée. Afin d’assurer une maintenance cohérente, un guide sur les mécanismes de mises à jour et des informations pertinentes d’encodages est disponible <ci-après/en annexe/sur ce lien>.*
 
 
-## 10. Règles de symbologie
+#  Règles de symbologie
 
 > *La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.*
 
 
-## 11. Livraison
+#  Livraison
 
 > *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
 
 Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie qui suit en précise les modalités.
 
-### 11.1. Livraison en GeoPackage
+##  Livraison en GeoPackage
 
-#### 11.1.1. Généralités sur GeoPackage
+###  Généralités sur GeoPackage
 
 GeoPackage est un format standard défini par l'[OGC](https://www.ogc.org/) (Open Geospatial Consortium). C'est un format ouvert, indépendant de toute plateforme et autodescriptif pour échanger de l'information géographique. Il s'appuie sur le format de fichier de base de données [SQLite](https://sqlite.org/fileformat2.html) pour décrire des tables de données et de métadonnées pour lesquelles il définit un ensemble de conventions. 
 
@@ -603,7 +603,7 @@ Les données échangées peuvent être de type vecteur, raster ou simplement att
 Ce format est largement adopté par les outils SIG libres et commerciaux, ce qui a contribué à son adoption par le groupe de travail sur la refonte des géostandards risques comme format de livraison.
 
 
-#### 11.1.2. Versions de GeoPackage supportées
+###  Versions de GeoPackage supportées
 
 A la date de rédaction de ce document, la version la plus récente du standard GeoPackage est la 1.3.1 (2021). Les versions précédentes 1.3, 1.2.1, 1.2 et 1.1 sont encore maintenues et reposent toutes sur la version 3 du format SQLite. Elles sont toutes compatibles avec les exigences définies dans les clauses suivantes pour la livraison des données de ce standard.
 
@@ -611,7 +611,7 @@ A la date de rédaction de ce document, la version la plus récente du standard 
 Les livraisons des données de plan de préventions des risques seront faites au format GeoPackage dans les versions supérieures ou égales à 1.1.
 
 
-#### 11.1.3. Contenu de la livraison
+###  Contenu de la livraison
 
 Le modèle physique implémenté avec GeoPackage est un modèle de données relationnel à l'instar de SQLite sur lequel il s'appuie. De ce fait, l'implémentation des données proposées pour la livraison se fera sous forme de tables comme décrit dans les paragraphes qui suivent : 
 - les tables intrinsèques au format GeoPackage
@@ -621,7 +621,7 @@ Le modèle physique implémenté avec GeoPackage est un modèle de données rela
 La granularité d'une livraison est celle d'une procédure associée à un plan de prévention des risques (un code de procédure). Autrement dit une livraison comprend l'ensemble des tables associées à une procédure identifée dans GASPAR par son code procédure.
 
 
-##### 11.1.3.1. Nom du fichier de livraison
+####  Nom du fichier de livraison
 
 Afin de normaliser et d'identifier les fichiers de livraisons entre eux, le nommage de fichiers de livraison s'appuiera sur le type de PPR, l'identifiant de la procédure associée dans GASPAR et l'extension de fichier associée au format Geopackage.
 
@@ -638,7 +638,7 @@ A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pou
 
 
 
-##### 11.1.3.1. Tables intrinsèques à GeoPackage
+####  Tables intrinsèques à GeoPackage
 
 Le format GeoPackage définit un certain nombre de tables "système" qui lui permettent d'organiser les données de façon structurée et efficace et dont le caractère obligatoire ou non de leur implémentation dépend du type de données échangées et de l'utilisation qui peut en être faite. Le schéma qui suit, issu du standard GeoPackage version 1.3.1, illustre la structure des tables intrinsèques à ce format.
 
@@ -660,7 +660,7 @@ Dans le cadre des Géostandards risques les tables suivantes doivent être impl�
 La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
 
 
-###### Table gpkg_contents
+##### Table gpkg_contents
 
 La table `gpkg_contents` est la table dictionnaire des tables de données (hors tables "systèmes") présentes dans la livraison. Elle liste l'ensemble de ces tables en indiquant pour chacune : 
 
@@ -681,7 +681,7 @@ Sa structure est définie dans [les spécifications du format GeoPackage](https:
 La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_contents` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
 
 
-###### Table gpkg_geometry_columns
+##### Table gpkg_geometry_columns
 
 La table `gpkg_geometry_columns` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#_gpkg_geometry_columns) qui identifie les colonnes portant la géométrie ainsi que leur type dans les tables de données de type `features` du GeoPackage.
 
@@ -704,7 +704,7 @@ Toutes les tables de la livraison listées dans la table `gpkg_geometry_columns`
 
 
 
-###### Table gpkg_spatial_ref_sys
+##### Table gpkg_spatial_ref_sys
 
 La table `gpkg_spatial_ref_sys` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/##spatial_ref_sys_data_table_definition) qui liste l'ensemble des systèmes de coordonnées et leurs définitions sur lesquels s'appuient les les géométries des tables de données de type `features` du GeoPackage.
 
@@ -726,18 +726,18 @@ La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une
 
 
 
-###### Table gpkg_metadata
+##### Table gpkg_metadata
 
-###### Table gpkg_metadata_reference
+##### Table gpkg_metadata_reference
 
 
 
-##### 11.1.3.2. Tables du Standard
+####  Tables du Standard
 
 La livraison en GeoPackage implique une implémentation du modèle conceptuel (classes et relations) défini par ce standard en modèle relationnel, sous forme de tables. Cette partie décrit l'ensemble des tables de ce standard dérivées du modèle conceptuel qui peuvent faire partie de la livraison en s'appuyant sur le formalisme et les types définis par le format GeoPackage.
 
 
-###### Nomenclature des tables
+##### Nomenclature des tables
 
 Les noms des tables intègrent des éléments d'identification du PPR (type et code GASPAR de la procédure) et sont écrits intégralement en minuscules ce qui permet de ne pas avoir à mettre ces noms entre côtes lorsqu'on les manipule dans des systèmes comme PostgreSQL.
 
@@ -760,7 +760,7 @@ A titre d'exemples :
 - la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
 
 
-###### Dictionnaire des tables
+##### Dictionnaire des tables
 
 Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livriason en précisant :
 
@@ -816,7 +816,7 @@ Les paragraphes qui suivent précisent pour chacune de ces tables :
 - les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel.
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
+##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
 La table `[TypePPR]_[CodeGASPARComplet]_procedure` bla bla bla
 
@@ -825,7 +825,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_procedure` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_revise`
+##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
 
 La table `[TypePPR]_[CodeGASPARComplet]_revise` bla bla bla
 
@@ -834,7 +834,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_revise` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
+##### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` bla bla bla
 
@@ -843,7 +843,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
+##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
 
 La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` bla bla bla
 
@@ -852,7 +852,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` bla bla bla
 
@@ -861,7 +861,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` bla bla 
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` bla bla bla
 
@@ -870,7 +870,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
+##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` bla bla bla
 
@@ -879,7 +879,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` bla bla bla
 
@@ -888,7 +888,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` bla b
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` bla bla bla
 
@@ -897,7 +897,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` bl
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` bla bla bla
 
@@ -906,7 +906,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` bla bla bla
 
@@ -915,7 +915,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
+##### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
 
 La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` bla bla bla
 
@@ -924,7 +924,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
+##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
 
 La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` bla bla bla
 
@@ -933,7 +933,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` bla bla bla
 
@@ -942,7 +942,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` bla bla b
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bla bla
 
@@ -952,7 +952,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bl
 
 
 
-###### Table d'enumeration `typeprocedure`
+##### Table d'enumeration `typeprocedure`
 
 La table `typeprocedure` bla bla bla
 
@@ -961,7 +961,7 @@ La table `typeprocedure` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `etatsprocedure`
+##### Table d'enumeration `etatsprocedure`
 
 La table `etatsprocedure` bla bla bla
 
@@ -970,7 +970,7 @@ La table `etatsprocedure` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typereference`
+##### Table d'enumeration `typereference`
 
 La table `typereference` bla bla bla
 
@@ -979,7 +979,7 @@ La table `typereference` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typealea`
+##### Table d'enumeration `typealea`
 
 La table `typealea` bla bla bla
 
@@ -988,7 +988,7 @@ La table `typealea` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typeniveaualea`
+##### Table d'enumeration `typeniveaualea`
 
 La table `typeniveaualea` bla bla bla
 
@@ -997,7 +997,7 @@ La table `typeniveaualea` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typesuralea`
+##### Table d'enumeration `typesuralea`
 
 La table `typesuralea` bla bla bla
 
@@ -1006,7 +1006,7 @@ La table `typesuralea` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typerefexterneouvrage`
+##### Table d'enumeration `typerefexterneouvrage`
 
 La table `typerefexterneouvrage` bla bla bla
 
@@ -1015,7 +1015,7 @@ La table `typerefexterneouvrage` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typereglementurba`
+##### Table d'enumeration `typereglementurba`
 
 La table `typereglementurba` bla bla bla
 
@@ -1024,7 +1024,7 @@ La table `typereglementurba` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table d'enumeration `typereglementfoncier`
+##### Table d'enumeration `typereglementfoncier`
 
 La table `typereglementfoncier` bla bla bla
 
@@ -1037,14 +1037,14 @@ La table `typereglementfoncier` bla bla bla
 
 
 
-## 12. Métadonnées
+#  Métadonnées
 
-### 12.1. Généralités
+##  Généralités
 
 > *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
 
 
-#### 12.1.1. Références
+###  Références
 
 > *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
 > *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
@@ -1053,7 +1053,7 @@ La table `typereglementfoncier` bla bla bla
 > *- Validateur européen*
 
 
-#### 12.1.2. Périmètre INSPIRE
+###  Périmètre INSPIRE
 
 > *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
 >* 	-  …*
@@ -1064,21 +1064,21 @@ La table `typereglementfoncier` bla bla bla
 > *Elements de métadonnées relatifs aux series et dataset*
 
 
-### 12.2. Eléménents de métadonnés
+##  Eléménents de métadonnés
 
 
 
 
 ---
 
-## ANNEXE A - Correspondances avec les standards COVADIS PPR (N et T) et PPRM
+# ANNEXE A - Correspondances avec les standards COVADIS PPR (N et T) et PPRM
 
 > *Règles de passage à indiquer ici*
 
 
 ---
 
-## ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
+# ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
 
 > *Règles de passage à indiquer ici*
 
