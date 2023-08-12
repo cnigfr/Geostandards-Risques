@@ -1200,7 +1200,7 @@ La table `typeniveaualea` implémente l'énumeration [TypeNiveauAlea](../Geostan
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(02) | `libelle` TEXT(15) |
+| `code` TEXT(2) | `libelle` TEXT(15) |
 |-|-|
 | 01 | Faible |
 | 02 | Moyen |
@@ -1216,8 +1216,8 @@ La définition de la table en SQL est la suivante :
 
 ``` SQL
 CREATE TABLE typeniveaualea (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(15) NOT NULL
 );
 INSERT INTO typeniveaualea VALUES 
   ('01','Faible'),
@@ -1237,7 +1237,7 @@ La table `typesuralea` implémente l'énumeration [TypeSurAlea](../Geostandards-
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(10) | `libelle` TEXT(80) |
+| `code` TEXT(2) | `libelle` TEXT(20) |
 |-|-|
 | 01 | bande de précaution | 
 | 02 | bande particulière |
@@ -1249,8 +1249,8 @@ La définition de la table en SQL est la suivante :
 
 ``` SQL
 CREATE TABLE typesuralea (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(20) NOT NULL
 );
 INSERT INTO typesuralea VALUES 
   ('01','bande de précaution'), 
@@ -1266,7 +1266,7 @@ La table `typerefexterneouvrage` implémente l'énumeration [TypeRefExterneOuvra
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(10) | `libelle` TEXT(80) |
+| `code` TEXT(2) | `libelle` TEXT(10) |
 |-|-|
 | 01 | ROE | 
 | 02 | SIOUH | 
@@ -1277,8 +1277,8 @@ La définition de la table en SQL est la suivante :
 
 ``` SQL
 CREATE TABLE typerefexterneouvrage (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(10) NOT NULL
 );
 INSERT INTO typerefexterneouvrage VALUES 
   ('01','ROE'), 
@@ -1294,7 +1294,7 @@ La table `typereglementurba` implémente l'énumeration [TypeReglementUrba](#enu
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(10) | `libelle` TEXT(80) |
+| `code` TEXT(2) | `libelle` TEXT(40) |
 |-|-|
 | 01 | Prescriptions hors zone d'aléa |
 | 02 | Prescriptions |
@@ -1309,8 +1309,8 @@ La définition de la table en SQL est la suivante :
 
 ``` SQL
 CREATE TABLE typereglementurba (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(40) NOT NULL
 );
 INSERT INTO typereglementurba VALUES 
   ('01','Prescriptions hors zone d''aléa'),
@@ -1332,7 +1332,7 @@ La table `typereglementfoncier` implémente l'énumeration [TypeReglementFoncier
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(10) | `libelle` TEXT(80) |
+| `code` TEXT(2) | `libelle` TEXT(30) |
 |-|-|
 | 01 | Délaissement possible |
 | 02 | Expropriation possible |
@@ -1343,8 +1343,8 @@ La définition de la table en SQL est la suivante :
 
 ``` SQL
 CREATE TABLE typereglementfoncier (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
 );
 INSERT INTO typereglementfoncier VALUES 
   ('01','Délaissement possible'),
