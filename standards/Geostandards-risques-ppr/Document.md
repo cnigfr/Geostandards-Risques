@@ -195,6 +195,8 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **SIG** Système d'Information Géographique
 
+**WKT** Well-Known Text
+
 ---
 
 
@@ -624,7 +626,7 @@ La granularité d'une livraison est celle d'une procédure associée à un plan 
 Afin de normaliser et d'identifier les fichiers de livraisons entre eux, le nommage de fichiers de livraison s'appuiera sur le type de PPR, l'identifiant de la procédure associée dans GASPAR et l'extension de fichier associée au format Geopackage.
 
 **Exigence**
-La livraison d'un plan de prévention des risques au format GeoPackage se fera sous la forme d'un seul et ununique fichier comprenant les données et les métadonnées.
+La livraison d'un plan de prévention des risques au format GeoPackage se fera sous la forme d'un seul et unique fichier comprenant les données et les métadonnées.
 
 Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
@@ -662,13 +664,13 @@ La structure et le contenu de ces tables sont définis dans les paragraphes qui 
 
 La table `gpkg_contents` est la table dictionnaire des tables de données (hors tables "systèmes") présentes dans la livraison. Elle liste l'ensemble de ces tables en indiquant pour chacune : 
 
-- son nom (`table_name`) ;
+- son nom (`table_name`)
 - son type de données (`data_type`), à savoir vecteur (`features`), raster (`tiles`) ou sémantique (`attributes`)
 - un identifiant optionnel (`identifier`) 
 - sa description optionnelle (`description`)
 - la date de dernière modification (`last_change`)
 - l'emprise géographique de la table (si elle est de type vecteur ou raster) : `min_x`, `min_y`, `max_x`, `max_y`
-- l'identifiant du système de coordonnées pour la géométrie s'il y en a une (`srs_id`) indiqué dans la table [`gpkg_spatial_ref_sys.srs_id`]([#table-gpkg_spatial_ref_sys) 
+- l'identifiant du système de coordonnées pour la géométrie s'il y en a une (`srs_id`) indiqué dans la table [`gpkg_spatial_ref_sys.srs_id`](#table-gpkg_spatial_ref_sys) 
 
 La présence de cette table dans un fichier GeoPackage est obligatoire.
 
@@ -676,15 +678,53 @@ Sa structure est définie dans [les spécifications du format GeoPackage](https:
 
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des risques doit contenir une table `gpkg_contents` conforme au format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
-
-
-
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_contents` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
 
 
 ###### Table gpkg_geometry_columns
 
+La table `gpkg_geometry_columns` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#_gpkg_geometry_columns) qui identifie les colonnes portant la géométrie ainsi que leur type dans les tables de données de type `features` du GeoPackage.
+
+Pour chacune d'elle, elle permet de préciser :
+
+- son nom (`table_name`)
+- le nom de la colonne portant la géométrie pour cette table (`column_name`) 
+- le type de géométrie porté par cette colonne (`geometry_type_name`)
+- l'identifiant du système de coordonnées pour cette géométrie (`srs_id`) indiqué dans la table [`gpkg_spatial_ref_sys.srs_id`](#table-gpkg_spatial_ref_sys) 
+- une valeur entière indiquant si la géométrie peut comporter une composante altimétrique (`z`)
+- une valeur entière indiquant si la géométrie peut comporter une composante temporelle (`m`)
+
+
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_geometry_columns` conforme à la strucutre du format GeoPackage qui liste l'ensemble des tables du standard de type `features` présentes dans la livraison.
+
+
+**Exigence**
+Toutes les tables de la livraison listées dans la table `gpkg_geometry_columns` n'ont pas de composante altimétrique ni temporelle. Les valeurs de `z` et `m` pour ces tables sont égales `0`.
+
+
+
 ###### Table gpkg_spatial_ref_sys
+
+La table `gpkg_spatial_ref_sys` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/##spatial_ref_sys_data_table_definition) qui liste l'ensemble des systèmes de coordonnées et leurs définitions sur lesquels s'appuient les les géométries des tables de données de type `features` du GeoPackage.
+
+Pour chacun des systèmes de coordonnées déclarés, elle permet de préciser :
+
+- un nom lisible par un humain (`srs_name`)
+- un identifiant unique pour de ce système de coordonnées (clef primaire) dans le GeoPackage (`srs_id`)
+- le nom de l'oganisation qui définit ce système de coordonnées (`organization`)
+- l'identifiant numérique de ce système de coordonnées pour cette organisation (`organization_coordsys_id`)
+- la définition au format WKT de ce système de coordonnées (`definition`)
+- Une description textuelle lisible par un être humain de ce système de coordonnées (`description`)
+
+La présence de cette table dans un fichier GeoPackage est obligatoire.
+
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la strucutre du format GeoPackage qui liste les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
+
+
+
+
 
 ###### Table gpkg_metadata
 
@@ -716,8 +756,8 @@ La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table de
 
 A titre d'exemples :
 
-- la table perimetre du PPRN du Bassin de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
-- la table zonealeareference du PPRN du Bassin de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
+- la table perimetre du PPRN du Bassin versant de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
+- la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
 
 
 ###### Dictionnaire des tables
@@ -731,7 +771,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 
 
 
-| nom de la table | type de table (GPKG) | type de géométrie (GPKG) | Référence entité(s) modèle conceptuel |
+| Nom de la table | Type de table (GPKG) | Type de géométrie (GPKG) | Entité(s) du modèle conceptuel implémentée(s) |
 |-|-|-|-|
 | `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
 | `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
@@ -750,8 +790,8 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_s` | `features` | `MULTIPOLYGON` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_l` | `features` | `LINESTRING` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_p` | `features` | `POINT` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu` | `attributes` | N.A. | Type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
+| `[TypePPR]_[CodeGASPARComplet]_typeenjeu` | `attributes` | N.A. | Type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) |
+| `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` | `features` | `POINT` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
@@ -875,18 +915,18 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` bla bla bla
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu`
+###### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
 
-La table `[TypePPR]_[CodeGASPARComplet]_TypeEnjeu` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` bla bla bla
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
 
-###### Table `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite`
+###### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
 
-La table `[TypePPR]_[CodeGASPARComplet]_TypeVulnerabilite` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` bla bla bla
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
