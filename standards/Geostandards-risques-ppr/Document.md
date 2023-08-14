@@ -795,7 +795,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` | `features` | `POINT` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
+| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` | `features` | `POINT` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
 | `typeprocedure` | `attributes` | N.A. | Enumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) |
@@ -840,129 +840,193 @@ CREATE TABLE typeppr_codegaspar_procedure (
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
 
-La table `[TypePPR]_[CodeGASPARComplet]_revise` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_revise` implémente l'associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)  définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| codeprocrevisante | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `code` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisante dans GASPAR |
+| codeprocrevisee | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `code` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisée dans GASPAR | 
 
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_revise ( 
+  codeprocrevisante TEXT(16) NOT NULL, 
+  codeprocrevisee TEXT(16) NOT NULL,
+  CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee)
+);
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
 
-La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
 
-La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
 
-La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` implémente la classe [ZoneAleaReference](#classe-dobjets-zonealeareference) définie dans ce profil applicatif. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
 
-La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` implémente la classe [ZoneAleaEcheance100ans](#classe-dobjets-ZoneAleaEcheance100ans) définie dans ce profil applicatif. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
 
-La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente la classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
 
-La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` implémente la classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique)  définie dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` bla bla bla
+Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` implémentent la classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) définie dans le modèle commun. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` bla bla bla
+Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) définie dans le modèle commun. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` bla bla bla
+Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) définie dans le modèle commun. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
 
-La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` implémente le type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) défini dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
 
-La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` bla bla bla
+La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) défini dans le modèle commun. Elle a la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` bla bla bla
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémentent la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` bla bla bla
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 |  |  |  | cf. définition du modèle conceptuel |
 
+La définition de la table en SQL est la suivante :
+
+``` SQL
+```
 
 
 ##### Table d'enumeration `typeprocedure`
