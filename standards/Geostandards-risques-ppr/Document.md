@@ -112,6 +112,7 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
+| [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
 
 
 
@@ -196,6 +197,8 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 **SIG** Système d'Information Géographique
 
 **WKT** Well-Known Text
+
+**URL** Uniform Resource Locator
 
 ---
 
@@ -822,9 +825,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Proced
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| `codeprocedure` | TEXT(16) | **Clef Primaire** | Code identifant de la procédure dans GASPAR |
+| `codeprocedure` | TEXT(16) | **Clef primaire** | Code identifant de la procédure dans GASPAR |
 | `libelleprocedure` | TEXT | Pas de restriction | Nom de la procédure lisible par un être humain. | 
-| `typeprocedure` | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table d'enumeration [typeprocedure](#table-denumeration-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
+| `typeprocedure` | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'enumeration [typeprocedure](#table-denumeration-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
 
 La définition de la table en SQL est la suivante :
@@ -834,7 +837,7 @@ CREATE TABLE typeppr_codegaspar_procedure (
   codeprocedure TEXT(16) NOT NULL PRIMARY KEY, 
   libelleprocedure TEXT NOT NULL, 
   typeprocedure TEXT(10) NOT NULL,
-  CONSTRAINT fk_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
+  CONSTRAINT fk_procedure_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
 );
 ```
 
@@ -844,8 +847,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_revise` implémente l'associtation [Revi
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| codeprocrevisante | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `code` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisante dans GASPAR |
-| codeprocrevisee | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `code` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisée dans GASPAR | 
+| codeprocrevisante | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisante dans GASPAR |
+| codeprocrevisee | TEXT(16) | la valeur de `codeprocrevisante` ou de `codeprocrevisee` doit être une valeur de `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Code identifiant de la procédure révisée dans GASPAR | 
 
 
 
@@ -865,11 +868,24 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Peri
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idperimetre` | TEXT(8) | **Clef primaire** | identifiant de l'objet périmètre. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `etatprocedure` | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table [etatsprocedure](#table-denumeration-etatsprocedure) | Etat d'avancement de la procédure référencée par `codeprocedure` sur le périmètre. |
+| `dateetat` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone du périmètre |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_perimetre_s ( 
+  idperimetre TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  etatprocedure TEXT(10) NOT NULL, 
+  dateetat DATE NOT NULL,
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_perimetre_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_perimetre_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES etatsprocedure(code)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
@@ -878,11 +894,25 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `adresse` | TEXT(255) | **Clef primaire**. La valeur de ce champ doit respecter le formalisme d'une URL ([RFC:3986]) | identifiant de l'objet reference internet. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure objet de la référence internet. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `nomressource` | TEXT(50) | Saisie libre | Nom de la ressource référencée sur Internet |
+| `typereference` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-denumeration-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
+| `description` | TEXT(255) | Saisie libre | Description de la ressource internet. |
+
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_referenceinternet ( 
+  adresse TEXT(255) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  nomressource TEXT(50), 
+  typereference TEXT(2) NOT NULL,
+  description TEXT(255), 
+  CONSTRAINT fk_referenceinternet_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_referenceinternet_typereference FOREIGN KEY (typereference) REFERENCES typereference(code)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
@@ -891,11 +921,29 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzonealea` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeareference. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
+| `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  occurence TEXT(15), 
+  description TEXT(255), 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeareference_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeareference_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
@@ -904,11 +952,30 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzonealea` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaecheance100ans. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
+| `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  occurence TEXT(15), 
+  description TEXT(255), 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
@@ -917,11 +984,38 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzoneprotegee` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zoneprotegee. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone protégée. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
+| `niveauprotection` | FLOAT | hauteur d'eau en mètres | Hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
+| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
+| `description` | TEXT(255) | Saisie libre | Description textuelle de la zone protégée. |
+| `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
+| `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
+| `idouvrageprotection_p` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s ( 
+  idzoneprotegee TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveauprotection FLOAT,
+  occurence TEXT(15), 
+  description TEXT(255), 
+  idouvrageprotection_s TEXT(20),
+  idouvrageprotection_l TEXT(20),
+  idouvrageprotection_p TEXT(20),
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
@@ -930,11 +1024,39 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzonedanger` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonedangerspecifique. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone de danger spécifique. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| `typesuralea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-denumeration-typesuralea) | Type de de zone de danger spécifique. |
+| `description` | TEXT(255) | Saisie libre | Description textuelle de la zone protégée. |
+| `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
+| `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
+| `idouvrageprotection_p` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s ( 
+  idzonedanger TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  typesuralea TEXT(2) NOT NULL,
+  description TEXT(255), 
+  idouvrageprotection_s TEXT(20),
+  idouvrageprotection_l TEXT(20),
+  idouvrageprotection_p TEXT(20),
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
+);
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
@@ -943,11 +1065,42 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` im
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idrefexterne` | TEXT(20) | **Clef primaire** | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
+| `refexterne` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-denumeration-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
+| `refexterneautre` | TEXT(50) | Saisie libre. La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
+| `typeouvrageprotection` | TEXT(255) |  Saisie libre. | Désignation du type d'ouvrage que représente cet objet. | 
+| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
-La définition de la table en SQL est la suivante :
+La définition de ces tables en SQL est la suivante :
 
 ``` SQL
+/* Table Multipolygon */
+CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  refexterne TEXT(2) NOT NULL,
+  refexterneautre TEXT(50),
+  typeouvrageprotection TEXT(255), 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+);
+/* Table Linestring */
+CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  refexterne TEXT(2) NOT NULL,
+  refexterneautre TEXT(50),
+  typeouvrageprotection TEXT(255), 
+  geom LINESTRING NOT NULL,
+  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+);
+/* Table Point */
+CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  refexterne TEXT(2) NOT NULL,
+  refexterneautre TEXT(50),
+  typeouvrageprotection TEXT(255), 
+  geom POINT NOT NULL,
+  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+);
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
