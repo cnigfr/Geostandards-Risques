@@ -832,6 +832,9 @@ Les paragraphes qui suivent précisent pour chacune de ces tables :
 - les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel
 - leur définition en SQL pour la livraison en GeoPackage.
 
+**Exigence** 
+Les tables du standard présentes dans la livraison GeoPackage doivent respecter les structures déclarées pour chacune d'elles dans les clauses suivantes.
+
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
