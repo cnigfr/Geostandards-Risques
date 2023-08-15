@@ -198,6 +198,8 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **WKT** Well-Known Text
 
+**URI** Uniform Resource Identifier
+
 **URL** Uniform Resource Locator
 
 ---
@@ -726,12 +728,14 @@ La présence de cette table dans un fichier GeoPackage est obligatoire.
 La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la strucutre du format GeoPackage qui liste les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
 
 
-
-
-
 ##### Table gpkg_metadata
 
+> *A préciser*
+
+
 ##### Table gpkg_metadata_reference
+
+> *A préciser*
 
 
 
@@ -761,6 +765,9 @@ A titre d'exemples :
 
 - la table perimetre du PPRN du Bassin versant de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
 - la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
+
+**Exigence** 
+Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
 
 
 ##### Dictionnaire des tables
@@ -811,12 +818,19 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
 | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
 
+**Exigence** 
+Les tables du standard présentes dans la livraison GeoPackage doivent être déclarées dans la table `gpkg_contents` avec le type de table indiqué dans le tableau précédent.
+
+**Exigence** 
+Les tables du standard présentes dans la livraison GeoPackage ayant pour type `features` doivent être déclarées dans la table `gpkg_geometry_columns` avec le type de géométrie indiqué dans le tableau précédent.
+
 
 Les paragraphes qui suivent précisent pour chacune de ces tables :
 - les noms des colonnes
 - le type des colonnes selon la [nomenclature GeoPackage](https://www.geopackage.org/spec131/#table_column_data_types), 
 - les éventuelles restrictions sur les valeurs possibles pour chaque colonne
-- les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel.
+- les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel
+- leur définition en SQL pour la livraison en GeoPackage.
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
@@ -1109,11 +1123,42 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la 
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idrefexterne` | TEXT(20) | **Clef primaire** | Identifiant de l'objet origine du risque dans le référentiel externe d'où il est extrait. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à l'objet origine du risque. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `refexterne` | TEXT(50) | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
+| `nom` | TEXT(255) |  Saisie libre. | Nom de l'objet origine du risque. | 
+| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
 
-La définition de la table en SQL est la suivante :
+La définition de ces tables en SQL est la suivante :
 
 ``` SQL
+/* Table Multipolygon */
+CREATE TABLE typeppr_codegaspar_originerisque_s ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL,
+  refexterne TEXT(50) NOT NULL,
+  nom TEXT(255) NOT NULL, 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_originerisque_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
+/* Table Linestring */
+CREATE TABLE typeppr_codegaspar_originerisque_l ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL,
+  refexterne TEXT(50) NOT NULL,
+  nom TEXT(255) NOT NULL, 
+  geom LINESTRING NOT NULL,
+  CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
+/* Table Point */
+CREATE TABLE typeppr_codegaspar_originerisque_p ( 
+  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL,
+  refexterne TEXT(50) NOT NULL,
+  nom TEXT(255) NOT NULL, 
+  geom POINT NOT NULL,
+  CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
@@ -1122,11 +1167,50 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idenjeu` | TEXT(8) | **Clef primaire** | Identifiant de l'objet enjeu. |
+| `idrefexterne` | TEXT(20) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe) | Identifiant de l'objet d'enjeu dans le référentiel externe d'où il est extrait. |
+| `refexterne` | TEXT(50) | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la collecte de cet objet enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `nomenjeu` | TEXT(255) | Saisie libre. | Nom de l'objet d'enjeu. |
+| `dateenjeu` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
+| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+/* Table Multipolygon */
+CREATE TABLE typeppr_codegaspar_enjeu_s ( 
+  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(20), 
+  refexterne TEXT(50) NOT NULL,
+  codeprocedure TEXT(16) NOT NULL,
+  nomenjeu TEXT(255) NOT NULL, 
+  dateenjeu DATE NOT NULL, 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_enjeu_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
+/* Table Linestring */
+CREATE TABLE typeppr_codegaspar_enjeu_l ( 
+  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(20), 
+  refexterne TEXT(50) NOT NULL,
+  codeprocedure TEXT(16) NOT NULL,
+  nomenjeu TEXT(255) NOT NULL, 
+  dateenjeu DATE NOT NULL, 
+  geom LINESTRING NOT NULL,
+  CONSTRAINT fk_enjeu_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
+/* Table Point */
+CREATE TABLE typeppr_codegaspar_enjeu_p ( 
+  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(20), 
+  refexterne TEXT(50) NOT NULL,
+  codeprocedure TEXT(16) NOT NULL,
+  nomenjeu TEXT(255) NOT NULL, 
+  dateenjeu DATE NOT NULL, 
+  geom POINT NOT NULL,
+  CONSTRAINT fk_enjeu_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
@@ -1135,11 +1219,24 @@ La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` implémente le type de donné
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_s|l|p](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeui classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_s|l|p](#table-typeppr_codegasparcomplet_enjeu_slp) |
+| `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
+| `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_typeenjeu ( 
+  idenjeu_s TEXT(8), 
+  idenjeu_l TEXT(8), 
+  idenjeu_p TEXT(8), 
+  codeenjeu TEXT(50) NOT NULL, 
+  nomenclatureenjeu TEXT(255) NOT NULL,
+  CONSTRAINT fk_typeenjeu_idenjeu_s FOREIGN KEY (idenjeu_s) REFERENCES typeppr_codegaspar_enjeu_s(idenjeu),
+  CONSTRAINT fk_typeenjeu_idenjeu_l FOREIGN KEY (idenjeu_l) REFERENCES typeppr_codegaspar_enjeu_l(idenjeu),
+  CONSTRAINT fk_typeenjeu_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
+  CONSTRAINT pk_typeenjeu PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,codeenjeu,nomenclatureenjeu)
+);
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
@@ -1148,11 +1245,26 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_s|l|p](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeui classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_s|l|p](#table-typeppr_codegasparcomplet_enjeu_slp) |
+| `nom` | TEXT(50) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
+| `description` | TEXT(255) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
+| `valeur` | TEXT(255) | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+CREATE TABLE typeppr_codegaspar_typevulnerabilite ( 
+  idenjeu_s TEXT(8), 
+  idenjeu_l TEXT(8), 
+  idenjeu_p TEXT(8), 
+  nom TEXT(50) NOT NULL, 
+  description TEXT(255), 
+  valeur TEXT(255) NOT NULL,
+  CONSTRAINT fk_typevulnerabilite_idenjeu_s FOREIGN KEY (idenjeu_s) REFERENCES typeppr_codegaspar_enjeu_s(idenjeu),
+  CONSTRAINT fk_typevulnerabilite_idenjeu_l FOREIGN KEY (idenjeu_l) REFERENCES typeppr_codegaspar_enjeu_l(idenjeu),
+  CONSTRAINT fk_typevulnerabilite_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
+  CONSTRAINT pk_typevulnerabilite PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,nom,valeur)
+);
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
@@ -1161,11 +1273,53 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzonereglementaire` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire urba. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du réglement qui s'applique.|
+| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. |
+| `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du réglement en matière d'urbanisme s'appliquant sur la zone. |
+| `obligationtravaux` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors l'obligation ou non de travaux est inconnue. | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. |
+| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+/* Table Multipolygon */
+CREATE TABLE typeppr_codegaspar_zonereglementaireurba_s ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  obligationtravaux BOOLEAN, 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonereglementaireurba_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementaireurba_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
+);
+/* Table Linestring */
+CREATE TABLE typeppr_codegaspar_zonereglementaireurba_l ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  obligationtravaux BOOLEAN, 
+  geom LINESTRING NOT NULL,
+  CONSTRAINT fk_zonereglementaireurba_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementaireurba_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
+);
+/* Table Point */
+CREATE TABLE typeppr_codegaspar_zonereglementaireurba_p ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  obligationtravaux BOOLEAN, 
+  geom POINT NOT NULL,
+  CONSTRAINT fk_zonereglementaireurba_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementaireurba_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
+);
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
@@ -1174,11 +1328,49 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-|  |  |  | cf. définition du modèle conceptuel |
+| `idzonereglementaire` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire foncier. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du réglement qui s'applique.|
+| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. |
+| `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-denumeration-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
+| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
+/* Table Multipolygon */
+CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_s ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonereglementairefoncier_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementairefoncier_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
+);
+/* Table Linestring */
+CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_l ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  geom LINESTRING NOT NULL,
+  CONSTRAINT fk_zonereglementairefoncier_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementairefoncier_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
+);
+/* Table Point */
+CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_p ( 
+  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  codezonereglement TEXT(10) NOT NULL, 
+  libellezonereglement TEXT(255) NOT NULL, 
+  typereglement TEXT(2) NOT NULL,
+  geom POINT NOT NULL,
+  CONSTRAINT fk_zonereglementairefoncier_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonereglementairefoncier_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
+);
 ```
 
 
