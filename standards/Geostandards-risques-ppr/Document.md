@@ -525,14 +525,14 @@ Le tableau suivant liste les différents types de réglementations foncières po
 
 #  Systèmes de référence
 
-Les définitions du [modèle commun](../Geostandards-risques-commun/Document.md#systèmes-de-référence) s'appliquent aux PPR avec les restrictions énoncées ci-après.
+Les clauses du [modèle commun](../Geostandards-risques-commun/Document.md#systèmes-de-référence) s'appliquent aux PPR avec les restrictions et précisions énoncées ci-après.
 
 
 ## Systèmes de référence spatiaux
 
 Le tableau suivant présente la restriction des systèmes de référence légaux à utiliser dans le cadre des PPR dans la mesure où les données décrites dans les PPR ne comprennent pas de composant verticale et la précision planimétrique des PPR ne nécessite pas sur le territoire métropolitain l'utilisation des projections coniques conformes 9 zones.
 
-Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection dans le registre [EPSG](https://epsg.org/home.html).
+Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection correspondant dans le [registre EPSG](https://epsg.org/home.html).
 
 
 | Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Code EPSG |
@@ -747,7 +747,7 @@ La présence de cette table dans un fichier GeoPackage est obligatoire.
 La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la strucutre du format GeoPackage qui contient les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
 
 
-Les instructions SQL suivantes permettent d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
+L'instructions SQL suivante permet d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
 
 ``` SQL
 INSERT INTO gpkg_spatial_ref_sys VALUES 
