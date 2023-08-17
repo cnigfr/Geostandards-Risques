@@ -886,7 +886,26 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 ## Systèmes de référence spatiaux
 
-Le [cadre réglementaire des systèmes de référence de coordonnées] détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. A savoir :
+Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-réglementaire-pour-les-systèmes-de-référence-de-coordonnées) détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. A savoir :
+
+
+| Zone géographique | Système géodésique | Système de référence terrestre associé | Projection | Système altimétrique |
+|-|-|-|-|
+| France métropolitaine (hors Corse) | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (LAMB93) | NGF - IGN 1969 (IGN69) |
+| Corse | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (LAMB93) | NGF - IGN 1978 (IGN78C) |
+| Corse - Conique Conforme Zone 1 | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 1 (CC42) | NGF - IGN 1978 (IGN78C) |
+| France métropolitaine Conique Conforme Zone 2  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 2 (CC43) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 3  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 3 (CC44) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 4  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 4 (CC45) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 5  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 5 (CC46) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 6  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 6 (CC47) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 7  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 7 (CC48) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 8  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 8 (CC49) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 9  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 9 (CC50) | NGF - IGN 1969 (IGN69) |
+| Guadeloupe | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (UTM20) | IGN 1988 (GUAD88) |
+| Martinique | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (UTM20) | IGN 1987 (MART87) |
+| Saint-Martin | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (UTM20) | IGN 1988 SM (GUAD88SM) |
+| Saint-Barthélémy | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (UTM20) | IGN 1988 SB (GUAD88SB) |
 
 
 
