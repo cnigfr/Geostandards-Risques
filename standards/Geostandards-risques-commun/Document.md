@@ -890,7 +890,7 @@ Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-r�
 
 
 | Zone géographique | Système géodésique | Système de référence terrestre associé | Projection | Système altimétrique |
-|-|-|-|-|
+|-|-|-|-|-|
 | France métropolitaine (hors Corse) | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (LAMB93) | NGF - IGN 1969 (IGN69) |
 | Corse | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (LAMB93) | NGF - IGN 1978 (IGN78C) |
 | Corse - Conique Conforme Zone 1 | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 1 (CC42) | NGF - IGN 1978 (IGN78C) |
