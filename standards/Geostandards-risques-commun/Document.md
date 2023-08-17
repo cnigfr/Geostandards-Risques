@@ -3,13 +3,13 @@
 | ![Logo CNIG](./ressources/logo-cnig.png)| ![Logo DGPR](./ressources/ministere-de-la-transition-ecologique-et-solidaire_logo.png) |
 
 
-# Conseil national de l'information Géolocalisée
+ Conseil national de l'information Géolocalisée
 
 
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
-# Géostandards Risques - Modèle Commun
+ Géostandards Risques - Modèle Commun
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -21,7 +21,7 @@ Groupe de travail refonte des Géostandards Risques
 
 ---
 
-## 1. Fiche analytique
+#  Fiche analytique
 
 > *Tableau de présentation du document à compléter...*
 
@@ -46,21 +46,21 @@ Groupe de travail refonte des Géostandards Risques
 
 ---
 
-## 2. Sommaire
+#  Sommaire
 
 > *A générer*
 
 
-## 3. Préface
+#  Préface
 
 
-### 3.1. Historique du document
+##  Historique du document
 
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | *xx* | Première rédaction en cours |
 
-### 3.2. Participation à l'écriture
+##  Participation à l'écriture
 
 Ce standard est le fruit des travaux du groupe de travail CNIG sur la refonte des Géostandards risques. Ce dernier rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR). 
 
@@ -81,26 +81,26 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 > *liste à compléter et actualiser*
 
 
-## 4. Présentation du document
+#  Présentation du document
 
 
-### 4.1. Objectif et raison d'être du standard
+##  Objectif et raison d'être du standard
 
 > *Résumé et objectif du document.*
 
 
 
-### 4.2. A qui s'adresse ce document ?
+##  A qui s'adresse ce document ?
 
 > *à remplir* 
 
 
-### 4.3. Comment lire le document
+##  Comment lire le document
 
 > *Si besoin, présentation de la structure du document*
 
 
-### 4.4. Références à d'autres normes
+##  Références à d'autres normes
 
 Le document ci-présent s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l’édition citée compte. Pour les autres, la dernière édition de la norme s’applique.
 
@@ -116,9 +116,9 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 
 
-### 4.5. Compréhension du document
+##  Compréhension du document
 
-#### 4.5.1. Termes spécifiques et définitions
+###  Termes spécifiques et définitions
 
 | Terme | Définition|
 |-|-|
@@ -131,7 +131,7 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 
 
-#### 4.5.2. Abréviations
+###  Abréviations
 
 
 **BRIL** Bureau des risques d'inondation et littoraux
@@ -167,13 +167,13 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 ---
 
-### 4.6. Cadre réglementaire des Géostandards
+##  Cadre réglementaire des Géostandards
 
-#### 4.6.1. Cadre réglementaire des Plans de Prévention des Risques
+###  Cadre réglementaire des Plans de Prévention des Risques
 
 Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le [profil applicatif PPR](ref. à fournir).
 
-#### 4.6.2. Cadre réglementaire des Territoires à Risque Important d'Inondation
+###  Cadre réglementaire des Territoires à Risque Important d'Inondation
 
 > *à reporter dans le profil applicatif dédié*
 
@@ -183,12 +183,12 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 * Les [articles R566-5 à R566-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) pour la partie réglementaire ;
 
 
-#### 4.6.3. Cadre réglementaire des Porter à Connaissance
+###  Cadre réglementaire des Porter à Connaissance
 
 > *à écrire dans le profil applicatif dédié*
 
 
-## 5. Concepts généraux
+#  Concepts généraux
 
 > *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
 
@@ -207,10 +207,10 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 * Directive Inondation, version 2.1 – juillet 2019
 
 
-### 5.1. Scope et périmètre d'application
+##  Scope et périmètre d'application
 
 
-#### Périmètre d'application
+### Périmètre d'application
 
 | **Nom du périmètre d'application** | |
 |-|-|
@@ -225,7 +225,7 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 
 
-### 5.2. Les acteurs et rôles concernés 
+##  Les acteurs et rôles concernés 
 
 > *à compléter: Par leurs missions, les différents intervenants (ou utilisateurs) liés au <thème> peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.*
 
@@ -238,11 +238,11 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 | *<Nom du rôle 1>* | *Contient une description du rôle* |
 
 
-### 5.3. Cas d'utilisation
+##  Cas d'utilisation
 
 > *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
 
-#### 5.3.1. Cas d’utilisation « Nom du cas 1 »
+###  Cas d’utilisation « Nom du cas 1 »
 
 | Nom du cas 1 | |
 |-|-|
@@ -257,12 +257,12 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 
 
 
-## 6. Contenu et structure de la donnée
+#  Contenu et structure de la donnée
 
 > *La section relative au contenu et à la structure des données décrit l’intégration de <objet du standard>. conception des schémas d'application (ISO 19109) qui utilise un catalogue d'entités (ISO 19110) pour fournir une description lisible par un humain des types et des caractéristiques des entités, et un dictionnaire de concepts d'entités (ISO 19126) pour décrire et publier les concepts d'entités.*
 
 
-### 6.1. Modèle conceptuel de données
+##  Modèle conceptuel de données
 
 > *Description des thématiques, des classes,attributs, ...*
 > *Cette partie constitue le cœur du standard de définition du modèle commun de donnée. Elle doit permettre de définir pour chacune des thématiques :*
@@ -281,7 +281,7 @@ Ce standard et les profils applicatifs dédiés se substituent et rendent obsol�
 > *Insérer un schéma global des thématiques ici*
 
 
-#### Thématique Procédures et périmètres
+### Thématique Procédures et périmètres
 
 La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'Etat dans l'application GASPAR du MTE.
 
@@ -304,7 +304,7 @@ Les ressources internets liées à une procédure donnée (par exemple la public
 
 
 
-#### Thématique Aléas
+### Thématique Aléas
 
 La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et leurs intensités.
 
@@ -332,7 +332,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 
 
-#### Thématique Origine du Risque
+### Thématique Origine du Risque
 
 La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de préventions.
 
@@ -343,7 +343,7 @@ Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui port
 ![Modele UML Zonage Réglementaire](./ressources/UML-Procedure-OrigineRisque.png)
 
 
-#### Thématique Enjeux
+### Thématique Enjeux
 
 La thématique "Enjeux" permet de décrire les personnes, biens, activités, éléments de patrimoine culturel ou environnemental, menacés par un aléa et susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise.
 
@@ -359,7 +359,7 @@ La définition de ces nomenclatures sera proposée dans les profils applicatifs 
 ![Modele UML Enjeux](./ressources/UML-Procedure-Enjeux.png)
 
 
-#### Thématique Zonage réglementaire
+### Thématique Zonage réglementaire
 
 La thématique "Zonage reglementaire" permet de définir les zones sur lesquelles un réglement spécifique peut s'appliquer du fait de la présence d'un risque. Il peut s'agir de zones exposées aux risques ou de zones qui n'y sont pas directement exposées mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
 
@@ -374,11 +374,11 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 
 
 
-### 6.2. Catalogue d'objets
+##  Catalogue d'objets
 
-#### Thématique Procédures et périmètres
+### Thématique Procédures et périmètres
 
-##### Classe d'objets *Procedure*
+#### Classe d'objets *Procedure*
 
 **Nom de la classe** : Procedure
 
@@ -397,7 +397,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | typeProcedure | Type de procédure selon la classification dans le système GASPAR | Enumeration [TypeProcedure](#enumeration-typeprocedure) | Celles de l'énumération | 1..1 |
 
 
-##### Associations de la classe procedure
+#### Associations de la classe procedure
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
@@ -406,7 +406,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 
 
 
-##### Classe d'objets *Perimetre*
+#### Classe d'objets *Perimetre*
 
 **Nom de la classe** : Perimetre
 
@@ -427,7 +427,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | dateEtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
 
-##### Classe d'objets *ReferenceInternet*
+#### Classe d'objets *ReferenceInternet*
 
 **Nom de la classe** : ReferenceInternet
 
@@ -448,7 +448,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
 
 
-##### Enumeration *TypeProcedure*
+#### Enumeration *TypeProcedure*
 
 Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites. Les correspondances avec les types de procédures gérés dans GASPAR sont précisées dans le [paragraphe dédié](#types-de-procédures-gaspar).
 
@@ -472,7 +472,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Porter à Connaissance | Ce type de procédure concerne le "Porter à Connaissance" (PAC) auprès des collectivités locales hors procédures TRI et PPR (couvertes par les précédentes) |
 
 
-##### Enumeration *Etats d'une procédure*
+#### Enumeration *Etats d'une procédure*
 
 Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
 
@@ -491,7 +491,7 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Abrogé | Le périmètren'est plus opposable sans effet rétroactif |
 
 
-##### Enumeration *TypeReference*
+#### Enumeration *TypeReference*
 
 Le tableau suivant liste les différents types de documents qui peuvent être référencés dans le cadre d'une procédure
 
@@ -505,9 +505,9 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | Autres | Tout autre document (Utilisation dans toutes les procédures) |
 
 
-#### Thématique Aléas
+### Thématique Aléas
 
-##### Classe d'objets *ZoneAlea*
+#### Classe d'objets *ZoneAlea*
 
 **Nom de la classe** : ZoneAlea
 
@@ -531,14 +531,14 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 
 
-##### Associations de la classe ZoneAlea
+#### Associations de la classe ZoneAlea
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
 
 
-##### Classe d'objets *ZoneProtegee*
+#### Classe d'objets *ZoneProtegee*
 
 **Nom de la classe** : ZoneProtegee
 
@@ -562,14 +562,14 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 
 
-##### Associations de la classe ZoneProtégée
+#### Associations de la classe ZoneProtégée
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
 
 
-##### Classe d'objets *ZoneDangerSpecifique*
+#### Classe d'objets *ZoneDangerSpecifique*
 
 **Nom de la classe** : ZoneDangerSpecifique
 
@@ -594,7 +594,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 
 
-##### Associations de la classe ZoneDangerSpecifique
+#### Associations de la classe ZoneDangerSpecifique
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
@@ -602,7 +602,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 
 
-##### Classe d'objets *OuvrageProtection*
+#### Classe d'objets *OuvrageProtection*
 
 **Nom de la classe** : OuvrageProtection
 
@@ -623,7 +623,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | CharacterString | Saisie libre, cependant on veillera à s'appuyer sur des nomenclatures existantes, notamment celles des référentiels dont sont issus les objets. | 0..1 |
 
 
-##### Classe d'objets *ElementCaracterisationAlea*
+#### Classe d'objets *ElementCaracterisationAlea*
 
 **Nom de la classe** : ElementCaracterisationAlea
 
@@ -641,7 +641,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | idZoneAlea | Identifiant de la zone d'aléa qui a été déterminée par cet élément | CharacterString | Valeur d'un identifiant porté par un objet de classe zoneAlea | 1..1 | 
 
 
-##### Enumeration *TypeAlea*
+#### Enumeration *TypeAlea*
 
 Le tableau suivant liste les différents types d'aléas applicables les zones d'Aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que Les libellés intègrent la hiérarchisation à trois niveau proposée par la nomenclature GASPAR.
 
@@ -689,7 +689,7 @@ Le tableau suivant liste les différents types d'aléas applicables les zones d'
 | Risque minier ; Echauffement des terrains de dépôts |
 
 
-##### Enumeration *TypeNiveauAlea*
+#### Enumeration *TypeNiveauAlea*
 
 Le tableau suivant liste les valeurs possibles pour caractériser l'intensité des aléas. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau varient en fonction de la zone et du type d'aléa et sont précisées dans des guides dédiés qui sont référencés dans les métadonnées associées au jeu de données.
 
@@ -705,7 +705,7 @@ Le tableau suivant liste les valeurs possibles pour caractériser l'intensité d
 | 07 | Très fort plus |
 
 
-##### Enumeration *TypeSurAlea*
+#### Enumeration *TypeSurAlea*
 
 Le tableau suivant liste les valeurs possibles permettant de caractériser les zones de danger spécifiques. 
 
@@ -715,7 +715,7 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les z
 | bande particulière | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) |
 
 
-##### Enumeration *TypeRefExterneOuvrage*
+#### Enumeration *TypeRefExterneOuvrage*
 
 Le tableau suivant liste les valeurs possibles permettant de désigner un référentiel dont est issu un ouvrage de protection. 
 
@@ -726,9 +726,9 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | autre | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 
-#### Thématique Origine du Risque
+### Thématique Origine du Risque
 
-##### Classe d'objets *OrigineRisque*
+#### Classe d'objets *OrigineRisque*
 
 **Nom de la classe** : OrigineRisque
 
@@ -747,16 +747,16 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
 
 
-##### Associations de la classe OrigineRisque
+#### Associations de la classe OrigineRisque
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **est engendré par** | Association | Relation sémantique permettant d'associer une procédure avec un objet origine du risque qui la motive. | [Procedure](#classe-dobjets-procedure) (1..1) |  [OrigineRisque](#classe-dobjets-originerisque) (0..\*) |
 
 
-#### Thématique Enjeux
+### Thématique Enjeux
 
-##### Classe d'objets *Enjeu*
+#### Classe d'objets *Enjeu*
 
 **Nom de la classe** : Enjeu
 
@@ -779,7 +779,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | Date | Valeur représentant une date : jour(optionnel), mois(optionnel), année. | 1..1 |
 
 
-##### Type de données *TypeEnjeu*
+#### Type de données *TypeEnjeu*
 
 **Nom du type de données** : TypeEnjeu
 
@@ -793,7 +793,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des élémetns exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
 
 
-##### Type de données *TypeVulnerabilite*
+#### Type de données *TypeVulnerabilite*
 
 **Nom du type de données** : TypeVulnerabilite
 
@@ -809,7 +809,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | valeur | valeur quantitative ou qualitative de la vulnérabilité | Tout type possible à ce stade | Saisie libre. Le type et les éventuelles restrictions de valeurs seront précisés en fonction des vulnérabilités que l'on souhaite représenter dans les profils applicatifs. | 
 
 
-##### Liste de codes ExposedElementCategoryValue
+#### Liste de codes ExposedElementCategoryValue
 
 **Nom de la liste de codes** : ExposedElementCategoryValue
 
@@ -842,9 +842,9 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 
 
-#### Thématique Zonage réglementaire
+### Thématique Zonage réglementaire
 
-##### Interface ZoneReglementaire
+#### Interface ZoneReglementaire
 
 **Nom de l'interface** : ZoneReglementaire
 
@@ -866,7 +866,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 | typeReglement | Type de réglement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
 
 
-##### Associations de l'interface ZoneReglementaire
+#### Associations de l'interface ZoneReglementaire
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
@@ -875,20 +875,20 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 ---
 
-## 7. Systèmes de référence
+#  Systèmes de référence
 
 > *Cette section vise à identifier les systèmes de référence spatiaux et temporels utilisés par les des données <de la thématique>.*
 
 
 
-## 8. Qualité
+#  Qualité
 
-### 8.1. Enjeux
+##  Enjeux
 
 > *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
 > *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
 
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée." 
+> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
 
 > *Ces mesures peuvent être :*
 > *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
@@ -898,7 +898,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 > *Les différentes mesures de la qualité des données de <la thématique> sont définies ci-dessous  et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit  (cf Mesures de qualité complémentaires).*
 
 
-### 8.2. Référence normative
+##  Référence normative
 
 > *La référence internationale est la norme ISO 19157 sur la qualité des données géographiques.*
  
@@ -907,53 +907,52 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 > *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
 > *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
 
-### 8.3. Mesures de la qualité
+##  Mesures de la qualité
 
-#### 8.3.1. Mesures obligatoires
-
-
-#### 8.3.2. Mesures Recommandées
+###  Mesures obligatoires
 
 
-#### 8.3.3. Mesures Conditionnelles 
+###  Mesures Recommandées
 
-## 9. Cycle de vie des données 
 
-### Les différents états d'une procédure de Plan de Prévention des risques
+###  Mesures Conditionnelles 
+
+#  Cycle de vie des données 
+
+## Les différents états d'une procédure de Plan de Prévention des risques
 
 > *à écrire : cf. les différents états d'une procédure GASPAR*
 > *Notions de procédures révisantes et révisées dans GASPAR*
 
-### 9.1. Saisie et production des données
+##  Saisie et production des données
 
 > *La section relative à la saisie et à la production de données vise à fournir des instructions, des exigences et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.*
 
 
 
-### 9.2. Maintenance
+##  Maintenance
 
 > *Cette section vise à fournir des instructions, des exigences, des descriptions, des principes et/ou des critères de gestion des données après la saisie. Cela inclut la fréquence des modifications, de la mise à jour et des ajouts dont le contenu fait l'objet.*
 > *Une maintenance peut donner une nouvelle version ou la mise à jour d’un jeu de donnée. Afin d’assurer une maintenance cohérente, un guide sur les mécanismes de mises à jour et des informations pertinentes d’encodages est disponible <ci-après/en annexe/sur ce lien>.*
 
 
-## 10. Règles de symbologie
+#  Règles de symbologie
 
 > *La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.*
 
 
-## 11. Livraison
+#  Livraison
 
-> *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
+La description des livraisons est faite dans les profils applicatifs.
 
+#  Métadonnées
 
-## 12. Métadonnées
-
-### 12.1. Généralités
+##  Généralités
 
 > *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
 
 
-#### 12.1.1. Références
+###  Références
 
 > *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
 > *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
@@ -962,7 +961,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 > *- Validateur européen*
 
 
-#### 12.1.2. Périmètre INSPIRE
+###  Périmètre INSPIRE
 
 > *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
 >* 	-  …*
@@ -973,53 +972,61 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 > *Elements de métadonnées relatifs aux series et dataset*
 
 
-### 12.2. Consignes de nommage du fichier de métadonnées 
+##  Consignes de nommage du fichier de métadonnées 
 
 
-### 12.3. Identification des données
+##  Identification des données
 
 
 ---
 
-## ANNEXE A - Correspondances INSPIRE
+# ANNEXE A - Correspondances INSPIRE
 
 > *Cette partie doit permettre de faire le lien entre le modèle de données et les modèles de données des thématiques INSPIRE en lien avec les standards risques, à savoir :*
  
 
-### Lien avec le thème 4 Usage des sols de l'annexe III
+## Lien avec le thème 4 Usage des sols de l'annexe III
 
 
 > *classes concernées et mapping à écrire* 
 
 
-### Lien avec le thème 8 Lieux de production et sites industriels de l'Annexe III 
+## Lien avec le thème 8 Lieux de production et sites industriels de l'Annexe III 
 
 > *classes concernées et mapping à écrire* 
 
 
-### Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III*
+## Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III*
 
 > *classes concernées et mapping à écrire* 
 
-### Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
+## Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
 
 > *classes concernées et mapping à écrire* 
 
 
 
-## ANNEXE B - Correspondances avec le modèle de données GASPAR
+# ANNEXE B - Correspondances avec le modèle de données GASPAR
 
-#### Nomenclature des identifiants dans GASPAR
+### Nomenclature des identifiants dans GASPAR
 
-> *Expliquer ici comment sont structurés les identifiants GASPAR*
+Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
+
+Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
+
+- numéro de département [ddd]
+- nom du service instructeur `PREF`, `DDT`, `DDTM` ou `DREAL`
+- année de prescription : [AAAA]
+- numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
+
+A tire d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
 
 
-
-#### Nomenclature des risques et de leurs codes dans GASPAR
+### Nomenclature des risques et de leurs codes dans GASPAR
 
 GASPAR propose une nomenclature des risques hiérarchisée sur trois niveaux croissants de spécialisation du risque, avec une codification correspondante preséntée dans le tableau suivant. 
 
-L'énumération [TypeAlea](#enumeration-typealea) présentée définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les aléas utilsés par le standard sont représentés en **gras** dans le tableau. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
+L'énumération [TypeAlea](#enumeration-typealea) définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
 
 Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" est : "Risque naturel ; Inondation ; Par ruissellement et coulée de boue" car il est hiérarchisé ainsi dans la nomenclature :
 
@@ -1030,60 +1037,51 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 
 | Code | Niveau | Libellé Risque
 | - | - | - |
-| 1 | 1 | Risque Naturel |
-| 11 | 2 | Inondation |
-| **112	| 3 | Par une crue à débordement lent de cours d'eau |
-| 113	| 3 | Par une crue torrentielle ou à montée rapide de cours d'eau |
-| 114	| 3 | Par ruissellement et coulée de boue |
-| 115	| 3 | Par lave torrentielle (torrent et talweg)  |
-| 116 | 3 | Par remontées de nappes naturelles |
-| 117	| 3 | Par submersion marine** |
-| 12 | 2 | Mouvement de terrain |
-| **121	| 3 | Affaissement et effondrements (cavités souterraines hors mines) |
-| 123	| 3 | Eboulement ou chutes de pierres et de blocs |
-| 124	| 3 | Glissement de terrain |
-| 125	| 3 | Avancée dunaire |
-| 126	| 3 | Recul du trait de côte et de falaises |
-| 127	| 3 | Tassement différentiels |
-| 13 | 2 | Séisme |
-| 14 | 2 | Avalanche |
-| 15 | 2 | Eruption volcanique |
-| 16 | 2 | Feu de forêt** |
-| 17 | 2 | Phénomène lié à l'atmosphère |
-| **171 |	3 | Cyclone / Ouragan |
-| 172	| 3 | Tempête et grains (vent) |
-| 174	| 3 | Foudre |
-| 175	| 3 | Grêle | 
-| 176	| 3 | Neige et pluies verglaçantes |
-| 18 | 2 | Radon** |
-| 2 | 1 | Risque technologique |
-| 21	| 2 | Risque Industriel |
-| **211	| 3 | Effet thermique |
-| 212	| 3 | Effet de surpression | 
-| 213	| 3 | Effet toxique  |
-| 214	| 3 | Effet de projection |
-| 22	| 2 | Nucléaire |
-| 23	| 2 | Rupture de barrage |
-| 24	| 2 | Transport de marchandises dangereuses |
-| 25	| 2 | Engins de guerre** |
-| 3 | 1 | Risque minier |
-| 31 | 2 | Affaissement minier |
-| **311	| 3 | Effondrements généralisés | 
-| 312	| 3 | Effondrements localisés | 
-| 313	| 3 | Affaissements progressifs | 
-| 314	| 3 | Tassements | 
-| 315	| 3 | Glissements ou mouvements de pente | 
-| 316	| 3 | Coulées | 
-| 317	| 3 | Ecroulements rocheux** | 
-| 32 | 2 | Inondations de terrains miniers |
-| **321	| 3 | Pollution des eaux souterraines et de surface |
-| 322	| 3 | Pollution des sédiments et des sols |
-| 33 | 2 | Emissions en surface de gaz de mine |
-| 34 | 2 | Echauffement des terrains de dépôts** |
+| 112 | 3 |  Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d'eau |
+| 113 | 3 |  Risque Naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau |
+| 114 | 3 |  Risque Naturel ; Inondation ; Par ruissellement et coulée de boue |
+| 115 | 3 |  Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg)  |
+| 116 | 3 |  Risque Naturel ; Inondation ; Par remontées de nappes naturelles |
+| 117 | 3 |  Risque Naturel ; Inondation ; Par submersion marine |
+| 121 | 3 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
+| 123 | 3 | Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
+| 124 | 3 | Risque Naturel ; Mouvement de terrain ; Glissement de terrain |
+| 125 | 3 | Risque Naturel ; Mouvement de terrain ; Avancée dunaire |
+| 126 | 3 | Risque Naturel ; Mouvement de terrain ; Recul du trait de côte et de falaises |
+| 127 | 3 | Risque Naturel ; Mouvement de terrain ; Tassement différentiels |
+| 13 | 2 |  Risque Naturel ; Séisme |
+| 14 | 2 |  Risque Naturel ; Avalanche |
+| 15 | 2 |  Risque Naturel ; Eruption volcanique |
+| 16 | 2 |  Risque Naturel ; Feu de forêt |
+| 171 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Cyclone / Ouragan |
+| 172 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Tempête et grains (vent) |
+| 174 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Foudre |
+| 175 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Grêle | 
+| 176 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Neige et pluies verglaçantes |
+| 18 | 2 | Risque Naturel ; Radon |
+| 211	| 3 | Risque technologique ; Risque Industriel ; Effet thermique |
+| 212	| 3 | Risque technologique ; Risque Industriel ; Effet de surpression | 
+| 213	| 3 | Risque technologique ; Risque Industriel ; Effet toxique  |
+| 214	| 3 | Risque technologique ; Risque Industriel ; Effet de projection |
+| 22	| 2 | Risque technologique ; Nucléaire |
+| 23	| 2 | Risque technologique ; Rupture de barrage |
+| 24	| 2 | Risque technologique ; Transport de marchandises dangereuses |
+| 25	| 2 | Risque technologique ; Engins de guerre |
+| 311	| 3 | Risque minier ; Affaissement minier ; Effondrements généralisés | 
+| 312	| 3 | Risque minier ; Affaissement minier ; Effondrements localisés | 
+| 313	| 3 | Risque minier ; Affaissement minier ; Affaissements progressifs | 
+| 314	| 3 | Risque minier ; Affaissement minier ; Tassements | 
+| 315	| 3 | Risque minier ; Affaissement minier ; Glissements ou mouvements de pente | 
+| 316	| 3 | Risque minier ; Affaissement minier ; Coulées | 
+| 317	| 3 | Risque minier ; Affaissement minier ; Ecroulements rocheux | 
+| 321	| 3 | Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface |
+| 322	| 3 | Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols |
+| 33 | 2 | Risque minier ; Emissions en surface de gaz de mine |
+| 34 | 2 | Risque minier ; Echauffement des terrains de dépôts |
 
 
 
-#### Types de procédures GASPAR
+### Types de procédures GASPAR
 
 Le tableau suivant liste les différents types de procédures gérées dans GASPAR et en lien avec les Géostandards risques
 
@@ -1109,7 +1107,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 
 
 
-#### Etats d'une procédure GASPAR
+### Etats d'une procédure GASPAR
 
 Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR.
 
