@@ -167,7 +167,12 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 ---
 
-##  Cadre réglementaire des Géostandards
+##  Cadre réglementaire des Géostandards risques
+
+### Cadre réglementaire pour les systèmes de référence de coordonnées
+
+Le cadre réglementaire pour les systèmes de référence de coordonnées est établi par le [décret du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203565) relatif au système national de référence de coordonnées et son [arrêté du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203601) portant application du décret n° 2000-1276 du 26 décembre 2000 modifié portant application de l'[article 89 de la loi n° 95-115 du 4 février 1995](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006340167) modifiée d'orientation pour l'aménagement et le développement durable du territoire relatif aux conditions d'exécution et de publication des levés de plans entrepris par les services publics.
+
 
 ###  Cadre réglementaire des Plans de Prévention des Risques
 
@@ -877,7 +882,37 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 #  Systèmes de référence
 
-> *Cette section vise à identifier les systèmes de référence spatiaux et temporels utilisés par les des données <de la thématique>.*
+## Systèmes de référence spatiaux
+
+Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-réglementaire-pour-les-systèmes-de-référence-de-coordonnées) détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. A savoir :
+
+
+| Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Système altimétrique (acronyme IGN) |
+|-|-|-|-|-|
+| France métropolitaine (hors Corse) | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (RGF93LAMB93) | NGF - IGN 1969 (IGN69) |
+| Corse | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (RGF93LAMB93) | NGF - IGN 1978 (IGN78C) |
+| Corse - Conique Conforme Zone 1 | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 1 (RGF93CC42) | NGF - IGN 1978 (IGN78C) |
+| France métropolitaine Conique Conforme Zone 2  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 2 (RGF93CC43) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 3  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 3 (RGF93CC44) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 4  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 4 (RGF93CC45) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 5  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 5 (RGF93CC46) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 6  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 6 (RGF93CC47) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 7  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 7 (RGF93CC48) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 8  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 8 (RGF93CC49) | NGF - IGN 1969 (IGN69) |
+| France métropolitaine Conique Conforme Zone 9  | Réseau géodésique français 1993 (RGF93) | ETRS89 | Conique conforme zone 9 (RGF93CC50) | NGF - IGN 1969 (IGN69) |
+| Guadeloupe | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | IGN 1988 (GUAD88) |
+| Saint-Martin | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | IGN 1988 SM (GUAD88SM) |
+| Saint-Barthélemy | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | IGN 1988 SB (GUAD88SB) |
+| Martinique | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | IGN 1987 (MART87) |
+| Guyane | Réseau géodésique français de Guyane 1995 (RGFG95) | ITRS | Universal transverse Mercator fuseau 22 nord (RGFG95UTM22) | NGG 1977 (GUYA77) |
+| La Réunion | Réseau géodésique de La Réunion 1992 (RGR92) | ITRS | Universal transverse Mercator fuseau 40 sud (RGR92UTM40S) | IGN 1989 (REUN89) |
+| Mayotte | Réseau géodésique de Mayotte 2004 (RGM04) | ITRS | Universal transverse Mercator fuseau 38 sud (RGM04UTM38S) | IGN 1950 / SHOM 1953 (MAYO53) |
+| Saint-Pierre-et-Miquelon | Réseau géodésique de St-Pierre-et-Miquelon 2006 (RGSPM06) | ITRS | Universal transverse Mercator fuseau 21 nord (RGSPM06U21) | Danger 1950 (STPM50) |
+
+
+## Système de référence temporel
+
+Le système de référence temporel est le calendrier grégorien. Les valeurs de temps sont référencées par rapport au temps local exprimé dans le système de temps universel UTC.
 
 
 
