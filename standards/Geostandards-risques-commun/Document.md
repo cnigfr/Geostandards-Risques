@@ -167,7 +167,12 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 ---
 
-##  Cadre réglementaire des Géostandards
+##  Cadre réglementaire des Géostandards risques
+
+### Cadre réglementaire pour les systèmes de référence de coordonnées
+
+Le cadre réglementaire pour les systèmes de référence de coordonnées est établi par le [décret du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203565) relatif au système national de référence de coordonnées et son [arrêté du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203601) portant application du décret n° 2000-1276 du 26 décembre 2000 modifié portant application de l'[article 89 de la loi n° 95-115 du 4 février 1995](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006340167) modifiée d'orientation pour l'aménagement et le développement durable du territoire relatif aux conditions d'exécution et de publication des levés de plans entrepris par les services publics.
+
 
 ###  Cadre réglementaire des Plans de Prévention des Risques
 
@@ -878,6 +883,13 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 #  Systèmes de référence
 
 > *Cette section vise à identifier les systèmes de référence spatiaux et temporels utilisés par les des données <de la thématique>.*
+
+## Systèmes de référence spatiaux
+
+Le [cadre réglementaire des systèmes de référence de coordonnées] détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. A savoir :
+
+
+
 
 
 
