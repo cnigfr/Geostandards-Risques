@@ -1823,9 +1823,9 @@ Pour chaque élément de données il est indiqué :
 
 #### Intitulé de la ressource
 
-**Description** : L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. |
-**Obligation** : Saisie obligatoire |
-**XPath ISO 19115** : `identificationInfo[1]/*/citation/*/title` |
+- Description : L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. 
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/title`
 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
