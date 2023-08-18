@@ -1823,12 +1823,13 @@ Pour chaque élément de données il est indiqué :
 
 #### Intitulé de la ressource
 
+**Description** : L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. |
+**Obligation** : Saisie obligatoire |
+**XPath ISO 19115** : `identificationInfo[1]/*/citation/*/title` |
 
-| Champs | Valeur |
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Description | L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. |
-| Obligation | Saisie obligatoire |
-| XPath ISO 19115 | `identificationInfo[1]/*/citation/*/title` |
 | Métadonnés générales | Ensemble des plans de préventions des risques sur le territoire français |
 | Métadonnées d'un PPR | Plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
 | Métadonnées d'une thématique | *Thématique* du plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
