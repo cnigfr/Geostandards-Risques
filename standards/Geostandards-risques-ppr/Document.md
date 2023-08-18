@@ -1824,6 +1824,7 @@ Pour chaque élément de données il est indiqué :
 #### Intitulé de la ressource
 
 
+| Champs | Valeur |
 |-|-|
 | Description | L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. |
 | Obligation | Saisie obligatoire |
