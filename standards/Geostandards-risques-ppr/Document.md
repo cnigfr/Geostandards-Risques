@@ -113,6 +113,7 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
 | [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
+| [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
 
 
 
@@ -1787,13 +1788,12 @@ Ces consignes facilitent le catalogage des données et leur moissonnage par des 
 
 ###  Périmètre INSPIRE
 
-> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
+> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. 
+>
+> Les catégories thématiques sont :*
 >* 	-  …*
 > *Liste des thématiques INSPIRE : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory*
 
-
-
-> *Elements de métadonnées relatifs aux series et dataset*
 
 
 ## Consignes de nommage du fichier de métadonnées
@@ -1827,16 +1827,140 @@ Pour chaque élément de données il est indiqué :
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/citation/*/title`
 
-
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
 | Métadonnés générales | Ensemble des plans de préventions des risques sur le territoire français |
-| Métadonnées d'un PPR | Plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
+| Métadonnées d'un PPR | Plan de prévention des risques *naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
 | Métadonnées d'une thématique | *Thématique* du plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
+
+
+#### Résumé de la ressource
+
+- Description : Le résumé doit décrire la ressource de façon compréhensible avec une définition commune et une indication géographique
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/abstract`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Type de la ressource
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ».
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `hierarchyLevel`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Localisateur de la ressource
+
+- Description : Le localisateur est un lien vers un site permettant de décrire plus finement la ressource mais pouvant également permettre le téléchargement ou l’accès aux données ressources. Le localisateur est de préférence une URL (résolvable). Il peut y avoir plusieurs liens mais au moins un des liens doit être un accès public.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `transferOptions/*/onLine/*/linkage/URL`
+
+| Niveau de granularité | Valeur ou consigne de saisie |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Identificateur de ressource unique IRU
+
+- Description : L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service)
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/identifier/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Langue de la ressource
+
+- Description : Le champ est à remplir avec le code à trois lettres de la langue de la ressource.
+Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : fre
+Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée de [[ISO:639-2]](http://www.loc.gov/standards/iso639-2/php/code_list.php)
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/language`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Encodage
+
+- Description : Le champ est à remplir avec les valeurs suivantes :
+  - format d'échange (format de distribution)
+  - version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `distributionInfo/*/distributionFormat/*/name` et `distributionInfo/*/distributionFormat/*/version`
+`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Encodage des caractères
+
+- Description : Il s’agit de l’encodage des caractères utilisé dans le lot de données
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/characterSet`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `utf8` |
+| Métadonnées d'un PPR | `utf8` |
+| Métadonnées d'une thématique | `utf8` |
+
+
+#### Type de représentation géographique
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : vector (traduction de « vecteur »)
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/spatialRepresentationType`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `vector` |
+| Métadonnées d'un PPR | `vector` |
+| Métadonnées d'une thématique | `vector` |
 
 
 
 ### Eléments de métadonnées relatifs à la classification des données et services géographiques
+
+
+#### Catégorie thématique
+
+- Description : Le champ est à remplir avec la valeur suivante : theme (traduction de « ... ») (liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory  )
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/topicCategory`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
 
 
 
@@ -1844,32 +1968,312 @@ Pour chaque élément de données il est indiqué :
 ### Eléments de métadonnées relatifs aux mots-clés 
 
 
+#### Mots clés obligatoire : Thème INSPIRE
+
+- Description : Le champ est à remplir avec la désignation du thème :  thème
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Mots clés obligatoire : Données prioritaires ?
+
+- Description : Le champ est à remplir avec la désignation du thème :  thème
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Mots clés obligatoire : Données de couverture nationale/régionale ?
+
+- Description : Le champ est à remplir avec la désignation du thème :  thème
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Mots clés complémentaires
+
+- Description : Il est conseillé de fournir des mots-clés complémentaires. Ces mots-clés peuvent être  associés à des vocabulaires contrôlés définissant ces mots-clés.
+- Obligation : Saisie recommandée
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+
 ### Eléments de métadonnées relatifs à la Situation géographique 
+
+
+#### Rectangle de délimitation géographique
+
+- Description : Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/extent/*/geographicElement/*/westBoundLongitude`, `identificationInfo[1]/*/extent/*/geographicElement/*/eastBoundLongitude`, `identificationInfo[1]/*/extent/*/geographicElement/*/southBoundLatitude` et `identificationInfo[1]/*/extent/*/geographicElement/*/northBoundLatiTude`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+#### Référentiel de coordonnées
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec le système de coordonnées des données, avec utilisation du code EPSG ou du registre IGN-F.
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `referenceSystemInfo/*/referenceSystemIdentifier/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
 
 
 ### Eléments de métadonnées relatifs aux références temporelles
 
 
+#### Dates de référence
+
+- Description : Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données. Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
 ### Eléments de métadonnées relatifs à la généalogie et résolution spatiale
+
+#### Généalogie
+
+- Description : Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants :
+  - le référentiel source de la géométrie
+  - la version du standard de référence
+  - le numéro de version du lot et sa durée de vie.
+  - etc.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/lineage/*/statement` Note : L’élément scope>level doit être fixé à « dataset » dans le cas d’une série, « series » pour un ensemble de séries.
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Résolution spatiale
+
+- Description : Le champ est à remplir avec la valeur entière correspondant au dénominateur de l’échelle. Ce dénominateur est celui de l’échelle du plan de référence pour la production du document numérique ou la plus petite échelle (le plus grand dénominateur) des différents plans ayant servi à la production des documents numériques
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/spatialResolution/*/equivalentScale/*/denominator`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
 
 
 ### Eléments de métadonnées relatifs aux mesures de qualité complémentaires
 
+Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)), faire apparaître les champs suivants :
+
+
+#### Identifiant de la mesure
+
+- Description : On indique l’URI de la mesure dans le Registre des mesures liées à la Qualité de Données Géographiques
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/measureIdentification/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Résultat
+
+- Description : Il s'agit du résultat de la mesure qualité effectuée sur le jeu de données. Le champ est à remplir avec les sous éléments suivants :
+  - Type de valeur : Type du résultat (Integer pour un résultat numérique, Double pour un nombre flottant et String pour une chaîne de caractère)
+  - Unité de mesure : Unité de mesure du résultat (Unity pour un nombre sans unités, meter pour un résultat en mètres, percent pour un pourcentage)
+  - Valeur : Valeur du résultat (Par exemple pour un taux d’exhaustivité de 85,5%, la valeur sera 85,5
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/valueType`, `dataQualityInfo/*/report/*/result/*/valueUnit` et `dataQualityInfo/*/report/*/result/*/value`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
 
 ### Eléments de métadonnées relatifs à la conformité
 
+#### Spécification
+
+- Description : On indique la conformité au standard CNIG et au format. Le champ est à remplir avec les éléments suivants :
+  - titre : référence du standard sous la forme : CNIG thème
+  - date : date de validation du standard sous la forme AAAA-MM-JJ
+  - type de date : publication
+  - titre : référence du format sous la forme : format
+  - date : version du format sous la forme AAAA-MM-JJ
+  - type de date : publication
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/specification`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Degré
+
+- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
+- Obligation : Saisie optionnelle
+- XPath ISO 19115 : `xxxx`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
 
 
 ### Eléments de métadonnées relatifs aux contraintes en matière d’accès et d’utilisation
+
+#### Conditions applicables à l’accès et à l’utilisation
+
+- Description : Le champ est à remplir avec les mentions concernant :
+  - les contraintes légales
+  - les contraintes de sécurité
+  - les contraintes d'usage
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : 
+  - Condition d’accès et d’utilisation : `identificationInfo[1]/*/resourceConstraints/*/useLimitation`
+  - Restriction d’accès public : `identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’` et `identificationInfo[1]/*/resourceConstraints/*/otherConstraints`
+`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+
 
 
 
 ### Eléments de métadonnées relatifs à l'organisation responsable de la ressource
 
+#### Organisation responsable de la ressource
+
+- Description : Le champ est à remplir avec :
+  - l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.
+  - Le rôle de cet organisme : `owner` (traduction de « propriétaire »)
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/pointOfContact/*/organisationName`, `identificationInfo[1]/*/pointOfContact/*/contcwactInfo/*/address/*/electronicMailAddress` et `identificationInfo[1]/*/pointOfContact/*/role`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
 
 
 
 ### Eléments de métadonnées relatifs aux métadonnées concernant les métadonnées
+
+
+#### FileIdentifier
+
+- Description : Le champ fileIdentifier est utilisé par tous les catalogues de métadonnées (en particulier par le Géocatalogue) comme identifiant de la fiche de métadonnées et est donc requis pour que la métadonnée soit déposée in fine sur le Géocatalogue. Il doit être unique quelque-soit l’outil utilisé pour produire la fiche de métadonnées et peut prendre l’une des deux formes suivantes :
+  - identique aux [règles de nommage du fichier de métadonnées](#consignes-de-nommage-du-fichier-de-métadonnées) (sans l’extension .xml)
+  - UUID aléatoirement généré par certaines plates-formes
+
+- Obligation : Saisie recommandée
+- XPath ISO 19115 : `fileIdentifier`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Point de contact pour la métadonnée
+
+- Description : Le champ est à remplir avec le nom de l’organisation :
+  - l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource)
+  - une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative.A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.
+  - La nature de cette adresse : `pointOfcontact` (traduction de « Point de contact »)
+- Obligation : Saisie obligatoire ?
+- XPath ISO 19115 : `contact*/organisationName`, `contact/*/address/*/electronicMailAddress` et `contact/*/role`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Date des métadonnées
+
+- Description : Date à laquelle l’enregistrement des métadonnées a été fait ou révisé. Elle est exprimée sous la forme AAAA-MM-JJ
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dateStamp`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Langue des métadonnées
+
+- Description : Langue des métadonnées. Cet élément prend la valeur `fre` pour "français" 
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `language`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | xxxx |
+| Métadonnées d'un PPR | xxx |
+| Métadonnées d'une thématique | xxx |
 
 
 
