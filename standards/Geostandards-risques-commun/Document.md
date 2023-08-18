@@ -949,33 +949,9 @@ La description des livraisons est faite dans les profils applicatifs.
 
 ##  Généralités
 
-> *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
+Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE afin de mettre en évidence les informations essentielles contenues, et ainsi permettre la réutilisation des données avec l'aide d'outils de catalogage.
 
-
-###  Références
-
-> *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
-> *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
-> *- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016*
-> *- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE*
-> *- Validateur européen*
-
-
-###  Périmètre INSPIRE
-
-> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
->* 	-  …*
-> *Liste des thématiques INSPIRE : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory*
-
-
-
-> *Elements de métadonnées relatifs aux series et dataset*
-
-
-##  Consignes de nommage du fichier de métadonnées 
-
-
-##  Identification des données
+La spécification des éléments de métadonnées qui accompagnent les jeu de données est faite dans les profils applicatifs.
 
 
 ---

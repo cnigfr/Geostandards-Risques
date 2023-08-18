@@ -1773,16 +1773,16 @@ INSERT INTO typereglementfoncier VALUES
 
 ##  Généralités
 
-> *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
+Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE afin de mettre en évidence les informations essentielles contenues, et ainsi permettre la réutilisation des données avec l'aide d'outils de catalogage.
 
 
 ###  Références
 
-> *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
-> *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
-> *- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016*
-> *- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE*
-> *- Validateur européen*
+Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :
+- le [Guide de saisie des éléments de métadonnées de données » v2.0, 2019](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf)
+- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016
+- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE
+- Validateur européen
 
 
 ###  Périmètre INSPIRE
@@ -1796,7 +1796,80 @@ INSERT INTO typereglementfoncier VALUES
 > *Elements de métadonnées relatifs aux series et dataset*
 
 
+## Consignes de nommage du fichier de métadonnées
+
+A préciser...
+
+
 ##  Eléménents de métadonnés
+
+Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner les données de prévention des risques conformément à la directive INSPIRE et à plusieurs niveaux de granularité :
+
+- les métadonnées décrivant les Plans de Prévention des Risques en général : un seul fichier de métadonnées (niveau "series" - "ensemble de séries de données géographiques") ;
+- les métadonnées décrivant un PPR en particulier avec ses caractéristiques propres : un fichier de métadonnées par PPR (niveau "dataset" - "série de données") ;
+- le cas échéant, les métadonnées accompagnant une thématique particulière (par exemple le zonage réglementaire) d'un PPR donné : un fichier de métadonnées décrivant une table d'un PPR (niveau "dataset" - "série de données").
+
+Pour chaque élément de données il est indiqué :
+
+- son nom
+- sa description dans le guide de saisie des métadonnées INSPIRE
+- le caractère obligatoire ou non de sa saisie
+- la localisation XPath de l'élément dans la structure XML du fichier de métadonnées correspondant implémentant la norme ISO 19115.
+- les valeurs ou les consignes de saisie des valeurs pour l'élément à chacun des niveaux de granularité
+
+
+
+### Eléments de métadonnées relatifs à l'identification des données
+
+#### Intitulé de la ressource
+
+
+|-|-|
+| Description | L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. |
+| Obligation | Saisie obligatoire |
+| XPath ISO 19115 | `identificationInfo[1]/*/citation/*/title` |
+| Métadonnés générales | Ensemble des plans de préventions des risques sur le territoire français |
+| Métadonnées d'un PPR | Plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
+| Métadonnées d'une thématique | *Thématique* du plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
+
+
+
+### Eléments de métadonnées relatifs à la classification des données et services géographiques
+
+
+
+
+### Eléments de métadonnées relatifs aux mots-clés 
+
+
+### Eléments de métadonnées relatifs à la Situation géographique 
+
+
+### Eléments de métadonnées relatifs aux références temporelles
+
+
+### Eléments de métadonnées relatifs à la généalogie et résolution spatiale
+
+
+### Eléments de métadonnées relatifs aux mesures de qualité complémentaires
+
+
+### Eléments de métadonnées relatifs à la conformité
+
+
+
+### Eléments de métadonnées relatifs aux contraintes en matière d’accès et d’utilisation
+
+
+
+### Eléments de métadonnées relatifs à l'organisation responsable de la ressource
+
+
+
+
+### Eléments de métadonnées relatifs aux métadonnées concernant les métadonnées
+
+
 
 
 
