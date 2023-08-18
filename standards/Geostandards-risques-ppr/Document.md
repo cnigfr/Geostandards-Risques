@@ -1801,7 +1801,7 @@ Ces consignes facilitent le catalogage des données et leur moissonnage par des 
 A préciser...
 
 
-##  Eléménents de métadonnés
+##  Eléments de métadonnés
 
 Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner les données de prévention des risques conformément à la directive INSPIRE et à plusieurs niveaux de granularité :
 
@@ -1874,7 +1874,7 @@ Pour chaque élément de données il est indiqué :
 | Métadonnées d'une thématique | xxx |
 
 
-#### Identificateur de ressource unique IRU
+#### Identificateur de ressource unique 
 
 - Description : L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service)
 - Obligation : Saisie obligatoire
@@ -2021,7 +2021,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 
 
-### Eléments de métadonnées relatifs à la Situation géographique 
+### Eléments de métadonnées relatifs à la situation géographique 
 
 
 #### Rectangle de délimitation géographique
