@@ -1857,15 +1857,15 @@ Pour chaque élément de données il est indiqué :
 
 #### Type de la ressource
 
-- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ».
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ». Les métadonnées générales ("ensemble de de séries de données") sont à remplir avec la valeur `series`.
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `hierarchyLevel`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `series` |
+| Métadonnées d'un PPR | `dataset` |
+| Métadonnées d'une thématique | `dataset` |
 
 
 #### Localisateur de la ressource
@@ -1877,9 +1877,9 @@ Pour chaque élément de données il est indiqué :
 
 | Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Indiquer le lien vers la page de téléchargement ou les consignes d'accès sur Géorisques* |
+| Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concerné et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
+| Métadonnées d'une thématique | *Même consigne que le PPR et lien plus précis sis possibilité d'accéder à la donnée de la thématique.* |
 
 
 #### Identificateur de ressource unique 
@@ -1890,15 +1890,15 @@ Pour chaque élément de données il est indiqué :
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | "https://geostandards.gouv.fr/risques/ppr" |
+| Métadonnées d'un PPR | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*". Exemple : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001" |
+| Métadonnées d'une thématique | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*/*nomthematique*". Exemple (pour la table d'aléa référence 112) : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001/zonealeareference-112" |
 
 
 #### Langue de la ressource
 
 - Description : Le champ est à remplir avec le code à trois lettres de la langue de la ressource.
-Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : fre
+Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : `fre`
 Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée de [[ISO:639-2]](http://www.loc.gov/standards/iso639-2/php/code_list.php)
 
 - Obligation : Saisie obligatoire
@@ -1906,9 +1906,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `fre` |
+| Métadonnées d'un PPR | `fre` |
+| Métadonnées d'une thématique | `fre` |
 
 
 #### Encodage
@@ -1923,9 +1923,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Pour la livraison Géopackage* : "GeoPackage", versions : "1.1", "1.2", "1.2.1", "1.3", "1.3.1"  |
+| Métadonnées d'un PPR | *Pour la livraison Géopackage* : "GeoPackage", version : *la version utilisée*  |
+| Métadonnées d'une thématique | *Pour la livraison Géopackage* : "GeoPackage", version : *la version utilisée* |
 
 
 #### Encodage des caractères
@@ -1966,9 +1966,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `planningCadastre` (*Catégorie ISO correspondante des thématiques INSPIRE : "Zones de gestion, de restriction ou de réglementation et unités de déclaration" et "Usage des sols"*), `geoscientificInformation` (*Catégorie ISO correspondante de la thématique INSPIRE : "Zones à risque naturel"), `structure` (*Catégorie ISO correspondante de la thématique INSPIRE : "Lieux de production et sites industriels" pour les PPRT*)|
+| Métadonnées d'un PPR | `planningCadastre` et `geoscientificInformation`,  et `structure` (si PPRT)|
+| Métadonnées d'une thématique | `planningCadastre` et `geoscientificInformation`,  et `structure` (si PPRT) |
 
 
 
@@ -1978,41 +1978,15 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 #### Mots clés obligatoire : Thème INSPIRE
 
-- Description : Le champ est à remplir avec la désignation du thème :  thème
+- Description : Le champ est à remplir avec la désignation du thème INSPIRE dans le Thésaurus GEMET (recommandation nationale : il est recommandé de ne rattacher une ressource qu’à un seul thème INSPIRE)
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
-
-
-#### Mots clés obligatoire : Données prioritaires ?
-
-- Description : Le champ est à remplir avec la désignation du thème :  thème
-- Obligation : Saisie obligatoire
-- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
-
-| Niveau de granularité | Valeur ou consigne de saisie  |
-|-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
-
-
-#### Mots clés obligatoire : Données de couverture nationale/régionale ?
-
-- Description : Le champ est à remplir avec la désignation du thème :  thème
-- Obligation : Saisie obligatoire
-- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
-
-| Niveau de granularité | Valeur ou consigne de saisie  |
-|-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `Lieux de production et sites industriels` (PPRT), `Usage des sols`, `Zones à risque naturel` (PPRN), `Zones de gestion, de restriction ou de réglementation et unités de déclaration`  |
+| Métadonnées d'un PPR | *Pour les PPRN* : `Zones à risque naturel`, *Pour les PPRT* : `Lieux de production et sites industriels`, *Pour les PPRM* : `Zones de gestion, de restriction ou de réglementation et unités de déclaration` |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
 
 #### Mots clés complémentaires
@@ -2023,9 +1997,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
+| Métadonnées d'un PPR | *Cf. ligne précédente.*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 
