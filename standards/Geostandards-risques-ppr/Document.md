@@ -114,6 +114,7 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
 | [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
 | [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
+| [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 
 
 
@@ -1779,11 +1780,13 @@ Chaque jeu de données doit obligatoirement être accompagné de ses métadonné
 
 ###  Références
 
-Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :
-- le [Guide de saisie des éléments de métadonnées de données » v2.0, 2019](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf)
-- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016
-- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE
-- Validateur européen
+Les éléments de métadonnées et les consignes générales qui les accompagnent sont issus du [Guide de saisie des éléments de métadonnées de données » v2.0, 2019](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) qui établit les recommandations nationales en ce qui concerne les Métadonnées INSPIRE pour les séries et ensemble de séries.
+
+D'autre références sont aussi d'utilité pour l'élaboration et la validation des métadonnées :
+
+- le ["Guide Identificateurs de Ressource Uniques v1.0.1 de février 2016"](http://cnig.ign.fr/wp-content/uploads/2016/02/GuideIRU-corrig%C3%A9-v2.pdf)
+- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE ([INSPIRE_MTD:2013](http://cnig.ign.fr/wp-content/uploads/2015/01/MD_IR_and_ISO_20131029.pdf)
+- [Validateur européen](https://inspire.ec.europa.eu/validator/home/index.html)
 
 
 ###  Périmètre INSPIRE
@@ -1798,7 +1801,8 @@ Ces consignes facilitent le catalogage des données et leur moissonnage par des 
 
 ## Consignes de nommage du fichier de métadonnées
 
-A préciser...
+
+
 
 
 ##  Eléments de métadonnés
@@ -1815,7 +1819,7 @@ Pour chaque élément de données il est indiqué :
 - sa description dans le guide de saisie des métadonnées INSPIRE
 - le caractère obligatoire ou non de sa saisie
 - la localisation XPath de l'élément dans la structure XML du fichier de métadonnées correspondant implémentant la norme ISO 19115.
-- les valeurs ou les consignes de saisie des valeurs pour l'élément à chacun des niveaux de granularité
+- les "valeurs" ou les *consignes de saisie des valeurs* pour l'élément à chacun des niveaux de granularité
 
 
 
@@ -1827,11 +1831,11 @@ Pour chaque élément de données il est indiqué :
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/citation/*/title`
 
-| Niveau de granularité | Valeur ou consigne de saisie  |
+| Niveau de granularité | "Valeur" ou *consigne de saisie*  |
 |-|-|
-| Métadonnés générales | Ensemble des plans de préventions des risques sur le territoire français |
-| Métadonnées d'un PPR | Plan de prévention des risques *naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
-| Métadonnées d'une thématique | *Thématique* du plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR* |
+| Métadonnés générales | "Ensemble des plans de préventions des risques sur le territoire français" |
+| Métadonnées d'un PPR | "Plan de prévention des risques *naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR*" |
+| Métadonnées d'une thématique | "*Thématique* du plan de prévention des *risques naturels (ou technologiques ou miniers)* de *nom de la localisation géographique du PPR*" |
 
 
 #### Résumé de la ressource
@@ -1842,9 +1846,9 @@ Pour chaque élément de données il est indiqué :
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Reprise de la description utilisée pour le standard COVADIS :* "Les plans de prévention des risques (PPR) ont été institués par la loi du 2 février 1995 relative au renforcement de la protection de l'environnement. Ils constituent l'instrument essentiel de l'État en matière de prévention des risques. Leur objectif est le contrôle du développement dans les zones exposées à un risque majeur. Les PPR sont approuvés par les préfets et généralement réalisés par les directions départementales des territoires (DDT). Ces plans réglementent l'occupation du sol ou son usage par des interdictions de construire ou des prescriptions sur les bâtiments existants ou futurs (dispositions constructives, travaux de réduction de la vulnérabilité, restrictions d'usage ou de pratiques agricoles...). Ces plans peuvent être en cours d'élaboration (prescrit), appliqués par anticipation ou approuvés. Le dossier de PPR contient une note de présentation, un plan de zonage réglementaire et un règlement. Peuvent être joints d'autres documents graphiques utiles à la compréhension de la démarche (aléas, enjeux...). Chaque PPR est repéré par un polygone qui correspond à l'ensemble de communes concernées du périmètre de prescription lorsqu'il est à l'état prescrit ; et l'enveloppe des zones réglementées lorsqu'il est à l'état approuvé." |
+| Métadonnées d'un PPR | *Reprise du de la valeur du champ `libelleProcedure` de la classe `Procedure``* |
+| Métadonnées d'une thématique | "Table *nom de la table* du *Reprise du libelle utilisé pour la métadonnée du PPR*" |
 
 
 #### Type de la ressource
