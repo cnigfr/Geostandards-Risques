@@ -2014,9 +2014,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Emprise des territoires concernés* : *ouest* : "-63,66" ; *est* : "58,24", *sud* : "-24,72", *nord* : "51,56" |
+| Métadonnées d'un PPR | *Emprise globale du PPR concerné* |
+| Métadonnées d'une thématique | *Emprise des tables de la thématique du PPR concerné* |
 
 #### Référentiel de coordonnées
 
