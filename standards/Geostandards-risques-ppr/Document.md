@@ -660,7 +660,7 @@ Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
 La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table des types de procédures GASPAR](../Geostandards-risques-commun/Document.md#types-de-procédures-gaspar). La nomenclature des identifiants des procédures GASPAR est expliquée [ici](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)
 
-A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn_76ddtm20120001`
+A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn-i_76ddtm20120001`
 
 
 
@@ -803,8 +803,8 @@ La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table de
 
 A titre d'exemples :
 
-- la table perimetre du PPRN du Bassin versant de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
-- la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
+- la table perimetre du PPRN-I du Bassin versant de la Scie aura pour nom : `pprn-i_76ddtm20120001_perimetre_s`
+- la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn-i_76ddtm20120001_zonealeareference_117_s`
 
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
@@ -1837,10 +1837,6 @@ D'autre références sont aussi d'utilité pour l'élaboration et la validation 
 
 
 
-## Consignes de nommage du fichier de métadonnées
-
-
-
 
 
 ##  Eléments de métadonnés
@@ -1858,6 +1854,18 @@ Pour chaque élément de données il est indiqué :
 - le caractère obligatoire ou non de sa saisie
 - la localisation XPath de l'élément dans la structure XML du fichier de métadonnées correspondant implémentant la norme ISO 19115.
 - les "valeurs" ou les *consignes de saisie des valeurs* pour l'élément à chacun des niveaux de granularité
+
+
+### Consignes de nommage du fichier de métadonnées
+
+Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées : 
+
+| Niveau de granularité | Nom du fichier  | 
+|-|-|
+| Métadonnés générales | `MTD_geostandard-ppr.xml` |
+| Métadonnées d'un PPR | *Réutiliser le même formalisme que le nom de fichier de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". *Exemple pour la Métadonnée du PPRN-I du Bassin Versant de la Scie* : "MTD_pprn-i_76ddtm20120001.xml" |
+| Métadonnées d'une thématique  | *Réutiliser le même formalisme que le nom de table concernée de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". *Exemple pour le fichier de Métadonnées de la table zonealeareference_112 du PPRN-I du Bassin Versant de la Scie* : "MTD_pprn-i_76ddtm20120001_zonealeareference_112.xml" |
+
 
 
 
@@ -1915,7 +1923,7 @@ Pour chaque élément de données il est indiqué :
 
 | Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
-| Métadonnés générales | *Indiquer le lien vers la page de téléchargement ou les consignes d'accès sur Géorisques* |
+| Métadonnés générales | *Indiquer le lien vers la page de téléchargement des PPR ou les consignes d'accès aux PPR sur Géorisques* |
 | Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concerné et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
 | Métadonnées d'une thématique | *Même consigne que le PPR et lien plus précis sis possibilité d'accéder à la donnée de la thématique.* |
 
@@ -1930,7 +1938,7 @@ Pour chaque élément de données il est indiqué :
 |-|-|
 | Métadonnés générales | "https://geostandards.gouv.fr/risques/ppr" |
 | Métadonnées d'un PPR | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*". Exemple : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001" |
-| Métadonnées d'une thématique | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*/*nomthematique*". Exemple (pour la table d'aléa référence 112) : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001/zonealeareference-112" |
+| Métadonnées d'une thématique | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*/*nomthematique*". Exemple (pour la table d'aléa référence 112) : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001/zonealeareference_112" |
 
 
 #### Langue de la ressource
@@ -2043,7 +2051,6 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 ### Eléments de métadonnées relatifs à la situation géographique 
 
-
 #### Rectangle de délimitation géographique
 
 - Description : Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84
@@ -2064,9 +2071,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Indiquer la liste des codes EPSG des systèmes de coordonnées du paragraphe [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)* |
+| Métadonnées d'un PPR | *Indiquer le code EPSG du système de coordonnées du territoire PPR* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 
@@ -2080,11 +2087,11 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date`
 
-| Niveau de granularité | Valeur ou consigne de saisie  |
+| Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Indiquer la date de 'révision' du nouveau Standard PPR* (?) |
+| Métadonnées d'un PPR | *Indiquer la date de création ou révision des données du PPR* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 ### Eléments de métadonnées relatifs à la généalogie et résolution spatiale
@@ -2102,9 +2109,10 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'oeuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'oeuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.
+  |
+| Métadonnées d'un PPR | *Indiquer les étapes de constitution du jeu de données PPR, les traitements effectués, les éventuelles validations reçues, ainsi que les référentiels sources utilisés. Si le PPR a fait l'objet d'une conversion du format COVADIS vers ce nouveau Standard, reprendre les éléments de Généalogie de l'ancien PPR et rajouter la mention de la conversion de format et les éventuels traitements effectués depuis.* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
 
 #### Résolution spatiale
@@ -2115,9 +2123,9 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `25000` *(NB : valeur indiquée dans les métadonnées du standard COVADIS)* |
+| Métadonnées d'un PPR | *Cf. ligne précédente.* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 
@@ -2171,22 +2179,22 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | Faire référence à ce Standard et aux différentes versions autorisées du format GeoPackage pour la livraison en Geopackage |
+| Métadonnées d'un PPR | Faire référence à ce Standard et à la version du format GeoPackage utilisée pour la livraison en Geopackage |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 #### Degré
 
 - Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
 - Obligation : Saisie optionnelle
-- XPath ISO 19115 : `xxxx`
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/pass`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Non applicable au niveau général* |
+| Métadonnées d'un PPR | *A indiquer en fonction des validations effectuées* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 ### Eléments de métadonnées relatifs aux contraintes en matière d’accès et d’utilisation
@@ -2205,13 +2213,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
-
-
-
-
+| Métadonnés générales | Contraintes légales : "",  Contraintes d'usage : "Licence ouverte v2.0", Contraintes d'accès : "Pas de restriction d'accès public" |
+| Métadonnées d'un PPR | *Cf. ligne précédente.*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 ### Eléments de métadonnées relatifs à l'organisation responsable de la ressource
@@ -2227,9 +2231,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Mentionner la Direction Générale de la Prévention des Risques* |
+| Métadonnées d'un PPR | *Mentionner la Direction Départementale des Territoires et la Mer responsable de la production du PPR*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
 
 
@@ -2249,8 +2253,8 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
+| Métadonnés générales | `MTD-Geostandard-PPR` |
+| Métadonnées d'un PPR | *Réutiliser le même formalisme que le nom de fichier de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". Exemple pour la Métadonnée du PPRN-I du Bassin Versant de la Scie : "MTD_pprn-i_76ddtm20120001" |
 | Métadonnées d'une thématique | xxx |
 
 
@@ -2265,9 +2269,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Mentionner la Direction Générale de la Prévention des Risques* |
+| Métadonnées d'un PPR | *Mentionner la Direction Départementale des Territoires et la Mer responsable de la production du PPR*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
 
 #### Date des métadonnées
@@ -2278,9 +2282,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | *Indiquer la date de 'révision' du fichier de métadonnées ou du nouveau Standard* (?) |
+| Métadonnées d'un PPR | *Indiquer la date de création ou de révision du fichier de métadonnées* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
 
 #### Langue des métadonnées
@@ -2291,9 +2295,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | `fre` |
+| Métadonnées d'un PPR | `fre` |
+| Métadonnées d'une thématique | `fre` |
 
 
 
