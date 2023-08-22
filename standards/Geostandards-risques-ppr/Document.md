@@ -115,7 +115,11 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
 | [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
+| [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) | Registre: mesuresQuaDoGeo - Mesures liées à la Qualité de Données Géographiques | CNIG | En continu |
 
+
+
+> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
 
 
 ##  Cadre réglementaire des Plans de Prévention des Risques
@@ -561,37 +565,152 @@ Il est important pour les futurs producteurs et utilisateurs d’évaluer la cap
 
 L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence. La communication de ces informations de qualité se fait par l'intermédiaire des métadonnées et de leurs éléments dédiés.
 
-Les objectifs de qualité visés pour les données des Plans de Prévention des Risques sont définis dans le tableau ci-dessous avec les caractistiques suivantes :
-
-- La désignation de l'objectif ou de l'élément de qualité ;
-- la recommandation ou l'exigence pour cet élément ;
-- la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, où l'élément de métadonnées qui porte directement cette information.
-
 
 ## Eléments de qualité
 
-### Eléments de qualité relatifs à la saisie des données
+Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risqueavec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, où l'élément de métadonnées qui porte directement cette information.
 
 
-| Element | Consigne | Elément de mesure ou de métadonnées | 
+### Dimensions géométriques 
+
+Les composantes géométriques des données des PPR sont levées en 2 dimension. 
+
+**Elément de mesure ou de métadonnées :**
+
+N.A. 
+
+
+### Référentiels de numérisation 
+
+Les PPR sont généralement élaborés à partir de plans topographiques ayant une échelle variant entre le 1:25000 et le 1:5000. Les référentiels de numérisation correspondant sont les suivants :  
+- SCAN 25, carte IGN au 1 :25 000
+- BD Ortho IGN
+- Plans cadastraux informatisés (selon les versions et dates d'élaboration des PPR) :
+  - BD Parcellaire ou Parcellaire Express IGN
+  - PCI Vecteur ou Image DGFiP
+- BD Topo IGN
+
+
+
+**Elément de mesure ou de métadonnées :**
+
+Le(s) référentiel(s) utilisé(s) doi(ven)t être mentionné(s) à l'aide de l'élément [Généalogie](#généalogie) des métadonnées qui est aussi décrit dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_genealogie).
+
+ 
+
+### Précision géométrique 
+
+Du fait de l'échelle de référence des PPR, la précision géométrique visée pour le posionnment planimétrique est de l'ordre du mètre.
+
+
+**Elément de mesure ou de métadonnées :**
+
+La précision géométrique d'un PPR peut être relatée dans les métadonnées à l'aide de la mesure d'[erreur horizontale relative](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_ErrHorizontaleRelative) décrite dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo).
+
+
+
+### Validité des géométries 
+
+Afin de pouvoir être exploitées correctement par les systèmes informatiques avals que ce soit pour diffusion ou en utilisation directe dans un SIG, les géométries des PPR doivent respecter les règles standard dérivées des normes OGC Simple Feature access part 1 (Common) et et Simple Features access part 2 (SQL Option). Ce sont les modèles de géométrie communément adoptés par les SIG, par PostGIS et par le format GeoPackage utilisé pour la livraison.
+
+Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient pas conformes avec la façon dont elles sont définies. Les sources d’invalidité concernent principalement les polygones, géométries complexes qui définissent des aires et requièrent une bonne structuration. Il s'agit de : 
+- Polygones non fermés ;
+- Des surfaces nulles (polygones plats)
+- Les noeuds trop proches ou dupliquéss
+- Les arcs pendants
+- Les contours qui s'intersectent (polygones en papillon)
+- Les contours d’un polygone ne doivent pas toucher les autres contours, sauf en un point unique.
+
+Note : Les méthodes de détection et de correction de ces invalidités sont relativement bien connues et ont été documentées dans des documents tels que le [Guide CPII : jeux de données SIG – vérification et correction des géométries](https://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/verification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf?arg=177834719&cle=830634f7888fc808498f0c41704664611af04021&file=pdf%252Fverification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf).  
+
+
+
+
+
+**Elément de mesure ou de métadonnées :**
+
+Les invalidités de géométries d'un PPR peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+- [Nombre de micro-surfaces non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbMicroSurfErr) ;
+- [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr)
+- [Nombre d’erreurs d’auto-intersections non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbBoucle)
+
+
+
+### Complexité des géométries 
+
+La complexité des géométries doit être maitrisée, notamment dans le domaine des risques naturels où certaines surfaces d'aléas générées à partir de données d'observation très résolues peuvent devenir inexploitables par les outils informatiques du fait de leurs volume.
+
+Pour contrôler cela, ce standard reprend les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
+
+Indicateur | Seuil d'avertissement | Seuil de rejet |
 |-|-|-|
-| Dimensions géométriques | Les composantes géométriques des données des PPR sont levées en 2 dimension. | N.A. |
-| Référentiels de numérisation | Les réfe | Elément [Généalogie](#généalogie) des métadonnées| 
-| Précision géométrique | | |
-| Validité des géométries | | |
-| Complexité des géométries | | |
-| Cohérence logique | | |
-| Exhaustivité | | |
-| Qualité temporelle | | |
+| Nombre de sommets | > 50 000 | > 200 000 |
+| Nombre de points par périmètre | > 1 point tous les 10m | > 10 points tous les 10m |
+| Nombre d'anneaux | > 500 | > 1 000 |
+| Nombre de parties | > 500 | > 1 000 |
+
+
+D'autres indicateurs sont définis ici éviter les micro géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
+
+Indicateur | Seuil de rejet |
+|-|-|
+| Périmètre d'un polygone | < 1m |
+| Longueur d'un linéaire | < 1m |
+| Aire d'un polygone | < 25m2 (carré d'1mm de côté sur un plan au 1:5000)  |
+
+
+**Exigence** 
+Une géométrie dont l'indicateur dépasse le seuil de rejet sera considérée comme non valide au regard de ce standard.
+
+
+**Elément de mesure ou de métadonnées :**
+
+Il n'existe pas de définition de ces mesures dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo). On pourra cependant les relater dans les métadonnées avec les intitulés suivants :
+
+- "Nombre de géométries dépassant le seuil d'avertissement"
+- "Nombre de géométries dépassant le seul de rejet"
+
+ou plus dans le détail des indicateurs (laissé à l'appréciation du producteur de données) :
+
+- "Nombre de géométries dont le nombre de sommets dépasse le seuil d'avertissement"
+- etc.
+
+
+### Cohérence topologique 
+
+Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet des PPR :
+
+- Pour le **zonage réglementaire**, le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) précise que le zonage réglementaire doit être subdivisé en zones correspondant à une réglementation homogène. De ce fait les objets des tables implémentant le zonage réglementaire (de nature foncière ou d'urbanisme) ne doivent pas se recouvrir entre eux.
+
+- Pour les **zones d'aléas relatives à un même risque**, il ne doit pas avoir de superposition entre les objets ayant une valeur de niveau d'aléa différente.
 
 
 
-### Complexité des géométries
+**Elément de mesure ou de métadonnées :**
+
+Les invalidités topologiques d'un PPR relatives ax règles énoncées ci-dessus peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+- [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
 
 
 
+### Conformité au standard 
 
-### Règles topologiques
+La conformité des données PPR au présent standard est un objectif. Il conviendra d'indiquer dans les métadonnées l'évaluation de cette conformité.
+
+
+**Elément de mesure ou de métadonnées :**
+
+Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non coformes ou si la conformité n'a pas été évaluée.
+
+Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
+
+- [Non conformité aux règles du schéma conceptuel](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nonConfConceptuelle) ;
+- [Taux de conformité au domaine de valeurs](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txConfDomVal) ;
+- [Taux de valeurs d’attributs correctes](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxValAttOk) ;
+- [Taux d’erreur de formatage](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxErrFormat) ;
+
 
 
 
@@ -603,7 +722,7 @@ Les objectifs de qualité visés pour les données des Plans de Prévention des 
 > *Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :*
 > *- les travaux du groupe de travail CNIG sur la qualité des données géographiques*
 > *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
-> *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
+> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
 
 
 ## Mesures de la qualité
@@ -2149,7 +2268,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | `25000` *(NB : valeur indiquée dans les métadonnées du standard COVADIS)* |
+| Métadonnés générales | `5000` *(NB :  le standard COVADIS indiquait 25000, mais le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) indique la valeur de 1:5000 comme échelle de référence* |
 | Métadonnées d'un PPR | *Cf. ligne précédente.* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
