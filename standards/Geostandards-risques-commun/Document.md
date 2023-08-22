@@ -1043,7 +1043,7 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 
 - niveau 1 : "Risque naturel"
 - niveau 2 : "Inondation"
-- niveau 3 : "Par ruissellement ert coulée de boue"
+- niveau 3 : "Par ruissellement et coulée de boue"
 
 
 | Code | Niveau | Libellé Risque

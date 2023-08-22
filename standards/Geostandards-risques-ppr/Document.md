@@ -553,19 +553,47 @@ Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des sys
 
 #  Qualité
 
+Cette partie contient les recommandations et exigences de qualité concernant le contenu des données des PPR et de leur structuration.
+
 ##  Enjeux
 
-> *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
-> *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
+Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).
 
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
+L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence. La communication de ces informations de qualité se fait par l'intermédiaire des métadonnées et de leurs éléments dédiés.
 
-> *Ces mesures peuvent être :*
-> *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
+Les objectifs de qualité visés pour les données des Plans de Prévention des Risques sont définis dans le tableau ci-dessous avec les caractistiques suivantes :
 
-> *- Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.*
+- La désignation de l'objectif ou de l'élément de qualité ;
+- la recommandation ou l'exigence pour cet élément ;
+- la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, où l'élément de métadonnées qui porte directement cette information.
 
-> *Les différentes mesures de la qualité des données de <la thématique> sont définies ci-dessous  et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit  (cf Mesures de qualité complémentaires).*
+
+## Eléments de qualité
+
+### Eléments de qualité relatifs à la saisie des données
+
+
+| Element | Consigne | Elément de mesure ou de métadonnées | 
+|-|-|-|
+| Dimensions géométriques | Les composantes géométriques des données des PPR sont levées en 2 dimension. | N.A. |
+| Référentiels de numérisation | Les réfe | Elément [Généalogie](#généalogie) des métadonnées| 
+| Précision géométrique | | |
+| Validité des géométries | | |
+| Complexité des géométries | | |
+| Cohérence logique | | |
+| Exhaustivité | | |
+| Qualité temporelle | | |
+
+
+
+### Complexité des géométries
+
+
+
+
+### Règles topologiques
+
+
 
 
 ##  Référence normative
@@ -577,12 +605,13 @@ Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des sys
 > *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
 > *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
 
-##  Mesures de la qualité
 
-###  Mesures obligatoires
+## Mesures de la qualité
+
+### Mesures obligatoires
 
 
-###  Mesures Recommandées
+### Mesures Recommandées
 
 
 ###  Mesures Conditionnelles 
@@ -613,8 +642,6 @@ Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des sys
 
 
 #  Livraison
-
-> *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
 
 Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie qui suit en précise les modalités.
 
@@ -2109,8 +2136,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'oeuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'oeuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.
-  |
+| Métadonnés générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'oeuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'oeuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.  |
 | Métadonnées d'un PPR | *Indiquer les étapes de constitution du jeu de données PPR, les traitements effectués, les éventuelles validations reçues, ainsi que les référentiels sources utilisés. Si le PPR a fait l'objet d'une conversion du format COVADIS vers ce nouveau Standard, reprendre les éléments de Généalogie de l'ancien PPR et rajouter la mention de la conversion de format et les éventuels traitements effectués depuis.* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
