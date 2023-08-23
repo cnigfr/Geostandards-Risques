@@ -566,18 +566,23 @@ Il est important pour les futurs producteurs et utilisateurs d’évaluer la cap
 L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence. La communication de ces informations de qualité se fait par l'intermédiaire des métadonnées et de leurs éléments dédiés.
 
 
+##  Référence normative
+
+La référence internationale est la norme [ISO 19157] sur la qualité des données géographiques.
+
+Les éléments relatés ci après s'appuient sur la déclaison de cette norme au niveau national issue des travaux du [groupe de travail CNIG sur la qualité des données géographiques](http://cnig.gouv.fr/ressource-quadogeo-a23521.html), notamment :
+- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) ;
+- la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques).
+
+
 ## Eléments de qualité
 
-Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risqueavec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, où l'élément de métadonnées qui porte directement cette information.
+Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risqueavec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, ou, dans certains cas, l'élément de métadonnées qui porte directement cette information.
 
 
 ### Dimensions géométriques 
 
 Les composantes géométriques des données des PPR sont levées en 2 dimension. 
-
-**Elément de mesure ou de métadonnées :**
-
-N.A. 
 
 
 ### Référentiels de numérisation 
@@ -715,25 +720,6 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 
 
-##  Référence normative
-
-> *La référence internationale est la norme ISO 19157 sur la qualité des données géographiques.*
- 
-> *Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :*
-> *- les travaux du groupe de travail CNIG sur la qualité des données géographiques*
-> *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
-> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
-
-
-## Mesures de la qualité
-
-### Mesures obligatoires
-
-
-### Mesures Recommandées
-
-
-###  Mesures Conditionnelles 
 
 
 #  Cycle de vie des données 
@@ -1975,14 +1961,14 @@ D'autre références sont aussi d'utilité pour l'élaboration et la validation 
 
 ###  Périmètre INSPIRE
 
-> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. 
->
-> Les catégories thématiques sont :*
->* 	-  …*
-> *Liste des thématiques INSPIRE : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory*
+Les données des Plans de Prévention des Risques sont référencées par INSPIRE. 
 
+Les catégories thématiques INSPIRE sont les suivantes (ANNEXE III) :
 
-
+- "Zones à risque naturel" pour les PPR Naturels ;
+- "Lieux de production et sites industriels" pour les PPR Technologiques ;
+- "Zones de gestion, de restriction ou de réglementation et unités de déclaration" ;
+- "Usage des sols" ;
 
 
 ##  Eléments de métadonnés
