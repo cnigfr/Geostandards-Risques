@@ -107,8 +107,12 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
+| [CNIG_RISQUES_COMMUN:2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
+| [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
+| [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) | Plans de prévention des risques naturels prévisibles (PPRN) - Guide général | Direction Générale de la Prévention des Risques (DGPR) - Cerema | 2016 |
+| [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques miniers | Cerema | 2019 |
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
@@ -117,9 +121,6 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 | [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) | Registre: mesuresQuaDoGeo - Mesures liées à la Qualité de Données Géographiques | CNIG | En continu |
 
-
-
-> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
 
 
 ##  Cadre réglementaire des Plans de Prévention des Risques
@@ -208,26 +209,19 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **URL** Uniform Resource Locator
 
----
+
 
 
 #  Concepts généraux
 
 > *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
 
-Ce standard propose une description de l'information géographique liée à une procédure de prévention des risques (*definir ou préciser "procédure de prévention des risques"*) et au cadre réglementaire dans lequel elle s'inscrit. Il définit un modèle conceptuel commun décrivant les concepts mis en oeuvre dans (cette liste pouvant être étendue par la suite):
+Ce standard propose une description de l'information géographique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent. Il s'appuie sur le modèle conceptuel commun défini par le Standard [CNIG_RISQUES_COMMUN] "Géostandards risques - Modèle commun" qu'il spécialise pour l'appliquer aux procédures des PPR.
 
-* les plans de prévention des risques, naturels prévisibles, technologiques et miniers
-* la description des Territoire à Risques d'Inondation (TRI) dans le cadre de l'application de la Directive Inondation
-* les procédures de porter à connaissance
-
-L'application de ce modèle dans le cadre de ces procédures est définie dans les profils applicatifs dédiés qui accompagnent ce standard (*références à fournir*).
-
-Ce standard et les profils applicatifs dédiés se substituent et rendent obsolètes les dernières version des standards COVADIS suivants :
+Ce standard se substitue et rend obsolètes les dernières versions des standards COVADIS suivants :
 
 * Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
 * Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
-* Directive Inondation, version 2.1 – juillet 2019
 
 
 ##  Scope et périmètre d'application
@@ -314,15 +308,14 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 ### Thématique Enjeux
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
-
 Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analyse des enjeux est réalisée afin de pouvoir établir le zonage réglementaire. A cette fin, la collecte des enjeux est réalisée au moment de l'élaboration du PPR et dont la date est renseignée par l'intermédiaire du champ "dateEnjeu"  de la classe [Enjeu](#classe-dobjets-enjeu) définie dans le modèle commun.
 
-Le [Guide PPRN:2016] propose une classification sur laquelle s'appuyer pour l'analyse des enjeux et que ce standard reprend sous la forme d'une liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
+Ce standard propose une nomenclature des enjeux pour les PPR qui fait la synthèse des différentes classifications proposées dans les guides [Guide PPRN:2016], [Guide PPRT:2007] et [Guide PPRM:2019] pour l'analyse des enjeux. Il s'agit de la liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
+
+L'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif (par opposition à normatif) une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon la nouvelle nomenclature.
 
 Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'information relative à la vulnérabilité autre que celle pouvant être intrinsèquement relatée par la classification. 
 
-La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifiés dans la nomenclature des enjeux PPR peut nécessiter de saisir des informations de vulnérabilité. *A PRECISER* ou *A SUPPRIMER*
 
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux dans le cadre des PPR.**
@@ -332,9 +325,7 @@ La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifi�
 
 ### Thématique Zonage réglementaire
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
-
-Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonage réglementaire est déterminé selon le [cadre réglementaire du type de PPR](#cadre-réglementaire-des-plans-de-prévention-des-risques)). 
+Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonage réglementaire est déterminé selon le [cadre réglementaire du type de PPR](#cadre-réglementaire-des-plans-de-prévention-des-risques). 
 
 Pour représenter ce zonage, l'interface ZoneReglementaire est implémentée par trois classes qui décrivent trois types de zonages qui peuvent se superposer les uns aux autres :
 
@@ -399,9 +390,15 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Nomenclature Enjeux PPR
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2015]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois gandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois grandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
 
-Elle est accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
+La codification des enjeux proposée pour cette nomenclature est à base d'URIs compatibles avec le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) même si à la date de rédaction de ce standard, elle n'y est pas implémentée. Le principe est un principe hiérarchique reposant sur une base d'URI fixe associée à la nomenclature, complétée par la suite hiérarchique des codes permettant d'accéder au code voulu. Par exemple, le code associé au type d'enjeu "habitat collectif" est formé de la concaténation des éléments suivants :
+
+`https://data.geocatalogue.fr/ncl/_NomenclatureEnjeuCNIGType`
+
+
+
+
 
 ##### Enjeux incontournables
 
