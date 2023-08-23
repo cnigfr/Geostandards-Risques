@@ -568,7 +568,7 @@ L’objectif est que le producteur puisse certifier la précision de la donnée 
 
 ##  Référence normative
 
-La référence internationale est la norme [ISO 19157] sur la qualité des données géographiques.
+La référence internationale est la norme [ISO 19157](https://www.iso.org/fr/standard/78900.html) sur la qualité des données géographiques.
 
 Les éléments relatés ci après s'appuient sur la déclaison de cette norme au niveau national issue des travaux du [groupe de travail CNIG sur la qualité des données géographiques](http://cnig.gouv.fr/ressource-quadogeo-a23521.html), notamment :
 - le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) ;
