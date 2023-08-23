@@ -916,42 +916,6 @@ Le système de référence temporel est le calendrier grégorien. Les valeurs de
 
 
 
-#  Qualité
-
-##  Enjeux
-
-> *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
-> *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
-
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
-
-> *Ces mesures peuvent être :*
-> *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
-
-> *- Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.*
-
-> *Les différentes mesures de la qualité des données de <la thématique> sont définies ci-dessous  et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit  (cf Mesures de qualité complémentaires).*
-
-
-##  Référence normative
-
-> *La référence internationale est la norme ISO 19157 sur la qualité des données géographiques.*
- 
-> *Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :*
-> *- les travaux du groupe de travail CNIG sur la qualité des données géographiques*
-> *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
-> *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
-
-##  Mesures de la qualité
-
-###  Mesures obligatoires
-
-
-###  Mesures Recommandées
-
-
-###  Mesures Conditionnelles 
-
 #  Cycle de vie des données 
 
 ## Les différents états d'une procédure de Plan de Prévention des risques
@@ -984,33 +948,9 @@ La description des livraisons est faite dans les profils applicatifs.
 
 ##  Généralités
 
-> *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
+Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE afin de mettre en évidence les informations essentielles contenues, et ainsi permettre la réutilisation des données avec l'aide d'outils de catalogage.
 
-
-###  Références
-
-> *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
-> *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
-> *- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016*
-> *- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE*
-> *- Validateur européen*
-
-
-###  Périmètre INSPIRE
-
-> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
->* 	-  …*
-> *Liste des thématiques INSPIRE : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory*
-
-
-
-> *Elements de métadonnées relatifs aux series et dataset*
-
-
-##  Consignes de nommage du fichier de métadonnées 
-
-
-##  Identification des données
+La spécification des éléments de métadonnées qui accompagnent les jeu de données est faite dans les profils applicatifs.
 
 
 ---
@@ -1067,7 +1007,7 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 
 - niveau 1 : "Risque naturel"
 - niveau 2 : "Inondation"
-- niveau 3 : "Par ruissellement ert coulée de boue"
+- niveau 3 : "Par ruissellement et coulée de boue"
 
 
 | Code | Niveau | Libellé Risque

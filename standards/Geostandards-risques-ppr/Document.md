@@ -113,7 +113,13 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
 | [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
+| [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
+| [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
+| [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) | Registre: mesuresQuaDoGeo - Mesures liées à la Qualité de Données Géographiques | CNIG | En continu |
 
+
+
+> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
 
 
 ##  Cadre réglementaire des Plans de Prévention des Risques
@@ -551,39 +557,169 @@ Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des sys
 
 #  Qualité
 
+Cette partie contient les recommandations et exigences de qualité concernant le contenu des données des PPR et de leur structuration.
+
 ##  Enjeux
 
-> *Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).* 
-> *L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ai connaissance, qualifie et utilise la donnée en conséquence.* 
+Il est important pour les futurs producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).
 
-> *Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée."*
-
-> *Ces mesures peuvent être :*
-> *- Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans le registre national des mesures pour la qualification des données géographiques.*
-
-> *- Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.*
-
-> *Les différentes mesures de la qualité des données de <la thématique> sont définies ci-dessous  et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit  (cf Mesures de qualité complémentaires).*
+L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence. La communication de ces informations de qualité se fait par l'intermédiaire des métadonnées et de leurs éléments dédiés.
 
 
 ##  Référence normative
 
-> *La référence internationale est la norme ISO 19157 sur la qualité des données géographiques.*
+La référence internationale est la norme [ISO 19157](https://www.iso.org/fr/standard/78900.html) sur la qualité des données géographiques.
+
+Les éléments relatés ci après s'appuient sur la déclaison de cette norme au niveau national issue des travaux du [groupe de travail CNIG sur la qualité des données géographiques](http://cnig.gouv.fr/ressource-quadogeo-a23521.html), notamment :
+- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) ;
+- la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques).
+
+
+## Eléments de qualité
+
+Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risqueavec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, ou, dans certains cas, l'élément de métadonnées qui porte directement cette information.
+
+
+### Dimensions géométriques 
+
+Les composantes géométriques des données des PPR sont levées en 2 dimension. 
+
+
+### Référentiels de numérisation 
+
+Les PPR sont généralement élaborés à partir de plans topographiques ayant une échelle variant entre le 1:25000 et le 1:5000. Les référentiels de numérisation correspondant sont les suivants :  
+- SCAN 25, carte IGN au 1 :25 000
+- BD Ortho IGN
+- Plans cadastraux informatisés (selon les versions et dates d'élaboration des PPR) :
+  - BD Parcellaire ou Parcellaire Express IGN
+  - PCI Vecteur ou Image DGFiP
+- BD Topo IGN
+
+
+
+**Elément de mesure ou de métadonnées :**
+
+Le(s) référentiel(s) utilisé(s) doi(ven)t être mentionné(s) à l'aide de l'élément [Généalogie](#généalogie) des métadonnées qui est aussi décrit dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_genealogie).
+
  
-> *Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :*
-> *- les travaux du groupe de travail CNIG sur la qualité des données géographiques*
-> *- la série de fiches méthodologiques du Cerema : Qualifier les données géographiques - Un décryptage de la norme ISO 19157*
-> *- le registre national des mesures pour la qualification des données géographiques sur le Géocatalogue*
 
-##  Mesures de la qualité
+### Précision géométrique 
 
-###  Mesures obligatoires
+Du fait de l'échelle de référence des PPR, la précision géométrique visée pour le posionnment planimétrique est de l'ordre du mètre.
 
 
-###  Mesures Recommandées
+**Elément de mesure ou de métadonnées :**
+
+La précision géométrique d'un PPR peut être relatée dans les métadonnées à l'aide de la mesure d'[erreur horizontale relative](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_ErrHorizontaleRelative) décrite dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo).
 
 
-###  Mesures Conditionnelles 
+
+### Validité des géométries 
+
+Afin de pouvoir être exploitées correctement par les systèmes informatiques avals que ce soit pour diffusion ou en utilisation directe dans un SIG, les géométries des PPR doivent respecter les règles standard dérivées des normes OGC Simple Feature access part 1 (Common) et et Simple Features access part 2 (SQL Option). Ce sont les modèles de géométrie communément adoptés par les SIG, par PostGIS et par le format GeoPackage utilisé pour la livraison.
+
+Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient pas conformes avec la façon dont elles sont définies. Les sources d’invalidité concernent principalement les polygones, géométries complexes qui définissent des aires et requièrent une bonne structuration. Il s'agit de : 
+- Polygones non fermés ;
+- Des surfaces nulles (polygones plats)
+- Les noeuds trop proches ou dupliquéss
+- Les arcs pendants
+- Les contours qui s'intersectent (polygones en papillon)
+- Les contours d’un polygone ne doivent pas toucher les autres contours, sauf en un point unique.
+
+Note : Les méthodes de détection et de correction de ces invalidités sont relativement bien connues et ont été documentées dans des documents tels que le [Guide CPII : jeux de données SIG – vérification et correction des géométries](https://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/verification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf?arg=177834719&cle=830634f7888fc808498f0c41704664611af04021&file=pdf%252Fverification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf).  
+
+
+
+
+
+**Elément de mesure ou de métadonnées :**
+
+Les invalidités de géométries d'un PPR peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+- [Nombre de micro-surfaces non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbMicroSurfErr) ;
+- [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr)
+- [Nombre d’erreurs d’auto-intersections non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbBoucle)
+
+
+
+### Complexité des géométries 
+
+La complexité des géométries doit être maitrisée, notamment dans le domaine des risques naturels où certaines surfaces d'aléas générées à partir de données d'observation très résolues peuvent devenir inexploitables par les outils informatiques du fait de leurs volume.
+
+Pour contrôler cela, ce standard reprend les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
+
+Indicateur | Seuil d'avertissement | Seuil de rejet |
+|-|-|-|
+| Nombre de sommets | > 50 000 | > 200 000 |
+| Nombre de points par périmètre | > 1 point tous les 10m | > 10 points tous les 10m |
+| Nombre d'anneaux | > 500 | > 1 000 |
+| Nombre de parties | > 500 | > 1 000 |
+
+
+D'autres indicateurs sont définis ici éviter les micro géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
+
+Indicateur | Seuil de rejet |
+|-|-|
+| Périmètre d'un polygone | < 1m |
+| Longueur d'un linéaire | < 1m |
+| Aire d'un polygone | < 25m2 (carré d'1mm de côté sur un plan au 1:5000)  |
+
+
+**Exigence** 
+Une géométrie dont l'indicateur dépasse le seuil de rejet sera considérée comme non valide au regard de ce standard.
+
+
+**Elément de mesure ou de métadonnées :**
+
+Il n'existe pas de définition de ces mesures dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo). On pourra cependant les relater dans les métadonnées avec les intitulés suivants :
+
+- "Nombre de géométries dépassant le seuil d'avertissement"
+- "Nombre de géométries dépassant le seul de rejet"
+
+ou plus dans le détail des indicateurs (laissé à l'appréciation du producteur de données) :
+
+- "Nombre de géométries dont le nombre de sommets dépasse le seuil d'avertissement"
+- etc.
+
+
+### Cohérence topologique 
+
+Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet des PPR :
+
+- Pour le **zonage réglementaire**, le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) précise que le zonage réglementaire doit être subdivisé en zones correspondant à une réglementation homogène. De ce fait les objets des tables implémentant le zonage réglementaire (de nature foncière ou d'urbanisme) ne doivent pas se recouvrir entre eux.
+
+- Pour les **zones d'aléas relatives à un même risque**, il ne doit pas avoir de superposition entre les objets ayant une valeur de niveau d'aléa différente.
+
+
+
+**Elément de mesure ou de métadonnées :**
+
+Les invalidités topologiques d'un PPR relatives ax règles énoncées ci-dessus peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+- [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
+
+
+
+### Conformité au standard 
+
+La conformité des données PPR au présent standard est un objectif. Il conviendra d'indiquer dans les métadonnées l'évaluation de cette conformité.
+
+
+**Elément de mesure ou de métadonnées :**
+
+Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non coformes ou si la conformité n'a pas été évaluée.
+
+Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
+
+- [Non conformité aux règles du schéma conceptuel](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nonConfConceptuelle) ;
+- [Taux de conformité au domaine de valeurs](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txConfDomVal) ;
+- [Taux de valeurs d’attributs correctes](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxValAttOk) ;
+- [Taux d’erreur de formatage](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxErrFormat) ;
+
+
+
+
+
 
 
 #  Cycle de vie des données 
@@ -611,8 +747,6 @@ Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des sys
 
 
 #  Livraison
-
-> *Cette partie vise à fournir des instructions, des exigences et/ou des descriptions du format de livraison des données et des moyens de livraison physique, ou bien des moyens de livraison de données via des services de téléchargement ou d'affichage.*
 
 Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie qui suit en précise les modalités.
 
@@ -658,7 +792,7 @@ Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
 La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table des types de procédures GASPAR](../Geostandards-risques-commun/Document.md#types-de-procédures-gaspar). La nomenclature des identifiants des procédures GASPAR est expliquée [ici](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)
 
-A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn_76ddtm20120001`
+A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn-i_76ddtm20120001`
 
 
 
@@ -801,8 +935,8 @@ La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table de
 
 A titre d'exemples :
 
-- la table perimetre du PPRN du Bassin versant de la Scie aura pour nom : `pprn_76ddtm20120001_perimetre_s`
-- la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn_76ddtm20120001_zonealeareference_117_s`
+- la table perimetre du PPRN-I du Bassin versant de la Scie aura pour nom : `pprn-i_76ddtm20120001_perimetre_s`
+- la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : `pprn-i_76ddtm20120001_zonealeareference_117_s`
 
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
@@ -1811,30 +1945,492 @@ INSERT INTO typereglementfoncier VALUES
 
 ##  Généralités
 
-> *Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE, afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.*
+Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE afin de mettre en évidence les informations essentielles contenues, et ainsi permettre la réutilisation des données avec l'aide d'outils de catalogage.
 
 
 ###  Références
 
-> *Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur :*
-> *- le « Guide de saisie des éléments de métadonnées de données » v2.0, 2019*
-> *- le « Guide Identificateurs de Ressource Uniques » v1.0.1 de février 2016*
-> *- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE*
-> *- Validateur européen*
+Les éléments de métadonnées et les consignes générales qui les accompagnent sont issus du [Guide de saisie des éléments de métadonnées de données » v2.0, 2019](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) qui établit les recommandations nationales en ce qui concerne les Métadonnées INSPIRE pour les séries et ensemble de séries.
+
+D'autre références sont aussi d'utilité pour l'élaboration et la validation des métadonnées :
+
+- le ["Guide Identificateurs de Ressource Uniques v1.0.1 de février 2016"](http://cnig.ign.fr/wp-content/uploads/2016/02/GuideIRU-corrig%C3%A9-v2.pdf)
+- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE ([INSPIRE_MTD:2013](http://cnig.ign.fr/wp-content/uploads/2015/01/MD_IR_and_ISO_20131029.pdf)
+- [Validateur européen](https://inspire.ec.europa.eu/validator/home/index.html)
 
 
 ###  Périmètre INSPIRE
 
-> *Les données de la thématique  sont / ne sont pas référencées par INSPIRE. Les catégories thématiques sont :*
->* 	-  …*
-> *Liste des thématiques INSPIRE : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory*
+Les données des Plans de Prévention des Risques sont référencées par INSPIRE. 
+
+Les catégories thématiques INSPIRE sont les suivantes (ANNEXE III) :
+
+- "Zones à risque naturel" pour les PPR Naturels ;
+- "Lieux de production et sites industriels" pour les PPR Technologiques ;
+- "Zones de gestion, de restriction ou de réglementation et unités de déclaration" ;
+- "Usage des sols" ;
+
+
+##  Eléments de métadonnés
+
+Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner les données de prévention des risques conformément à la directive INSPIRE et à plusieurs niveaux de granularité :
+
+- les métadonnées décrivant les Plans de Prévention des Risques en général : un seul fichier de métadonnées (niveau "series" - "ensemble de séries de données géographiques") ;
+- les métadonnées décrivant un PPR en particulier avec ses caractéristiques propres : un fichier de métadonnées par PPR (niveau "dataset" - "série de données") ;
+- le cas échéant, les métadonnées accompagnant une thématique particulière (par exemple le zonage réglementaire) d'un PPR donné : un fichier de métadonnées décrivant une table d'un PPR (niveau "dataset" - "série de données").
+
+Pour chaque élément de données il est indiqué :
+
+- son nom
+- sa description dans le guide de saisie des métadonnées INSPIRE
+- le caractère obligatoire ou non de sa saisie
+- la localisation XPath de l'élément dans la structure XML du fichier de métadonnées correspondant implémentant la norme ISO 19115.
+- les "valeurs" ou les *consignes de saisie des valeurs* pour l'élément à chacun des niveaux de granularité
+
+
+### Consignes de nommage du fichier de métadonnées
+
+Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées : 
+
+| Niveau de granularité | Nom du fichier  | 
+|-|-|
+| Métadonnés générales | `MTD_geostandard-ppr.xml` |
+| Métadonnées d'un PPR | *Réutiliser le même formalisme que le nom de fichier de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". *Exemple pour la Métadonnée du PPRN-I du Bassin Versant de la Scie* : "MTD_pprn-i_76ddtm20120001.xml" |
+| Métadonnées d'une thématique  | *Réutiliser le même formalisme que le nom de table concernée de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". *Exemple pour le fichier de Métadonnées de la table zonealeareference_112 du PPRN-I du Bassin Versant de la Scie* : "MTD_pprn-i_76ddtm20120001_zonealeareference_112.xml" |
 
 
 
-> *Elements de métadonnées relatifs aux series et dataset*
+
+### Eléments de métadonnées relatifs à l'identification des données
+
+#### Intitulé de la ressource
+
+- Description : L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime. 
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/title`
+
+| Niveau de granularité | "Valeur" ou *consigne de saisie*  | 
+|-|-|
+| Métadonnés générales | "Ensemble des Plans de Préventions des Risques sur le territoire français" |
+| Métadonnées d'un PPR | "Plan de Prévention des Risques *Naturels (ou Technologiques ou Miniers)* de *nom de la localisation géographique du PPR*". Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
+| Métadonnées d'un PPR | *Reprise du de la valeur du champ `libelleProcedure` de la classe `Procedure``*. Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
+| Métadonnées d'une thématique | "Table *nom de la table* du *Reprise du libelle utilisé pour la métadonnée du PPR*" |
 
 
-##  Eléménents de métadonnés
+#### Résumé de la ressource
+
+- Description : Le résumé doit décrire la ressource de façon compréhensible avec une définition commune et une indication géographique
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/abstract`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Reprise de la description utilisée pour le standard COVADIS :* "Les plans de prévention des risques (PPR) ont été institués par la loi du 2 février 1995 relative au renforcement de la protection de l'environnement. Ils constituent l'instrument essentiel de l'État en matière de prévention des risques. Leur objectif est le contrôle du développement dans les zones exposées à un risque majeur. Les PPR sont approuvés par les préfets et généralement réalisés par les directions départementales des territoires (DDT). Ces plans réglementent l'occupation du sol ou son usage par des interdictions de construire ou des prescriptions sur les bâtiments existants ou futurs (dispositions constructives, travaux de réduction de la vulnérabilité, restrictions d'usage ou de pratiques agricoles...). Ces plans peuvent être en cours d'élaboration (prescrit), appliqués par anticipation ou approuvés. Le dossier de PPR contient une note de présentation, un plan de zonage réglementaire et un règlement. Peuvent être joints d'autres documents graphiques utiles à la compréhension de la démarche (aléas, enjeux...). Chaque PPR est repéré par un polygone qui correspond à l'ensemble de communes concernées du périmètre de prescription lorsqu'il est à l'état prescrit ; et l'enveloppe des zones réglementées lorsqu'il est à l'état approuvé." |
+| Métadonnées d'un PPR | *Reprendre la valeur de l'intitulé de la ressource et y rajouter : son état, la date de son état et les types d'aléas couverts.* Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie, Etat : Approuvé, Année : 2020, Risques couverts : 'Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d'eau', 'Risque Naturel ; Inondation ; Par ruissellement et coulée de boue', 'Risque Naturel ; Inondation ; Par submersion marine' |
+| Métadonnées d'une thématique (alea) | *Reprise des descriptions COVADIS pour chaque type de table :* "Zone exposée à un ou plusieurs aléas représentée sur la carte des aléas utilisée pour l'analyse du risque du PPR. La carte d'aléas est le résultat de l'étude des aléas dont l'objectif est d'évaluer l'intensité de chaque aléa en tout point de la zone d'étude. La méthode d'évaluation est spécifique à chaque type d'aléa. Elle conduit à délimiter un ensemble de zones sur le périmètre d'étude constituant un zonage gradué en fonction du niveau de l'aléa. L'attribution d'un niveau d'aléa en un point donné du territoire prend en compte la probabilité d'occurrence du phénomène dangereux et son degré d'intensité."  |
+| Métadonnées d'une thématique (Enjeu) | *Reprise des descriptions COVADIS pour chaque type de table.* : "De manière générale, les enjeux sont les personnes, biens, activités, éléments de patrimoine culturel ou environnemental, menacés par un aléa et susceptibles d'être affectés ou endommagés par celui-ci. La sensibilité d'un enjeu à un aléa est nommée 'vulnérabilité'. Cette classe d'objet regroupe tous les enjeux qui ont été pris en compte dans l'étude du PPR. Un enjeu est un objet daté dont la prise en compte est fonction de l'objet du PPR et de sa vulnérabilité aux aléas étudiés. Un enjeu de PPR peut donc être pris en compte (ou pas) selon le ou les types d'aléa traités. Ces éléments constituent le socle de connaissance de l'occupation du sol nécessaire à l'élaboration du PPR, dans la zone d'étude ou à proximité de celle-ci, à la date de l'analyse des enjeux. Les données d'enjeux représentent une photographie (figée et non exhaustive) des biens et des personnes exposés aux aléas au moment de l'élaboration du plan de prévention des risques. Ces données ne sont pas mises à jour après l'approbation du PPR. En pratique elles ne sont plus utilisées : les enjeux sont recalculés en tant que de besoin avec des sources de données à jour." |
+| Métadonnées d'une thématique (Origine risque) | *Reprise des descriptions COVADIS pour chaque type de table.* : "L'origine du risque caractérise l'entité du monde réel qui, par sa présence, représente un risque potentiel. Cette origine peut être caractérisée par un nom et, dans certains cas, un objet géographique localisant l'entité réelle à l'origine du risque. La localisation de l'entité et la connaissance du phénomène dangereux servent à définir les bassins de risques, les zones exposées aux risques qui fondent le PPR. Pour les PPRN, cette entité peut par exemple correspondre à un cours d'eau, une zone géologiquement instable." |
+| Métadonnées d'une thématique (Zonage réglementaire) | *Reprise des descriptions COVADIS pour chaque type de table.* : "Ce jeu de données décrit les zones réglementées du plan une fois approuvé. Les règlements des PPR distinguent généralement les 'zones d'interdiction de construire', dites 'zones rouges', lorsque le niveau d'aléa est fort et que la règle générale est l'interdiction de construire ; les 'zones soumises à prescriptions', dites 'zones bleues' lorsque le niveau d'aléa est moyen et que les projets sont soumis à des prescriptions adaptées au type d'enjeu et les zones non directement exposées aux risques mais soumises à interdictions ou prescriptions". |
+
+
+#### Type de la ressource
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ». Les métadonnées générales ("ensemble de de séries de données") sont à remplir avec la valeur `series`.
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `hierarchyLevel`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `series` |
+| Métadonnées d'un PPR | `dataset` |
+| Métadonnées d'une thématique | `dataset` |
+
+
+#### Localisateur de la ressource
+
+- Description : Le localisateur est un lien vers un site permettant de décrire plus finement la ressource mais pouvant également permettre le téléchargement ou l’accès aux données ressources. Le localisateur est de préférence une URL (résolvable). Il peut y avoir plusieurs liens mais au moins un des liens doit être un accès public.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `transferOptions/*/onLine/*/linkage/URL`
+
+| Niveau de granularité | Valeur ou consigne de saisie |
+|-|-|
+| Métadonnés générales | *Indiquer le lien vers la page de téléchargement des PPR ou les consignes d'accès aux PPR sur Géorisques* |
+| Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concerné et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
+| Métadonnées d'une thématique | *Même consigne que le PPR et lien plus précis sis possibilité d'accéder à la donnée de la thématique.* |
+
+
+#### Identificateur de ressource unique 
+
+- Description : L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service)
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/identifier/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | "https://geostandards.gouv.fr/risques/ppr" |
+| Métadonnées d'un PPR | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*". Exemple : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001" |
+| Métadonnées d'une thématique | "https://geostandards.gouv.fr/risques/ppr/*typeppr*/*codegasparcomplet*/*nomthematique*". Exemple (pour la table d'aléa référence 112) : "https://geostandards.gouv.fr/risques/ppr/pprn-i/76DDTM20120001/zonealeareference_112" |
+
+
+#### Langue de la ressource
+
+- Description : Le champ est à remplir avec le code à trois lettres de la langue de la ressource.
+Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : `fre`
+Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée de [[ISO:639-2]](http://www.loc.gov/standards/iso639-2/php/code_list.php)
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/language`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `fre` |
+| Métadonnées d'un PPR | `fre` |
+| Métadonnées d'une thématique | `fre` |
+
+
+#### Encodage
+
+- Description : Le champ est à remplir avec les valeurs suivantes :
+  - format d'échange (format de distribution)
+  - version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `distributionInfo/*/distributionFormat/*/name` et `distributionInfo/*/distributionFormat/*/version`
+`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Pour la livraison Géopackage* : "GeoPackage", versions : "1.1", "1.2", "1.2.1", "1.3", "1.3.1"  |
+| Métadonnées d'un PPR | *Pour la livraison Géopackage* : "GeoPackage", version : *la version utilisée*  |
+| Métadonnées d'une thématique | *Pour la livraison Géopackage* : "GeoPackage", version : *la version utilisée* |
+
+
+#### Encodage des caractères
+
+- Description : Il s’agit de l’encodage des caractères utilisé dans le lot de données
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/characterSet`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `utf8` |
+| Métadonnées d'un PPR | `utf8` |
+| Métadonnées d'une thématique | `utf8` |
+
+
+#### Type de représentation géographique
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : vector (traduction de « vecteur »)
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/spatialRepresentationType`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `vector` |
+| Métadonnées d'un PPR | `vector` |
+| Métadonnées d'une thématique | `vector` |
+
+
+
+### Eléments de métadonnées relatifs à la classification des données et services géographiques
+
+
+#### Catégorie thématique
+
+- Description : Le champ est à remplir avec la valeur suivante : theme (traduction de « ... ») (liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory  )
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/topicCategory`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `planningCadastre` (*Catégorie ISO correspondante des thématiques INSPIRE : "Zones de gestion, de restriction ou de réglementation et unités de déclaration" et "Usage des sols"*), `geoscientificInformation` (*Catégorie ISO correspondante de la thématique INSPIRE : "Zones à risque naturel"), `structure` (*Catégorie ISO correspondante de la thématique INSPIRE : "Lieux de production et sites industriels" pour les PPRT*)|
+| Métadonnées d'un PPR | `planningCadastre` et `geoscientificInformation`,  et `structure` (si PPRT)|
+| Métadonnées d'une thématique | `planningCadastre` et `geoscientificInformation`,  et `structure` (si PPRT) |
+
+
+
+
+### Eléments de métadonnées relatifs aux mots-clés 
+
+
+#### Mots clés obligatoire : Thème INSPIRE
+
+- Description : Le champ est à remplir avec la désignation du thème INSPIRE dans le Thésaurus GEMET (recommandation nationale : il est recommandé de ne rattacher une ressource qu’à un seul thème INSPIRE)
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `Lieux de production et sites industriels` (PPRT), `Usage des sols`, `Zones à risque naturel` (PPRN), `Zones de gestion, de restriction ou de réglementation et unités de déclaration`  |
+| Métadonnées d'un PPR | *Pour les PPRN* : `Zones à risque naturel`, *Pour les PPRT* : `Lieux de production et sites industriels`, *Pour les PPRM* : `Zones de gestion, de restriction ou de réglementation et unités de déclaration` |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
+
+
+#### Mots clés complémentaires
+
+- Description : Il est conseillé de fournir des mots-clés complémentaires. Ces mots-clés peuvent être  associés à des vocabulaires contrôlés définissant ces mots-clés.
+- Obligation : Saisie recommandée
+- XPath ISO 19115 : `identificationInfo[1]/*/descriptiveKeywords/*/keyword` et `identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
+| Métadonnées d'un PPR | *Cf. ligne précédente.*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+
+### Eléments de métadonnées relatifs à la situation géographique 
+
+#### Rectangle de délimitation géographique
+
+- Description : Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/extent/*/geographicElement/*/westBoundLongitude`, `identificationInfo[1]/*/extent/*/geographicElement/*/eastBoundLongitude`, `identificationInfo[1]/*/extent/*/geographicElement/*/southBoundLatitude` et `identificationInfo[1]/*/extent/*/geographicElement/*/northBoundLatiTude`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Emprise des territoires concernés* : *ouest* : "-63,66" ; *est* : "58,24", *sud* : "-24,72", *nord* : "51,56" |
+| Métadonnées d'un PPR | *Emprise globale du PPR concerné* |
+| Métadonnées d'une thématique | *Emprise des tables de la thématique du PPR concerné* |
+
+#### Référentiel de coordonnées
+
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec le système de coordonnées des données, avec utilisation du code EPSG ou du registre IGN-F.
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `referenceSystemInfo/*/referenceSystemIdentifier/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Indiquer la liste des codes EPSG des systèmes de coordonnées du paragraphe [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)* |
+| Métadonnées d'un PPR | *Indiquer le code EPSG du système de coordonnées du territoire PPR* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+
+### Eléments de métadonnées relatifs aux références temporelles
+
+
+#### Dates de référence
+
+- Description : Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données. Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date`
+
+| Niveau de granularité | Valeur ou consigne de saisie |
+|-|-|
+| Métadonnés générales | *Indiquer la date de 'révision' du nouveau Standard PPR* (?) |
+| Métadonnées d'un PPR | *Indiquer la date de création ou révision des données du PPR* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+### Eléments de métadonnées relatifs à la généalogie et résolution spatiale
+
+#### Généalogie
+
+- Description : Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants :
+  - le référentiel source de la géométrie
+  - la version du standard de référence
+  - le numéro de version du lot et sa durée de vie.
+  - etc.
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/lineage/*/statement` Note : L’élément scope>level doit être fixé à « dataset » dans le cas d’une série, « series » pour un ensemble de séries.
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'oeuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'oeuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.  |
+| Métadonnées d'un PPR | *Indiquer les étapes de constitution du jeu de données PPR, les traitements effectués, les éventuelles validations reçues, ainsi que les référentiels sources utilisés. Si le PPR a fait l'objet d'une conversion du format COVADIS vers ce nouveau Standard, reprendre les éléments de Généalogie de l'ancien PPR et rajouter la mention de la conversion de format et les éventuels traitements effectués depuis.* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
+
+
+#### Résolution spatiale
+
+- Description : Le champ est à remplir avec la valeur entière correspondant au dénominateur de l’échelle. Ce dénominateur est celui de l’échelle du plan de référence pour la production du document numérique ou la plus petite échelle (le plus grand dénominateur) des différents plans ayant servi à la production des documents numériques
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/spatialResolution/*/equivalentScale/*/denominator`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `5000` *(NB :  le standard COVADIS indiquait 25000, mais le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) indique la valeur de 1:5000 comme échelle de référence* |
+| Métadonnées d'un PPR | *Cf. ligne précédente.* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+
+### Eléments de métadonnées relatifs aux mesures de qualité complémentaires
+
+Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)), faire apparaître les champs suivants :
+
+
+#### Identifiant de la mesure
+
+- Description : On indique l’URI de la mesure dans le Registre des mesures liées à la Qualité de Données Géographiques
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/measureIdentification/*/code`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | Non applicable au niveau des métadonnées générales |
+| Métadonnées d'un PPR | *Utiliser les identifiants de mesure indiqués dans la partie [Qualité des données](#qualité) pour les mesures qui pourraient être disponibles pour le jeu de données PPR.* |
+| Métadonnées d'une thématique | *Cf. Ligne précédente.* |
+
+
+#### Résultat
+
+- Description : Il s'agit du résultat de la mesure qualité effectuée sur le jeu de données. Le champ est à remplir avec les sous éléments suivants :
+  - Type de valeur : Type du résultat (Integer pour un résultat numérique, Double pour un nombre flottant et String pour une chaîne de caractère)
+  - Unité de mesure : Unité de mesure du résultat (Unity pour un nombre sans unités, meter pour un résultat en mètres, percent pour un pourcentage)
+  - Valeur : Valeur du résultat (Par exemple pour un taux d’exhaustivité de 85,5%, la valeur sera 85,5
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/valueType`, `dataQualityInfo/*/report/*/result/*/valueUnit` et `dataQualityInfo/*/report/*/result/*/value`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | Non applicable au niveau des métadonnées générales |
+| Métadonnées d'un PPR | *Indiquer la valeur de la mesure en fonction du type de mesure relaté* |
+| Métadonnées d'une thématique | *Cf. Ligne précédente.* |
+
+
+### Eléments de métadonnées relatifs à la conformité
+
+#### Spécification
+
+- Description : On indique la conformité au standard CNIG et au format. Le champ est à remplir avec les éléments suivants :
+  - titre : référence à ce standard sous la forme : "CNIG Géostandards Risques - Profil applicatif PPR"
+  - date : date de validation du standard sous la forme AAAA-MM-JJ
+  - type de date : publication
+  - titre : référence du format sous la forme : format
+  - date : version du format 
+  - type de date : publication
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/specification`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Non applicable au niveau général* |
+| Métadonnées d'un PPR | Faire référence à ce Standard et à la version du format GeoPackage utilisée pour la livraison en Geopackage |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+#### Degré
+
+- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
+- Obligation : Saisie optionnelle
+- XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/pass`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Non applicable au niveau général* |
+| Métadonnées d'un PPR | *A indiquer en fonction des validations effectuées* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+### Eléments de métadonnées relatifs aux contraintes en matière d’accès et d’utilisation
+
+#### Conditions applicables à l’accès et à l’utilisation
+
+- Description : Le champ est à remplir avec les mentions concernant :
+  - les contraintes légales
+  - les contraintes de sécurité
+  - les contraintes d'usage
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : 
+  - Condition d’accès et d’utilisation : `identificationInfo[1]/*/resourceConstraints/*/useLimitation`
+  - Restriction d’accès public : `identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’` et `identificationInfo[1]/*/resourceConstraints/*/otherConstraints`
+`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | Contraintes d'usage : "Licence ouverte v2.0", Contraintes d'accès : "Pas de restriction d'accès public" |
+| Métadonnées d'un PPR | *Cf. ligne précédente.*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+### Eléments de métadonnées relatifs à l'organisation responsable de la ressource
+
+#### Organisation responsable de la ressource
+
+- Description : Le champ est à remplir avec :
+  - l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.
+  - Le rôle de cet organisme : `owner` (traduction de « propriétaire »)
+
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `identificationInfo[1]/*/pointOfContact/*/organisationName`, `identificationInfo[1]/*/pointOfContact/*/contcwactInfo/*/address/*/electronicMailAddress` et `identificationInfo[1]/*/pointOfContact/*/role`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Mentionner la Direction Générale de la Prévention des Risques* |
+| Métadonnées d'un PPR | *Mentionner la Direction Départementale des Territoires et la Mer responsable de la production du PPR*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
+
+
+
+
+
+### Eléments de métadonnées relatifs aux métadonnées concernant les métadonnées
+
+
+#### FileIdentifier
+
+- Description : Le champ fileIdentifier est utilisé par tous les catalogues de métadonnées (en particulier par le Géocatalogue) comme identifiant de la fiche de métadonnées et est donc requis pour que la métadonnée soit déposée in fine sur le Géocatalogue. Il doit être unique quelque-soit l’outil utilisé pour produire la fiche de métadonnées et peut prendre l’une des deux formes suivantes :
+  - identique aux [règles de nommage du fichier de métadonnées](#consignes-de-nommage-du-fichier-de-métadonnées) (sans l’extension .xml)
+  - UUID aléatoirement généré par certaines plates-formes
+
+- Obligation : Saisie recommandée
+- XPath ISO 19115 : `fileIdentifier`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `MTD-Geostandard-PPR` |
+| Métadonnées d'un PPR | *Réutiliser le même formalisme que le nom de fichier de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". Exemple pour la Métadonnée du PPRN-I du Bassin Versant de la Scie : "MTD_pprn-i_76ddtm20120001" |
+| Métadonnées d'une thématique | xxx |
+
+
+#### Point de contact pour la métadonnée
+
+- Description : Le champ est à remplir avec le nom de l’organisation :
+  - l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource)
+  - une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative.A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.
+  - La nature de cette adresse : `pointOfcontact` (traduction de « Point de contact »)
+- Obligation : Saisie obligatoire ?
+- XPath ISO 19115 : `contact*/organisationName`, `contact/*/address/*/electronicMailAddress` et `contact/*/role`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Mentionner la Direction Générale de la Prévention des Risques* |
+| Métadonnées d'un PPR | *Mentionner la Direction Départementale des Territoires et la Mer responsable de la production du PPR*  |
+| Métadonnées d'une thématique | *Cf. ligne précédente.* |
+
+
+#### Date des métadonnées
+
+- Description : Date à laquelle l’enregistrement des métadonnées a été fait ou révisé. Elle est exprimée sous la forme AAAA-MM-JJ
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `dateStamp`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | *Indiquer la date de 'révision' du fichier de métadonnées ou du nouveau Standard* (?) |
+| Métadonnées d'un PPR | *Indiquer la date de création ou de révision du fichier de métadonnées* |
+| Métadonnées d'une thématique | *Cf. ligne précédente.*  |
+
+
+#### Langue des métadonnées
+
+- Description : Langue des métadonnées. Cet élément prend la valeur `fre` pour "français" 
+- Obligation : Saisie obligatoire
+- XPath ISO 19115 : `language`
+
+| Niveau de granularité | Valeur ou consigne de saisie  |
+|-|-|
+| Métadonnés générales | `fre` |
+| Métadonnées d'un PPR | `fre` |
+| Métadonnées d'une thématique | `fre` |
+
+
 
 
 
