@@ -2287,9 +2287,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | Non applicable au niveau des métadonnées générales |
+| Métadonnées d'un PPR | *Utiliser les identifiants de mesure indiqués dans la partie [Qualité des données](#qualité) pour les mesures qui pourraient être disponibles pour le jeu de données PPR.* |
+| Métadonnées d'une thématique | *Cf. Ligne précédente.* |
 
 
 #### Résultat
@@ -2303,9 +2303,9 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | xxxx |
-| Métadonnées d'un PPR | xxx |
-| Métadonnées d'une thématique | xxx |
+| Métadonnés générales | Non applicable au niveau des métadonnées générales |
+| Métadonnées d'un PPR | *Indiquer la valeur de la mesure en fonction du type de mesure relaté* |
+| Métadonnées d'une thématique | *Cf. Ligne précédente.* |
 
 
 ### Eléments de métadonnées relatifs à la conformité
@@ -2313,18 +2313,18 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 #### Spécification
 
 - Description : On indique la conformité au standard CNIG et au format. Le champ est à remplir avec les éléments suivants :
-  - titre : référence du standard sous la forme : CNIG thème
+  - titre : référence à ce standard sous la forme : "CNIG Géostandards Risques - Profil applicatif PPR"
   - date : date de validation du standard sous la forme AAAA-MM-JJ
   - type de date : publication
   - titre : référence du format sous la forme : format
-  - date : version du format sous la forme AAAA-MM-JJ
+  - date : version du format 
   - type de date : publication
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/specification`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | Faire référence à ce Standard et aux différentes versions autorisées du format GeoPackage pour la livraison en Geopackage |
+| Métadonnés générales | *Non applicable au niveau général* |
 | Métadonnées d'un PPR | Faire référence à ce Standard et à la version du format GeoPackage utilisée pour la livraison en Geopackage |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
@@ -2358,7 +2358,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnés générales | Contraintes légales : "",  Contraintes d'usage : "Licence ouverte v2.0", Contraintes d'accès : "Pas de restriction d'accès public" |
+| Métadonnés générales | Contraintes d'usage : "Licence ouverte v2.0", Contraintes d'accès : "Pas de restriction d'accès public" |
 | Métadonnées d'un PPR | *Cf. ligne précédente.*  |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
