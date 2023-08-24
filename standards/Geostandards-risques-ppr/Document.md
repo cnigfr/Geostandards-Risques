@@ -107,8 +107,12 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
+| [CNIG_RISQUES_COMMUN:2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
+| [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
+| [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) | Plans de prévention des risques naturels prévisibles (PPRN) - Guide général | Direction Générale de la Prévention des Risques (DGPR) - Cerema | 2016 |
+| [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques miniers | Cerema | 2019 |
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
@@ -117,9 +121,6 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 | [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) | Registre: mesuresQuaDoGeo - Mesures liées à la Qualité de Données Géographiques | CNIG | En continu |
 
-
-
-> *- le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)*
 
 
 ##  Cadre réglementaire des Plans de Prévention des Risques
@@ -186,6 +187,8 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
 
+**ERP** Etablissement recevant du public
+
 **GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
 
 **IGN** Institut national de l'information géographique et forestière
@@ -208,26 +211,19 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **URL** Uniform Resource Locator
 
----
+
 
 
 #  Concepts généraux
 
 > *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
 
-Ce standard propose une description de l'information géographique liée à une procédure de prévention des risques (*definir ou préciser "procédure de prévention des risques"*) et au cadre réglementaire dans lequel elle s'inscrit. Il définit un modèle conceptuel commun décrivant les concepts mis en oeuvre dans (cette liste pouvant être étendue par la suite):
+Ce standard propose une description de l'information géographique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent. Il s'appuie sur le modèle conceptuel commun défini par le Standard [CNIG_RISQUES_COMMUN] "Géostandards risques - Modèle commun" qu'il spécialise pour l'appliquer aux procédures des PPR.
 
-* les plans de prévention des risques, naturels prévisibles, technologiques et miniers
-* la description des Territoire à Risques d'Inondation (TRI) dans le cadre de l'application de la Directive Inondation
-* les procédures de porter à connaissance
-
-L'application de ce modèle dans le cadre de ces procédures est définie dans les profils applicatifs dédiés qui accompagnent ce standard (*références à fournir*).
-
-Ce standard et les profils applicatifs dédiés se substituent et rendent obsolètes les dernières version des standards COVADIS suivants :
+Ce standard se substitue et rend obsolètes les dernières versions des standards COVADIS suivants :
 
 * Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
 * Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
-* Directive Inondation, version 2.1 – juillet 2019
 
 
 ##  Scope et périmètre d'application
@@ -314,15 +310,20 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 ### Thématique Enjeux
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
-
 Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analyse des enjeux est réalisée afin de pouvoir établir le zonage réglementaire. A cette fin, la collecte des enjeux est réalisée au moment de l'élaboration du PPR et dont la date est renseignée par l'intermédiaire du champ "dateEnjeu"  de la classe [Enjeu](#classe-dobjets-enjeu) définie dans le modèle commun.
 
-Le [Guide PPRN:2016] propose une classification sur laquelle s'appuyer pour l'analyse des enjeux et que ce standard reprend sous la forme d'une liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
+Selon les types de PPR et les guides d'élaboration qui leur sont associés, les nomenclatures de ces enjeux varient autour d'une répartition partagée en trois catégories : enjeux incontournables, enjeux complémentaires et autres éléments de contexte (ou enjeux connexes). Le modèle commun de ce standard permet d'associer à chaque objet de la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) une ou plusieurs typologies issues de nomenclatures différentes à l'aide du champ "typeEnjeu" de type [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu).
+
+Le profil applicatif PPR décline les différentes nomenclatures définies dans les guides d'élaboration en fonction du type de PPR sous forme d'énumérations, qu'il conviendra d'adopter selon le type de PPR qui est mis en oeuvre :
+
+- Liste de codes [NomenclatureEnjeuPPRN](#liste-de-codes-nomenclatureenjeupprn) issue du [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRL](#liste-de-codes-nomenclatureenjeupprl) issue du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRT](#liste-de-codes-nomenclatureenjeupprt) issue du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRM](#liste-de-codes-nomenclatureenjeupprm) issue du [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) ;
+
+Par ailleurs, l'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon une nouvelle nomenclature mais aussi, pour les nouveaux PPR, de préciser, si besoin, la catégorie de certains enjeux.
 
 Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'information relative à la vulnérabilité autre que celle pouvant être intrinsèquement relatée par la classification. 
-
-La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifiés dans la nomenclature des enjeux PPR peut nécessiter de saisir des informations de vulnérabilité. *A PRECISER* ou *A SUPPRIMER*
 
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux dans le cadre des PPR.**
@@ -332,9 +333,7 @@ La saisie des [éléments de contexte](#autres-éléments-de-contexte) identifi�
 
 ### Thématique Zonage réglementaire
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
-
-Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonage réglementaire est déterminé selon le [cadre réglementaire du type de PPR](#cadre-réglementaire-des-plans-de-prévention-des-risques)). 
+Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonage réglementaire est déterminé selon le [cadre réglementaire du type de PPR](#cadre-réglementaire-des-plans-de-prévention-des-risques). 
 
 Pour représenter ce zonage, l'interface ZoneReglementaire est implémentée par trois classes qui décrivent trois types de zonages qui peuvent se superposer les uns aux autres :
 
@@ -393,76 +392,255 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ### Thématique Enjeux
 
 
-#### Liste de codes NomenclatureEnjeuPPR
+#### Liste de codes NomenclatureEnjeuPPRN
 
-**Nom de la liste de codes** : NomenclatureEnjeuPPR
+**Nom de la liste de codes** : NomenclatureEnjeuPPRN
 
-**Titre** : Nomenclature Enjeux PPR
+**Titre** : Nomenclature Enjeux PPR Naturels Prévisibles
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2015]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois gandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
-Elle est accessible dans le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) (*A FAIRE : Saisie dans le registre en cohérence avec nomenclature COVADIS*) et propose les valeurs suivantes :
-
-##### Enjeux incontournables
-
-Les enjeux incontournables caractérisent les différents types d'occupation du sol. Il se répartissent en quatre catégories principales qui, pour certaines peuvent être précisées en sous-catégories. 
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRN"+*code*.
 
 
-| Code | Code Parent | Définition |
-|-|-|-|
-| espaces urbanisés | enjeux incontourables |  La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| centres urbains | enjeux incontourables | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaces spécifiques au type d’aléa étudié | enjeux incontourables | Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes tels que les zones d’expansion des crues pour les inondations, les zones d’atterrissement pour les crues torrentielles, les zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs... |
-| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les inondations. |
-| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les crues torrentielles. |
-| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ...pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| projets des collectivités | enjeux incontourables | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-
-La [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) précise la caractérisation des zones de centre urbains.
-
-
-##### Enjeux complémentaires
-
-Les enjeux complémentaires permettent d’identifier les points particulièrement vulnérables au sein des zones définies dans les enjeux incontournables. L'étude des enjeux complémentaires est conseillée puisqu’elle permet d’obtenir une connaissance du territoire et de son fonctionnement relativement fine, ce qui est essentiel pour que les mesures prescrites soient cohérentes avec les enjeux en présence. Elle est également utile à la préparation de la gestion de crise.
-
-Les enjeux complémentaires se répartissent dans les catégories suivantes :
-
-| Code | Code Parent | Définition |
-|-|-|-|
-| typologie du bâti | Enjeux complémentaires | zones homogènes careactérisées par leur fonction, ou par des caractéristiques constructives similaires |
-| habitat | typologie du bâti | *A DEFINIR* |
-| habitat individuel | habitat | *A DEFINIR* |
-| habitat collectif | habitat | *A DEFINIR*  |
-| habitat | typologie du bâti | *A DEFINIR*  |
-| industrie | typologie du bâti | *A DEFINIR*  |
-| service | typologie du bâti | *A DEFINIR*  |
-| artisanat | typologie du bâti | *A DEFINIR*  |
-| infrastructures et équipements particuliers | Enjeux complémentaires | éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires |
-| équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  |
-| équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | ils regroupent ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes dont les conditions d’évacuation ou de mise en sécurité doivent être étudiées. |
-| campings et hôtellerie de plein air | infrastructures et équipements particuliers | ces établissements accueillent, dans une forme d'occupation du sol particulièrement exposée aux risques, une population vulnérable en raison de sa méconnaissance des aléas locaux. Les campings situés au bord des cours d’eau et sur la frange littorale sont nombreux et très fréquentés. Ils sont d’autant plus vulnérables qu’ils sont parfois localisés dans des secteurs difficilement accessibles et évacuables. La tendance actuelle à l’occupation à l’année des campings augmente encore ce risque. |
-| infrastructures de transport | infrastructures et équipements particuliers | Elles sont essentielles pour assurer la desserte du territoire à la fois pour l’évacuation des personnes et l'acheminement des secours. Elles peuvent également être à l’origine d’un sur-aléa tel qu’un accident de transport de matière dangereuse. |
-| réseaux et équipements sensibles | infrastructures et équipements particuliers | réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+| Code | Libellé | Libellé Parent | Définition |
+|-|-|-|-|
+| /espaceUrba | espaces urbanisés | -  | Enjeu incontournable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| /centreUrbain | centres urbains | - | Enjeu incontournable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| /espaceSpecifique | espaces spécifiques au type d’aléa étudié | - | Enjeu incontournable - Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains |
+| /espaceSpecifique/expansionCrues | zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
+| /espaceSpecifique/atterrisement | zones d’atterrissement | espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
+| /espaceSpecifique/interfaceHabitatForet | zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /espaceSpecifique/maintienForet | zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /projetCollectivite | projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| /activite | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
+| /activite/service | service | zone d'activité | Zone de typologie de bati homogène destinée au service |
+| /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
+| /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/gestionCrise | équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/collectifsPublicsOuverts | équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/campings | campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| /equipementParticulier/infraTransport | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/reseauxSensibles | réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
-##### Autres éléments de contexte
+#### Liste de codes NomenclatureEnjeuPPRL
 
-Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les évolutions du territoire.
+**Nom de la liste de codes** : NomenclatureEnjeuPPRL
 
-*A voir s'il est possible de caractériser des types d'enjeu d'après la définition du [Guide PPRN:2016] :*
+**Titre** : Nomenclature des Enjeux PPR Littoraux
 
-> Ce sont par exemple :
-> 
-> * les enjeux stratégiques pour la gestion de crise : PC crise, centres de secours, ERP pouvant servir d’hébergement, centraux téléphoniques, centrales électriques... ;
-> * la vulnérabilité des différents réseaux et les effets de leurs dysfonctionnements ;
->  * les procédures réglementaires existantes ou à venir connues ;
-> * les mises en perspective : évolution démographique, contexte socio-économique, place du territoire considéré au sein d’ensembles territoriaux plus vastes ;
-> * l’évaluation quantitative des populations menacées ;
-> * les alternatives d’urbanisation ;
-> * les dents creuses (c’est-à-dire en urbanisme, des espaces non construits entourés de parcelles
-bâties).
+**Définition** : La liste de codes "NomenclatureEnjeuPPRL" expose la classification des enjeux définie par [Guide PPRL:2014], précisée par certains éléments communs au [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRL"+*code*.
+
+| Code | Libellé | Libellé Parent | Définition |
+|-|-|-|-|
+| /espaceUrba | espaces urbanisés | -  | Enjeu incontournable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| /centreUrbain | centres urbains | - | Enjeu incontournable - La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| /espaceSpecifique | espaces spécifiques au type d’aléa étudié | - | Enjeu incontournable - Espaces support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| /espaceSpecifique/portuaireBalneaire | ports, zones d’activités portuaires et d’activités balnéaires | espaces spécifiques au type d’aléa étudié | Les ports, zones d’activités portuaires et d’activités balnéaires |
+| /espaceSpecifique/campings | campings et hôtellerie de plein air | espaces spécifiques au type d’aléa étudié | Campings et hôtellerie de plein air |
+| /espaceSpecifique/activiteAgricoles | zones d'activités agricoles spécifiques | espaces spécifiques au type d’aléa étudié | Par exemple : les élevages sur prés salés et les marais salants |
+| /espaceSpecifique/propagationAlea | espaces participants à la propagation des aléas | espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
+| /projetCollectivite | projets d'aménagement futurs du territoire | - | Enjeux complémentaires - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/collectifERPPublicOuverts | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/transports | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
+| /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| /activite | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
+| /activite/service | service | zone d'activité | Zone de typologie de bati homogène destinée au service |
+| /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
+| /gestionCrise | enjeux stratégiques pour la gestion de crise | -  | Autres éléments de contextes - Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+
+
+#### Liste de codes NomenclatureEnjeuPPRT
+
+**Nom de la liste de codes** : NomenclatureEnjeuPPRT
+
+**Titre** : Nomenclature des Enjeux PPR Technologiques
+
+**Définition** : La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications. Il est aussi indiqué à titre informatif le type d'éléments de vulnérabilité qui peut être rattachée à un objet Enjeu selon certaines de ces classifications.
+
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRT"+*code*.
+
+
+| Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité pouvant être associée |
+|-|-|-|-|-|
+| /urbaExistante | Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. | |
+| /urbaExistante/habitat | habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
+| /urbaExistante/activite | activités | Urbanisation existante | activités (industrielles, etc.) | Nombre d'emplois |
+| /urbaExistante/origineRisque | établissements à l’origine du risque | Urbanisation existante | établissements à l’origine du risque | |
+| /urbaExistante/espaceNonUrba | espaces non urbanisés | Urbanisation existante | espaces non urbanisés | |
+| /urbaExistante/agricole | espaces agricoles | Urbanisation existante | espaces agricoles | |
+| /erp | établissements recevant du public (ERP) | - | Enjeu incontournable - Établissements recevant du public, à caractère public ou privé, dédiés le plus souvant à un usage permanent. Les sous catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. | Classification des ERP selon leur capacité d'accueil. Cf. [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| /erp/secours | Services de secours | établissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. | |
+| /erp/enseignement | Bâtiments d’enseignement | établissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. | |
+| /erp/servicePublic | Bâtiments de services publics | établissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. | |
+| /erp/loisirs | Bâtiments et équipements de loisirs | établissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. | |
+| /erp/soins | Bâtiments de soins | établissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. | |
+| /erp/centreCommerce | Grands centres commerciaux | établissements recevant du public (ERP)  | Grande surface commerciale, etc. | |
+| /erp/petitCommerce | Petits commerces et services aux particuliers | établissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. | |
+| /erp/religieux | Bâtiments religieux | établissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc | |
+| /infraTransport | Infrastructures de transports | - | Enjeu incontournable - Infrastructures de transports (routier, fluvial, maritime, ferroviaire et aérien) exposées aux risques, pouvant être utilisées pour acheminer les secours et évacuer les populations exposées ou en lien les installations à l'origine du PPRT. Les sous catégories qui suivent permettent de classifier ces infrastrucutres. | Traffic connu pour chaque infrastructure |
+| /infraTransport/routes | routes | Infrastructures de transports | routes. Celles-ci peuvent être distinguées en trois sous-catégories, énoncées ci-après. | |
+| /infraTransport/routes/grandeVoiesStruct | grandes voies structurantes | routes | grandes voies structurantes | |
+| /infraTransport/routes/autresVoiesStruct | autres voies structurantes | routes | autres voies structurantes | |
+| /infraTransport/routes/dessertes | voies de dessertes | routes | voies de desserte | |
+| /infraTransport/voiesFerrees | voies ferrées | Infrastructures de transports | voies ferrées | |
+| /infraTransport/voiesNavigables | voies navigables  | Infrastructures de transports | voies navigables | |
+| /infraTransport/itiTMD | itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | Infrastructures de transports | itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | |
+| /infraTransport/aeroports | aéroports | Infrastructures de transports | aéroports | |
+| //infraTransport/gares | gares (routières, ferroviaires, portuaires) | Infrastructures de transports | gares (routières, ferroviaires, portuaires)  | |
+| /infraTransport/transportsDoux | modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | modes doux de déplacement (piétons, vélos) | |
+| /infraTransport/collectif | transports collectifs (bus, métros, etc.)  | Infrastructures de transports | transports collectifs (bus, métros, etc.) | |
+| /espacesPublicsOuverts | espaces publics ouverts | - | Enjeu incontournable - Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous catégories ci-dessous | Nombre de personnes pouvant être rassemblées |
+| /espacesPublicsOuverts/permanents | espaces à usage permanent | espaces publics ouverts | équipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
+| /espacesPublicsOuverts/occasionnel  | espaces à usage périodique ou occasionnel | espaces publics ouverts | voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
+| /ouvrageInteretGeneral | ouvrages et équipements d’intérêt général | - | Enjeu incontournable - Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous catégories suivantes identifient certains de ces types d'ouvrages | |
+| /ouvrageInteretGeneral/posteElectrique | poste EDF | ouvrages et équipements d’intérêt général | poste EDF | |
+| /ouvrageInteretGeneral/centralTelephone | central téléphonique | ouvrages et équipements d’intérêt général | central téléphonique | |
+| /ouvrageInteretGeneral/posteDetenteGaz | poste de détente GDF | ouvrages et équipements d’intérêt général | poste de détente GDF | |
+| /ouvrageInteretGeneral/antenneTelMobile | antenne de téléphonie mobile | ouvrages et équipements d’intérêt général | antenne de téléphonie mobile | |
+| /ouvrageInteretGeneral/captageEau | point de captage d’eau | ouvrages et équipements d’intérêt général | point de captage d’eau | |
+| /ouvrageInteretGeneral/reservoirEau | château d’eau, réservoir | ouvrages et équipements d’intérêt général | château d’eau, réservoir | |
+| /projetCollectivite | projets de développement de la commune | - | Elements connexes disponibles | |
+| /patrimoineEnvironement | enjeux environnementaux et patrimoniaux | - | Elements connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
+
+
+#### Liste de codes NomenclatureEnjeuPPRM
+
+**Nom de la liste de codes** : NomenclatureEnjeuPPRM
+
+**Titre** : Nomenclature des Enjeux PPR Miniers
+
+**Définition** : La liste de codes "NomenclatureEnjeuPPRM" expose la classification des enjeux définie par [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes et éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRM"+*code*.
+
+| Code | Libellé | Libellé Parent | Définition |
+|-|-|-|-|
+| /espaceUrba | espaces urbanisés | -  | Enjeux incontournables - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| /espaceNonUrba | espaces non urbanisés | -  | Enjeux incontournables - Zones exclues des espaces urbanisés, zones agricoles, zones naturelles et forestières |
+| /habitat | zones d'habitat | - | Enjeux complémentaires - typologie du bati : zone d'habitat individuel, collectif et immeubles de grande hauteur |
+| /activite | zones d'activités | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| /equipements | équipements | - | Enjeux complémentaires - typologie du bati : toutes constructions et installations nécessaires aux services publics ou d’intérêt général |
+| /zonesMixtes | zones mixtes habitat / activité ou équipement | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| /erp | établissements recevant du public (ERP) | - | Enjeux complémentaires - Établissements recevant du public  à caractère public ou privé (ex : commerces, maisons de retraites, écoles, stades, édifices religieux) dédiés le plus souvent à un usage permanent. Ces établissements sont à identifier selon leur usage (ex. santé, enseignement, commercial) et leur capacité 'accueil (cf. catégorie d'ERP selon [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| /equipementsParticuliers | équipements particuliers | - | Enjeux complémentaires - équipements qui peuvent faire l’objet d’une vulnérabilité propre et de prescriptions spécifiques. A répartir selon les sous-catégories qui suivent. |
+| /sensiblesCrise | établissements dits sensibles ou difficilement évacuables | équipements particuliers | établissements dits sensibles ou difficilement évacuables (ex : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires) |
+| /gestionCrise | équipements nécessaires à la gestion de crise | équipements particuliers |  équipements nécessaires à la gestion de crise (ex : centres de secours, gendarmerie, police, services techniques des collectivités) |
+| /collectifPublicOuverts | équipements collectifs ou espaces publics ouverts | équipements particuliers | équipements collectifs ou espaces publics ouverts (ex : parcs, espaces verts, campings, aires d’accueil des gens du voyage, terrains de sport) |
+| /campings | campings et hôtellerie de plein air | équipements particuliers | campings et hôtellerie de plein air. |
+| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Il s’agit par exemple des secteurs sauvegardés ou des monuments historiques, qui sont soumis à des réglementations particulières et avec lesquelles il faudra veiller à définir des mesures cohérentes. |
+| /infraTransport | infrastructures de transport | - | Enjeux complémentaires - Les différentes infrastructures routières, ferrées, voies navigables, modes doux de déplacement et transports collectifs y sont recensés. On peut distinguer les deux sous-catégories suivantes. |
+| /infraTransport/voiesStruct | voies de circulation structurantes existantes ou en projet | infrastructures de transport | voies de circulation structurantes existantes ou en projet | 
+| /infraTransport/dessertes | voies de desserte locale de l’habitat et des équipements | infrastructures de transport | voies de desserte locale de l’habitat et des équipements |
+| /ouvrageInteretGeneral | ouvrages et équipements d’intérêt général | - | Enjeux complémentaires - ouvrages et équipements d’intérêt général et/ou sensibles pouvant avoir un effet indirect sur la sécurité des personnes. Distingués dans les sous catégories suivantes |
+| /ouvrageInteretGeneral/reseauxSensibles | réseaux et équipements sensibles | ouvrages et équipements d’intérêt général | réseaux (lignes) électriques ou téléphoniques enterrés ou aériens, réseaux (canalisations) d’eau ou de gaz enterrés ou aériens |
+| /ouvrageInteretGeneral/posteElectrique | postes, transformateurs ou pylônes électriques | ouvrages et équipements d’intérêt général | postes, transformateurs ou pylônes électriques |
+| /ouvrageInteretGeneral/posteDetenteGaz | postes de détente de gaz | ouvrages et équipements d’intérêt général | postes de détente de gaz |
+| /ouvrageInteretGeneral/centreTel | centraux téléphoniques | ouvrages et équipements d’intérêt général | centraux téléphoniques |
+| /ouvrageInteretGeneral/relaisTel | relais ou antennes de téléphonie mobile | ouvrages et équipements d’intérêt général | relais ou antennes de téléphonie mobile |
+| /ouvrageInteretGeneral/captageEau | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau | ouvrages et équipements d’intérêt général | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau |
+| /ouvrageInteretGeneral/eauxUsees | stations de traitement des eaux usées, de lagunage | ouvrages et équipements d’intérêt général | stations de traitement des eaux usées, de lagunage |
+| /ouvrageInteretGeneral/reservoirEau | réservoirs ou châteaux d’eau | ouvrages et équipements d’intérêt général | réservoirs ou châteaux d’eau |
+| /ouvrageInteretGeneral/posteRelevement | postes de relèvement | ouvrages et équipements d’intérêt général | postes de relèvement |
+| /ouvrageInteretGeneral/securiteHydraulique | Installations hydrauliques de sécurités | ouvrages et équipements d’intérêt général | Installations hydrauliques de sécurités (par exemple stations de relevage des eaux pluviales) |
+| /ouvrageInteretGeneral/barrages | barrages, vannes, écluses | ouvrages et équipements d’intérêt général | barrages, vannes, écluses |
+| /ouvrageInteretGeneral/canaMD | canalisations de matières dangereuses | ouvrages et équipements d’intérêt général | canalisations de matières dangereuses |
+| /frichesIndusUrba | friches industrielles et urbaines | - | Enjeux connexess et éléments de contexte - zones de friches industrielles et urbaines |
+| /projetCollectivite | projets des collectivités | - | Enjeux connexess et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
+
+
+
+#### Liste de codes NomenclatureEnjeuCOVADIS
+
+**Nom de la liste de codes** : NomenclatureEnjeuCOVADIS
+
+**Définition** : La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard et, le cas échéant, d'affiner certaines catégories d'enjeux définies précédemment.
+
+
+| Code | Libellé |
+|-|-|
+|0101|Espace urbanisé - habitat dense|
+|0102|Espace urbanisé - habitat peu dense|
+|0103|Espace urbanisé - habitat diffus|
+|0104|Espace urbanisé - projet d'urbanisation future|
+|0105|Espace urbanisé - réserve foncière|
+|0201c|ERP J : Structures d'accueil pour personnes âgées et handicapées|
+|0202c|ERP L : Salles à usage d'audition, de conférences, de réunions, de spectacles|
+|0203c|ERP M : Magasins de vente, centres commerciaux|
+|0204c|ERP N : Restaurants et débits de boissons|
+|0205c|ERP O : Hôtels et pensions de famille|
+|0206c|ERP P : Salles de danse et salles de jeux|
+|0207c|ERP R : Établissements d'enseignement, colonies de vacances|
+|0208c|ERP S : Bibliothèques, centres de documentation et de consultation d'archives|
+|0209c|ERP T : Salles d'expositions|
+|0210c|ERP U : Établissements de soins|
+|0211c|ERP V : Établissements de culte|
+|0212c|ERP W : Administrations, banques, bureaux|
+|0213c|ERP X : Établissements sportifs couverts|
+|0214c|ERP Y : Musées|
+|0215c|ERP PA : Établissements de plein air|
+|0216c|ERP CST : Chapiteaux, tentes et structures|
+|0217c|ERP CG : Structures gonflables|
+|0218c|ERP OA : Hôtels, restaurants d'altitude|
+|0219c|ERP REF : Refuges de montagne|
+|0220c|ERP PS : Parcs de stationnement couverts|
+|0221c|ERP GA : Gares accessibles au public|
+|0222c|ERP EF : Établissements flottants|
+|0301|Espace économique - zone d'activité industrielle|
+|0302|Espace économique - zone d'activité commerciale|
+|0303|Espace économique - zone d'activité future|
+|0304|Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture|
+|0305|Espace économique - zone de camping, mobilhome|
+|0306|Espace économique - zone aéroportuaire, portuaire|
+|0307|Espace économique - carrière, gravière|
+|0308|Établissement employeur|
+|0401|Espace ouvert recevant du public - sport|
+|0402|Espace ouvert recevant du public - tourisme|
+|0403|Espace ouvert recevant du public - parking|
+|0404|Espace ouvert recevant du public - parc d'exposition, foires, rassemblements divers|
+|0405|Espace ouvert recevant du public - cimetière|
+|0501|Infrastructure linéaire - route, voie ferrée, canal|
+|0502|Infrastructure linéaire en projet|
+|0503|Infrastructure linéaire - ligne de bus|
+|0504|Infrastructure linéaire - piste cyclable, voie verte|
+|0505|Infrastructure linéaire - ligne électrique|
+|0506|Infrastructure surfacique - gare, aéroport, aérodrome, port|
+|0507|Infrastructure ponctuelle - gare, arrêt, stationnement TMD|
+|0601|Ouvrage ou équipement d'intérêt général - zone, station de captage|
+|0602|Ouvrage ou équipement d'intérêt général - station de pompage|
+|0603|Ouvrage ou équipement d'intérêt général - réservoir, château d'eau|
+|0604|Ouvrage ou équipement d'intérêt général - canalisation eau|
+|0605|Ouvrage ou équipement d'intérêt général - poste de relèvement|
+|0606|Ouvrage ou équipement d'intérêt général - station de traitement, de lagunage|
+|0607|Ouvrage ou équipement d'intérêt général - barrage, vanne, écluse|
+|0608|Ouvrage ou équipement d'intérêt général - poste de transformation EDF|
+|0609|Ouvrage ou équipement d'intérêt général - canalisation matière dangereuse|
+|0610|Ouvrage ou équipement d'intérêt général - téléphonique, relai, antenne|
+|0611|Ouvrage ou équipement d'intérêt général - caserne de pompier|
+|0612|Ouvrage ou équipement d'intérêt général - poste de détente gaz|
+|0613|Ouvrage ou équipement d'intérêt général - station hydrocarbure|
+|0614|Ouvrage ou équipement d'intérêt général - décharge, usine d'incinération|
+|0701|Zone naturelle protégée|
+|0702|Monument inscrit ou classé au répertoire des monuments historiques|
+|0703|Parc naturel national, régional|
+|0704|Zone d'expansion des crues pour les inondations|
+|0705|Zone naturelle de mouvements de terrain|
+|9999|Autre enjeu : nature à préciser|
 
 
 ### Thématique Zonage réglementaire
