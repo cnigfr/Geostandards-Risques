@@ -468,56 +468,51 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Nomenclature des Enjeux PPR Technologiques
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications. Il est aussi indiqué à titre informatif le type d'éléments de vulnérabilité qui peut être rattachée à un objet Enjeu selon certaines de ces classifications.
 
 
-| Libellé | Libellé Parent | Définition |
+
+| Libellé | Libellé Parent | Définition | Exemple de vulnérabilité pouvant être associée |
 |-|-|-|
-| Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. |
-| habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  |
-| activités | Urbanisation existante | activités (industrielles, etc.) |
-| établissements à l’origine du risque | Urbanisation existante | établissements à l’origine du risque |
-| espaces non urbanisés | Urbanisation existante | espaces non urbanisés |
-| espaces agricoles | Urbanisation existante | espaces agricoles |
-| établissements recevant du public (ERP) | - | Enjeu incontournable - Établissements recevant du public, à caractère public ou privé, dédiés le plus souvant à un usage permanent. Les sous catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. |
-| Services de secours | établissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. |
-| Bâtiments d’enseignement | établissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. |
-| Bâtiments de services publics | établissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. |
-| Bâtiments et équipements de loisirs | établissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. |
-| Bâtiments de soins | établissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. |
-| Grands centres commerciaux | établissements recevant du public (ERP)  | Grande surface commerciale, etc. |
-| Petits commerces et services aux particuliers | établissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. |
-| Bâtiments religieux | établissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc |
-
-| Infrastructures de transports | - | Enjeu incontournable -  |
-
-| Usages des espaces publics ouverts | - | Enjeu incontournable -  |
-
-| Ouvrages et équipements d’intérêt général | - | Enjeu incontournable -  |
-
-| projets de développement de la commune | - | Elements connexes disponibles -  |
-
-| enjeux environnementaux et patrimoniaux | - | Elements connexes disponibles -  |
-
-
-
-| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Enjeux pour lesquels des mesures de prévention,
-de protection ou de sauvegarde peuvent être prescrites. A cet égard, certains espaces naturels peuvent
-jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). Leur identification pourra être pertinente
-dans une perspective de prescriptions particulières relatives à l’usage et/ou l’entretien de ces espacespour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
-| zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
-| zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
-| zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
-| zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
-| service | zone d'activité | Zone de typologie de bati homogène destinée au service |
-| artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
-| enjeux stratégiques pour la gestion de crise | -  | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-
-
-NB : 
-- Classification des ERP selon leur capacité d'accueil. Cf. Art. R. 123-19 du code de la construction et de l’habitat (CCH).
-
+| Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. | |
+| habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
+| activités | Urbanisation existante | activités (industrielles, etc.) | Nombre d'emplois |
+| établissements à l’origine du risque | Urbanisation existante | établissements à l’origine du risque | |
+| espaces non urbanisés | Urbanisation existante | espaces non urbanisés | |
+| espaces agricoles | Urbanisation existante | espaces agricoles | |
+| établissements recevant du public (ERP) | - | Enjeu incontournable - Établissements recevant du public, à caractère public ou privé, dédiés le plus souvant à un usage permanent. Les sous catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. | Classification des ERP selon leur capacité d'accueil. Cf. [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| Services de secours | établissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. | |
+| Bâtiments d’enseignement | établissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. | |
+| Bâtiments de services publics | établissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. | |
+| Bâtiments et équipements de loisirs | établissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. | |
+| Bâtiments de soins | établissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. | |
+| Grands centres commerciaux | établissements recevant du public (ERP)  | Grande surface commerciale, etc. | |
+| Petits commerces et services aux particuliers | établissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. | |
+| Bâtiments religieux | établissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc | |
+| Infrastructures de transports | - | Enjeu incontournable - Infrastructures de transports (routier, fluvial, maritime, ferroviaire et aérien) exposées aux risques, pouvant être utilisées pour acheminer les secours et évacuer les populations exposées ou en lien les installations à l'origine du PPRT. Les sous catégories qui suivent permettent de classifier ces infrastrucutres. | Traffic connu pour chaque infrastructure |
+| routes | Infrastructures de transports | routes. Celles-ci peuvent être distinguées en trois sous-catégories, énoncées ci-après. | |
+| grandes voies structurantes | routes | grandes voies structurantes | |
+| autres voies structurantes | routes | autres voies structurantes | |
+| voies de dessertes | routes | voies de desserte | |
+| voies ferrées | Infrastructures de transports | voies ferrées | |
+| voies navigables  | Infrastructures de transports | voies navigables | |
+| itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | Infrastructures de transports | itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | |
+| aéroports | Infrastructures de transports | aéroports | |
+| gares (routières, ferroviaires, portuaires) | Infrastructures de transports | gares (routières, ferroviaires, portuaires)  | |
+| modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | modes doux de déplacement (piétons, vélos) | |
+| transports collectifs (bus, métros, etc.)  | Infrastructures de transports | transports collectifs (bus, métros, etc.) | |
+| espaces publics ouverts | - | Enjeu incontournable - Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous catégories ci-dessous | nombre de personnes pouvant être rassemblées |
+| espaces à usage permanent | espaces publics ouverts | équipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
+| espaces à usage périodique ou occasionnel | espaces publics ouverts | voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
+| ouvrages et équipements d’intérêt général | - | Enjeu incontournable - Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous catégories suivantes identifient certains de ces types d'ouvrages | |
+| poste EDF | ouvrages et équipements d’intérêt général | poste EDF | |
+| central téléphonique | ouvrages et équipements d’intérêt général | central téléphonique | |
+| poste de détente GDF | ouvrages et équipements d’intérêt général | poste de détente GDF | |
+| antenne de téléphonie mobile | ouvrages et équipements d’intérêt général | antenne de téléphonie mobile | |
+| point de captage d’eau | ouvrages et équipements d’intérêt général | point de captage d’eau | |
+| château d’eau, réservoir | ouvrages et équipements d’intérêt général | château d’eau, réservoir | |
+| projets de développement de la commune | - | Elements connexes disponibles | |
+| enjeux environnementaux et patrimoniaux | - | Elements connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
 
 
 
