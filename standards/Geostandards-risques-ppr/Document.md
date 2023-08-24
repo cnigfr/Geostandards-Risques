@@ -398,27 +398,24 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
-La codification des enjeux proposée pour cette nomenclature est à base d'URIs compatibles avec le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) même si à la date de rédaction de ce standard, elle n'y est pas implémentée. Le principe est un principe hiérarchique reposant sur une base d'URI fixe associée à la nomenclature, complétée par la suite hiérarchique des codes permettant d'accéder au code voulu. Par exemple, le code associé au type d'enjeu "habitat collectif" est formé de la concaténation des éléments suivants :
-
-`https://data.geocatalogue.fr/ncl/_NomenclatureEnjeuCNIGType`
 
 | Libellé | Libellé Parent | Définition |
 |-|-|-|
-| espaces urbanisés | -  | enjeu incontourable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| centres urbains | - | Enjeu incontourable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaces spécifiques au type d’aléa étudié | - | enjeu incontourable - Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains
-| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | zones d’expansion des crues pour les inondations |
-| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | zones d'atterrissement pour les crues torrentielles. |
-| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| projets des collectivités | - | enjeux incontourables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| espaces urbanisés | -  | Enjeu incontournable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| centres urbains | - | Enjeu incontournable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| espaces spécifiques au type d’aléa étudié | - | Enjeu incontournable - Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains
+| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
+| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
+| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
 | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
-| zone d'habitat individuel | zone d'habitat | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
-| zone d'habitat collectif |  zone d'habitat | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
 | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
-| zone d'industrie | zone d'activité | typologie du bâti | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'industrie |
-| service | zone d'activité | Enjeux complémentaires - zone de typologie de bati homogène destinée au service |
-| artisanat | zone d'activité | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'artisanat |
+| zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
+| service | zone d'activité | Zone de typologie de bati homogène destinée au service |
+| artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
 | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
 | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
