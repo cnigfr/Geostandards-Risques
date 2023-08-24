@@ -451,7 +451,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
 | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
 | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
 | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
@@ -462,13 +462,70 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | enjeux stratégiques pour la gestion de crise | -  | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 
 
+#### Liste de codes NomenclatureEnjeuPPRT
+
+**Nom de la liste de codes** : NomenclatureEnjeuPPRT
+
+**Titre** : Nomenclature des Enjeux PPR Technologiques
+
+**Définition** : La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+
+
+| Libellé | Libellé Parent | Définition |
+|-|-|-|
+| Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. |
+| habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  |
+| activités | Urbanisation existante | activités (industrielles, etc.) |
+| établissements à l’origine du risque | Urbanisation existante | établissements à l’origine du risque |
+| espaces non urbanisés | Urbanisation existante | espaces non urbanisés |
+| espaces agricoles | Urbanisation existante | espaces agricoles |
+| établissements recevant du public (ERP) | - | Enjeu incontournable - Établissements recevant du public, à caractère public ou privé, dédiés le plus souvant à un usage permanent. Les sous catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. |
+| Services de secours | établissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. |
+| Bâtiments d’enseignement | établissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. |
+| Bâtiments de services publics | établissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. |
+| Bâtiments et équipements de loisirs | établissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. |
+| Bâtiments de soins | établissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. |
+| Grands centres commerciaux | établissements recevant du public (ERP)  | Grande surface commerciale, etc. |
+| Petits commerces et services aux particuliers | établissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. |
+| Bâtiments religieux | établissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc |
+
+| Infrastructures de transports | - | Enjeu incontournable -  |
+
+| Usages des espaces publics ouverts | - | Enjeu incontournable -  |
+
+| Ouvrages et équipements d’intérêt général | - | Enjeu incontournable -  |
+
+| projets de développement de la commune | - | Elements connexes disponibles -  |
+
+| enjeux environnementaux et patrimoniaux | - | Elements connexes disponibles -  |
+
+
+
+| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Enjeux pour lesquels des mesures de prévention,
+de protection ou de sauvegarde peuvent être prescrites. A cet égard, certains espaces naturels peuvent
+jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). Leur identification pourra être pertinente
+dans une perspective de prescriptions particulières relatives à l’usage et/ou l’entretien de ces espacespour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
+| zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
+| service | zone d'activité | Zone de typologie de bati homogène destinée au service |
+| artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
+| enjeux stratégiques pour la gestion de crise | -  | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+
+
+NB : 
+- Classification des ERP selon leur capacité d'accueil. Cf. Art. R. 123-19 du code de la construction et de l’habitat (CCH).
+
+
 
 
 #### Liste de codes NomenclatureEnjeuCOVADIS
 
 **Nom de la liste de codes** : NomenclatureEnjeuCOVADIS
 
-**Définition** : La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard.
+**Définition** : La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard et, le cas échéant, d'affiner certaines catégories d'enjeux définies précédemment.
 
 
 | Code | Libellé |
