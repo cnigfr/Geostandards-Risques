@@ -452,7 +452,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 | /projetCollectivite | projets d'aménagement futurs du territoire | - | Enjeux complémentaires - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
 | /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
 | /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/CollectifERPPublicOuverts | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/collectifERPPublicOuverts | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/transports | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
 | /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
@@ -482,7 +482,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 | /urbaExistante/habitat | habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
 | /urbaExistante/activite | activités | Urbanisation existante | activités (industrielles, etc.) | Nombre d'emplois |
 | /urbaExistante/origineRisque | établissements à l’origine du risque | Urbanisation existante | établissements à l’origine du risque | |
-| /urbaExistante/nonUrba | espaces non urbanisés | Urbanisation existante | espaces non urbanisés | |
+| /urbaExistante/espaceNonUrba | espaces non urbanisés | Urbanisation existante | espaces non urbanisés | |
 | /urbaExistante/agricole | espaces agricoles | Urbanisation existante | espaces agricoles | |
 | /erp | établissements recevant du public (ERP) | - | Enjeu incontournable - Établissements recevant du public, à caractère public ou privé, dédiés le plus souvant à un usage permanent. Les sous catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. | Classification des ERP selon leur capacité d'accueil. Cf. [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
 | /erp/secours | Services de secours | établissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. | |
@@ -509,9 +509,9 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 | /espacesPublicsOuverts/permanents | espaces à usage permanent | espaces publics ouverts | équipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
 | /espacesPublicsOuverts/occasionnel  | espaces à usage périodique ou occasionnel | espaces publics ouverts | voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
 | /ouvrageInteretGeneral | ouvrages et équipements d’intérêt général | - | Enjeu incontournable - Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous catégories suivantes identifient certains de ces types d'ouvrages | |
-| /ouvrageInteretGeneral/posteEDF | poste EDF | ouvrages et équipements d’intérêt général | poste EDF | |
+| /ouvrageInteretGeneral/posteElectrique | poste EDF | ouvrages et équipements d’intérêt général | poste EDF | |
 | /ouvrageInteretGeneral/centralTelephone | central téléphonique | ouvrages et équipements d’intérêt général | central téléphonique | |
-| /ouvrageInteretGeneral/posteDetnteGDF | poste de détente GDF | ouvrages et équipements d’intérêt général | poste de détente GDF | |
+| /ouvrageInteretGeneral/posteDetenteGaz | poste de détente GDF | ouvrages et équipements d’intérêt général | poste de détente GDF | |
 | /ouvrageInteretGeneral/antenneTelMobile | antenne de téléphonie mobile | ouvrages et équipements d’intérêt général | antenne de téléphonie mobile | |
 | /ouvrageInteretGeneral/captageEau | point de captage d’eau | ouvrages et équipements d’intérêt général | point de captage d’eau | |
 | /ouvrageInteretGeneral/reservoirEau | château d’eau, réservoir | ouvrages et équipements d’intérêt général | château d’eau, réservoir | |
@@ -527,41 +527,41 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 **Définition** : La liste de codes "NomenclatureEnjeuPPRM" expose la classification des enjeux définie par [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes et éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRM"+*code*.
 
-| Libellé | Libellé Parent | Définition |
-|-|-|-|
-| espaces urbanisés | -  | Enjeux incontournables - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| espaces non urbanisés | -  | Enjeux incontournables - Zones exclues des espaces urbanisés, zones agricoles, zones naturelles et forestières |
-| zones d'habitat | - | Enjeux complémentaires - typologie du bati : zone d'habitat individuel, collectif et immeubles de grande hauteur |
-| zones d'activités | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
-| équipements | - | Enjeux complémentaires - typologie du bati : toutes constructions et installations nécessaires aux services publics ou d’intérêt général |
-| zones mixtes habitat / activité ou équipement | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
-| établissements recevant du public (ERP) | - | Enjeux complémentaires - Établissements recevant du public  à caractère public ou privé (ex : commerces, maisons de retraites, écoles, stades, édifices religieux) dédiés le plus souvent à un usage
-permanent. Ces établissements sont à identifier selon leur usage (ex. santé, enseignement, commercial) et leur capacité 'accueil (cf. catégorie d'ERP selon [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
-| équipements particuliers | - | Enjeux complémentaires - équipements qui peuvent faire l’objet d’une vulnérabilité propre et de prescriptions spécifiques. A répartir selon les sous-catégories qui suivent. |
-| établissements dits sensibles ou difficilement évacuables | équipements particuliers | établissements dits sensibles ou difficilement évacuables (ex : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires) |
-| équipements nécessaires à la gestion de crise | équipements particuliers |  équipements nécessaires à la gestion de crise (ex : centres de secours, gendarmerie, police, services techniques des collectivités) |
-| équipements collectifs ou espaces publics ouverts | équipements particuliers | équipements collectifs ou espaces publics ouverts (ex : parcs, espaces verts, campings, aires d’accueil des gens du voyage, terrains de sport) |
-| campings et hôtellerie de plein air | équipements particuliers | campings et hôtellerie de plein air. |
-| enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Il s’agit par exemple des secteurs sauvegardés ou des monuments historiques, qui sont soumis à des réglementations particulières et avec lesquelles il faudra veiller à définir des mesures cohérentes. |
-| infrastructures de transport | - | Enjeux complémentaires - Les différentes infrastructures routières, ferrées, voies navigables, modes doux de déplacement et transports collectifs y sont recensés. On peut distinguer les deux sous-catégories suivantes. |
-| voies de circulation structurantes existantes ou en projet | infrastructures de transport | voies de circulation structurantes existantes ou en projet | 
-| voies de desserte locale de l’habitat et des équipements | infrastructures de transport | voies de desserte locale de l’habitat et des équipements |
-| ouvrages et équipements d’intérêt général | - | Enjeux complémentaires - ouvrages et équipements d’intérêt général et/ou sensibles pouvant avoir un effet indirect sur la sécurité des personnes. Distingués dans les sous catégories suivantes |
-| réseaux et équipements sensibles | ouvrages et équipements d’intérêt général | réseaux (lignes) électriques ou téléphoniques enterrés ou aériens, réseaux (canalisations) d’eau ou de gaz enterrés ou aériens |
-| postes, transformateurs ou pylônes électriques | ouvrages et équipements d’intérêt général | postes, transformateurs ou pylônes électriques |
-| postes de détente de gaz | ouvrages et équipements d’intérêt général | postes de détente de gaz |
-| centraux téléphoniques | ouvrages et équipements d’intérêt général | centraux téléphoniques |
-| relais ou antennes de téléphonie mobile | ouvrages et équipements d’intérêt général | relais ou antennes de téléphonie mobile |
-| installations d’alimentation en eau potable, zones, points ou stations de captage d’eau | ouvrages et équipements d’intérêt général | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau |
-| stations de traitement des eaux usées, de lagunage | ouvrages et équipements d’intérêt général | stations de traitement des eaux usées, de lagunage |
-| réservoirs ou châteaux d’eau | ouvrages et équipements d’intérêt général | réservoirs ou châteaux d’eau |
-| postes de relèvement | ouvrages et équipements d’intérêt général | postes de relèvement |
-| Installations hydrauliques de sécurités | ouvrages et équipements d’intérêt général | Installations hydrauliques de sécurités (par exemple stations de relevage des eaux pluviales) |
-| barrages, vannes, écluses | ouvrages et équipements d’intérêt général | barrages, vannes, écluses |
-| canalisations de matières dangereuses | ouvrages et équipements d’intérêt général | canalisations de matières dangereuses |
-| friches industrielles et urbaines | - | Enjeux connexess et éléments de contexte - zones de friches industrielles et urbaines |
-| projets des collectivités | - | Enjeux connexess et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
+| Code | Libellé | Libellé Parent | Définition |
+|-|-|-|-|
+| /espaceUrba | espaces urbanisés | -  | Enjeux incontournables - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| /espaceNonUrba | espaces non urbanisés | -  | Enjeux incontournables - Zones exclues des espaces urbanisés, zones agricoles, zones naturelles et forestières |
+| /habitat | zones d'habitat | - | Enjeux complémentaires - typologie du bati : zone d'habitat individuel, collectif et immeubles de grande hauteur |
+| /activite | zones d'activités | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| /equipements | équipements | - | Enjeux complémentaires - typologie du bati : toutes constructions et installations nécessaires aux services publics ou d’intérêt général |
+| /zonesMixtes | zones mixtes habitat / activité ou équipement | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| /erp | établissements recevant du public (ERP) | - | Enjeux complémentaires - Établissements recevant du public  à caractère public ou privé (ex : commerces, maisons de retraites, écoles, stades, édifices religieux) dédiés le plus souvent à un usage permanent. Ces établissements sont à identifier selon leur usage (ex. santé, enseignement, commercial) et leur capacité 'accueil (cf. catégorie d'ERP selon [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| /equipementsParticuliers | équipements particuliers | - | Enjeux complémentaires - équipements qui peuvent faire l’objet d’une vulnérabilité propre et de prescriptions spécifiques. A répartir selon les sous-catégories qui suivent. |
+| /sensiblesCrise | établissements dits sensibles ou difficilement évacuables | équipements particuliers | établissements dits sensibles ou difficilement évacuables (ex : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires) |
+| /gestionCrise | équipements nécessaires à la gestion de crise | équipements particuliers |  équipements nécessaires à la gestion de crise (ex : centres de secours, gendarmerie, police, services techniques des collectivités) |
+| /collectifPublicOuverts | équipements collectifs ou espaces publics ouverts | équipements particuliers | équipements collectifs ou espaces publics ouverts (ex : parcs, espaces verts, campings, aires d’accueil des gens du voyage, terrains de sport) |
+| /campings | campings et hôtellerie de plein air | équipements particuliers | campings et hôtellerie de plein air. |
+| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Il s’agit par exemple des secteurs sauvegardés ou des monuments historiques, qui sont soumis à des réglementations particulières et avec lesquelles il faudra veiller à définir des mesures cohérentes. |
+| /infraTransport | infrastructures de transport | - | Enjeux complémentaires - Les différentes infrastructures routières, ferrées, voies navigables, modes doux de déplacement et transports collectifs y sont recensés. On peut distinguer les deux sous-catégories suivantes. |
+| /infraTransport/voiesStruct | voies de circulation structurantes existantes ou en projet | infrastructures de transport | voies de circulation structurantes existantes ou en projet | 
+| /infraTransport/dessertes | voies de desserte locale de l’habitat et des équipements | infrastructures de transport | voies de desserte locale de l’habitat et des équipements |
+| /ouvrageInteretGeneral | ouvrages et équipements d’intérêt général | - | Enjeux complémentaires - ouvrages et équipements d’intérêt général et/ou sensibles pouvant avoir un effet indirect sur la sécurité des personnes. Distingués dans les sous catégories suivantes |
+| /ouvrageInteretGeneral/reseauxSensibles | réseaux et équipements sensibles | ouvrages et équipements d’intérêt général | réseaux (lignes) électriques ou téléphoniques enterrés ou aériens, réseaux (canalisations) d’eau ou de gaz enterrés ou aériens |
+| /ouvrageInteretGeneral/posteElectrique | postes, transformateurs ou pylônes électriques | ouvrages et équipements d’intérêt général | postes, transformateurs ou pylônes électriques |
+| /ouvrageInteretGeneral/posteDetenteGaz | postes de détente de gaz | ouvrages et équipements d’intérêt général | postes de détente de gaz |
+| /ouvrageInteretGeneral/centreTel | centraux téléphoniques | ouvrages et équipements d’intérêt général | centraux téléphoniques |
+| /ouvrageInteretGeneral/relaisTel | relais ou antennes de téléphonie mobile | ouvrages et équipements d’intérêt général | relais ou antennes de téléphonie mobile |
+| /ouvrageInteretGeneral/captageEau | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau | ouvrages et équipements d’intérêt général | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau |
+| /ouvrageInteretGeneral/eauxUsees | stations de traitement des eaux usées, de lagunage | ouvrages et équipements d’intérêt général | stations de traitement des eaux usées, de lagunage |
+| /ouvrageInteretGeneral/reservoirEau | réservoirs ou châteaux d’eau | ouvrages et équipements d’intérêt général | réservoirs ou châteaux d’eau |
+| /ouvrageInteretGeneral/posteRelevement | postes de relèvement | ouvrages et équipements d’intérêt général | postes de relèvement |
+| /ouvrageInteretGeneral/securiteHydraulique | Installations hydrauliques de sécurités | ouvrages et équipements d’intérêt général | Installations hydrauliques de sécurités (par exemple stations de relevage des eaux pluviales) |
+| /ouvrageInteretGeneral/barrages | barrages, vannes, écluses | ouvrages et équipements d’intérêt général | barrages, vannes, écluses |
+| /ouvrageInteretGeneral/canaMD | canalisations de matières dangereuses | ouvrages et équipements d’intérêt général | canalisations de matières dangereuses |
+| /frichesIndusUrba | friches industrielles et urbaines | - | Enjeux connexess et éléments de contexte - zones de friches industrielles et urbaines |
+| /projetCollectivite | projets des collectivités | - | Enjeux connexess et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
 
 
 
