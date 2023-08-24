@@ -400,32 +400,34 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
+La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRN"+*code*.
 
-| Libellé | Libellé Parent | Définition |
-|-|-|-|
-| espaces urbanisés | -  | Enjeu incontournable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| centres urbains | - | Enjeu incontournable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaces spécifiques au type d’aléa étudié | - | Enjeu incontournable - Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains |
-| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
-| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
-| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-| zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
-| zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
-| zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
-| zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
-| service | zone d'activité | Zone de typologie de bati homogène destinée au service |
-| artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
-| infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
-| infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+
+| Code | Libellé | Libellé Parent | Définition |
+|-|-|-|-|
+| /espaceUrba | espaces urbanisés | -  | Enjeu incontournable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| /centreUrbain | centres urbains | - | Enjeu incontournable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| /espaceSpecifique | espaces spécifiques au type d’aléa étudié | - | Enjeu incontournable - Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains |
+| /espaceSpecifique/expansionCrues | zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
+| /espaceSpecifique/atterrisement | zones d’atterrissement | espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
+| /espaceSpecifique/interfaceHabitatForet | zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /espaceSpecifique/maintienForet | zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /projetCollectivite | projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| /activite | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
+| /activite/service | service | zone d'activité | Zone de typologie de bati homogène destinée au service |
+| /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
+| /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/gestionCrise | équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/publicsOuverts | équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/campings | campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| /equipementParticulier/infraTransport | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/reseauxSensibles | réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
 #### Liste de codes NomenclatureEnjeuPPRL
@@ -538,7 +540,7 @@ permanent. Ces établissements sont à identifier selon leur usage (ex. santé, 
 | établissements dits sensibles ou difficilement évacuables | équipements particuliers | établissements dits sensibles ou difficilement évacuables (ex : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires) |
 | équipements nécessaires à la gestion de crise | équipements particuliers |  équipements nécessaires à la gestion de crise (ex : centres de secours, gendarmerie, police, services techniques des collectivités) |
 | équipements collectifs ou espaces publics ouverts | équipements particuliers | équipements collectifs ou espaces publics ouverts (ex : parcs, espaces verts, campings, aires d’accueil des gens du voyage, terrains de sport) |
-| campings et l’hôtellerie de plein air | équipements particuliers | campings et l’hôtellerie de plein air. |
+| campings et hôtellerie de plein air | équipements particuliers | campings et hôtellerie de plein air. |
 | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Il s’agit par exemple des secteurs sauvegardés ou des monuments historiques, qui sont soumis à des réglementations particulières et avec lesquelles il faudra veiller à définir des mesures cohérentes. |
 | infrastructures de transport | - | Enjeux complémentaires - Les différentes infrastructures routières, ferrées, voies navigables, modes doux de déplacement et transports collectifs y sont recensés. On peut distinguer les deux sous-catégories suivantes. |
 | voies de circulation structurantes existantes ou en projet | infrastructures de transport | voies de circulation structurantes existantes ou en projet | 
