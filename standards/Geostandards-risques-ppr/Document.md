@@ -473,7 +473,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 
 | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité pouvant être associée |
-|-|-|-|
+|-|-|-|-|
 | Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. | |
 | habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
 | activités | Urbanisation existante | activités (industrielles, etc.) | Nombre d'emplois |
@@ -501,7 +501,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | gares (routières, ferroviaires, portuaires) | Infrastructures de transports | gares (routières, ferroviaires, portuaires)  | |
 | modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | modes doux de déplacement (piétons, vélos) | |
 | transports collectifs (bus, métros, etc.)  | Infrastructures de transports | transports collectifs (bus, métros, etc.) | |
-| espaces publics ouverts | - | Enjeu incontournable - Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous catégories ci-dessous | nombre de personnes pouvant être rassemblées |
+| espaces publics ouverts | - | Enjeu incontournable - Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous catégories ci-dessous | Nombre de personnes pouvant être rassemblées |
 | espaces à usage permanent | espaces publics ouverts | équipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
 | espaces à usage périodique ou occasionnel | espaces publics ouverts | voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
 | ouvrages et équipements d’intérêt général | - | Enjeu incontournable - Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous catégories suivantes identifient certains de ces types d'ouvrages | |
@@ -513,6 +513,51 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 | château d’eau, réservoir | ouvrages et équipements d’intérêt général | château d’eau, réservoir | |
 | projets de développement de la commune | - | Elements connexes disponibles | |
 | enjeux environnementaux et patrimoniaux | - | Elements connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
+
+
+#### Liste de codes NomenclatureEnjeuPPRM
+
+**Nom de la liste de codes** : NomenclatureEnjeuPPRM
+
+**Titre** : Nomenclature des Enjeux PPR Miniers
+
+**Définition** : La liste de codes "NomenclatureEnjeuPPRM" expose la classification des enjeux définie par [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes et éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+
+
+| Libellé | Libellé Parent | Définition |
+|-|-|-|
+| espaces urbanisés | -  | Enjeux incontournables - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| espaces non urbanisés | -  | Enjeux incontournables - Zones exclues des espaces urbanisés, zones agricoles, zones naturelles et forestières |
+| zones d'habitat | - | Enjeux complémentaires - typologie du bati : zone d'habitat individuel, collectif et immeubles de grande hauteur |
+| zones d'activités | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| équipements | - | Enjeux complémentaires - typologie du bati : toutes constructions et installations nécessaires aux services publics ou d’intérêt général |
+| zones mixtes habitat / activité ou équipement | - | Enjeux complémentaires - typologie du bati : établissements industriels et commerciaux |
+| établissements recevant du public (ERP) | - | Enjeux complémentaires - Établissements recevant du public  à caractère public ou privé (ex : commerces, maisons de retraites, écoles, stades, édifices religieux) dédiés le plus souvent à un usage
+permanent. Ces établissements sont à identifier selon leur usage (ex. santé, enseignement, commercial) et leur capacité 'accueil (cf. catégorie d'ERP selon [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| équipements particuliers | - | Enjeux complémentaires - équipements qui peuvent faire l’objet d’une vulnérabilité propre et de prescriptions spécifiques. A répartir selon les sous-catégories qui suivent. |
+| établissements dits sensibles ou difficilement évacuables | équipements particuliers | établissements dits sensibles ou difficilement évacuables (ex : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires) |
+| équipements nécessaires à la gestion de crise | équipements particuliers |  équipements nécessaires à la gestion de crise (ex : centres de secours, gendarmerie, police, services techniques des collectivités) |
+| équipements collectifs ou espaces publics ouverts | équipements particuliers | équipements collectifs ou espaces publics ouverts (ex : parcs, espaces verts, campings, aires d’accueil des gens du voyage, terrains de sport) |
+| campings et l’hôtellerie de plein air | équipements particuliers | campings et l’hôtellerie de plein air. |
+| enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Il s’agit par exemple des secteurs sauvegardés ou des monuments historiques, qui sont soumis à des réglementations particulières et avec lesquelles il faudra veiller à définir des mesures cohérentes. |
+| infrastructures de transport | - | Enjeux complémentaires - Les différentes infrastructures routières, ferrées, voies navigables, modes doux de déplacement et transports collectifs y sont recensés. On peut distinguer les deux sous-catégories suivantes. |
+| voies de circulation structurantes existantes ou en projet | infrastructures de transport | voies de circulation structurantes existantes ou en projet | 
+| voies de desserte locale de l’habitat et des équipements | infrastructures de transport | voies de desserte locale de l’habitat et des équipements |
+| ouvrages et équipements d’intérêt général | - | Enjeux complémentaires - ouvrages et équipements d’intérêt général et/ou sensibles pouvant avoir un effet indirect sur la sécurité des personnes. Distingués dans les sous catégories suivantes |
+| réseaux et équipements sensibles | ouvrages et équipements d’intérêt général | réseaux (lignes) électriques ou téléphoniques enterrés ou aériens, réseaux (canalisations) d’eau ou de gaz enterrés ou aériens |
+| postes, transformateurs ou pylônes électriques | ouvrages et équipements d’intérêt général | postes, transformateurs ou pylônes électriques |
+| postes de détente de gaz | ouvrages et équipements d’intérêt général | postes de détente de gaz |
+| centraux téléphoniques | ouvrages et équipements d’intérêt général | centraux téléphoniques |
+| relais ou antennes de téléphonie mobile | ouvrages et équipements d’intérêt général | relais ou antennes de téléphonie mobile |
+| installations d’alimentation en eau potable, zones, points ou stations de captage d’eau | ouvrages et équipements d’intérêt général | installations d’alimentation en eau potable, zones, points ou stations de captage d’eau |
+| stations de traitement des eaux usées, de lagunage | ouvrages et équipements d’intérêt général | stations de traitement des eaux usées, de lagunage |
+| réservoirs ou châteaux d’eau | ouvrages et équipements d’intérêt général | réservoirs ou châteaux d’eau |
+| postes de relèvement | ouvrages et équipements d’intérêt général | postes de relèvement |
+| Installations hydrauliques de sécurités | ouvrages et équipements d’intérêt général | Installations hydrauliques de sécurités (par exemple stations de relevage des eaux pluviales) |
+| barrages, vannes, écluses | ouvrages et équipements d’intérêt général | barrages, vannes, écluses |
+| canalisations de matières dangereuses | ouvrages et équipements d’intérêt général | canalisations de matières dangereuses |
+| friches industrielles et urbaines | - | Enjeux connexess et éléments de contexte - zones de friches industrielles et urbaines |
+| projets des collectivités | - | Enjeux connexess et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
 
 
 
