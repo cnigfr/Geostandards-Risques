@@ -319,7 +319,7 @@ Le profil applicatif PPR décline les différentes nomenclatures définies dans 
 - Liste de codes [NomenclatureEnjeuPPRT](#liste-de-codes-nomenclatureenjeupprt) issue du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) ;
 - Liste de codes [NomenclatureEnjeuPPRM](#liste-de-codes-nomenclatureenjeupprm) issue du [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) ;
 
-Par ailleurs, l'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon la nouvelle nomenclature mais aussi, pour les nouveaux PPR, de préciseri, si besoin, la catégorie de certains enjeux.
+Par ailleurs, l'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon une nouvelle nomenclature mais aussi, pour les nouveaux PPR, de préciser, si besoin, la catégorie de certains enjeux.
 
 Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'information relative à la vulnérabilité autre que celle pouvant être intrinsèquement relatée par la classification. 
 
@@ -396,88 +396,48 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Nomenclature Enjeux PPR Natuerels Prévisibles
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois grandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
 La codification des enjeux proposée pour cette nomenclature est à base d'URIs compatibles avec le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) même si à la date de rédaction de ce standard, elle n'y est pas implémentée. Le principe est un principe hiérarchique reposant sur une base d'URI fixe associée à la nomenclature, complétée par la suite hiérarchique des codes permettant d'accéder au code voulu. Par exemple, le code associé au type d'enjeu "habitat collectif" est formé de la concaténation des éléments suivants :
 
 `https://data.geocatalogue.fr/ncl/_NomenclatureEnjeuCNIGType`
 
-
-
-
-
-##### Enjeux incontournables
-
-Les enjeux incontournables caractérisent les différents types d'occupation du sol. Il se répartissent en quatre catégories principales qui, pour certaines peuvent être précisées en sous-catégories. 
-
-
-| Code | Code Parent | Définition |
+| Libellé | Libellé Parent | Définition |
 |-|-|-|
-| espaces urbanisés | enjeux incontourables |  La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| centres urbains | enjeux incontourables | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaces spécifiques au type d’aléa étudié | enjeux incontourables | Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes tels que les zones d’expansion des crues pour les inondations, les zones d’atterrissement pour les crues torrentielles, les zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs... |
-| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les inondations. |
-| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ... pour les crues torrentielles. |
-| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | *A DEFINIR* ...pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| projets des collectivités | enjeux incontourables | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-
-La [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) précise la caractérisation des zones de centre urbains.
-
-
-##### Enjeux complémentaires
-
-Les enjeux complémentaires permettent d’identifier les points particulièrement vulnérables au sein des zones définies dans les enjeux incontournables. L'étude des enjeux complémentaires est conseillée puisqu’elle permet d’obtenir une connaissance du territoire et de son fonctionnement relativement fine, ce qui est essentiel pour que les mesures prescrites soient cohérentes avec les enjeux en présence. Elle est également utile à la préparation de la gestion de crise.
-
-Les enjeux complémentaires se répartissent dans les catégories suivantes :
-
-| Code | Code Parent | Définition |
-|-|-|-|
-| typologie du bâti | Enjeux complémentaires | zones homogènes careactérisées par leur fonction, ou par des caractéristiques constructives similaires |
-| habitat | typologie du bâti | *A DEFINIR* |
-| habitat individuel | habitat | *A DEFINIR* |
-| habitat collectif | habitat | *A DEFINIR*  |
-| habitat | typologie du bâti | *A DEFINIR*  |
-| industrie | typologie du bâti | *A DEFINIR*  |
-| service | typologie du bâti | *A DEFINIR*  |
-| artisanat | typologie du bâti | *A DEFINIR*  |
-| infrastructures et équipements particuliers | Enjeux complémentaires | éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires |
-| équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  |
-| équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | ils regroupent ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes dont les conditions d’évacuation ou de mise en sécurité doivent être étudiées. |
-| campings et hôtellerie de plein air | infrastructures et équipements particuliers | ces établissements accueillent, dans une forme d'occupation du sol particulièrement exposée aux risques, une population vulnérable en raison de sa méconnaissance des aléas locaux. Les campings situés au bord des cours d’eau et sur la frange littorale sont nombreux et très fréquentés. Ils sont d’autant plus vulnérables qu’ils sont parfois localisés dans des secteurs difficilement accessibles et évacuables. La tendance actuelle à l’occupation à l’année des campings augmente encore ce risque. |
-| infrastructures de transport | infrastructures et équipements particuliers | Elles sont essentielles pour assurer la desserte du territoire à la fois pour l’évacuation des personnes et l'acheminement des secours. Elles peuvent également être à l’origine d’un sur-aléa tel qu’un accident de transport de matière dangereuse. |
-| réseaux et équipements sensibles | infrastructures et équipements particuliers | réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| espaces urbanisés | -  | enjeu incontourable - La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| centres urbains | - | Enjeu incontourable - Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| espaces spécifiques au type d’aléa étudié | - | enjeu incontourable - Des espaces naturels, agricoles, forestiers ou autres, peuvent jouer un rôle dans la dynamique des phénomènes. Les sous catégories suivantes permettent d'en caractériser certains
+| zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | zones d’expansion des crues pour les inondations |
+| zones d’atterrissement | espaces spécifiques au type d’aléa étudié | zones d'atterrissement pour les crues torrentielles. |
+| zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| projets des collectivités | - | enjeux incontourables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| zone d'habitat individuel | zone d'habitat | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
+| zone d'habitat collectif |  zone d'habitat | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| zone d'industrie | zone d'activité | typologie du bâti | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'industrie |
+| service | zone d'activité | Enjeux complémentaires - zone de typologie de bati homogène destinée au service |
+| artisanat | zone d'activité | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'artisanat |
+| infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
 | enjeux patrimoniaux, culturels et environnementaux | Enjeux complémentaires | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
-
-##### Autres éléments de contexte
-
-Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les évolutions du territoire.
-
-*A voir s'il est possible de caractériser des types d'enjeu d'après la définition du [Guide PPRN:2016] :*
-
-> Ce sont par exemple :
-> 
-> * les enjeux stratégiques pour la gestion de crise : PC crise, centres de secours, ERP pouvant servir d’hébergement, centraux téléphoniques, centrales électriques... ;
-> * la vulnérabilité des différents réseaux et les effets de leurs dysfonctionnements ;
->  * les procédures réglementaires existantes ou à venir connues ;
-> * les mises en perspective : évolution démographique, contexte socio-économique, place du territoire considéré au sein d’ensembles territoriaux plus vastes ;
-> * l’évaluation quantitative des populations menacées ;
-> * les alternatives d’urbanisation ;
-> * les dents creuses (c’est-à-dire en urbanisme, des espaces non construits entourés de parcelles
-bâties).
 
 
 #### Liste de codes NomenclatureEnjeuCOVADIS
 
 **Nom de la liste de codes** : NomenclatureEnjeuCOVADIS
 
-**Titre** : Nomenclature Enjeux PPR COVADIS
-
 **Définition** : La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard.
 
 
-| Code | Définition |
+| Code | Libellé |
 |-|-|
 |0101|Espace urbanisé - habitat dense|
 |0102|Espace urbanisé - habitat peu dense|
