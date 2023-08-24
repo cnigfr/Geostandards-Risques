@@ -310,12 +310,18 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analyse des enjeux est réalisée afin de pouvoir établir le zonage réglementaire. A cette fin, la collecte des enjeux est réalisée au moment de l'élaboration du PPR et dont la date est renseignée par l'intermédiaire du champ "dateEnjeu"  de la classe [Enjeu](#classe-dobjets-enjeu) définie dans le modèle commun.
 
-Ce standard propose une nomenclature des enjeux pour les PPR qui fait la synthèse des différentes classifications proposées dans les guides [Guide PPRN:2016], [Guide PPRT:2007] et [Guide PPRM:2019] pour l'analyse des enjeux. Il s'agit de la liste de codes [NomenclatureEnjeuPPR](#liste-de-codes-nomenclatureenjeuppr) à appliquer aux objets de la classe [Enjeu](#classe-dobjets-enjeu) au travers du champ "typeEnjeu".
+Selon les types de PPR et les guides d'élaboration qui leur sont associés, les nomenclatures de ces enjeux varient autour d'une répartition partagée en trois catégories : enjeux incontournables, enjeux complémentaires et autres éléments de contexte (ou enjeux connexes). Le modèle commun de ce standard permet d'associer à chaque objet de la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) une ou plusieurs typologies issues de nomenclatures différentes à l'aide du champ "typeEnjeu" de type [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu).
 
-L'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif (par opposition à normatif) une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon la nouvelle nomenclature.
+Le profil applicatif PPR décline les différentes nomenclatures définies dans les guides d'élaboration en fonction du type de PPR sous forme d'énumérations, qu'il conviendra d'adopter selon le type de PPR qui est mis en oeuvre :
+
+- Liste de codes [NomenclatureEnjeuPPRN](#liste-de-codes-nomenclatureenjeupprn) issue du [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRL](#liste-de-codes-nomenclatureenjeupprl) issue du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRT](#liste-de-codes-nomenclatureenjeupprt) issue du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) ;
+- Liste de codes [NomenclatureEnjeuPPRM](#liste-de-codes-nomenclatureenjeupprm) issue du [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) ;
+
+Par ailleurs, l'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon la nouvelle nomenclature mais aussi, pour les nouveaux PPR, de préciseri, si besoin, la catégorie de certains enjeux.
 
 Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'information relative à la vulnérabilité autre que celle pouvant être intrinsèquement relatée par la classification. 
-
 
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux dans le cadre des PPR.**
@@ -384,13 +390,13 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ### Thématique Enjeux
 
 
-#### Liste de codes NomenclatureEnjeuPPR
+#### Liste de codes NomenclatureEnjeuPPRN
 
-**Nom de la liste de codes** : NomenclatureEnjeuPPR
+**Nom de la liste de codes** : NomenclatureEnjeuPPRN
 
-**Titre** : Nomenclature Enjeux PPR
+**Titre** : Nomenclature Enjeux PPR Natuerels Prévisibles
 
-**Définition** : La liste de codes "NomenclatureEnjeuPPR" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois grandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification.  
+**Définition** : La liste de codes "NomenclatureEnjeuPPRN" expose la classification des enjeux définie par [Guide PPRN:2016]. Il s'agit d'une classification hiérarchique qui organise les types d'enjeux en trois grandes catégories : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. Elle est non exclusive, à savoir qu'un même objet de la classe [Enjeu](#classe-dobjets-enjeu) peut être rattaché à plusieurs éléments de cette classification ou d'autres classifications.  
 
 La codification des enjeux proposée pour cette nomenclature est à base d'URIs compatibles avec le [Système de publication de registres du Géocatalogue](https://data.geocatalogue.fr/ncl/NomenclaturePPR) même si à la date de rédaction de ce standard, elle n'y est pas implémentée. Le principe est un principe hiérarchique reposant sur une base d'URI fixe associée à la nomenclature, complétée par la suite hiérarchique des codes permettant d'accéder au code voulu. Par exemple, le code associé au type d'enjeu "habitat collectif" est formé de la concaténation des éléments suivants :
 
@@ -460,6 +466,86 @@ Il s'agit des éléments qui permettent d'approfondir le fonctionnement et les �
 > * les alternatives d’urbanisation ;
 > * les dents creuses (c’est-à-dire en urbanisme, des espaces non construits entourés de parcelles
 bâties).
+
+
+#### Liste de codes NomenclatureEnjeuCOVADIS
+
+**Nom de la liste de codes** : NomenclatureEnjeuCOVADIS
+
+**Titre** : Nomenclature Enjeux PPR COVADIS
+
+**Définition** : La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard.
+
+
+| Code | Définition |
+|-|-|
+|0101|Espace urbanisé - habitat dense|
+|0102|Espace urbanisé - habitat peu dense|
+|0103|Espace urbanisé - habitat diffus|
+|0104|Espace urbanisé - projet d'urbanisation future|
+|0105|Espace urbanisé - réserve foncière|
+|0201c|ERP J : Structures d'accueil pour personnes âgées et handicapées|
+|0202c|ERP L : Salles à usage d'audition, de conférences, de réunions, de spectacles|
+|0203c|ERP M : Magasins de vente, centres commerciaux|
+|0204c|ERP N : Restaurants et débits de boissons|
+|0205c|ERP O : Hôtels et pensions de famille|
+|0206c|ERP P : Salles de danse et salles de jeux|
+|0207c|ERP R : Établissements d'enseignement, colonies de vacances|
+|0208c|ERP S : Bibliothèques, centres de documentation et de consultation d'archives|
+|0209c|ERP T : Salles d'expositions|
+|0210c|ERP U : Établissements de soins|
+|0211c|ERP V : Établissements de culte|
+|0212c|ERP W : Administrations, banques, bureaux|
+|0213c|ERP X : Établissements sportifs couverts|
+|0214c|ERP Y : Musées|
+|0215c|ERP PA : Établissements de plein air|
+|0216c|ERP CST : Chapiteaux, tentes et structures|
+|0217c|ERP CG : Structures gonflables|
+|0218c|ERP OA : Hôtels, restaurants d'altitude|
+|0219c|ERP REF : Refuges de montagne|
+|0220c|ERP PS : Parcs de stationnement couverts|
+|0221c|ERP GA : Gares accessibles au public|
+|0222c|ERP EF : Établissements flottants|
+|0301|Espace économique - zone d'activité industrielle|
+|0302|Espace économique - zone d'activité commerciale|
+|0303|Espace économique - zone d'activité future|
+|0304|Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture|
+|0305|Espace économique - zone de camping, mobilhome|
+|0306|Espace économique - zone aéroportuaire, portuaire|
+|0307|Espace économique - carrière, gravière|
+|0308|Établissement employeur|
+|0401|Espace ouvert recevant du public - sport|
+|0402|Espace ouvert recevant du public - tourisme|
+|0403|Espace ouvert recevant du public - parking|
+|0404|Espace ouvert recevant du public - parc d'exposition, foires, rassemblements divers|
+|0405|Espace ouvert recevant du public - cimetière|
+|0501|Infrastructure linéaire - route, voie ferrée, canal|
+|0502|Infrastructure linéaire en projet|
+|0503|Infrastructure linéaire - ligne de bus|
+|0504|Infrastructure linéaire - piste cyclable, voie verte|
+|0505|Infrastructure linéaire - ligne électrique|
+|0506|Infrastructure surfacique - gare, aéroport, aérodrome, port|
+|0507|Infrastructure ponctuelle - gare, arrêt, stationnement TMD|
+|0601|Ouvrage ou équipement d'intérêt général - zone, station de captage|
+|0602|Ouvrage ou équipement d'intérêt général - station de pompage|
+|0603|Ouvrage ou équipement d'intérêt général - réservoir, château d'eau|
+|0604|Ouvrage ou équipement d'intérêt général - canalisation eau|
+|0605|Ouvrage ou équipement d'intérêt général - poste de relèvement|
+|0606|Ouvrage ou équipement d'intérêt général - station de traitement, de lagunage|
+|0607|Ouvrage ou équipement d'intérêt général - barrage, vanne, écluse|
+|0608|Ouvrage ou équipement d'intérêt général - poste de transformation EDF|
+|0609|Ouvrage ou équipement d'intérêt général - canalisation matière dangereuse|
+|0610|Ouvrage ou équipement d'intérêt général - téléphonique, relai, antenne|
+|0611|Ouvrage ou équipement d'intérêt général - caserne de pompier|
+|0612|Ouvrage ou équipement d'intérêt général - poste de détente gaz|
+|0613|Ouvrage ou équipement d'intérêt général - station hydrocarbure|
+|0614|Ouvrage ou équipement d'intérêt général - décharge, usine d'incinération|
+|0701|Zone naturelle protégée|
+|0702|Monument inscrit ou classé au répertoire des monuments historiques|
+|0703|Parc naturel national, régional|
+|0704|Zone d'expansion des crues pour les inondations|
+|0705|Zone naturelle de mouvements de terrain|
+|9999|Autre enjeu : nature à préciser|
 
 
 ### Thématique Zonage réglementaire
