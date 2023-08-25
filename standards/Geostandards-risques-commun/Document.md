@@ -260,7 +260,7 @@ Le schéma suivant représente les liens entre chacune de ces thématiques. Les 
 
 **Fig. *xx* Relations entre les différentes thématiques.**
 
-![Modele UML Procedure et Perimetre](./ressources/Schema-thematiques.png)
+![Schéma relations thématiques](./ressources/Schema-thematiques.png)
 
 
 
@@ -893,35 +893,6 @@ Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-r�
 Le système de référence temporel est le calendrier grégorien. Les valeurs de temps sont référencées par rapport au temps local exprimé dans le système de temps universel UTC.
 
 
-
-#  Cycle de vie des données 
-
-## Les différents états d'une procédure de Plan de Prévention des risques
-
-> *à écrire : cf. les différents états d'une procédure GASPAR*
-> *Notions de procédures révisantes et révisées dans GASPAR*
-
-##  Saisie et production des données
-
-> *La section relative à la saisie et à la production de données vise à fournir des instructions, des exigences et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.*
-
-
-
-##  Maintenance
-
-> *Cette section vise à fournir des instructions, des exigences, des descriptions, des principes et/ou des critères de gestion des données après la saisie. Cela inclut la fréquence des modifications, de la mise à jour et des ajouts dont le contenu fait l'objet.*
-> *Une maintenance peut donner une nouvelle version ou la mise à jour d’un jeu de donnée. Afin d’assurer une maintenance cohérente, un guide sur les mécanismes de mises à jour et des informations pertinentes d’encodages est disponible <ci-après/en annexe/sur ce lien>.*
-
-
-#  Règles de symbologie
-
-> *La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.*
-
-
-#  Livraison
-
-La description des livraisons est faite dans les profils applicatifs.
-
 #  Métadonnées
 
 ##  Généralités
@@ -931,32 +902,38 @@ Chaque jeu de données doit obligatoirement être accompagné de ses métadonné
 La spécification des éléments de métadonnées qui accompagnent les jeu de données est faite dans les profils applicatifs.
 
 
----
 
 # ANNEXE A - Correspondances INSPIRE
 
-> *Cette partie doit permettre de faire le lien entre le modèle de données et les modèles de données des thématiques INSPIRE en lien avec les standards risques, à savoir :*
+Cette partie fait le lien entre le modèle de données des Géostandards risques et les modèles de données des thématiques INSPIRE en lien avec les standards risquesi, à savoir :
+
+- le [thème 4 "Usage des sols" de l'annexe III](#lien-avec-le-thème-4-usage-des-sols-de-lannexe-iii) ;
+- le [thème 8 "Lieux de production et sites industriels" de l'Annexe III](#lien-avec-le-thème-8-lieux-de-production-et-sites-industriels-de-lannexe-iii) dans le cadre des risques technologiques ;
+- le [thème 11 "Zones de gestion, de restriction ou de réglementation et unités de déclaration" de l'annexe III](#lien-avec-le-thème-11-zones-de-gestion-de-restriction-ou-de-réglementation-et-unités-de-déclaration-de-lannexe-iii) ;
+- le [thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE](#lien-avec-le-thème-12-zones-de-risque-naturel-de-lannexe-iii-de-la-directive-inspire) Dans le cadre des risques naturels. 
+
+Les tableaux présentés ici sont un résumé à un haut niveau des correspondances qui sont implémentées dans des tableaux spécifiques fournis par la commission européenne ("Mapping tables") référencés dans chacune des parties suivantes. 
  
 
 ## Lien avec le thème 4 Usage des sols de l'annexe III
 
 
-> *classes concernées et mapping à écrire* 
+Les tables de correspondances avec le thème 4 Usage des sols de l'annexe III sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/LandUseMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/LandUseMappingTable.xls) 
 
 
 ## Lien avec le thème 8 Lieux de production et sites industriels de l'Annexe III 
 
-> *classes concernées et mapping à écrire* 
+Les tables de correspondances avec le thème 8 Lieux de production et sites industriels de l'Annexe III sont accessibles ici :  [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/ProductionAndIndustrialFacilitiesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/ProductionAndIndustrialFacilitiesMappingTable.xls)
 
 
-## Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III*
+## Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III
 
-> *classes concernées et mapping à écrire* 
+Les tables de correspondances avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls)
 
-## Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.*
 
-> *classes concernées et mapping à écrire* 
+## Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.
 
+Les tables de correspondances avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls)
 
 
 # ANNEXE B - Correspondances avec le modèle de données GASPAR
@@ -1036,9 +1013,7 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 
 ### Types de procédures GASPAR
 
-Le tableau suivant liste les différents types de procédures gérées dans GASPAR et en lien avec les Géostandards risques
-
-> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
+Le tableau suivant liste les différents types de procédures gérées dans GASPAR, en lien avec les Géostandards risques. Les codes et libellés sont réutilisés comme base pour l'énumération [TypeProcedure](#enumeration-typeprocedure) qui restreint les valeurs de la propriété `typeProcedure` de la classe d'objets [Procedure](#classe-dobjets-procedure).
 
 
 | Code | Libellé |
@@ -1062,17 +1037,15 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 
 ### Etats d'une procédure GASPAR
 
-Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR.
-
-> *Indiquer l'utilisation des cette classification dans le cadre des Géostandards*
+Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR.  Les codes et libellés des sous-états sont réutilisés comme base pour l'énumération [TypeEtatProcedure](#enumeration-typeetatprocedure) qui restreint les valeurs de la propriété `etatProcedure` de la classe d'objets [Perimetre](#classe-dobjets-perimetre).
 
 
 | Code Etat | Libellé Etat | Code sous-état | Libellé sous-état |
 |-|-|-|-|
-| PRG_MTG	| Programmation et montage | DEB_PRG | Début programmation |
+| PRG_MTG | Programmation et montage | DEB_PRG | Début programmation |
 | PRG_MTG | Programmation et montage | FIN_PRG |Fin programmation |
 | PRG_MTG | Programmation et montage | DEB_MTG | Début montage |
-| PRG_MTG	| Programmation et montage | FIN_MTG | Fin montage |
+| PRG_MTG| Programmation et montage | FIN_MTG | Fin montage |
 | PRESCRIT | Prescrit | PRECRIT | Prescrit |
 | PRESCRIT | Prescrit | PROROGE | Prorogé |
 | OPPOSABLE | Opposable | ANTICIPE | Anticipé |
