@@ -19,26 +19,22 @@ Groupe de travail refonte des Géostandards Risques
 
 #  Fiche analytique
 
-> *Tableau de présentation du document à compléter...*
 
 | | |
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Modèle Commun |
 | **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
-| **Résumé** | *à remplir* |
-| **Objectif** | *à remplir* |
-| **Etendue d'application** | *à remplir : <Contient l'étendue de la ou les zones géographiques, temporelles ou verticales couvertes par le contenu>* |
-| **Resolution spatiale** | *à remplir : <(facultatif) Contient un facteur fournissant une compréhension générale de la densité des données spatiales/du niveau de référence>* |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Rsiques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières. |
+| **Etendue d'application** | Territoire national français. |
+| **Resolution spatiale** | entre le 1:5000 et le 1:25000 |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| **Diffusion** | *à remplir : <Contient le format de disponibilité et l’endroit où le trouver> Ex PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** | *à remplir* |
-| **Restriction** | *à remplir* |
-| **Thèmes** | *à remplir* |
-| **Mots-clés** | *à remplir* |
-| **Contact** | *à remplir* |
-| **Informations complémentaires** | *à remplir : <(facultatif) Contient toute autre information descriptive sur le contenu et nécessaire à la fiche d’information>* |
+| **Diffusion** | *A venir : PDF sur internet  (site du CNIG)* |
+| **Formats disponibles** |  HTML/Markdown sur le [dépot Github du Groupe de travail Géostandards Risques](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
+| **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
+| **Contact** | geostandards-risques-gt-cnig@framalistes.org |
 
 
 #  Sommaire
