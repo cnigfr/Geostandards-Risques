@@ -196,8 +196,6 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 **TRI** Territoire à risque important d'inondation
 
 
----
-
 
 #  Concepts généraux
 
@@ -855,8 +853,6 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 |-|-|-|-|-|
 | **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
 
-
----
 
 #  Systèmes de référence
 
