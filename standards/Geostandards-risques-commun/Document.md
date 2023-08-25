@@ -17,10 +17,6 @@ Groupe de travail refonte des Géostandards Risques
 *Version 0.1 - Date*
 
 
----
-
----
-
 #  Fiche analytique
 
 > *Tableau de présentation du document à compléter...*
@@ -44,7 +40,6 @@ Groupe de travail refonte des Géostandards Risques
 | **Contact** | *à remplir* |
 | **Informations complémentaires** | *à remplir : <(facultatif) Contient toute autre information descriptive sur le contenu et nécessaire à la fiche d’information>* |
 
----
 
 #  Sommaire
 
@@ -74,9 +69,9 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Bouffier Jacques | MTE / DGPR / BRIL |
 | Boudesseul Nicolas | DREAL Pays de la Loire |
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
+| Coignon Bastien | MTE / DGPR / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohan | Cerema |
-| Perehin Céline | Cerema |
 
 > *liste à compléter et actualiser*
 
@@ -86,34 +81,68 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 
 ##  Objectif et raison d'être du standard
 
-> *Résumé et objectif du document.*
+La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Rsiques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI).
 
+Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières.
 
 
 ##  A qui s'adresse ce document ?
 
-> *à remplir* 
+Ce document s'adresse :
+
+- aux services de l'Etat ou assimilés, chargés de produire ces données, les entretenir les diffuser.
+- aux utilisateurs de ces données : collectivités locales, bureaux d'études, ou grand public.
 
 
 ##  Comment lire le document
 
-> *Si besoin, présentation de la structure du document*
+Les parties [Préface](#préface) et [Présentation du document](#présentation-du-document) donnent les éléments nécessaires à la compréhension du document. 
+
+Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) et [Systèmes de référence](#syst%C3%A8mes-de-r%C3%A9f%C3%A9rence) sont le coeur du document. Elles définissent le modèle conceptuel commun, le catalogue de données associé et les systèmes de référence de coordonnées applicables aux Géostandards risques.
+
+L'[annexe A](#annexe-a---correspondances-inspire), informative, établit les correspondances du modèle de données des Géostandards avec ceux des thématiques INSPIRE qui les concernent.
+
+L'[annexe B](#annexe-b---correspondances-avec-le-modèle-de-données-gaspar), informative, décrit les correspondances du modèle de données des Géostandards avec celui de la base nationale de gestion assistée des procédures administratives relatives aux risques (GASPAR) dont est dérivée une partie des informations décrites dans ce document.
 
 
-##  Références à d'autres normes
 
-Le document ci-présent s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l’édition citée compte. Pour les autres, la dernière édition de la norme s’applique.
+## Références
 
-> *Indiquer ici les documents auquel il est fait références (normes, guides, lois, ...)*
+Cette partie cite les références documentaires et réglementaires sur lesquelles s'appuie ce standard.
+
+### Références à d'autres documents
+
+Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous. 
 
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
+| [CNIG_RISQUES_PPR:2024] | Géostandards Risques - Profil Applicatif Plan de Prévention des Risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement) | Description des ouvrages faisant obstacle à l’écoulement v1.2 | SANDRE | 2014 |
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
+
+
+
+####  Cadre réglementaire des Géostandards risques
+
+#### Cadre réglementaire pour les systèmes de référence de coordonnées
+
+Le cadre réglementaire pour les systèmes de référence de coordonnées est établi par le [décret du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203565) relatif au système national de référence de coordonnées et son [arrêté du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203601) portant application du décret n° 2000-1276 du 26 décembre 2000 modifié portant application de l'[article 89 de la loi n° 95-115 du 4 février 1995](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006340167) modifiée d'orientation pour l'aménagement et le développement durable du territoire relatif aux conditions d'exécution et de publication des levés de plans entrepris par les services publics.
+
+
+####  Cadre réglementaire des Plans de Prévention des Risques
+
+Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le profil applicatif Plan de Prévention des Risques (PPR) des Géostandards [CNIG_RISQUES_PPR:2024].
+
+####  Cadre réglementaire des Territoires à Risque Important d'Inondation
+
+La mise en oeuvre des Territoires à Risque Important d'Inondation est définie dans le code de l'environnement par :
+
+* Les [articles L566-1 à L566-13](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) pour la partie législative ;
+* Les [articles R566-5 à R566-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) pour la partie réglementaire ;
 
 
 ##  Compréhension du document
@@ -166,31 +195,6 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 
 
 ---
-
-##  Cadre réglementaire des Géostandards risques
-
-### Cadre réglementaire pour les systèmes de référence de coordonnées
-
-Le cadre réglementaire pour les systèmes de référence de coordonnées est établi par le [décret du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203565) relatif au système national de référence de coordonnées et son [arrêté du 5 mars 2019](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000038203601) portant application du décret n° 2000-1276 du 26 décembre 2000 modifié portant application de l'[article 89 de la loi n° 95-115 du 4 février 1995](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006340167) modifiée d'orientation pour l'aménagement et le développement durable du territoire relatif aux conditions d'exécution et de publication des levés de plans entrepris par les services publics.
-
-
-###  Cadre réglementaire des Plans de Prévention des Risques
-
-Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le [profil applicatif PPR](ref. à fournir).
-
-###  Cadre réglementaire des Territoires à Risque Important d'Inondation
-
-> *à reporter dans le profil applicatif dédié*
-
-La mise en oeuvre des Territoires à Risque Important d'Inondation est définie dans le code de l'environnement par :
-
-* Les [articles L566-1 à L566-13](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) pour la partie législative ;
-* Les [articles R566-5 à R566-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) pour la partie réglementaire ;
-
-
-###  Cadre réglementaire des Porter à Connaissance
-
-> *à écrire dans le profil applicatif dédié*
 
 
 #  Concepts généraux
