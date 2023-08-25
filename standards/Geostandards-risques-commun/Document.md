@@ -151,12 +151,12 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 | Terme | Définition|
 |-|-|
-| Risque | ([INSPIRE NZ:2013] reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
-| Aléa | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
+| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
+| Aléa | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
 | Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
-| Enjeux | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) : Personnes, biens, systèmes, ou autres éléments présents dans les zones de risque et qui sont ainsi soumis à des pertes potentielles. *Commentaire : L’exposition peut inclure le nombre de personnes ou les types de bien dans une région. Elle peut être combinée avec la vulnérabilité spécifique des éléments exposés pour un risque particulier, afin d’estimer le risque associé en cette zone.* |
-| Vulnérabilité | ([INSPIRE NZ:2013] reprise de [UNISDR:2009]) : Les caractéristiques et les circonstances d’une communauté ou d’un système qui le rendent susceptible de subir les effets d’un danger. *Commentaire: Il existe de nombreux aspects de la vulnérabilité, découlant de divers facteurs physiques, sociaux, économiques et environnementaux. Par exemple, il peut s’agir de la mauvaise conception et construction de bâtiments, de l’insuffisance de la protection de l’actif, du manque d’information du public et de sa sensibilisation, de la reconnaissance officielle de limiter les risques et des mesures de préparation, ou du mépris de sage gestion de l’environnement. La vulnérabilité varie sensiblement au sein d’une communauté et dans le temps. Cette définition identifie la vulnérabilité comme une caractéristique de l’élément d’intérêt (de la communauté ou du système) qui est indépendante de son exposition. Toutefois, dans l’usage commun, le mot est souvent utilisé plus largement pour inclure l’élément de l’exposition.* |
+| Enjeux | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) : Personnes, biens, systèmes, ou autres éléments présents dans les zones de risque et qui sont ainsi soumis à des pertes potentielles. *Commentaire : L’exposition peut inclure le nombre de personnes ou les types de bien dans une région. Elle peut être combinée avec la vulnérabilité spécifique des éléments exposés pour un risque particulier, afin d’estimer le risque associé en cette zone.* |
+| Vulnérabilité | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) : Les caractéristiques et les circonstances d’une communauté ou d’un système qui le rendent susceptible de subir les effets d’un danger. *Commentaire: Il existe de nombreux aspects de la vulnérabilité, découlant de divers facteurs physiques, sociaux, économiques et environnementaux. Par exemple, il peut s’agir de la mauvaise conception et construction de bâtiments, de l’insuffisance de la protection de l’actif, du manque d’information du public et de sa sensibilisation, de la reconnaissance officielle de limiter les risques et des mesures de préparation, ou du mépris de sage gestion de l’environnement. La vulnérabilité varie sensiblement au sein d’une communauté et dans le temps. Cette définition identifie la vulnérabilité comme une caractéristique de l’élément d’intérêt (de la communauté ou du système) qui est indépendante de son exposition. Toutefois, dans l’usage commun, le mot est souvent utilisé plus largement pour inclure l’élément de l’exposition.* |
 
 
 
@@ -191,6 +191,8 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 **PPRT** Plan de Prévention des Risques Technologiques
 
+**SIOuH** Système d'Information sur les Ouvrages Hydrauliques
+
 **TRI** Territoire à risque important d'inondation
 
 
@@ -199,95 +201,67 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 #  Concepts généraux
 
-> *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
+## Périmètre d'application
 
-Ce standard propose une description de l'information géographique liée à une procédure de prévention des risques (*definir ou préciser "procédure de prévention des risques"*) et au cadre réglementaire dans lequel elle s'inscrit. Il définit un modèle conceptuel commun décrivant les concepts mis en oeuvre dans (cette liste pouvant être étendue par la suite):
+Le périmètre d'application couvert par les Géostandards risques peut varier selon les différentes procédures de préventions des risques référencées dans la [partie introductive du document](#objectif-et-raison-dêtre-du-standard) et sera détaillé dans les profils applicatifs attachés à chacune d'elles.
 
-* les plans de prévention des risques, naturels prévisibles, technologiques et miniers
-* la description des Territoire à Risques d'Inondation (TRI) dans le cadre de l'application de la Directive Inondation
-* les procédures de porter à connaissance
+Au niveau du modèle commun décrit par ce document, le périmètre d'application est assez générique et concerne la production des jeux de données numériques correspondant à la mise en oeuvre de ces procédures pour la diffusion aux utilisateurs (notamment collectivités, bureaux d'études, grand public, ...).
 
-L'application de ce modèle dans le cadre de ces procédures est définie dans les profils applicatifs dédiés qui accompagnent ce standard (*références à fournir*).
+Les données représentées couvrent le territoire national français susceptible de faire l'objet de telles procédures : 
 
-Ce standard et les profils applicatifs dédiés se substituent et rendent obsolètes les dernières version des standards COVADIS suivants :
+- Territoire européen de la France
+- France d'outre mer, plus précisément :
+  - Guadeloupe
+  - Saint-Martin
+  - Saint-Barthélemy
+  - Martinique
+  - Guyane
+  - La Réunion
+  - Mayotte
+  - Saint-Pierre-et-Miquelon
 
-* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
-* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
-* Directive Inondation, version 2.1 – juillet 2019
-
-
-##  Scope et périmètre d'application
-
-
-### Périmètre d'application
-
-| **Nom du périmètre d'application** | |
-|-|-|
-| Périmètre d’application  | *à remplir : contient un nom descriptif court identifiant le domaine d'application* |
-| Niveau | *(facultatif) contient le niveau hiérarchique (sous forme de code) des données concernées. Ex. Jeu de données* |
-| Nom du niveau | *(facultatif) contient un nom descriptif du niveau hiérarchique. Ex. Municipalité de Kalmar* |
-| Description du niveau |*(facultatif) contient une description du niveau hiérarchique* |
-| Etendue | *(facultatif) contient un critère basé sur l'étendue spatiale, verticale et temporelle des données. Ex. Le présent domaine d'application couvre l'étendue géographique de la municipalité de Kalmar.* |
-
-
-> *Cette partie permet de préciser le contexte dans lequel s’inscrit le standard, ce que couvrent et décrivent les données et ce à quoi les données qu’il décrit sont amenées à servir. On y précisera notamment le cadre réglementaire des données de prévention des risques concernées, ainsi que le cycle de vie des données. Dans le domaine d’application on pourra aussi préciser l’étendue géographique couverte par les données (les territoires concernés).*
-
+Les types de risques couverts par ce standard et ses profils applicatifs sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar)
 
 
 ##  Les acteurs et rôles concernés 
 
-> *à compléter: Par leurs missions, les différents intervenants (ou utilisateurs) liés au <thème> peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.*
-
-> *Ces rôles peuvent être :*
-
+Les acteurs concernés peuvent varier selon les différentes procédures de préventions des risques référencées dans la [partie introductive du document](#objectif-et-raison-dêtre-du-standard). De manière générale, on va retrouver cependant le shéma suivant :
 
 | Nom du rôle | Caractéristiques |
 |-|-|
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
-
-
-##  Cas d'utilisation
-
-> *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
-
-###  Cas d’utilisation « Nom du cas 1 »
-
-| Nom du cas 1 | |
-|-|-|
-| Objectif | *(facultatif) Brève description de l’objectif à atteindre en réalisant le cas d’utilisation 1* |
-| Déclencheur | *(facultatif) Evènement spécifique menant à l’exécution de ce cas d’utilisation 1* |
-| Précondition | *(facultatif) Description du statut requis pour lancer l'exécution du scénario d'utilisation* |
-| Postcondition | *(facultatif) Description du statut après exécution réussie du scénario d'utilisation* | 
-
-> *Diagramme UML du cas d’utilisation 1*
-
-> *Description rédigée du scénario d'utilisation*
+| Producteur | Organisme en charge de produire le jeu de données conformément à ce Standard : Services de l'Etat (DDTM, DREAL) |
+| Diffuseur | Organisme en charge de mettre à disposition le jeu de données : Services de l'Etat (DDTM), Organismes mandatés par l'Etat (BRGM), IGN, ...  |
+| Utilisateur | Consommateur de la donnée : Collectivité territoriale, Organismes privés, Bureaux d'étude, Services de l'Etat, Grand public, ... |
 
 
 
 #  Contenu et structure de la donnée
 
-> *La section relative au contenu et à la structure des données décrit l’intégration de <objet du standard>. conception des schémas d'application (ISO 19109) qui utilise un catalogue d'entités (ISO 19110) pour fournir une description lisible par un humain des types et des caractéristiques des entités, et un dictionnaire de concepts d'entités (ISO 19126) pour décrire et publier les concepts d'entités.*
+Cette section définit le [modèle conceptuel de données](#modèle-conceptuel-de-données) commun aux données relatives à la prévention des risques couvertes par la famille des Géostandards risques à l'aide du langage UML. Le [catalogue d'objets](#catalogue-dobjets) fournit la sémantique des entités décrites dans le modèle.
 
 
 ##  Modèle conceptuel de données
 
-> *Description des thématiques, des classes,attributs, ...*
-> *Cette partie constitue le cœur du standard de définition du modèle commun de donnée. Elle doit permettre de définir pour chacune des thématiques :*
-> 
-> *- Les classes d’objets, les relations entre elles et leurs attributs ;* 
-> 
-> *- Les définitions des attributs, leur type, leur cardinalité, leur caractère obligatoire ou non ;*
->
-> *- Les contraintes sémantiques, géométriques et topologiques qui peuvent s’appliquer ;*
->
-> *- Les attentes de qualité sur des données (exhaustivité, précision, …) ;*
->
-> *- Les éléments de métadonnées au niveau général ou des jeux de données.*
+Les données décrites dans le cadre de ce standard se répartissent dans cinq grandes thématiques :
 
+- La thématique [procédures et périmètres](#thématique-procédures-et-périmètres) relate de l'aspect administratif et de l'état d'avancement de la procédure en lien avec le système GASPAR (gestion assistée des procédures administratives relatives aux risques) du MTE dans lequel elles sont recensées. Toutes les entités des autres thématiques y sont rattachées ;
 
-> *Insérer un schéma global des thématiques ici*
+- La thématique [aléas](#thématique-aléas) comprend les entités permettant de décrire les phénomènes objets du risque à l'origine de la procédure, leur localisation, leurs probabilités et leurs intensités ;
+
+- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, ... menacés par les aléas
+
+- La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention.
+
+- La thématique [zonage réglementaire](#thématique-zonage-réglementaire) permet de décrire le zonage réglementaire déduit du croisement des objets de la thématique aléa et de ceux de la thématique enjeux.
+
+Selon les procédures et les profils applicatifs associés, ces thématiques ne sont pas toujours toutes implémentées.
+
+Le schéma suivant représente les liens entre chacune de ces thématiques. Les liens en pointillés illustrent pour information une relation de cause à effet entre deux thématiques mais ne sont pas implémentées dans le modèle qui suit.
+
+**Fig. *xx* Relations entre les différentes thématiques.**
+
+![Modele UML Procedure et Perimetre](./ressources/Schema-thematiques.png)
+
 
 
 ### Thématique Procédures et périmètres
@@ -360,7 +334,7 @@ Les données d'enjeux sont de nature diverses et définies dans des référentie
 
 Dans cadre du modèle commun, la thématique "Enjeux" définit une classe [Enjeu](#classe-dobjets-enjeu) qui porte les informations minimales permettant d'intégrer des données d'enjeux issues de référentiels externes, la date de collecte de ces données, une information sur leur(s) vulnérabilités à l'aide du type de données [TypeVulnerabilite](#type-de-données-typevulnerabilite) ainsi qu'un rattachement de ces entités à une ou plusieurs nomenclatures d'enjeux à l'aide du type de données [TypeEnjeu](#type-de-données-typeenjeu).
 
-La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013] au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
+La définition de ces nomenclatures sera proposée dans les profils applicatifs en fonction des besoins. Le modèle commun rappelle seulement la nomenclature des enjeux définie dans [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) au travers de la liste de codes [ExposedElementCategoryValue](#liste-de-codes-exposedelementcategoryvalue). 
 
 
 **Fig. *xx* Modèle UML des classes relatives aux enjeux.**
@@ -617,7 +591,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Ouvrage de protection
 
-**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
+**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
 **Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'orgine.
 
@@ -824,7 +798,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 **Titre français** : Catégorie de l'élément exposé
 
-**Définition** : La liste de codes "ExposedElementCategoryValue" est la classification des enjeux définie par [INSPIRE NZ:2013]. Il s'agit d'une classification hiérarchique a deux niveaux qui peut être étendue à tous niveaux selon les besoins par les fournisseurs de données.  
+**Définition** : La liste de codes "ExposedElementCategoryValue" est la classification des enjeux définie par [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf). Il s'agit d'une classification hiérarchique a deux niveaux qui peut être étendue à tous niveaux selon les besoins par les fournisseurs de données.  
 
 Elle accessible dans le [Système de publication de registres pour INSPIRE](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue) et propose les valeurs suivantes (rappelées ici à titre informatif) :
 
