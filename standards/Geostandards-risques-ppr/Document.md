@@ -920,7 +920,31 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 #  Règles de symbologie
 
-> *La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.*
+
+
+## Représentation des niveaux d'aléas
+
+Le tableau suivant présente les styles à appliquer pour une représentation des niveaux d'aléas en fonction du type de PPR.
+
+
+| Niveau d'aléa | PPRN | PPRT | PPRM |
+|-|-|-|-|
+| Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) |
+| Moyen |
+| Moyen plus |
+| Fort |
+| Fort plus |
+| Très fort |
+| Très fort plus |
+
+
+
+
+
+## Représentations des types de réglementations standardisés
+
+
+
 
 
 #  Livraison
