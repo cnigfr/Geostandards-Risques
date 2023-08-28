@@ -719,16 +719,11 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
+| codeProcedure | Identifiant de la procédure pour laquelle l'objet origine du risque a été rapporté. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 1..1 | 
 | nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
 
-
-#### Associations de la classe OrigineRisque
-
-| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
-|-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une procédure avec un objet origine du risque qui la motive. | [Procedure](#classe-dobjets-procedure) (1..1) |  [OrigineRisque](#classe-dobjets-originerisque) (0..\*) |
 
 
 ### Thématique Enjeux
@@ -748,6 +743,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | idEnjeu | Identifiant de l'objet Enjeu | CharacterString | Deux objets de la classe enjeu ne peuvent avoir la même valeur pour le champ idEnjeu. | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle l'objet enjeu a été renseigné. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 0..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | CharacterString | Saisie Libre. Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 0..1 | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
@@ -843,12 +839,6 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 | typeReglement | Type de réglement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
 
 
-#### Associations de l'interface ZoneReglementaire
-
-| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
-|-|-|-|-|-|
-| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
-
 
 #  Systèmes de référence
 
@@ -941,7 +931,7 @@ Cet identifiant est constitué par une chaine de caractères qui concatène les 
 - année de prescription : [AAAA]
 - numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
 
-A tire d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
+A titre d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
 
 
 ### Nomenclature des risques et de leurs codes dans GASPAR
@@ -1023,7 +1013,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 | PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
 | PPRT | Plan de Prévention des Risques Technologiques |
 | PPRM | Plan de Prévention des Risques Miniers |
-| TRI	| Territoires à Risque Important d’Inondations |
+| TRI | Territoires à Risque Important d’Inondations |
 
 
 
