@@ -930,7 +930,7 @@ Le tableau suivant présente les styles à appliquer pour une représentation de
 | Niveau d'aléa | PPRN | PPRT | PPRM |
 |-|-|-|-|
 | Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) |
-| Moyen |
+| Moyen | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R238 V221 B130 ![StyleAleaMoyenPPRM](./ressources/couleur-alea-pprm-02-m.png)
 | Moyen plus |
 | Fort |
 | Fort plus |
