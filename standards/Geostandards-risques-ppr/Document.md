@@ -924,7 +924,7 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 ## Représentation des niveaux d'aléas
 
-Le tableau suivant présente les styles à appliquer pour une représentation des niveaux d'aléas en fonction du type de PPR.
+Le tableau suivant présente les couleurs (en code RVB) à appliquer pour une représentation des niveaux d'aléas en fonction du type de PPR. Ces  couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
 
 | Niveau d'aléa | PPRN | PPRT | PPRM |
@@ -940,8 +940,31 @@ Le tableau suivant présente les styles à appliquer pour une représentation de
 
 
 
-
 ## Représentations des types de réglementations standardisés
+
+Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (foncière ou en matière d'urbanisme). Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
+
+### Types de réglementation en matière d'urbanisme
+
+
+| Type de réglementation | PRN et T | PPRM |
+|-|-|-|
+| Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | Non défini |
+| Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
+| Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | Non défini |
+| Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) |
+| Recommandations | Non défini | Non défini |
+| Zone grisées | Non défini | Non défini |
+
+
+
+### Types de réglementation en matière foncière
+
+
+| Type de réglementation | PRN et T | 
+|-|-|
+| Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) |
+| Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) |
 
 
 
