@@ -931,11 +931,11 @@ Le tableau suivant présente les styles à appliquer pour une représentation de
 |-|-|-|-|
 | Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) |
 | Moyen | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R238 V221 B130 ![StyleAleaMoyenPPRM](./ressources/couleur-alea-pprm-02-m.png)
-| Moyen plus |
-| Fort |
-| Fort plus |
-| Très fort |
-| Très fort plus |
+| Moyen plus | N.A. | R176 V196 B222  ![StyleAleaMoyenPlusPPRT](./ressources/couleur-alea-pprt03-mplus.png) | N.A. |
+| Fort | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | R233 V150 B122 ![StyleAleaFortPPRM](./ressources/couleur-alea-pprm-04-f.png) |
+| Fort plus | N.A. | R238 V221 B130 ![StyleAleaFortPlusPPRT](./ressources/couleur-alea-pprt05-fplus.png) | N.A. |
+| Très fort | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | N.A. |
+| Très fort plus |  N.A. | R240 V128 B128 ![StyleAleaTresFortPlusPPRT](./ressources/couleur-alea-pprt07-tfplus.png) | N.A. |
 
 
 
