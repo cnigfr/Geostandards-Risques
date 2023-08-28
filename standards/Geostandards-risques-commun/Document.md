@@ -719,16 +719,11 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
+| codeProcedure | Identifiant de la procédure pour laquelle l'objet origine du risque a été rapporté. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 1..1 | 
 | nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
 
-
-#### Associations de la classe OrigineRisque
-
-| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
-|-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une procédure avec un objet origine du risque qui la motive. | [Procedure](#classe-dobjets-procedure) (1..1) |  [OrigineRisque](#classe-dobjets-originerisque) (0..\*) |
 
 
 ### Thématique Enjeux
@@ -843,12 +838,6 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 | libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. La définition du libellé associé au code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
 | typeReglement | Type de réglement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
 
-
-#### Associations de l'interface ZoneReglementaire
-
-| Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
-|-|-|-|-|-|
-| **est déterminé par** | Association | Relation sémantique permettant de faire le lien entre une zone d'aléa et des éléments qui ont pu permettre de la calculer, décrits par la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea).| [ZoneAlea](#classe-dobjets-zonealea) (0..1) | [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) (0..\*) |
 
 
 #  Systèmes de référence
