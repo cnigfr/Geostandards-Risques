@@ -920,6 +920,8 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 #  Règles de symbologie
 
+Cette partie reprend les recommandations de représentation des entités décrivant les niveaux d'aléas et le zonage réglementaire selon les attributs standardisés xxxxx
+
 
 
 ## Représentation des niveaux d'aléas
