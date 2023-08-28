@@ -2787,7 +2787,7 @@ La classe Enjeu permet de faire état des objets d'enjeu qui sont à représente
 
 Le type de données TypeEnjeu permet de définir un type d'enjeu à l'aide d'un nom ("codeEnjeu" : identifiant ou libellé) faisant partie d'une nomenclature particulière identifiée grace au champ "nomenclatureEnjeu".
 
-Le Standard COVADIS proposait une classe EnjeuPPR, permettant d'identifier de tels objets avec les caractéristiques suivantes : un rattachement à la procédure GASPAR ("ID_GASPAR"), une description ("DESCRIPT") , un code correspondant à la classification de l'enjeu selon une nomenclature "COVADIS" définie dans le Standard ("CATEGORIE") et l'année d'identification de l'enjeu ("IDENTANNEE").
+Le Standard COVADIS définissait une classe EnjeuPPR, permettant d'identifier de tels objets avec les caractéristiques suivantes : un rattachement à la procédure GASPAR ("ID_GASPAR"), une description ("DESCRIPT") , un code correspondant à la classification de l'enjeu selon une nomenclature "COVADIS" définie dans le Standard ("CATEGORIE") et l'année d'identification de l'enjeu ("IDENTANNEE").
 
 Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de la classe COVADIS EnjeuPPR, un objet de cette dernière générant un objet de la classe Enjeu du nouveau Standard et un objet du type de donnée TypeEnjeu. Avec les règles correspondantes pour les propriétés :
 
@@ -2797,11 +2797,11 @@ Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de l
 |-|-|-|-|-|
 |codeProcedure|Lien vers la table procédure | 76DDTM20120001 | EnjeuPPR | (ID_GASPAR) |
 | idEnjeu | Identifiant de l'objet Enjeu | 14066 | EnjeuPPR | (ID_MAP)  | 
-| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | -  | N.A. | N.A. |
-| refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | - | N.A. | N.A. | 
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | -  | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) |
+| refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | - | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | "Zone d'habitat peu dense"  | EnjeuPPR | description (DESCRIPT) |
-| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | *Cf. TypEnjeu*  |  EnjeuPPR | categorie (CATEGORIE) | 
-| vulnerabilite | Information sur les vulnérabilités de l'enjeu | -  | N.A. | N.A. |
+| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | *Cf. TypEnjeu*  |  *Cf. TypEnjeu* | *Cf. TypEnjeu* | 
+| vulnerabilite | Information sur les vulnérabilités de l'enjeu | -  | N.A. | N.A.  (cette information n'est pas renseignée dans le standard COVADIS) |
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | 2020 | EnjeuPPR | anneeIdentification (IDENTANNEE) |
 
 - Pour le type de données TypeEnjeu
@@ -2810,7 +2810,23 @@ Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de l
 |-|-|-|-|-|
 | idEnjeu | Identifiant de l'objet Enjeu à qui est associé ce type d'Enjeu | 14066 | EnjeuPPR | (ID_MAP) |
 | codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | 0102 | EnjeuPPR | categorie (CATEGORIE) |
-| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | "NomenclatureEnjeuCOVADIS" | N.A. | N.A. (Les catégories d'Enjeu sont systématiquement rattachés à la nomenclature des Enjeux COVADIS dans le cas de la conversion du standard COVADIS vers le novueau standar ). |
+| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | "NomenclatureEnjeuCOVADIS" | N.A. | N.A. (Les catégories d'Enjeu sont systématiquement rattachés à la nomenclature des Enjeux COVADIS dans le cas de la conversion du standard COVADIS vers le novueau standard ). |
+
+
+## Remplissage des objets de la classe OrigineRisque
+
+La classe OrigineRisque permet de faire état des objets qui engendrent les risques ayant motivé la procédure concernée. Elle permet d'intégrer des objets issus de référentiels externes spécifiques selon le type de risque ou d'objet en indiquant à minima un nom et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel.
+
+Le Standard COVADIS définissait une classe équivalente OrigineRisque avec les caractéristiques suivantes : un nom ("NOM"), le nom du système d'information ou de la base de données externe qui gère l'objet à l'origine du risque ("NOM_SI_EXT") et l'identifiant à utiliser pour faire référence à l'objet du SI externe correspondant l'entité à l'origine du risque ("ID_SI_EXT").
+
+Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Avec les règles de correspondances pour les propriétés :
+
+| Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (NOM Shapefile) |
+|-|-|-|-|-|
+| codeProcedure |Lien vers la table procédure | 76DDTM20120001 | OrigineRisque | (ID_GASPAR) |
+| nom | Nom de l'objet origine du risque. | "La Scie" | OrigineRisque | nom (NOM) |
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait. | 12345 | OrigineRisque |  idSIExterne (ID_SI_EXT) |
+| refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | "BD Topo" | OrigineRisque | nomSIExterne (NOM_SI_EXT) | 
 
 
 

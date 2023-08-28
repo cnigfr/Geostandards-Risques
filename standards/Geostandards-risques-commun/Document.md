@@ -748,6 +748,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | idEnjeu | Identifiant de l'objet Enjeu | CharacterString | Deux objets de la classe enjeu ne peuvent avoir la même valeur pour le champ idEnjeu. | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle l'objet enjeu a été renseigné. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 0..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | CharacterString | Saisie Libre. Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 0..1 | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
@@ -941,7 +942,7 @@ Cet identifiant est constitué par une chaine de caractères qui concatène les 
 - année de prescription : [AAAA]
 - numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
 
-A tire d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
+A titre d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
 
 
 ### Nomenclature des risques et de leurs codes dans GASPAR
@@ -1023,7 +1024,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 | PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
 | PPRT | Plan de Prévention des Risques Technologiques |
 | PPRM | Plan de Prévention des Risques Miniers |
-| TRI	| Territoires à Risque Important d’Inondations |
+| TRI | Territoires à Risque Important d’Inondations |
 
 
 
