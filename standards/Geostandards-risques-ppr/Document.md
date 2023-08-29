@@ -2264,7 +2264,7 @@ Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées 
 |-|-|
 | Métadonnés générales | "Ensemble des Plans de Préventions des Risques sur le territoire français" |
 | Métadonnées d'un PPR | "Plan de Prévention des Risques *Naturels (ou Technologiques ou Miniers)* de *nom de la localisation géographique du PPR*". Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
-| Métadonnées d'un PPR | *Reprise du de la valeur du champ `libelleProcedure` de la classe `Procedure``*. Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
+| Métadonnées d'un PPR | *Reprise du de la valeur du champ `libelleProcedure` de la classe `Procedure`*. Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
 | Métadonnées d'une thématique | "Table *nom de la table* du *Reprise du libelle utilisé pour la métadonnée du PPR*" |
 
 
