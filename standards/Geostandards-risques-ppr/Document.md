@@ -978,7 +978,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 
 | Type de réglementation | PPRN | PPRT | PPRM |
-|-|-|-|
+|-|-|-|-|
 | Recommandations | Non défini | Non défini | Non défini |
 | Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | Non défini |
 | Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
