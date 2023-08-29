@@ -2505,7 +2505,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnées générales | `5000` *(NB :  le standard COVADIS indiquait 25000, mais le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) indique la valeur de 1:5000 comme échelle de référence* |
+| Métadonnées générales | `5000` *(NB :  le standard COVADIS indiquait 25000, mais le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) indique la valeur de 1:5000 comme échelle de référence)* |
 | Métadonnées d'un PPR | *Cf. ligne précédente.* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
