@@ -942,7 +942,7 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 #  Règles de symbologie
 
-Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers et en accord avec les guides d'élaborations qui leur sont édiés. 
+Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers, en accord avec les guides d'élaboration qui leur sont dédiés. 
 
 Il s'agit de recommandations à appliquer pour une représentation synthétique et uniforme des PPR à un niveau départemental ou national (échelle <= 1:50000). Pour les représentations à l'échelle d'un PPR particulier (entre 1:5000 et 1:25000), ces recommandations restent pertinentes mais des règles particulières et spécifiques au réglement du PPR peuvent s'ajouter.
 
@@ -950,7 +950,7 @@ Il s'agit de recommandations à appliquer pour une représentation synthétique 
 
 ## Représentation des niveaux d'aléas
 
-Le tableau suivant présente les couleurs (en code RVB) à appliquer pour une représentation des différents niveaux d'aléas de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) en fonction du type de PPR. 
+Le tableau suivant présente les couleurs, en code RVB (Rouge Vert Bleu), à appliquer pour une représentation des différents niveaux d'aléas de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) en fonction du type de PPR. 
 
 Ces couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
@@ -970,11 +970,11 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 
 ## Représentations des types de réglementations standardisés
 
-Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (foncière ou en matière d'urbanisme). 
+Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (en matière d'urbanisme ou foncière). 
 
 Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
-### Types de réglementation en matière d'urbanisme
+### Représentation des types de réglementations en matière d'urbanisme
 
 
 | Type de réglementation | PPRN | PPRT | PPRM |
@@ -987,8 +987,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 | Zone grisées | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | N.A. | N.A. |
 
 
-
-### Types de réglementation foncière
+### Représentation des types de réglementations foncières
 
 
 | Type de réglementation | PPRN et PPRT | PPRM |
