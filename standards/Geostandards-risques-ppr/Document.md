@@ -394,7 +394,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 Le tableau suivant précise l'application des valeurs possibles pour caractériser l'intensité de l'aléa en fonction des différents types de PPR. 
 
 
-| Code | Libellé Etat | Type PPR |
+| Code | Libellé Etat | Type PPR applicable |
 |-|-|-|
 | 01 | Faible | Tous PPR |
 | 02 | Moyen | Tous PPR|
@@ -992,7 +992,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 
 | Type de réglementation | PPRN et PPRT | PPRM |
-|-|-|
+|-|-|-|
 | Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) | Non Défini |
 | Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) | Non Défini|
 
