@@ -893,7 +893,7 @@ Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet
 
 **Elément de mesure ou de métadonnées :**
 
-Les invalidités topologiques d'un PPR relatives ax règles énoncées ci-dessus peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+Les invalidités topologiques d'un PPR relatives aux règles énoncées ci-dessus peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
 
 - [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
 
