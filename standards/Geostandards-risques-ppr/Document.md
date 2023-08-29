@@ -2222,7 +2222,7 @@ Les catégories thématiques INSPIRE sont les suivantes (ANNEXE III) :
 - "Usage des sols" ;
 
 
-##  Eléments de métadonnés
+##  Eléments de métadonnées
 
 Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner les données de prévention des risques conformément à la directive INSPIRE et à plusieurs niveaux de granularité :
 
