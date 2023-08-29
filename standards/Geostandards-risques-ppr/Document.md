@@ -206,7 +206,7 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **SIG** Système d'Information Géographique
 
-**SUP** Servitude d'Utilité Publiques
+**SUP** Servitude d'Utilité Publique
 
 **WKT** Well-Known Text
 
@@ -2612,7 +2612,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
   - Le rôle de cet organisme : `owner` (traduction de « propriétaire »)
 
 - Obligation : Saisie obligatoire
-- XPath ISO 19115 : `identificationInfo[1]/*/pointOfContact/*/organisationName`, `identificationInfo[1]/*/pointOfContact/*/contcwactInfo/*/address/*/electronicMailAddress` et `identificationInfo[1]/*/pointOfContact/*/role`
+- XPath ISO 19115 : `identificationInfo[1]/*/pointOfContact/*/organisationName`, `identificationInfo[1]/*/pointOfContact/*/contactInfo/*/address/*/electronicMailAddress` et `identificationInfo[1]/*/pointOfContact/*/role`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
@@ -2912,13 +2912,13 @@ Les objets de la classe OrigineRisque seront créés à partir de ceux de la cla
 # ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
 
 
-Le standard [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) "Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE" définit les spécifications des données de Servitude d'Utilité Publiques (SUP) affetant l'utilisation du sol, au niveau conceptuel et physique (implémentation) en vue de leur intégration dans le Géoportail de l'Urbanisme.
+Le standard [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) "Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE" définit les spécifications des données de Servitude d'Utilité Publique (SUP) affetant l'utilisation du sol, au niveau conceptuel et physique (implémentation) en vue de leur intégration dans le Géoportail de l'Urbanisme.
 
 Les SUP sont des limitations administratives au droit de propriété et peuvent être instituées au bénéfice de personnes publiques, concessionnaires de services ou de travaux publics, ou bien de personnes privées exerçant une activité d’intérêt général. Elles sont réparties selon une [nomenclature nationale](https://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/tableau_liste_sup_code_alpha-numerique_et_base_legale_maj_04_07_23_cle1cb13e.pdf?arg=177836311&cle=344e2d37ea33c4b35357c6be9d7f0d1c5ce702ac&file=pdf%2Ftableau_liste_sup_code_alpha-numerique_et_base_legale_maj_04_07_23_cle1cb13e.pdf)  comprenant en premier niveau : les servitudes relatives à la conservation du patrimoine, l’utilisation des ressources et équipements, la défense nationale, ou bien encore la salubrité et la sécurité publiques. Parmi les catégories relatives à la sécurité publique, deux sous-catégories de SUP sont issues des PPR : la catégorie "PM1", représentant les PPR Naturels et Miniers, et la catégorie "PM3", pour les SUP relatives aux PPR Technologiques.
 
 Des travaux de mise en correspondance du modèle des standards COVADIS PPR avec le modèle du standard CNIG SUP ont été réalisés par l'IGN pour la DGPR afin de faciliter la réalisation et la publication de ces deux catégories de SUP dans le Géoportail de l'Urbanisme et leur prise en compte dans l'application de réalisation des risques pour l'information des acquéreurs et des locataires ([ERRIAL](https://errial.georisques.gouv.fr/#/)).
 
-Cette annexe reprend et adapte à ces mises en correspondances au modèle de ce nouveau standard PPR.
+Cette annexe reprend et adapte ces mises en correspondances au modèle de ce nouveau standard PPR.
 
 Les parties qui suivent indiquent, pour chaque table du standard SUP, les correspondances avec les informations du profil applicatif PPR des Géostandards Risques. 
 
@@ -2931,29 +2931,32 @@ Enfin, la dernière colonne illustre un exemple d’implémentation du standard 
 
 ## Correspondances pour la table Gestionnaire
 
+La table Gestionnaire permet de décrire l'organisme gestionnaire ou organisme ressource de la servitude.
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
-**IdGest**|Identifiant du gestionnaire|Code SIREN (9 caractères)||Code SIREN de la DDT (ex. 123456789)
-**nomGest**|Nom de l’organisme gestionnaire|||Nom de la DDT (ex. DDT 69 - Rhône)
+**IdGest**|Identifiant du gestionnaire|Code SIREN (9 caractères)||Code SIREN de la DDT (ex. 123456789) |
+**nomGest**|Nom de l’organisme gestionnaire||Element de métadonnées "[Organisation responsable de la ressource](#organisation-responsable-de-la-ressource)" (`organisationName`)|Nom de la DDT (ex. DDT 69 - Rhône)
 nomCorres|Correspondant à contacter chez le gestionnaire (ne pas faire figurer d’informations nominatives)|||Nom du service en charge de ce sujet à la DDT (ex. Service risques)
 numTel|Numéro de téléphone du point de contact chez le service gestionnaire|||Numéro téléphone du service contact (ex. 0102030405)
-courriel|Adresse électronique du point de contact chez le service gestionnaire|||Courriel générique du service contact (ex. servicerisque@ddt-rhone.gouv.fr)
+courriel|Adresse électronique du point de contact chez le service gestionnaire||Element de métadonnées "[Organisation responsable de la ressource](#organisation-responsable-de-la-ressource)" (`contactInfo/*/address/*/electronicMailAddress`)|Courriel générique du service contact (ex. servicerisque@ddt-rhone.gouv.fr)
 adresse|Adresse de l’organisme servant aux envois postaux|||Adresse postale de la DDT (ex. Service Risques – DDT 69, 13 rue du Rhône 69007 Lyon)
 
 
 
 ## Correspondances pour la table Acte
 
+La table Acte permet de décrire la décision, généralement de nature réglementaire ou administrative, qui crée la servitude.
+
 Attribut SUP|Description|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
 **IdActe**|Identifiant de l’acte|Voir §5.2.6 du standard [idSup]-[numéro incrémental]||PM1-130010325-65-1
-**nomActe**|Nom abrégé de l’acte, respectant les règles de nommage des SUP|Voir §4.1.3 du standard [cat]_[radical]_[dateDecis]_act|Champ NOM de la table DOCUMENT|PM1_PPRiAutignac_20160531_act
+**nomActe**|Nom abrégé de l’acte, respectant les règles de nommage des SUP|Voir §4.1.3 du standard [cat]_[radical]_[dateDecis]_act|propriétés `typeProcedure` et `codeProcedure` de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |PM1_PPR-I-34DDTM20120133_20160531_act
 **reference**|Référence de l’acte ayant créé ou modifié la servitude (numéro d’enregistrement dans le journal officiel, numéro d’arrêté préfectoral...)|Si inconnue, indiquer « inconnu »||DDTM34-2016-05-07291
 **typeActe**|Description de la nature de l’acte|Voir énumération « natureActe » §4.3.7 du standard||Arrêté préfectoral
 **fichier**|Nom ou référence du fichier contenant l’acte instituant la servitude. Ce fichier contient le cas échéant les plans annexés à l’acte|Voir §5.3.4 du standard [cat]_[radical]_{dateDecis}_act.pdf||PM1_PPRi_AUTIGNAC_20160531_act.pdf
 **decision**|Nature de la décision prise dans l’acte : l’autorité compétente prend une décision qui crée ou modifie l’état de la servitude|Voir énumération « decision » §4.3.7 du standard. Valeur par défaut : Création||Création
-**dateDecis**|Date à laquelle la décision a été prise. Il s’agit de la date de signature de l’acte.|AAAAMMJJ|Champ DATEAPPRO de la table DOCUMENT|20160531
+**dateDecis**|Date à laquelle la décision a été prise. Il s’agit de la date de signature de l’acte.|AAAAMMJJ|Propriété `dateEtat` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |20160531
 datePub|Date de parution au Journal Officiel ou de publicité dans la presse|AAAAMMJJ||
 aPlan|Existence d’un ou plusieurs plans annexés à l’acte|T (oui) ou F (non)||T
 
@@ -2966,12 +2969,12 @@ Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Informat
 |-|-|-|-|-|
 **IdSup**|Identifiant de la SUP|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental] ||PM1-130008568-86
 **IdGest**|Identifiant du gestionnaire de la SUP|Code SIREN (9 caractères)||130008568
-**nomSup**|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_sup|Utilisation du champ NOM de la table DOCUMENT pour déterminer le radical|PM1_PPRn_AUTIGNAC_sup
-nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Champ NOM de la table DOCUMENT|AUTIGNAC
+**nomSup**|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_sup| Utilisation des propriétés `typeProcedure` et `codeProcedure` de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) pour déterminer le radical|PM1_PPR-I-AUTIGNAC_sup
+nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Propriété `libelleProcedure` de la classe "[Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)"|AUTIGNAC
 **categorie**|Catégorie de la servitude|PM1 ou PM3||PM1
 idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant, ID_GASPAR peut être utilisé ici||34DDTM20120133
 descriptio|Description détaillée de la servitude|Voir §4.1.5 du standard||
-**dateMaj**|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Champ DATEAPPRO de la table DOCUMENT|20160531
+**dateMaj**|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Propriété `dateEtat` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|20160531
 **echNum**|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)||10000
 **valideGest**|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non). Valeur par défaut : F||T
 obsValidat|Observation relative à la validation de la servitude formulée par le gestionnaire|||
