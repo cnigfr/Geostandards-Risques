@@ -2286,7 +2286,7 @@ Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées 
 
 #### Type de la ressource
 
-- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ». Les métadonnées générales ("ensemble de de séries de données") sont à remplir avec la valeur `series`.
+- Description : Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : `dataset`. Certaines interfaces de saisie proposent « jeu de données ». Les métadonnées générales ("ensemble de séries de données") sont à remplir avec la valeur `series`.
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `hierarchyLevel`
 
