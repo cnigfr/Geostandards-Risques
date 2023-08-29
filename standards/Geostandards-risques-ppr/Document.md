@@ -2472,7 +2472,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
-| Métadonnées générales | *Indiquer la date de 'révision' du nouveau Standard PPR* (?) |
+| Métadonnées générales | *Indiquer la date de 'révision' du nouveau Standard PPR* |
 | Métadonnées d'un PPR | *Indiquer la date de création ou révision des données du PPR* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
