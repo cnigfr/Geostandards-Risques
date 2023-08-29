@@ -2306,7 +2306,7 @@ Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
-| Métadonnés générales | *Indiquer le lien vers la page de téléchargement des PPR ou les consignes d'accès aux PPR sur Géorisques* |
+| Métadonnées générales | *Indiquer le lien vers la page de téléchargement des PPR ou les consignes d'accès aux PPR sur Géorisques* |
 | Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concerné et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
 | Métadonnées d'une thématique | *Même consigne que le PPR et lien plus précis sis possibilité d'accéder à la donnée de la thématique.* |
 
