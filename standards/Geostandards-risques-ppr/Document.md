@@ -2206,7 +2206,7 @@ Les éléments de métadonnées et les consignes générales qui les accompagnen
 D'autre références sont aussi d'utilité pour l'élaboration et la validation des métadonnées :
 
 - le ["Guide Identificateurs de Ressource Uniques v1.0.1 de février 2016"](http://cnig.ign.fr/wp-content/uploads/2016/02/GuideIRU-corrig%C3%A9-v2.pdf)
-- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE ([INSPIRE_MTD:2013](http://cnig.ign.fr/wp-content/uploads/2015/01/MD_IR_and_ISO_20131029.pdf)
+- le guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE [INSPIRE_MTD:2013](http://cnig.ign.fr/wp-content/uploads/2015/01/MD_IR_and_ISO_20131029.pdf)
 - [Validateur européen](https://inspire.ec.europa.eu/validator/home/index.html)
 
 
