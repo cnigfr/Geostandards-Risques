@@ -2929,16 +2929,12 @@ adresse|Adresse de l’organisme servant aux envois postaux|||Adresse postale de
 
 Attribut CNIG|Description|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
-IdActe|Identifiant de l’acte|Voir §5.2.6 du standard||PM1-130010325-65-1
-||<idSup>-<numéro incrémental>||
-nomActe|Nom abrégé de l’acte, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Champ NOM de la table DOCUMENT|PM1_PPRiAutignac_20160531_act
-||<cat>_<radical>_<dateDecis>_act||
+IdActe|Identifiant de l’acte|Voir §5.2.6 du standard <idSup>-<numéro incrémental>||PM1-130010325-65-1
+nomActe|Nom abrégé de l’acte, respectant les règles de nommage des SUP|Voir §4.1.3 du standard <cat>_<radical>_<dateDecis>_act|Champ NOM de la table DOCUMENT|PM1_PPRiAutignac_20160531_act
 reference|Référence de l’acte ayant créé ou modifié la servitude (numéro d’enregistrement dans le journal officiel, numéro d’arrêté préfectoral...)|Si inconnue, indiquer « inconnu »||DDTM34-2016-05-07291
 typeActe|Description de la nature de l’acte|Voir énumération « natureActe » §4.3.7 du standard||Arrêté préfectoral
-fichier|Nom ou référence du fichier contenant l’acte instituant la servitude. Ce fichier contient le cas échéant les plans annexés à l’acte|Voir §5.3.4 du standard||PM1_PPRi_AUTIGNAC_20160531_act.pdf
-||<cat>_<radical>_{dateDecis]_act.pdf||
-decision|Nature de la décision prise dans l’acte : l’autorité compétente prend une décision qui crée ou modifie l’état de la servitude|Voir énumération « decision » §4.3.7 du standard||Création
-||Valeur par défaut : Création||
+fichier|Nom ou référence du fichier contenant l’acte instituant la servitude. Ce fichier contient le cas échéant les plans annexés à l’acte|Voir §5.3.4 du standard <cat>_<radical>_{dateDecis}_act.pdf||PM1_PPRi_AUTIGNAC_20160531_act.pdf
+decision|Nature de la décision prise dans l’acte : l’autorité compétente prend une décision qui crée ou modifie l’état de la servitude|Voir énumération « decision » §4.3.7 du standard. Valeur par défaut : Création||Création
 dateDecis|Date à laquelle la décision a été prise. Il s’agit de la date de signature de l’acte.|AAAAMMJJ|Champ DATEAPPRO de la table DOCUMENT|20160531
 datePub|Date de parution au Journal Officiel ou de publicité dans la presse|AAAAMMJJ||
 aPlan|Existence d’un ou plusieurs plans annexés à l’acte|T (oui) ou F (non)||T
@@ -2950,19 +2946,16 @@ aPlan|Existence d’un ou plusieurs plans annexés à l’acte|T (oui) ou F (non
 
 Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
-IdSup|Identifiant de la SUO|Voir §5.2.3 du standard||PM1-130008568-86
-||<cat>-<idGest>-<numéro incrémental>||
+IdSup|Identifiant de la SUP|Voir §5.2.3 du standard. <cat>-<idGest>-<numéro incrémental> ||PM1-130008568-86
 IdGest|Identifiant du gestionnaire de la SUP|Code SIREN (9 caractères)||130008568
-nomSup|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table DOCUMENT pour déterminer le radical|PM1_PPRn_AUTIGNAC_sup
-||<cat>_<radical>_sup||
+nomSup|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. <cat>_<radical>_sup|Utilisation du champ NOM de la table DOCUMENT pour déterminer le radical|PM1_PPRn_AUTIGNAC_sup
 nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Champ NOM de la table DOCUMENT|AUTIGNAC
 categorie|Catégorie de la servitude|PM1 ou PM3||PM1
 idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant, ID_GASPAR peut être utilisé ici||34DDTM20120133
 descriptio|Description détaillée de la servitude|Voir §4.1.5 du standard||
 dateMaj|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Champ DATEAPPRO de la table DOCUMENT|20160531
 echNum|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)||10000
-valideGest|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non)||T
-||Valeur par défaut : F||
+valideGest|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non). Valeur par défaut : F||T
 obsValidat|Observation relative à la validation de la servitude formulée par le gestionnaire|||
 modeProd|Mode d’obtention de la SUP|Voir énumération « modeProd » §4.3.7 du standard||Reconstitution
 quiProd|Organisme ayant numérisé la SUP|Valeur vide interdite si modeProd vaut « numerisation »||DDTM34
@@ -2975,12 +2968,9 @@ docSource|Document graphique ayant été numérisé|Valeur vide interdite si mod
 Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage 
 |-|-|-|-|-|
 (geom)|Géométrie de l’objet générateur, à l’origine de la servitude|Surfacique|Géométrie du PERIMETRE|MultiPolygon(…)
-IdGen|Identifiant du générateur|Voir §5.2.4 du standard||PM1-130008568-86-1
-||<idSup>-<numéro incrémental>||
-IdSup|Identifiant de la SUO|Voir §5.2.3 du standard||PM1-130008568-86
-||<cat>-<idGest>-<numéro incrémental>||
-nomGen|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_gen
-||<cat>_<radical>_gen<n>||
+IdGen|Identifiant du générateur|Voir §5.2.4 du standard. <idSup>-<numéro incrémental>||PM1-130008568-86-1
+IdSup|Identifiant de la SUO|Voir §5.2.3 du standard. <cat>-<idGest>-<numéro incrémental>||PM1-130008568-86
+nomGen|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. <cat>_<radical>_gen<n>|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_gen
 typeGen|Nature de l’entité génératrice|Valeur imposée par le §5.4 du standard : « Périmètre règlementé des PPR »||Périmètre règlementé des PPR 
 modeGenere|Description du moyen utilisé pour obtenir la géométrie du générateur|Voir énumération « modeGenere » §4.3.7 du standard||Digitalisation
 srcGeoGen|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGenere vaut « digitalisation » ou « liste de coordonnées »|Champ SRCE_GEOM de la table PERIMETRE|BD Parcellaire
@@ -2999,12 +2989,9 @@ URL_GRISQ|Hyperlien vers le PPR dans Géorisques||Champ SITE_WEB de la table DOC
 Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage 
 |-|-|-|-|-|
 (geom)|Géométrie de l’objet assiette, sur laquelle s’applique la servitude|Surfacique|Enveloppe agrégée des ZONE_REG|MultiPolygon(…)
-IdAss|Identifiant de l’assiette|Voir §5.2.5 du standard||PM1-130008568-86-1-1
-||<idGen>-<numéro incrémental>||
-IdGen|Identifiant du générateur de l’assiette|Voir §5.2.4 du standard||PM1-130008568-86-1
-||<idSup>-<numéro incrémental>||
-nomAss|Nom abrégé de l’assiette, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_ass
-||<cat>_<radical>_ass||
+IdAss|Identifiant de l’assiette|Voir §5.2.5 du standard. <idGen>-<numéro incrémental>||PM1-130008568-86-1-1
+IdGen|Identifiant du générateur de l’assiette|Voir §5.2.4 du standard. <idSup>-<numéro incrémental>||PM1-130008568-86-1
+nomAss|Nom abrégé de l’assiette, respectant les règles de nommage des SUP|Voir §4.1.3 du standard.<cat>_<radical>_ass|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_ass
 typeAss|Nature de l’assiette selon sa vocation principale et la catégorie de SUP|Valeur imposée par le §5.4 du standard : « Enveloppe des zonages règlementaires »||Enveloppe des zonages règlementaires
 modeGeoAss|Description de la méthode utilisée pour générer la géométrie de l’assiette|Voir énumération « modeGeoAss » §4.3.7 du standard||Duplication
 paramCalc|Valeur du paramètre ayant permis de calculer l’assiette lorsque celle-ci correspond à un objet tampon|Entier en m, Valeur vide interdite si modeGeoAss vaut « Zone tampon »||
@@ -3021,10 +3008,8 @@ dateSrcAss|Date d’actualité du référentiel utilisé|Valeur vide interdite s
 
 Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
-IdSup|Identifiant de la SUP|Voir §5.2.3 du standard||PM1-130010325-65
-||<cat>-<idGest>-<numéro incrémental>||
-IdActe|Identifiant de l’acte|Voir §5.2.6 du standard||PM1-130010325-65-1
-||<idSup>-<numéro incrémental>||
+IdSup|Identifiant de la SUP|Voir §5.2.3 du standard. <cat>-<idGest>-<numéro incrémental>||PM1-130010325-65
+IdActe|Identifiant de l’acte|Voir §5.2.6 du standard. <idSup>-<numéro incrémental>||PM1-130010325-65-1
 
 
 
