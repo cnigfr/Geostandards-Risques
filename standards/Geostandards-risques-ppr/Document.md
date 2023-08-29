@@ -295,6 +295,8 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). Dans ce cadre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par deux classes [ZoneAleaReference](#classe-dobjets-zonealeareference) et [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant respectivement à l'aléa de référence et à l'aléa  à échéance 100 ans. L'implémentation de la classe ZoneAleaEcheance100ans n'est obligatoire que dans le cadre de l'aléa submersion marine.
 
+Par ailleurs, l'application des différents niveaux d'aléas définis par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) dépend du type de PPR concernés.
+
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR.**
 
@@ -305,7 +307,8 @@ Dans le cadre de l'élaboration des **plans de prévention des risque naturels**
 
 ### Thématique Origine du Risque
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
+Les entités définies dans le modèle commun s'appliquent pour PPR.
+
 
 
 ### Thématique Enjeux
@@ -355,6 +358,8 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ### Thématique Procédures et périmètres
 
 
+
+
 ### Thématique Aléas
 
 #### Classe d'objets *ZoneAleaReference*
@@ -384,8 +389,25 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 **Propriétés** : Cf. propriétés de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 
+#### Enumeration *TypeNiveauAlea*
+
+Le tableau suivant précise l'application des valeurs possibles pour caractériser l'intensité de l'aléa en fonction des différents types de PPR. 
+
+
+| Code | Libellé Etat | Type PPR |
+|-|-|-|
+| 01 | Faible | Tous PPR |
+| 02 | Moyen | Tous PPR|
+| 03 | Moyen plus | PPRT |
+| 04 | Fort | Tous PPR |
+| 05 | Fort plus | PPRT |
+| 06 | Très fort | PPRN et PPRT |
+| 07 | Très fort plus | PPRT |
+
 
 ### Thématique Origine du Risque
+
+Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 
 ### Thématique Enjeux
@@ -920,13 +942,17 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 #  Règles de symbologie
 
-Cette partie reprend les recommandations de représentation des entités décrivant les niveaux d'aléas et le zonage réglementaire selon les attributs standardisés xxxxx
+Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers et en accord avec les guides d'élaborations qui leur sont édiés. 
+
+Il s'agit de recommandations à appliquer pour une représentation synthétique et uniforme des PPR à un niveau départemental ou national (échelle <= 1:50000). Pour les représentations à l'échelle d'un PPR particulier (entre 1:5000 et 1:25000), ces recommandations restent pertinentes mais des règles particulières et spécifiques au réglement du PPR peuvent s'ajouter.
 
 
 
 ## Représentation des niveaux d'aléas
 
-Le tableau suivant présente les couleurs (en code RVB) à appliquer pour une représentation des niveaux d'aléas en fonction du type de PPR. Ces  couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
+Le tableau suivant présente les couleurs (en code RVB) à appliquer pour une représentation des différents niveaux d'aléas de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) en fonction du type de PPR. 
+
+Ces couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
 
 | Niveau d'aléa | PPRN | PPRT | PPRM |
@@ -944,31 +970,31 @@ Le tableau suivant présente les couleurs (en code RVB) à appliquer pour une re
 
 ## Représentations des types de réglementations standardisés
 
-Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (foncière ou en matière d'urbanisme). Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
+Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (foncière ou en matière d'urbanisme). 
+
+Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
 ### Types de réglementation en matière d'urbanisme
 
 
-| Type de réglementation | PRN et T | PPRM |
+| Type de réglementation | PPRN | PPRT | PPRM |
 |-|-|-|
-| Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | Non défini |
-| Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
-| Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | Non défini |
-| Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) |
-| Recommandations | Non défini | Non défini |
-| Zone grisées | Non défini | Non défini |
+| Recommandations | Non défini | Non défini | Non défini |
+| Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | Non défini |
+| Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
+| Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | Non défini |
+| Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) |
+| Zone grisées | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | N.A. | N.A. |
 
 
 
-### Types de réglementation en matière foncière
+### Types de réglementation foncière
 
 
-| Type de réglementation | PRN et T | 
+| Type de réglementation | PPRN et PPRT | PPRM |
 |-|-|
-| Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) |
-| Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) |
-
-
+| Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) | Non Défini |
+| Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) | Non Défini|
 
 
 
