@@ -120,6 +120,7 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 | [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) | Registre: mesuresQuaDoGeo - Mesures liées à la Qualité de Données Géographiques | CNIG | En continu |
+| [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) | Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE - Standard CNIG v2016b (rev. août 2023) | CNIG - Cerema | 2023/08 |
 
 
 
@@ -2908,9 +2909,122 @@ Les objets de la classe OrigineRisque seront créés à partir de ceux de la cla
 
 # ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
 
-> *Règles de passage à indiquer ici*
 
 
+## Correspondances pour la table Gestionnaire
+
+
+Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
+|-|-|-|-|-|
+IdGest|Identifiant du gestionnaire|Code SIREN (9 caractères)||Code SIREN de la DDT (ex. 123456789)
+nomGest|Nom de l’organisme gestionnaire|||Nom de la DDT (ex. DDT 69 - Rhône)
+nomCorres|Correspondant à contacter chez le gestionnaire (ne pas faire figurer d’informations nominatives)|||Nom du service en charge de ce sujet à la DDT (ex. Service risques)
+numTel|Numéro de téléphone du point de contact chez le service gestionnaire|||Numéro téléphone du service contact (ex. 0102030405)
+courriel|Adresse électronique du point de contact chez le service gestionnaire|||Courriel générique du service contact (ex. servicerisque@ddt-rhone.gouv.fr)
+adresse|Adresse de l’organisme servant aux envois postaux|||Adresse postale de la DDT (ex. Service Risques – DDT 69, 13 rue du Rhône 69007 Lyon)
+
+
+
+## Correspondances pour la table Acte
+
+Attribut CNIG|Description|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
+|-|-|-|-|-|
+IdActe|Identifiant de l’acte|Voir §5.2.6 du standard||PM1-130010325-65-1
+||<idSup>-<numéro incrémental>||
+nomActe|Nom abrégé de l’acte, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Champ NOM de la table DOCUMENT|PM1_PPRiAutignac_20160531_act
+||<cat>_<radical>_<dateDecis>_act||
+reference|Référence de l’acte ayant créé ou modifié la servitude (numéro d’enregistrement dans le journal officiel, numéro d’arrêté préfectoral...)|Si inconnue, indiquer « inconnu »||DDTM34-2016-05-07291
+typeActe|Description de la nature de l’acte|Voir énumération « natureActe » §4.3.7 du standard||Arrêté préfectoral
+fichier|Nom ou référence du fichier contenant l’acte instituant la servitude. Ce fichier contient le cas échéant les plans annexés à l’acte|Voir §5.3.4 du standard||PM1_PPRi_AUTIGNAC_20160531_act.pdf
+||<cat>_<radical>_{dateDecis]_act.pdf||
+decision|Nature de la décision prise dans l’acte : l’autorité compétente prend une décision qui crée ou modifie l’état de la servitude|Voir énumération « decision » §4.3.7 du standard||Création
+||Valeur par défaut : Création||
+dateDecis|Date à laquelle la décision a été prise. Il s’agit de la date de signature de l’acte.|AAAAMMJJ|Champ DATEAPPRO de la table DOCUMENT|20160531
+datePub|Date de parution au Journal Officiel ou de publicité dans la presse|AAAAMMJJ||
+aPlan|Existence d’un ou plusieurs plans annexés à l’acte|T (oui) ou F (non)||T
+
+
+
+
+## Correspondances pour la table Servitude
+
+Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
+|-|-|-|-|-|
+IdSup|Identifiant de la SUO|Voir §5.2.3 du standard||PM1-130008568-86
+||<cat>-<idGest>-<numéro incrémental>||
+IdGest|Identifiant du gestionnaire de la SUP|Code SIREN (9 caractères)||130008568
+nomSup|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table DOCUMENT pour déterminer le radical|PM1_PPRn_AUTIGNAC_sup
+||<cat>_<radical>_sup||
+nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Champ NOM de la table DOCUMENT|AUTIGNAC
+categorie|Catégorie de la servitude|PM1 ou PM3||PM1
+idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant, ID_GASPAR peut être utilisé ici||34DDTM20120133
+descriptio|Description détaillée de la servitude|Voir §4.1.5 du standard||
+dateMaj|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Champ DATEAPPRO de la table DOCUMENT|20160531
+echNum|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)||10000
+valideGest|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non)||T
+||Valeur par défaut : F||
+obsValidat|Observation relative à la validation de la servitude formulée par le gestionnaire|||
+modeProd|Mode d’obtention de la SUP|Voir énumération « modeProd » §4.3.7 du standard||Reconstitution
+quiProd|Organisme ayant numérisé la SUP|Valeur vide interdite si modeProd vaut « numerisation »||DDTM34
+docSource|Document graphique ayant été numérisé|Valeur vide interdite si modeProd vaut « numerisation »||
+
+
+
+## Correspondances pour la table Generateur
+
+Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage 
+|-|-|-|-|-|
+(geom)|Géométrie de l’objet générateur, à l’origine de la servitude|Surfacique|Géométrie du PERIMETRE|MultiPolygon(…)
+IdGen|Identifiant du générateur|Voir §5.2.4 du standard||PM1-130008568-86-1
+||<idSup>-<numéro incrémental>||
+IdSup|Identifiant de la SUO|Voir §5.2.3 du standard||PM1-130008568-86
+||<cat>-<idGest>-<numéro incrémental>||
+nomGen|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_gen
+||<cat>_<radical>_gen<n>||
+typeGen|Nature de l’entité génératrice|Valeur imposée par le §5.4 du standard : « Périmètre règlementé des PPR »||Périmètre règlementé des PPR 
+modeGenere|Description du moyen utilisé pour obtenir la géométrie du générateur|Voir énumération « modeGenere » §4.3.7 du standard||Digitalisation
+srcGeoGen|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGenere vaut « digitalisation » ou « liste de coordonnées »|Champ SRCE_GEOM de la table PERIMETRE|BD Parcellaire
+dateSrcGen|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné, format AAAAMMJJ|Utilisation du champ SRCE_ANNEE de la table PERIMETRE|20150101
+refBDExt|Nom du référentiel ou de la source de données externes d’où provient la géométrie|Valeur vide interdite si modeGenere vaut « duplication »||vide
+idBDExt|Identifiant référençant l’objet correspondant dans le référentiel externe|Valeur vide interdite si refBDExt renseigné||vide
+ID_GASPAR|Identifiant GASPAR du PPR|Référencé dans GASPAR, format [ddd][PREF|DDT|DDTM|DREAL][AAAA][nnnn]|Champ ID_GASPAR de la table PERIMETRE|34DDTM20120133
+CODE_ALEA|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères du champ CODERISQUE de la table DOCUMENT|11
+URL_GRISQ|Hyperlien vers le PPR dans Géorisques||Champ SITE_WEB de la table DOCUMENT si disponible|https://files.georisques.fr/ppr/...
+
+
+
+## Correspondances pour la table Assiette
+
+
+Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage 
+|-|-|-|-|-|
+(geom)|Géométrie de l’objet assiette, sur laquelle s’applique la servitude|Surfacique|Enveloppe agrégée des ZONE_REG|MultiPolygon(…)
+IdAss|Identifiant de l’assiette|Voir §5.2.5 du standard||PM1-130008568-86-1-1
+||<idGen>-<numéro incrémental>||
+IdGen|Identifiant du générateur de l’assiette|Voir §5.2.4 du standard||PM1-130008568-86-1
+||<idSup>-<numéro incrémental>||
+nomAss|Nom abrégé de l’assiette, respectant les règles de nommage des SUP|Voir §4.1.3 du standard|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_ass
+||<cat>_<radical>_ass||
+typeAss|Nature de l’assiette selon sa vocation principale et la catégorie de SUP|Valeur imposée par le §5.4 du standard : « Enveloppe des zonages règlementaires »||Enveloppe des zonages règlementaires
+modeGeoAss|Description de la méthode utilisée pour générer la géométrie de l’assiette|Voir énumération « modeGeoAss » §4.3.7 du standard||Duplication
+paramCalc|Valeur du paramètre ayant permis de calculer l’assiette lorsque celle-ci correspond à un objet tampon|Entier en m, Valeur vide interdite si modeGeoAss vaut « Zone tampon »||
+srcGeoAss|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGeoAss vaut « digitalisation » ou « liste de coordonnées »|Champ SRCE_GEOM de la table PERIMETRE|BD Parcellaire
+dateSrcAss|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné ou si modeGeoAss vaut « Liste de parcelles », format AAAAMMJJ|Utilisation du champ SRCE_ANNEE de la table PERIMETRE|20150101
+
+
+
+
+
+
+
+## Correspondances pour la table Servitude-acte
+
+Attribut CNIG|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante COVADIS PPR|Exemple de remplissage spécifique aux PM1/PM3
+|-|-|-|-|-|
+IdSup|Identifiant de la SUP|Voir §5.2.3 du standard||PM1-130010325-65
+||<cat>-<idGest>-<numéro incrémental>||
+IdActe|Identifiant de l’acte|Voir §5.2.6 du standard||PM1-130010325-65-1
+||<idSup>-<numéro incrémental>||
 
 
 
