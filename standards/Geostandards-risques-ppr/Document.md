@@ -776,7 +776,7 @@ Les éléments relatés ci après s'appuient sur la déclaison de cette norme au
 
 ## Eléments de qualité
 
-Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risqueavec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, ou, dans certains cas, l'élément de métadonnées qui porte directement cette information.
+Ce qui suit décrit les objectifs de qualité visés pour les données des Plans de Prévention des Risques avec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, ou, dans certains cas, l'élément de métadonnées qui porte directement cette information.
 
 
 ### Dimensions géométriques 
