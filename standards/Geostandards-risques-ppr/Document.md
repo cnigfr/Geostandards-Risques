@@ -804,7 +804,7 @@ Le(s) référentiel(s) utilisé(s) doi(ven)t être mentionné(s) à l'aide de l'
 
 ### Précision géométrique 
 
-Du fait de l'échelle de référence des PPR, la précision géométrique visée pour le posionnment planimétrique est de l'ordre du mètre.
+Du fait de l'échelle de référence des PPR, la précision géométrique visée pour le positionnement planimétrique est de l'ordre du mètre.
 
 
 **Elément de mesure ou de métadonnées :**
