@@ -368,7 +368,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 **Titre** : Zone d'aléa de référence
 
-**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
