@@ -2646,7 +2646,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
   - l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource)
   - une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative.A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.
   - La nature de cette adresse : `pointOfcontact` (traduction de « Point de contact »)
-- Obligation : Saisie obligatoire ?
+- Obligation : Saisie obligatoire 
 - XPath ISO 19115 : `contact*/organisationName`, `contact/*/address/*/electronicMailAddress` et `contact/*/role`
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
@@ -2664,7 +2664,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnées générales | *Indiquer la date de 'révision' du fichier de métadonnées ou du nouveau Standard* (?) |
+| Métadonnées générales | *Indiquer la date de 'révision' du fichier de métadonnées ou du nouveau Standard* |
 | Métadonnées d'un PPR | *Indiquer la date de création ou de révision du fichier de métadonnées* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.*  |
 
