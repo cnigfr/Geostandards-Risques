@@ -582,7 +582,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 | /ouvrageInteretGeneral/barrages | barrages, vannes, écluses | ouvrages et équipements d’intérêt général | barrages, vannes, écluses |
 | /ouvrageInteretGeneral/canaMD | canalisations de matières dangereuses | ouvrages et équipements d’intérêt général | canalisations de matières dangereuses |
 | /frichesIndusUrba | friches industrielles et urbaines | - | Enjeux connexes et éléments de contexte - zones de friches industrielles et urbaines |
-| /projetCollectivite | projets des collectivités | - | Enjeux connexess et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
+| /projetCollectivite | projets des collectivités | - | Enjeux connexes et éléments de contexte - projets d’aménagement envisagés dans le périmètre du PPRM |
 
 
 
