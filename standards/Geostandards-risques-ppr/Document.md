@@ -2359,7 +2359,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 #### Encodage des caractères
 
-- Description : Il s’agit de l’encodage des caractères utilisé dans le lot de données
+- Description : Il s’agit de l’encodage des caractères utilisés dans le lot de données
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/characterSet`
 
