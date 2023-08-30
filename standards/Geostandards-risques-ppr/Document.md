@@ -1927,7 +1927,7 @@ INSERT INTO typereference VALUES
 
 ##### Table d'enumeration `typealea`
 
-La table `typealea` implémente l'énumération TypeAlea définie dans le modèle commun
+La table `typealea` implémente l'énumération [TypeAlea](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typealea) définie dans le modèle commun
 
 Elle a la structure et le contenu suivants :
 
