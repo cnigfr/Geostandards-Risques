@@ -1121,7 +1121,7 @@ Pour chacun des systèmes de coordonnées déclarés, elle permet de préciser :
 
 - un nom lisible par un humain (`srs_name`)
 - un identifiant unique pour de ce système de coordonnées (clef primaire) dans le GeoPackage (`srs_id`)
-- le nom de l'oganisation qui définit ce système de coordonnées (`organization`)
+- le nom de l'organisation qui définit ce système de coordonnées (`organization`)
 - l'identifiant numérique de ce système de coordonnées pour cette organisation (`organization_coordsys_id`)
 - la définition au format WKT de ce système de coordonnées (`definition`)
 - Une description textuelle lisible par un être humain de ce système de coordonnées (`description`)
