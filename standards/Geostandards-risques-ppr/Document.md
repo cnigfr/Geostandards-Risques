@@ -2911,6 +2911,7 @@ Les objets de la classe OrigineRisque seront créés à partir de ceux de la cla
 
 # ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
 
+## Généralités sur le Standard CNIG SUP
 
 Le standard [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) "Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE" définit les spécifications des données de Servitude d'Utilité Publique (SUP) affetant l'utilisation du sol, au niveau conceptuel et physique (implémentation) en vue de leur intégration dans le Géoportail de l'Urbanisme.
 
@@ -2919,6 +2920,45 @@ Les SUP sont des limitations administratives au droit de propriété et peuvent 
 Des travaux de mise en correspondance du modèle des standards COVADIS PPR avec le modèle du standard CNIG SUP ont été réalisés par l'IGN pour la DGPR afin de faciliter la réalisation et la publication de ces deux catégories de SUP dans le Géoportail de l'Urbanisme et leur prise en compte dans l'application de réalisation des risques pour l'information des acquéreurs et des locataires ([ERRIAL](https://errial.georisques.gouv.fr/#/)).
 
 Cette annexe reprend et adapte ces mises en correspondances au modèle de ce nouveau standard PPR.
+
+
+## Génération des données du Standard SUP
+
+### Principe général
+
+Le modèle du standard [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) définit cinq classes d'objets :
+
+- ActeServitude : décrit la ou les décision(s), généralement de nature réglementaire ou administrative, qui crée(nt) la servitude
+- Servitude : décrit la Servitude d'Utilité Publique
+- GenerateurServitude : décrit le ou les générateur(s), entité(s) géographique(s) qui indui(sen)t la Servitude d'Utilité Publique
+- AssietteServitude : La ou les zone(s) géographique(s) à l'intérieur de laquelle ou desquelles s'applique la servitude
+- Gestionnaire : l'organisme gestionnaire ou organisme ressource de la servitude
+
+
+Dans le cas d'une SUP issue d'un PPR, le principe de création des objets du modèle SUP est le suivant :
+
+- un objet acte correspondant à l'arrêté préfectoral de création du PPR
+- un objet servitude correspondant à la servitude
+- un objet générateur correspondant au périmètre du PPR
+- un objet assiette correspondant à l'enveloppe aggrégée du zonage réglementaire.
+- un objet gestionnaire correspondant à la DDTM responsable de la mise en oeuvre du PPR)
+
+
+### Nommage des objets
+
+Le paragraphe $4.1.3 du standard [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) définit une règle de nommage des objets implémentant les SUP qui repose sur le modèle [préfixe]_[radical]_[suffixe] où :
+
+- le [préfixe] est déterminé la catégorie de la SUP : `PM1` ou `PM3` pour les PPR
+- le [suffixe] est détermine par la classe d'implémentation de la SUP et sa cardinalité. La règle générale est la suivante, mais elle peut varier selon la cardinalité :
+  - `gen` pour les tables représentant les générateurs
+  - `act` pour les tables représentant les actes
+  - `sup` pour la table représentant la servitude
+  - `ass` pour les tables représentant les assiettes
+- le [radical] porte le nom abrégé de la SUP.
+  - Dans le cadre des PPR, le radical sera formé de la concaténation du type de PPR et de l'identifiant du PPR dans le système GASPAR (valeurs des propriétés `typeProcedure` et `codeProcedure` de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)).
+
+
+### Correspondances
 
 Les parties qui suivent indiquent, pour chaque table du standard SUP, les correspondances avec les informations du profil applicatif PPR des Géostandards Risques. 
 
@@ -2929,7 +2969,7 @@ La colonne "Information correspondante Géostandard PPR" indique, lorsque c'est 
 Enfin, la dernière colonne illustre un exemple d’implémentation du standard pour une SUP PM1.
 
 
-## Correspondances pour la table Gestionnaire
+#### Correspondances pour la table Gestionnaire
 
 La table Gestionnaire permet de décrire l'organisme gestionnaire ou organisme ressource de la servitude.
 
@@ -2944,7 +2984,7 @@ adresse|Adresse de l’organisme servant aux envois postaux|||Adresse postale de
 
 
 
-## Correspondances pour la table Acte
+#### Correspondances pour la table Acte
 
 La table Acte permet de décrire la décision, généralement de nature réglementaire ou administrative, qui crée la servitude.
 
@@ -2963,7 +3003,7 @@ aPlan|Existence d’un ou plusieurs plans annexés à l’acte|T (oui) ou F (non
 
 
 
-## Correspondances pour la table Servitude
+#### Correspondances pour la table Servitude
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
@@ -2971,11 +3011,11 @@ Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Informat
 **IdGest**|Identifiant du gestionnaire de la SUP|Code SIREN (9 caractères)||130008568
 **nomSup**|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_sup| Utilisation des propriétés `typeProcedure` et `codeProcedure` de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) pour déterminer le radical|PM1_PPR-I-AUTIGNAC_sup
 nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Propriété `libelleProcedure` de la classe "[Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)"|AUTIGNAC
-**categorie**|Catégorie de la servitude|PM1 ou PM3||PM1
-idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant, ID_GASPAR peut être utilisé ici||34DDTM20120133
+**categorie**|Catégorie de la servitude|PM1 ou PM3|PM1 si le type de procédure est un PPR Naturel ou Minier, PM3 si c'est un PPR Technologique|PM1
+idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant|Propriété `codeProcedure` de la classe "[Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)"|34DDTM20120133
 descriptio|Description détaillée de la servitude|Voir §4.1.5 du standard||
 **dateMaj**|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Propriété `dateEtat` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|20160531
-**echNum**|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)||10000
+**echNum**|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)|Elément de métadonnées ["Résolution spatiale"](#résolution-spatiale)|10000
 **valideGest**|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non). Valeur par défaut : F||T
 obsValidat|Observation relative à la validation de la servitude formulée par le gestionnaire|||
 **modeProd**|Mode d’obtention de la SUP|Voir énumération « modeProd » §4.3.7 du standard||Reconstitution
@@ -2983,8 +3023,7 @@ quiProd|Organisme ayant numérisé la SUP|Valeur vide interdite si modeProd vaut
 docSource|Document graphique ayant été numérisé|Valeur vide interdite si modeProd vaut « numerisation »||
 
 
-
-## Correspondances pour la table Generateur
+#### Correspondances pour la table Generateur
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage 
 |-|-|-|-|-|
@@ -3003,9 +3042,7 @@ idBDExt|Identifiant référençant l’objet correspondant dans le référentiel
 **URL_GRISQ**|Hyperlien vers le PPR dans Géorisques||Champ SITE_WEB de la table DOCUMENT si disponible|https://files.georisques.fr/ppr/...
 
 
-
-## Correspondances pour la table Assiette
-
+#### Correspondances pour la table Assiette
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage 
 |-|-|-|-|-|
@@ -3021,7 +3058,7 @@ dateSrcAss|Date d’actualité du référentiel utilisé|Valeur vide interdite s
 
 
 
-## Correspondances pour la table Servitude-acte
+#### Correspondances pour la table Servitude-acte
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
