@@ -2940,7 +2940,7 @@ Dans le cas d'une SUP issue d'un PPR, le principe de création des objets du mod
 - un objet ActeServitude correspondant à l'arrêté préfectoral de création du PPR
 - un objet Servitude correspondant à la servitude
 - un objet GenerateurServitude correspondant au périmètre du PPR
-- un objet AssietteServitude correspondant à l'enveloppe aggrégée du zonage réglementaire.
+- un objet AssietteServitude correspondant à l'enveloppe agrégée du zonage réglementaire.
 - un objet Gestionnaire correspondant à la DDTM responsable de la mise en oeuvre du PPR
 
 
