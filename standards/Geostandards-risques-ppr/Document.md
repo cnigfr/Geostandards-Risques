@@ -1927,7 +1927,7 @@ INSERT INTO typereference VALUES
 
 ##### Table d'enumeration `typealea`
 
-La table `typealea` bla bla bla
+La table `typealea` implémente l'énumération TypeAlea définie dans le modèle commun
 
 Elle a la structure et le contenu suivants :
 
