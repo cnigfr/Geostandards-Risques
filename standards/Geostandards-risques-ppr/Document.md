@@ -3009,7 +3009,7 @@ Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Informat
 |-|-|-|-|-|
 **IdSup**|Identifiant de la SUP|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental] ||PM1-130008568-86
 **IdGest**|Identifiant du gestionnaire de la SUP|Code SIREN (9 caractères)||130008568
-**nomSup**|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_sup| Utilisation des propriétés `typeProcedure` et `codeProcedure` de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) pour déterminer le radical|PM1_PPR-I-AUTIGNAC_sup
+**nomSup**|Nom abrégé de la servitude, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_sup| Cf. le [paragraphe sur le nommage des objets](#nommage-des-objets) poru la détermination de [cat] et [radical] |PM1_PPR-I-AUTIGNAC_sup
 nomSupLitt|Nom littéral de la servitude, figurant dans l’acte l’ayant instaurée||Propriété `libelleProcedure` de la classe "[Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)"|AUTIGNAC
 **categorie**|Catégorie de la servitude|PM1 ou PM3|PM1 si le type de procédure est un PPR Naturel ou Minier, PM3 si c'est un PPR Technologique|PM1
 idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la servitude|Valeur vide possible si identifiant inexistant|Propriété `codeProcedure` de la classe "[Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)"|34DDTM20120133
@@ -3029,35 +3029,37 @@ Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Informat
 |-|-|-|-|-|
 **(geom)**|Géométrie de l’objet générateur, à l’origine de la servitude|Surfacique|Géométrie de l'objet de la classe  "[Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)" dont la valeur de la propriété `etatProcedure` est la plus avancée|MultiPolygon(…)
 **IdGen**|Identifiant du générateur|Voir §5.2.4 du standard. [idSup]-[numéro incrémental]||PM1-130008568-86-1
-**IdSup**|Identifiant de la SUO|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental]||PM1-130008568-86
-**nomGen**|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_gen|Cf. le [paragraphe sur le nommage des objets](#nommage-des-objets) poru la détermination de [cat] et [radical]|PM1_PPRn_AUTIGNAC_gen
+**IdSup**|Identifiant de la SUP|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental]||PM1-130008568-86
+**nomGen**|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_gen|Cf. le [paragraphe sur le nommage des objets](#nommage-des-objets) poru la détermination de [cat] et [radical]|PM1_PPR-I_AUTIGNAC_gen
 **typeGen**|Nature de l’entité génératrice|Valeur imposée par le §5.4 du standard : « Périmètre règlementé des PPR »||Périmètre règlementé des PPR 
 modeGenere|Description du moyen utilisé pour obtenir la géométrie du générateur|Voir énumération « modeGenere » §4.3.7 du standard|Dans le cas des PPR, la valeur "Duplication" est à utiliser|Duplication
 srcGeoGen|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGenere vaut "Digitalisation" ou « liste de coordonnées »|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|BD Parcellaire|
 dateSrcGen|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné, format AAAAMMJJ|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|20150101
 refBDExt|Nom du référentiel ou de la source de données externes d’où provient la géométrie|Valeur vide interdite si modeGenere vaut "Duplication"|Utiliser l'élément de métadonnées générales "[Intitulé de la ressource](##intitulé-de-la-ressource)" pour faire référence à l'ensemble des PPR| "Ensemble des Plans de Préventions des Risques sur le territoire français"
 idBDExt|Identifiant référençant l’objet correspondant dans le référentiel externe|Valeur vide interdite si refBDExt renseigné|Valeur de l'identifiant `idperimetre` de la table "[Perimetre](#table-typeppr_codegasparcomplet_perimetre_s)"| 12345678
-**ID_GASPAR**|Identifiant GASPAR du PPR|Référencé dans GASPAR, format [ddd][PREF|DDT|DDTM|DREAL][AAAA][nnnn]|Propriété `codeProcedure` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|34DDTM20120133
-**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères de la propriété `typeAlea` de la classe [ZoneAleaReference](#classe-dobjets-zonealeaireference)|11
+**ID_GASPAR**|Identifiant GASPAR du PPR|Cf. [Nomenclature des identifiants dans GASPAR](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)|Propriété `codeProcedure` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|34DDTM20120133
+**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères de la propriété `typeAlea` des classes décrivant les zones d'aléa du PPR. Par exmple : [ZoneAleaReference](#classe-dobjets-zonealeaireference)|11
 
 
 #### Correspondances pour la table Assiette
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage 
 |-|-|-|-|-|
-**(geom)**|Géométrie de l’objet assiette, sur laquelle s’applique la servitude|Surfacique|Enveloppe agrégée des ZONE_REG|MultiPolygon(…)
+**(geom)**|Géométrie de l’objet assiette, sur laquelle s’applique la servitude|Surfacique|La géométrie est l'enveloppe agrégée des objets du Zonage réglementaire : Classes [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) et [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier)|MultiPolygon(…)
 **IdAss**|Identifiant de l’assiette|Voir §5.2.5 du standard. [idGen]-[numéro incrémental]||PM1-130008568-86-1-1
 **IdGen**|Identifiant du générateur de l’assiette|Voir §5.2.4 du standard. [idSup]-[numéro incrémental]||PM1-130008568-86-1
-**nomAss**|Nom abrégé de l’assiette, respectant les règles de nommage des SUP|Voir §4.1.3 du standard.[cat]_[radical]_ass|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_ass
-**typeAss**|Nature de l’assiette selon sa vocation principale et la catégorie de SUP|Valeur imposée par le §5.4 du standard : « Enveloppe des zonages règlementaires »||Enveloppe des zonages règlementaires
-**modeGeoAss**|Description de la méthode utilisée pour générer la géométrie de l’assiette|Voir énumération « modeGeoAss » §4.3.7 du standard||Duplication
-paramCalc|Valeur du paramètre ayant permis de calculer l’assiette lorsque celle-ci correspond à un objet tampon|Entier en m, Valeur vide interdite si modeGeoAss vaut « Zone tampon »||
-srcGeoAss|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGeoAss vaut « digitalisation » ou « liste de coordonnées »|Champ SRCE_GEOM de la table PERIMETRE|BD Parcellaire
-dateSrcAss|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné ou si modeGeoAss vaut « Liste de parcelles », format AAAAMMJJ|Utilisation du champ SRCE_ANNEE de la table PERIMETRE|20150101
+**nomAss**|Nom abrégé de l’assiette, respectant les règles de nommage des SUP|Voir §4.1.3 du standard.[cat]_[radical]_ass|Cf. le [paragraphe sur le nommage des objets](#nommage-des-objets) pour la détermination de [cat] et [radical]|PM1_PPR-I_AUTIGNAC_ass
+**typeAss**|Nature de l’assiette selon sa vocation principale et la catégorie de SUP|Valeur imposée par le §5.4 du standard : "Enveloppe des zonages règlementaires"||Enveloppe des zonages règlementaires
+**modeGeoAss**|Description de la méthode utilisée pour générer la géométrie de l’assiette|Voir énumération « modeGeoAss » §4.3.7 du standard|Utiliser la valeur "Calculée" (il s'agit d'une géométrie calculée à partir de la géométrie d'autres objets) | Calculée
+paramCalc|Valeur du paramètre ayant permis de calculer l’assiette lorsque celle-ci correspond à un objet tampon|Entier en m, Valeur vide interdite si modeGeoAss vaut « Zone tampon »|Non Applicable| vide
+srcGeoAss|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGeoAss vaut « digitalisation » ou « liste de coordonnées »|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|BD Parcellaire
+dateSrcAss|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné ou si modeGeoAss vaut « Liste de parcelles », format AAAAMMJJ|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|20150101
 
 
 
 #### Correspondances pour la table Servitude-acte
+
+Il s'agit de la table de lien entre la table Servitude et la table Acte. Les valeurs correspondent à celles définies pour les identifiants des objets de ces deux tables.
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage spécifique aux PM1/PM3
 |-|-|-|-|-|
