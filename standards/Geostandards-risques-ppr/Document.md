@@ -3016,10 +3016,10 @@ idIntGest|Identifiant créé et entretenu par l’organisme gestionnaire de la s
 descriptio|Description détaillée de la servitude|Voir §4.1.5 du standard||
 **dateMaj**|Date de la dernière modification apportée à la servitude|Par défaut, égale à la date de l’acte de création|Propriété `dateEtat` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|20160531
 **echNum**|Dénominateur de l’échelle à laquelle a été numérisée la servitude|Entier, selon l’échelle du référentiel (5000, 10000 etc)|Elément de métadonnées ["Résolution spatiale"](#résolution-spatiale)|10000
-**valideGest**|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non). Valeur par défaut : F||T
+**valideGest**|Validation des données numérisées de la servitude par le gestionnaire|T (oui) ou F (non). Valeur par défaut : F|Indiquer systématiquement 'T' (Oui) |T
 obsValidat|Observation relative à la validation de la servitude formulée par le gestionnaire|||
-**modeProd**|Mode d’obtention de la SUP|Voir énumération « modeProd » §4.3.7 du standard||Reconstitution
-quiProd|Organisme ayant numérisé la SUP|Valeur vide interdite si modeProd vaut « numerisation »||DDTM34
+**modeProd**|Mode d’obtention de la SUP|Voir énumération « modeProd » §4.3.7 du standard|Indiquer systématiquement "Reconstitution"|Reconstitution
+quiProd|Organisme ayant numérisé la SUP|Valeur vide interdite si modeProd vaut « numerisation »|Element de métadonnées "[Organisation responsable de la ressource](#organisation-responsable-de-la-ressource)" (`organisationName`)|DDTM34
 docSource|Document graphique ayant été numérisé|Valeur vide interdite si modeProd vaut « numerisation »||
 
 
@@ -3027,19 +3027,18 @@ docSource|Document graphique ayant été numérisé|Valeur vide interdite si mod
 
 Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Information correspondante Géostandard PPR|Exemple de remplissage 
 |-|-|-|-|-|
-**(geom)**|Géométrie de l’objet générateur, à l’origine de la servitude|Surfacique|Géométrie du PERIMETRE|MultiPolygon(…)
+**(geom)**|Géométrie de l’objet générateur, à l’origine de la servitude|Surfacique|Géométrie de l'objet de la classe  "[Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)" dont la valeur de la propriété `etatProcedure` est la plus avancée|MultiPolygon(…)
 **IdGen**|Identifiant du générateur|Voir §5.2.4 du standard. [idSup]-[numéro incrémental]||PM1-130008568-86-1
 **IdSup**|Identifiant de la SUO|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental]||PM1-130008568-86
-**nomGen**|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_gen[n]|Utilisation du champ NOM de la table PERIMETRE pour déterminer le radical|PM1_PPRn_AUTIGNAC_gen
+**nomGen**|Nom abrégé du générateur, respectant les règles de nommage des SUP|Voir §4.1.3 du standard. [cat]_[radical]_gen|Cf. le [paragraphe sur le nommage des objets](#nommage-des-objets) poru la détermination de [cat] et [radical]|PM1_PPRn_AUTIGNAC_gen
 **typeGen**|Nature de l’entité génératrice|Valeur imposée par le §5.4 du standard : « Périmètre règlementé des PPR »||Périmètre règlementé des PPR 
-modeGenere|Description du moyen utilisé pour obtenir la géométrie du générateur|Voir énumération « modeGenere » §4.3.7 du standard||Digitalisation
-srcGeoGen|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGenere vaut « digitalisation » ou « liste de coordonnées »|Champ SRCE_GEOM de la table PERIMETRE|BD Parcellaire
-dateSrcGen|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné, format AAAAMMJJ|Utilisation du champ SRCE_ANNEE de la table PERIMETRE|20150101
-refBDExt|Nom du référentiel ou de la source de données externes d’où provient la géométrie|Valeur vide interdite si modeGenere vaut « duplication »||vide
-idBDExt|Identifiant référençant l’objet correspondant dans le référentiel externe|Valeur vide interdite si refBDExt renseigné||vide
-**ID_GASPAR**|Identifiant GASPAR du PPR|Référencé dans GASPAR, format [ddd][PREF|DDT|DDTM|DREAL][AAAA][nnnn]|Champ ID_GASPAR de la table PERIMETRE|34DDTM20120133
-**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères du champ CODERISQUE de la table DOCUMENT|11
-**URL_GRISQ**|Hyperlien vers le PPR dans Géorisques||Champ SITE_WEB de la table DOCUMENT si disponible|https://files.georisques.fr/ppr/...
+modeGenere|Description du moyen utilisé pour obtenir la géométrie du générateur|Voir énumération « modeGenere » §4.3.7 du standard|Dans le cas des PPR, la valeur "Duplication" est à utiliser|Duplication
+srcGeoGen|Type de carte, référentiel géographique utilisé comme source de référencement pour la géométrie|Valeur vide interdite si modeGenere vaut "Digitalisation" ou « liste de coordonnées »|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|BD Parcellaire|
+dateSrcGen|Date d’actualité du référentiel utilisé|Valeur vide interdite si srcGeoGen est renseigné, format AAAAMMJJ|Le cas échéant cette information peut être renseignée dans l'élément de métadonnée "[Généalogie](#généalogie)"|20150101
+refBDExt|Nom du référentiel ou de la source de données externes d’où provient la géométrie|Valeur vide interdite si modeGenere vaut "Duplication"|Utiliser l'élément de métadonnées générales "[Intitulé de la ressource](##intitulé-de-la-ressource)" pour faire référence à l'ensemble des PPR| "Ensemble des Plans de Préventions des Risques sur le territoire français"
+idBDExt|Identifiant référençant l’objet correspondant dans le référentiel externe|Valeur vide interdite si refBDExt renseigné|Valeur de l'identifiant `idperimetre` de la table "[Perimetre](#table-typeppr_codegasparcomplet_perimetre_s)"| 12345678
+**ID_GASPAR**|Identifiant GASPAR du PPR|Référencé dans GASPAR, format [ddd][PREF|DDT|DDTM|DREAL][AAAA][nnnn]|Propriété `codeProcedure` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|34DDTM20120133
+**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères de la propriété `typeAlea` de la classe [ZoneAleaReference](#classe-dobjets-zonealeaireference)|11
 
 
 #### Correspondances pour la table Assiette
