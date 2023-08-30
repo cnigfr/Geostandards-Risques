@@ -1105,7 +1105,7 @@ Pour chacune d'elle, elle permet de préciser :
 
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_geometry_columns` conforme à la strucutre du format GeoPackage qui liste l'ensemble des tables du standard de type `features` présentes dans la livraison.
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_geometry_columns` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard de type `features` présentes dans la livraison.
 
 
 **Exigence**
