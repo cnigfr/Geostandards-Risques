@@ -1195,7 +1195,7 @@ Les tables du standard présentes dans la livraison GeoPackage doivent respecter
 
 ##### Dictionnaire des tables
 
-Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livriason en précisant :
+Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livraison en précisant :
 
 - le nom de la table (valeur de `table_name` dans la table `gpkg_contents`)
 - le type de la table selon la nomenclature de GeoPackage (valeur de `data_type` dans la table `gpkg_contents`)
