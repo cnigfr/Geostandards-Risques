@@ -9,7 +9,7 @@
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
- Géostandards Risques - Profil applicatif PPR
+Géostandards Risques - Profil applicatif PPR
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -17,32 +17,25 @@ Groupe de travail refonte des Géostandards Risques
 *Version 0.1 - Date*
 
 
----
-
----
 
 #  Fiche analytique
 
-> *Tableau de présentation du document à compléter...*
 
 | | |
 |-|-|
 | **Titre** | Géostandards Risques |
-| **Sous-titre** | Profil applicatif PPR |
+| **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
 | **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
-| **Résumé** | *à remplir* |
-| **Objectif** | *à remplir* |
-| **Etendue d'application** | *à remplir : <Contient l'étendue de la ou les zones géographiques, temporelles ou verticales couvertes par le contenu>* |
-| **Resolution spatiale** | *à remplir : <(facultatif) Contient un facteur fournissant une compréhension générale de la densité des données spatiales/du niveau de référence>* |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui le précisent et l'implémentent dans le cas de procédures particulières. Ce document est le profl applicatif dédié aux Plans de Prévention des Risques (PPR). |
+| **Etendue d'application** | Territoire national français |
+| **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| **Diffusion** | *à remplir : <Contient le format de disponibilité et l’endroit où le trouver> Ex PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** | *à remplir* |
-| **Restriction** | *à remplir* |
-| **Thèmes** | *à remplir* |
-| **Mots-clés** | *à remplir* |
-| **Contact** | *à remplir* |
-| **Informations complémentaires** | *à remplir : <(facultatif) Contient toute autre information descriptive sur le contenu et nécessaire à la fiche d’information>* |
+| **Diffusion** | A venir : PDF sur internet (site du CNIG) |
+| **Formats disponibles** | HTML/Markdown sur le [dépot Github du Groupe de travail Géostandards Risques](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
+| **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
+| **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
+| **Contact** | geostandards-risques-gt-cnig@framalistes.org |
 
 ---
 
@@ -72,9 +65,9 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Bouffier Jacques | MTE / DGPR / BRIL |
 | Boudesseul Nicolas | DREAL Pays de la Loire |
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
+| Coignon Bastien | MTE / DGPR / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohan | Cerema |
-| Perehin Céline | Cerema |
 
 > *liste à compléter et actualiser*
 
@@ -84,7 +77,16 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 
 ##  Objectif et raison d'être du standard
 
-> *Résumé et objectif du document.*
+La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). 
+
+Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui le précisent et l'implémentent dans le cas de procédures particulières. 
+
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent.
+
+Il a voccation à se substituer et rendre obsolètes les dernières versions des standards COVADIS suivants :
+
+* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
+* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
 
 
 
@@ -221,12 +223,6 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 > *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
 
-Ce standard propose une description de l'information géographique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent. Il s'appuie sur le modèle conceptuel commun défini par le Standard [CNIG_RISQUES_COMMUN] "Géostandards risques - Modèle commun" qu'il spécialise pour l'appliquer aux procédures des PPR.
-
-Ce standard se substitue et rend obsolètes les dernières versions des standards COVADIS suivants :
-
-* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
-* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
 
 
 ##  Scope et périmètre d'application
@@ -1648,7 +1644,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` implémente le type de donné
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp). |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
 | `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 
@@ -1674,7 +1670,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp). |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | `nom` | TEXT(50) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
 | `description` | TEXT(255) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
 | `valeur` | TEXT(255) | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
