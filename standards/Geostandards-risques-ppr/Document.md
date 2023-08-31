@@ -26,7 +26,7 @@ Groupe de travail refonte des Géostandards Risques
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
 | **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
-| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui le précisent et l'implémentent dans le cas de procédures particulières. Ce document est le profl applicatif dédié aux Plans de Prévention des Risques (PPR). |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR). |
 | **Etendue d'application** | Territoire national français |
 | **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
@@ -79,7 +79,7 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 
 La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). 
 
-Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui le précisent et l'implémentent dans le cas de procédures particulières. 
+Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. 
 
 Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent.
 
@@ -92,24 +92,47 @@ Il a voccation à se substituer et rendre obsolètes les dernières versions des
 
 ##  A qui s'adresse ce document ?
 
-> *à remplir* 
+Ce document s'adresse :
+
+- aux services de l'Etat ou assimilés, chargés de produire les PPR, les entretenir les diffuser.
+- aux utilisateurs des PPR, amenés à en prendre connaissance ou les exploiter : services de l'Etat, collectivités locales, professionnels, bureaux d'études, ou grand public.
+
 
 
 ##  Comment lire le document
 
-> *Si besoin, présentation de la structure du document*
+Les parties [Préface](#préface), [Présentation du document](#présentation-du-document) et [Concepts Généraux](#concepts-généraux) donnent les éléments nécessaires à la compréhension du document. 
+
+Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) et [Systèmes de référence](#syst%C3%A8mes-de-r%C3%A9f%C3%A9rence) définissent les adaptations du modèle conceptuel commun et de son catalogue de données associé dans le cadre des plans de prévention des risques ainsi que les systèmes de référence de coordonnées applicables à ces procédures.
+
+La partie [Qualité](#qualité) décrit les recommandations et exigences des qualité concernant le contenu des données des PPR et de leur structuration ainsi que la façon de rapporter leur évaluation dans les métadonnées.
+
+La partie [Cycle de vie des données](#cycle-de-vie-des-données) expose xxxx
+
+La partie [Règles de symbologie](#règles-de-symbologie) décrit les règles de représentation de certaines entités relatives aux PPR.
+
+La partie [Livraison](#livraison) précise les modalités d'implémentation et d'échange des données PPR au format GeoPackage.
+
+La partie [Métadonnées](#métadonnées) précise les valeurs ou les consignes de saisie des éléments de étadonnées relatifs aux PPR de façon à en permettre une description et un catalogage pertinents en conformité avec les exigences INSPIRE sur les métadonnées et leur déclinaison au niveau national.
+
+L'[annexe A](#annexe-a---correspondances-avec-les-standards-covadis-ppr-n-et-t-et-pprm), informative, expose les correspondances entre le modèle de données de ce standard et celui des anciens standards COVADIS PPR de façon à aider à la conversion des données PPR existantes vers ce novueau standard.
+
+L'[annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3), informative, décrit les correspondances du modèle de données du Standard CNIG sur les Servitudes d'Utilité Publique (SUP) avec celui de ce standard de façon à aider à la production des catégories de SUP correspondant à des PPR.
 
 
-##  Références à d'autres normes
 
-Le document ci-présent s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l’édition citée compte. Pour les autres, la dernière édition de la norme s’applique.
+##  Références
 
-> *Indiquer ici les documents auquel il est fait références (normes, guides, lois, ...)*
+Cette partie cite les références documentaires et réglementaires sur lesquelles s'appuie ce standard.
 
+
+### Références à d'autres documents
+
+Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous. 
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
-| [CNIG_RISQUES_COMMUN:2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
+| [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
@@ -125,10 +148,9 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) | Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE - Standard CNIG v2016b (rev. août 2023) | CNIG - Cerema | 2023/08 |
 
 
+###  Cadre réglementaire des Plans de Prévention des Risques
 
-##  Cadre réglementaire des Plans de Prévention des Risques
-
-###  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
+####  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
 La mise en oeuvre des Plans de prevention des risques naturels prévisibles est définie dans le code de l'environnement par :
 
@@ -139,14 +161,14 @@ L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001
 
 Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRI », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
-###  Cadre réglementaire des Plans de Prévention des Risques Technologiques
+####  Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
 La mise en oeuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
 
 * Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
 
-###  Cadre réglementaire des Plans de Prévention des Risques Miniers
+####  Cadre réglementaire des Plans de Prévention des Risques Miniers
 
 La mise en oeuvre des Plans de prévention des risques miniers est définie par :
 
