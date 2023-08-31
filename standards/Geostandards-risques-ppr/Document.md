@@ -327,7 +327,7 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 |-|-|
 | Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le Standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
 | Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
-| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet le site internet de la préfecture du département de la DDT(M) concernée, mais si elle a voccation à se faire sur la palteforme nationale de diffusion qu'est Géorisques. |
+| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet le site internet de la préfecture du département de la DDT(M) concernée, mais elle a voccation à se faire sur la palteforme nationale de diffusion qu'est Géorisques. |
 
 **Figure xx : Cas d'utilisation : Publier un PPR**
 
@@ -336,7 +336,15 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 
 ### Cas d'utilisation Exploiter un PPR
 
-Le cas d'utilisation "Exploiter un PPR" xxxx
+Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Êlles n'ont pas voccation à être exhaustive meis elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grace à la connaissance de la structure des données et de sa qualité.
+
+
+|Action du cas d'utilisation| Description|
+|-|-|
+| Consulter les données | Cette action est celle du Grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en oeuvre de telles fonctionalité. La consultation est aussi rendue possible grace aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grace à des mécanismes de cataloguage. |
+| Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
+| Dérivier / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en oeuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les Plans locaux d'urbanisme par les collectivités territoriales. |
+| Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
 
 
 **Figure xx : Cas d'utilisation : Exploiter un PPR**
@@ -345,13 +353,9 @@ Le cas d'utilisation "Exploiter un PPR" xxxx
 
 
 
-
-
 #  Contenu et structure de la donnée
 
-> *La section relative au contenu et à la structure des données décrit l’intégration de <objet du standard>. conception des schémas d'application (ISO 19109) qui utilise un catalogue d'entités (ISO 19110) pour fournir une description lisible par un humain des types et des caractéristiques des entités, et un dictionnaire de concepts d'entités (ISO 19126) pour décrire et publier les concepts d'entités.* 
-
-Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [*Ref. à fournir*]() dans le cadre des procédures de Plans de Prévention des Risques.
+Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) dans le cadre des procédures de Plans de Prévention des Risques.
 
 
 ##  Modèle conceptuel de données
