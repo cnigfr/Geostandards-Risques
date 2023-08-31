@@ -196,6 +196,8 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 ###  Abréviations
 
 
+**BRGM** Bureau de Recherches Géologiques et Minières
+
 **BRIL** Bureau des risques d'inondation et littoraux
 
 **BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
@@ -249,7 +251,6 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 ##  Périmètre d'application
 
-
 Le périmètre d'application des plans de prévention des risques couvert par ce standard concerne :
 
 - la production par les services de l'Etat des jeux de données numériques relatives aux plans de prévention des risques conformément aux exigences réglementaires définies dans la partie [Cadre réglementaire des Plans de Prévention des Risques](#cadre-réglementaire-des-plans-de-prévention-des-risques) 
@@ -260,7 +261,7 @@ Le périmètre d'application des plans de prévention des risques couvert par ce
   - la mise en oeuvre de l'information des acquereurs ou des locataires (IAL) ;
   - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
 
-
+Les données décrites et couvertes par ce standard ne couvent pas l'intégralité des informations d'un dossier de plan de prévention des risques. Il s'agit des données géographiques et sémantiques du PPR permettant d'en établir la partie cartographique et de faire le lien avec les autres éléments du dossier pouvant être mis en oeuvre dans d'autres systèmes tels que GASPAR ou les sites des préfectures qui hébergent le dossier.
 
 
 Les plans de prévention des risques peuvent être définis sur le territoire national français, à savoir : 
@@ -279,38 +280,20 @@ Les plans de prévention des risques peuvent être définis sur le territoire na
 Les types de risques couverts par les plans de prévention des risques sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar) du modèle commun.
 
 
-
-
-
 ##  Les acteurs et rôles concernés 
 
-> *à compléter: Par leurs missions, les différents intervenants (ou utilisateurs) liés au <thème> peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.*
-
-> *Ces rôles peuvent être :*
-
+Les acteurs concernés par les plans de prévention des risques sont :
 
 | Nom du rôle | Caractéristiques |
 |-|-|
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
+| Producteur | La production des PPR est réalisée au niveau départemental par les Direction Départementales des Territoires et de la Mer (DDTM) |
+| Diffuseur | La diffusion des PPR est assurée par les DDTM sur le site internet de leur préfectures de rattachement et aussi au niveau national sur la plateforme [Géorisques](https://www.georisques.gouv.fr/) opérée par le BRGM. |
+| Utilisateur | Les utilisateurs des PPR sont multiples en fonction des utilisations évoquées dans la partie précédente : grand public, services de l'état, collectivités territoriales, organismes publics ou privés (notamment bureaux d'études ou agences d'urbanismes) amenés à exploiter, dériver ou enrichir ces données. |  
 
 
 ##  Cas d'utilisation
 
 > *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
-
-###  Cas d’utilisation « Nom du cas 1 »
-
-| Nom du cas 1 | |
-|-|-|
-| Objectif | *(facultatif) Brève description de l’objectif à atteindre en réalisant le cas d’utilisation 1* |
-| Déclencheur | *(facultatif) Evènement spécifique menant à l’exécution de ce cas d’utilisation 1* |
-| Précondition | *(facultatif) Description du statut requis pour lancer l'exécution du scénario d'utilisation* |
-| Postcondition | *(facultatif) Description du statut après exécution réussie du scénario d'utilisation* | 
-
-> *Diagramme UML du cas d’utilisation 1*
-
-> *Description rédigée du scénario d'utilisation*
 
 
 

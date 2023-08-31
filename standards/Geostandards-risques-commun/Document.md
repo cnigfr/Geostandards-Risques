@@ -160,6 +160,8 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 ###  Abréviations
 
 
+**BRGM** Bureau de Recherches Géologiques et Minières
+
 **BRIL** Bureau des risques d'inondation et littoraux
 
 **BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
