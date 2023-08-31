@@ -300,10 +300,19 @@ Les cas d'utilisation illustrés ci-après mettent en oeuvre la production, la p
 
 ### Cas d'utilisation Elaborer un PPR
 
-Le cas d'utilisation "Elaborer un PPR" xxxx
+Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'élaboration d'un PPR et les acteurs majeurs et systèmes impliqués. Les étapes présentées ne sont pas toutes concernées au même niveau par le périmètre du ce standard.
+
+|Action du cas d'utilisation| Description|
+|-|-|
+|Prescrire, approuver, ... le PPR | Cette action, de la responsabilité du Prêfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
+| Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
+| Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
+| Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le réglement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
+| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informationsqui permettent de faire le lien avec les informations de cette base.
 
 
-** Figure xx : Cas d'utilisation : Elaborer un PPR **
+
+**Figure xx : Cas d'utilisation : Elaborer un PPR**
 
 ![Elaborer un PPR](./ressources/CU-elaborer-ppr.png)
 
@@ -311,10 +320,15 @@ Le cas d'utilisation "Elaborer un PPR" xxxx
 
 ### Cas d'utilisation Publier un PPR
 
-Le cas d'utilisation "Publier un PPR" xxxx
+Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en ligne des données numériques d'un PPR. Ce cas d'utilisation est au coeur de la cible du Standard, même si ce dernier ne couvre que marginalement la publication des pièces écrite.
 
 
-** Figure xx : Cas d'utilisation : Publier un PPR **
+|-|-|
+| Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le Standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
+| Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
+| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet le site internet de la préfecture du département de la DDT(M) concernée, mais si elle a voccation à se faire sur la palteforme nationale de diffusion qu'est Géorisques. |
+
+**Figure xx : Cas d'utilisation : Publier un PPR**
 
 ![Publier un PPR](./ressources/CU-publier-ppr.png)
 
@@ -324,7 +338,7 @@ Le cas d'utilisation "Publier un PPR" xxxx
 Le cas d'utilisation "Exploiter un PPR" xxxx
 
 
-** Figure xx : Cas d'utilisation : Exploiter un PPR **
+**Figure xx : Cas d'utilisation : Exploiter un PPR**
 
 ![Exploiter un PPR](./ressources/CU-exploiter-ppr.png)
 
