@@ -293,7 +293,42 @@ Les acteurs concernés par les plans de prévention des risques sont :
 
 ##  Cas d'utilisation
 
-> *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
+Les cas d'utilisation illustrés ci-après mettent en oeuvre la production, la publication et l'exploitation des PPR. Les acteurs qui y figurent peuvent être :
+- des personnes ou entités effectivement à la manoeuvre dans les actions
+- des systèmes en place permettant la réalisation de ces actions
+
+
+### Cas d'utilisation Elaborer un PPR
+
+Le cas d'utilisation "Elaborer un PPR" xxxx
+
+
+** Figure xx : Cas d'utilisation : Elaborer un PPR **
+
+![Elaborer un PPR](./ressources/CU-elaborer-ppr.png)
+
+
+
+### Cas d'utilisation Publier un PPR
+
+Le cas d'utilisation "Publier un PPR" xxxx
+
+
+** Figure xx : Cas d'utilisation : Publier un PPR **
+
+![Publier un PPR](./ressources/CU-publier-ppr.png)
+
+
+### Cas d'utilisation Exploiter un PPR
+
+Le cas d'utilisation "Exploiter un PPR" xxxx
+
+
+** Figure xx : Cas d'utilisation : Exploiter un PPR **
+
+![Exploiter un PPR](./ressources/CU-exploiter-ppr.png)
+
+
 
 
 
