@@ -202,11 +202,15 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
 
+**COVADIS** Commission de validation des données pour l'information spatialisée
+
 **CNIG** Comité national de l'information géolocalisée
 
 **DAGSI** Département des affaires générales et des systèmes d’information
 
-**DDT(M)** Direction départementale des territoires (et de la mer) 
+**DDT** Direction départementale des territoires 
+
+**DDTM** Direction départementale des territoires et de la mer 
 
 **DGPR** Direction générale de la prévention des risques
 
@@ -243,24 +247,38 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 #  Concepts généraux
 
-> *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
+##  Périmètre d'application
+
+
+Le périmètre d'application des plans de prévention des risques couvert par ce standard concerne :
+
+- la production par les services de l'Etat des jeux de données numériques relatives aux plans de prévention des risques conformément aux exigences réglementaires définies dans la partie [Cadre réglementaire des Plans de Prévention des Risques](#cadre-réglementaire-des-plans-de-prévention-des-risques) 
+
+- La mise à disposition de ces jeux de données sur internet de façon à permettre la connaissance du risque par le grand public et leur exploitation aval pour :
+  - la mise en place des politiques d'urbanisation par les collectivités territoriales en conformité avec la loi ;
+  - l'anticipation de la gestion de crise, notamment pour l'élaboration des Plans Particuliers d'Intervention (PPI) par les services de l'Etat ;
+  - la mise en oeuvre de l'information des acquereurs ou des locataires (IAL) ;
+  - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
 
 
 
-##  Scope et périmètre d'application
 
-### Périmètre d'application
+Les plans de prévention des risques peuvent être définis sur le territoire national français, à savoir : 
 
-| **Nom du périmètre d'application** | |
-|-|-|
-| Périmètre d’application  | *à remplir : contient un nom descriptif court identifiant le domaine d'application* |
-| Niveau | *(facultatif) contient le niveau hiérarchique (sous forme de code) des données concernées. Ex. Jeu de données* |
-| Nom du niveau | *(facultatif) contient un nom descriptif du niveau hiérarchique. Ex. Municipalité de Kalmar* |
-| Description du niveau |*(facultatif) contient une description du niveau hiérarchique* |
-| Etendue | *(facultatif) contient un critère basé sur l'étendue spatiale, verticale et temporelle des données. Ex. Le présent domaine d'application couvre l'étendue géographique de la municipalité de Kalmar.* |
+- le territoire européen de la France
+- la France d'outre mer, plus précisément :
+  - Guadeloupe
+  - Saint-Martin
+  - Saint-Barthélemy
+  - Martinique
+  - Guyane
+  - La Réunion
+  - Mayotte
+  - Saint-Pierre-et-Miquelon
+
+Les types de risques couverts par les plans de prévention des risques sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar) du modèle commun.
 
 
-> *Cette partie permet de préciser le contexte dans lequel s’inscrit le standard, ce que couvrent et décrivent les données et ce à quoi les données qu’il décrit sont amenées à servir. On y précisera notamment le cadre réglementaire des données de prévention des risques concernées, ainsi que le cycle de vie des données. Dans le domaine d’application on pourra aussi préciser l’étendue géographique couverte par les données (les territoires concernés).*
 
 
 
