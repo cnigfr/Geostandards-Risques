@@ -543,7 +543,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
 
 
 #### Classe d'objets *ZoneDangerSpecifique*
