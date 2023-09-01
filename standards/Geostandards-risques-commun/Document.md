@@ -410,7 +410,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 
 **Titre** : Référence Internet
 
-**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
+**Définition** : La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il s'agisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
 
 **Modélisation géométrique** : Cette classe n'a pas de géométrie.
 
