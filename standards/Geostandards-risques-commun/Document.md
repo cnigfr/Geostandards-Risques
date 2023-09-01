@@ -587,7 +587,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
-**Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'orgine.
+**Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
 **Propriétés** : 
 
@@ -713,7 +713,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 **Définition** : La classe Origine du Risque permet de faire état des objets qui engendrent les risques ayant motivé la procédure concernée. Elle permet d'intégrer des objets issus de référentiels externes spécifiques selon le type de risque ou d'objet en indiquant à minima un nom et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
 
-**Modélisation géométrique** : Les objets de la classe origine du risque peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés dans leurs référentiels d'orgine.
+**Modélisation géométrique** : Les objets de la classe origine du risque peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
 **Propriétés** : 
 
