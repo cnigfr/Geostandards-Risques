@@ -596,7 +596,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 |-|-|-|-|-|
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet | Enumération [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage) | Celles de l'énumération | 1..1 | 
-| refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | charecterString | La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
+| refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
 | typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | CharacterString | Saisie libre, cependant on veillera à s'appuyer sur des nomenclatures existantes, notamment celles des référentiels dont sont issus les objets. | 0..1 |
 
 
