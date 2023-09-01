@@ -881,7 +881,7 @@ Le système de référence temporel est le calendrier grégorien. Les valeurs de
 
 Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes INSPIRE afin de mettre en évidence les informations essentielles contenues, et ainsi permettre la réutilisation des données avec l'aide d'outils de catalogage.
 
-La spécification des éléments de métadonnées qui accompagnent les jeu de données est faite dans les profils applicatifs.
+La spécification des éléments de métadonnées qui accompagnent les jeux de données est faite dans les profils applicatifs.
 
 
 
