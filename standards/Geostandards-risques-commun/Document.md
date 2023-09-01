@@ -432,7 +432,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels | |
+| Plan de Prévention des Risques Naturels | Ce type de procédure couvre les risques naturels de manière générique. Il convient d'utiliser de préférence les types de procédures plus spécifiques qui suivent pour les risques naturels |
 | Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
 | Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
