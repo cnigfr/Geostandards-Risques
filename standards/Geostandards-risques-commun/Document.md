@@ -620,7 +620,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 #### Enumeration *TypeAlea*
 
-Le tableau suivant liste les différents types d'aléas applicables les zones d'Aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que Les libellés intègrent la hiérarchisation à trois niveau proposée par la nomenclature GASPAR.
+Le tableau suivant liste les différents types d'aléas applicables les zones d'aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que Les libellés intègrent la hiérarchisation à trois niveau proposée par la nomenclature GASPAR.
 
 | Libellé Aléa |
 |-|
