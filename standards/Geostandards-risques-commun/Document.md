@@ -275,7 +275,7 @@ A une procédure donnée peuvent être associés plusieurs périmètres sur lesq
 Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la description de la ressource.  
 
 
-**Fig. *xx* Modèle UML des classes relatives aux procédeures et périmètres.**
+**Fig. *xx* Modèle UML des classes relatives aux procédures et périmètres.**
 
 ![Modele UML Procedure et Perimetre](./ressources/UML-Procedure-Perimetre.png)
 
