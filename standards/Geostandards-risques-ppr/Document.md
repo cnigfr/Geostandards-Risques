@@ -1019,27 +1019,24 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 
 
-
-
-
-
 #  Cycle de vie des données 
 
 ## Les différents états d'une procédure de Plan de Prévention des risques
 
-> *à écrire : cf. les différents états d'une procédure GASPAR*
-> *Notions de procédures révisantes et révisées dans GASPAR*
+Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure adminitrative. Les différentes étapes sont exposées en le détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf)[Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf)[Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) et [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)). On peut les résumer ici en quatre états majeurs pour celle-ci qui sont réflêtés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspodnent aussi à des états juridiques différents pour le PPR :
 
-##  Saisie et production des données
+- un état "Programmation et montage" pendant lequel le PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
-> *La section relative à la saisie et à la production de données vise à fournir des instructions, des exigences et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.*
+- un état "Prescrit", signé par le prêfet où les zones soumises au aléas sont connues mais le zonage réglementaire non encore complétement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
+- un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le prêfet dans le délai d'instruction prévu ou par anticipation. Les données du PPR décrites par ce standard doivent être publiées. A ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et^les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
+
+- un état "Caduque" lorsque le PPR n'est plus opposable : déprescrit, abbrogé, ou rendu obsolète par une procédure révision.
 
 
 ##  Maintenance
 
-> *Cette section vise à fournir des instructions, des exigences, des descriptions, des principes et/ou des critères de gestion des données après la saisie. Cela inclut la fréquence des modifications, de la mise à jour et des ajouts dont le contenu fait l'objet.*
-> *Une maintenance peut donner une nouvelle version ou la mise à jour d’un jeu de donnée. Afin d’assurer une maintenance cohérente, un guide sur les mécanismes de mises à jour et des informations pertinentes d’encodages est disponible <ci-après/en annexe/sur ce lien>.*
+Les données PPR ne font pas l'objet de mise à jour systématique. Les données d'un PPR respectent logiquement le même cycle de vie que le document PPR dont l'élaboration et la révision relèvent d'une procédure administrative prescrite par le préfet. La mise à jour de ces données n'intervient qu'à l'issue d'une procédure de révision du PPR
 
 
 #  Règles de symbologie
@@ -1159,15 +1156,10 @@ Le format GeoPackage définit un certain nombre de tables "système" qui lui per
 ![Geopackage Tables Overview](./ressources/geopackage-overview.png)
 
 
-**Exigence**
-Dans le cadre des Géostandards risques les tables suivantes doivent être implémentées et non vides dans la livraison en GeoPackage :
+Les tables `gpkg_contents`, `gpkg_geometry_columns` et `gpkg_spatial_ref_sys` permettent de décrire les tables de données métier du GeoPackage et d'en gérer l'aspect géographique.
 
-- gpkg_contents
-- gpkg_geometry_columns
-- gpkg_spatial_ref_sys
-- gpkg_metadata
-- gpkg_metadata_reference
-,
+Les tables `gpkg_metadata` et `gpkg_metadata_reference` permettent d'associer des informations de métadonnées relatives aux données métiers du GeoPackage à différent niveau de granularité. L'implementation des éléments de métadonnées décrits au paragraphe [Métadonnées](#métadonnées) peut être ainsi être embarquée dans le fichier GeoPackage.
+
 La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
 
 
@@ -1255,12 +1247,34 @@ INSERT INTO gpkg_spatial_ref_sys VALUES
 
 ##### Table gpkg_metadata
 
-> *A préciser*
+La table `gpkg_metadata` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_table_table_definition) qui permet d'associer un ensemble d'éléments de métadonnées à différents éléments du fichier Geopackage.
+
+Pour chaque ensemble d'éléments de métadonnées elle permet de préciser :
+
+- un identifiant unique (clef primaire) de cet ensemble d'éléments (`id`)
+- le niveau hiérarchique de cet ensemble d'éléments (`md_scope`)
+- l'URI correspondant au formalisme de métadonnées utilisé pour ces éléments  (`md_standard_uri`)
+- le type MIME correspondant à l'encodage de ces ensemble d'éléments de métadonnées (`mime_type`)
+- l'implémentation de cet ensemble d'éléments de métadonnées (`metadata`)
+
+
+> *A finir*
 
 
 ##### Table gpkg_metadata_reference
 
-> *A préciser*
+> *A finir*
+
+La table `gpkg_metadata_reference` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_reference_table_table_definition) qui liste xxxx
+
+Pour chacun des systèmes de coordonnées déclarés, elle permet de préciser :
+
+- un nom lisible par un humain (`srs_name`)
+- un identifiant unique pour de ce système de coordonnées (clef primaire) dans le GeoPackage (`srs_id`)
+- le nom de l'organisation qui définit ce système de coordonnées (`organization`)
+- l'identifiant numérique de ce système de coordonnées pour cette organisation (`organization_coordsys_id`)
+- la définition au format WKT de ce système de coordonnées (`definition`)
+- Une description textuelle lisible par un être humain de ce système de coordonnées (`description`)
 
 
 
@@ -2288,6 +2302,21 @@ INSERT INTO typereglementfoncier VALUES
 ```
 
 
+
+#### Métadonnées du Standard
+
+> *A finir*
+
+
+##### Métadonnées du PPR
+
+> *A finir*
+
+
+##### Métadonnées des tables du PPR
+
+
+> *A finir*
 
 
 
