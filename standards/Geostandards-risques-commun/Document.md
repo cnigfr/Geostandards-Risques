@@ -242,7 +242,7 @@ Les données décrites dans le cadre de ce standard se répartissent dans cinq g
 
 - La thématique [aléas](#thématique-aléas) comprend les entités permettant de décrire les phénomènes objets du risque à l'origine de la procédure, leur localisation, leurs probabilités et leurs intensités ;
 
-- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, ... menacés par les aléas
+- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, activités, éléments de patrimoine culturel ou environnemental, menacés par les aléa. 
 
 - La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention.
 
