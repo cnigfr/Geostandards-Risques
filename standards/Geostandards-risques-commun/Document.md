@@ -465,7 +465,7 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Approuvé | Le périmètre est validé par l'autorité compétente et il est opposable |
 | Déprescrit | Le périmètre n'est plus opposable *pour quelle raison (différence avec les états "Annulé" et "Abrogé") ?* |
 | Annulé | Le périmètre n'est plus opposable avec effet rétroactif |
-| Abrogé | Le périmètren'est plus opposable sans effet rétroactif |
+| Abrogé | Le périmètre n'est plus opposable sans effet rétroactif |
 
 
 #### Enumeration *TypeReference*
