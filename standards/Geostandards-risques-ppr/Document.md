@@ -308,7 +308,7 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 | Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
 | Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
 | Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le réglement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
-| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informationsqui permettent de faire le lien avec les informations de cette base.
+| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base.
 
 
 
@@ -327,7 +327,7 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 |-|-|
 | Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le Standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
 | Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
-| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet le site internet de la préfecture du département de la DDT(M) concernée, mais elle a voccation à se faire sur la palteforme nationale de diffusion qu'est Géorisques. |
+| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plaleforme nationale de diffusion qu'est Géorisques. |
 
 **Figure xx : Cas d'utilisation : Publier un PPR**
 
@@ -363,8 +363,12 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 ### Thématique Procédures et périmètres
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
+Dans le cadre de l'élaboration des **plans de prévention des risques**, les entités définies dans le modèle commun s'appliquent avec une restriction sur l'énumération [TypeProcedure](#enumeration-typeprocedure) pour laquelle seules les valeurs relatives aux PPR s'appliquent.
 
+
+**Fig. *xx* Modèle UML des classes relatives aux procédures et périmètres dans le cadre des PPR.**
+
+![Modele UML Procedure et Perimetre](./ressources/UML-Procedure-Perimetre-PPR.png)
 
 
 ### Thématique Aléas
@@ -432,6 +436,28 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ##  Catalogue d'objets
 
 ### Thématique Procédures et périmètres
+
+#### Enumeration *TypeProcedure*
+
+Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites dans le cadre des PPR. Il s'agit d'une restriction par rapport à l'énumération définie dans le modèle commun.
+
+
+| Libellé | Description |
+|-|-|
+| Plan de Prévention des Risques Naturels | |
+| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
+| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
+| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels liés aux avalanches spontanées, avalanches provoquées naturellement, avalanches provoquées accidentellement, et aux avalanches provoquées artificiellement |
+| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
+| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
+| Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
+| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques naturels liés aux formations géologique, failles, ouvrages miniers, et aux sources hydrothermales |
+| Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
+| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
+
 
 
 
@@ -1940,7 +1966,6 @@ Elle a la structure et le contenu suivants :
 | PROROGE | Prorogé |
 | ANTICIPE | Anticipé |
 | APPROUVE | Approuvé |
-| DEPRESCRIT | Déprescrit |
 | ANNULE | Annulé |
 | ABROGE | Abrogé |
 
@@ -1961,7 +1986,6 @@ INSERT INTO etatsprocedure VALUES
   ('PROROGE','Prorogé'),
   ('ANTICIPE','Anticipé'),
   ('APPROUVE','Approuvé'),
-  ('DEPRESCRIT','Déprescrit'),
   ('ANNULE','Annulé'),
   ('ABROGE','Abrogé')
  ;
