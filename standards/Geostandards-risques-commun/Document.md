@@ -113,7 +113,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
-| [CNIG_RISQUES_PPR:2024] | Géostandards Risques - Profil Applicatif Plan de Prévention des Risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
+| [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) | Géostandards Risques - Profil Applicatif Plan de Prévention des Risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement) | Description des ouvrages faisant obstacle à l’écoulement v1.2 | SANDRE | 2014 |
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
@@ -122,7 +122,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 
 
-####  Cadre réglementaire des Géostandards risques
+###  Cadre réglementaire des Géostandards risques
 
 #### Cadre réglementaire pour les systèmes de référence de coordonnées
 
@@ -131,7 +131,8 @@ Le cadre réglementaire pour les systèmes de référence de coordonnées est é
 
 ####  Cadre réglementaire des Plans de Prévention des Risques
 
-Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le profil applicatif Plan de Prévention des Risques (PPR) des Géostandards [CNIG_RISQUES_PPR:2024].
+Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le profil applicatif Plan de Prévention des Risques (PPR) des Géostandards [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md).
+
 
 ####  Cadre réglementaire des Territoires à Risque Important d'Inondation
 
@@ -158,6 +159,8 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 ###  Abréviations
 
+
+**BRGM** Bureau de Recherches Géologiques et Minières
 
 **BRIL** Bureau des risques d'inondation et littoraux
 
@@ -463,7 +466,6 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Prorogé | La durée de validité du périmètre est prolongée au delà de la date initialement fixée |
 | Anticipé | Le périmètre peut être opposable avant sa publication grâce à un arrêté du préfet qui approuve par anticipation |
 | Approuvé | Le périmètre est validé par l'autorité compétente et il est opposable |
-| Déprescrit | Le périmètre n'est plus opposable *pour quelle raison (différence avec les états "Annulé" et "Abrogé") ?* |
 | Annulé | Le périmètre n'est plus opposable avec effet rétroactif |
 | Abrogé | Le périmètre n'est plus opposable sans effet rétroactif |
 

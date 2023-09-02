@@ -9,7 +9,7 @@
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
- Géostandards Risques - Profil applicatif PPR
+Géostandards Risques - Profil applicatif PPR
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -17,32 +17,25 @@ Groupe de travail refonte des Géostandards Risques
 *Version 0.1 - Date*
 
 
----
-
----
 
 #  Fiche analytique
 
-> *Tableau de présentation du document à compléter...*
 
 | | |
 |-|-|
 | **Titre** | Géostandards Risques |
-| **Sous-titre** | Profil applicatif PPR |
+| **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
 | **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
-| **Résumé** | *à remplir* |
-| **Objectif** | *à remplir* |
-| **Etendue d'application** | *à remplir : <Contient l'étendue de la ou les zones géographiques, temporelles ou verticales couvertes par le contenu>* |
-| **Resolution spatiale** | *à remplir : <(facultatif) Contient un facteur fournissant une compréhension générale de la densité des données spatiales/du niveau de référence>* |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR). |
+| **Etendue d'application** | Territoire national français |
+| **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| **Diffusion** | *à remplir : <Contient le format de disponibilité et l’endroit où le trouver> Ex PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** | *à remplir* |
-| **Restriction** | *à remplir* |
-| **Thèmes** | *à remplir* |
-| **Mots-clés** | *à remplir* |
-| **Contact** | *à remplir* |
-| **Informations complémentaires** | *à remplir : <(facultatif) Contient toute autre information descriptive sur le contenu et nécessaire à la fiche d’information>* |
+| **Diffusion** | A venir : PDF sur internet (site du CNIG) |
+| **Formats disponibles** | HTML/Markdown sur le [dépot Github du Groupe de travail Géostandards Risques](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
+| **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
+| **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
+| **Contact** | geostandards-risques-gt-cnig@framalistes.org |
 
 ---
 
@@ -72,9 +65,9 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Bouffier Jacques | MTE / DGPR / BRIL |
 | Boudesseul Nicolas | DREAL Pays de la Loire |
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
+| Coignon Bastien | MTE / DGPR / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohan | Cerema |
-| Perehin Céline | Cerema |
 
 > *liste à compléter et actualiser*
 
@@ -84,30 +77,62 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 
 ##  Objectif et raison d'être du standard
 
-> *Résumé et objectif du document.*
+La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). 
+
+Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. 
+
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent.
+
+Il a voccation à se substituer et rendre obsolètes les dernières versions des standards COVADIS suivants :
+
+* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
+* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
 
 
 
 ##  A qui s'adresse ce document ?
 
-> *à remplir* 
+Ce document s'adresse :
+
+- aux services de l'Etat ou assimilés, chargés de produire les PPR, les entretenir les diffuser.
+- aux utilisateurs des PPR, amenés à en prendre connaissance ou les exploiter : services de l'Etat, collectivités locales, professionnels, bureaux d'études, ou grand public.
+
 
 
 ##  Comment lire le document
 
-> *Si besoin, présentation de la structure du document*
+Les parties [Préface](#préface), [Présentation du document](#présentation-du-document) et [Concepts Généraux](#concepts-généraux) donnent les éléments nécessaires à la compréhension du document. 
+
+Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) et [Systèmes de référence](#syst%C3%A8mes-de-r%C3%A9f%C3%A9rence) définissent les adaptations du modèle conceptuel commun et de son catalogue de données associé dans le cadre des plans de prévention des risques ainsi que les systèmes de référence de coordonnées applicables à ces procédures.
+
+La partie [Qualité](#qualité) décrit les recommandations et exigences des qualité concernant le contenu des données des PPR et de leur structuration ainsi que la façon de rapporter leur évaluation dans les métadonnées.
+
+La partie [Cycle de vie des données](#cycle-de-vie-des-données) expose xxxx
+
+La partie [Règles de symbologie](#règles-de-symbologie) décrit les règles de représentation de certaines entités relatives aux PPR.
+
+La partie [Livraison](#livraison) précise les modalités d'implémentation et d'échange des données PPR au format GeoPackage.
+
+La partie [Métadonnées](#métadonnées) précise les valeurs ou les consignes de saisie des éléments de étadonnées relatifs aux PPR de façon à en permettre une description et un catalogage pertinents en conformité avec les exigences INSPIRE sur les métadonnées et leur déclinaison au niveau national.
+
+L'[annexe A](#annexe-a---correspondances-avec-les-standards-covadis-ppr-n-et-t-et-pprm), informative, expose les correspondances entre le modèle de données de ce standard et celui des anciens standards COVADIS PPR de façon à aider à la conversion des données PPR existantes vers ce novueau standard.
+
+L'[annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3), informative, décrit les correspondances du modèle de données du Standard CNIG sur les Servitudes d'Utilité Publique (SUP) avec celui de ce standard de façon à aider à la production des catégories de SUP correspondant à des PPR.
 
 
-##  Références à d'autres normes
 
-Le document ci-présent s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l’édition citée compte. Pour les autres, la dernière édition de la norme s’applique.
+##  Références
 
-> *Indiquer ici les documents auquel il est fait références (normes, guides, lois, ...)*
+Cette partie cite les références documentaires et réglementaires sur lesquelles s'appuie ce standard.
 
+
+### Références à d'autres documents
+
+Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous. 
 
 | Accronyme | Titre | Auteur | Année |
 |-|-|-|-|
-| [CNIG_RISQUES_COMMUN:2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
+| [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
@@ -123,10 +148,9 @@ Le document ci-présent s’appuie ou nécessite la lecture des normes référen
 | [CNIG:SUP:2023](http://cnig.gouv.fr/IMG/pdf/230822_standard_cnig_sup__v2016b_rev2023-08.pdf) | Prescriptions nationales pour la dématérialisation des documents d’urbanisme - SERVITUDES D'UTILITÉ PUBLIQUE - Standard CNIG v2016b (rev. août 2023) | CNIG - Cerema | 2023/08 |
 
 
+###  Cadre réglementaire des Plans de Prévention des Risques
 
-##  Cadre réglementaire des Plans de Prévention des Risques
-
-###  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
+####  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
 La mise en oeuvre des Plans de prevention des risques naturels prévisibles est définie dans le code de l'environnement par :
 
@@ -137,14 +161,14 @@ L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001
 
 Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine »](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841), dit « décret PPRI », précise les modalités de détermination, de qualification et de cartographie de l'aléa de référence et du zonage réglementaire pour l’élaboration des PPRN portant sur les aléas débordement de cours d’eau (à l’exclusion des débordements de cours d’eau torrentiel) et submersion marine.
 
-###  Cadre réglementaire des Plans de Prévention des Risques Technologiques
+####  Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
 La mise en oeuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
 
 * Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
 
-###  Cadre réglementaire des Plans de Prévention des Risques Miniers
+####  Cadre réglementaire des Plans de Prévention des Risques Miniers
 
 La mise en oeuvre des Plans de prévention des risques miniers est définie par :
 
@@ -172,17 +196,23 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 ###  Abréviations
 
 
+**BRGM** Bureau de Recherches Géologiques et Minières
+
 **BRIL** Bureau des risques d'inondation et littoraux
 
 **BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
 
 **Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
 
+**COVADIS** Commission de validation des données pour l'information spatialisée
+
 **CNIG** Comité national de l'information géolocalisée
 
 **DAGSI** Département des affaires générales et des systèmes d’information
 
-**DDT(M)** Direction départementale des territoires (et de la mer) 
+**DDT** Direction départementale des territoires 
+
+**DDTM** Direction départementale des territoires et de la mer 
 
 **DGPR** Direction générale de la prévention des risques
 
@@ -219,70 +249,113 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 #  Concepts généraux
 
-> *A adapter : L’utilisateur a un objectif identifié quand il mobilise <l’objet du standard>. Les cas d’utilisation permettent de décrire les interactions entre les acteurs (utilisateurs) et le système (<objet du standard>), afin de permettre à l'acteur d'atteindre son objectif. Ils illustrent l’utilisation des <objets du standard>.*
+##  Périmètre d'application
 
-Ce standard propose une description de l'information géographique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent. Il s'appuie sur le modèle conceptuel commun défini par le Standard [CNIG_RISQUES_COMMUN] "Géostandards risques - Modèle commun" qu'il spécialise pour l'appliquer aux procédures des PPR.
+Le périmètre d'application des plans de prévention des risques couvert par ce standard concerne :
 
-Ce standard se substitue et rend obsolètes les dernières versions des standards COVADIS suivants :
+- la production par les services de l'Etat des jeux de données numériques relatives aux plans de prévention des risques conformément aux exigences réglementaires définies dans la partie [Cadre réglementaire des Plans de Prévention des Risques](#cadre-réglementaire-des-plans-de-prévention-des-risques) 
 
-* Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
-* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
+- La mise à disposition de ces jeux de données sur internet de façon à permettre la connaissance du risque par le grand public et leur exploitation aval pour :
+  - la mise en place des politiques d'urbanisation par les collectivités territoriales en conformité avec la loi ;
+  - l'anticipation de la gestion de crise, notamment pour l'élaboration des Plans Particuliers d'Intervention (PPI) par les services de l'Etat ;
+  - la mise en oeuvre de l'information des acquereurs ou des locataires (IAL) ;
+  - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
 
-
-##  Scope et périmètre d'application
-
-### Périmètre d'application
-
-| **Nom du périmètre d'application** | |
-|-|-|
-| Périmètre d’application  | *à remplir : contient un nom descriptif court identifiant le domaine d'application* |
-| Niveau | *(facultatif) contient le niveau hiérarchique (sous forme de code) des données concernées. Ex. Jeu de données* |
-| Nom du niveau | *(facultatif) contient un nom descriptif du niveau hiérarchique. Ex. Municipalité de Kalmar* |
-| Description du niveau |*(facultatif) contient une description du niveau hiérarchique* |
-| Etendue | *(facultatif) contient un critère basé sur l'étendue spatiale, verticale et temporelle des données. Ex. Le présent domaine d'application couvre l'étendue géographique de la municipalité de Kalmar.* |
+Les données décrites et couvertes par ce standard ne couvent pas l'intégralité des informations d'un dossier de plan de prévention des risques. Il s'agit des données géographiques et sémantiques du PPR permettant d'en établir la partie cartographique et de faire le lien avec les autres éléments du dossier pouvant être mis en oeuvre dans d'autres systèmes tels que GASPAR ou les sites des préfectures qui hébergent le dossier.
 
 
-> *Cette partie permet de préciser le contexte dans lequel s’inscrit le standard, ce que couvrent et décrivent les données et ce à quoi les données qu’il décrit sont amenées à servir. On y précisera notamment le cadre réglementaire des données de prévention des risques concernées, ainsi que le cycle de vie des données. Dans le domaine d’application on pourra aussi préciser l’étendue géographique couverte par les données (les territoires concernés).*
+Les plans de prévention des risques peuvent être définis sur le territoire national français, à savoir : 
 
+- le territoire européen de la France
+- la France d'outre mer, plus précisément :
+  - Guadeloupe
+  - Saint-Martin
+  - Saint-Barthélemy
+  - Martinique
+  - Guyane
+  - La Réunion
+  - Mayotte
+  - Saint-Pierre-et-Miquelon
+
+Les types de risques couverts par les plans de prévention des risques sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar) du modèle commun.
 
 
 ##  Les acteurs et rôles concernés 
 
-> *à compléter: Par leurs missions, les différents intervenants (ou utilisateurs) liés au <thème> peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.*
-
-> *Ces rôles peuvent être :*
-
+Les acteurs concernés par les plans de prévention des risques sont :
 
 | Nom du rôle | Caractéristiques |
 |-|-|
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
-| *<Nom du rôle 1>* | *Contient une description du rôle* |
+| Producteur | La production des PPR est réalisée au niveau départemental par les Direction Départementales des Territoires et de la Mer (DDTM) |
+| Diffuseur | La diffusion des PPR est assurée par les DDTM sur le site internet de leur préfectures de rattachement et aussi au niveau national sur la plateforme [Géorisques](https://www.georisques.gouv.fr/) opérée par le BRGM. |
+| Utilisateur | Les utilisateurs des PPR sont multiples en fonction des utilisations évoquées dans la partie précédente : grand public, services de l'état, collectivités territoriales, organismes publics ou privés (notamment bureaux d'études ou agences d'urbanismes) amenés à exploiter, dériver ou enrichir ces données. |  
 
 
 ##  Cas d'utilisation
 
-> *Dans un diagramme de cas d'utilisation, les acteurs apparaissent dans des scénarios identifiant des utilisations majeures de <l’objet du standard>.*
+Les cas d'utilisation illustrés ci-après mettent en oeuvre la production, la publication et l'exploitation des PPR. Les acteurs qui y figurent peuvent être :
+- des personnes ou entités effectivement à la manoeuvre dans les actions
+- des systèmes en place permettant la réalisation de ces actions
 
-###  Cas d’utilisation « Nom du cas 1 »
 
-| Nom du cas 1 | |
+### Cas d'utilisation Elaborer un PPR
+
+Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'élaboration d'un PPR et les acteurs majeurs et systèmes impliqués. Les étapes présentées ne sont pas toutes concernées au même niveau par le périmètre du ce standard.
+
+|Action du cas d'utilisation| Description|
 |-|-|
-| Objectif | *(facultatif) Brève description de l’objectif à atteindre en réalisant le cas d’utilisation 1* |
-| Déclencheur | *(facultatif) Evènement spécifique menant à l’exécution de ce cas d’utilisation 1* |
-| Précondition | *(facultatif) Description du statut requis pour lancer l'exécution du scénario d'utilisation* |
-| Postcondition | *(facultatif) Description du statut après exécution réussie du scénario d'utilisation* | 
+|Prescrire, approuver, ... le PPR | Cette action, de la responsabilité du Prêfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
+| Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
+| Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
+| Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le réglement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
+| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base.
 
-> *Diagramme UML du cas d’utilisation 1*
 
-> *Description rédigée du scénario d'utilisation*
+
+**Figure xx : Cas d'utilisation : Elaborer un PPR**
+
+![Elaborer un PPR](./ressources/CU-elaborer-ppr.png)
+
+
+
+### Cas d'utilisation Publier un PPR
+
+Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en ligne des données numériques d'un PPR. Ce cas d'utilisation est au coeur de la cible du Standard, même si ce dernier ne couvre que marginalement la publication des pièces écrite.
+
+
+|Action du cas d'utilisation| Description|
+|-|-|
+| Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le Standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
+| Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
+| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plaleforme nationale de diffusion qu'est Géorisques. |
+
+**Figure xx : Cas d'utilisation : Publier un PPR**
+
+![Publier un PPR](./ressources/CU-publier-ppr.png)
+
+
+### Cas d'utilisation Exploiter un PPR
+
+Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Êlles n'ont pas voccation à être exhaustive meis elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grace à la connaissance de la structure des données et de sa qualité.
+
+
+|Action du cas d'utilisation| Description|
+|-|-|
+| Consulter les données | Cette action est celle du Grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en oeuvre de telles fonctionalité. La consultation est aussi rendue possible grace aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grace à des mécanismes de cataloguage. |
+| Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
+| Dérivier / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en oeuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les Plans locaux d'urbanisme par les collectivités territoriales. |
+| Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
+
+
+**Figure xx : Cas d'utilisation : Exploiter un PPR**
+
+![Exploiter un PPR](./ressources/CU-exploiter-ppr.png)
 
 
 
 #  Contenu et structure de la donnée
 
-> *La section relative au contenu et à la structure des données décrit l’intégration de <objet du standard>. conception des schémas d'application (ISO 19109) qui utilise un catalogue d'entités (ISO 19110) pour fournir une description lisible par un humain des types et des caractéristiques des entités, et un dictionnaire de concepts d'entités (ISO 19126) pour décrire et publier les concepts d'entités.* 
-
-Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [*Ref. à fournir*]() dans le cadre des procédures de Plans de Prévention des Risques.
+Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) dans le cadre des procédures de Plans de Prévention des Risques.
 
 
 ##  Modèle conceptuel de données
@@ -290,8 +363,12 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 ### Thématique Procédures et périmètres
 
-> *A remplir : Spécialisation du modèle de cette thématique.*
+Dans le cadre de l'élaboration des **plans de prévention des risques**, les entités définies dans le modèle commun s'appliquent avec une restriction sur l'énumération [TypeProcedure](#enumeration-typeprocedure) pour laquelle seules les valeurs relatives aux PPR s'appliquent.
 
+
+**Fig. *xx* Modèle UML des classes relatives aux procédures et périmètres dans le cadre des PPR.**
+
+![Modele UML Procedure et Perimetre](./ressources/UML-Procedure-Perimetre-PPR.png)
 
 
 ### Thématique Aléas
@@ -359,6 +436,28 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 ##  Catalogue d'objets
 
 ### Thématique Procédures et périmètres
+
+#### Enumeration *TypeProcedure*
+
+Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites dans le cadre des PPR. Il s'agit d'une restriction par rapport à l'énumération définie dans le modèle commun.
+
+
+| Libellé | Description |
+|-|-|
+| Plan de Prévention des Risques Naturels | |
+| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
+| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
+| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels liés aux avalanches spontanées, avalanches provoquées naturellement, avalanches provoquées accidentellement, et aux avalanches provoquées artificiellement |
+| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
+| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
+| Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
+| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques naturels liés aux formations géologique, failles, ouvrages miniers, et aux sources hydrothermales |
+| Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
+| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
+
 
 
 
@@ -920,27 +1019,24 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 
 
-
-
-
-
 #  Cycle de vie des données 
 
 ## Les différents états d'une procédure de Plan de Prévention des risques
 
-> *à écrire : cf. les différents états d'une procédure GASPAR*
-> *Notions de procédures révisantes et révisées dans GASPAR*
+Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en le détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf)[Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf)[Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) et [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)). On peut les résumer ici en quatre états majeurs qui sont réflêtés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
 
-##  Saisie et production des données
+- un état "Programmation et montage" pendant lequel le PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
-> *La section relative à la saisie et à la production de données vise à fournir des instructions, des exigences et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.*
+- un état "Prescrit", signé par le prêfet où les zones soumises au aléas sont connues mais le zonage réglementaire non encore complétement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
+- un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le prêfet dans le délai d'instruction prévu ou par anticipation. Les données du PPR décrites par ce standard doivent être publiées. A ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
+
+- un état "Caduque" lorsque le PPR n'est plus opposable : déprescrit, abbrogé, ou rendu obsolète par une procédure révision.
 
 
 ##  Maintenance
 
-> *Cette section vise à fournir des instructions, des exigences, des descriptions, des principes et/ou des critères de gestion des données après la saisie. Cela inclut la fréquence des modifications, de la mise à jour et des ajouts dont le contenu fait l'objet.*
-> *Une maintenance peut donner une nouvelle version ou la mise à jour d’un jeu de donnée. Afin d’assurer une maintenance cohérente, un guide sur les mécanismes de mises à jour et des informations pertinentes d’encodages est disponible <ci-après/en annexe/sur ce lien>.*
+Les données PPR ne font pas l'objet de mise à jour systématique. Les données d'un PPR respectent logiquement le même cycle de vie que le document PPR dont l'élaboration et la révision relèvent d'une procédure administrative prescrite par le préfet. La mise à jour de ces données n'intervient qu'à l'issue d'une procédure de révision du PPR
 
 
 #  Règles de symbologie
@@ -1060,15 +1156,10 @@ Le format GeoPackage définit un certain nombre de tables "système" qui lui per
 ![Geopackage Tables Overview](./ressources/geopackage-overview.png)
 
 
-**Exigence**
-Dans le cadre des Géostandards risques les tables suivantes doivent être implémentées et non vides dans la livraison en GeoPackage :
+Les tables `gpkg_contents`, `gpkg_geometry_columns` et `gpkg_spatial_ref_sys` permettent de décrire les tables de données métier du GeoPackage et d'en gérer l'aspect géographique.
 
-- gpkg_contents
-- gpkg_geometry_columns
-- gpkg_spatial_ref_sys
-- gpkg_metadata
-- gpkg_metadata_reference
-,
+Les tables `gpkg_metadata` et `gpkg_metadata_reference` permettent d'associer des informations de métadonnées relatives aux données métiers du GeoPackage à différent niveau de granularité. L'implementation des éléments de métadonnées décrits au paragraphe [Métadonnées](#métadonnées) peut être ainsi être embarquée dans le fichier GeoPackage.
+
 La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
 
 
@@ -1156,13 +1247,41 @@ INSERT INTO gpkg_spatial_ref_sys VALUES
 
 ##### Table gpkg_metadata
 
-> *A préciser*
+La table `gpkg_metadata` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_table_table_definition) qui permet d'associer un ensemble d'éléments de métadonnées à différents éléments du fichier Geopackage.
+
+Pour chaque ensemble d'éléments de métadonnées elle permet de préciser :
+
+- un identifiant unique (clef primaire) de cet ensemble d'éléments (`id`)
+- le niveau hiérarchique de cet ensemble d'éléments (`md_scope`)
+- l'URI correspondant au formalisme de métadonnées utilisé pour ces éléments  (`md_standard_uri`)
+- le type MIME correspondant à l'encodage de ces ensemble d'éléments de métadonnées (`mime_type`)
+- l'implémentation de cet ensemble d'éléments de métadonnées (`metadata`)
+
+La présence de cette table dans un fichier GeoPackage est facultative. 
+
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
+
 
 
 ##### Table gpkg_metadata_reference
 
-> *A préciser*
+La table `gpkg_metadata_reference` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_reference_table_table_definition) qui permet de lier les éléments de métadonnées présents dans la table `gpkg_metadata` avec les données de la livraison qu'ils décrivent en fonction de leur niveau de granularité (ou domaine d'application) et d'établir une hiérarchie entre eux.
 
+Pour chacun de ses élément, elle permet de préciser :
+
+- le domaine d'application de l'ensemble des éléments de métadonnées (`reference_scope`)
+- éventuellement le nom de la table qui est référencée par ces métadonnées (`table_name`)
+- éventuellement le nom de de la colonne de la table mentionnée précédemment qui est référencée par ces métadonnées (`column_name`)
+- éventuellement la valeur de l'identifiant d'un objet (ligne) de la table mentionnée précédemment qui est référencée par ces métadonnées (`row_id_value`)
+- le moment d'écriture de cet élément (`timestamp`)
+- l'identifiant de l'ensemble des élément de métadonnées dans la table `gpkg_metadata` (clef étrangère) auquel s'applique cet élément (`md_file_id`)
+- l'identifiant de l'ensemble des éléments de métadonnées parent (clef étrangère) dans la table `gpkg_metadata` (`md_file_id`)
+
+La présence de cette table dans un fichier GeoPackage est facultative. Elle devient obligatoire si une table `gpkg_metadata` est présente.
+
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata_reference` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
 
 
 ####  Tables du Standard
@@ -1282,6 +1401,10 @@ CREATE TABLE typeppr_codegaspar_procedure (
   typeprocedure TEXT(10) NOT NULL,
   CONSTRAINT fk_procedure_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
 );
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_procedure','attributes','typeppr_codegaspar_procedure','Table Procedure PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
@@ -1303,6 +1426,10 @@ CREATE TABLE typeppr_codegaspar_revise (
   codeprocrevisee TEXT(16) NOT NULL,
   CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee)
 );
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_revise','attributes','typeppr_codegaspar_revise','Table Revise PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
@@ -1329,6 +1456,14 @@ CREATE TABLE typeppr_codegaspar_perimetre_s (
   CONSTRAINT fk_perimetre_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_perimetre_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES etatsprocedure(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_perimetre_s','features','typeppr_codegaspar_perimetre_s','Table Perimetre Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns - exemple en EPSG:2154 */
+INSERT INTO gpkg_geometry_columns VALUES 
+  ('typeppr_codegaspar_perimetre_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
@@ -1356,6 +1491,10 @@ CREATE TABLE typeppr_codegaspar_referenceinternet (
   CONSTRAINT fk_referenceinternet_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_referenceinternet_typereference FOREIGN KEY (typereference) REFERENCES typereference(code)
 );
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_referenceinternet','attributes','typeppr_codegaspar_referenceinternet','Table Référence Internet PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
@@ -1387,6 +1526,14 @@ CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s (
   CONSTRAINT fk_zonealeareference_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeareference_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeareference_codealea_s','features','typeppr_codegaspar_zonealeareference_codealea_s','Table Zone Alea de Reference Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeareference_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
@@ -1419,6 +1566,14 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_codealea_s (
   CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeaecheance100ans_codealea_s','features','typeppr_codegaspar_zonealeaecheance100ans_codealea_s','Table Zone Alea Echéance 100 ans Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeaecheance100ans_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
@@ -1459,6 +1614,14 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
   CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zoneprotegee_codealea_s','features','typeppr_codegaspar_zoneprotegee_codealea_s','Table Zone Protégée Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zoneprotegee_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
@@ -1500,6 +1663,14 @@ CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s (
   CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
   CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','features','typeppr_codegaspar_zonedangerspecifique_codealea_s','Table Zone de danger Spécifique Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
@@ -1544,6 +1715,18 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p (
   geom POINT NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_ouvrageprotection_codealea_s','features','typeppr_codegaspar_ouvrageprotection_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_ouvrageprotection_codealea_l','features','typeppr_codegaspar_ouvrageprotection_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_ouvrageprotection_codealea_p','features','typeppr_codegaspar_ouvrageprotection_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','LINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','POINT',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
@@ -1588,6 +1771,18 @@ CREATE TABLE typeppr_codegaspar_originerisque_p (
   geom POINT NOT NULL,
   CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_originerisque_s','features','typeppr_codegaspar_originerisque_s','Table Origine du risque Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_originerisque_l','features','typeppr_codegaspar_originerisque_l','Table Origine du risque Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_originerisque_p','features','typeppr_codegaspar_originerisque_p','Table Origine du risque Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_originerisque_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_originerisque_l','geom','LINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_originerisque_p','geom','POINT',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
@@ -1640,6 +1835,18 @@ CREATE TABLE typeppr_codegaspar_enjeu_p (
   geom POINT NOT NULL,
   CONSTRAINT fk_enjeu_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_enjeu_s','features','typeppr_codegaspar_enjeu_s','Table Enjeux Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_enjeu_l','features','typeppr_codegaspar_enjeu_l','Table Enjeux Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_enjeu_p','features','typeppr_codegaspar_enjeu_p','Table Enjeux Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_enjeu_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_enjeu_l','geom','LINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_enjeu_p','geom','POINT',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
@@ -1648,7 +1855,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` implémente le type de donné
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp). |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
 | `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 
@@ -1666,6 +1873,10 @@ CREATE TABLE typeppr_codegaspar_typeenjeu (
   CONSTRAINT fk_typeenjeu_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
   CONSTRAINT pk_typeenjeu PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,codeenjeu,nomenclatureenjeu)
 );
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_typeenjeu','attributes','typeppr_codegaspar_typeenjeu','Table Types Enjeux PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
@@ -1674,7 +1885,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#table-typeppr_codegasparcomplet_enjeu_slp). |
+| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | `nom` | TEXT(50) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
 | `description` | TEXT(255) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
 | `valeur` | TEXT(255) | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
@@ -1694,6 +1905,10 @@ CREATE TABLE typeppr_codegaspar_typevulnerabilite (
   CONSTRAINT fk_typevulnerabilite_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
   CONSTRAINT pk_typevulnerabilite PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,nom,valeur)
 );
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_typevulnerabilite','attributes','typeppr_codegaspar_typevulnerabilite','Table Type Vulnerabilites PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
@@ -1749,6 +1964,18 @@ CREATE TABLE typeppr_codegaspar_zonereglementaireurba_p (
   CONSTRAINT fk_zonereglementaireurba_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonereglementaireurba_s','features','typeppr_codegaspar_zonereglementaireurba_s','Table Zone Réglementaire Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_zonereglementaireurba_l','features','typeppr_codegaspar_zonereglementaireurba_l','Table Zone Réglementaire Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_zonereglementaireurba_p','features','typeppr_codegaspar_zonereglementaireurba_p','Table Zone Réglementaire Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonereglementaireurba_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementaireurba_l','geom','LINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementaireurba_p','geom','POINT',/*srs_id*/2154,0,0)
+ ;
 ```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
@@ -1800,6 +2027,18 @@ CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_p (
   CONSTRAINT fk_zonereglementairefoncier_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementairefoncier_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
 );
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonereglementairefoncier_s','features','typeppr_codegaspar_zonereglementairefoncier_s','Table Zone Réglementaire Foncier Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_zonereglementairefoncier_l','features','typeppr_codegaspar_zonereglementairefoncier_l','Table Zone Réglementaire Foncier Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_zonereglementairefoncier_p','features','typeppr_codegaspar_zonereglementairefoncier_p','Table Zone Réglementaire Foncier Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonereglementairefoncier_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementairefoncier_l','geom','LINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementairefoncier_p','geom','POINT',/*srs_id*/2154,0,0)
+ ;
 ```
 
 
@@ -1849,6 +2088,10 @@ INSERT INTO typeprocedure VALUES
   ('PPRT','Plan de Prévention des Risques Technologiques'),
   ('PPRM','Plan de Prévention des Risques Miniers')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeprocedure','attributes','typeprocedure','Enumeration valeurs possibles de types de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 
@@ -1867,7 +2110,6 @@ Elle a la structure et le contenu suivants :
 | PROROGE | Prorogé |
 | ANTICIPE | Anticipé |
 | APPROUVE | Approuvé |
-| DEPRESCRIT | Déprescrit |
 | ANNULE | Annulé |
 | ABROGE | Abrogé |
 
@@ -1888,9 +2130,12 @@ INSERT INTO etatsprocedure VALUES
   ('PROROGE','Prorogé'),
   ('ANTICIPE','Anticipé'),
   ('APPROUVE','Approuvé'),
-  ('DEPRESCRIT','Déprescrit'),
   ('ANNULE','Annulé'),
   ('ABROGE','Abrogé')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('etatsprocedure','attributes','etatsprocedure','Enumeration valeurs possibles des états de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
@@ -1924,6 +2169,10 @@ INSERT INTO typereference VALUES
   ('03','Cartes signées'),
   ('98','Autres cartes'),
   ('99','Autres')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typereference','attributes','typereference','Enumeration valeurs possibles de types de références internet',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
@@ -2029,6 +2278,10 @@ INSERT INTO typealea VALUES
   ('33','Risque minier ; Emissions en surface de gaz de mine'),
   ('34','Risque minier ; Echauffement des terrains de dépôts')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typealea','attributes','typealea','Enumeration valeurs possibles de types d''aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 
@@ -2066,6 +2319,10 @@ INSERT INTO typeniveaualea VALUES
   ('06','Très fort'),
   ('07','Très fort plus')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeniveaualea','attributes','typeniveaualea','Enumeration valeurs possibles des niveaux d''aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 
@@ -2095,6 +2352,10 @@ INSERT INTO typesuralea VALUES
   ('02','bande particulière'),
   ('99','autre')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typesuralea','attributes','typesuralea','Enumeration valeurs possibles de types de suraléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 
@@ -2122,6 +2383,10 @@ INSERT INTO typerefexterneouvrage VALUES
   ('01','ROE'), 
   ('02','SIOUH'), 
   ('99','autre')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typerefexterneouvrage','attributes','typerefexterneouvrage','Enumeration valeurs possibles de types de référentiels externes pour les ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
@@ -2158,6 +2423,10 @@ INSERT INTO typereglementurba VALUES
   ('05','Recommandations'),
   ('06','Zone grisées')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typereglementurba','attributes','typereglementurba','Enumeration valeurs possibles de types de reglementation d''urbanisme',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 ```
 
 
@@ -2188,10 +2457,75 @@ INSERT INTO typereglementfoncier VALUES
   ('01','Délaissement possible'),
   ('02','Expropriation possible')
  ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typereglementfoncier','attributes','typereglementfoncier','Enumeration valeurs possibles de types de reglementation foncières',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+#### Métadonnées de la livraison
+
+Cette partie traite de l'intégration des métadonnées décrivant un PPR dans une livraison GeoPackage. Le contenu de ces métadonnées est défini dans la partie [Eléments de métadonnées](#eléments-de-métadonnées).
+
+Parmi les trois niveaux de granularité de métadonnées décrivant les PPR, seuls les niveaux "dataset" (métadonnées d'un PPR particulier et éventuellement métadonnées spécifiques d'une ou plusieurs tables) sont concernés par la livraison en GeoPackage. Le niveau "series" corrspondant aux métadonnées générales des PPR est exclu.
+
+##### Métadonnées du PPR
+
+Les éléments de métadonnées du PPR objet de la livraison en GeoPackage sont à renseigner par une ligne dans la table `gpkg_metadata` et une ligne dans la table `gpkg_metadata_reference` de la manière suivante.
+
+- Dans la table `gpkg_metadata` :
+
+|`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
+|-|-|-|-|-|
+| 1 (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
+
+
+- Dans la table `gpkg_metadata_reference` :
+
+| `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
+|-|-|-|-|-|-|-|
+| 'geopackage' | NULL | NULL | NULL | *date des métadonnées* | 1 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | NULL |
+
+
+Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  1,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>'
+) ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'geopackage', NULL, NULL, NULL, (datetime('now')), 1, NULL
+);
 ```
 
 
+##### Métadonnées des tables du PPR
 
+Il est possible de rajouter d'autres ensembles d'éléments de métadonnées relatifs à des thématiques particulières (ici des tables de la livraison). Pour chacun de ces élements, il faut créer une ligne dans les tables `gpkg_metadata` et `gpkg_metadata_reference` de la manière suivantes, par exemple pour la table "pprn-i_76ddtm20120001_zonealeareference_112" :
+
+- Dans la table `gpkg_metadata` :
+
+|`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
+|-|-|-|-|-|
+| 2 (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
+
+
+- Dans la table `gpkg_metadata_reference` :
+
+| `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
+|-|-|-|-|-|-|-|
+| 'table' | 'pprn-i_76ddtm20120001_zonealeareference_112' | NULL | NULL | *date des métadonnées* | 2 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | 1 *(identifiant de la métadonnée du PPR)* |
+
+
+Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  2,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>') ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'table', 'pprn-i_76ddtm20120001_zonealeareference_112', NULL, NULL, (datetime('now')), 2, 1
+);
+```
 
 
 
