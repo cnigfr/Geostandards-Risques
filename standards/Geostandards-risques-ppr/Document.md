@@ -1257,25 +1257,31 @@ Pour chaque ensemble d'éléments de métadonnées elle permet de préciser :
 - le type MIME correspondant à l'encodage de ces ensemble d'éléments de métadonnées (`mime_type`)
 - l'implémentation de cet ensemble d'éléments de métadonnées (`metadata`)
 
+La présence de cette table dans un fichier GeoPackage est facultative. 
 
-> *A finir*
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
+
 
 
 ##### Table gpkg_metadata_reference
 
-> *A finir*
+La table `gpkg_metadata_reference` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_reference_table_table_definition) qui permet de lier les éléments de métadonnées présents dans la table `gpkg_metadata` avec les données de la livraison qu'ils décrivent en fonction de leur niveau de granularité (ou domaine d'application) et d'établir une hiérarchie entre eux.
 
-La table `gpkg_metadata_reference` est une table définie dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#metadata_reference_table_table_definition) qui liste xxxx
+Pour chacun de ses élément, elle permet de préciser :
 
-Pour chacun des systèmes de coordonnées déclarés, elle permet de préciser :
+- le domaine d'application de l'ensemble des éléments de métadonnées (`reference_scope`)
+- éventuellement le nom de la table qui est référencée par ces métadonnées (`table_name`)
+- éventuellement le nom de de la colonne de la table mentionnée précédemment qui est référencée par ces métadonnées (`column_name`)
+- éventuellement la valeur de l'identifiant d'un objet (ligne) de la table mentionnée précédemment qui est référencée par ces métadonnées (`row_id_value`)
+- le moment d'écriture de cet élément (`timestamp`)
+- l'identifiant de l'ensemble des élément de métadonnées dans la table `gpkg_metadata` (clef étrangère) auquel s'applique cet élément (`md_file_id`)
+- l'identifiant de l'ensemble des éléments de métadonnées parent (clef étrangère) dans la table `gpkg_metadata` (`md_file_id`)
 
-- un nom lisible par un humain (`srs_name`)
-- un identifiant unique pour de ce système de coordonnées (clef primaire) dans le GeoPackage (`srs_id`)
-- le nom de l'organisation qui définit ce système de coordonnées (`organization`)
-- l'identifiant numérique de ce système de coordonnées pour cette organisation (`organization_coordsys_id`)
-- la définition au format WKT de ce système de coordonnées (`definition`)
-- Une description textuelle lisible par un être humain de ce système de coordonnées (`description`)
+La présence de cette table dans un fichier GeoPackage est facultative. Elle devient obligatoire si une table `gpkg_metadata` est présente.
 
+**Exigence**
+La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata_reference` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
 
 
 ####  Tables du Standard
@@ -2301,23 +2307,69 @@ INSERT INTO typereglementfoncier VALUES
  ;
 ```
 
+#### Métadonnées de la livraison
 
+Cette partie traite de l'intégration des métadonnées décrivant un PPR dans une livraison GeoPackage. Le contenu de ces métadonnées est défini dans la partie [Eléments de métadonnées](#eléments-de-métadonnées).
 
-#### Métadonnées du Standard
-
-> *A finir*
-
+Parmi les trois niveaux de granularité de métadonnées décrivant les PPR, seuls les niveaux "dataset" (métadonnées d'un PPR particulier et éventuellement métadonnées spécifiques d'une ou plusieurs tables) sont concernés par la livraison en GeoPackage. Le niveau "series" corrspondant aux métadonnées générales des PPR est exclu.
 
 ##### Métadonnées du PPR
 
-> *A finir*
+Les éléments de métadonnées du PPR objet de la livraison en GeoPackage sont à renseigner par une ligne dans la table `gpkg_metadata` et une ligne dans la table `gpkg_metadata_reference` de la manière suivante.
+
+- Dans la table `gpkg_metadata` :
+
+|`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
+|-|-|-|-|-|
+| 1 (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
+
+
+- Dans la table `gpkg_metadata_reference` :
+
+| `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
+|-|-|-|-|-|-|-|
+| 'geopackage' | NULL | NULL | NULL | *date des métadonnées* | 1 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | NULL |
+
+
+Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  1,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>'
+) ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'geopackage', NULL, NULL, NULL, (datetime('now')), 1, NULL
+);
+```
 
 
 ##### Métadonnées des tables du PPR
 
+Il est possible de rajouter d'autres ensembles d'éléments de métadonnées relatifs à des thématiques particulières (ici des tables de la livraison). Pour chacun de ces élements, il faut créer une ligne dans les tables `gpkg_metadata` et `gpkg_metadata_reference` de la manière suivantes, par exemple pour la table "pprn-i_76ddtm20120001_zonealeareference_112" :
 
-> *A finir*
+- Dans la table `gpkg_metadata` :
 
+|`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
+|-|-|-|-|-|
+| 2 (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
+
+
+- Dans la table `gpkg_metadata_reference` :
+
+| `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
+|-|-|-|-|-|-|-|
+| 'table' | 'pprn-i_76ddtm20120001_zonealeareference_112' | NULL | NULL | *date des métadonnées* | 2 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | 1 *(identifiant de la métadonnée du PPR)* |
+
+
+Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  2,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>') ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'table', 'pprn-i_76ddtm20120001_zonealeareference_112', NULL, NULL, (datetime('now')), 2, 1
+);
+```
 
 
 
