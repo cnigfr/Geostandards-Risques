@@ -258,7 +258,7 @@ Le périmètre d'application des plans de prévention des risques couvert par ce
 - La mise à disposition de ces jeux de données sur internet de façon à permettre la connaissance du risque par le grand public et leur exploitation aval pour :
   - la mise en place des politiques d'urbanisation par les collectivités territoriales en conformité avec la loi ;
   - l'anticipation de la gestion de crise, notamment pour l'élaboration des Plans Particuliers d'Intervention (PPI) par les services de l'Etat ;
-  - la mise en oeuvre de l'information des acquereurs ou des locataires (IAL) ;
+  - la mise en oeuvre de l'information des acquéreurs ou des locataires (IAL) ;
   - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
 
 Les données décrites et couvertes par ce standard ne couvent pas l'intégralité des informations d'un dossier de plan de prévention des risques. Il s'agit des données géographiques et sémantiques du PPR permettant d'en établir la partie cartographique et de faire le lien avec les autres éléments du dossier pouvant être mis en oeuvre dans d'autres systèmes tels que GASPAR ou les sites des préfectures qui hébergent le dossier.
