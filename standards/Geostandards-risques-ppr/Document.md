@@ -107,7 +107,7 @@ Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-don
 
 La partie [Qualité](#qualité) décrit les recommandations et exigences des qualité concernant le contenu des données des PPR et de leur structuration ainsi que la façon de rapporter leur évaluation dans les métadonnées.
 
-La partie [Cycle de vie des données](#cycle-de-vie-des-données) expose xxxx
+La partie [Cycle de vie des données](#cycle-de-vie-des-données) expose les différents états d'une procédure PPR ainsi que les cycles de maintenance des données associées.
 
 La partie [Règles de symbologie](#règles-de-symbologie) décrit les règles de représentation de certaines entités relatives aux PPR.
 
