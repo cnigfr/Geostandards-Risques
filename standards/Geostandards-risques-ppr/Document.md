@@ -336,7 +336,7 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 
 ### Cas d'utilisation Exploiter un PPR
 
-Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Êlles n'ont pas voccation à être exhaustive meis elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grace à la connaissance de la structure des données et de sa qualité.
+Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Elles n'ont pas voccation à être exhaustive meis elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grace à la connaissance de la structure des données et de sa qualité.
 
 
 |Action du cas d'utilisation| Description|
