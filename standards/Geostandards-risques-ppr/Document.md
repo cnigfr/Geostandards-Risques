@@ -113,7 +113,7 @@ La partie [Règles de symbologie](#règles-de-symbologie) décrit les règles de
 
 La partie [Livraison](#livraison) précise les modalités d'implémentation et d'échange des données PPR au format GeoPackage.
 
-La partie [Métadonnées](#métadonnées) précise les valeurs ou les consignes de saisie des éléments de étadonnées relatifs aux PPR de façon à en permettre une description et un catalogage pertinents en conformité avec les exigences INSPIRE sur les métadonnées et leur déclinaison au niveau national.
+La partie [Métadonnées](#métadonnées) précise les valeurs ou les consignes de saisie des éléments de métadonnées relatifs aux PPR de façon à en permettre une description et un catalogage pertinents en conformité avec les exigences INSPIRE sur les métadonnées et leur déclinaison au niveau national.
 
 L'[annexe A](#annexe-a---correspondances-avec-les-standards-covadis-ppr-n-et-t-et-pprm), informative, expose les correspondances entre le modèle de données de ce standard et celui des anciens standards COVADIS PPR de façon à aider à la conversion des données PPR existantes vers ce novueau standard.
 
