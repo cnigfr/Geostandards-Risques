@@ -115,7 +115,7 @@ La partie [Livraison](#livraison) précise les modalités d'implémentation et d
 
 La partie [Métadonnées](#métadonnées) précise les valeurs ou les consignes de saisie des éléments de métadonnées relatifs aux PPR de façon à en permettre une description et un catalogage pertinents en conformité avec les exigences INSPIRE sur les métadonnées et leur déclinaison au niveau national.
 
-L'[annexe A](#annexe-a---correspondances-avec-les-standards-covadis-ppr-n-et-t-et-pprm), informative, expose les correspondances entre le modèle de données de ce standard et celui des anciens standards COVADIS PPR de façon à aider à la conversion des données PPR existantes vers ce novueau standard.
+L'[annexe A](#annexe-a---correspondances-avec-les-standards-covadis-ppr-n-et-t-et-pprm), informative, expose les correspondances entre le modèle de données de ce standard et celui des anciens standards COVADIS PPR de façon à aider à la conversion des données PPR existantes vers ce nouveau standard.
 
 L'[annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3), informative, décrit les correspondances du modèle de données du Standard CNIG sur les Servitudes d'Utilité Publique (SUP) avec celui de ce standard de façon à aider à la production des catégories de SUP correspondant à des PPR.
 
