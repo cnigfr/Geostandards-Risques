@@ -9,7 +9,7 @@
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
- Géostandards Risques - Modèle Commun
+Géostandards Risques - Modèle Commun
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -901,21 +901,62 @@ Les tableaux présentés ici sont un résumé à un haut niveau des correspondan
 
 ## Lien avec le thème 4 Usage des sols de l'annexe III
 
+La description de la thématique "Usage des sols" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/lu) est la suivante : "Territoire caractérisé selon sa dimension fonctionnelle prévue ou son objet socioéconomique actuel et futur (par exemple, résidentiel, industriel, commercial, agricole, forestier, récréatif)."
+
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+
+| Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
+|-|-|-|
+| Zoning Element | *A spatial object which is homogeneous regarding the permitted uses of land based on zoning which separate one set of land uses from another. Zoning elements refer to the regulation of the kinds of activities which will be acceptable on particular lots (such as open space, residential, agricultural, commercial or industrial). The intensity of use at which those activities can be performed (from low-density housing such as single family homes to high-density such as high-rise apartment buildings), the height of buildings, the amount of space that structures may occupy, the proportions of the types of space on a lot, such as how much landscaped space, impervious surface, traffic lanes, and parking may be provided.* | [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent du type d'occupation du sol, de l'habitat ou des activités qui sont exercées. |
+| Supplementary Regulation | *A spatial object (point, line or polygon) of a spatial plan that provides supplementary information and/or limitation of the use of land/water necessary for spatial planning reasons or to formalise external rules defined in legal text.* | [ZoneReglementaire](#interface-zonereglementaire) en ce qui concerne la description de zones soumises à des restrictions en matière d'urbanisme ou foncières, [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent de zones faisant l'objet de réglementation particulière. |
+| Official Documentation | *The official documentation that composes the spatial plan; it may be composed of, the applicable legislation, the regulations, cartographic elements, descriptive elements that may be associated with the complete spatial plan, a zoning element or a supplementary regulation . In some Member States the actual textual regulation will be part of the data set (and can be put in the regulationText attribute), in other Member States the text will not be part of the data set and will be referenced via a reference to a document or a legal act.At least one of the three voidable values shall be provided.* | [ReferenceInternet](#classe-dobjets-referenceinternet) dans la mesure où cette classe d'objet permet de référencer les documents en lien avec les procédures de prévention des risques, notamment : les cartes et le réglement associé au zonage réglementaire. |
+
+
 
 Les tables de correspondances avec le thème 4 Usage des sols de l'annexe III sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/LandUseMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/LandUseMappingTable.xls) 
 
 
 ## Lien avec le thème 8 Lieux de production et sites industriels de l'Annexe III 
 
+La description de la thématique "Lieux de production et sites industriels" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/pf) est la suivante : "Sites de production industrielle, y compris les installations couvertes par la directive 96/61/CE du Conseil du 24 septembre 1996 relative à la prévention et à la réduction intégrées de la pollution (1) et les installations de captage d'eau, d'extraction minière et de stockage."
+
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+
+| Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
+|-|-|-|
+| Production Facility | *One or more installations on the same site operated by the same natural or legal person,designed, built or installed to serve specific production or industrial purposes, comprehendingall infrastructure, equipment and materials. A production facility groups together a single installation, set of installations or production processes (stationary or mobile), which can be defined within a single geographical boundary, organizational unit or production process. A production facility can also be identified as one or more installations located on the same site that are operated by the same natural or legal person and in which production activities are being carried out. Such a facility groups potentially the land, buildings, and equipment used in carrying on an industrial business or other undertaking or service.* | [OrigineRisque](#classe-dobjets-originerisque) dans la mesure où certaines installations de production peuvent être à l'origine de risques (notamment technlogoiques), [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent d'installations de productions sensibles aux risques ou utile pour la gestion de crise. NB : le même mapping peut être fait avec les entités plus fines de cette thématique INSPIRE : "Production Instalation" (Ponctuel) ou "Production Plot" ou moins fine "Production Site" (site où se trouve les "Production Facilities") selon les cas. |
+
+
 Les tables de correspondances avec le thème 8 Lieux de production et sites industriels de l'Annexe III sont accessibles ici :  [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/ProductionAndIndustrialFacilitiesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/ProductionAndIndustrialFacilitiesMappingTable.xls)
 
 
 ## Lien avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III
 
+La description de la thématique "Zones de gestion, de restriction ou de réglementation et unités de déclaration" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/am) est la suivante : "Zones gérées, réglementées ou utilisées pour les rapports aux niveaux international, européen, national, régional et local. Sont inclus les décharges, les zones restreintes aux alentours des sources d'eau potable, les zones vulnérables aux nitrates, les chenaux réglementés en mer ou les eaux intérieures importantes, les zones destinées à la décharge de déchets, les zones soumises à limitation du bruit, les zones faisant l'objet de permis d'exploration et d'extraction minière, les districts hydrographiques, les unités correspondantes utilisées pour les rapports et les zones de gestion du littoral."
+
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+
+| Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes |
+|-|-|-|
+| Management Restriction Or Regulation Zone | *Area managed, restricted or regulated in accordance with a legal requirement related to an environmental policy or a policy or activity that may have an impact on the environment at any level of administration (or used for reporting at international, European, national, regional and local) levels.* | [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent de zones faisant l'objet d'une réglementation particulière et sensible aux risques ou dont la connaissance est utile pour la gestion de crise. NB : les zones définies par cette thématique INSPIRE permettent aussi de déterminer les zones de rapportage (Bassins hydrographiques ou sous-unités éventuelles) pour la directive Inondation. |
+
+
 Les tables de correspondances avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls)
 
 
 ## Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.
+
+La description de la thématique "Zones de risque naturel" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/nz) est la suivante : "Zones sensibles caractérisées en fonction des risques naturels (tous les phénomènes atmosphériques, hydrologiques, sismiques, volcaniques, ainsi que les feux de friche qui peuvent, en raison de leur situation, de leur gravité et de leur fréquence, nuire gravement à la société), tels qu'inondations, glissements et affaissements de terrain, avalanches, incendies de forêts, tremblements de terre et éruptions volcaniques."
+
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+
+| Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
+|-|-|-|
+| Observed Event | *A natural phenomenon relevant to the study of natural hazards which occurred and which has been observed.* | [ZoneAlea](#classe-dobjets-zonealea) représentant un aléa s'étant déjà produit (exemple : crue centenale). Le cas échéant, la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) pourrait aussi être porteuse de cette information. |
+| Hazard Area | *An area affected by a natural hazard. A natural hazard is a natural process or phenomenon that may cause loss of life, injury or other impacts, property damage, loss livelihoods and services, social and economic disruption, or environmental damage.* | [ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) ou [ZoneProtegee](#classe-dobjets-zoneprotegee)  |
+| Risk Zone | *A risk zone is the spatial extent of a combination of the consequences of an event (hazard) and the associated probability/likelihood of its occurrence.* | [ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) ou [ZoneProtegee](#classe-dobjets-zoneprotegee) en lien direct avec des enjeux. |
+| Exposed Element | *People, property, systems, or other elements present in hazard zones that are thereby subject to potential losses.* | [Enjeu](#classe-dobjets-enjeu) tels que généralement définis dans le cadre du Géostandard risque. NB : la nomenclature des enjeux INSPIRE peut ne pas être en corresondance directe avec les nomenclatures d'enjeu spécifiques aux profils applicatifs. |
+
 
 Les tables de correspondances avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls)
 
