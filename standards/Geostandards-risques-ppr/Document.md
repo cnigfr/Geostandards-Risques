@@ -1031,7 +1031,7 @@ Les données relatives au plans de prévention des risques sont constituées, nu
 
 - un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le prêfet dans le délai d'instruction prévu ou par anticipation. Les données du PPR décrites par ce standard doivent être publiées. A ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
 
-- un état "Caduque" lorsque le PPR n'est plus opposable : déprescrit, abbrogé, ou rendu obsolète par une procédure révision.
+- un état "Caduque" lorsque le PPR n'est plus opposable : déprescrit, abrogé, ou rendu obsolète par une procédure révision.
 
 
 ##  Maintenance
