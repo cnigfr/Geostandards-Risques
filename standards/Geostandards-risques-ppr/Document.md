@@ -1069,7 +1069,7 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 
 ## Représentations des types de réglementations standardisés
 
-Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardiséés en fonction du type de PPR et du type de réglementation (en matière d'urbanisme ou foncière). 
+Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardisées en fonction du type de PPR et du type de réglementation (en matière d'urbanisme ou foncière). 
 
 Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
