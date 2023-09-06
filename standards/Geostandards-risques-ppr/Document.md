@@ -1027,7 +1027,7 @@ Les données relatives au plans de prévention des risques sont constituées, nu
 
 - un état "Programmation et montage" pendant lequel le PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
-- un état "Prescrit", signé par le prêfet où les zones soumises au aléas sont connues mais le zonage réglementaire non encore complétement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
+- un état "Prescrit", signé par le prêfet où les zones soumises aux aléas sont connues mais le zonage réglementaire non encore complétement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
 - un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le prêfet dans le délai d'instruction prévu ou par anticipation. Les données du PPR décrites par ce standard doivent être publiées. A ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
 
