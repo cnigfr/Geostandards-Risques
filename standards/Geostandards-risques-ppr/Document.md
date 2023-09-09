@@ -9,7 +9,8 @@
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
-Géostandards Risques - Profil applicatif PPR
+Géostandards Risques 
+Plans de prévention des risques (PPR)
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -32,12 +33,11 @@ Groupe de travail refonte des Géostandards Risques
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | A venir : PDF sur internet (site du CNIG) |
-| **Formats disponibles** | HTML/Markdown sur le [dépot Github du Groupe de travail Géostandards Risques](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
+| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.1.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
 | **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
 | **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org |
 
----
 
 #  Sommaire
 
@@ -50,7 +50,7 @@ Groupe de travail refonte des Géostandards Risques
 
 | Version | Date | Raison |
 | - | - | - |
-| 0.1 | *xx* | Première rédaction en cours |
+| 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 
 ##  Participation à l'écriture
 
@@ -304,7 +304,7 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 
 |Action du cas d'utilisation| Description|
 |-|-|
-|Prescrire, approuver, le PPR | Cette action, de la responsabilité du Prêfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
+|Prescrire, approuver, le PPR | Cette action, de la responsabilité du Préfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
 | Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
 | Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
 | Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le réglement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
@@ -341,7 +341,7 @@ Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR
 
 |Action du cas d'utilisation| Description|
 |-|-|
-| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en oeuvre de telles fonctionalité. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grace à des mécanismes de cataloguage. |
+| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en oeuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
 | Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
 | Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en oeuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les plans locaux d'urbanisme par les collectivités territoriales. |
 | Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
@@ -599,7 +599,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRT"+*code*.
 
 
-| Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité pouvant être associée |
+| Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
 |-|-|-|-|-|
 | /urbaExistante | Urbanisation existante | -  | Enjeu incontournable - Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous catégories qui suivent. | |
 | /urbaExistante/habitat | habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
@@ -807,7 +807,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 #### Enumeration *TypeReglementUrba*
 
-Le tableau suivant liste les différents types de réglementations possibles pouvant s'appliquer en matière d'urbanisme
+Le tableau suivant liste les différents types de réglementations possibles pouvant s'appliquer en matière d'urbanisme.
 
 
 | Libellé | Description |
@@ -839,7 +839,7 @@ Les clauses du [modèle commun](../Geostandards-risques-commun/Document.md#syst�
 
 Le tableau suivant présente la restriction des systèmes de référence légaux à utiliser dans le cadre des PPR dans la mesure où les données décrites dans les PPR ne comprennent pas de composant verticale et la précision planimétrique des PPR ne nécessite pas sur le territoire métropolitain l'utilisation des projections coniques conformes 9 zones.
 
-Note : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection correspondant dans le [registre EPSG](https://epsg.org/home.html).
+__Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection correspondant dans le [registre EPSG](https://epsg.org/home.html).
 
 
 | Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Code EPSG |
@@ -883,7 +883,7 @@ Ce qui suit décrit les objectifs de qualité visés pour les données des Plans
 
 ### Dimensions géométriques 
 
-Les composantes géométriques des données des PPR sont levées en 2 dimension. 
+Les composantes géométriques des données des PPR sont levées en 2 dimensions. 
 
 
 ### Référentiels de numérisation 
@@ -957,7 +957,7 @@ Indicateur | Seuil d'avertissement | Seuil de rejet |
 | Nombre de parties | > 500 | > 1 000 |
 
 
-D'autres indicateurs sont définis ici éviter les micro géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
+D'autres indicateurs sont définis ici éviter les micro-géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
 
 Indicateur | Seuil de rejet |
 |-|-|
@@ -977,7 +977,7 @@ Il n'existe pas de définition de ces mesures dans le registre national des mesu
 - "Nombre de géométries dépassant le seuil d'avertissement"
 - "Nombre de géométries dépassant le seul de rejet"
 
-ou plus dans le détail des indicateurs (laissé à l'appréciation du producteur de données) :
+Ou, plus dans le détail des indicateurs (laissé à l'appréciation du producteur de données) :
 
 - "Nombre de géométries dont le nombre de sommets dépasse le seuil d'avertissement"
 - etc.
@@ -995,7 +995,7 @@ Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet
 
 **Elément de mesure ou de métadonnées :**
 
-Les invalidités topologiques d'un PPR relatives aux règles énoncées ci-dessus peuvent être relatées de manière statistiques dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+Les invalidités topologiques d'un PPR relatives aux règles énoncées ci-dessus peuvent être relatées de manière statistique dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
 
 - [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
 
@@ -1008,7 +1008,7 @@ La conformité des données PPR au présent standard est un objectif. Il convien
 
 **Elément de mesure ou de métadonnées :**
 
-Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non coformes ou si la conformité n'a pas été évaluée.
+Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non conformes ou si la conformité n'a pas été évaluée.
 
 Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
 
@@ -1069,7 +1069,7 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 
 ## Représentations des types de réglementations standardisés
 
-Les tableaux suivants présentent les couleurs (en code RVB) préconnisées à appliquer pour une représentation des réglementations standardisées en fonction du type de PPR et du type de réglementation (en matière d'urbanisme ou foncière). 
+Les tableaux suivants présentent les couleurs (en code RVB) préconisées à appliquer pour une représentation des réglementations standardisées en fonction du type de PPR et du type de réglementation (en matière d'urbanisme ou foncière). 
 
 Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
@@ -1142,7 +1142,7 @@ Le nom du fichier est composé en lettres minuscules selon le modèle suivant :
 
 La liste des valeurs possibles pour `TypePPR` est déterminée dans la [table des types de procédures GASPAR](../Geostandards-risques-commun/Document.md#types-de-procédures-gaspar). La nomenclature des identifiants des procédures GASPAR est expliquée [ici](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)
 
-A titre d'exemple, le fichier de livraison du PPRN du Bassie de la Scie aura pour nom : `pprn-i_76ddtm20120001`
+A titre d'exemple, le fichier de livraison du PPRN du Bassin de la Scie aura pour nom : `pprn-i_76ddtm20120001`
 
 
 
@@ -2467,7 +2467,7 @@ INSERT INTO gpkg_contents VALUES
 
 Cette partie traite de l'intégration des métadonnées décrivant un PPR dans une livraison GeoPackage. Le contenu de ces métadonnées est défini dans la partie [Eléments de métadonnées](#eléments-de-métadonnées).
 
-Parmi les trois niveaux de granularité de métadonnées décrivant les PPR, seuls les niveaux "dataset" (métadonnées d'un PPR particulier et éventuellement métadonnées spécifiques d'une ou plusieurs tables) sont concernés par la livraison en GeoPackage. Le niveau "series" corrspondant aux métadonnées générales des PPR est exclu.
+Parmi les trois niveaux de granularité de métadonnées décrivant les PPR, seuls les niveaux "dataset" (métadonnées d'un PPR particulier et éventuellement métadonnées spécifiques d'une ou plusieurs tables) sont concernés par la livraison en GeoPackage. Le niveau "series" correspondant aux métadonnées générales des PPR est exclu.
 
 ##### Métadonnées du PPR
 
@@ -2905,7 +2905,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 #### Degré
 
-- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
+- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non-conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
 - Obligation : Saisie optionnelle
 - XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/pass`
 
@@ -2974,7 +2974,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 |-|-|
 | Métadonnées générales | `MTD-Geostandard-PPR` |
 | Métadonnées d'un PPR | *Réutiliser le même formalisme que le nom de fichier de la livraison en GeoPackage, préfixé par "MTD"* : "MTD_[TypePPR]_[codegasparcomplet]". Exemple pour la Métadonnée du PPRN-I du Bassin Versant de la Scie : "MTD_pprn-i_76ddtm20120001" |
-| Métadonnées d'une thématique | xxx |
+| Métadonnées d'une thématique | *Réutiliser le nom de la table associée à la thématique préfixé par "MTD"* |
 
 
 #### Point de contact pour la métadonnée
@@ -3020,16 +3020,11 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 
 
-
-
-
----
-
 # ANNEXE A - Correspondances avec les standards COVADIS PPR (N et T) et PPRM
 
 Les règles de passage ci-dessous détaillent la façon dont les objets des classes du nouveau standard sont créés et renseignés à partir des objets provenant des classes du modèle de conceptuel de données de l'ancien standard COVADIS PPRN (DocumentPPR, PerimetrePPR, ZonePPR, ZoneAleaPPR, EnjeuPPR et OrigineRisque).
 
-Ce classes sont implémentées de la manière suivante dans le jeu de données Shapefile conformément au standard PPR (Naturels et Technologiques) COVADIS :
+Ces classes sont implémentées de la manière suivante dans le jeu de données Shapefile conformément au standard PPR (Naturels et Technologiques) COVADIS :
 
 | Classe modèle Covadis | Table(s) Shapefile |
 |-|-|
@@ -3070,7 +3065,7 @@ Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPR| idGASPAR (ID_GASPAR)|
-|adresse| Url d'accès à la ressource url|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPR | serviceInternet (SITE_WEB) |
+|adresse| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPR | serviceInternet (SITE_WEB) |
 |nomRessource |Nom de la ressource| - |N/A|N/A|
 |description|Description de la ressource| - |N/A|N/A|
 |typeReference|Indique le type de document auquel on fait référence| - | N/A|N/A|
@@ -3241,7 +3236,6 @@ Les objets de la classe OrigineRisque seront créés à partir de ceux de la cla
 
 
 
----
 
 # ANNEXE B - Correspondances avec le Standard CNIG SUP pour les SUP PM1 et PM3
 
