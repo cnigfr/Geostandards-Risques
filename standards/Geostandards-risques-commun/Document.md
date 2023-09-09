@@ -9,7 +9,8 @@
 ![Illustration GT Risques](./ressources/logo-gt-risques.png)
 
 
-Géostandards Risques - Modèle Commun
+Géostandards Risques
+Modèle Commun
 
 
 Groupe de travail refonte des Géostandards Risques
@@ -31,7 +32,7 @@ Groupe de travail refonte des Géostandards Risques
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | *A venir : PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** |  HTML/Markdown sur le [dépot Github du Groupe de travail Géostandards Risques](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.1.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
 | **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
 | **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org |
@@ -49,7 +50,8 @@ Groupe de travail refonte des Géostandards Risques
 
 | Version | Date | Raison |
 | - | - | - |
-| 0.1 | *xx* | Première rédaction en cours |
+| 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
+
 
 ##  Participation à l'écriture
 
@@ -219,7 +221,7 @@ Les données représentées couvrent le territoire national français susceptibl
   - Mayotte
   - Saint-Pierre-et-Miquelon
 
-Les types de risques couverts par ce standard et ses profils applicatifs sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar)
+Les types de risques couverts par ce standard et ses profils applicatifs sont ceux de la nomenclature GASPAR (Gestion assistée des procédures administratives relatives aux risques naturels et technologiques), décrite en [Annexe B](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar).
 
 
 ##  Les acteurs et rôles concernés 
@@ -320,7 +322,7 @@ La thématique Origine du risque permet de décrire les entités génératrices 
 
 Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui porte les informations minimales permettant d'intégrer les entités issues de référentiels externes variés dans une cartographie des risques.
 
-**Fig. *xx* Modèle UML des classes relatives à lorigine du risque.**
+**Fig. *xx* Modèle UML des classes relatives à l'origine du risque.**
 
 ![Modele UML Zonage Réglementaire](./ressources/UML-Procedure-OrigineRisque.png)
 
@@ -774,7 +776,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 **Nom du type de données** : TypeVulnerabilite
 
-**Définition** : Le type de données TypeVulnerabilite permet de relater une vulnérabilité relative à un enjeu. Les champs nom et description permettent de qualifier le type de vulnérabilité dont il s'agit (par exemple au travers d'une nomenclature de types de mesures) et le champs valeur porte la valeur de la vulnérabilité (par exemple un nombre d'habitants ou une appréciation littérale).    
+**Définition** : Le type de données TypeVulnerabilite permet de relater une vulnérabilité relative à un enjeu. Les champs nom et description permettent de qualifier le type de vulnérabilité dont il s'agit (par exemple au travers d'une nomenclature de types de mesures) et le champ valeur porte la valeur de la vulnérabilité (par exemple un nombre d'habitants ou une appréciation littérale).    
 
 
 **Propriétés** : 
@@ -848,7 +850,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 ## Systèmes de référence spatiaux
 
-Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-réglementaire-pour-les-systèmes-de-référence-de-coordonnées) détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. A savoir :
+Le [cadre réglementaire des systèmes de référence de coordonnées](#cadre-réglementaire-pour-les-systèmes-de-référence-de-coordonnées) détermine les systèmes de référence spatiaux à utiliser pour les données de prévention des risques selon les territoires français concernés. Ils sont présentés dans le tableau suivant.
 
 
 | Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Système altimétrique (acronyme IGN) |
