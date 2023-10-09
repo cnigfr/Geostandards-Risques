@@ -327,7 +327,7 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 |-|-|
 | Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
 | Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
-| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plaleforme nationale de diffusion qu'est Géorisques. |
+| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. |
 
 **Figure xx : Cas d'utilisation : Publier un PPR**
 
@@ -776,7 +776,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 **Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : Polygone, Ligne, Point.
 
 **Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -795,7 +795,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 **Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : polygone, Ligne, Point.
 
 **Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -1358,7 +1358,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `typereference` | `attributes` | N.A. | Enumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) |
 | `typealea` | `attributes` | N.A. | Enumeration [TypeAlea](../Geostandards-risques-commun/Document.md#enumeration-typealea) |
 | `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
-| `typealea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
+| `typesuralea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
 | `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
 | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
 | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
