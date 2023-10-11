@@ -3084,8 +3084,8 @@ Les attributs de la classe Perimetre sont renseignés selon les correspondances 
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure | 76DDTM20120001 | PerimetrePPR | idGASPAR (ID_GASPAR)|
 |etatProcedure |Etat d'avancement de la procédure sur le périmètre|"APPROUVE" si etat= "Approuvé" (02); PRECRIT si etat="Prescrit" (01); ABROGE si etat ="Abrogé" (03); ANTICIPE si etat = "Anticipe" (04)" |DocumentPPR | etat (ETAT) |
-|dateEtatPerimetre|Date du début de l'état de la procédure sur le périmètre|29/05/2020|DocumentPPR|dateApprobation (DATEAPPRO), si Approuvé |
-|geometrie|Géométrie du Périmètre| MultiPolygone |PerimetrePPR|geometry|
+|dateEtat|Date du début de l'état de la procédure sur le périmètre|29/05/2020|DocumentPPR|dateApprobation (DATEAPPRO), si Approuvé |
+|geom|Géométrie du Périmètre| MultiPolygone |PerimetrePPR|geometry|
 
 ## Remplissage des objets de la classe ZoneAlea
 
@@ -3110,7 +3110,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
 |description|Description de l'aléa|Inondation - Par submersion marine|ZoneAleaPPR|descriptionZone (DESCRIPT)|
 |occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.| - |N/A|N/A|
-|geometrie|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
+|geom|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
 
 ## Remplissage des objets de la classe ZoneAleaEcheance100ans
 
@@ -3142,7 +3142,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |description|Secteur soumis aux chocs de vagues et de projection|N/A|ZoneAleaPPR|descriptionZone (DESCRIPT)|
 |niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
 |typeSuralea|Ce champ permet d'indiquer le type de zone de danger spécifique.| bande particulière (02) |N/A|N/A|
-|geometrie|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
+|geom|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
 
 ## Remplissage des objets de la classe ZoneReglementaire
 
@@ -3168,7 +3168,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Interdiction stricte, Interdiction, Prescriptions ou Prescriptions hors zone d'aléa.|ZonePPR|typeReglementStandardise ("typereg")|
 | obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | - | N.A. | N.A. |  
-|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+|geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
 
 
 ## Remplissage des objets de la classe ZoneReglementaireFoncier
@@ -3184,7 +3184,7 @@ Les objets de la classe ZoneReglementaireUrba seront créés à partir des objet
 |codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
 |libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Délaissement possible ou Expropriation possible.|ZonePPR|typeReglementStandardise ("typereg")|
-|geometrie|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+|geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
 
 
 ## Remplissage des objets de la classe Enjeu et du type de données TypeEnjeu
@@ -3205,7 +3205,7 @@ Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de l
 | idEnjeu | Identifiant de l'objet Enjeu | 14066 | EnjeuPPR | (ID_MAP)  | 
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | -  | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) |
 | refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | - | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) | 
-| nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | "Zone d'habitat peu dense"  | EnjeuPPR | description (DESCRIPT) |
+| nomEnjeu | Nom de l'objet d'enjeu. | "Zone d'habitat peu dense"  | EnjeuPPR | description (DESCRIPT) |
 | typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | *Cf. TypEnjeu*  |  *Cf. TypEnjeu* | *Cf. TypEnjeu* | 
 | vulnerabilite | Information sur les vulnérabilités de l'enjeu | -  | N.A. | N.A.  (cette information n'est pas renseignée dans le standard COVADIS) |
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | 2020 | EnjeuPPR | anneeIdentification (IDENTANNEE) |
