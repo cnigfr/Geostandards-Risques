@@ -173,8 +173,7 @@ La mise en œuvre des Plans de prévention des risques technologiques est défin
 La mise en œuvre des Plans de prévention des risques miniers est définie par :
 
 * L'[article L174-5 du code minier](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046554903?init=true&page=1&query=L174-5&searchField=ALL&tab_selection=all) pour la partie législative ;
-* Les [Articles R562-1 à R562-11-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
-
+* Le [décret n°2000-547 du 16 juin 2000 pris pour l'application du chapitre IV du titre VII du livre Ier du code minier](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000765577) pour la partie réglementaire.
 
 
 ##  Compréhension du document
@@ -816,7 +815,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 | Prescriptions | Réglementation faisant prévaloir le principe d'autorisation assorti de l'obligation de respect de prescriptions. |
 | Interdiction | Réglementation faisant prévaloir le principe d'interdiction mais où certaines constructions peuvent être autorisées sous réserve du respect de prescriptions strictes |
 | Interdiction stricte | Réglementation imposant une interdiction stricte. |
-| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'aménagement. |
+| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'aménagement pour les projets futurs uniquement. |
 | Zone grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout batiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
 
 
@@ -826,8 +825,8 @@ Le tableau suivant liste les différents types de réglementations foncières po
 
 | Libellé | Description |
 |-|-|
-| Délaissement possible | Réglementation autorisant le maire à prendre un arrêté instaurant la possibilité de mettre en œuvre des mesures de délaissement. |
-| Expropriation possible | Réglementation autorisant le maire ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
+| Délaissement possible | Réglementation autorisant la collectivité compétente en matière d'urbanisme à prendre un arrêté instaurant la possibilité de mettre en œuvre des mesures de délaissement. |
+| Expropriation possible | Réglementation autorisant la collectivité compétente en matière d'urbanisme ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
 
 
 #  Systèmes de référence
@@ -1025,7 +1024,7 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) et [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)). On peut les résumer ici en quatre états majeurs qui sont réflêtés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
 
-- un état "Programmation et montage" pendant lequel le PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
+- un état "Programmation et montage" pendant lequel l'opportunité de prescrire un PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
 - un état "Prescrit", signé par le préfet où les zones soumises aux aléas sont connues mais le zonage réglementaire non encore complètement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
@@ -1272,10 +1271,10 @@ Pour chacun de ses élément, elle permet de préciser :
 
 - le domaine d'application de l'ensemble des éléments de métadonnées (`reference_scope`)
 - éventuellement le nom de la table qui est référencée par ces métadonnées (`table_name`)
-- éventuellement le nom de de la colonne de la table mentionnée précédemment qui est référencée par ces métadonnées (`column_name`)
+- éventuellement le nom de la colonne de la table mentionnée précédemment qui est référencée par ces métadonnées (`column_name`)
 - éventuellement la valeur de l'identifiant d'un objet (ligne) de la table mentionnée précédemment qui est référencée par ces métadonnées (`row_id_value`)
 - le moment d'écriture de cet élément (`timestamp`)
-- l'identifiant de l'ensemble des élément de métadonnées dans la table `gpkg_metadata` (clef étrangère) auquel s'applique cet élément (`md_file_id`)
+- l'identifiant de l'ensemble des éléments de métadonnées dans la table `gpkg_metadata` (clef étrangère) auquel s'applique cet élément (`md_file_id`)
 - l'identifiant de l'ensemble des éléments de métadonnées parent (clef étrangère) dans la table `gpkg_metadata` (`md_file_id`)
 
 La présence de cette table dans un fichier GeoPackage est facultative. Elle devient obligatoire si une table `gpkg_metadata` est présente.
