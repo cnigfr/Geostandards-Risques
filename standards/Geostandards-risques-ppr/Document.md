@@ -67,7 +67,7 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
 | Coignon Bastien | MTE / DGPR / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
-| Evain Yohan | Cerema |
+| Evain Yohann | Cerema |
 
 > *liste à compléter et actualiser*
 
@@ -83,7 +83,7 @@ Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.
 
 Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent.
 
-Il a voccation à se substituer et rendre obsolètes les dernières versions des standards COVADIS suivants :
+Il a vocation à se substituer et rendre obsolètes les dernières versions des standards COVADIS suivants :
 
 * Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
 * Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
@@ -130,7 +130,7 @@ Cette partie cite les références documentaires et réglementaires sur lesquell
 
 Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous. 
 
-| Accronyme | Titre | Auteur | Année |
+| Acronyme | Titre | Auteur | Année |
 |-|-|-|-|
 | [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
@@ -152,7 +152,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 ####  Cadre réglementaire des Plans de Prévention des Risques Naturels Prévisibles
 
-La mise en oeuvre des Plans de prevention des risques naturels prévisibles est définie dans le code de l'environnement par :
+La mise en œuvre des Plans de prévention des risques naturels prévisibles est définie dans le code de l'environnement par :
 
 * Les [articles L562-1 à L562-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006159296/#LEGISCTA000006159296) pour la partie législative ;
 * Les [Articles R562-1 à R562-11-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
@@ -163,14 +163,14 @@ Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des r
 
 ####  Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
-La mise en oeuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
+La mise en œuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
 
 * Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
 
 ####  Cadre réglementaire des Plans de Prévention des Risques Miniers
 
-La mise en oeuvre des Plans de prévention des risques miniers est définie par :
+La mise en œuvre des Plans de prévention des risques miniers est définie par :
 
 * L'[article L174-5 du code minier](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046554903?init=true&page=1&query=L174-5&searchField=ALL&tab_selection=all) pour la partie législative ;
 * Les [Articles R562-1 à R562-11-9 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007) pour la partie réglementaire.
@@ -183,7 +183,7 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 | Terme | Définition|
 |-|-|
-| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
+| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurrence.  |
 | Aléa | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf)) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
 | Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
@@ -218,7 +218,7 @@ La mise en oeuvre des Plans de prévention des risques miniers est définie par 
 
 **DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
 
-**ERP** Etablissement recevant du public
+**ERP** Établissement recevant du public
 
 **GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
 
@@ -258,10 +258,10 @@ Le périmètre d'application des plans de prévention des risques couvert par ce
 - La mise à disposition de ces jeux de données sur internet de façon à permettre la connaissance du risque par le grand public et leur exploitation aval pour :
   - la mise en place des politiques d'urbanisation par les collectivités territoriales en conformité avec la loi ;
   - l'anticipation de la gestion de crise, notamment pour l'élaboration des Plans Particuliers d'Intervention (PPI) par les services de l'Etat ;
-  - la mise en oeuvre de l'information des acquéreurs ou des locataires (IAL) ;
+  - la mise en œuvre de l'information des acquéreurs ou des locataires (IAL) ;
   - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
 
-Les données décrites et couvertes par ce standard ne couvent pas l'intégralité des informations d'un dossier de plan de prévention des risques. Il s'agit des données géographiques et sémantiques du PPR permettant d'en établir la partie cartographique et de faire le lien avec les autres éléments du dossier pouvant être mis en oeuvre dans d'autres systèmes tels que GASPAR ou les sites des préfectures qui hébergent le dossier.
+Les données décrites et couvertes par ce standard ne couvent pas l'intégralité des informations d'un dossier de plan de prévention des risques. Il s'agit des données géographiques et sémantiques du PPR permettant d'en établir la partie cartographique et de faire le lien avec les autres éléments du dossier pouvant être mis en œuvre dans d'autres systèmes tels que GASPAR ou les sites des préfectures qui hébergent le dossier.
 
 
 Les plans de prévention des risques peuvent être définis sur le territoire national français, à savoir : 
@@ -293,8 +293,8 @@ Les acteurs concernés par les plans de prévention des risques sont :
 
 ##  Cas d'utilisation
 
-Les cas d'utilisation illustrés ci-après mettent en oeuvre la production, la publication et l'exploitation des PPR. Les acteurs qui y figurent peuvent être :
-- des personnes ou entités effectivement à la manoeuvre dans les actions
+Les cas d'utilisation illustrés ci-après mettent en œuvre la production, la publication et l'exploitation des PPR. Les acteurs qui y figurent peuvent être :
+- des personnes ou entités effectivement à la manœuvre dans les actions
 - des systèmes en place permettant la réalisation de ces actions
 
 
@@ -307,7 +307,7 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 |Prescrire, approuver, le PPR | Cette action, de la responsabilité du Préfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
 | Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
 | Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
-| Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le réglement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
+| Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le règlement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
 | Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base.
 
 
@@ -320,14 +320,14 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 
 ### Cas d'utilisation Publier un PPR
 
-Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en ligne des données numériques d'un PPR. Ce cas d'utilisation est au coeur de la cible du Standard, même si ce dernier ne couvre que marginalement la publication des pièces écrite.
+Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en ligne des données numériques d'un PPR. Ce cas d'utilisation est au cœur de la cible du Standard, même si ce dernier ne couvre que marginalement la publication des pièces écrite.
 
 
 |Action du cas d'utilisation| Description|
 |-|-|
 | Mettre en ligne les pièces écrites | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
-| Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en oeuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
-| Mettre en ligne les données SIG | Cette action est aussi au coeur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. |
+| Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en œuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
+| Mettre en ligne les données SIG | Cette action est aussi au cœur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. |
 
 **Figure xx : Cas d'utilisation : Publier un PPR**
 
@@ -336,14 +336,14 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 
 ### Cas d'utilisation Exploiter un PPR
 
-Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Elles n'ont pas voccation à être exhaustive meis elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grace à la connaissance de la structure des données et de sa qualité.
+Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Elles n'ont pas vocation à être exhaustive mais elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grâce à la connaissance de la structure des données et de sa qualité.
 
 
 |Action du cas d'utilisation| Description|
 |-|-|
-| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en oeuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
+| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en œuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
 | Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
-| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en oeuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les plans locaux d'urbanisme par les collectivités territoriales. |
+| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en œuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les plans locaux d'urbanisme par les collectivités territoriales. |
 | Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
 
 
@@ -397,7 +397,7 @@ Dans le cadre de l'élaboration des *plans de prévention des risques*, l'analys
 
 Selon les types de PPR et les guides d'élaboration qui leur sont associés, les nomenclatures de ces enjeux varient autour d'une répartition partagée en trois catégories : enjeux incontournables, enjeux complémentaires et autres éléments de contexte (ou enjeux connexes). Le modèle commun de ce standard permet d'associer à chaque objet de la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) une ou plusieurs typologies issues de nomenclatures différentes à l'aide du champ "typeEnjeu" de type [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu).
 
-Le profil applicatif PPR décline les différentes nomenclatures définies dans les guides d'élaboration en fonction du type de PPR sous forme d'énumérations, qu'il conviendra d'adopter selon le type de PPR qui est mis en oeuvre :
+Le profil applicatif PPR décline les différentes nomenclatures définies dans les guides d'élaboration en fonction du type de PPR sous forme d'énumérations, qu'il conviendra d'adopter selon le type de PPR qui est mis en œuvre :
 
 - Liste de codes [NomenclatureEnjeuPPRN](#liste-de-codes-nomenclatureenjeupprn) issue du [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) ;
 - Liste de codes [NomenclatureEnjeuPPRL](#liste-de-codes-nomenclatureenjeupprl) issue du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) ;
@@ -420,8 +420,8 @@ Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonag
 
 Pour représenter ce zonage, l'interface ZoneReglementaire est implémentée par deux classes qui décrivent deux types de zonages :
 
-* La classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) permet de définir les zones sur lesquelles s'applique un réglement spécifique en matière d'urbanisme.
-* La classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) permet de définir les zones sur lesquelles s'applique un réglement spécifique en terme de mesures foncières.
+* La classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) permet de définir les zones sur lesquelles s'applique un règlement spécifique en matière d'urbanisme.
+* La classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) permet de définir les zones sur lesquelles s'applique un règlement spécifique en terme de mesures foncières.
  
 Pour chacun de ces types de zonages une liste de valeurs possibles est établie pour caractériser la nature de la réglementation qui s'applique. Ces listes sont définies par les énumérations suivantes :
 
@@ -470,7 +470,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 **Titre** : Zone d'aléa de référence
 
-**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
@@ -484,7 +484,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 **Titre** : Zone d'aléa à échéance 100 ans.
 
-**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'**aléa à échéance 100 ans** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa à échéance 100 ans** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
@@ -774,16 +774,16 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 **Titre** : Zones réglementaires en matière d'urbanisme
 
-**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
+**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : Polygone, Ligne, Point.
+**Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives classiques : Polygone, Ligne, Point.
 
 **Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| typeReglement | Nature du réglement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
+| typeReglement | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
 | obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors l'obligation de travaux est inconnue. | 0..1 |
 
 
@@ -793,7 +793,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 **Titre** : Zones réglementaires de type foncier
 
-**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
+**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : polygone, Ligne, Point.
 
@@ -826,7 +826,7 @@ Le tableau suivant liste les différents types de réglementations foncières po
 
 | Libellé | Description |
 |-|-|
-| Délaissement possible | Réglementation autorisant le maire à prendre un arrêté instaurant la possibilité de mettre en oeuvre des mesures de délaissement. |
+| Délaissement possible | Réglementation autorisant le maire à prendre un arrêté instaurant la possibilité de mettre en œuvre des mesures de délaissement. |
 | Expropriation possible | Réglementation autorisant le maire ou le préfet à initier une procédure d'expropriation pour cause d'utilité publique. |
 
 
@@ -871,7 +871,7 @@ L’objectif est que le producteur puisse certifier la précision de la donnée 
 
 La référence internationale est la norme [ISO 19157](https://www.iso.org/fr/standard/78900.html) sur la qualité des données géographiques.
 
-Les éléments relatés ci après s'appuient sur la déclaison de cette norme au niveau national issue des travaux du [groupe de travail CNIG sur la qualité des données géographiques](http://cnig.gouv.fr/ressource-quadogeo-a23521.html), notamment :
+Les éléments relatés ci-après s'appuient sur la déclinaison de cette norme au niveau national issue des travaux du [groupe de travail CNIG sur la qualité des données géographiques](http://cnig.gouv.fr/ressource-quadogeo-a23521.html), notamment :
 - le [registre national des mesures pour la qualification des données géographiques sur le Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) ;
 - la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques).
 
@@ -922,7 +922,7 @@ Afin de pouvoir être exploitées correctement par les systèmes informatiques a
 Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient pas conformes avec la façon dont elles sont définies. Les sources d’invalidité concernent principalement les polygones, géométries complexes qui définissent des aires et requièrent une bonne structuration. Il s'agit de : 
 - Polygones non fermés ;
 - Des surfaces nulles (polygones plats)
-- Les noeuds trop proches ou dupliquéss
+- Les nœuds trop proches ou dupliqués
 - Les arcs pendants
 - Les contours qui s'intersectent (polygones en papillon)
 - Les contours d’un polygone ne doivent pas toucher les autres contours, sauf en un point unique.
@@ -1027,7 +1027,7 @@ Les données relatives au plans de prévention des risques sont constituées, nu
 
 - un état "Programmation et montage" pendant lequel le PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
-- un état "Prescrit", signé par le prêfet où les zones soumises aux aléas sont connues mais le zonage réglementaire non encore complétement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
+- un état "Prescrit", signé par le préfet où les zones soumises aux aléas sont connues mais le zonage réglementaire non encore complètement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
 - un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le prêfet dans le délai d'instruction prévu ou par anticipation. Les données du PPR décrites par ce standard doivent être publiées. A ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
 
@@ -1043,7 +1043,7 @@ Les données PPR ne font pas l'objet de mise à jour systématique. Les données
 
 Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers, en accord avec les guides d'élaboration qui leur sont dédiés. 
 
-Il s'agit de recommandations à appliquer pour une représentation synthétique et uniforme des PPR à un niveau départemental ou national (échelle <= 1:50000). Pour les représentations à l'échelle d'un PPR particulier (entre 1:5000 et 1:25000), ces recommandations restent pertinentes mais des règles particulières et spécifiques au réglement du PPR peuvent s'ajouter.
+Il s'agit de recommandations à appliquer pour une représentation synthétique et uniforme des PPR à un niveau départemental ou national (échelle <= 1:50000). Pour les représentations à l'échelle d'un PPR particulier (entre 1:5000 et 1:25000), ces recommandations restent pertinentes mais des règles particulières et spécifiques au règlement du PPR peuvent s'ajouter.
 
 
 
@@ -1181,7 +1181,7 @@ Sa structure est définie dans [les spécifications du format GeoPackage](https:
 
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_contents` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
+La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_contents` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard présentes dans la livraison.
 
 
 ##### Table gpkg_geometry_columns
@@ -1199,7 +1199,7 @@ Pour chacune d'elle, elle permet de préciser :
 
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_geometry_columns` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard de type `features` présentes dans la livraison.
+La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_geometry_columns` conforme à la structure du format GeoPackage qui liste l'ensemble des tables du standard de type `features` présentes dans la livraison.
 
 
 **Exigence**
@@ -1223,7 +1223,7 @@ Pour chacun des systèmes de coordonnées déclarés, elle permet de préciser :
 La présence de cette table dans un fichier GeoPackage est obligatoire.
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la structure du format GeoPackage qui contient les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
+La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la structure du format GeoPackage qui contient les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
 
 
 L'instructions SQL suivante permet d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
@@ -1260,7 +1260,7 @@ Pour chaque ensemble d'éléments de métadonnées elle permet de préciser :
 La présence de cette table dans un fichier GeoPackage est facultative. 
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
+La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_metadata` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
 
 
 
@@ -1281,7 +1281,7 @@ Pour chacun de ses élément, elle permet de préciser :
 La présence de cette table dans un fichier GeoPackage est facultative. Elle devient obligatoire si une table `gpkg_metadata` est présente.
 
 **Exigence**
-La livraison en Geopackage d'un Plan de Prevention des Risques doit contenir une table `gpkg_metadata_reference` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
+La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_metadata_reference` conforme à la structure du format GeoPackage et qui contient à minima une ligne correspondant aux éléments de métadonnées du jeu de données constituant la livraison telle que décrite dans la partie [Métadonnées de la livraison](#métadonnées-de-la-livraison).
 
 
 ####  Tables du Standard
@@ -1507,7 +1507,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
-| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
+| `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
@@ -1519,7 +1519,7 @@ CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s (
   codeprocedure TEXT(16) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurence TEXT(15), 
+  occurrence TEXT(15), 
   description TEXT(255), 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -1546,7 +1546,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
-| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
+| `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
@@ -1559,7 +1559,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_codealea_s (
   codeprocedure TEXT(16) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurence TEXT(15), 
+  occurrence TEXT(15), 
   description TEXT(255), 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -1586,7 +1586,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone protégée. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
 | `niveauprotection` | FLOAT | hauteur d'eau en mètres | Hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
-| `occurence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
+| `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone protégée. |
 | `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
 | `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
@@ -1602,7 +1602,7 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   codeprocedure TEXT(16) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveauprotection FLOAT,
-  occurence TEXT(15), 
+  occurrence TEXT(15), 
   description TEXT(255), 
   idouvrageprotection_s TEXT(20),
   idouvrageprotection_l TEXT(20),
@@ -1919,9 +1919,9 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 |-|-|-|-|
 | `idzonereglementaire` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire urba. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du réglement qui s'applique.|
-| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. |
-| `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du réglement en matière d'urbanisme s'appliquant sur la zone. |
+| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
+| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
+| `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
 | `obligationtravaux` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors l'obligation ou non de travaux est inconnue. | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
@@ -1986,8 +1986,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 |-|-|-|-|
 | `idzonereglementaire` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire foncier. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du réglement qui s'applique.|
-| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le réglement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique. |
+| `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
+| `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
 | `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-denumeration-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
@@ -2644,7 +2644,7 @@ Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées 
 | Niveau de granularité | Valeur ou consigne de saisie |
 |-|-|
 | Métadonnées générales | *Indiquer le lien vers la page de téléchargement des PPR ou les consignes d'accès aux PPR sur Géorisques* |
-| Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concernée et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
+| Métadonnées d'un PPR | *Indiquer le lien d'accès au PPR sur le site de la Préfecture concernée et/ou sur Géorisques (visualisation et/ou téléchargement)*. Exemple : "https://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR", "https://carto2.geo-ide.din.developpement-durable.gouv.fr/frontoffice/?map=8c8106b2-3cfa-45c9-aa53-7d2cc45d45c8" |
 | Métadonnées d'une thématique | *Même consigne que le PPR et lien plus précis sis possibilité d'accéder à la donnée de la thématique.* |
 
 
@@ -2829,7 +2829,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnées générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'oeuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'oeuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.  |
+| Métadonnées générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'œuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'œuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques pré-existantes comme un part de numérisation.  |
 | Métadonnées d'un PPR | *Indiquer les étapes de constitution du jeu de données PPR, les traitements effectués, les éventuelles validations reçues, ainsi que les référentiels sources utilisés. Si le PPR a fait l'objet d'une conversion du format COVADIS vers ce nouveau Standard, reprendre les éléments de Généalogie de l'ancien PPR et rajouter la mention de la conversion de format et les éventuels traitements effectués depuis.* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
@@ -3065,7 +3065,7 @@ Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les
 |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPR| idGASPAR (ID_GASPAR)|
-|adresse| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prevention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPR | serviceInternet (SITE_WEB) |
+|adresse| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPR | serviceInternet (SITE_WEB) |
 |nomRessource |Nom de la ressource| - |N/A|N/A|
 |description|Description de la ressource| - |N/A|N/A|
 |typeReference|Indique le type de document auquel on fait référence| - | N/A|N/A|
@@ -3089,32 +3089,32 @@ Les attributs de la classe Perimetre sont renseignés selon les correspondances 
 
 ## Remplissage des objets de la classe ZoneAlea
 
-La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. 
+La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. 
 
 Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard. 
 
 
 ## Remplissage des objets de la classe ZoneAleaReference
 
-La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
+La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés de que la classe ZoneAlea.
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence et un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
 
 Les attributs sont renseignés selon les correspondances suivantes :
 
- |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implementation)|
+ |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation)|
 |-|:-:|:-:|:-:|:-:|
-|idZoneAlea|Identifiant de la zone alea|20120001R000003|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
+|idZoneAlea|Identifiant de la zone aléa|20120001R000003|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
 |codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
 |typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|codeRisque (CODERISQUE)|
 |niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
 |description|Description de l'aléa|Inondation - Par submersion marine|ZoneAleaPPR|descriptionZone (DESCRIPT)|
-|occurence|ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.| - |N/A|N/A|
+|occurrence|ce champ permet d'indiquer l'occurrence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.| - |N/A|N/A|
 |geom|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
 
 ## Remplissage des objets de la classe ZoneAleaEcheance100ans
 
-La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa à échéance 100 ans et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence. Elle a les mêmes propriétés de que la classe ZoneAlea.
+La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa à échéance 100 ans et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés de que la classe ZoneAlea.
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa à échéance 100 ans. Cette table ne sera donc pas générée lors de la transposition d'un ancien PPR vers le nouveau modèle si rien n'indique que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa.
 
@@ -3138,7 +3138,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |-|:-:|:-:|:-:|:-:|
 |idZoneDanger|Identifiant unique d'un objet zone de danger spécifique|20120001R000002|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
 |codeProcedure|Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe Procedure|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
-|typeAlea|Type de l'alea associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération TypeAlea|117 (Inondation par submersion marine) |ZoneAleaPPR|codeRisque (CODERISQUE)|
+|typeAlea|Type de l'aléa associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération TypeAlea|117 (Inondation par submersion marine) |ZoneAleaPPR|codeRisque (CODERISQUE)|
 |description|Secteur soumis aux chocs de vagues et de projection|N/A|ZoneAleaPPR|descriptionZone (DESCRIPT)|
 |niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
 |typeSuralea|Ce champ permet d'indiquer le type de zone de danger spécifique.| bande particulière (02) |N/A|N/A|
@@ -3147,11 +3147,11 @@ Les attributs sont renseignés selon les correspondances suivantes :
 ## Remplissage des objets de la classe ZoneReglementaire
 
 L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'appliquent des réglements dufait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
-Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type du réglement que l'on veut renseigner : ZoneReglementaireUrba ou ZoneRegelementaireFoncier. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type du règlement que l'on veut renseigner : ZoneReglementaireUrba ou ZoneRegelementaireFoncier. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
 
 ## Remplissage des objets de la classe ZoneReglementaireUrba
 
-La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement. Elle a les mêmes propriétés de que la classe ZoneReglementaire avec une propriété booléeenne supplémentaire optionnelle permettant d'indiquer s'il existe des obligations de travaux sur le batit existant de la zone.
+La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement. Elle a les mêmes propriétés de que la classe ZoneReglementaire avec une propriété booléeenne supplémentaire optionnelle permettant d'indiquer s'il existe des obligations de travaux sur le batit existant de la zone.
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : 'Interdiction stricte", "Interdiction", "Prescriptions" ou "Prescriptions hors zone d'aléa".
 
@@ -3164,8 +3164,8 @@ Les attributs sont renseignés selon les correspondances suivantes :
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
 |idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
-|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
-|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
+|codeZoneReglement|Code attribué à la zone dans le cadre du règlement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
+|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Interdiction stricte, Interdiction, Prescriptions ou Prescriptions hors zone d'aléa.|ZonePPR|typeReglementStandardise ("typereg")|
 | obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | - | N.A. | N.A. |  
 |geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
@@ -3173,7 +3173,7 @@ Les attributs sont renseignés selon les correspondances suivantes :
 
 ## Remplissage des objets de la classe ZoneReglementaireFoncier
 
-La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un réglement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement.Elle a les mêmes propriétés de que la classe ZoneReglementaire.
+La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement.Elle a les mêmes propriétés de que la classe ZoneReglementaire.
 
 Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
@@ -3181,8 +3181,8 @@ Les objets de la classe ZoneReglementaireUrba seront créés à partir des objet
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
 |idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
-|codeZoneReglement|Code attribué à la zone dans le cadre du réglement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
-|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du réglement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
+|codeZoneReglement|Code attribué à la zone dans le cadre du règlement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
+|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
 |typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Délaissement possible ou Expropriation possible.|ZonePPR|typeReglementStandardise ("typereg")|
 |geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
 
@@ -3269,7 +3269,7 @@ Dans le cas d'une SUP issue d'un PPR, le principe de création des objets du mod
 - un objet Servitude correspondant à la servitude
 - un objet GenerateurServitude correspondant au périmètre du PPR
 - un objet AssietteServitude correspondant à l'enveloppe agrégée du zonage réglementaire.
-- un objet Gestionnaire correspondant à la DDTM responsable de la mise en oeuvre du PPR
+- un objet Gestionnaire correspondant à la DDTM responsable de la mise en œuvre du PPR
 
 
 ### Nommage des objets
@@ -3366,7 +3366,7 @@ dateSrcGen|Date d’actualité du référentiel utilisé|Valeur vide interdite s
 refBDExt|Nom du référentiel ou de la source de données externes d’où provient la géométrie|Valeur vide interdite si modeGenere vaut "Duplication"|Utiliser l'élément de métadonnées générales "[Intitulé de la ressource](##intitulé-de-la-ressource)" pour faire référence à l'ensemble des PPR| "Ensemble des Plans de Préventions des Risques sur le territoire français"
 idBDExt|Identifiant référençant l’objet correspondant dans le référentiel externe|Valeur vide interdite si refBDExt renseigné|Valeur de l'identifiant `idperimetre` de la table "[Perimetre](#table-typeppr_codegasparcomplet_perimetre_s)"| 12345678
 **ID_GASPAR**|Identifiant GASPAR du PPR|Cf. [Nomenclature des identifiants dans GASPAR](../Geostandards-risques-commun/Document.md#nomenclature-des-identifiants-dans-gaspar)|Propriété `codeProcedure` de la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre)|34DDTM20120133
-**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères de la propriété `typeAlea` des classes décrivant les zones d'aléa du PPR. Par exmple : [ZoneAleaReference](#classe-dobjets-zonealeaireference)|11
+**CODE_ALEA**|Identifiant GASPAR de l’aléa|Voir liste de codes de valeurs possibles §5.5.1, en cas de PPR multirisques, utiliser la valeur 99|2 premiers caractères de la propriété `typeAlea` des classes décrivant les zones d'aléa du PPR. Par exmple : [ZoneAleaReference](#classe-dobjets-zonealeareference)|11
 
 
 #### Correspondances pour la table Assiette

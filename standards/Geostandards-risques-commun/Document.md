@@ -69,7 +69,7 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
 | Coignon Bastien | MTE / DGPR / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
-| Evain Yohan | Cerema |
+| Evain Yohann | Cerema |
 
 > *liste à compléter et actualiser*
 
@@ -96,7 +96,7 @@ Ce document s'adresse :
 
 Les parties [Préface](#préface) et [Présentation du document](#présentation-du-document) donnent les éléments nécessaires à la compréhension du document. 
 
-Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) et [Systèmes de référence](#syst%C3%A8mes-de-r%C3%A9f%C3%A9rence) sont le coeur du document. Elles définissent le modèle conceptuel commun, le catalogue de données associé et les systèmes de référence de coordonnées applicables aux Géostandards risques.
+Les parties [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) et [Systèmes de référence](#syst%C3%A8mes-de-r%C3%A9f%C3%A9rence) sont le cœur du document. Elles définissent le modèle conceptuel commun, le catalogue de données associé et les systèmes de référence de coordonnées applicables aux Géostandards risques.
 
 L'[annexe A](#annexe-a---correspondances-inspire), informative, établit les correspondances du modèle de données des Géostandards avec ceux des thématiques INSPIRE qui les concernent.
 
@@ -133,12 +133,12 @@ Le cadre réglementaire pour les systèmes de référence de coordonnées est é
 
 ####  Cadre réglementaire des Plans de Prévention des Risques
 
-Le cadre réglementaire de la mise en oeuvre des Plans de Prévention des Risques (PPR) est décrit dans le profil applicatif Plan de Prévention des Risques (PPR) des Géostandards [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md).
+Le cadre réglementaire de la mise en œuvre des Plans de Prévention des Risques (PPR) est décrit dans le profil applicatif Plan de Prévention des Risques (PPR) des Géostandards [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md).
 
 
 ####  Cadre réglementaire des Territoires à Risque Important d'Inondation
 
-La mise en oeuvre des Territoires à Risque Important d'Inondation est définie dans le code de l'environnement par :
+La mise en œuvre des Territoires à Risque Important d'Inondation est définie dans le code de l'environnement par :
 
 * Les [articles L566-1 à L566-13](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) pour la partie législative ;
 * Les [articles R566-5 à R566-9](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) pour la partie réglementaire ;
@@ -150,7 +150,7 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 | Terme | Définition|
 |-|-|
-| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurence.  |
+| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurrence.  |
 | Aléa | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
 | Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
@@ -206,7 +206,7 @@ La mise en oeuvre des Territoires à Risque Important d'Inondation est définie 
 
 Le périmètre d'application couvert par les Géostandards risques peut varier selon les différentes procédures de préventions des risques référencées dans la [partie introductive du document](#objectif-et-raison-dêtre-du-standard) et sera détaillé dans les profils applicatifs attachés à chacune d'elles.
 
-Au niveau du modèle commun décrit par ce document, le périmètre d'application est assez générique et concerne la production des jeux de données numériques correspondant à la mise en oeuvre de ces procédures pour la diffusion aux utilisateurs (notamment collectivités, bureaux d'études, grand public, ...).
+Au niveau du modèle commun décrit par ce document, le périmètre d'application est assez générique et concerne la production des jeux de données numériques correspondant à la mise en œuvre de ces procédures pour la diffusion aux utilisateurs (notamment collectivités, bureaux d'études, grand public, ...).
 
 Les données représentées couvrent le territoire national français susceptible de faire l'objet de telles procédures : 
 
@@ -299,7 +299,7 @@ Dans cette thématique sont définies :
 * une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) ;
 * Trois énumérations permettant de classifier les Types d'aléas ([TypeAlea](#enumeration-typealea)), les niveaux d'aléas ([TypeNiveauAlea](#enumeration-typeniveaualea)) et les types de sur-aléas ([TypeSurAlea](#enumeration-typesuralea)) ;
 
-La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau (classifié selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité d'occurence. Les zones d'aléas sont définies par rapport à une procédure donnée.
+La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau (classifié selon l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea)) et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
 
 La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Decret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) et le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf). Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il sagit d'une bande de protection. 
 
@@ -496,7 +496,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Zone d'aléa
 
-**Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurence.
+**Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence.
 
 **Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
 
@@ -509,7 +509,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | codeProcedure | Identifiant de la procédure pour laquelle la zone d'aléas a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | typeAlea | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
 | niveauAlea | Caractérisation du niveau de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Enumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
-| occurence | Ce champ permet d'indiquer l'occurence de survenue de l'aléa. Selon le type d'aléa, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
+| occurrence | Ce champ permet d'indiquer l'occurrence de survenue de l'aléa. Selon le type d'aléa, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
 | description | Description textuelle de la zone d'aléa | CharacterString | Saisie libre | 0..1 |
 
 
@@ -540,7 +540,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | codeProcedure | Identifiant de la procédure pour laquelle la zone protégée a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | typeAlea | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Enumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
 | niveauProtection | (Article R214-119-1 code de l'environnement) Pour un système d'endiguement au sens de l'article R. 562-13, le niveau de protection d'une zone exposée au risque d'inondation ou de submersion marine est déterminé par la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. | Numérique (hauteur d'eau en mêtre) | valeur positive | 0..1 |
-| occurence | Ce champ permet d'indiquer l'occurence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. | CharacterString | Saisie libre | 0..1 |
+| occurrence | Ce champ permet d'indiquer l'occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. | CharacterString | Saisie libre | 0..1 |
 | description | Description textuelle de la zone protégée | CharacterString | Saisie libre | 0..1 |
 
 
