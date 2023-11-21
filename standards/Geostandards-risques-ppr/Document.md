@@ -492,13 +492,14 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 #### Enumeration *TypeNiveauAlea*
 
-Le tableau suivant précise l'application des valeurs possibles pour caractériser l'intensité de l'aléa en fonction des différents types de PPR. 
+Le tableau suivant liste les valeurs possibles et communes pour caractériser l'intensité des aléas dans le cadre des PPR. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau ainsi que leur appellation varient en fonction de la zone et du type d'aléa et sont précisées dans des guides dédiés qui sont référencés dans les métadonnées associées au jeu de données.
+
 
 
 | Code | Libellé Etat | Type PPR applicable |
 |-|-|-|
 | 01 | Faible | Tous PPR |
-| 02 | Moyen | Tous PPR|
+| 02 | Moyen | Tous PPR. Correspond au niveau "Modéré" pour les PPR Inondation |
 | 03 | Moyen plus | PPRT |
 | 04 | Fort | Tous PPR |
 | 05 | Fort plus | PPRT |
