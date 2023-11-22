@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.1 - Date*
+*Version 0.2 - Date*
 
 
 #  Fiche analytique
@@ -51,6 +51,7 @@ Groupe de travail refonte des Géostandards Risques
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
+| 0.2 | xx/11/2023 | Prise en compte de la relecture du Groupe de Travail. Application des définitions DGPR pour les risques, aléas et enjeux.  |
 
 
 ##  Participation à l'écriture
@@ -158,7 +159,7 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 | Aléa de référence | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) Phénomène naturel d'occurrence et d'intensité données servant de référence pour définir la réglementation du PPRN. |
 | Aléa technologique | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) L’aléa technologique est une composante du risque industriel. Il désigne la probabilité qu’un phénomène dangereux produise, en un point donné du territoire, des effets d’une intensité physique définie. | 
 | Enjeux | Les différents Guides PPR ([Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf)], [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) et [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)) définissent les enjeux comme étant les personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. |
-| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
+| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique aux documents d'une procédure qui définissent des contraintes réglementaires, notamment en terme d'urbanisme, lorsqu'ils sont validés par une autorité publique. |
 | Risque | La définition générale du risque appliquée par la DGPR dans le cadre de la prévention des risques et qui s'applique pour ce standard est reprise du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) : Le risque résulte du croisement de l’**aléa** et d’un **enjeu** **vulnérable**. Les défintions qui suivent précisent cette définition dans le cadre des risques naturels et industriels. *Il est important de noter que cette définition diffère de celle utilisée dans ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un **risque** est la combinaison d'un événement (**Aléa**) et la probabilité de son occurrence.* |
 | Risque industriel | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) Le risque industriel est un concept intégrant des composantes techniques, économiques et sociales. Il résulte de la présence, sur un territoire, d’une installation manipulant des substances ou procédés susceptibles d’être à l’origine de phénomènes dangereux, face à des enjeux socio-économiques et environnementaux. |
 | Risque naturel | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) Pertes probables en vies humaines, en biens et en activités consécutives à la survenance d'un aléa naturel. |
@@ -170,7 +171,7 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 ###  Abréviations
 
 
-**BRGM** Bureau de Recherches Géologiques et Minières
+**BRGM** Bureau de recherches géologiques et minières
 
 **BRIL** Bureau des risques d'inondation et littoraux
 
@@ -186,26 +187,29 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 
 **DGPR** Direction générale de la prévention des risques
 
-**DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
+**D(R)EAL** Direction (régionale) de l'environnement, de l'aménagement et du logement
+
+**DRIEAT** Direction régionale et interdépartementale de l’environnement, de l’aménagement et des transports (d'Île de France)
 
 **GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
 
-**GEMET** General Multilingual Environmental Thesaurus
+**GEMET** General multilingual environmental thesaurus
 
 **IGN** Institut national de l'information géographique et forestière
 
 **MTECT** Ministère de la transition écologique et de la cohésion des territoires 
 
-**PPRM** Plan de Prévention des Risques Miniers
+**PPRM** Plan de prévention des risques miniers
 
-**PPRN** Plan de Prévention des Risques Naturels
+**PPRN** Plan de prévention des risques naturels
 
-**PPRT** Plan de Prévention des Risques Technologiques
+**PPRT** Plan de prévention des risques technologiques
 
-**SIOuH** Système d'Information sur les Ouvrages Hydrauliques
+**SIOUH** Système d'information sur les ouvrages hydrauliques
 
 **TRI** Territoire à risque important d'inondation
 
+**UML** Unified modeling language 
 
 
 #  Concepts généraux
@@ -219,7 +223,7 @@ Au niveau du modèle commun décrit par ce document, le périmètre d'applicatio
 Les données représentées couvrent le territoire national français susceptible de faire l'objet de telles procédures : 
 
 - Territoire européen de la France
-- France d'outre mer, plus précisément :
+- France d'outre-mer, plus précisément :
   - Guadeloupe
   - Saint-Martin
   - Saint-Barthélemy
@@ -246,7 +250,7 @@ Les acteurs concernés peuvent varier selon les différentes procédures de pré
 
 #  Contenu et structure de la donnée
 
-Cette section définit le [modèle conceptuel de données](#modèle-conceptuel-de-données) commun aux données relatives aux procédures réglementaires de prévention des risques couvertes par la famille des Géostandards risques (Plans de prévention des risques, Directive Inondation, Porter à Connaissance) à l'aide du langage UML. Le [catalogue d'objets](#catalogue-dobjets) fournit la sémantique des entités décrites dans le modèle.
+Cette section définit, à l'aide du langage UML, le [modèle conceptuel de données](#modèle-conceptuel-de-données) commun aux données relatives aux procédures réglementaires de prévention des risques couvertes par la famille des Géostandards risques (Plans de prévention des risques, Directive Inondation, Porter à Connaissance). Le [catalogue d'objets](#catalogue-dobjets) fournit la sémantique des entités décrites dans le modèle.
 
 
 ##  Modèle conceptuel de données
@@ -277,9 +281,9 @@ Le schéma suivant représente les liens entre chacune de ces thématiques. Les 
 
 La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'État dans l'application GASPAR du MTE.
 
-Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#correspondances-avec-le-mod%C3%A8le-de-donn%C3%A9es-gaspar).
+Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#annexe-b---correspondances-avec-le-modèle-de-données-gaspar).
 
-La liste des types de procédures prises en charge par ce standard est établie par le type énuméré [TypeProcedure](#enumeration-typeprocedure) et correspond à des types de procédures gérés dans GASPAR. 
+La liste des types de procédures prises en charge par ce standard correspond à des types de procédures gérés dans GASPAR. Elle est reprise par le type énuméré [TypeProcedure](#enumeration-typeprocedure).
 
 Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champ "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
 
@@ -287,7 +291,7 @@ Une procédure peut être la révision d'une ou de plusieurs anciennes procédur
 
 A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](#classe-dobjets-perimetre) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeÉtatProcedure](#enumeration-etats-dune-procédure) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
 
-Les ressources internets liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfectue concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet le nom et la description de la ressource.  
+Les ressources internet liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfecture concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet, le nom et la description de la ressource.  
 
 
 **Fig. *xx* Modèle UML des classes relatives aux procédures et périmètres.**
@@ -395,7 +399,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
 | **revise** | Association | Relation sémantique permettant d'indiquer qu'une procédure est la révision de zéro ou plusieurs procédures existantes et inversement qu'une procédure peut être révisée par zéro ou plusieurs procédures GASPAR. | [Procedure](#classe-dobjets-procedure) (0..\*) | [Procedure](#classe-dobjets-procedure) (0..\*) |
-| **est decrit par** | Association | Relation sémantique permettant d'indiquer qu'une procédure est documentée par une ou plusieurs référennces sur internet. | [Procedure](#classe-dobjets-procedure) (1..1) | [ReferenceInternet](#classe-dobjets-referenceinternet) (1..\*) |
+| **est decrit par** | Association | Relation sémantique permettant d'indiquer qu'une procédure est documentée par une ou plusieurs références sur internet. | [Procedure](#classe-dobjets-procedure) (1..1) | [ReferenceInternet](#classe-dobjets-referenceinternet) (1..\*) |
 
 
 
@@ -448,8 +452,8 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
+| Plan de Prévention des Risques Naturels Inondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de côte et la submersion marine |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
 | Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
 | Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
@@ -457,9 +461,9 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
 | Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
 | Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
-| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques naturels liés aux formations géologique, failles, ouvrages miniers, et aux sources hydrothermales |
+| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques liés aux émanations du gaz radon en fonction du contexte naturel (formations géologiques, failles, sources hydrothermales) ou minier | 
 | Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
-| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
+| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation en lien avec les anciennes exploitations minières |
 | Territoires à Risque Important d’Inondations |Ce type de procédure couvre le risque inondation. Il est lié à la mise en œuvre de la Directive Inondation |
 | Porter à Connaissance | Ce type de procédure concerne le "Porter à Connaissance" (PAC) auprès des collectivités locales hors procédures TRI et PPR (couvertes par les précédentes) |
 
@@ -600,7 +604,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Ouvrage de protection
 
-**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOuH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
+**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La modélisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOUH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
 **Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
@@ -684,16 +688,17 @@ Le tableau suivant liste les différents types d'aléas applicables les zones d'
 
 #### Enumeration *TypeNiveauAlea*
 
+Le tableau suivant liste les valeurs possibles et communes pour caractériser l'intensité des aléas. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau ainsi que leur appellation varient en fonction de la zone et du type d'aléa et sont précisées dans des guides dédiés qui sont référencés dans les métadonnées associées au jeu de données.
 
-| Code | Libellé État |
+| Code | Libellé État | 
 |-|-|
 | 01 | Faible |  |
-| 02 | Moyen ou Modéré | 
+| 02 | Moyen | 
 | 03 | Moyen plus | 
 | 04 | Fort |
 | 05 | Fort plus |
 | 06 | Très fort |
-| 07 | Très fort plus |
+| 07 | Très fort plus | 
 
 
 #### Enumeration *TypeSurAlea*
@@ -712,8 +717,8 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un type d
 
 | Libellé référentiel | Description |
 |-|-|
-| Barrage | Ouvrage, composé éventuellement de plusieurs tronçons, construit en élévation du terrain naturel, afin de retenir de l'eau de manière permanente ou temporaire (SIOuH) |
-| Digue | Ouvrage, composé éventuellement de plusieurs tronçons, dont au moins une partie est construite en élévation du terrain naturel afin de protéger des zones naturellement inondables (SIOuH) |
+| Barrage | Ouvrage, composé éventuellement de plusieurs tronçons, construit en élévation du terrain naturel, afin de retenir de l'eau de manière permanente ou temporaire (SIOUH) |
+| Digue | Ouvrage, composé éventuellement de plusieurs tronçons, dont au moins une partie est construite en élévation du terrain naturel afin de protéger des zones naturellement inondables (SIOUH) |
 | Autre | Autre type d'ouvrage ne figurant pas dans la liste ci-dessus |
 
 
