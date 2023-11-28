@@ -475,15 +475,15 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 
 | Libellé État | Description |
 |-|-|
-| Début programmation | Début de la programmation de la procédure |
-| Début montage | Début du montage de la procédure |
-| Prescrit | La procédure a fait l'objet d'un arrêté de prescription |
+| Programmation | Période prévisionnelle de l'élaboration de la procédure |
+| Montage | Période de réflexion du service instructeur sur la mise en place de la procédure |
+| Prescrit | La procédure a fait l'objet d'un arrêté préfectoral de prescription |
 | Porté à connaissance | La procédure a été portée à connaissance des collectivités |
 | Prorogé | La durée de validité de la procédure est prolongée au delà de la date initialement fixée |
-| Anticipé | La procédure est approuvée par anticipation |
-| Approuvé | La procédure est approuvée par l'autorité compétente et elle est opposable |
-| Annulé | La procédure est annulée |
-| Abrogé | La procédure est abrogée |
+| Anticipé | La procédure a fait l'objet d'un arrêté préfectoral portant mise en application anticipée |
+| Approuvé | La procédure fait l'objet d'un arrêté préfectoral portant approbation |
+| Annulé | La procédure a fait l'objet d'une décision d'une juridiction portant annulation |
+| Abrogé | La procédure a fait l'objet d'un arrêté préfectoral portant abrogation |
 
 
 #### Enumeration *TypeReference*
@@ -1092,7 +1092,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 
 ### États d'une procédure GASPAR
 
-Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR.  Les codes et libellés des sous-états sont réutilisés comme base pour l'énumération [TypeÉtatProcedure](#enumeration-typeetatprocedure) qui restreint les valeurs de la propriété `etatProcedure` de la classe d'objets [Perimetre](#classe-dobjets-perimetre).
+Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR. Les codes et libellés des sous-états sont réutilisés comme base pour l'énumération [TypeÉtatProcedure](#enumeration-typeetatprocedure) qui restreint les valeurs de la propriété `etatProcedure` de la classe d'objets [Perimetre](#classe-dobjets-perimetre).
 
 
 | Code état | Libellé état | Code sous-état | Libellé sous-état |
