@@ -2103,8 +2103,8 @@ Elle a la structure et le contenu suivants :
 
 | `code` TEXT(10) | `libelle` TEXT(25) |
 |-|-|
-| DEB_PRG | Début programmation |
-| DEB_MTG | Début montage |
+| DEB_PRG | Programmation |
+| DEB_MTG | Montage |
 | PRECRIT | Prescrit |
 | PAC | Porté à connaissance |
 | PROROGE | Prorogé |
@@ -2123,8 +2123,8 @@ CREATE TABLE etatsprocedure (
   libelle TEXT(25) NOT NULL
 );
 INSERT INTO etatsprocedure VALUES 
-  ('DEB_PRG','Début programmation'),
-  ('DEB_MTG','Début montage'),
+  ('DEB_PRG','Programmation'),
+  ('DEB_MTG','Montage'),
   ('PRECRIT','Prescrit'),
   ('PAC','Porté à connaissance'),
   ('PROROGE','Prorogé'),

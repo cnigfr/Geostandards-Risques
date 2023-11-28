@@ -289,7 +289,7 @@ Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une p
 
 Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](#associations-de-la-classe-procedure).
 
-A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](#classe-dobjets-perimetre) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeÉtatProcedure](#enumeration-etats-dune-procédure) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
+A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](#classe-dobjets-perimetre) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](#enumeration-typeetatprocedure) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
 
 Les ressources internet liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfecture concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet, le nom et la description de la ressource.  
 
@@ -420,7 +420,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
-| etatProcedure | État d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeÉtatProcedure](#enumeration-etats-dune-procédure) | Celles de l'énumération | 1..1 |
+| etatProcedure | État d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeÉtatProcedure](#enumeration-typeetatprocedure) | Celles de l'énumération | 1..1 |
 | dateÉtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
 
@@ -468,7 +468,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Porter à Connaissance | Ce type de procédure concerne le "Porter à Connaissance" (PAC) auprès des collectivités locales hors procédures TRI et PPR (couvertes par les précédentes) |
 
 
-#### Enumeration *États d'une procédure*
+#### Enumeration *TypeEtatProcedure*
 
 Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
 
