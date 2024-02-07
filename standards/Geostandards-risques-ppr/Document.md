@@ -15,7 +15,7 @@ Plans de prévention des risques (PPR)
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.1 - Date*
+*Version 0.2 - Date*
 
 
 
@@ -26,7 +26,7 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
-| **Version du document** | *0.1 - jj mois aaaa (date de publication)*  |
+| **Version du document** | *0.2 - jj mois aaaa (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR). |
 | **Etendue d'application** | Territoire national français |
 | **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
@@ -51,6 +51,7 @@ Groupe de travail refonte des Géostandards Risques
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
+| 0.2 | xx/xx/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : xxx  |
 
 ##  Participation à l'écriture
 
@@ -61,11 +62,11 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Nom |Affiliation 
 | - | - |
 | Besson Stanislas | DDT de l'Isère (38) |
-| Bonnin Nicolas | MTE / DGPR / DAGSI |
-| Bouffier Jacques | MTE / DGPR / BRIL |
+| Bonnin Nicolas | MTECT / DGPR / DAGSI |
+| Bouffier Jacques | MTECT / DGPR /SRNH / SdCAP / BRIL |
 | Boudesseul Nicolas | DREAL Pays de la Loire |
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
-| Coignon Bastien | MTE / DGPR / BRIL |
+| Coignon Bastien | MTECT / DGPR / SRNH / SdCAP / BRIL |
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohann | Cerema |
 
@@ -90,11 +91,11 @@ Il a vocation à se substituer et rendre obsolètes les dernières versions des 
 
 
 
-##  A qui s'adresse ce document ?
+## À qui s'adresse ce document ?
 
 Ce document s'adresse :
 
-- aux services de l'Etat ou assimilés, chargés de produire les PPR, les entretenir les diffuser.
+- aux services de l'Etat ou assimilés, chargés de produire les PPR, les maintenir et les diffuser.
 - aux utilisateurs des PPR, amenés à en prendre connaissance ou les exploiter : services de l'Etat, collectivités locales, professionnels, bureaux d'études, ou grand public.
 
 
@@ -182,12 +183,12 @@ La mise en œuvre des Plans de prévention des risques miniers est définie par 
 
 | Terme | Définition|
 |-|-|
-| Risque | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un risque est la combinaison d'un événement (Aléa) et la probabilité de son occurrence.  |
-| Aléa | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf)) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.  |
-| Aléa de référence | ([Article R562-11-3 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733751)) Dans le cas des aléas de débordement de cours d'eau et submersion marine, l'aléa de référence est l'aléa déterminé à partir de l'évènement le plus important connu et documenté ou d'un évènement théorique de fréquence centennale, si ce dernier est plus important.   |
-| Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique a des périmètres géographiques associés à une procédure lorsqu'elle est validée par une autorité publique et sur lesquels s'appliquent des contraintes réglementaires notamment en terme d'urbanisme. |
-| Enjeux | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf)) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) : Personnes, biens, systèmes, ou autres éléments présents dans les zones de risque et qui sont ainsi soumis à des pertes potentielles. *Commentaire : L’exposition peut inclure le nombre de personnes ou les types de bien dans une région. Elle peut être combinée avec la vulnérabilité spécifique des éléments exposés pour un risque particulier, afin d’estimer le risque associé en cette zone.* |
-| Vulnérabilité | ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf)) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) : Les caractéristiques et les circonstances d’une communauté ou d’un système qui le rendent susceptible de subir les effets d’un danger. *Commentaire: Il existe de nombreux aspects de la vulnérabilité, découlant de divers facteurs physiques, sociaux, économiques et environnementaux. Par exemple, il peut s’agir de la mauvaise conception et construction de bâtiments, de l’insuffisance de la protection de l’actif, du manque d’information du public et de sa sensibilisation, de la reconnaissance officielle de limiter les risques et des mesures de préparation, ou du mépris de sage gestion de l’environnement. La vulnérabilité varie sensiblement au sein d’une communauté et dans le temps. Cette définition identifie la vulnérabilité comme une caractéristique de l’élément d’intérêt (de la communauté ou du système) qui est indépendante de son exposition. Toutefois, dans l’usage commun, le mot est souvent utilisé plus largement pour inclure l’élément de l’exposition.* |
+| Risque | La définition de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions) s'applique.  |
+| Aléa | La définition de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions) s'applique. |
+| Aléa de référence | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) Phénomène naturel d'occurrence et d'intensité données servant de référence pour définir la réglementation du PPRN. |
+| Opposable | La définition de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions) s'applique. |
+| Enjeux | La définition de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions) s'applique. |
+| Vulnérabilité | La définition de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions) s'applique. |
 | Délaissement | Dans le contexte du "Droit de délaissement" : Le droit de délaissement est une procédure administrative. Elle permet au propriétaire d’un bien immobilier soumis à des prescriptions d’urbanisme l’empêchant d’en jouir, d’inciter le bénéficiaire de la servitude à acquérir le bien. |
 | Expropriation | ([Service-Public.fr](https://www.service-public.fr/particuliers/vosdroits/N326)) L'expropriation est une procédure qui permet à une personne publique (État, collectivités territoriales...) de contraindre un particulier ou une personne morale (entreprise) à céder la propriété de son bien, moyennant le paiement d'une indemnité. |
 
@@ -195,11 +196,11 @@ La mise en œuvre des Plans de prévention des risques miniers est définie par 
 ###  Abréviations
 
 
-**BRGM** Bureau de Recherches Géologiques et Minières
+**BRGM** Bureau de recherches géologiques et minières
 
-**BRIL** Bureau des risques d'inondation et littoraux
+**BRIL** Bureau des risques d'inondation et littoraux (DGPR)
 
-**BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
+**BRIEC** Bureau des risques des industries de l’énergie et de la chimie (DGPR)
 
 **Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
 
@@ -207,7 +208,7 @@ La mise en œuvre des Plans de prévention des risques miniers est définie par 
 
 **CNIG** Comité national de l'information géolocalisée
 
-**DAGSI** Département des affaires générales et des systèmes d’information
+**DAGSI** Département des affaires générales et des systèmes d’information (DGPR)
 
 **DDT** Direction départementale des territoires 
 
@@ -223,7 +224,7 @@ La mise en œuvre des Plans de prévention des risques miniers est définie par 
 
 **IGN** Institut national de l'information géographique et forestière
 
-**MTE** Ministère de la transition écologique et de la cohésion des territoires 
+**MTECT** Ministère de la transition écologique et de la cohésion des territoires 
 
 **OGC** Open Geospatial Consortium
 
@@ -255,7 +256,7 @@ Le périmètre d'application des plans de prévention des risques couvert par ce
 - la production par les services de l'Etat des jeux de données numériques relatives aux plans de prévention des risques conformément aux exigences réglementaires définies dans la partie [Cadre réglementaire des Plans de Prévention des Risques](#cadre-réglementaire-des-plans-de-prévention-des-risques) 
 
 - La mise à disposition de ces jeux de données sur internet de façon à permettre la connaissance du risque par le grand public et leur exploitation aval pour :
-  - la mise en place des politiques d'urbanisation par les collectivités territoriales en conformité avec la loi ;
+  - la mise en place des politiques d'urbanisme et l'aménagement des territoires par les collectivités territoriales en conformité avec la loi ;
   - l'anticipation de la gestion de crise, notamment pour l'élaboration des Plans Particuliers d'Intervention (PPI) par les services de l'Etat ;
   - la mise en œuvre de l'information des acquéreurs ou des locataires (IAL) ;
   - de manière générale, toute exploitation aval de ces données par des organismes privés ou publics pour des actions visant à développer la culture du risque.
@@ -286,8 +287,8 @@ Les acteurs concernés par les plans de prévention des risques sont :
 | Nom du rôle | Caractéristiques |
 |-|-|
 | Producteur | La production des PPR est réalisée au niveau départemental par les Direction Départementales des Territoires et de la Mer (DDTM) |
-| Diffuseur | La diffusion des PPR est assurée par les DDTM sur le site internet de leur préfectures de rattachement et aussi au niveau national sur la plateforme [Géorisques](https://www.georisques.gouv.fr/) opérée par le BRGM. |
-| Utilisateur | Les utilisateurs des PPR sont multiples en fonction des utilisations évoquées dans la partie précédente : grand public, services de l'état, collectivités territoriales, organismes publics ou privés (notamment bureaux d'études ou agences d'urbanismes) amenés à exploiter, dériver ou enrichir ces données. |  
+| Diffuseur | La diffusion des PPR est assurée par les DDTM sur le site internet de leur préfecture de rattachement et aussi au niveau national sur la plateforme [Géorisques](https://www.georisques.gouv.fr/) opérée par le BRGM. |
+| Utilisateur | Les utilisateurs des PPR sont multiples en fonction des utilisations évoquées dans la partie précédente : collectivités territoriales, grand public, services de l'état, organismes publics ou privés (notamment bureaux d'études, notaires, agences d'urbanismes, ...) amenés à exploiter, dériver ou enrichir ces données. |  
 
 
 ##  Cas d'utilisation
@@ -303,12 +304,14 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 
 |Action du cas d'utilisation| Description|
 |-|-|
-|Prescrire, approuver, le PPR | Cette action, de la responsabilité du Préfet, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
-| Produire les données métier | Cette étape, menée sous la responsabilité des DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
-| Produire les données SIG | Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
-| Produire les pièces écrites |  Cette étape, menée sous la responsabilité des DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le règlement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
-| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité des DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base.
+|Prescrire, approuver, le PPR | Cette action, de la responsabilité du préfet de département, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
+| Produire les données métier | Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
+| Produire les données SIG | Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
+| Produire les pièces écrites |  Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le règlement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
+| Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité du préfet, généralement par ldu préfet, généralement par les DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base. |
 
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes impliqués pour chacune d'elles.
 
 
 **Figure xx : Cas d'utilisation : Elaborer un PPR**
@@ -328,6 +331,10 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 | Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en œuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
 | Mettre en ligne les données SIG | Cette action est aussi au cœur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. |
 
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes impliqués pour chacune d'elles.
+
+
 **Figure xx : Cas d'utilisation : Publier un PPR**
 
 ![Publier un PPR](./ressources/CU-publier-ppr.png)
@@ -335,15 +342,18 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 
 ### Cas d'utilisation Exploiter un PPR
 
-Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Elles n'ont pas vocation à être exhaustive mais elles sont représentatives des exploitations couvertes par ce standard. Elles sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grâce à la connaissance de la structure des données et de sa qualité.
+Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR une fois mis en ligne. Il n'a pas vocation à être exhaustif mais est représentatif des exploitations couvertes par ce standard. Ces utilisations types associées sont facilitées par la production et la diffusion de données PPR en conformité avec le Standard grâce à la connaissance de la structure des données et de sa qualité.
 
 
 |Action du cas d'utilisation| Description|
 |-|-|
-| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques autour d'une position. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en œuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
+| Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques sur un secteur. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en œuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
 | Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
-| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des Servitudes d'Utilité Publiques dérivées des PPR et mises en œuvre par les services de l'Etat ou l'utilisation des PPR pour élaborer les plans locaux d'urbanisme par les collectivités territoriales. |
+| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des données SIG décrivant les Servitudes d'Utilité Publiques dérivées des PPR et mises en œuvre par les services de l'Etat ou l'utilisation des PPR dans le cadre de l'élaboration des plans locaux d'urbanisme par les collectivités territoriales. |
 | Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
+
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes impliqués pour chacune d'elles.
 
 
 **Figure xx : Cas d'utilisation : Exploiter un PPR**
@@ -372,9 +382,14 @@ Dans le cadre de l'élaboration des **plans de prévention des risques**, les en
 
 ### Thématique Aléas
 
-Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). Dans ce cadre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par deux classes [ZoneAleaReference](#classe-dobjets-zonealeareference) et [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant respectivement à l'aléa de référence et à l'aléa  à échéance 100 ans. L'implémentation de la classe ZoneAleaEcheance100ans n'est obligatoire que dans le cadre de l'aléa submersion marine.
+
+Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. A ce titre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par la classe [ZoneAleaReference](#classe-dobjets-zonealeareference) permettant de représenter les zones d'aléas correspondant à cet aléa de référence et à l'aléa.
+
+Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). Dans ce cadre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par la classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant à l'aléa à échéance 100 ans. L'implémentation de cette classe n'est obligatoire que dans le cadre de l'aléa submersion marine.
 
 Par ailleurs, l'application des différents niveaux d'aléas définis par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) dépend du type de PPR concernés.
+
+La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) est aussi spécialisée par la classe [ZoneDangerSpecifiquePPRI](#classe-dobjets-zonedangerspecifiquePPRI) qui permet de caractériser ces zones de danger spécifiques dans le cadre de l'aléa inondation en deux types précisés par l'énumération [TypeSurAlea](#enumeration-typesuralea) : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841).
 
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR.**
@@ -490,10 +505,34 @@ Le tableau suivant liste les différents types de procédures de prévention des
 **Propriétés** : Cf. propriétés de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
 
+
+#### Classe d'objets *ZoneDangerSpecifiquePPRI*
+
+**Nom de la classe** : ZoneDangerSpecifiquePPRI
+
+**Titre** : Zone de danger spécifique PPRI
+
+**Définition** : La classe Zone de danger spécifique PPRI permet de représenter des zones de danger particulières superposables aux zones d'aléas dans le cadre des PPRI, ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841). Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il s'agit d'une bande de protection.
+
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+
+
+**Propriétés** : 
+
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| idZoneDanger | Identifiant unique d'un objet zone de danger spécifique | CharacterString | Deux objets de la classe ZoneDangerSpecifique ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
+| typeAlea | Type de l'aléa associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
+| niveauAlea | Caractérisation du niveau de l'aléa selon la classification définie dans GASPAR et reprise par l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). D'après le [Décret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) : pour les bandes de précautions, le niveau d'aléa est systématiquement "Très fort". Pour les bandes particulières, il est classé en zone d’aléa de référence modéré à très fort, en fonction de l’intensité du phénomène | Énumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
+| typeSuralea | Ce champ permet d'indiquer le type de zone de danger spécifique. | Énumération [TypeSuralea](#enumeration-typesuralea) | Celles de l'énumération | 0..1 |
+| description | Description textuelle de la zone de danger spécifique | CharacterString | Saisie libre | 0..1 |
+
+
 #### Enumeration *TypeNiveauAlea*
 
 Le tableau suivant reprend la liste des valeurs possibles pour caractériser l'intensité des aléas du modèle commun. Il précise leur application selon le type de PPR et les correspondances avec certaines appellations spécifiques à des types de PPR particuliers.
-
 
 
 | Code | Libellé Etat | Type PPR applicable |
@@ -505,6 +544,16 @@ Le tableau suivant reprend la liste des valeurs possibles pour caractériser l'i
 | 05 | Fort plus | PPRT |
 | 06 | Très fort | PPRN et PPRT |
 | 07 | Très fort plus | PPRT ou PPR Inondation Crue Torrentielles (Correspond au niveau "Très fort Aggravé")|
+
+
+#### Enumeration *TypeSurAlea*
+
+Le tableau suivant liste les valeurs possibles permettant de caractériser les zones de danger spécifiques. 
+
+| Libellé zone | Description |
+|-|-|
+| bande de précaution | Bande de précaution située à l'arrière d'un système d'endiguement, telle que définie dans l'[article R562-11-4 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733753) |
+| bande particulière | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans l'[article R562-11-4 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733753) |
 
 
 ### Thématique Origine du Risque
