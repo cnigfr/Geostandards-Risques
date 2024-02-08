@@ -119,7 +119,6 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 | [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) | Géostandards Risques - Profil Applicatif Plan de Prévention des Risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement) | Description des ouvrages faisant obstacle à l’écoulement v1.2 | SANDRE | 2014 |
 | [Guide Ineris:2018](https://www.ineris.fr/sites/ineris.fr/files/contribution/Documents/Ineris-Guide_Aleas_miniers_0.pdf) | Évaluation des aléas miniers | INERIS | 2018 |
-| [Décret PPRI:2019](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038730841) | Décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » | Journal Officiel de la République Française | 2019 | 
 | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
 | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) | Plans de prévention des risques naturels prévisibles (PPRN) - Guide général | Direction Générale de la Prévention des Risques (DGPR) - Cerema | 2016 |
 | [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques miniers | Cerema | 2019 |
@@ -329,7 +328,7 @@ Les zones d'aléas sont déterminées à partir d'éléments techniques, spécif
 
 ### Thématique Origine du Risque
 
-La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de prévention. par exemple, les tronçons d'un cours d'eau à l'origine du risque inondation, l'enceinte d'une installation classée pour la protection de l'environnement (ICPE) pour le risque technologique ou la localisation d'un puits de mine pour le risque minier.
+La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de prévention. par exemple, les tronçons d'un cours d'eau à l'origine du risque inondation, l'enceinte d'une installation classée pour la protection de l'environnement (ICPE) pour le risque technologique ou la localisation d'un puit de mine pour le risque minier.
 
 Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui porte les informations minimales permettant d'intégrer les entités issues de référentiels externes variés dans une cartographie des risques.
 
