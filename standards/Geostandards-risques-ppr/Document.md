@@ -374,8 +374,14 @@ La figure suivante illustre ces actions avec les interventions correspondantes d
 
 Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) dans le cadre des procédures de Plans de Prévention des Risques.
 
-
 ##  Modèle conceptuel de données
+
+La figure suivante représente le modèle de données complet spécialisé dans le cadre des procédures de Plans de Prévention des Risques en faisant ressortir les spécificités par rapport au modèle commun. Pour plus de lisibilité, les énumérations et les types de données ne sont pas représentés sur ce diagramme. Ces éléments seront représentés dans les diagrammes spécifiques par thématique qui suivent.
+
+**Fig. *xx* Diagramme UML complet des différentes thématiques.**
+
+![Modele UML PPR](./ressources/UML-PPR.png)
+
 
 
 ### Thématique Procédures et périmètres
