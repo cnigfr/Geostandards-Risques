@@ -267,9 +267,10 @@ Les données décrites dans le cadre de ce standard se répartissent dans cinq g
 
 Selon les procédures et les profils applicatifs associés, ces thématiques ne sont pas toujours toutes implémentées.
 
-Le schéma suivant représente les liens entre chacune de ces thématiques. Les liens en pointillés illustrent pour information une relation de cause à effet entre deux thématiques mais ne sont pas implémentées dans le modèle qui suit.
+Le schéma suivant représente le schéma UML complet des classes décrites par ce modèle commun avec leur répartition par thématiques. Pour plus de lisibilité, les classes décrivant des énumérations ou des types de données n'ont pas été représentées. Elles le seront dans les schémas détaillés par thématiques qui suivront.
 
-**Fig. *xx* Relations entre les différentes thématiques.**
+
+**Fig. *xx* Diagramme UML complet des différentes thématiques.**
 
 ![Schéma relations thématiques](./ressources/Schema-thematiques.png)
 
@@ -319,10 +320,16 @@ Les ouvrages de protection sont déjà décrits dans d'autres référentiels plu
 
 Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les zones d'iso classe de hauteur d'eau permettant de déterminer les surfaces inondables pour les territoires à risque important d'inondation. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
 
+Les deux figures suivantes montrent le Modèle UML des classes relatives aux aleéas et la classe d'énumération des Types d'aléas issus de GASPAR.
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
 
 ![Modele UML Aléas](./ressources/UML-Procedure-Alea.png)
+
+
+**Fig. *xx* Modèle UML de l'énumération TypeAlea**
+
+![Modele UML Aléas](./ressources/UML-GASPAR-TypeAlea.png)
 
 
 
