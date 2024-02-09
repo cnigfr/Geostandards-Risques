@@ -588,15 +588,15 @@ Le tableau suivant liste les valeurs possibles et communes pour caractériser l'
 
 | Code | Libellé Etat | Type PPR applicable |
 |-|-|-|
-| 00 | Très faible ou nul | PPRN Avalanches | 
+| 00 | Très faible ou nul | PPR Avalanches ou PPR Incendies de forêt | 
 | 01 | Faible | Tous PPR |
-| 02 | Moyen ou Modéré | Tous PPR. Correspond au niveau "Modéré" pour les PPR Inondation |
+| 02 | Moyen ou Modéré | Tous PPR. Le terme "Modéré" est appliqué dans certains PPRN  |
 | 03 | Moyen plus | PPRT |
 | 04 | Fort | Tous PPR |
 | 05 | Fort plus | PPRT |
-| 06 | Très fort | Tous PPRN et PPRT |
-| 07 | Très fort plus ou aggravé | PPRT ou PPR Inondation Crue Torrentielles (Correspond au niveau "Très fort Aggravé")|
-| 08 | Exceptionnel | PPRN Avalanches |
+| 06 | Très fort ou Majeur | Tous PPRN et PPRT. Le terme "Majeur" peut-être utilisé pour les PPR Mouvement de terrain |
+| 07 | Très fort plus ou aggravé | PPRT (Très fort plus) ou PPR Inondation Crue Torrentielles (Très fort Aggravé)|
+| 08 | Exceptionnel | PPR Avalanches |
 
 
 #### Enumeration *TypeSurAlea*
