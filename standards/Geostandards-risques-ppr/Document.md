@@ -1439,7 +1439,8 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
 | `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
 | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
-| `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-ZoneAleaEcheance100ans) |
+| `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `MULTIPOLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
+| `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `MULTIPOLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zoneAleaexceptionnel) |
 | `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
 | `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
 | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
@@ -1650,7 +1651,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 |-|-|-|-|
 | `idzonealea` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaecheance100ans. |
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur est toujours `117` (aléa submersion marine) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
@@ -1660,7 +1661,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 La définition de la table en SQL est la suivante :
 
 ``` SQL
-CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_codealea_s ( 
+CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s ( 
   idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
   codeprocedure TEXT(16) NOT NULL, 
   typealea TEXT(3) NOT NULL,
@@ -1674,11 +1675,51 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_codealea_s (
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonealeaecheance100ans_codealea_s','features','typeppr_codegaspar_zonealeaecheance100ans_codealea_s','Table Zone Alea Echéance 100 ans Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','features','typeppr_codegaspar_zonealeaecheance100ans_117_s','Table Zone Alea Echéance 100 ans Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeaecheance100ans_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+ ;
+```
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` implémente la classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) définie dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| `idzonealea` | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaecheance100ans. |
+| `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `typealea` | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur est toujours `14` (aléa avalanches) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). Ici la valeur est toujours `08` (exceptionnel) | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
+| `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
+| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  occurrence TEXT(15), 
+  description TEXT(255), 
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaexceptionnel_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeaexceptionnel_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','features','typeppr_codegaspar_zonealeaexceptionnel_14_s','Table Zone Alea Exceptionnel Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -2297,7 +2338,8 @@ Elle a la structure et le contenu suivants :
 | 115 |  Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg)  |
 | 116 |  Risque Naturel ; Inondation ; Par remontées de nappes naturelles |
 | 117 |  Risque Naturel ; Inondation ; Par submersion marine |
-| 121 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines) |
+| 121 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine anthropique (anciennes carrières souterraines, hors mines) |
+| 122 | Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine naturelle (cavités souterraines) |
 | 123 | Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs |
 | 124 | Risque Naturel ; Mouvement de terrain ; Glissement de terrain |
 | 125 | Risque Naturel ; Mouvement de terrain ; Avancée dunaire |
@@ -2348,7 +2390,8 @@ INSERT INTO typealea VALUES
   ('115','Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg) '),
   ('116','Risque Naturel ; Inondation ; Par remontées de nappes naturelles'),
   ('117','Risque Naturel ; Inondation ; Par submersion marine'),
-  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements (cavités souterraines hors mines)'),
+  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine anthropique (anciennes carrières souterraines, hors mines)'),
+  ('122','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine naturelle (cavités souterraines)'),
   ('123','Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs'),
   ('124','Risque Naturel ; Mouvement de terrain ; Glissement de terrain'),
   ('125','Risque Naturel ; Mouvement de terrain ; Avancée dunaire'),
@@ -2397,15 +2440,17 @@ La table `typeniveaualea` implémente l'énumeration [TypeNiveauAlea](../Geostan
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(2) | `libelle` TEXT(15) |
+| `code` TEXT(2) | `libelle` TEXT(30) |
 |-|-|
+| 00 | Très faible ou nul |
 | 01 | Faible |
-| 02 | Moyen |
+| 02 | Moyen ou Modéré |
 | 03 | Moyen plus |
 | 04 | Fort |
 | 05 | Fort plus |
-| 06 | Très fort |
-| 07 | Très fort plus |
+| 06 | Très fort ou Majeur |
+| 07 | Très fort plus ou agravé |
+| 08 | Exceptionnel |
 
 
 La définition de la table en SQL est la suivante :
@@ -2414,16 +2459,18 @@ La définition de la table en SQL est la suivante :
 ``` SQL
 CREATE TABLE typeniveaualea (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(15) NOT NULL
+  libelle TEXT(30) NOT NULL
 );
 INSERT INTO typeniveaualea VALUES 
+  ('00','Très faible ou nul'),
   ('01','Faible'),
-  ('02','Moyen'),
+  ('02','Moyen ou Modéré'),
   ('03','Moyen plus'),
   ('04','Fort'),
   ('05','Fort plus'),
-  ('06','Très fort'),
-  ('07','Très fort plus')
+  ('06','Très fort ou Majeur'),
+  ('07','Très fort plus ou aggravé'),
+  ('08','Exceptionnel')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -2510,7 +2557,8 @@ Elle a la structure et le contenu suivants :
 | 03 | Interdiction |
 | 04 | Interdiction stricte |
 | 05 | Recommandations |
-| 06 | Zone grisées |
+| 06 | Zones grisées |
+| 07 | Zones d'aléa exceptionnel (AE) |
 
 
 
@@ -2527,7 +2575,8 @@ INSERT INTO typereglementurba VALUES
   ('03','Interdiction'),
   ('04','Interdiction stricte'),
   ('05','Recommandations'),
-  ('06','Zone grisées')
+  ('06','Zones grisées'),
+  ('07','Zones d'aléa exceptionnel (AE)')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
