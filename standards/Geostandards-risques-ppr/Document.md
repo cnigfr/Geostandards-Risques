@@ -3209,7 +3209,7 @@ où :
 * [DDD] représent le département (par exemple pour la Seine Maritime : "076")
 * [AAAANNNN] représente les 8 derniers caractères de l'identifiant GASPAR du PPRN (Par exemple : "20120001")
 * [NT] représente le type de PPR représenté "N" pour Naturel ou "T" pour Technologique
-* le caractère _S_, _L_ ou _P_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
+* le caractère \_S\_, \_L\_ ou \_P\_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
 
 
 
@@ -3223,9 +3223,9 @@ Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_proce
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
-|`codeprocedure`|"76DDTM20120001"| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR |
-|`libelleProcedure`|"Plan de Prévention des Risques Naturels du bassin versant  de la Scie"|N_DOCUMENT_PPR[NT]_S_[DDD]|NOM |
-|`typeprocedure`| "PPRN-I" (Valeur çà prendre parmi celles de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|N.A.|N.A.|
+|`codeprocedure`|"76DDTM20120001"| N\_DOCUMENT\_PPR[NT]\_S\_[DDD]| ID\_GASPAR |
+|`libelleProcedure`|"Plan de Prévention des Risques Naturels du bassin versant  de la Scie"|N\_DOCUMENT\_PPR[NT]\_S\_[DDD]|NOM |
+|`typeprocedure`| "PPRN-I" (Valeur à prendre parmi celles de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|N.A.|N.A.|
 
 
 
@@ -3237,11 +3237,11 @@ Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_refer
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
 |-|:-:|:-:|:-:|
-|`codeprocedure`|"76DDTM20120001"| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR|
-|`adresse`| "http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE" | N_DOCUMENT_PPR[NT]_S_[DDD] | SITE_WEB |
+|`codeprocedure`|"76DDTM20120001"| N\_DOCUMENT\_PPR[NT]\_S\_[DDD]| ID\_GASPAR|
+|`adresse`| "http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE" | N\_DOCUMENT\_PPR[NT]\_S\_[DDD] | SITE\_WEB |
 |`nomressource` |  "PPRN Bassin Versant de la SCIE" |N.A.|N.A.|
 |`description`| "Site internet de la préfecture de la Seine-Maritime" |N.A.|N.A.|
-|`typereference`| Valeurs à prendre parmi les valeurs de code de la table [typereference](#table-denumeration-typereference) | N.A.|N.A.|
+|`typereference`| Valeur à prendre parmi celles de code de la table [typereference](#table-denumeration-typereference) | N.A.|N.A.|
 
 ## Remplissage des objets de la classe Perimetre
 
@@ -3254,9 +3254,10 @@ La classe Perimetre est implémentée par la table [[TypePPR]_[CodeGASPARComplet
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
-|`codeProcedure`| 76DDTM20120001 | N_PERIMETRE_PPR[NT]_[AAAANNNN]S[DDD] | idGASPAR (ID_GASPAR)|
-|`etatProcedure` |"APPROUVE" si etat= "Approuvé" (02); PRECRIT si etat="Prescrit" (01); ABROGE si etat ="Abrogé" (03); ANTICIPE si etat = "Anticipe" (04)" |N_DOCUMENT_PPR[NT]_S_[DDD] | ETAT |
-|dateEtat|"2020-05-09"|N_DOCUMENT_PPR[NT]_S_[DDD] |DATEAPPRO, si Approuvé |
+|`idperimetre` | "1" | N.A. | N.A. (pas de correspondance pour l'identification du périmètre) |
+|`codeProcedure`| "76DDTM20120001" | N\_PERIMETRE\_PPR[NT]\_[AAAANNNN]S[DDD] | idGASPAR (ID\_GASPAR)|
+|`etatProcedure` |"APPROUVE" si ETAT= "Approuvé" (02); PRECRIT si ETAT="Prescrit" (01); ABROGE si ETAT ="Abrogé" (03); ANTICIPE si ETAT = "Anticipe" (04)" |N\_DOCUMENT\_PPR[NT]\_S\_[DDD] | ETAT |
+|`dateetat`|"2020-05-09"|N\_DOCUMENT\_PPR[NT]\_S\_[DDD] |DATEAPPRO, si ETAT="Approuvé", DATEFINVAL si ETAT="Abrogé". Pas de correspondance pour les autres valeurs d'ETAT. |
 
 
 
@@ -3264,32 +3265,38 @@ La classe Perimetre est implémentée par la table [[TypePPR]_[CodeGASPARComplet
 
 La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. 
 
-Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard. 
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans et ZoneAleaExceptionnel. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard. 
 
 
 ## Remplissage des objets de la classe ZoneAleaReference
 
-La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminés à partir de l'aléa de référence et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés de que la classe ZoneAlea.
-
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence et un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
 
-Les attributs sont renseignés selon les correspondances suivantes :
+La classe ZoneAleaReference est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
- |Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (implémentation)|
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|:-:|
-|idZoneAlea|Identifiant de la zone aléa|20120001R000003|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
-|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
-|typeAlea|Type de l'aléa selon la nomenclature GASPAR|112|ZoneAleaPPR|codeRisque (CODERISQUE)|
-|niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
-|description|Description de l'aléa|Inondation - Par submersion marine|ZoneAleaPPR|descriptionZone (DESCRIPT)|
-|occurrence|ce champ permet d'indiquer l'occurrence de survenue de l'aléa. Selon son type, il pourra s'agir d'une probabilité (par exemple période de retour) ou d'un autre indicateur à définir dans les profils applicatifs.| - |N/A|N/A|
-|geom|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
+|`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
+|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`occurrence`| "Q30" |N/A|N/A (Pas de correspondance pour l'occurence)|
+|`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
 ## Remplissage des objets de la classe ZoneAleaEcheance100ans
 
-La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques soumises à des aléas de type naturels déterminéés à partir de l'aléa à échéance 100 ans et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés de que la classe ZoneAlea.
+L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa à échéance 100 ans. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
 
-L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa à échéance 100 ans. Cette table ne sera donc pas générée lors de la transposition d'un ancien PPR vers le nouveau modèle si rien n'indique que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa.
+Cette classe est implépmentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de typealea vaudra systématiquement "117" (aléa submersion marine)
+
+
+## Remplissage des objets de la classe ZoneAleaExceptionnel
+
+L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa exceptionnel pour le risque avalanche. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
+
+Cette classe est implépmentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches et celle de `niveaualea` systématiquement "08" (exceptionnel).
+
+
 
 ## Remplissage des objets de la classe ZoneProtegee
 
@@ -3299,65 +3306,57 @@ Dans l'ancien standard PPR, les zones protégées n'étaient pas représentées.
 
 ## Remplissage des objets de la classe ZoneDangerSpecifique
 
-La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Ces zones de danger particulières peuvent être de deux types : les bandes de précaution à l'arrière des systèmes d'endiguement et les bandes particulières liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Decret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf) et le Guide PPRL:2014. Elles sont aussi caractérisées par le type d'aléa (TypeAlea) et son niveau (TypeNiveauAlea) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection (OuvrageProtection), notamment lorsqu'il s'agit d'une bande de protection.
-
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones de danger spécifiques. Cependant, certains objets de la classe ZoneAleaPPR peuvent représenter de telles zones avec une indication en ce sens dans le champs description de la table. Lorsque c'est le cas, ces objets particuliers de la classe ZoneAleaPPR permettront de générer les objets de la classe ZoneDangerSpecifique. 
 
-Par exemple, dans le jeu de données PPRN du Bassin versant de la Scie, de telles zones d'aléas existent et sont identifiables grace au champ description lorsqu'il comprend les valeurs : "Bande de precaution" ou "Secteur soumis aux chocs de vagues et de projection".
+Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
-Les attributs sont renseignés selon les correspondances suivantes :
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
+|-|-|-|-|
+|`idzonedanger`|"20120001R000002"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
+|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"117" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`description`|"Secteur soumis aux chocs de vagues et de projection"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
+|`typeSuralea`| "02" (bande particulière) |N.A.|N.A.|
 
-|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
-|-|:-:|:-:|:-:|:-:|
-|idZoneDanger|Identifiant unique d'un objet zone de danger spécifique|20120001R000002|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
-|codeProcedure|Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe Procedure|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
-|typeAlea|Type de l'aléa associé à la zone de danger spécifique, selon la nomenclature définie dans GASPAR et reprise par l'énumération TypeAlea|117 (Inondation par submersion marine) |ZoneAleaPPR|codeRisque (CODERISQUE)|
-|description|Secteur soumis aux chocs de vagues et de projection|N/A|ZoneAleaPPR|descriptionZone (DESCRIPT)|
-|niveauAlea|Niveau d'aléa|06 (Très fort) |ZoneAleaPPR|niveauleaStandard (NIVALEA_ST)|
-|typeSuralea|Ce champ permet d'indiquer le type de zone de danger spécifique.| bande particulière (02) |N/A|N/A|
-|geom|Géométrie de la zone|Multipolygone|ZoneAleaPPR|geometry|
 
 ## Remplissage des objets de la classe ZoneReglementaire
 
-L'interface ZoneRéglementaire permet de décrire les zones sur lesquelles s'appliquent des réglements dufait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
-Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type du règlement que l'on veut renseigner : ZoneReglementaireUrba ou ZoneRegelementaireFoncier. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
+Dans le cadre du profil applicatif PPR des nouveaux standards, la classe ZoneReglementaire est spécialisée par des classes spécifiques en fonction du type de règlement que l'on veut renseigner : ZoneReglementaireUrba ou ZoneRegelementaireFoncier. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
 
 ## Remplissage des objets de la classe ZoneReglementaireUrba
-
-La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement. Elle a les mêmes propriétés de que la classe ZoneReglementaire avec une propriété booléeenne supplémentaire optionnelle permettant d'indiquer s'il existe des obligations de travaux sur le batit existant de la zone.
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : 'Interdiction stricte", "Interdiction", "Prescriptions" ou "Prescriptions hors zone d'aléa".
 
 La propriété obligationTravaux ne pourra pas être renseignée automatiquement car l'information n'était pas indiquée dans l'ancien Standard. Elle pourra être laissée non renseignée, signifant ainsi que l'existence ou non d'obligation de travaux est inconnue sur la zone.
 
+Les attributs de la table [[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
 
-Les attributs sont renseignés selon les correspondances suivantes :
-
-|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
-|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
-|codeZoneReglement|Code attribué à la zone dans le cadre du règlement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
-|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
-|typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Interdiction stricte, Interdiction, Prescriptions ou Prescriptions hors zone d'aléa.|ZonePPR|typeReglementStandardise ("typereg")|
-| obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | - | N.A. | N.A. |  
-|geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|:-:|:-:|:-:|
+|`idZoneReglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
+|`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
+|`codeZoneReglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
+|`libelleZoneReglement`|"prescription - Inondation par remontee de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
+|`typeReglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba)|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+| `obligationtravaux`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
 ## Remplissage des objets de la classe ZoneReglementaireFoncier
 
-La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement.Elle a les mêmes propriétés de que la classe ZoneReglementaire.
 
-Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
+L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
-| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
-|-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
-|idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
-|codeZoneReglement|Code attribué à la zone dans le cadre du règlement qui s'applique|Bir|ZonePPR|codeZoneReglement ("codeZone")|
-|libelleZoneReglement|Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique|prescription - Inondation par remontee de nappe|ZonePPR|libelleZone ("nom")|
-|typeReglement|Nature du règlement en matière d'urbanisme s'appliquant sur la zone. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure.|Délaissement possible ou Expropriation possible.|ZonePPR|typeReglementStandardise ("typereg")|
-|geom|Geometrie de la zone. Celle-ci peut être de tout type : (Multi)Polygone, polyligne ou point. Par exemple, certaines zones réglementées peuvent être relatives à des cavités (ponctuel) ou des axes de ruissellement (linéaire).|(Multi)Polygone, polyligne ou point.|ZonePPR|geometry|
+Les attributs de la table [[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp) qui implémente la classe ZoneReglementaireFoncier sont renseignés selon les correspondances suivantes :
+
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|:-:|:-:|:-:|
+|`idZoneReglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
+|`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
+|`codeZoneReglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
+|`libelleZoneReglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
+|`typeReglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier)|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+
 
 
 ## Remplissage des objets de la classe Enjeu et du type de données TypeEnjeu
