@@ -3197,12 +3197,12 @@ Ces classes sont implémentées de la manière suivante dans le jeu de données 
 
 | Classe modèle Covadis | Table(s) Shapefile |
 |-|-|
-| DocumentPPR | N_DOCUMENT_PPR[NT]_S_[DDD] |
-| PerimetrePPR | N_PERIMETRE_PPR[NT]_[AAAANNNN]_S_[DDD] |
-| ZonePPR | N_ZONE_REG_PPR[NT]_[AAAANNNN]_S_[DDD], N_ZONE_REG_PPR[NT]_[AAAANNNN]_L_[DDD], N_ZONE_REG_PPR[NT]_[AAAANNNN]_P_[DDD] |
-| ZoneAleaPPR | N_ZONE_ALEA_PPR[NT]_[AAAANNNN]_S_[DDD] |
-| EnjeuPPR | N_ENJEU_PPR[NT]_[AAAANNNN]_S_[DDD], N_ENJEU_PPR[NT]_[AAAANNNN]_L_[DDD], N_ENJEU_PPR[NT]_[AAAANNNN]_P_[DDD] |
-| OrigineRisque | N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_S_[DDD], N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_L_[DDD], N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_P_[DDD] |
+| DocumentPPR | N\_DOCUMENT\_PPR\[NT\]\_S\_\[DDD\] |
+| PerimetrePPR | N\_PERIMETRE\_PPR\[NT\]\_\[AAAANNNN\]\_S\_\[DDD\] |
+| ZonePPR | N\_ZONE\_REG\_PPR\[NT\]\_\[AAAANNNN\]\_S\_\[DDD\], N\_ZONE\_REG\_PPR\[NT\]\_\[AAAANNNN\]\_L\_\[DDD\], N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_P\_[DDD] |
+| ZoneAleaPPR | N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD] |
+| EnjeuPPR | N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_S\_[DDD], N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_L\_[DDD], N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_P\_[DDD] |
+| OrigineRisque | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_S\_[DDD], N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_L\_[DDD], N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_P\_[DDD] |
 
 où :
 
@@ -3221,11 +3221,11 @@ Les objets de la classe Procedure sont créés à partir de ceux de la classe "D
 
 Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|:-:|
-|`codeprocedure`|Identifiant de la procédure dans GASPAR|76DDTM20120001| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR |
-|`libelleProcedure`|Description textuelle de la procédure (cf. Libellé procédure dans GASPAR)|Plan de Prévention des Risques Naturels du bassin versant  de la Scie|DocumentPPR|nomDocPPR (NOM) |
-|`typeprocedure`|Type de procédure (parmi les valeurs de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|PPRN-I|N/A|N/A|
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|:-:|:-:|:-:|
+|`codeprocedure`|"76DDTM20120001"| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR |
+|`libelleProcedure`|"Plan de Prévention des Risques Naturels du bassin versant  de la Scie"|N_DOCUMENT_PPR[NT]_S_[DDD]|NOM |
+|`typeprocedure`| "PPRN-I" (Valeur çà prendre parmi celles de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|N.A.|N.A.|
 
 
 
@@ -3235,30 +3235,30 @@ La classe ReferenceInternet n'existait pas dans l'ancien standard, elle a été 
 
 Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_referenceinternet](#table-typeppr_codegasparcomplet_referenceinternet). Ses attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
-|-|:-:|:-:|:-:|:-:|
-|`codeprocedure`|Lien vers la table procédure |76DDTM20120001| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR|
-|`adresse`| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | N_DOCUMENT_PPR[NT]_S_[DDD] | SITE_WEB |
-|`nomressource` |Nom de la ressource| - |N/A|N/A|
-|`description`|Description de la ressource| - |N/A|N/A|
-|`typereference`|Indique le type de document auquel on fait référence| Valeurs à prendre parmi les valeurs de code de la table [typereference](#table-denumeration-typereference) | N/A|N/A|
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
+|-|:-:|:-:|:-:|
+|`codeprocedure`|"76DDTM20120001"| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR|
+|`adresse`| "http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE" | N_DOCUMENT_PPR[NT]_S_[DDD] | SITE_WEB |
+|`nomressource` |  "PPRN Bassin Versant de la SCIE" |N.A.|N.A.|
+|`description`| "Site internet de la préfecture de la Seine-Maritime" |N.A.|N.A.|
+|`typereference`| Valeurs à prendre parmi les valeurs de code de la table [typereference](#table-denumeration-typereference) | N.A.|N.A.|
 
 ## Remplissage des objets de la classe Perimetre
 
-La classe Perimetre permet de décrire l'état d'avancement d'une procédure sur une zone géographique donnée. Pour une même procédure donnée à un instant donné, plusieurs périmètres peuvent exister dans des états d'avancement différents.
 
 Les objets de la classe Perimetre sont créés à partir ceux de la classe PerimetrePPR avec une correspondance exacte : un objet de la classe PerimetrePPR génère un objet de classe Perimetre.
 
 A noter que dans l'ancien standard, l'avancement de la procédure était porté par la classe DocumentPPR (attribut "etat") et non le périmètre. Pour la traduction des données de l'ancien standard, la valeur de l'attribut "etat" de l'objet DocumentPPR rattaché au perimetre sera donc utilisée pour les périmètres générés pour le nouveau standard.
 
-Les attributs de la classe Perimetre sont renseignés selon les correspondances suivantes :
+La classe Perimetre est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_perimetre_s](#table-typeppr_codegasparcomplet_perimetre_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (implémentation) |
-|-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure | 76DDTM20120001 | PerimetrePPR | idGASPAR (ID_GASPAR)|
-|etatProcedure |Etat d'avancement de la procédure sur le périmètre|"APPROUVE" si etat= "Approuvé" (02); PRECRIT si etat="Prescrit" (01); ABROGE si etat ="Abrogé" (03); ANTICIPE si etat = "Anticipe" (04)" |DocumentPPR | etat (ETAT) |
-|dateEtat|Date du début de l'état de la procédure sur le périmètre|29/05/2020|DocumentPPR|dateApprobation (DATEAPPRO), si Approuvé |
-|geom|Géométrie du Périmètre| MultiPolygone |PerimetrePPR|geometry|
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|:-:|:-:|:-:|
+|`codeProcedure`| 76DDTM20120001 | N_PERIMETRE_PPR[NT]_[AAAANNNN]S[DDD] | idGASPAR (ID_GASPAR)|
+|`etatProcedure` |"APPROUVE" si etat= "Approuvé" (02); PRECRIT si etat="Prescrit" (01); ABROGE si etat ="Abrogé" (03); ANTICIPE si etat = "Anticipe" (04)" |N_DOCUMENT_PPR[NT]_S_[DDD] | ETAT |
+|dateEtat|"2020-05-09"|N_DOCUMENT_PPR[NT]_S_[DDD] |DATEAPPRO, si Approuvé |
+
+
 
 ## Remplissage des objets de la classe ZoneAlea
 
