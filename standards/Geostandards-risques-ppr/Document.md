@@ -1452,7 +1452,6 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_s` | `features` | `MULTIPOLYGON` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_l` | `features` | `LINESTRING` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
 | `[TypePPR]_[CodeGASPARComplet]_enjeu_p` | `features` | `POINT` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_typeenjeu` | `attributes` | N.A. | Type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) |
 | `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
@@ -1467,6 +1466,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
 | `typesuralea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
 | `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
+| `typeouvrageprotection` | `attributes` | N.A. | Enumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) |
 | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
 | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
 
@@ -1829,7 +1829,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` im
 | `idrefexterne` | TEXT(20) | **Clef primaire** | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
 | `refexterne` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-denumeration-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
 | `refexterneautre` | TEXT(50) | Saisie libre. La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
-| `typeouvrageprotection` | TEXT(255) |  Saisie libre. | Désignation du type d'ouvrage que représente cet objet. | 
+| `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-denumeration-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
 La définition de ces tables en SQL est la suivante :
@@ -1840,27 +1840,30 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s (
   idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(255), 
+  typeouvrageprotection TEXT(2), 
   geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
   idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(255), 
+  typeouvrageprotection TEXT(2), 
   geom LINESTRING NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
   idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(255), 
+  typeouvrageprotection TEXT(2), 
   geom POINT NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code)
+  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES
@@ -1943,6 +1946,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 | `refexterne` | TEXT(50) | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la collecte de cet objet enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `nomenjeu` | TEXT(255) | Saisie libre. | Nom de l'objet d'enjeu. |
+| `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
+| `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 | `dateenjeu` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
@@ -1956,6 +1961,8 @@ CREATE TABLE typeppr_codegaspar_enjeu_s (
   refexterne TEXT(50) NOT NULL,
   codeprocedure TEXT(16) NOT NULL,
   nomenjeu TEXT(255) NOT NULL, 
+  codeenjeu TEXT(50) NOT NULL, 
+  nomenclatureenjeu TEXT(255) NOT NULL,
   dateenjeu DATE NOT NULL, 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_enjeu_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -1967,6 +1974,8 @@ CREATE TABLE typeppr_codegaspar_enjeu_l (
   refexterne TEXT(50) NOT NULL,
   codeprocedure TEXT(16) NOT NULL,
   nomenjeu TEXT(255) NOT NULL, 
+  codeenjeu TEXT(50) NOT NULL, 
+  nomenclatureenjeu TEXT(255) NOT NULL,
   dateenjeu DATE NOT NULL, 
   geom LINESTRING NOT NULL,
   CONSTRAINT fk_enjeu_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -1978,6 +1987,8 @@ CREATE TABLE typeppr_codegaspar_enjeu_p (
   refexterne TEXT(50) NOT NULL,
   codeprocedure TEXT(16) NOT NULL,
   nomenjeu TEXT(255) NOT NULL, 
+  codeenjeu TEXT(50) NOT NULL, 
+  nomenclatureenjeu TEXT(255) NOT NULL,
   dateenjeu DATE NOT NULL, 
   geom POINT NOT NULL,
   CONSTRAINT fk_enjeu_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -1996,35 +2007,6 @@ INSERT INTO gpkg_geometry_columns VALUES
  ;
 ```
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_typeenjeu`
-
-La table `[TypePPR]_[CodeGASPARComplet]_typeenjeu` implémente le type de données [TypeEnjeu](../Geostandards-risques-commun/Document.md#type-de-données-typeenjeu) défini dans le modèle commun. Elle a la structure suivante :
-
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-| `idenjeu` | TEXT(8) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type d'enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
-| `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
-| `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
-
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typeppr_codegaspar_typeenjeu ( 
-  idenjeu_s TEXT(8), 
-  idenjeu_l TEXT(8), 
-  idenjeu_p TEXT(8), 
-  codeenjeu TEXT(50) NOT NULL, 
-  nomenclatureenjeu TEXT(255) NOT NULL,
-  CONSTRAINT fk_typeenjeu_idenjeu_s FOREIGN KEY (idenjeu_s) REFERENCES typeppr_codegaspar_enjeu_s(idenjeu),
-  CONSTRAINT fk_typeenjeu_idenjeu_l FOREIGN KEY (idenjeu_l) REFERENCES typeppr_codegaspar_enjeu_l(idenjeu),
-  CONSTRAINT fk_typeenjeu_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
-  CONSTRAINT pk_typeenjeu PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,codeenjeu,nomenclatureenjeu)
-);
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_typeenjeu','attributes','typeppr_codegaspar_typeenjeu','Table Types Enjeux PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
 
@@ -2512,13 +2494,45 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
+##### Table d'enumeration `typeouvrageprotection`
+
+La table `typeouvrageprotection` implémente l'énumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(10) |
+|-|-|
+| 01 | Barrage | 
+| 02 | Digue | 
+| 99 | autre |
+
+
+La définition de la table en SQL est la suivante :
+
+``` SQL
+CREATE TABLE typeouvrageprotection (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(20) NOT NULL
+);
+INSERT INTO typeouvrageprotection VALUES 
+  ('01','Barrage'), 
+  ('02','Digue'), 
+  ('99','autre')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d'ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
 ##### Table d'enumeration `typerefexterneouvrage`
 
 La table `typerefexterneouvrage` implémente l'énumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) définie dans le modèle commun.
 
 Elle a la structure et le contenu suivants :
 
-| `code` TEXT(2) | `libelle` TEXT(10) |
+| `code` TEXT(2) | `libelle` TEXT(20) |
 |-|-|
 | 01 | ROE | 
 | 02 | SIOUH | 
@@ -3183,47 +3197,51 @@ Ces classes sont implémentées de la manière suivante dans le jeu de données 
 
 | Classe modèle Covadis | Table(s) Shapefile |
 |-|-|
-| DocumentPPR | n_document_pprn_s_DDD |
-| PerimetrePPR | n_perimetre_pprn_AAAANNNN_s_DDD |
-| ZonePPR | n_zone_reg_pprn_AAAANNNN_s_DDD, n_zone_reg_pprn_AAAANNNN_l_DDD, n_zone_reg_pprn_AAAANNNN_p_DDD |
-| ZoneAleaPPR | n_zone_alea_pprn_AAAANNNN_s_DDD |
-| EnjeuPPR | n_enjeu_pprn_AAAANNNN_s_DDD, n_enjeu_pprn_AAAANNNN_l_DDD, n_enjeu_pprn_AAAANNNN_p_DDD |
-| OrigineRisque | n_orig_risq_pprn_AAAANNNN_s_DDD, n_orig_risq_pprn_AAAANNNN_l_DDD, n_orig_risq_pprn_AAAANNNN_p_DDD |
+| DocumentPPR | N_DOCUMENT_PPR[NT]_S_[DDD] |
+| PerimetrePPR | N_PERIMETRE_PPR[NT]_[AAAANNNN]_S_[DDD] |
+| ZonePPR | N_ZONE_REG_PPR[NT]_[AAAANNNN]_S_[DDD], N_ZONE_REG_PPR[NT]_[AAAANNNN]_L_[DDD], N_ZONE_REG_PPR[NT]_[AAAANNNN]_P_[DDD] |
+| ZoneAleaPPR | N_ZONE_ALEA_PPR[NT]_[AAAANNNN]_S_[DDD] |
+| EnjeuPPR | N_ENJEU_PPR[NT]_[AAAANNNN]_S_[DDD], N_ENJEU_PPR[NT]_[AAAANNNN]_L_[DDD], N_ENJEU_PPR[NT]_[AAAANNNN]_P_[DDD] |
+| OrigineRisque | N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_S_[DDD], N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_L_[DDD], N_ORIG_RISQ_PPR[NT]_[AAAANNNN]_P_[DDD] |
 
 où :
 
-* DDD représent le département (par exemple pour la Seine Maritime : "076")
-* AAAANNNN représente les 8 derniers caractères de l'identifiant GASPAR du PPRN (Par exemple : "20120001")
-* le caractère _s_, _l_ ou _p_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
+* [DDD] représent le département (par exemple pour la Seine Maritime : "076")
+* [AAAANNNN] représente les 8 derniers caractères de l'identifiant GASPAR du PPRN (Par exemple : "20120001")
+* [NT] représente le type de PPR représenté "N" pour Naturel ou "T" pour Technologique
+* le caractère _S_, _L_ ou _P_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
+
+
 
 
 ## Remplissage des objets de la classe Procedure
 
-La classe "Procedure" permet de faire le lien entre un jeu de données du Standard et le système GASPAR. Un objet de cette classe correspond à une procédure unique identifiée dans GASPAR.
 
-Les objets de la classe "Procedure" sont créés à partir de ceux de la classe "DocumentPPR" avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procédure. 
+Les objets de la classe Procedure sont créés à partir de ceux de la classe "DocumentPPR" avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procédure. 
 
-Les attributs sont renseignés selon les correspondances suivantes :
+Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation) |
+|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|:-:|
-|codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|DocumentPPR| idGASPAR (ID_GASPAR) |
-|libelleProcedure|Description textuelle de la procédure (cf. Libellé procédure dans GASPAR)|Plan de Prévention des Risques Naturels du bassin versant  de la Scie|DocumentPPR|nomDocPPR (NOM) |
-|typeProcedure|Type de procédure (selon les modèles identifiés dans GASPAR)|PPRN-I|N/A|N/A|
+|`codeprocedure`|Identifiant de la procédure dans GASPAR|76DDTM20120001| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR |
+|`libelleProcedure`|Description textuelle de la procédure (cf. Libellé procédure dans GASPAR)|Plan de Prévention des Risques Naturels du bassin versant  de la Scie|DocumentPPR|nomDocPPR (NOM) |
+|`typeprocedure`|Type de procédure (parmi les valeurs de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|PPRN-I|N/A|N/A|
+
+
 
 ## Remplissage des objets de la classe ReferenceInternet
 
-La classe ReferenceInternet permet de décrire des ressources accessibles sur internet, qu'il sagisse d'une page html, d'une arborescence d'un site web ou de documents téléchargeables. Un objet de cette classe représente un telle ressource, caractérisée de manière unique par son adresse sur internet (URL).
+La classe ReferenceInternet n'existait pas dans l'ancien standard, elle a été créé pour les besoins du nouveau standard. La génération de ses objets est effectuée à partir des objets de l'ancienne classe DocumentPPR avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe ReferenceInternet. 
 
-Cette classe n'existait pas dans l'ancien standard, elle a été créé pour les besoins du nouveau standard. La génération de ses objets est effectuée à partir des objets de l'ancienne classe Document avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe ReferenceInternet. 
+Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_referenceinternet](#table-typeppr_codegasparcomplet_referenceinternet). Ses attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
+|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
 |-|:-:|:-:|:-:|:-:|
-|codeProcedure|Lien vers la table procédure |76DDTM20120001|DocumentPPR| idGASPAR (ID_GASPAR)|
-|adresse| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | DocumentPPR | serviceInternet (SITE_WEB) |
-|nomRessource |Nom de la ressource| - |N/A|N/A|
-|description|Description de la ressource| - |N/A|N/A|
-|typeReference|Indique le type de document auquel on fait référence| - | N/A|N/A|
+|`codeprocedure`|Lien vers la table procédure |76DDTM20120001| N_DOCUMENT_PPR[NT]_S_[DDD]| ID_GASPAR|
+|`adresse`| Url d'accès à la ressource|http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE | N_DOCUMENT_PPR[NT]_S_[DDD] | SITE_WEB |
+|`nomressource` |Nom de la ressource| - |N/A|N/A|
+|`description`|Description de la ressource| - |N/A|N/A|
+|`typereference`|Indique le type de document auquel on fait référence| Valeurs à prendre parmi les valeurs de code de la table [typereference](#table-denumeration-typereference) | N/A|N/A|
 
 ## Remplissage des objets de la classe Perimetre
 
@@ -3235,7 +3253,7 @@ A noter que dans l'ancien standard, l'avancement de la procédure était porté 
 
 Les attributs de la classe Perimetre sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation) |
+|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (implémentation) |
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure | 76DDTM20120001 | PerimetrePPR | idGASPAR (ID_GASPAR)|
 |etatProcedure |Etat d'avancement de la procédure sur le périmètre|"APPROUVE" si etat= "Approuvé" (02); PRECRIT si etat="Prescrit" (01); ABROGE si etat ="Abrogé" (03); ANTICIPE si etat = "Anticipe" (04)" |DocumentPPR | etat (ETAT) |
@@ -3257,7 +3275,7 @@ L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par dé
 
 Les attributs sont renseignés selon les correspondances suivantes :
 
- |Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (implémentation)|
+ |Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (implémentation)|
 |-|:-:|:-:|:-:|:-:|
 |idZoneAlea|Identifiant de la zone aléa|20120001R000003|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
 |codeProcedure|Identifiant de la procédure dans GASPAR|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
@@ -3289,7 +3307,7 @@ Par exemple, dans le jeu de données PPRN du Bassin versant de la Scie, de telle
 
 Les attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
+|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
 |-|:-:|:-:|:-:|:-:|
 |idZoneDanger|Identifiant unique d'un objet zone de danger spécifique|20120001R000002|ZoneAleaPPR|idZoneAlea (ID_ZONE)|
 |codeProcedure|Identifiant de la procédure pour laquelle la zone de danger spécifique a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe Procedure|76DDTM20120001|ZoneAleaPPR|(ID_GASPAR)|
@@ -3315,7 +3333,7 @@ La propriété obligationTravaux ne pourra pas être renseignée automatiquement
 
 Les attributs sont renseignés selon les correspondances suivantes :
 
-|Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN |
+|Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
 |idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
@@ -3332,7 +3350,7 @@ La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique 
 
 Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
-| Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN|
+| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
 |-|:-:|:-:|:-:|:-:|
 |codeProcedure|Lien vers la table procédure |76DDTM20120001|ZonePPR|ID_GASPAR|
 |idZoneReglementaire|Identifiant unique de la zone réglementaire|18|ZonePPR|idZonePPR ("id_zone")|
@@ -3354,7 +3372,7 @@ Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de l
 
 - Pour la classe Enjeu
 
-| Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (NOM Shapefile) |
+| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (NOM Shapefile) |
 |-|-|-|-|-|
 |codeProcedure|Lien vers la table procédure | 76DDTM20120001 | EnjeuPPR | (ID_GASPAR) |
 | idEnjeu | Identifiant de l'objet Enjeu | 14066 | EnjeuPPR | (ID_MAP)  | 
@@ -3367,7 +3385,7 @@ Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de l
 
 - Pour le type de données TypeEnjeu
 
-| Nom Attribut | Description | Exemple de valeur | Classe ancien PPRN | Attribut ancien PPRN|
+| Nom Attribut | Description | Exemple de valeur | Table COVADIS | Nom attribut COVADIS|
 |-|-|-|-|-|
 | idEnjeu | Identifiant de l'objet Enjeu à qui est associé ce type d'Enjeu | 14066 | EnjeuPPR | (ID_MAP) |
 | codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | 0102 | EnjeuPPR | categorie (CATEGORIE) |
@@ -3382,13 +3400,29 @@ Le Standard COVADIS définissait une classe équivalente OrigineRisque avec les 
 
 Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Avec les règles de correspondances pour les propriétés :
 
-| Nom Attribut|Description|Exemple de valeur|Classe ancien PPRN| Attribut ancien PPRN (NOM Shapefile) |
+| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (NOM Shapefile) |
 |-|-|-|-|-|
 | codeProcedure |Lien vers la table procédure | 76DDTM20120001 | OrigineRisque | (ID_GASPAR) |
 | nom | Nom de l'objet origine du risque. | "La Scie" | OrigineRisque | nom (NOM) |
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait. | 12345 | OrigineRisque |  idSIExterne (ID_SI_EXT) |
 | refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | "BD Topo" | OrigineRisque | nomSIExterne (NOM_SI_EXT) | 
 
+
+## Génération des noms des tables de la livraison Geopackage
+
+A l'exception des tables d'énumartion, les tables de la livraison GeoPackage de ce standard suivent la nomenclature suivante (come indiqué dans la partie [Nomenclature des tables](#nomenclature-des-tables) :
+
+`[TypePPR]_[CodeGASPARComplet]_[nom table]_[code aléa si table d'alea]_[type de geometrie]`
+
+Le tableau suivant indique comment composer le nom d'une table GeoPackage à partir des informations du jeu de données PPR COVADIS à traduire :
+
+| Partie du nom | Information |
+|-|-|
+| [TypePPR] | La valeur à renseigner est obtenue en convertissant en minuscules la partie `PPRN` (PPR Naturel) ou (PPRT` Technologique) du nom des tables du jeu de données COVADIS. |
+| [CodeGASPARComplet] | La valeur à renseigner est obtenue en récupérant la valeur de l'attribut  `ID_GASPAR`` de n'importe quelle table du jeu de données COVADIS. |
+| [nom table] |  Le nom de la table est indiquer au cas par cas selon les paragraphes suivants |
+| [code aléa si table d'alea] | le code alea est à remplir pour les tables de la thématique Aléas. La récupération de la valeur à renseigner sera détaillée dans les paragraphes dédiés à ces tables. |
+| [type de geometrie] | La valeur à renseigner est déduite de la partie `_S_`, `_L_` ou `_P_` de la table COVADIS d'origine 
 
 
 
