@@ -3212,6 +3212,22 @@ où :
 * le caractère \_S\_, \_L\_ ou \_P\_ représente la primitive géométrique associée à la classe shapefile (surfacique, linéaire ou ponctuel)
 
 
+## Génération des noms des tables de la livraison Geopackage
+
+À l'exception des tables d'énumération, les tables de la livraison GeoPackage de ce standard suivent la [nomenclature suivante](#nomenclature-des-tables) :
+
+`[TypePPR]_[CodeGASPARComplet]_[nom table]_[code aléa si table d'alea]_[type de geometrie]`
+
+Le tableau suivant indique comment composer le nom d'une table GeoPackage à partir des informations du jeu de données PPR COVADIS à traduire :
+
+| Partie du nom | Information source |
+|-|-|
+| [TypePPR] | La valeur à renseigner est obtenue en convertissant en minuscules la partie `PPRN` (PPR Naturel) ou (PPRT` Technologique) du nom des tables du jeu de données COVADIS. |
+| [CodeGASPARComplet] | La valeur à renseigner est obtenue en récupérant la valeur de l'attribut  `ID_GASPAR`` de n'importe quelle table du jeu de données COVADIS. |
+| [nom table] |  Le nom de la table est indiquer au cas par cas selon les paragraphes suivants |
+| [code aléa si table d'alea] | le code alea est à remplir pour les tables de la thématique Aléas. La récupération de la valeur à renseigner sera détaillée dans les paragraphes dédiés à ces tables. |
+| [type de geometrie] | La valeur à renseigner est déduite de la partie `_S_`, `_L_` ou `_P_` de la table COVADIS d'origine 
+
 
 
 ## Remplissage des objets de la classe Procedure
@@ -3243,6 +3259,7 @@ Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_refer
 |`description`| "Site internet de la préfecture de la Seine-Maritime" |N.A.|N.A.|
 |`typereference`| Valeur à prendre parmi celles de code de la table [typereference](#table-denumeration-typereference) | N.A.|N.A.|
 
+
 ## Remplissage des objets de la classe Perimetre
 
 
@@ -3265,7 +3282,7 @@ La classe Perimetre est implémentée par la table [[TypePPR]_[CodeGASPARComplet
 
 La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. 
 
-Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans et ZoneAleaExceptionnel. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard. 
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans et ZoneAleaExceptionnel. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard.
 
 
 ## Remplissage des objets de la classe ZoneAleaReference
@@ -3283,6 +3300,23 @@ La classe ZoneAleaReference est implémentée par la table [[TypePPR]_[CodeGASPA
 |`occurrence`| "Q30" |N/A|N/A (Pas de correspondance pour l'occurence)|
 |`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
+*Cas particulier des PPR multirisques* 
+
+Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eu un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]. 
+
+Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes les zones d'aléas qui y sont décrites sont mono risques. La transcription des zones d'aléa multirisques dans le nouveau standard nécessitera donc de créer une zone d'aléa par risque avec la géométrie de la zone multirisques et les propriétés des objets de la table MULTIALEA selon les règles de passage suivantes :
+
+
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|-|-|-|
+|`idZoneAlea`|"20120001R000003"| N.A. | N.A. |
+|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|CODERISQUE|
+|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
+|`occurrence`| "Q30" |N/A|N/A (Pas de correspondance pour l'occurence)|
+|`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NOMRISQUE|
+
+
 ## Remplissage des objets de la classe ZoneAleaEcheance100ans
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa à échéance 100 ans. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
@@ -3294,7 +3328,7 @@ Cette classe est implépmentée par la table [[TypePPR]_[CodeGASPARComplet]_zone
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa exceptionnel pour le risque avalanche. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
 
-Cette classe est implépmentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches et celle de `niveaualea` systématiquement "08" (exceptionnel).
+Cette classe est implépmentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches) et celle de `niveaualea` systématiquement "08" (exceptionnel).
 
 
 
@@ -3338,7 +3372,7 @@ Les attributs de la table [[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s
 |`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
 |`codeZoneReglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
 |`libelleZoneReglement`|"prescription - Inondation par remontee de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typeReglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba)|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`typeReglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
 | `obligationtravaux`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
@@ -3355,73 +3389,46 @@ Les attributs de la table [[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncie
 |`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
 |`codeZoneReglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
 |`libelleZoneReglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typeReglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier)|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`typeReglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
 
 
 
-## Remplissage des objets de la classe Enjeu et du type de données TypeEnjeu
+## Remplissage des objets de la classe Enjeu 
 
-La classe Enjeu permet de faire état des objets d'enjeu qui sont à représenter dans le cadre de la procédure de prévention des risques. Elle permet d'intégrer des objets issus de référentiels externes ou saisis spécifiquement en indiquant à minima un nom, le rattachement à une ou plusieurs nomenclatures d'enjeu à l'aide du type de données TypeEnjeu, une date de collecte, une plusieurs éventuelle(s) information(s) sur les vulnérabilités de l'enjeu et une géométrie, en précisant le cas échéant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel.
 
-Le type de données TypeEnjeu permet de définir un type d'enjeu à l'aide d'un nom ("codeEnjeu" : identifiant ou libellé) faisant partie d'une nomenclature particulière identifiée grace au champ "nomenclatureEnjeu".
+Le Standard COVADIS définit une classe EnjeuPPR, permettant d'identifier de tels objets avec les caractéristiques suivantes : un rattachement à la procédure GASPAR ("ID_GASPAR"), une description ("DESCRIPT") , un code correspondant à la classification de l'enjeu selon une nomenclature "COVADIS" définie dans le Standard ("CATEGORIE") et l'année d'identification de l'enjeu ("IDENTANNEE").
 
-Le Standard COVADIS définissait une classe EnjeuPPR, permettant d'identifier de tels objets avec les caractéristiques suivantes : un rattachement à la procédure GASPAR ("ID_GASPAR"), une description ("DESCRIPT") , un code correspondant à la classification de l'enjeu selon une nomenclature "COVADIS" définie dans le Standard ("CATEGORIE") et l'année d'identification de l'enjeu ("IDENTANNEE").
+Les objets de la classe Enjeu seront créés à partir de ceux de la classe COVADIS EnjeuPPR, un objet de cette dernière générant un objet de la classe Enjeu du nouveau Standard. Dans le contexte d'une transformation d'un PPR COVADIS existant on utilisera systématiquement la nomenclature COVADIS pour classer les nouveaux objets d'enjeux créés.
 
-Les objets de la classe Enjeu et TypeEnjeu seront créés à partir de ceux de la classe COVADIS EnjeuPPR, un objet de cette dernière générant un objet de la classe Enjeu du nouveau Standard et un objet du type de donnée TypeEnjeu. Avec les règles correspondantes pour les propriétés :
+La classe Enjeu est implémentée par les tables [[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p](#tables-typeppr_codegasparcomplet_enjeu_slp) en fonction du type de géométrie des enjeux représentés. Les règles correspondantes avec le standard COAVDIS pour les propriétés sont les suivantes :
 
-- Pour la classe Enjeu
 
-| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (NOM Shapefile) |
-|-|-|-|-|-|
-|codeProcedure|Lien vers la table procédure | 76DDTM20120001 | EnjeuPPR | (ID_GASPAR) |
-| idEnjeu | Identifiant de l'objet Enjeu | 14066 | EnjeuPPR | (ID_MAP)  | 
-| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | -  | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) |
-| refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | - | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) | 
-| nomEnjeu | Nom de l'objet d'enjeu. | "Zone d'habitat peu dense"  | EnjeuPPR | description (DESCRIPT) |
-| typeEnjeu | classifications de l'enjeu dans une ou plusieurs nomenclatures d'enjeu. | *Cf. TypEnjeu*  |  *Cf. TypEnjeu* | *Cf. TypEnjeu* | 
-| vulnerabilite | Information sur les vulnérabilités de l'enjeu | -  | N.A. | N.A.  (cette information n'est pas renseignée dans le standard COVADIS) |
-| dateEnjeu | Date de collecte de l'objet d'enjeu. | 2020 | EnjeuPPR | anneeIdentification (IDENTANNEE) |
+| Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|-|-|-|
+| `idenjeu` | "14066" | EnjeuPPR | N.A. (Pas de correspondance dans le standard COVADIS)  | 
+| `codeprocedure` | "76DDTM20120001" | N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | ID_GASPAR |
+| `idrefexterne` | -  | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) |
+| `refexterne` | - | N.A. | N.A. (cette information n'est pas renseignée dans le standard COVADIS) | 
+| `nomenjeu` | "Zone d'habitat peu dense"  | N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | DESCRIPT |
+| `codeenjeu` | "0102" | N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | CATEGORIE |
+| `nomenclatureenjeu` | "NomenclatureEnjeuCOVADIS" | N.A. | N.A. (Les catégories d'Enjeu sont systématiquement rattachés à la nomenclature des Enjeux COVADIS dans le cas de la conversion du standard COVADIS vers le nouveau standard). |
+| `dateenjeu` | 2020 |  N\_ENJEU\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | IDENTANNEE |
 
-- Pour le type de données TypeEnjeu
-
-| Nom Attribut | Description | Exemple de valeur | Table COVADIS | Nom attribut COVADIS|
-|-|-|-|-|-|
-| idEnjeu | Identifiant de l'objet Enjeu à qui est associé ce type d'Enjeu | 14066 | EnjeuPPR | (ID_MAP) |
-| codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | 0102 | EnjeuPPR | categorie (CATEGORIE) |
-| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | "NomenclatureEnjeuCOVADIS" | N.A. | N.A. (Les catégories d'Enjeu sont systématiquement rattachés à la nomenclature des Enjeux COVADIS dans le cas de la conversion du standard COVADIS vers le novueau standard ). |
 
 
 ## Remplissage des objets de la classe OrigineRisque
 
-La classe OrigineRisque permet de faire état des objets qui engendrent les risques ayant motivé la procédure concernée. Elle permet d'intégrer des objets issus de référentiels externes spécifiques selon le type de risque ou d'objet en indiquant à minima un nom et une géométrie si on souhaite le faire figurer dans une cartographie et en précisant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel.
+Le Standard COVADIS définit une classe équivalente OrigineRisque avec les caractéristiques suivantes : un nom ("NOM"), le nom du système d'information ou de la base de données externe qui gère l'objet à l'origine du risque ("NOM_SI_EXT") et l'identifiant à utiliser pour faire référence à l'objet du SI externe correspondant l'entité à l'origine du risque ("ID_SI_EXT").
 
-Le Standard COVADIS définissait une classe équivalente OrigineRisque avec les caractéristiques suivantes : un nom ("NOM"), le nom du système d'information ou de la base de données externe qui gère l'objet à l'origine du risque ("NOM_SI_EXT") et l'identifiant à utiliser pour faire référence à l'objet du SI externe correspondant l'entité à l'origine du risque ("ID_SI_EXT").
+Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Les règles de correspondances pour les propriétés des tables [[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p](#tables-typeppr_codegasparcomplet_originerisque_slp) qui l'implémentent selon le type de géométrie des objets représentés sont les suivantes :
 
-Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Avec les règles de correspondances pour les propriétés :
-
-| Nom Attribut|Description|Exemple de valeur|Table COVADIS| Nom attribut COVADIS (NOM Shapefile) |
+| Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS) |
 |-|-|-|-|-|
-| codeProcedure |Lien vers la table procédure | 76DDTM20120001 | OrigineRisque | (ID_GASPAR) |
-| nom | Nom de l'objet origine du risque. | "La Scie" | OrigineRisque | nom (NOM) |
-| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait. | 12345 | OrigineRisque |  idSIExterne (ID_SI_EXT) |
-| refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | "BD Topo" | OrigineRisque | nomSIExterne (NOM_SI_EXT) | 
+| `codeprocedure` | "76DDTM20120001" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | ID_GASPAR |
+| `nom` | "La Scie" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | NOM |
+| `idrefexterne` | "12345" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] |  ID_SI_EXT |
+| `refexterne` | "BD Topo" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | NOM_SI_EXT | 
 
-
-## Génération des noms des tables de la livraison Geopackage
-
-A l'exception des tables d'énumartion, les tables de la livraison GeoPackage de ce standard suivent la nomenclature suivante (come indiqué dans la partie [Nomenclature des tables](#nomenclature-des-tables) :
-
-`[TypePPR]_[CodeGASPARComplet]_[nom table]_[code aléa si table d'alea]_[type de geometrie]`
-
-Le tableau suivant indique comment composer le nom d'une table GeoPackage à partir des informations du jeu de données PPR COVADIS à traduire :
-
-| Partie du nom | Information |
-|-|-|
-| [TypePPR] | La valeur à renseigner est obtenue en convertissant en minuscules la partie `PPRN` (PPR Naturel) ou (PPRT` Technologique) du nom des tables du jeu de données COVADIS. |
-| [CodeGASPARComplet] | La valeur à renseigner est obtenue en récupérant la valeur de l'attribut  `ID_GASPAR`` de n'importe quelle table du jeu de données COVADIS. |
-| [nom table] |  Le nom de la table est indiquer au cas par cas selon les paragraphes suivants |
-| [code aléa si table d'alea] | le code alea est à remplir pour les tables de la thématique Aléas. La récupération de la valeur à renseigner sera détaillée dans les paragraphes dédiés à ces tables. |
-| [type de geometrie] | La valeur à renseigner est déduite de la partie `_S_`, `_L_` ou `_P_` de la table COVADIS d'origine 
 
 
 
