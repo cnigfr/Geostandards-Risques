@@ -3275,7 +3275,7 @@ L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par dé
 La classe ZoneAleaReference est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|:-:|
+|-|-|-|-|
 |`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
 |`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
