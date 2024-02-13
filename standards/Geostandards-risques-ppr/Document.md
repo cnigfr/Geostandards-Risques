@@ -3297,10 +3297,10 @@ La classe ZoneAleaReference est implémentée par la table [[TypePPR]_[CodeGASPA
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
 |`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
 |`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
-|`occurrence`| "Q30" |N/A|N/A (Pas de correspondance pour l'occurence)|
+|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurence)|
 |`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
-*Cas particulier des PPR multirisques* 
+**Cas particulier des PPR multirisques**
 
 Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eu un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]. 
 
@@ -3313,7 +3313,7 @@ Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes 
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
 |`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|CODERISQUE|
 |`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
-|`occurrence`| "Q30" |N/A|N/A (Pas de correspondance pour l'occurence)|
+|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurence)|
 |`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NOMRISQUE|
 
 
