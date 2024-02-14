@@ -3216,17 +3216,17 @@ où :
 
 À l'exception des tables d'énumération, les tables de la livraison GeoPackage de ce standard suivent la [nomenclature suivante](#nomenclature-des-tables) :
 
-`[TypePPR]_[CodeGASPARComplet]_[nom table]_[code aléa si table d'alea]_[type de geometrie]`
+`[TypePPR]\_[CodeGASPARComplet]\_[nom table]\_[code aléa si table d'alea]\_[type de geometrie]`
 
-Le tableau suivant indique comment composer le nom d'une table GeoPackage à partir des informations du jeu de données PPR COVADIS à traduire :
+Le tableau suivant indique comment composer les parties du nom d'une table GeoPackage à partir des informations du jeu de données PPR COVADIS à traduire :
 
 | Partie du nom | Information source |
 |-|-|
-| [TypePPR] | La valeur à renseigner est obtenue en convertissant en minuscules la partie `PPRN` (PPR Naturel) ou (PPRT` Technologique) du nom des tables du jeu de données COVADIS. |
-| [CodeGASPARComplet] | La valeur à renseigner est obtenue en récupérant la valeur de l'attribut  `ID_GASPAR`` de n'importe quelle table du jeu de données COVADIS. |
-| [nom table] |  Le nom de la table est indiquer au cas par cas selon les paragraphes suivants |
+| [TypePPR] | La valeur à renseigner est obtenue en convertissant en minuscules la partie `PPRN` (PPR Naturel) ou `PPRT` (PPR Technologique) du nom des tables du jeu de données COVADIS. |
+| [CodeGASPARComplet] | La valeur à renseigner est obtenue en récupérant la valeur de l'attribut  `ID_GASPAR` de n'importe quelle table du jeu de données COVADIS. |
+| [nom table] |  Le nom de la table est à renseigner au cas par cas en fonction des paragraphes qui suivent |
 | [code aléa si table d'alea] | le code alea est à remplir pour les tables de la thématique Aléas. La récupération de la valeur à renseigner sera détaillée dans les paragraphes dédiés à ces tables. |
-| [type de geometrie] | La valeur à renseigner est déduite de la partie `_S_`, `_L_` ou `_P_` de la table COVADIS d'origine 
+| [type de geometrie] | La valeur à renseigner (`s`, `l` ou `p`) est déduite de la partie `\_S\_`, `\_L\_` ou `\_P\_` de la table COVADIS d'origine 
 
 
 
@@ -3235,7 +3235,7 @@ Le tableau suivant indique comment composer le nom d'une table GeoPackage à par
 
 Les objets de la classe Procedure sont créés à partir de ceux de la classe "DocumentPPR" avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procédure. 
 
-Cette classe est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
+Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
@@ -3289,7 +3289,7 @@ Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécial
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence et un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
 
-La classe ZoneAleaReference est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
+La classe ZoneAleaReference est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeareference\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
