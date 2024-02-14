@@ -799,11 +799,13 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 | Code | Libellé |
 |-|-|
+|0100|Espace urbanisé|
 |0101|Espace urbanisé - habitat dense|
 |0102|Espace urbanisé - habitat peu dense|
 |0103|Espace urbanisé - habitat diffus|
 |0104|Espace urbanisé - projet d'urbanisation future|
 |0105|Espace urbanisé - réserve foncière|
+|0200|Établissement recevant du public (ERP) |
 |0201c|ERP J : Structures d'accueil pour personnes âgées et handicapées|
 |0202c|ERP L : Salles à usage d'audition, de conférences, de réunions, de spectacles|
 |0203c|ERP M : Magasins de vente, centres commerciaux|
@@ -826,6 +828,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 |0220c|ERP PS : Parcs de stationnement couverts|
 |0221c|ERP GA : Gares accessibles au public|
 |0222c|ERP EF : Établissements flottants|
+|0300|Espace économique|
 |0301|Espace économique - zone d'activité industrielle|
 |0302|Espace économique - zone d'activité commerciale|
 |0303|Espace économique - zone d'activité future|
@@ -834,11 +837,13 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 |0306|Espace économique - zone aéroportuaire, portuaire|
 |0307|Espace économique - carrière, gravière|
 |0308|Établissement employeur|
+|0400|Espace ouvert recevant du public|
 |0401|Espace ouvert recevant du public - sport|
 |0402|Espace ouvert recevant du public - tourisme|
 |0403|Espace ouvert recevant du public - parking|
 |0404|Espace ouvert recevant du public - parc d'exposition, foires, rassemblements divers|
 |0405|Espace ouvert recevant du public - cimetière|
+|0500|Infrastructure de transport de personnes ou de marchandise|
 |0501|Infrastructure linéaire - route, voie ferrée, canal|
 |0502|Infrastructure linéaire en projet|
 |0503|Infrastructure linéaire - ligne de bus|
@@ -846,6 +851,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 |0505|Infrastructure linéaire - ligne électrique|
 |0506|Infrastructure surfacique - gare, aéroport, aérodrome, port|
 |0507|Infrastructure ponctuelle - gare, arrêt, stationnement TMD|
+|0600|Ouvrage ou équipement d'intérêt général|
 |0601|Ouvrage ou équipement d'intérêt général - zone, station de captage|
 |0602|Ouvrage ou équipement d'intérêt général - station de pompage|
 |0603|Ouvrage ou équipement d'intérêt général - réservoir, château d'eau|
@@ -860,6 +866,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 |0612|Ouvrage ou équipement d'intérêt général - poste de détente gaz|
 |0613|Ouvrage ou équipement d'intérêt général - station hydrocarbure|
 |0614|Ouvrage ou équipement d'intérêt général - décharge, usine d'incinération|
+|0700|Enjeu environnemental ou patrimonial|
 |0701|Zone naturelle protégée|
 |0702|Monument inscrit ou classé au répertoire des monuments historiques|
 |0703|Parc naturel national, régional|
@@ -1143,7 +1150,6 @@ Les données PPR ne font pas l'objet de mise à jour systématique. Les données
 
 
 #  Règles de symbologie
-te
 
 Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers, en accord avec les guides d'élaboration qui leur sont dédiés. 
 
@@ -1178,6 +1184,7 @@ Les tableaux suivants présentent les couleurs (en code RVB) préconisées à ap
 
 Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
+
 ### Représentation des types de réglementations en matière d'urbanisme
 
 
@@ -1188,7 +1195,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 | Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
 | Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | Non défini |
 | Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) |
-| Zone grisées | N.A. | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | N.A. |
+| Zone grises | N.A. | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | N.A. |
 | Zones d'aléa exceptionnel (AE) | ![StyleRegJaunePPRNAE](./ressources/couleur-reg-pprn-ae.png) | N.A. | N.A. |
 
 
@@ -3589,6 +3596,31 @@ Attribut SUP|Définition|Liste de valeurs autorisées ou format imposé|Informat
 **IdSup**|Identifiant de la SUP|Voir §5.2.3 du standard. [cat]-[idGest]-[numéro incrémental]||PM1-130010325-65
 **IdActe**|Identifiant de l’acte|Voir §5.2.6 du standard. [idSup]-[numéro incrémental]||PM1-130010325-65-1
 
+
+# ANNEXE C - PPRN Multirisques
+
+Les Plans de prévention des risques naturels peuvent être définis relativement à plusieurs types d'aléas. Cette annexe expose la façon dont de tels PPR sont implémentés avec ce standard.
+
+## Identification d'un PPRN Multirisques
+
+Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `typeppr_codegaspar_procedure` à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques".
+
+## Identification des zones d'aléas multirisques
+
+A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multialéas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacunes dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type comme montré sur la figure suivante illustrant un ensemble de tables zonealeareference pour plusieurs types d'aléa inondation.
+
+**Fig. *xx* Implémentation du multirisque avec les tables mono-aléa**
+
+![Tables ZonAleaReference QGIS](./ressources/ZonesAleasMultirisques.png)
+
+
+## Périmètre des PPRN Multirisques
+
+La table `typeppr_codegaspar_perimetre_s` ne porte pas d'information sur le ou les aléas traités. Le ou les périmètres décrits par cette table concernent l'ensemble des aléas traités par le PPR s'il est multirisques. 
+
+## Zonage réglementaire des PPRN Multirisques
+
+Les tables de zonage réglementaire de ce standard ne comportent pas de champ permettant d'indiquer à partir de quel(s) aléa(s) une zone réglementaire a été définie. De ce fait ces tables décrivent le zonage réglementaire relatif à tous les risques du PPRN Multirisques.
 
 
 
