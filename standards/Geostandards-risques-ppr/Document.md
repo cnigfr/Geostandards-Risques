@@ -3364,7 +3364,7 @@ L'ancien standard ne définissait qu'une classe pour les zones réglementaires. 
 
 La propriété obligationTravaux ne pourra pas être renseignée automatiquement car l'information n'était pas indiquée dans l'ancien Standard. Elle pourra être laissée non renseignée, signifant ainsi que l'existence ou non d'obligation de travaux est inconnue sur la zone.
 
-Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba\_s|l|p](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
+Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba\_[slp]](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
@@ -3381,7 +3381,7 @@ Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
-Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementairefoncier\_s|l|p](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp) qui implémente la classe ZoneReglementaireFoncier sont renseignés selon les correspondances suivantes :
+Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementairefoncier\_[slp]](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp) qui implémente la classe ZoneReglementaireFoncier sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
@@ -3400,7 +3400,7 @@ Le Standard COVADIS définit une classe EnjeuPPR, permettant d'identifier de tel
 
 Les objets de la classe Enjeu seront créés à partir de ceux de la classe COVADIS EnjeuPPR, un objet de cette dernière générant un objet de la classe Enjeu du nouveau Standard. Dans le contexte d'une transformation d'un PPR COVADIS existant on utilisera systématiquement la nomenclature COVADIS pour classer les nouveaux objets d'enjeux créés.
 
-La classe Enjeu est implémentée par les tables [[TypePPR]\_[CodeGASPARComplet]\_enjeu\_s|l|p](#tables-typeppr_codegasparcomplet_enjeu_slp) en fonction du type de géométrie des enjeux représentés. Les règles correspondantes avec le standard COAVDIS pour les propriétés sont les suivantes :
+La classe Enjeu est implémentée par les tables [[TypePPR]\_[CodeGASPARComplet]\_enjeu\_[slp]](#tables-typeppr_codegasparcomplet_enjeu_slp) en fonction du type de géométrie des enjeux représentés. Les règles correspondantes avec le standard COAVDIS pour les propriétés sont les suivantes :
 
 
 | Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
@@ -3420,10 +3420,10 @@ La classe Enjeu est implémentée par les tables [[TypePPR]\_[CodeGASPARComplet]
 
 Le Standard COVADIS définit une classe équivalente OrigineRisque avec les caractéristiques suivantes : un nom ("NOM"), le nom du système d'information ou de la base de données externe qui gère l'objet à l'origine du risque ("NOM_SI_EXT") et l'identifiant à utiliser pour faire référence à l'objet du SI externe correspondant l'entité à l'origine du risque ("ID_SI_EXT").
 
-Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Les règles de correspondances pour les propriétés des tables [[TypePPR]\_[CodeGASPARComplet]\_originerisque\_s|l|p](#tables-typeppr_codegasparcomplet_originerisque_slp) qui l'implémentent selon le type de géométrie des objets représentés sont les suivantes :
+Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Les règles de correspondances pour les propriétés des tables [[TypePPR]\_[CodeGASPARComplet]\_originerisque\_[slp]](#tables-typeppr_codegasparcomplet_originerisque_slp) qui l'implémentent selon le type de géométrie des objets représentés sont les suivantes :
 
 | Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS) |
-|-|-|-|-|-|
+|-|-|-|-|
 | `codeprocedure` | "76DDTM20120001" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | ID_GASPAR |
 | `nom` | "La Scie" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | NOM |
 | `idrefexterne` | "12345" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] |  ID_SI_EXT |
