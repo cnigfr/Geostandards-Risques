@@ -1117,24 +1117,8 @@ La présence de cette table dans un fichier GeoPackage est obligatoire.
 La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la structure du format GeoPackage qui contient les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
 
 
-L'instructions SQL suivante permet d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
+L'instructions SQL indiquée en [ANNEXE E](#insertion-des-systèmes-de-coordonnées-dans-la-table-gpkg_spatial_ref_sys) permet d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
 
-``` SQL
-INSERT INTO gpkg_spatial_ref_sys VALUES 
-  /* Lambert-93 (RGF93LAMB93) - France métropolitaine */
-  ('Lambert-93 (RGF93LAMB93)',2154,'EPSG',2154, 'PROJCRS["RGF93 v1 / Lambert-93",BASEGEOGCRS["RGF93 v1",DATUM["Reseau Geodesique Francais 1993 v1",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4171]],CONVERSION["Lambert-93",METHOD["Lambert Conic Conformal (2SP)",ID["EPSG",9802]],PARAMETER["Latitude of false origin",46.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8821]],PARAMETER["Longitude of false origin",3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8822]],PARAMETER["Latitude of 1st standard parallel",49,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8823]],PARAMETER["Latitude of 2nd standard parallel",44,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8824]],PARAMETER["Easting at false origin",700000,LENGTHUNIT["metre",1],ID["EPSG",8826]],PARAMETER["Northing at false origin",6600000,LENGTHUNIT["metre",1],ID["EPSG",8827]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["France - onshore and offshore, mainland and Corsica (France métropolitaine including Corsica)."],BBOX[41.15,-9.86,51.56,10.38]],ID["EPSG",2154]]','France métropolitaine'),
-  /* RGAF09UTM20 - Antilles françaises */
-  ('Universal transverse Mercator fuseau 20 nord (RGAF09UTM20)',5490,'EPSG',5490, 'PROJCRS["RGAF09 / UTM zone 20N",BASEGEOGCRS["RGAF09",DATUM["Reseau Geodesique des Antilles Francaises 2009",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",5489]],CONVERSION["UTM zone 20N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["French Antilles onshore and offshore west of 60°W - Guadeloupe (including Grande Terre, Basse Terre, Marie Galante, Les Saintes, Iles de la Petite Terre, La Desirade); Martinique; St Barthélemy; northern St Martin."],BBOX[14.08,-63.66,18.31,-60]],ID["EPSG",5490]]','Antilles françaises (Guadeloupe,Saint-Martin,Saint-Barthélemy,Martinique)'),
-  /* RGFG95UTM22 - Guyane */
-  ('Universal transverse Mercator fuseau 22 nord (RGFG95UTM22)',2972,'EPSG',2972, 'PROJCRS["RGFG95 / UTM zone 22N",BASEGEOGCRS["RGFG95",DATUM["Reseau Geodesique Francais Guyane 1995",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4624]],CONVERSION["UTM zone 22N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-51,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["French Guiana - east of 54°W, onshore and offshore."],BBOX[2.17,-54,8.88,-49.45]],ID["EPSG",2972]]','Guyane'),
-  /* RGR92UTM40S - La Réunion */
-  ('Universal transverse Mercator fuseau 40 sud (RGR92UTM40S)',2975,'EPSG',2975, 'PROJCRS["RGR92 / UTM zone 40S",BASEGEOGCRS["RGR92",DATUM["Reseau Geodesique de la Reunion 1992",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4627]],CONVERSION["UTM zone 40S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",57,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Reunion - onshore and offshore - east of 54°E."],BBOX[-24.72,54,-18.28,58.24]],ID["EPSG",2975]]','La Réunion'),
-  /* RGM04UTM38S - Mayotte */
-  ('Universal transverse Mercator fuseau 38 sud (RGM04UTM38S)',4471,'EPSG',4471, 'PROJCRS["RGM04 / UTM zone 38S",BASEGEOGCRS["RGM04",DATUM["Reseau Geodesique de Mayotte 2004",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4470]],CONVERSION["UTM zone 38S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",45,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Mayotte - onshore and offshore."],BBOX[-14.49,43.68,-11.33,46.7]],ID["EPSG",4471]]','Mayotte'),
-  /* RGSPM06U21 - Saint-Pierre-et-Miquelon' */
-  ('Universal transverse Mercator fuseau 21 nord (RGSPM06U21)',4467,'EPSG',4467, 'PROJCRS["RGSPM06 / UTM zone 21N",BASEGEOGCRS["RGSPM06",DATUM["Reseau Geodesique de Saint Pierre et Miquelon 2006",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4463]],CONVERSION["UTM zone 21N",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-57,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["St Pierre and Miquelon - onshore and offshore."],BBOX[43.41,-57.1,47.37,-55.9]],ID["EPSG",4467]]','Saint-Pierre-et-Miquelon')
- ;
-```
 
 ##### Table gpkg_metadata
 
@@ -1284,20 +1268,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Proced
 | `typeprocedure` | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'enumeration [typeprocedure](#table-denumeration-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typeppr_codegaspar_procedure ( 
-  codeprocedure TEXT(16) NOT NULL PRIMARY KEY, 
-  libelleprocedure TEXT NOT NULL, 
-  typeprocedure TEXT(10) NOT NULL,
-  CONSTRAINT fk_procedure_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
-);
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_procedure','attributes','typeppr_codegaspar_procedure','Table Procedure PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_procedure).
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
 
@@ -1310,19 +1281,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_revise` implémente l'associtation [Revi
 
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_revise).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_revise ( 
-  codeprocrevisante TEXT(16) NOT NULL, 
-  codeprocrevisee TEXT(16) NOT NULL,
-  CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee)
-);
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_revise','attributes','typeppr_codegaspar_revise','Table Revise PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
 
@@ -1336,27 +1296,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Peri
 | `dateetat` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. |
 | `geom` | MULTIPOLYGON | Géométrie multipolygone du périmètre |  |
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_perimetre_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_perimetre_s ( 
-  idperimetre TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  etatprocedure TEXT(10) NOT NULL, 
-  dateetat DATE NOT NULL,
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_perimetre_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_perimetre_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES etatsprocedure(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_perimetre_s','features','typeppr_codegaspar_perimetre_s','Table Perimetre Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns - exemple en EPSG:2154 */
-INSERT INTO gpkg_geometry_columns VALUES 
-  ('typeppr_codegaspar_perimetre_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
 
@@ -1371,23 +1312,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 | `description` | TEXT(255) | Saisie libre | Description de la ressource internet. |
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_referenceinternet).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_referenceinternet ( 
-  adresse TEXT(255) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  nomressource TEXT(50), 
-  typereference TEXT(2) NOT NULL,
-  description TEXT(255), 
-  CONSTRAINT fk_referenceinternet_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_referenceinternet_typereference FOREIGN KEY (typereference) REFERENCES typereference(code)
-);
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_referenceinternet','attributes','typeppr_codegaspar_referenceinternet','Table Référence Internet PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
 
@@ -1403,30 +1329,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeareference_codealea_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT(15), 
-  description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonealeareference_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
-  CONSTRAINT fk_zonealeareference_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonealeareference_codealea_s','features','typeppr_codegaspar_zonealeareference_codealea_s','Table Zone Alea de Reference Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeareference_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
 
@@ -1443,30 +1347,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT(15), 
-  description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
-  CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','features','typeppr_codegaspar_zonealeaecheance100ans_117_s','Table Zone Alea Echéance 100 ans Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s`
 
@@ -1483,30 +1365,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT(15), 
-  description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonealeaexceptionnel_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
-  CONSTRAINT fk_zonealeaexceptionnel_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','features','typeppr_codegaspar_zonealeaexceptionnel_14_s','Table Zone Alea Exceptionnel Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
 
@@ -1526,35 +1386,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zoneprotegee_codealea_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s ( 
-  idzoneprotegee TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  typealea TEXT(3) NOT NULL,
-  niveauprotection FLOAT,
-  occurrence TEXT(15), 
-  description TEXT(255), 
-  idouvrageprotection_s TEXT(20),
-  idouvrageprotection_l TEXT(20),
-  idouvrageprotection_p TEXT(20),
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zoneprotegee_codealea_s','features','typeppr_codegaspar_zoneprotegee_codealea_s','Table Zone Protégée Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zoneprotegee_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
 
@@ -1573,37 +1406,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | `idouvrageprotection_p` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
 | `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s ( 
-  idzonedanger TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  typesuralea TEXT(2) NOT NULL,
-  description TEXT(255), 
-  idouvrageprotection_s TEXT(20),
-  idouvrageprotection_l TEXT(20),
-  idouvrageprotection_p TEXT(20),
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','features','typeppr_codegaspar_zonedangerspecifique_codealea_s','Table Zone de danger Spécifique Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
 
@@ -1617,52 +1421,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` im
 | `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-denumeration-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
-La définition de ces tables en SQL est la suivante :
+La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp).
 
-``` SQL
-/* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  refexterne TEXT(2) NOT NULL,
-  refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(2), 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
-);
-/* Table Linestring */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  refexterne TEXT(2) NOT NULL,
-  refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(2), 
-  geom LINESTRING NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
-);
-/* Table Point */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  refexterne TEXT(2) NOT NULL,
-  refexterneautre TEXT(50),
-  typeouvrageprotection TEXT(2), 
-  geom POINT NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','features','typeppr_codegaspar_ouvrageprotection_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','features','typeppr_codegaspar_ouvrageprotection_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','features','typeppr_codegaspar_ouvrageprotection_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','POINT',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
 
@@ -1676,49 +1436,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la 
 | `nom` | TEXT(255) |  Saisie libre. | Nom de l'objet origine du risque. | 
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
 
-La définition de ces tables en SQL est la suivante :
+La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_originerisque_slp).
 
-``` SQL
-/* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_originerisque_s ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT(50) NOT NULL,
-  nom TEXT(255) NOT NULL, 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_originerisque_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Table Linestring */
-CREATE TABLE typeppr_codegaspar_originerisque_l ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT(50) NOT NULL,
-  nom TEXT(255) NOT NULL, 
-  geom LINESTRING NOT NULL,
-  CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Table Point */
-CREATE TABLE typeppr_codegaspar_originerisque_p ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT(50) NOT NULL,
-  nom TEXT(255) NOT NULL, 
-  geom POINT NOT NULL,
-  CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_originerisque_s','features','typeppr_codegaspar_originerisque_s','Table Origine du risque Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_originerisque_l','features','typeppr_codegaspar_originerisque_l','Table Origine du risque Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_originerisque_p','features','typeppr_codegaspar_originerisque_p','Table Origine du risque Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_originerisque_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_originerisque_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_originerisque_p','geom','POINT',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
 
@@ -1736,61 +1455,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 | `dateenjeu` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-/* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_enjeu_s ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
-  refexterne TEXT(50) NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
-  nomenjeu TEXT(255) NOT NULL, 
-  codeenjeu TEXT(50) NOT NULL, 
-  nomenclatureenjeu TEXT(255) NOT NULL,
-  dateenjeu DATE NOT NULL, 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_enjeu_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Table Linestring */
-CREATE TABLE typeppr_codegaspar_enjeu_l ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
-  refexterne TEXT(50) NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
-  nomenjeu TEXT(255) NOT NULL, 
-  codeenjeu TEXT(50) NOT NULL, 
-  nomenclatureenjeu TEXT(255) NOT NULL,
-  dateenjeu DATE NOT NULL, 
-  geom LINESTRING NOT NULL,
-  CONSTRAINT fk_enjeu_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Table Point */
-CREATE TABLE typeppr_codegaspar_enjeu_p ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
-  refexterne TEXT(50) NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
-  nomenjeu TEXT(255) NOT NULL, 
-  codeenjeu TEXT(50) NOT NULL, 
-  nomenclatureenjeu TEXT(255) NOT NULL,
-  dateenjeu DATE NOT NULL, 
-  geom POINT NOT NULL,
-  CONSTRAINT fk_enjeu_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_enjeu_s','features','typeppr_codegaspar_enjeu_s','Table Enjeux Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_enjeu_l','features','typeppr_codegaspar_enjeu_l','Table Enjeux Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_enjeu_p','features','typeppr_codegaspar_enjeu_p','Table Enjeux Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_enjeu_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_enjeu_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_enjeu_p','geom','POINT',/*srs_id*/2154,0,0)
- ;
-```
+La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_enjeu_slp).
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
@@ -1804,26 +1469,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 | `description` | TEXT(255) | Saisie libre pouvant ête contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
 | `valeur` | TEXT(255) | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_typevulnerabilite).
 
-``` SQL
-CREATE TABLE typeppr_codegaspar_typevulnerabilite ( 
-  idenjeu_s TEXT(8), 
-  idenjeu_l TEXT(8), 
-  idenjeu_p TEXT(8), 
-  nom TEXT(50) NOT NULL, 
-  description TEXT(255), 
-  valeur TEXT(255) NOT NULL,
-  CONSTRAINT fk_typevulnerabilite_idenjeu_s FOREIGN KEY (idenjeu_s) REFERENCES typeppr_codegaspar_enjeu_s(idenjeu),
-  CONSTRAINT fk_typevulnerabilite_idenjeu_l FOREIGN KEY (idenjeu_l) REFERENCES typeppr_codegaspar_enjeu_l(idenjeu),
-  CONSTRAINT fk_typevulnerabilite_idenjeu_p FOREIGN KEY (idenjeu_p) REFERENCES typeppr_codegaspar_enjeu_p(idenjeu),
-  CONSTRAINT pk_typevulnerabilite PRIMARY KEY (idenjeu_s,idenjeu_l,idenjeu_p,nom,valeur)
-);
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeppr_codegaspar_typevulnerabilite','attributes','typeppr_codegaspar_typevulnerabilite','Table Type Vulnerabilites PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
 
@@ -1839,58 +1486,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 | `obligationtravaux` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors l'obligation ou non de travaux est inconnue. | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
-La définition de la table en SQL est la suivante :
+La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementaireurba_slp).
 
-``` SQL
-/* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_zonereglementaireurba_s ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonereglementaireurba_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementaireurba_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
-);
-/* Table Linestring */
-CREATE TABLE typeppr_codegaspar_zonereglementaireurba_l ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
-  geom LINESTRING NOT NULL,
-  CONSTRAINT fk_zonereglementaireurba_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementaireurba_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
-);
-/* Table Point */
-CREATE TABLE typeppr_codegaspar_zonereglementaireurba_p ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
-  geom POINT NOT NULL,
-  CONSTRAINT fk_zonereglementaireurba_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementaireurba_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonereglementaireurba_s','features','typeppr_codegaspar_zonereglementaireurba_s','Table Zone Réglementaire Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_zonereglementaireurba_l','features','typeppr_codegaspar_zonereglementaireurba_l','Table Zone Réglementaire Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_zonereglementaireurba_p','features','typeppr_codegaspar_zonereglementaireurba_p','Table Zone Réglementaire Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonereglementaireurba_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_zonereglementaireurba_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_zonereglementaireurba_p','geom','POINT',/*srs_id*/2154,0,0)
- ;
-```
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
 
@@ -1905,55 +1502,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 | `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-denumeration-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
 | `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-/* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_s ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_zonereglementairefoncier_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementairefoncier_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
-);
-/* Table Linestring */
-CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_l ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  geom LINESTRING NOT NULL,
-  CONSTRAINT fk_zonereglementairefoncier_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementairefoncier_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
-);
-/* Table Point */
-CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_p ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
-  codezonereglement TEXT(10) NOT NULL, 
-  libellezonereglement TEXT(255) NOT NULL, 
-  typereglement TEXT(2) NOT NULL,
-  geom POINT NOT NULL,
-  CONSTRAINT fk_zonereglementairefoncier_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zonereglementairefoncier_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
-);
-/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
-INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_zonereglementairefoncier_s','features','typeppr_codegaspar_zonereglementairefoncier_s','Table Zone Réglementaire Foncier Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_zonereglementairefoncier_l','features','typeppr_codegaspar_zonereglementairefoncier_l','Table Zone Réglementaire Foncier Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_zonereglementairefoncier_p','features','typeppr_codegaspar_zonereglementairefoncier_p','Table Zone Réglementaire Foncier Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
- ;
-/* Ajout à la table gpkg_geometry_columns */
-INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonereglementairefoncier_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_zonereglementairefoncier_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_zonereglementairefoncier_p','geom','POINT',/*srs_id*/2154,0,0)
- ;
-```
+La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp).
 
 
 ##### Table d'enumeration `typeprocedure`
@@ -1980,33 +1529,7 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typeprocedure (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(80) NOT NULL
-);
-INSERT INTO typeprocedure VALUES 
-  ('PPRN','Plan de Prévention des Risques Naturels'),
-  ('PPRN-I','Plan de Prévention des Risques Naturels Innondation'),
-  ('PPRN-L','Plan de Prévention des Risques Naturels Littoral'),
-  ('PPRN-Mvt','Plan de Prévention des Risques Naturels Mouvement de Terrain'),
-  ('PPRN-Multi','Plan de Prévention des Risques Naturels Multirisques'),
-  ('PPRN-S','Plan de Prévention des Risques Naturels Séisme'),
-  ('PPRN-Av','Plan de Prévention des Risques Naturels Avalanches'),
-  ('PPRN-Ev','Plan de Prévention des Risques Naturels Eruption volcanique'),
-  ('PPRN-If','Plan de Prévention des Risques Naturels Incendie de forêt'),
-  ('PPRN-Cy','Plan de Prévention des Risques Naturels Cyclone'),
-  ('PPRN-Rad','Plan de Prévention des Risques Naturels Radon'),
-  ('PPRT','Plan de Prévention des Risques Technologiques'),
-  ('PPRM','Plan de Prévention des Risques Miniers')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeprocedure','attributes','typeprocedure','Enumeration valeurs possibles de types de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeprocedure).
 
 
 ##### Table d'enumeration `etatsprocedure`
@@ -2028,30 +1551,7 @@ Elle a la structure et le contenu suivants :
 | ABROGE | Abrogé |
 
 
-La définition de la table en SQL est la suivante :
-
-
-``` SQL
-CREATE TABLE etatsprocedure (
-  code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(25) NOT NULL
-);
-INSERT INTO etatsprocedure VALUES 
-  ('DEB_PRG','Programmation'),
-  ('DEB_MTG','Montage'),
-  ('PRECRIT','Prescrit'),
-  ('PAC','Porté à connaissance'),
-  ('PROROGE','Prorogé'),
-  ('ANTICIPE','Anticipé'),
-  ('APPROUVE','Approuvé'),
-  ('ANNULE','Annulé'),
-  ('ABROGE','Abrogé')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('etatsprocedure','attributes','etatsprocedure','Enumeration valeurs possibles des états de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-etatsprocedure).
 
 
 ##### Table d'enumeration `typereference`
@@ -2070,25 +1570,7 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typereference (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
-);
-INSERT INTO typereference VALUES 
-  ('01','Règlement signé'),
-  ('02','Zonage réglementaire signé'),
-  ('03','Cartes signées'),
-  ('98','Autres cartes'),
-  ('99','Autres')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typereference','attributes','typereference','Enumeration valeurs possibles de types de références internet',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereference).
 
 
 ##### Table d'enumeration `typealea`
@@ -2143,62 +1625,7 @@ Elle a la structure et le contenu suivants :
 | 34 | Risque minier ; Echauffement des terrains de dépôts |
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typealea (
-  code TEXT(3) NOT NULL PRIMARY KEY,
-  libelle TEXT(120) NOT NULL
-);
-INSERT INTO typealea VALUES 
-  ('112','Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d''eau'),
-  ('113','Risque Naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d''eau'),
-  ('114','Risque Naturel ; Inondation ; Par ruissellement et coulée de boue'),
-  ('115','Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg) '),
-  ('116','Risque Naturel ; Inondation ; Par remontées de nappes naturelles'),
-  ('117','Risque Naturel ; Inondation ; Par submersion marine'),
-  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine anthropique (anciennes carrières souterraines, hors mines)'),
-  ('122','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine naturelle (cavités souterraines)'),
-  ('123','Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs'),
-  ('124','Risque Naturel ; Mouvement de terrain ; Glissement de terrain'),
-  ('125','Risque Naturel ; Mouvement de terrain ; Avancée dunaire'),
-  ('126','Risque Naturel ; Mouvement de terrain ; Recul du trait de côte et de falaises'),
-  ('127','Risque Naturel ; Mouvement de terrain ; Tassement différentiels'),
-  ('13','Risque Naturel ; Séisme'),
-  ('14','Risque Naturel ; Avalanche'),
-  ('15','Risque Naturel ; Eruption volcanique'),
-  ('16','Risque Naturel ; Feu de forêt'),
-  ('171','Risque Naturel ; Phénomène lié à l''atmosphère ; Cyclone / Ouragan'),
-  ('172','Risque Naturel ; Phénomène lié à l''atmosphère ; Tempête et grains (vent)'),
-  ('174','Risque Naturel ; Phénomène lié à l''atmosphère ; Foudre'),
-  ('175','Risque Naturel ; Phénomène lié à l''atmosphère ; Grêle'), 
-  ('176','Risque Naturel ; Phénomène lié à l''atmosphère ; Neige et pluies verglaçantes'),
-  ('18','Risque Naturel ; Radon'),
-  ('211','Risque technologique ; Risque Industriel ; Effet thermique'),
-  ('212','Risque technologique ; Risque Industriel ; Effet de surpression'), 
-  ('213','Risque technologique ; Risque Industriel ; Effet toxique '),
-  ('214','Risque technologique ; Risque Industriel ; Effet de projection'),
-  ('22','Risque technologique ; Nucléaire'),
-  ('23','Risque technologique ; Rupture de barrage'),
-  ('24','Risque technologique ; Transport de marchandises dangereuses'),
-  ('25','Risque technologique ; Engins de guerre'),
-  ('311','Risque minier ; Affaissement minier ; Effondrements généralisés'), 
-  ('312','Risque minier ; Affaissement minier ; Effondrements localisés'), 
-  ('313','Risque minier ; Affaissement minier ; Affaissements progressifs'), 
-  ('314','Risque minier ; Affaissement minier ; Tassements'), 
-  ('315','Risque minier ; Affaissement minier ; Glissements ou mouvements de pente'), 
-  ('316','Risque minier ; Affaissement minier ; Coulées'), 
-  ('317','Risque minier ; Affaissement minier ; Ecroulements rocheux'), 
-  ('321','Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface'),
-  ('322','Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols'),
-  ('33','Risque minier ; Emissions en surface de gaz de mine'),
-  ('34','Risque minier ; Echauffement des terrains de dépôts')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typealea','attributes','typealea','Enumeration valeurs possibles de types d''aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typealea).
 
 
 ##### Table d'enumeration `typeniveaualea`
@@ -2220,30 +1647,7 @@ Elle a la structure et le contenu suivants :
 | 08 | Exceptionnel |
 
 
-La définition de la table en SQL est la suivante :
-
-
-``` SQL
-CREATE TABLE typeniveaualea (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
-);
-INSERT INTO typeniveaualea VALUES 
-  ('00','Très faible ou nul'),
-  ('01','Faible'),
-  ('02','Moyen ou Modéré'),
-  ('03','Moyen plus'),
-  ('04','Fort'),
-  ('05','Fort plus'),
-  ('06','Très fort ou Majeur'),
-  ('07','Très fort plus ou aggravé'),
-  ('08','Exceptionnel')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeniveaualea','attributes','typeniveaualea','Enumeration valeurs possibles des niveaux d''aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeniveaualea).
 
 
 ##### Table d'enumeration `typesuralea`
@@ -2260,23 +1664,8 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typesuralea).
 
-``` SQL
-CREATE TABLE typesuralea (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
-);
-INSERT INTO typesuralea VALUES 
-  ('01','bande de précaution'), 
-  ('02','bande particulière'),
-  ('99','autre')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typesuralea','attributes','typesuralea','Enumeration valeurs possibles de types de suraléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 
 ##### Table d'enumeration `typeouvrageprotection`
@@ -2292,23 +1681,7 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typeouvrageprotection (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
-);
-INSERT INTO typeouvrageprotection VALUES 
-  ('01','Barrage'), 
-  ('02','Digue'), 
-  ('99','autre')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d'ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeouvrageprotection).
 
 
 ##### Table d'enumeration `typerefexterneouvrage`
@@ -2324,23 +1697,7 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-La définition de la table en SQL est la suivante :
-
-``` SQL
-CREATE TABLE typerefexterneouvrage (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(10) NOT NULL
-);
-INSERT INTO typerefexterneouvrage VALUES 
-  ('01','ROE'), 
-  ('02','SIOUH'), 
-  ('99','autre')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typerefexterneouvrage','attributes','typerefexterneouvrage','Enumeration valeurs possibles de types de référentiels externes pour les ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typerefexterneouvrage).
 
 
 ##### Table d'enumeration `typereglementurba`
@@ -2361,31 +1718,8 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereglementurba).
 
-``` SQL
-CREATE TABLE typereglementurba (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(40) NOT NULL
-);
-INSERT INTO typereglementurba VALUES 
-  ('01','Prescriptions hors zone d''aléa'),
-  ('02','Prescriptions'),
-  ('03','Interdiction'),
-  ('04','Interdiction stricte'),
-  ('05','Recommandations'),
-  ('06','Zones grisées'),
-  ('07','Zones d'aléa exceptionnel (AE)')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typereglementurba','attributes','typereglementurba','Enumeration valeurs possibles de types de reglementation d''urbanisme',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
-
-
-
-La définition de la table en SQL est la suivante :
 
 ##### Table d'enumeration `typereglementfoncier`
 
@@ -2400,22 +1734,8 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est la suivante :
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereglementfoncier).
 
-``` SQL
-CREATE TABLE typereglementfoncier (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
-);
-INSERT INTO typereglementfoncier VALUES 
-  ('01','Délaissement possible'),
-  ('02','Expropriation possible')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typereglementfoncier','attributes','typereglementfoncier','Enumeration valeurs possibles de types de reglementation foncières',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-```
 
 #### Métadonnées de la livraison
 
@@ -2441,16 +1761,10 @@ Les éléments de métadonnées du PPR objet de la livraison en GeoPackage sont 
 | 'geopackage' | NULL | NULL | NULL | *date des métadonnées* | 1 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | NULL |
 
 
-Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
 
-``` SQL
-INSERT INTO gpkg_metadata VALUES (
-  1,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>'
-) ;
-INSERT INTO gpkg_metadata_reference VALUES (
-  'geopackage', NULL, NULL, NULL, (datetime('now')), 1, NULL
-);
-```
+inition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereglementfoncier).
+
+Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-metadonnees-de-ppr). 
 
 
 ##### Métadonnées des tables du PPR
@@ -2471,15 +1785,7 @@ Il est possible de rajouter d'autres ensembles d'éléments de métadonnées rel
 | 'table' | 'pprn_76ddtm20120001_zonealeareference_112_s' | NULL | NULL | *date des métadonnées* | 2 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | 1 *(identifiant de la métadonnée du PPR)* |
 
 
-Exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) : 
-
-``` SQL
-INSERT INTO gpkg_metadata VALUES (
-  2,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>') ;
-INSERT INTO gpkg_metadata_reference VALUES (
-  'table', 'pprn_76ddtm20120001_zonealeareference_112_s', NULL, NULL, (datetime('now')), 2, 1
-);
-```
+Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-metadonnees-de-table). 
 
 
 
@@ -4458,4 +3764,28 @@ INSERT INTO gpkg_contents VALUES
  ;
 ```
 
+
+## Exemple d'insertion de meétadonnées de PPR
+
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  1,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>'
+) ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'geopackage', NULL, NULL, NULL, (datetime('now')), 1, NULL
+);
+```
+
+
+## Exemple d'insertion de métadonnées de table
+
+
+``` SQL
+INSERT INTO gpkg_metadata VALUES (
+  2,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>') ;
+INSERT INTO gpkg_metadata_reference VALUES (
+  'table', 'pprn_76ddtm20120001_zonealeareference_112_s', NULL, NULL, (datetime('now')), 2, 1
+);
+```
 
