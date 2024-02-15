@@ -3433,24 +3433,24 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| /habitat | zone d'habitat | -  | zone de typologie de bati homogène destinée à l'habitat |
 | /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
 | /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| /activite | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| /activite | zone d'activité | - | typologie du bâti |  zone de typologie de bati homogène destinée à l'activité professionnelle |
 | /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
 | /activite/service | service | zone d'activité | Zone de typologie de bati homogène destinée au service |
 | /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
-| /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier | infrastructures et équipements particuliers | - | éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/gestionCrise | équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/collectifsPublicsOuverts | équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/campings | campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
 | /equipementParticulier/infraTransport | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/reseauxSensibles | réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
-#### Liste de codes NomenclatureEnjeuPPRL
+## NomenclatureEnjeuPPRL
 
 La liste de codes "NomenclatureEnjeuPPRL" expose la classification des enjeux définie par [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), précisée par certains éléments communs au [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. 
 
@@ -3476,23 +3476,23 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /projetCollectivite | projets d'aménagement futurs du territoire | - | Enjeux complémentaires - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-| /equipementParticulier | infrastructures et équipements particuliers | - | Enjeux complémentaires : éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Enjeux complémentaires - Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /projetCollectivite | projets d'aménagement futurs du territoire | - | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /equipementParticulier | infrastructures et équipements particuliers | - | éléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/collectifERPPublicOuverts | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 | /equipementParticulier/transports | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux complémentaires - Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
-| /habitat | zone d'habitat | -  | Enjeux complémentaires - zone de typologie de bati homogène destinée à l'habitat |
+| patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
+| /habitat | zone d'habitat | -  | zone de typologie de bati homogène destinée à l'habitat |
 | /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat individuel (pavillons) |
 | /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bati homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| /activite | zone d'activité | - | typologie du bâti |  Enjeux complémentaires - zone de typologie de bati homogène destinée à l'activité professionnelle |
+| /activite | zone d'activité | - | typologie du bâti |  zone de typologie de bati homogène destinée à l'activité professionnelle |
 | /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bati homogène destinée à l'industrie |
 | /activite/service | service | zone d'activité | Zone de typologie de bati homogène destinée au service |
 | /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bati homogène destinée à l'artisanat |
 | /gestionCrise | enjeux stratégiques pour la gestion de crise | -  | Autres éléments de contextes - Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 
 
-#### Liste de codes NomenclatureEnjeuPPRT
+## NomenclatureEnjeuPPRT
 
 La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Il est aussi indiqué à titre informatif le type d'éléments de vulnérabilité qui peut être rattachée à un objet Enjeu selon certaines de ces classifications.
 
@@ -3551,7 +3551,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 
 
-## Liste de codes NomenclatureEnjeuCOVADIS
+## NomenclatureEnjeuCOVADIS
 
 
 La liste de codes "NomenclatureEnjeuCOVADIS" expose la classification des enjeux définie dans l'ancien standard COVADIS. Elle est reprise ici de manière à permettre de conserver les classifications des enjeux effectuées pour les PPR antérieurs au présent standard. Elle est présentée par grandes catégories (correspondant aux deux premiers caractères du code, standadisé par la COVADIS), affinées chacune en sous catégories (sur quatre à cinq caractères) comme proposé en annexe dans le le standard COVADIS.
