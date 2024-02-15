@@ -1762,9 +1762,7 @@ Les éléments de métadonnées du PPR objet de la livraison en GeoPackage sont 
 
 
 
-inition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereglementfoncier).
-
-Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-metadonnees-de-ppr). 
+Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-métadonnées-de-ppr). 
 
 
 ##### Métadonnées des tables du PPR
@@ -1785,7 +1783,7 @@ Il est possible de rajouter d'autres ensembles d'éléments de métadonnées rel
 | 'table' | 'pprn_76ddtm20120001_zonealeareference_112_s' | NULL | NULL | *date des métadonnées* | 2 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | 1 *(identifiant de la métadonnée du PPR)* |
 
 
-Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-metadonnees-de-table). 
+Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [ANNEXE E](#exemple-dinsertion-de-métadonnées-de-table). 
 
 
 
@@ -3765,7 +3763,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Exemple d'insertion de meétadonnées de PPR
+## Exemple d'insertion de métadonnées de PPR
 
 
 ``` SQL
