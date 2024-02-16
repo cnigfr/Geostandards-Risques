@@ -27,7 +27,7 @@ Groupe de travail refonte des Géostandards Risques
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
 | **Version du document** | *0.2 - jj mois aaaa (date de publication)*  |
-| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR). |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR) Naturels et Technologiques. |
 | **Etendue d'application** | Territoire national français |
 | **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
@@ -82,12 +82,12 @@ La famille des Géostandards Risques a pour objectif de standardiser les donnée
 
 Elle est constituée d'un document socle [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. 
 
-Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles, technologiques ou Miniers et au cadre réglementaire dans lequel ils s'inscrivent.
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique liée aux Plans de Prévention des Risques (PPR) naturels prévisibles ou technologiques et au cadre réglementaire dans lequel ils s'inscrivent.
 
-Il a vocation à se substituer et rendre obsolètes les dernières versions des standards COVADIS suivants :
+Il a vocation à se substituer et rendre obsolète la dernières version du standard COVADIS suivant :
 
 * Plan de prévention des risques naturels ou technologiques PPRN – PPRT, version 1.0, corrigée du 31/12/2012 ;
-* Plan de prévention des risques miniers (PPRM), version 1.0 du 16 septembre 2015 ;
+
 
 
 
@@ -142,7 +142,6 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf) | Guide Méthodologique PPRN Avalanches | ONF-RTM, DGPR | 2015 |
 | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
-| [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques miniers | Cerema | 2019 |
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
@@ -172,13 +171,6 @@ La mise en œuvre des Plans de prévention des risques technologiques est défin
 
 * Les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * Les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire ;
-
-####  Cadre réglementaire des Plans de Prévention des Risques Miniers
-
-La mise en œuvre des Plans de prévention des risques miniers est définie par :
-
-* L'[article L174-5 du code minier](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046554903?init=true&page=1&query=L174-5&searchField=ALL&tab_selection=all) pour la partie législative ;
-* Le [décret n°2000-547 du 16 juin 2000 pris pour l'application du chapitre IV du titre VII du livre Ier du code minier](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000765577) pour la partie réglementaire.
 
 
 ##  Compréhension du document
@@ -233,8 +225,6 @@ La mise en œuvre des Plans de prévention des risques miniers est définie par 
 **OGC** Open Geospatial Consortium
 
 **ONF** Office National des Forêts
-
-**PPRM** Plan de Prévention des Risques Miniers
 
 **PPRN** Plan de Prévention des Risques Naturels
 
@@ -313,7 +303,7 @@ Le cas d'utilisation "Elaborer un PPR" illustre à grand traits les étapes d'é
 |Action du cas d'utilisation| Description|
 |-|-|
 |Prescrire, approuver, le PPR | Cette action, de la responsabilité du préfet de département, témoigne de l'aspect réglementaire et juridique des PPR. Elle ne concerne ce standard que dans la mesure où ce dernier permet de décrire l'état juridique du PPR, résultant de cette action. |
-| Produire les données métier | Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
+| Produire les données métier | Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s ou les DREALs (dans le cadre des PPR technologiques) est centrale dans l'élaboration du PPR, puisqu'elle permet d'en établir l'essence même : définir les zones d'aléas, faire la collecte des enjeux et établir le zonage réglementaire résultant. A ce stade ces données métiers peuvent être directement produites selon le formalisme du standard. |
 | Produire les données SIG | Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s permet de produire les données numériques correspondant à la cartographie du PPR. Elle peut être une sous étape de la précédente si cette dernière à directement produit ces données numériquement ou peut y succéder s'il s'agit de les numériser. Dans tous les cas, elle est complètement dans le périmètre de ce standard qui permet de structurer cette information. |
 | Produire les pièces écrites |  Cette étape, menée sous la responsabilité du préfet, généralement par les DDT(M)s permet de produire les documents du dossier PPR, notamment les cartes qui peuvent être produites à partir des données SIG évoquées précédemment mais aussi le règlement et les arrêtés préfectoraux. Elle est concernée par le standard dans la mesure où ce dernier permet de faire référence à ces pièces écrites. |
 | Gérer le suivi de la procédure | Cette étape, menée sous la responsabilité du préfet, généralement par ldu préfet, généralement par les DDT(M)s, relate de l'utilisation de la base GASPAR (gestion assistée des procédures administratives relatives aux risques) pour l'enregistrement et le suivi du PPR au niveau national. Là aussi le standard PPR décrit des informations qui permettent de faire le lien avec les informations de cette base. |
@@ -386,7 +376,9 @@ La figure suivante représente le modèle de données complet spécialisé dans 
 
 ### Thématique Procédures et périmètres
 
-Dans le cadre de l'élaboration des **plans de prévention des risques**, les entités définies dans le modèle commun s'appliquent avec une restriction sur l'énumération [TypeProcedure](#enumeration-typeprocedure) pour laquelle seules les valeurs relatives aux PPR s'appliquent.
+Dans le cadre de l'élaboration des **plans de prévention des risques**, la thématique "Procédures et périmètres" regroupe les informations relatives alu suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire.
+
+Dans ce contexte, les entités définies dans le modèle commun s'appliquent avec une restriction sur l'énumération [TypeProcedure](#enumeration-typeprocedure) pour laquelle seules les valeurs relatives aux PPR s'appliquent.
 
 La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR pour la thématique Procédures et périmètres.
 
@@ -441,7 +433,6 @@ Le profil applicatif PPR décline les différentes nomenclatures définies dans 
 - Liste de codes [NomenclatureEnjeuPPRN](#liste-de-codes-nomenclatureenjeupprn) issue du [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) ;
 - Liste de codes [NomenclatureEnjeuPPRL](#liste-de-codes-nomenclatureenjeupprl) issue du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) ;
 - Liste de codes [NomenclatureEnjeuPPRT](#liste-de-codes-nomenclatureenjeupprt) issue du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) ;
-- Liste de codes [NomenclatureEnjeuPPRM](#liste-de-codes-nomenclatureenjeupprm) issue du [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf) ;
 
 Par ailleurs, l'annexe D de l'ancien standard COVADIS PPR naturels ou technologiques définissait à titre informatif une nomenclature détaillée des enjeux. Cette nomenclature est reprise ici sous le nom de [NomenclatureEnjeuCOVADIS](#liste-de-codes-nomenclatureenjeucovadis), toujours à titre informatif, de façon à faciliter la conversion des anciens PPR COVADIS s'appuyant sur cette nomenclature sans avoir à refaire une classification des enjeux selon une nouvelle nomenclature mais aussi, pour les nouveaux PPR, de préciser, si besoin, la catégorie de certains enjeux.
 
@@ -480,22 +471,21 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 
 Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites dans le cadre des PPR. Il s'agit d'une restriction par rapport à l'énumération définie dans le modèle commun.
 
+Cette section précise l'utilisation et les spécialisations du modèle de données commun défini dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) dans le cadre des procédures de Plans de Prévention des Risques.
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels | |
-| Plan de Prévention des Risques Naturels Innondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de cote et la submersion marine |
-| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
-| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
-| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
-| Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels liés aux avalanches spontanées, avalanches provoquées naturellement, avalanches provoquées accidentellement, et aux avalanches provoquées artificiellement |
-| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
-| Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
-| Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
-| Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques naturels liés aux formations géologique, failles, ouvrages miniers, et aux sources hydrothermales |
-| Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
-| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation |
+| Plan de Prévention des Risques Naturels Innondation | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) s'applique |
+| Plan de Prévention des Risques Naturels Littoral | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Multirisques | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Séisme | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Avalanches | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Eruption volcanique | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Incendie de forêt | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Cyclone | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Naturels Radon | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
+| Plan de Prévention des Risques Technologiques | La description de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun#énumeration-typeprocedure) |
 
 
 
@@ -911,9 +901,9 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 ## Les différents états d'une procédure de Plan de Prévention des risques
 
-Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) et [Guide PPRM:2019](https://www.ecologie.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)). On peut les résumer ici en quatre états majeurs qui sont réflêtés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
+Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) et [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). On peut les résumer ici en quatre états majeurs qui sont réflêtés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
 
-- un état "Programmation et montage" pendant lequel l'opportunité de prescrire un PPR est à l'étude et correspond à une phase d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
+- un état "Programmation et montage" pendant lequel l'opportunité de prescrire un PPR est à l'étude et correspond à une phase de recueil de données et d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
 
 - un état "Prescrit", signé par le préfet où les zones soumises aux aléas sont connues mais le zonage réglementaire non encore complètement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
@@ -929,7 +919,7 @@ Les données PPR ne font pas l'objet de mise à jour systématique. Les données
 
 #  Règles de symbologie
 
-Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques et PPR Miniers, en accord avec les guides d'élaboration qui leur sont dédiés. 
+Cette partie reprend et adapte pour ce standard les recommandations de représentation des entités décrivant les niveaux d'aléas et les types de zonages réglementaire énoncées dans les anciens standards COVADIS PPR Naturels et Technologiques, en accord avec les guides d'élaboration qui leur sont dédiés. 
 
 Il s'agit de recommandations à appliquer pour une représentation synthétique et uniforme des PPR à un niveau départemental ou national (échelle <= 1:50000). Pour les représentations à l'échelle d'un PPR particulier (entre 1:5000 et 1:25000), ces recommandations restent pertinentes mais des règles particulières et spécifiques au règlement du PPR peuvent s'ajouter.
 
@@ -942,16 +932,16 @@ Le tableau suivant présente les couleurs, en code RVB (Rouge Vert Bleu), à app
 Ces couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
 
-| Niveau d'aléa | PPRN | PPRT | PPRM |
+| Niveau d'aléa | PPRN | PPRT | 
 |-|-|-|-|
-| Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) |
-| Moyen ou Modéré | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R238 V221 B130 ![StyleAleaMoyenPPRM](./ressources/couleur-alea-pprm-02-m.png)
-| Moyen plus | N.A. | R176 V196 B222  ![StyleAleaMoyenPlusPPRT](./ressources/couleur-alea-pprt-03-mplus.png) | N.A. |
-| Fort | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | R233 V150 B122 ![StyleAleaFortPPRM](./ressources/couleur-alea-pprm-04-f.png) |
-| Fort plus | N.A. | R238 V221 B130 ![StyleAleaFortPlusPPRT](./ressources/couleur-alea-pprt-05-fplus.png) | N.A. |
-| Très fort ou Majeur| R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | N.A. |
-| Très fort plus ou aggravé |  R240 V128 B128 ![StyleAleaTresFortPlusPPRN](./ressources/couleur-alea-pprt-07-tfplus.png)  | R240 V128 B128 ![StyleAleaTresFortPlusPPRT](./ressources/couleur-alea-pprt-07-tfplus.png) | N.A. |
-| Exceptionnel | Contour jaune. (Cf. [Note ARE DGPR:2022](https://www.georisques.gouv.fr/sites/default/files/2022-09/note_ARE_janvier_2022_version_finale.pdf))   | N.A. | N.A. |
+| Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  |
+| Moyen ou Modéré | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) |
+| Moyen plus | N.A. | R176 V196 B222  ![StyleAleaMoyenPlusPPRT](./ressources/couleur-alea-pprt-03-mplus.png) | 
+| Fort | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | R245 V222 B179 ![StyleAleaFortPPRNT](./ressources/couleur-alea-pprnt-04-f.png) | 
+| Fort plus | N.A. | R238 V221 B130 ![StyleAleaFortPlusPPRT](./ressources/couleur-alea-pprt-05-fplus.png) | 
+| Très fort ou Majeur| R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | 
+| Très fort plus ou aggravé |  R240 V128 B128 ![StyleAleaTresFortPlusPPRN](./ressources/couleur-alea-pprt-07-tfplus.png)  | R240 V128 B128 ![StyleAleaTresFortPlusPPRT](./ressources/couleur-alea-pprt-07-tfplus.png) | 
+| Exceptionnel | Contour jaune. (Cf. [Note ARE DGPR:2022](https://www.georisques.gouv.fr/sites/default/files/2022-09/note_ARE_janvier_2022_version_finale.pdf))   | N.A. | 
 
 
 
@@ -966,24 +956,24 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 ### Représentation des types de réglementations en matière d'urbanisme
 
 
-| Type de réglementation | PPRN | PPRT | PPRM |
+| Type de réglementation | PPRN | PPRT | 
 |-|-|-|-|
-| Recommandations | Non défini | Non défini | Non défini |
-| Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | Non défini |
-| Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) |
-| Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | Non défini |
-| Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) |
-| Zone grises | N.A. | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | N.A. |
-| Zones d'aléa exceptionnel (AE) | ![StyleRegJaunePPRNAE](./ressources/couleur-reg-pprn-ae.png) | N.A. | N.A. |
+| Recommandations | Non défini | Non défini | 
+| Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | 
+| Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | 
+| Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | 
+| Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | 
+| Zone grises | N.A. | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | 
+| Zones d'aléa exceptionnel (AE) | ![StyleRegJaunePPRNAE](./ressources/couleur-reg-pprn-ae.png) | N.A. | 
 
 
 ### Représentation des types de réglementations foncières
 
 
-| Type de réglementation | PPRN et PPRT | PPRM |
+| Type de réglementation | PPRN et PPRT | 
 |-|-|-|
-| Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) | Non Défini |
-| Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) | Non Défini |
+| Délaissement possible | R201 V147 B255 ![StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05.png) | 
+| Expropriation possible | R154 V53 B155 ![StyleReg06PPRNT](./ressources/couleur-reg-pprnt-06.png) | 
 
 
 
@@ -1117,7 +1107,7 @@ La présence de cette table dans un fichier GeoPackage est obligatoire.
 La livraison en Geopackage d'un Plan de Prévention des Risques doit contenir une table `gpkg_spatial_ref_sys` conforme à la structure du format GeoPackage qui contient les systèmes de coordonnées utilisés pour les géométries des tables de type `features` présentes dans la livraison. Ces systèmes de coordonnées doivent correspondre à un de ceux décrits dans la section [Systèmes de référence](#systèmes-de-référence).
 
 
-L'instructions SQL indiquée en [ANNEXE E](#insertion-des-systèmes-de-coordonnées-dans-la-table-gpkg_spatial_ref_sys) permet d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
+Les instructions SQL indiquée en [ANNEXE E](#insertion-des-systèmes-de-coordonnées-dans-la-table-gpkg_spatial_ref_sys) permettent d'insérer les enregistrements relatifs aux systèmes de coordonnées en projection autorisés pour les PPR dans la table `gpkg_spatial_ref_sys`.
 
 
 ##### Table gpkg_metadata
@@ -1525,7 +1515,6 @@ Elle a la structure et le contenu suivants :
 | PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
 | PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
 | PPRT | Plan de Prévention des Risques Technologiques |
-| PPRM | Plan de Prévention des Risques Miniers |
 
 
 
@@ -1858,7 +1847,7 @@ Les règles suivantes sont à appliquer pour nommer le fichier de métadonnées 
 | Niveau de granularité | "Valeur" ou *consigne de saisie*  | 
 |-|-|
 | Métadonnées générales | "Ensemble des Plans de Préventions des Risques sur le territoire français" |
-| Métadonnées d'un PPR | "Plan de Prévention des Risques *Naturels (ou Technologiques ou Miniers)* de *nom de la localisation géographique du PPR*". Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
+| Métadonnées d'un PPR | "Plan de Prévention des Risques *Naturels (ou Technologiques)* de *nom de la localisation géographique du PPR*". Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
 | Métadonnées d'un PPR | *Reprise du de la valeur du champ `libelleProcedure` de la classe `Procedure`*. Exemple : "Plan de Prévention des Risques Naturels du bassin versant  de la Scie" |
 | Métadonnées d'une thématique | "Table *nom de la table* du *Reprise du libelle utilisé pour la métadonnée du PPR*" |
 
@@ -2009,7 +1998,7 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
 | Métadonnées générales | `Lieux de production et sites industriels` (PPRT), `Usage des sols`, `Zones à risque naturel` (PPRN), `Zones de gestion, de restriction ou de réglementation et unités de déclaration`  |
-| Métadonnées d'un PPR | *Pour les PPRN* : `Zones à risque naturel`, *Pour les PPRT* : `Lieux de production et sites industriels`, *Pour les PPRM* : `Zones de gestion, de restriction ou de réglementation et unités de déclaration` |
+| Métadonnées d'un PPR | *Pour les PPRN* : `Zones à risque naturel`, *Pour les PPRT* : `Lieux de production et sites industriels` |
 | Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
 
@@ -2278,7 +2267,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 
 
-# ANNEXE A - Correspondances avec les standards COVADIS PPR (N et T) et PPRM
+# ANNEXE A - Correspondances avec les standards COVADIS PPR (N et T)
 
 Les règles de passage ci-dessous détaillent la façon dont les objets des classes du nouveau standard sont créés et renseignés à partir des objets provenant des classes du modèle de conceptuel de données de l'ancien standard COVADIS PPRN (DocumentPPR, PerimetrePPR, ZonePPR, ZoneAleaPPR, EnjeuPPR et OrigineRisque).
 
@@ -3517,8 +3506,7 @@ INSERT INTO typeprocedure VALUES
   ('PPRN-If','Plan de Prévention des Risques Naturels Incendie de forêt'),
   ('PPRN-Cy','Plan de Prévention des Risques Naturels Cyclone'),
   ('PPRN-Rad','Plan de Prévention des Risques Naturels Radon'),
-  ('PPRT','Plan de Prévention des Risques Technologiques'),
-  ('PPRM','Plan de Prévention des Risques Miniers')
+  ('PPRT','Plan de Prévention des Risques Technologiques')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
