@@ -457,13 +457,13 @@ Le tableau suivant liste les différents types de procédures de prévention des
 
 | Libellé | Description |
 |-|-|
-| Plan de Prévention des Risques Naturels Inondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine et par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de côte et la submersion marine |
-| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge et au retrait-gonflement des argiles |
-| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure couvre plusieurs types de risques naturels |
-| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés aux tsunamis, mouvements de terrain, et la liquéfaction des sols|
+| Plan de Prévention des Risques Naturels Inondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine ou par remontée de nappe |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de côte ou à la submersion marine |
+| Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge ou au retrait-gonflement des argiles |
+| Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure concerne les plans de prévention des risques couvrant plusieurs types de risques naturels |
+| Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés au zonage sismique de la France, aux effets de site (amplification par rapport au mouvement de référence) et aux effets induits (mouvements de terrain, liquéfaction des sols, tsunamis) |
 | Plan de Prévention des Risques Naturels Avalanches | Ce type de procédure couvre les risques naturels liés aux avalanches spontanées, avalanches provoquées naturellement, avalanches provoquées accidentellement, et aux avalanches provoquées artificiellement |
-| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux glissements de terrain, modification du cours des rivières, tsunamis, et la destruction des réseaux d’eau, d’énergie ou de communication |
+| Plan de Prévention des Risques Naturels Eruption volcanique |Ce type de procédure couvre les risques naturels liés aux éruptions volcaniques, tels que les coulées de lave, les nuées ardentes, les explosions volcaniques et les lahars (coulées de boues/coulées de débris). |
 | Plan de Prévention des Risques Naturels Incendie de forêt | Ce type de procédure couvre les risques naturels liés aux incendies |
 | Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
 | Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques liés aux émanations du gaz radon en fonction du contexte naturel (formations géologiques, failles, sources hydrothermales) ou minier | 
