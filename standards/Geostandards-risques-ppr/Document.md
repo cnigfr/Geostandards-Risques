@@ -1219,7 +1219,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 |-|-|-|-|-|
 | O | `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
 | F | `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
-| O | **`[TypePPR]_[CodeGASPARComplet]_perimetre_s`** | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
+| O | `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
 | O | `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `POLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
