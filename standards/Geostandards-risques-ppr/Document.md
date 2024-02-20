@@ -145,6 +145,8 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 | [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf) | Terminologie pour la Prévention des risques de catastrophe | Stratégie internationale de prévention des catastrophes des Nations Unies (UNISDR) | 2009 | 
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [OGC:GeoPackage 1.3.1](https://www.geopackage.org/spec131/) | OGC(R) GeoPackage Encoding Standard version 1.3.1 | Open Geospatial Consortium | 2021 |
+| [OGC:SimpleFeature-1 1.2.1](https://portal.ogc.org/files/?artifact_id=25355) | OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture| Open Geospatial Consortium | 2011 |
+| [OGC:SimpleFeature-2 (SQL Option) 1.2.1](https://portal.ogc.org/files/?artifact_id=25355) | OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 2: SQL option| Open Geospatial Consortium | 2010 |
 | [RFC:3986](https://datatracker.ietf.org/doc/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax | Network Working Group, The Internet Society | 2005 |
 | [ISO:639-2](https://www.loc.gov/standards/iso639-2/) | Codes for the representation of names of languages-- Part 2: alpha-3 code | Library of congress | 2011 |
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
@@ -224,19 +226,19 @@ La mise en œuvre des Plans de prévention des risques technologiques est défin
 
 **OGC** Open Geospatial Consortium
 
-**ONF** Office National des Forêts
+**ONF** Office national des forêts
 
-**PPRN** Plan de Prévention des Risques Naturels
+**PPRN** Plan de prévention des risques naturels
 
-**PPRT** Plan de Prévention des Risques Technologiques
+**PPRT** Plan de prévention des risques technologiques
 
-**RTM** Service de Restauration des terrains en montagne de l'ONF
+**RTM** Service de restauration des terrains en montagne de l'ONF
 
-**SIG** Système d'Information Géographique
+**SIG** Système d'information géographique
 
-**SUP** Servitude d'Utilité Publique
+**SUP** Servitude d'utilité publique
 
-**WKT** Well-Known Text
+**WKT** Well-known text
 
 **URI** Uniform Resource Identifier
 
@@ -556,7 +558,7 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas dans le cadre des PPRI, ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf). Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il s'agit d'une bande de protection.
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Polygone simple de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
 
 
 **Propriétés** : 
@@ -653,7 +655,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives classiques : Polygone, Ligne, Point.
+**Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives simples classiques : Polygone, Ligne, Point.
 
 **Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -672,7 +674,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives classiques : polygone, Ligne, Point.
+**Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives simples classiques : polygone, Ligne, Point.
 
 **Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -795,7 +797,7 @@ La précision géométrique d'un PPR peut être relatée dans les métadonnées 
 
 ### Validité des géométries 
 
-Afin de pouvoir être exploitées correctement par les systèmes informatiques avals que ce soit pour diffusion ou en utilisation directe dans un SIG, les géométries des PPR doivent respecter les règles standard dérivées des normes OGC Simple Feature access part 1 (Common) et Simple Features access part 2 (SQL Option). Ce sont les modèles de géométrie communément adoptés par les SIG, par PostGIS et par le format GeoPackage utilisé pour la livraison.
+Afin de pouvoir être exploitées correctement par les systèmes informatiques avals que ce soit pour diffusion ou en utilisation directe dans un SIG, les géométries des PPR doivent respecter les règles standard dérivées des normes  [OGC:SimpleFeature-1 1.2.1](https://portal.ogc.org/files/?artifact_id=25355) et [OGC:SimpleFeature-2 (SQL Option) 1.2.1](https://portal.ogc.org/files/?artifact_id=25354). Ce sont les modèles de géométrie communément adoptés par les SIG, par PostGIS et par le format GeoPackage utilisé pour la livraison.
 
 Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient pas conformes avec la façon dont elles sont définies. Les sources d’invalidité concernent principalement les polygones, géométries complexes qui définissent des aires et requièrent une bonne structuration. Il s'agit de : 
 - Polygones non fermés ;
@@ -803,7 +805,7 @@ Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient p
 - Les nœuds trop proches ou dupliqués
 - Les arcs pendants
 - Les contours qui s'intersectent (polygones en papillon)
-- Les contours d’un polygone ne doivent pas toucher les autres contours, sauf en un point unique.
+- Les contours d’un même polygone ne doivent pas se toucher, sauf éventuellement en tangence en un point unique.
 
 Note : Les méthodes de détection et de correction de ces invalidités sont relativement bien connues et ont été documentées dans des documents tels que le [Guide CPII : jeux de données SIG – vérification et correction des géométries](https://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/verification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf?arg=177834719&cle=830634f7888fc808498f0c41704664611af04021&file=pdf%252Fverification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf).  
 
@@ -834,6 +836,18 @@ Indicateur | Seuil d'avertissement | Seuil de rejet |
 | Nombre d'anneaux | > 500 | > 1 000 |
 | Nombre de parties | > 500 | > 1 000 |
 
+A noter que la livraison en Geopackage décrite dans ce docuement impose une implémentation en primitives simples pour les tables dériviées des classes suivantes : 
+
+- [ZoneAleaReference](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s)
+- [ZoneAleaEcheance100ans](#table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s)
+- [ZoneAleaExceptionnel](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s)
+- [ZoneProtegee](#table-typeppr_codegasparcomplet_zoneprotegee_codealea_s)
+- [ZoneDangerSpecifique](#table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s)
+- [ZoneReglementaireUrba](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp)
+- [ZoneReglementaireFoncier](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp)
+
+Les autres tables dont les données (dont la géométrie) peuvent être issues de référentiels externes n'ont pas cette limitation. Mais devront cependant respecter ces indicateurs.
+ 
 
 D'autres indicateurs sont définis ici éviter les micro-géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
 
@@ -1179,11 +1193,21 @@ A titre d'exemples :
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
 
+##### Schéma physique des tables
+
+La figure suivante représente l'ensemble des tables du standard pouvant faire partie de la livraison à l'exception des tables intrinsèques à GeoPackage. Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme complet des tables du standard**
+
+![Diagramme tables PPR](./ressources/Geopackage-PPR-view.png)
+
 
 ##### Dictionnaire des tables
 
 Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livraison en précisant :
 
+- le caractère obligatoire (O), conditionnel (C) ou facultatif (F) de la présence de la table dans la livraison
 - le nom de la table (valeur de `table_name` dans la table `gpkg_contents`)
 - le type de la table selon la nomenclature de GeoPackage (valeur de `data_type` dans la table `gpkg_contents`)
 - le type de Géométrie de la table dans la nomenclature de GeoPackage (valeur de `geometry_type_name` dans la table `gpkg_geometry_columns`). Les types de Géométries possibles sont précisés dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#geometry_types).
@@ -1191,43 +1215,43 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 
 
 
-| Nom de la table | Type de table (GPKG) | Type de géométrie (GPKG) | Entité(s) du modèle conceptuel implémentée(s) |
-|-|-|-|-|
-| `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
-| `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
-| `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
-| `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
-| `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
-| `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `MULTIPOLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
-| `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `MULTIPOLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zoneAleaexceptionnel) |
-| `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
-| `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
-| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
-| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_l` | `features` | `LINESTRING` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
-| `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_p` | `features` | `POINT` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
-| `[TypePPR]_[CodeGASPARComplet]_originerisque_s` | `features` | `MULTIPOLYGON` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
-| `[TypePPR]_[CodeGASPARComplet]_originerisque_l` | `features` | `LINESTRING` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
-| `[TypePPR]_[CodeGASPARComplet]_originerisque_p` | `features` | `POINT` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
-| `[TypePPR]_[CodeGASPARComplet]_enjeu_s` | `features` | `MULTIPOLYGON` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_enjeu_l` | `features` | `LINESTRING` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_enjeu_p` | `features` | `POINT` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
-| `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` | `features` | `POINT` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` | `features` | `MULTIPOLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
-| `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` | `features` | `POINT` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
-| `typeprocedure` | `attributes` | N.A. | Enumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) |
-| `etatsprocedure` | `attributes` | N.A. | Enumeration [Etats d'une procédure](../Geostandards-risques-commun/Document.md#enumeration-etats-dune-procédure) |
-| `typereference` | `attributes` | N.A. | Enumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) |
-| `typealea` | `attributes` | N.A. | Enumeration [TypeAlea](../Geostandards-risques-commun/Document.md#enumeration-typealea) |
-| `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
-| `typesuralea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
-| `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
-| `typeouvrageprotection` | `attributes` | N.A. | Enumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) |
-| `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
-| `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
+| Obl. | Nom de la table | Type de table (GPKG) | Type de géométrie (GPKG) | Entité(s) du modèle conceptuel implémentée(s) |
+|-|-|-|-|-|
+| O | `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| F | `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
+| O | **`[TypePPR]_[CodeGASPARComplet]_perimetre_s`** | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
+| O | `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `POLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `POLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zoneAleaexceptionnel) |
+| F | `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
+| F | `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_l` | `features` | `MULTILINESTRING` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_p` | `features` | `MULTIPOINT` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| F | `[TypePPR]_[CodeGASPARComplet]_originerisque_s` | `features` | `MULTIPOLYGON` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| F | `[TypePPR]_[CodeGASPARComplet]_originerisque_l` | `features` | `MULTILINESTRING` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| F | `[TypePPR]_[CodeGASPARComplet]_originerisque_p` | `features` | `MULTIPOINT` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
+| C | `[TypePPR]_[CodeGASPARComplet]_enjeu_s` | `features` | `MULTIPOLYGON` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| C | `[TypePPR]_[CodeGASPARComplet]_enjeu_l` | `features` | `MULTILINESTRING` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| C | `[TypePPR]_[CodeGASPARComplet]_enjeu_p` | `features` | `MULTIPOINT` | Classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) |
+| F | `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` | `attributes` | N.A. | Type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` | `features` | `POLYGON` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` | `features` | `POINT` | Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` | `features` | `POLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` | `features` | `POINT` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
+| F | `typeprocedure` | `attributes` | N.A. | Enumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) |
+| F | `typeetatprocedure` | `attributes` | N.A. | Enumeration [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) |
+| F | `typereference` | `attributes` | N.A. | Enumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) |
+| F | `typealea` | `attributes` | N.A. | Enumeration [TypeAlea](../Geostandards-risques-commun/Document.md#enumeration-typealea) |
+| F | `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
+| F | `typesuralea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
+| F | `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
+| F | `typeouvrageprotection` | `attributes` | N.A. | Enumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) |
+| F | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
+| F | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
 
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent être déclarées dans la table `gpkg_contents` avec le type de table indiqué dans le tableau précédent.
@@ -1282,9 +1306,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Peri
 |-|-|-|-|
 | `idperimetre` | TEXT(8) | **Clef primaire** | identifiant de l'objet périmètre. |
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| `etatprocedure` | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table [etatsprocedure](#table-denumeration-etatsprocedure) | Etat d'avancement de la procédure référencée par `codeprocedure` sur le périmètre. |
+| `etatprocedure` | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table [typeetatprocedure](#table-denumeration-typeetatprocedure) | Etat d'avancement de la procédure référencée par `codeprocedure` sur le périmètre. |
 | `dateetat` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone du périmètre |  |
+| `geom` | MULTIPOLYGON | (multi)polygone du périmètre |  |
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_perimetre_s).
 
@@ -1317,7 +1341,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+| `geom` | POLYGON | Polygone de la zone |  |
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeareference_codealea_s).
 
@@ -1334,7 +1358,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+| `geom` | POLYGON | Polygone de la zone |  |
 
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s).
@@ -1352,7 +1376,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). Ici la valeur est toujours `08` (exceptionnel) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT(15) | Saisie libre éventuellement contrainte par le type d'aléa | Occurence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT(255) | Saisie libre | Description textuelle de la zone d'aléa. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+| `geom` | POLYGON | Polygone de la zone |  |
 
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s).
@@ -1373,7 +1397,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
 | `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
 | `idouvrageprotection_p` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+| `geom` | POLYGON | Polygone de la zone |  |
 
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zoneprotegee_codealea_s).
@@ -1394,7 +1418,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
 | `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
 | `idouvrageprotection_p` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
-| `geom` | MULTIPOLYGON | Géométrie multipolygone de la zone |  |
+| `geom` | POLYGON | Polygone de la zone |  |
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s).
 
@@ -1409,7 +1433,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` im
 | `refexterne` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-denumeration-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
 | `refexterneautre` | TEXT(50) | Saisie libre. La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
 | `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-denumeration-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
-| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
+| `geom` | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp).
 
@@ -1424,7 +1448,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la 
 | `codeprocedure` | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à l'objet origine du risque. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `refexterne` | TEXT(50) | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
 | `nom` | TEXT(255) |  Saisie libre. | Nom de l'objet origine du risque. | 
-| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
+| `geom` | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_originerisque_slp).
 
@@ -1443,7 +1467,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 | `codeenjeu` | TEXT(50) | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureEnjeu`. |
 | `nomenclatureEnjeu` | TEXT(255) | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 | `dateenjeu` | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
-| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
+| `geom` | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_enjeu_slp).
 
@@ -1474,7 +1498,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 | `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
 | `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
 | `obligationtravaux` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors l'obligation ou non de travaux est inconnue. | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. |
-| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
+| `geom` | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementaireurba_slp).
 
@@ -1490,7 +1514,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 | `codezonereglement` | TEXT(10) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
 | `libellezonereglement` | TEXT(255) | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
 | `typereglement` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-denumeration-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
-| `geom` | MULTIPOLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
+| `geom` | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp).
 
@@ -1521,9 +1545,9 @@ Elle a la structure et le contenu suivants :
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeprocedure).
 
 
-##### Table d'enumeration `etatsprocedure`
+##### Table d'enumeration `typeetatprocedure`
 
-La table `etatsprocedure` implémente l'énumeration [Etats d'une procédure](../Geostandards-risques-commun/Document.md#enumeration-etats-dune-procédure) définie dans le modèle commun.
+La table `typeetatprocedure` implémente l'énumeration [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) définie dans le modèle commun.
 
 Elle a la structure et le contenu suivants :
 
@@ -1540,7 +1564,7 @@ Elle a la structure et le contenu suivants :
 | ABROGE | Abrogé |
 
 
-La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-etatsprocedure).
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeetatprocedure).
 
 
 ##### Table d'enumeration `typereference`
@@ -3015,7 +3039,9 @@ INSERT INTO gpkg_contents VALUES
 CREATE TABLE typeppr_codegaspar_revise ( 
   codeprocrevisante TEXT(16) NOT NULL, 
   codeprocrevisee TEXT(16) NOT NULL,
-  CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee)
+  CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee),
+  CONSTRAINT fk_revise_codeprocrevisante FOREIGN KEY (codeprocrevisante) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_revise_codeprocrevisee FOREIGN KEY (codeprocrevisee) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -3034,7 +3060,7 @@ CREATE TABLE typeppr_codegaspar_perimetre_s (
   dateetat DATE NOT NULL,
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_perimetre_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_perimetre_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES etatsprocedure(code)
+  CONSTRAINT fk_perimetre_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES typeetatprocedure(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES 
@@ -3076,7 +3102,7 @@ CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s (
   niveaualea TEXT(2) NOT NULL,
   occurrence TEXT(15), 
   description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeareference_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeareference_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
@@ -3087,7 +3113,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeareference_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zonealeareference_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3102,7 +3128,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s (
   niveaualea TEXT(2) NOT NULL,
   occurrence TEXT(15), 
   description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
@@ -3113,7 +3139,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zonealeaecheance100ans_117_s','geom','POLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3128,7 +3154,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s (
   niveaualea TEXT(2) NOT NULL,
   occurrence TEXT(15), 
   description TEXT(255), 
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
@@ -3139,7 +3165,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','POLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3157,7 +3183,7 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   idouvrageprotection_s TEXT(20),
   idouvrageprotection_l TEXT(20),
   idouvrageprotection_p TEXT(20),
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
   CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
@@ -3170,7 +3196,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zoneprotegee_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zoneprotegee_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3188,7 +3214,7 @@ CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s (
   idouvrageprotection_s TEXT(20),
   idouvrageprotection_l TEXT(20),
   idouvrageprotection_p TEXT(20),
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
@@ -3203,7 +3229,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_zonedangerspecifique_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3227,7 +3253,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT(50),
   typeouvrageprotection TEXT(2), 
-  geom LINESTRING NOT NULL,
+  geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
   CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
 );
@@ -3237,7 +3263,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT(50),
   typeouvrageprotection TEXT(2), 
-  geom POINT NOT NULL,
+  geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
   CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
 );
@@ -3250,8 +3276,8 @@ INSERT INTO gpkg_contents VALUES
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','POINT',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','MULTILINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','MULTIPOINT',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3274,7 +3300,7 @@ CREATE TABLE typeppr_codegaspar_originerisque_l (
   codeprocedure TEXT(16) NOT NULL,
   refexterne TEXT(50) NOT NULL,
   nom TEXT(255) NOT NULL, 
-  geom LINESTRING NOT NULL,
+  geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Point */
@@ -3283,7 +3309,7 @@ CREATE TABLE typeppr_codegaspar_originerisque_p (
   codeprocedure TEXT(16) NOT NULL,
   refexterne TEXT(50) NOT NULL,
   nom TEXT(255) NOT NULL, 
-  geom POINT NOT NULL,
+  geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -3295,8 +3321,8 @@ INSERT INTO gpkg_contents VALUES
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_originerisque_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_originerisque_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_originerisque_p','geom','POINT',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_originerisque_l','geom','MULTILINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_originerisque_p','geom','MULTIPOINT',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3327,7 +3353,7 @@ CREATE TABLE typeppr_codegaspar_enjeu_l (
   codeenjeu TEXT(50) NOT NULL, 
   nomenclatureenjeu TEXT(255) NOT NULL,
   dateenjeu DATE NOT NULL, 
-  geom LINESTRING NOT NULL,
+  geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_enjeu_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Point */
@@ -3340,7 +3366,7 @@ CREATE TABLE typeppr_codegaspar_enjeu_p (
   codeenjeu TEXT(50) NOT NULL, 
   nomenclatureenjeu TEXT(255) NOT NULL,
   dateenjeu DATE NOT NULL, 
-  geom POINT NOT NULL,
+  geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_enjeu_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -3352,8 +3378,8 @@ INSERT INTO gpkg_contents VALUES
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_enjeu_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_enjeu_l','geom','LINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_enjeu_p','geom','POINT',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_enjeu_l','geom','MULTILINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_enjeu_p','geom','MULTIPOINT',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -3392,7 +3418,7 @@ CREATE TABLE typeppr_codegaspar_zonereglementaireurba_s (
   libellezonereglement TEXT(255) NOT NULL, 
   typereglement TEXT(2) NOT NULL,
   obligationtravaux BOOLEAN, 
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
 );
@@ -3428,7 +3454,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonereglementaireurba_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementaireurba_s','geom','POLYGON',/*srs_id*/2154,0,0),
   ('typeppr_codegaspar_zonereglementaireurba_l','geom','LINESTRING',/*srs_id*/2154,0,0),
   ('typeppr_codegaspar_zonereglementaireurba_p','geom','POINT',/*srs_id*/2154,0,0)
  ;
@@ -3445,7 +3471,7 @@ CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_s (
   codezonereglement TEXT(10) NOT NULL, 
   libellezonereglement TEXT(255) NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  geom MULTIPOLYGON NOT NULL,
+  geom POLYGON NOT NULL,
   CONSTRAINT fk_zonereglementairefoncier_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementairefoncier_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementfoncier(code)
 );
@@ -3479,7 +3505,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_zonereglementairefoncier_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_zonereglementairefoncier_s','geom','POLYGON',/*srs_id*/2154,0,0),
   ('typeppr_codegaspar_zonereglementairefoncier_l','geom','LINESTRING',/*srs_id*/2154,0,0),
   ('typeppr_codegaspar_zonereglementairefoncier_p','geom','POINT',/*srs_id*/2154,0,0)
  ;
@@ -3515,15 +3541,15 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `etatsprocedure`
+## Création de la table d'enumeration `typeetatprocedure`
 
 
 ``` SQL
-CREATE TABLE etatsprocedure (
+CREATE TABLE typeetatprocedure (
   code TEXT(10) NOT NULL PRIMARY KEY,
   libelle TEXT(25) NOT NULL
 );
-INSERT INTO etatsprocedure VALUES 
+INSERT INTO typeetatprocedure VALUES 
   ('DEB_PRG','Programmation'),
   ('DEB_MTG','Montage'),
   ('PRECRIT','Prescrit'),
@@ -3536,7 +3562,7 @@ INSERT INTO etatsprocedure VALUES
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
-  ('etatsprocedure','attributes','etatsprocedure','Enumeration valeurs possibles des états de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+  ('typeetatprocedure','attributes','typeetatprocedure','Enumeration valeurs possibles des états de procédures',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
@@ -3578,8 +3604,8 @@ INSERT INTO typealea VALUES
   ('115','Risque Naturel ; Inondation ; Par lave torrentielle (torrent et talweg) '),
   ('116','Risque Naturel ; Inondation ; Par remontées de nappes naturelles'),
   ('117','Risque Naturel ; Inondation ; Par submersion marine'),
-  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine anthropique (anciennes carrières souterraines, hors mines)'),
-  ('122','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d'origine naturelle (cavités souterraines)'),
+  ('121','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d''origine anthropique (anciennes carrières souterraines, hors mines)'),
+  ('122','Risque Naturel ; Mouvement de terrain ; Affaissement et effondrements d''origine naturelle (cavités souterraines)'),
   ('123','Risque Naturel ; Mouvement de terrain ; Eboulement ou chutes de pierres et de blocs'),
   ('124','Risque Naturel ; Mouvement de terrain ; Glissement de terrain'),
   ('125','Risque Naturel ; Mouvement de terrain ; Avancée dunaire'),
@@ -3684,7 +3710,7 @@ INSERT INTO typeouvrageprotection VALUES
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
-  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d'ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
@@ -3724,7 +3750,7 @@ INSERT INTO typereglementurba VALUES
   ('04','Interdiction stricte'),
   ('05','Recommandations'),
   ('06','Zones grisées'),
-  ('07','Zones d'aléa exceptionnel (AE)')
+  ('07','Zones d''aléa exceptionnel (AE)')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
