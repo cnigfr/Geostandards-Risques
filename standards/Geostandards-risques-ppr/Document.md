@@ -1193,15 +1193,6 @@ A titre d'exemples :
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
 
-##### Schéma physique des tables
-
-La figure suivante représente l'ensemble des tables du standard pouvant faire partie de la livraison à l'exception des tables intrinsèques à GeoPackage. Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
-
-
-**Fig. xx Diagramme complet des tables du standard**
-
-![Diagramme tables PPR](./ressources/Geopackage-PPR-view.png)
-
 
 ##### Dictionnaire des tables
 
@@ -1219,7 +1210,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 |-|-|-|-|-|
 | O | `[TypePPR]_[CodeGASPARComplet]_procedure` | `attributes` | N.A. | Classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
 | F | `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
-| O | **`[TypePPR]_[CodeGASPARComplet]_perimetre_s`** | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
+| O | `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
 | O | `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `POLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
@@ -1258,6 +1249,13 @@ Les tables du standard présentes dans la livraison GeoPackage doivent être dé
 
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage ayant pour type `features` doivent être déclarées dans la table `gpkg_geometry_columns` avec le type de géométrie indiqué dans le tableau précédent.
+
+La figure suivante représente l'ensemble des tables du standard pouvant faire partie de la livraison à l'exception des tables intrinsèques à GeoPackage. Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme complet des tables du standard**
+
+![Diagramme tables PPR](./ressources/Geopackage-PPR-view.png)
 
 
 Les paragraphes qui suivent précisent pour chacune de ces tables :
