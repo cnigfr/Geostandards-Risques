@@ -171,15 +171,15 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 
 **BRGM** Bureau de recherches géologiques et minières
 
-**BRIL** Bureau des risques d'inondation et littoraux
+**BRIL** Bureau des risques d'inondation et littoraux (DGPR)
 
-**BRIEC** Bureau des risques des industries de l’énergie et de la chimie 
+**BRIEC** Bureau des risques des industries de l’énergie et de la chimie (DGPR)
 
 **Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
 
 **CNIG** Comité national de l'information géolocalisée
 
-**DAGSI** Département des affaires générales et des systèmes d’information
+**DAGSI** Département des affaires générales et des systèmes d’information (DGPR)
 
 **DDT(M)** Direction départementale des territoires (et de la mer) 
 
