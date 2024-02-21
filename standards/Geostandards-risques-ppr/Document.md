@@ -947,7 +947,7 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 
 
 | Niveau d'aléa | PPRN | PPRT | 
-|-|-|-|-|
+|-|-|-|
 | Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  |
 | Moyen ou Modéré | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) |
 | Moyen plus | N.A. | R176 V196 B222  ![StyleAleaMoyenPlusPPRT](./ressources/couleur-alea-pprt-03-mplus.png) | 
@@ -971,12 +971,12 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 
 | Type de réglementation | PPRN | PPRT | 
-|-|-|-|-|
-| Recommandations | Non défini | Non défini | 
+|-|-|-|
 | Prescriptions hors zone d'aléa | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | R137 V217 B231 ![StyleReg01PPRNT](./ressources/couleur-reg-pprnt-01.png) | 
 | Prescriptions | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | R0 V0 B255 ![StyleReg02PPR](./ressources/couleur-reg-pprnmt-02.png) | 
 | Interdiction | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | R255 V96 B96 ![StyleReg03PPRNT](./ressources/couleur-reg-pprnt-03.png) | 
 | Interdiction stricte | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | R224 V0 B0 ![StyleReg04PPR](./ressources/couleur-reg-pprnmt-04.png) | 
+| Recommandations | R178 V223 B138 [StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05-recommandations.png) | R178 V223 B138 [StyleReg05PPRNT](./ressources/couleur-reg-pprnt-05-recommandations.png) | 
 | Zone grises | N.A. | R188 V188 B188 ![StyleRegGrisPPRT](./ressources/couleur-reg-pprt-gris.png) | 
 | Zones d'aléa exceptionnel (AE) | ![StyleRegJaunePPRNAE](./ressources/couleur-reg-pprn-ae.png) | N.A. | 
 
