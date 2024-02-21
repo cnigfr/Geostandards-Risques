@@ -812,8 +812,7 @@ Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient p
 
 ![Polygones papillons](./ressources/geom-papillons.png)
 
-- Les contours qui se touchent eux-même ;
-- Les contours d’un même polygone qui se touchent entre eux sauf en tangence en un point unique.
+- Les contours qui se touchent eux-même ou les contours d’un même polygone qui se touchent entre eux sauf en tangence en un point unique.
 
 ![Polygones contours touchent](./ressources/geom-contours-touchent.png)
 
