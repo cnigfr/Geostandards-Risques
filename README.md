@@ -8,6 +8,18 @@ Le Groupe de travail pour la refonte des Géostandards Risques a pour objectif d
 
 Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Information Géolocalisée** (CNIG). Le **mandat du Groupe de Travail** peut être consulté [ici](http://cnig.gouv.fr/wp-content/uploads/2021/10/MandatModernisationStandardsRisque-vf.pdf). La page dédiée de ce groupe sur le **site du CNIG** est accessible [ici](http://cnig.gouv.fr/?page_id=25378). 
 
+Les versions en cours des géostandards développés par ce groupe de travail sont accessibles ici :
+
+- **Géostandards risques - Modèle commun** :
+  - [Version 0.1 du 11/09/2023](./standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.1.docx) soumise à relecture du groupe de travail
+  - [Version 0.2 en cours de rédaction](./standards/Geostandards-risques-commun/Document.md)
+
+
+- **Géostandards risques - Plans de prévention des risques (PPR)** :
+  - [Version 0.1 du 11/09/2023](./standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.1.docx) soumise à relecture du groupe de travail
+  - [Version 0.2 en cours de rédaction](./standards/Geostandards-risques-ppr/Document.md)
+
+
 ## Organisation du dépot
 
 * Le répertoire [documents](/documents) contient ou fait référence aux documents existants utiles au groupe de travail :
