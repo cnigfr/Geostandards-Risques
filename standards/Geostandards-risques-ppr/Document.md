@@ -2744,7 +2744,7 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 ### Enjeux incontournables
 
-| Code | Libellé | Libell2yyé Parent | Définition |
+| Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
 | /espaceUrba | espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
 | espaceUrba/centreUrbain | centres urbains | espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
