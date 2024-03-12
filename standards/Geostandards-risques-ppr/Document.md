@@ -450,7 +450,7 @@ Les enjeux rapportés dans les anciens standards PPR ne portaient pas d'informat
 
 Dans le cadre de l'élaboration des *plans de prévention des risques*, un zonage réglementaire est déterminé selon le [cadre réglementaire du type de PPR](#cadre-réglementaire-des-plans-de-prévention-des-risques). 
 
-Pour représenter ce zonage, l'interface ZoneReglementaire est implémentée par deux classes qui décrivent deux types de zonages :
+Pour représenter ce zonage, la classe ZoneReglementaire est spécialisée par deux classes qui décrivent deux types de zonages :
 
 * La classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) permet de définir les zones sur lesquelles s'applique un règlement spécifique en matière d'urbanisme.
 * La classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) permet de définir les zones sur lesquelles des mesures réglementaires foncières spécifiques s'appliquent.
@@ -653,11 +653,11 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Titre** : Zones réglementaires en matière d'urbanisme
 
-**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
+**Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle spécialise l'interface ZoneReglementaire et précise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives simples classiques : Polygone, Ligne, Point.
 
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+**Propriétés** : La classe hérite des propriétés définies pour la classe [ZoneReglementaire](#classe-dobjets-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
@@ -672,11 +672,11 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Titre** : Zones réglementaires de type foncier
 
-**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle implémente l'interface ZoneReglementaire et spécialise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
+**Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle spécialise la classe ZoneReglementaire et précise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être réprésentées par toutes les primitives simples classiques : polygone, Ligne, Point.
 
-**Propriétés** : La classe reprend les propriétés définies pour l'interface [ZoneReglementaire](#interface-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
+**Propriétés** : La classe hérite des propriétés définies pour la classe [ZoneReglementaire](#classe-dobjets-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |

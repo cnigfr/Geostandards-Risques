@@ -365,9 +365,9 @@ La définition des nomenclatures possibles sera proposée dans les profils appli
 
 La thématique "Zonage reglementaire" permet de définir les zones sur lesquelles un règlement spécifique s'applique. Il peut s'agir de zones exposées aux risques ou de zones qui n'y sont pas directement exposées mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
 
-Au niveau du modèle commun cette thématique définit une interface [ZoneReglementaire](#interface-zonereglementaire) qui permet de décrire les élements génériques d'une zone réglementaire. Cette interface sera implémentée spécifiquement selon les profils applicatifs.
+Au niveau du modèle commun cette thématique définit une classe [ZoneReglementaire](#classe-dobjets-zonereglementaire) qui permet de décrire les élements génériques d'une zone réglementaire. Cette classe sera spécialisée spécifiquement selon les profils applicatifs.
 
-Il est à noter que certaines procédures n'impliquent pas obligatoirement la mise en place d'un zonage réglementaire et cette interface pourra ne pas être implémentée dans certains profils applicatifs.
+Il est à noter que certaines procédures n'impliquent pas obligatoirement la mise en place d'un zonage réglementaire et cette classe pourra ne pas être implémentée dans certains profils applicatifs.
 
 **Fig. *xx* Modèle UML des classes relatives au zonage réglementaire.**
 
@@ -826,13 +826,13 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 ### Thématique Zonage réglementaire
 
-#### Interface ZoneReglementaire
+#### Classe d'objets ZoneReglementaire
 
-**Nom de l'interface** : ZoneReglementaire
+**Nom de la classe** : ZoneReglementaire
 
 **Titre** : Zone réglementaire
 
-**Définition** : L'interface Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les implémentations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
+**Définition** : La classe d'objets Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les spécialisations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
@@ -841,7 +841,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| idZoneReglementaire | Identifiant unique d'un objet zone réglementaire | CharacterString | Deux objets d'une classe implémentant l'interface ZoneRéglementaire ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| idZoneReglementaire | Identifiant unique d'un objet zone réglementaire | CharacterString | Deux objets de la classe ZoneRéglementaire ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
 | codeProcedure | Identifiant de la procédure pour laquelle la zone réglementaire a été définie. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | codeZoneReglement | Code attribué à la zone dans le cadre du règlement qui s'applique. La définition du code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
 | libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. La définition du libellé associé au code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
@@ -915,7 +915,7 @@ Le tableau suivant résume les correspondances possibles des classes de cette th
 | Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
 |-|-|-|
 | Zoning Element | *A spatial object which is homogeneous regarding the permitted uses of land based on zoning which separate one set of land uses from another. Zoning elements refer to the regulation of the kinds of activities which will be acceptable on particular lots (such as open space, residential, agricultural, commercial or industrial). The intensity of use at which those activities can be performed (from low-density housing such as single family homes to high-density such as high-rise apartment buildings), the height of buildings, the amount of space that structures may occupy, the proportions of the types of space on a lot, such as how much landscaped space, impervious surface, traffic lanes, and parking may be provided.* | [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent du type d'occupation du sol, de l'habitat ou des activités qui sont exercées. |
-| Supplementary Regulation | *A spatial object (point, line or polygon) of a spatial plan that provides supplementary information and/or limitation of the use of land/water necessary for spatial planning reasons or to formalise external rules defined in legal text.* | [ZoneReglementaire](#interface-zonereglementaire) en ce qui concerne la description de zones soumises à des restrictions en matière d'urbanisme ou foncières, [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent de zones faisant l'objet de réglementation particulière. |
+| Supplementary Regulation | *A spatial object (point, line or polygon) of a spatial plan that provides supplementary information and/or limitation of the use of land/water necessary for spatial planning reasons or to formalise external rules defined in legal text.* | [ZoneReglementaire](#classe-dobjets-zonereglementaire) en ce qui concerne la description de zones soumises à des restrictions en matière d'urbanisme ou foncières, [Enjeux](#classe-dobjets-enjeu) dans la mesure où certaines catégories d'enjeux témoignent de zones faisant l'objet de réglementation particulière. |
 | Official Documentation | *The official documentation that composes the spatial plan; it may be composed of, the applicable legislation, the regulations, cartographic elements, descriptive elements that may be associated with the complete spatial plan, a zoning element or a supplementary regulation . In some Member States the actual textual regulation will be part of the data set (and can be put in the regulationText attribute), in other Member States the text will not be part of the data set and will be referenced via a reference to a document or a legal act. At least one of the three voidable values shall be provided.* | [ReferenceInternet](#classe-dobjets-referenceinternet) dans la mesure où cette classe d'objet permet de référencer les documents en lien avec les procédures de prévention des risques, notamment : les cartes et le règlement associé au zonage réglementaire. |
 
 
