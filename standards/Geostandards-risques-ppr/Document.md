@@ -663,7 +663,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
-| obligationTravaux | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors l'obligation de travaux est inconnue. | 0..1 |
+| mesuresObligatoires | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | 0..1 |
 
 
 #### Classe d'objets ZoneReglementaireFoncier
@@ -1508,7 +1508,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 | **`codezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
 | **`libellezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
 | **`typereglement`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
-| `obligationtravaux` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors l'obligation ou non de travaux est inconnue. | Indique si des obligations de travaux sur l'existant s'appliquent sur la zone. |
+| `mesuresobligatoires` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. |
 | **`geom`** | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementaireurba_slp).
@@ -2475,7 +2475,7 @@ Dans le cadre du profil applicatif PPR des nouveaux standards, la classe ZoneReg
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : 'Interdiction stricte", "Interdiction", "Prescriptions" ou "Prescriptions hors zone d'aléa".
 
-La propriété obligationTravaux ne pourra pas être renseignée automatiquement car l'information n'était pas indiquée dans l'ancien Standard. Elle pourra être laissée non renseignée, signifant ainsi que l'existence ou non d'obligation de travaux est inconnue sur la zone.
+La propriété mesuresObligatoires ne pourra pas être renseignée automatiquement car l'information n'était pas indiquée dans l'ancien Standard. Elle pourra être laissée non renseignée, signifant ainsi que l'existence ou non d'obligation d'application de mesures de réduction de la vulnérabilité est inconnue sur la zone.
 
 Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba\_[slp]](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
 
@@ -2486,7 +2486,7 @@ Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba
 |`codeZoneReglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
 |`libelleZoneReglement`|"prescription - Inondation par remontee de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
 |`typeReglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
-| `obligationtravaux`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
+| `mesuresobligatoires`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
 ## Remplissage des objets de la classe ZoneReglementaireFoncier
@@ -3428,7 +3428,7 @@ CREATE TABLE typeppr_codegaspar_zonereglementaireurba_s (
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
+  mesuresobligatoires BOOLEAN, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
@@ -3440,7 +3440,7 @@ CREATE TABLE typeppr_codegaspar_zonereglementaireurba_l (
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
+  mesuresobligatoires BOOLEAN, 
   geom LINESTRING NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
@@ -3452,7 +3452,7 @@ CREATE TABLE typeppr_codegaspar_zonereglementaireurba_p (
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  obligationtravaux BOOLEAN, 
+  mesuresobligatoires BOOLEAN, 
   geom POINT NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
