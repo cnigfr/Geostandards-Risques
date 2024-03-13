@@ -391,31 +391,56 @@ La figure suivante fait ressortir en jaune les modifications du modèle commun d
 
 ### Thématique Aléas
 
+L'implémention des concepts de la thématique Aléas, notamment des zones d'aléas dépend de la nature du risque, naturel ou technologique. Deux classes abstraites [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) et [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique) sont définies et rassemblent les propriétés communes aux différentes zones d'aléas qui vont les implémenter dans le cadre respectif des PPR Naturels et Technologiques. Les paragraphes qui suivent décrivent ces spécialisations dans les deux cas de figure. 
 
-#### Impleméntations des zones d'aléas dans le cadre des PPR
+La qualification des niveaux d'aléas varie en fonction des types d'aléas et est précisée dans les guides relatifs aux différents types de PPR. L'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) définit les valeurs possibles pour qualifier ces niveaux dans le cadre des PPR. Des restrictions peuvent s'appliquer selon la nature du risque naturel ou technologique.
 
-Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. A ce titre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par la classe [ZoneAleaReference](#classe-dobjets-zonealeareference) permettant de représenter les zones d'aléas correspondant à cet aléa de référence.
-
-Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). A ce titre, la classe [ZoneAlea](#classe-dobjets-zonealea) est spécialisée par la classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant à l'aléa à échéance 100 ans. L'implémentation de cette classe n'est obligatoire que dans le cadre de l'aléa submersion marine.
-
-Dans le cas particulier des **PPR Avalanches**, des zones d'aléa correspondant à un **aléa de référence exceptionnel** peuvent être définies selon les modalités précisées dans [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf)] et auxquelles un niveau d'aléa "exceptionnel" sera systématiquement attribué. La classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) spécialise la classe [ZoneAlea](#classe-dobjets-zonealea) pour mettre en œuvre ces zones exceptionnelles.
-
-#### Définition des niveaux d'aléas dans le cadre des PPR
-
-La qualification des niveaux d'aléas varie en fonction des types d'aléas et est précisée dans les guides relatifs aux différents types de PPR. L'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) définit les valeurs possibles pour qualifier ces niveaux dans le cadre des PPR.
-
-#### Définition des zones de danger spécifiques pour l'aléa inondation
-
-La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) est aussi spécialisée pour permettre de caractériser ces zones de danger spécifiques dans le cadre de l'aléa inondation en deux types précisés par l'énumération [TypeSurAlea](#enumeration-typesuralea) : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf).
-
-
-La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR pour la thématique Aléas.
+La figure suivante fait ressortir en jaune les modifications du modèle commun permettant ces spécialisations dans le cadre des PPR pour la thématique Aléas.
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR.**
 
 ![Modele UML Aléas](./ressources/UML-Alea-PPR.png)
 
 
+#### Thématique Aléas dans le cadre des PPR Naturels
+
+##### Impleméntations des zones d'aléas dans le cadre des PPR Naturels
+
+Dans le cadre de l'élaboration des **plans de prévention des risque naturels**, les zones d'aléa sont déterminées et qualifiées relativement à un **aléa de référence** dont les modalités sont fixées par décrets relatifs au type d'aléa. A ce titre, la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) est spécialisée par la classe [ZoneAleaReference](#classe-dobjets-zonealeareference) permettant de représenter les zones d'aléas correspondant à cet aléa de référence.
+
+Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). A ce titre, la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) est spécialisée par la classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant à l'aléa à échéance 100 ans. L'implémentation de cette classe n'est obligatoire que dans le cadre de l'aléa submersion marine.
+
+Dans le cas particulier des **PPR Avalanches**, des zones d'aléa correspondant à un **aléa de référence exceptionnel** peuvent être définies selon les modalités précisées dans [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf)] et auxquelles un niveau d'aléa "exceptionnel" sera systématiquement attribué. La classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) spécialise la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) pour mettre en œuvre ces zones exceptionnelles.
+
+
+##### Définition des zones de danger spécifiques pour l'aléa inondation
+
+La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) est aussi spécialisée pour permettre de caractériser ces zones de danger spécifiques dans le cadre de l'aléa inondation en deux types précisés par l'énumération [TypeSurAlea](#enumeration-typesuralea) : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues et projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf).
+
+
+La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR Naturels pour la thématique Aléas.
+
+**Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR Naturels.**
+
+![Modele UML Aléas](./ressources/UML-Alea-PPR-Naturel.png)
+
+
+#### Thématique Aléas dans le cadre des PPR Technologiques
+
+Dans le cadre de l'élaboration des **plans de prévention des risque technologiques**, les zones d'aléas portent des caractéristiques spécifiques par rapport à la classe [ZoneAlea](#classe-dobjets-zonealea) du modèle commun qui sont décrites par la classe abstraite [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). Il s'agit de l'effet dont les valeurs possibles sont déterminées par l'énumération [TypeEffetTechno](#enumeration-typeeffettechno) et de l'intensité dont les valeurs possibles sont définies par l'énumération [TypeIntensiteTechno](#enumeration-typeinstensitetechno). Par ailleurs des restrictions s'appliquent sur les niveaux d'aléas possibles de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) et l'occurence peut-être caractérisée par des classes de probabilité d'occurence mentionnées dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) reprises dans ce standard par l'énumération [TypeClasseProbaTechno](#enumeration-typeeclasseprobatechno).
+
+Trois types de zones d'aléas peuvent être représentées dans les PPR Technologiques sur la base de ces caractéristiques :
+
+- Les zones d'aléas à cinétique rapide hors effets de projection représentées par la classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) qui sont qualifiées obligatoirement par un niveau d'aléa ;
+- Les zones d'aléas à cinétique lente représentées par la classe [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) qui doivent être qualifiées obligatoirement par leur intensité ;
+- Les zones d'alés technologiques par effet de projection repésentées par la classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) qui doivent être quelifiées obligatoirement par leur intensité.
+
+
+La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR Technologiques pour la thématique Aléas.
+
+**Fig. *xx* Modèle UML des classes relatives aux aléas dans le cadre des PPR Technologiques.**
+
+![Modele UML Aléas](./ressources/UML-Alea-PPR-Techno.png)
 
 
 ### Thématique Origine du Risque
@@ -495,13 +520,13 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 ### Thématique Aléas
 
-#### Classe d'objets *ZoneAleaReference*
+#### Classe d'objets *ZoneAleaNaturel*
 
-**Nom de la classe** : ZoneAleaReference
+**Nom de la classe** : ZoneAleaNaturel
 
-**Titre** : Zone d'aléa de référence
+**Titre** : Zone d'aléa naturel
 
-**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Définition** : La classe Zone d'aléa naturel est une classe abstraite rassemblant les propriétés communes aux zones géographiques soumises à des aléas de type naturels et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea). Selon les cas, elle est spécialisée par les classes [ZoneAleaReference](#classe-dobjets-zonealeareference), [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) ou [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptinnel).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
@@ -510,6 +535,19 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | niveauAlea | Caractérisation du niveau de l'aléa selon les valeurs de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Énumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
+
+
+#### Classe d'objets *ZoneAleaReference*
+
+**Nom de la classe** : ZoneAleaReference
+
+**Titre** : Zone d'aléa de référence
+
+**Définition** : La classe Zone d'aléa de référence permet de décrire des zones géographiques soumises à des aléas de type naturels déterminées à partir de l'**aléa de référence** et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel).
+
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel).
 
 
 
@@ -519,16 +557,15 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Titre** : Zone d'aléa à échéance 100 ans.
 
-**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques d'**aléa de submersion marine à échéance 100 ans** déterminées selon les modalités idu [Decret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf). Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea) du modèle commun mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous
+**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques d'**aléa de submersion marine à échéance 100 ans** déterminées selon les modalités idu [Decret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf). Elle a les mêmes propriétés que la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous
 
-**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel).
 
-**Propriétés** : Cf. propriétés héritées de la classe [ZoneAlea](#classe-dobjets-zonealea) définie dans le modèle commun. On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel). On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeAlea | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) du modèle commun | Énumération [TypeAlea](#enumeration-typealea) | Pour l'aléa à échéance 100 ans, cette propriété prendra la valeur correspondant à l'aléa submersion marine. | 1..1 |
-| niveauAlea | Caractérisation du niveau de l'aléa selon les valeurs de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Énumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
 
 
 #### Classe d'objets *ZoneAleaExceptionnel*
@@ -537,11 +574,11 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Titre** : Zone d'aléa de référence Exceptionnel
 
-**Définition** : La classe Zone d'aléa de référence exceptionnel ans permet de décrire des zones géographiques correspondant à l'aléa de référence exceptionnel (AE) pour les PPR avalanches tel qu'il est décrit dans le [Guide PPRAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf)]. Cette classe a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea) du modèle commun mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous.
+**Définition** : La classe Zone d'aléa de référence exceptionnel ans permet de décrire des zones géographiques correspondant à l'aléa de référence exceptionnel (AE) pour les PPR avalanches tel qu'il est décrit dans le [Guide PPRAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf)]. Cette classe a les mêmes propriétés que la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous.
 
-**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel).
 
-**Propriétés** : Cf. propriétés héritées de la classe [ZoneAlea](#classe-dobjets-zonealea) définie dans le modèle commun. On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) définie dans le modèle commun. On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
@@ -574,6 +611,80 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 | description | Description textuelle de la zone de danger spécifique | CharacterString | Saisie libre | 0..1 |
 
 
+#### Classe d'objets *ZoneAleaTechnologique*
+
+**Nom de la classe** : ZoneAleaTechnologique
+
+**Titre** : Zone d'aléa technologique
+
+**Définition** : La classe Zone d'aléa technologique est une classe abstraite rassemblant les propriétés communes aux zones géographiques soumises à des aléas de type technologique. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea), elle en précise la définition du niveau d'aléa, de son occurence et rajoute des propriétés relatives au type d'effet et à son intensité. Selon les cas, elle est spécialisée par les classes [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide), [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) ou [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection).
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
+
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAlea](#classe-dobjets-zonealea) définie dans le modèle commun. On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| niveauAlea | Caractérisation du niveau de l'aléa selon les valeurs de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Énumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 0..1 |
+| occurrence | Probabilité de survenue de l'aléa. Pour les risques technologiques elle est caractérisée à l'aide de classes de probailité dont les valeurs sont définies par l'énumération [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) | Énumération [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) | Celles de l'énumération | 0..1 |
+| effet | Caractérisation de l'effet du phénomène dangereux lié au risque technologique. | Enumeration [TypeEffetTechno](#enumeration-typeeffettechno) | Celles de l'énumération | 1..1 |
+| intensite | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. | Enumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno) | Celles de l'énumération | 0..1 |
+
+
+#### Classe d'objets *ZoneAleaTechnoRapide*
+
+**Nom de la classe** : ZoneAleaTechnoRapide
+
+**Titre** : Zone d'aléa technologique à cinétique rapide
+
+**Définition** : Cette classe permet de représenter les zones d'aléas à cinétique rapide, hors effets de projection, telles que définies dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Elle spécialise la classe [ZoneAleaiTechnologique](#classe-dobjets-zonealeatechnologique), en rendant obligatoire le renseignement du niveau d'aléa. Par définition, elle ne peut pas avoir "projection" comme valeur d'effet.
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique).
+
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| niveauAlea | Caractérisation du niveau de l'aléa selon les valeurs de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea). Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | Énumération [TypeNiveauAlea](#enumeration-typeniveaualea) | Celles de l'énumération | 1..1 |
+| effet | Caractérisation de l'effet du phénomène dangereux lié au risque technologique. | Enumeration [TypeEffetTechno](#enumeration-typeeffettechno) | Celles de l'énumération à l'exclusion de la valeur "projection" | 1..1 |
+
+
+#### Classe d'objets *ZoneAleaTechnoLent*
+
+**Nom de la classe** : ZoneAleaTechnoLent
+
+**Titre** : Zone d'aléa technologique à cinétique lente
+
+**Définition** : Cette classe permet de représenter les zones d'aléas à cinétique lente, telles que définies dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Elle spécialise la classe [ZoneAleaiTechnologique](#classe-dobjets-zonealeatechnologique), en rendant obligatoire le renseignement de la propriété intensite.
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique).
+
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| intensite | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. | Enumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno). Selon le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf), seules les zones d'intensité significatives sont à prendre en compte pour ce type d'aléas. | Celles de l'énumération | 1..1 |
+
+
+#### Classe d'objets *ZoneAleaTechnoProjection*
+
+**Nom de la classe** : ZoneAleaTechnoProjection
+
+**Titre** : Zone d'aléa technologique à cinétique rapide pour l'effet de projection
+
+**Définition** : Cette classe permet de représenter les zones d'aléas à cinétique rapide dans le cas des effets de projection, telles que définies dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Elle spécialise la classe [ZoneAleaiTechnologique](#classe-dobjets-zonealeatechnologique) en rendant obligatoire la saisie de l'intensité et en restreignant, par définition, le type d'effet à "projection".
+
+**Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique).
+
+**Propriétés** : Cf. propriétés héritées de la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). On indique ici seulement les propriétés dont les caractéristiques sont modifiées pour cette classe. 
+
+| Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
+|-|-|-|-|-|
+| effet | Caractérisation de l'effet du phénomène dangereux lié au risque technologique. | Enumeration [TypeEffetTechno](#enumeration-typeeffettechno) | Celles de l'énumération restreinte à la valeur "projection" | 1..1 |
+| intensite | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. | Enumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno). Selon le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf), seules les zones d'intensité "graves" ou "indirects" sont à prendre en compte pour ce type de zones d'aléas. | Celles de l'énumération | 1..1 |
+
+
+
 #### Enumeration *TypeNiveauAlea*
 
 Le tableau suivant liste les valeurs possibles et communes pour caractériser l'intensité des aléas dans les procédures de plans de prévention des risques. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau ainsi que leur appellation varient en fonction de la zone et du type d'aléa et sont précisées dans les guides dédiés. Il précise leur application selon le type de PPR et les correspondances avec certaines appellations spécifiques à des types de PPR particuliers.
@@ -599,6 +710,36 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les z
 |-|-|
 | bande de précaution | Bande de précaution située à l'arrière d'un système d'endiguement, telle que définie dans l'[article R562-11-4 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733753) |
 | bande particulière | Il s'agit de la zone décrivant les secteurs soumis aux chocs de vagues et aux projections tels que définis dans l'[article R562-11-4 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733753) |
+
+
+#### Enumeration *TypeEffetTechno*
+
+Le tableau suivant liste les valeurs possibles pour caractériser les types d'effets pouvant être générés par les aléas technologiques selon les définitions du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf).
+
+| Libellé état | Description |
+|-|-|
+| thermique | les effets thermiques sont liés à la combustion plus ou moins rapide d’une substance inflammable ou combustible. |
+| toxique | les effets toxiques résultent d’une fuite sur une installation ou du dégagement d’une substance toxique issue d’une décomposition chimique lors d’un incendie ou d’une réaction chimique. |
+| surpression | les effets de surpression résultent d’une onde de pression (déflagration ou détonation en fonction de la vitesse de propagation de l’onde de pression), provoquée par une explosion.  |
+| projection | xxxx |
+
+
+#### Enumeration *TypeIntensiteTechno*
+
+Le tableau suivant liste les valeurs possibles pour caractériser l'intensité de l'aléa technologique.
+
+| Libellé état | Description |
+|-|-|
+| xx | xxxx |
+
+
+#### Enumeration *TypeClasseProbeTechno*
+
+Le tableau suivant liste les valeurs possibles et pour caractériser la probabilité d'occurence de l'aléa technologique.
+
+| Libellé état | Description |
+|-|-|
+| xx | xxxx |
 
 
 ### Thématique Origine du Risque
