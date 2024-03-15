@@ -721,9 +721,9 @@ Le tableau suivant liste les valeurs possibles pour caractériser les types d'ef
 
 | Libellé effet | Description |
 |-|-|
-| Thermique | les effets thermiques sont liés à la combustion plus ou moins rapide d’une substance inflammable ou combustible. |
-| Toxique | les effets toxiques résultent d’une fuite sur une installation ou du dégagement d’une substance toxique issue d’une décomposition chimique lors d’un incendie ou d’une réaction chimique. |
-| Surpression | les effets de surpression résultent d’une onde de pression (déflagration ou détonation en fonction de la vitesse de propagation de l’onde de pression), provoquée par une explosion.  |
+| Thermique | Les effets thermiques sont liés à la combustion plus ou moins rapide d’une substance inflammable ou combustible. |
+| Toxique | Les effets toxiques résultent d’une fuite sur une installation ou du dégagement d’une substance toxique issue d’une décomposition chimique lors d’un incendie ou d’une réaction chimique. |
+| Surpression | Les effets de surpression résultent d’une onde de pression (déflagration ou détonation en fonction de la vitesse de propagation de l’onde de pression), provoquée par une explosion.  |
 | Projection | L'effet de projection (impacts de projectiles) est une conséquence indirecte de l'effet de surpression. Il n'est retenu que dans le secteur des établissements pyrotechniques. |
 
 
