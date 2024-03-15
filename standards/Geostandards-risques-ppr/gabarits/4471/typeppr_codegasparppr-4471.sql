@@ -191,6 +191,103 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','POLYGON',4471,0,0)
  ;
 
+
+
+/** 
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
+  */
+
+CREATE TABLE typeppr_codegaspar_zonealeatechnorapide_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2),
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnorapide_codealea_s','features','typeppr_codegaspar_zonealeatechnorapide_codealea_s','Table Zone Alea Technologique Rapide Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,4471)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnorapide_codealea_s','geom','POLYGON',4471,0,0)
+ ;
+
+
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s`
+  */
+
+CREATE TABLE typeppr_codegaspar_zonealeatechnolent_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2) NOT NULL,
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnolent_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnolent_codealea_s','features','typeppr_codegaspar_zonealeatechnolent_codealea_s','Table Zone Alea technologique Lent Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnolent_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
+ ;
+
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
+  */
+
+CREATE TABLE typeppr_codegaspar_zonealeatechnoprojection_214_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2) NOT NULL,
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnoprojection_214_s','features','typeppr_codegaspar_zonealeatechnoprojection_214_s','Table Zone Alea Technologique Projection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,4471)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnoprojection_214_s','geom','POLYGON',4471,0,0)
+ ;
+
+
+
 /**
  * /**
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
@@ -831,10 +928,75 @@ INSERT INTO gpkg_contents VALUES
 
 
 
+/** 
+  * Création de la table d'enumeration `typeeffettechno`
+  */
+
+
+CREATE TABLE typeeffettechno (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeeffettechno VALUES 
+  ('01','Effet thermique'),
+  ('02','Effet de surpression'),
+  ('03','Effet toxique'),
+  ('04','Effet de projection')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeeffettechno','attributes','typeeffettechno','Enumeration valeurs possibles de types d''effet technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+/** 
+  * Création de la table d'enumeration `typeintensitetechno`
+  */
+
+
+CREATE TABLE typeintensitetechno (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeintensitetechno VALUES 
+  ('Z1','Extrèmement grave'),
+  ('Z2','Très grave'),
+  ('Z3','Grave'),
+  ('Z4','Significatif'),
+  ('Z5','Indirect')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeintensitetechno','attributes','typeintensitetechno','Enumeration valeurs possibles de types d''instensité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+/** 
+  * Création de la table d'enumeration `typeclasseprobatechno`
+  */
+
+
+CREATE TABLE typeclasseprobatechno (
+  code TEXT(1) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeclasseprobatechno VALUES 
+  ('A','Evènement courant'),
+  ('B','Evènement probable'),
+  ('C','Evènement improbable'),
+  ('D','Evènement très improbable'),
+  ('E','Evènement possible mais extrêment peu probable')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeclasseprobatechno','attributes','typeclasseprobatechno','Enumeration valeurs possibles de classes de probabilité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+
 /**
  * Exemple d'insertion de métadonnées de PPR
  */
-
 
 
 INSERT INTO gpkg_metadata VALUES (

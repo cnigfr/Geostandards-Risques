@@ -174,6 +174,9 @@ La mise en œuvre des Plans de prévention des risques technologiques est défin
 * les [articles L515-15 à L515-26](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176606/#LEGISCTA000006176606) pour la partie législative ;
 * les [articles R515-39 à R515-50](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006188931/#LEGISCTA000006188931) pour la partie réglementaire.
 
+L'[arrêté du 10 avril 2007](https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006056459) "fixant les règles relatives à l'évaluation des risques et à la prévention des accidents dans les établissements pyrotechniques" apporte des précisions sur les zones d'intensité relatives à l'effet de projection.
+
+L'[arrêté du 29 septembre 2005 dit PCIG](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000245167) "relatif à l'évaluation et à la prise en compte de la probabilité d'occurrence, de la cinétique, de l'intensité des effets et de la gravité des conséquences des accidents potentiels dans les études de dangers des installations classées soumises à autorisation" définit les classes de probabilité de survenu des événements technologiques et une échelle d'appréciation de la gravité des conséquences humaines d'un accident à l'extérieur des installations. 
 
 ##  Compréhension du document
 
@@ -427,7 +430,7 @@ La figure suivante fait ressortir en jaune les modifications du modèle commun d
 
 #### Thématique Aléas dans le cadre des PPR Technologiques
 
-Dans le cadre de l'élaboration des **plans de prévention des risque technologiques**, les zones d'aléas portent des caractéristiques spécifiques par rapport à la classe [ZoneAlea](#classe-dobjets-zonealea) du modèle commun qui sont décrites par la classe abstraite [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). Il s'agit de l'effet dont les valeurs possibles sont déterminées par l'énumération [TypeEffetTechno](#enumeration-typeeffettechno) et de l'intensité dont les valeurs possibles sont définies par l'énumération [TypeIntensiteTechno](#enumeration-typeinstensitetechno). Par ailleurs des restrictions s'appliquent sur les niveaux d'aléas possibles de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) et l'occurence peut-être caractérisée par des classes de probabilité d'occurence mentionnées dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) reprises dans ce standard par l'énumération [TypeClasseProbaTechno](#enumeration-typeeclasseprobatechno).
+Dans le cadre de l'élaboration des **plans de prévention des risque technologiques**, les zones d'aléas portent des caractéristiques spécifiques par rapport à la classe [ZoneAlea](#classe-dobjets-zonealea) du modèle commun qui sont décrites par la classe abstraite [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique). Il s'agit de l'effet dont les valeurs possibles sont déterminées par l'énumération [TypeEffetTechno](#enumeration-typeeffettechno) et de l'intensité dont les valeurs possibles sont définies par l'énumération [TypeIntensiteTechno](#enumeration-typeinstensitetechno). Par ailleurs des restrictions s'appliquent sur les niveaux d'aléas possibles de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) et l'occurrence peut-être caractérisée par des classes de probabilité d'occurrence mentionnées dans le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) reprises dans ce standard par l'énumération [TypeClasseProbaTechno](#enumeration-typeeclasseprobatechno).
 
 Trois types de zones d'aléas peuvent être représentées dans les PPR Technologiques sur la base de ces caractéristiques :
 
@@ -617,7 +620,7 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Titre** : Zone d'aléa technologique
 
-**Définition** : La classe Zone d'aléa technologique est une classe abstraite rassemblant les propriétés communes aux zones géographiques soumises à des aléas de type technologique. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea), elle en précise la définition du niveau d'aléa, de son occurence et rajoute des propriétés relatives au type d'effet et à son intensité. Selon les cas, elle est spécialisée par les classes [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide), [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) ou [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection).
+**Définition** : La classe Zone d'aléa technologique est une classe abstraite rassemblant les propriétés communes aux zones géographiques soumises à des aléas de type technologique. Elle a les mêmes propriétés que la classe [ZoneAlea](#classe-dobjets-zonealea), elle en précise la définition du niveau d'aléa, de son occurrence et rajoute des propriétés relatives au type d'effet et à son intensité. Selon les cas, elle est spécialisée par les classes [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide), [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) ou [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection).
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAlea](#classe-dobjets-zonealea).
 
@@ -689,7 +692,7 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 Le tableau suivant liste les valeurs possibles et communes pour caractériser l'intensité des aléas dans les procédures de plans de prévention des risques. Elles représentent une gradation sur une échelle croissante d'intensité. Les règles de détermination du niveau ainsi que leur appellation varient en fonction de la zone et du type d'aléa et sont précisées dans les guides dédiés. Il précise leur application selon le type de PPR et les correspondances avec certaines appellations spécifiques à des types de PPR particuliers.
 
-| Code | Libellé état | Type PPR applicable |
+| Code | Libellé niveau | Type PPR applicable |
 |-|-|-|
 | 00 | Très faible ou nul | PPR Avalanches ou PPR Incendies de forêt | 
 | 01 | Faible | Tous PPR |
@@ -716,30 +719,38 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les z
 
 Le tableau suivant liste les valeurs possibles pour caractériser les types d'effets pouvant être générés par les aléas technologiques selon les définitions du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf).
 
-| Libellé état | Description |
+| Libellé effet | Description |
 |-|-|
-| thermique | les effets thermiques sont liés à la combustion plus ou moins rapide d’une substance inflammable ou combustible. |
-| toxique | les effets toxiques résultent d’une fuite sur une installation ou du dégagement d’une substance toxique issue d’une décomposition chimique lors d’un incendie ou d’une réaction chimique. |
-| surpression | les effets de surpression résultent d’une onde de pression (déflagration ou détonation en fonction de la vitesse de propagation de l’onde de pression), provoquée par une explosion.  |
-| projection | xxxx |
+| Thermique | les effets thermiques sont liés à la combustion plus ou moins rapide d’une substance inflammable ou combustible. |
+| Toxique | les effets toxiques résultent d’une fuite sur une installation ou du dégagement d’une substance toxique issue d’une décomposition chimique lors d’un incendie ou d’une réaction chimique. |
+| Surpression | les effets de surpression résultent d’une onde de pression (déflagration ou détonation en fonction de la vitesse de propagation de l’onde de pression), provoquée par une explosion.  |
+| Projection | L'effet de projection (impacts de projectiles) est une conséquence indirecte de l'effet de surpression. Il n'est retenu que dans le secteur des établissements pyrotechniques. |
 
 
 #### Enumeration *TypeIntensiteTechno*
 
-Le tableau suivant liste les valeurs possibles pour caractériser l'intensité de l'aléa technologique.
+Le tableau suivant liste les valeurs possibles pour caractériser l'intensité de l'aléa technologique relativement aux conséquences potentielle qu'elle présente pour les personnes et pour les biens.
+
+| Libellé intensité | Description (conséquences sur les personnes) |
+|-|-|
+| Extrèmement grave (Z1) | Effets létaux dans plus de 50% des cas. |
+| Très grave (Z2) | Effets létaux significatifs |
+| Grave (Z3)  | Seuil des effets létaux|
+| Significatif (Z4) | Seuil des effets irréversibles |
+| Indirect (Z5) | Seuil des effets indirects (par bris de vitre) |
+
+
+#### Enumeration *TypeClasseProbaTechno*
+
+Le tableau suivant liste les valeurs possibles et pour caractériser la probabilité d'occurrence de l'aléa technologique. Elle reprend pour cela les classe de probabilités définies dans l'[arrêté PCIG du 29 septembre 2005](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000245167)
 
 | Libellé état | Description |
 |-|-|
-| xx | xxxx |
-
-
-#### Enumeration *TypeClasseProbeTechno*
-
-Le tableau suivant liste les valeurs possibles et pour caractériser la probabilité d'occurence de l'aléa technologique.
-
-| Libellé état | Description |
-|-|-|
-| xx | xxxx |
+| A : Evènement courant | Représente un événement qui s’est produit sur le site considéré et/ou peut se produire à plusieurs reprises pendant la durée de vie de l’installation malgré d’éventuelles mesures correctives. |
+| B : Evènement probable | Représente un événement qui s’est produit et/ou peut se produire pendant la durée de vie de l’installation.  |
+| C : Evènement improbable | Un évènement similaire déjà rencontré dans le secteur d’activité ou dans ce type d’organisation au niveau mondial, sans que les éventuelles corrections intervenues depuis apportent une garantie de réduction signii cative de sa probabilité.  |
+| D : Evènement très improbable | Représente un événement qui s’est déjà produit dans ce secteur d’activité mais a fait l’objet de mesures correctives réduisant signii cativement sa probabilité. |
+| E : Evènement possible mais extrêment peu probable | Représente un événement qui n’est pas impossible au vu des connaissances actuelles, mais non rencontré au niveau mondial sur un très grand nombre d’années - installations. |
 
 
 ### Thématique Origine du Risque
@@ -1373,9 +1384,12 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | F | `[TypePPR]_[CodeGASPARComplet]_revise` | `attributes` | N.A. | Associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) |
 | O | `[TypePPR]_[CodeGASPARComplet]_perimetre_s` | `features` | `MULTIPOLYGON` | Classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) |
 | O | `[TypePPR]_[CodeGASPARComplet]_referenceinternet` | `attributes` | N.A. | Classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) |
-| C | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` (NB: [CodeAlea]==1xx) | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `POLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
-| C | `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `POLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zoneAleaexceptionnel) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `POLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` (NB: [CodeAlea]==21x) | `features` | `POLYGON` | Classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` (NB: [CodeAlea]==21x) | `features` | `POLYGON` | Classe [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` (NB: [CodeAlea]==214) | `features` | `POLYGON` | Classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
 | F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
@@ -1404,6 +1418,9 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | F | `typeouvrageprotection` | `attributes` | N.A. | Enumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) |
 | F | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
 | F | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
+| F | `typeeffettechno` | `attributes` | N.A. | Enumeration [TypeEffetTechno](#enumeration-typeeffettechno) |
+| F | `typeintensitetechno` | `attributes` | N.A. | Enumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno) |
+| F | `typeclasseprobatechno` | `attributes` | N.A. | Enumeration [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) |
 
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent être déclarées dans la table `gpkg_contents` avec le type de table indiqué dans le tableau précédent.
@@ -1522,7 +1539,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaecheance100ans. |
+| **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaexceptionnel. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur est toujours `14` (aléa avalanches) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). Ici la valeur est toujours `08` (exceptionnel) | Caractérisation du niveau de l'aléa. |
@@ -1532,6 +1549,66 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 
 
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s).
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) définie dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnorapide. |
+| **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). | Type d'effet du risque industriels |
+| `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`geom`** | POLYGON | Polygone de la zone |  |
+
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeatechnorapide_codealea_s).
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) définie dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnolent. |
+| **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). | Type d'effet du risque industriels |
+| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`geom`** | POLYGON | Polygone de la zone |  |
+
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s).
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) définie dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnoprojection. |
+| **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'alea associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). Ici la valeur correspond à l'effet de projection (`04`). | Type d'effet du risque industriels |
+| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`geom`** | POLYGON | Polygone de la zone |  |
+
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zonealeatechnoprojection_codealea_s).
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
@@ -1734,7 +1811,6 @@ Elle a la structure et le contenu suivants :
 | 99 | Autres |
 
 
-
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereference).
 
 
@@ -1897,9 +1973,57 @@ Elle a la structure et le contenu suivants :
 | 01 | Délaissement possible |
 | 02 | Expropriation possible |
 
-
-
 La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typereglementfoncier).
+
+
+##### Table d'enumeration `typeeffettechno`
+
+La table `typeeffettechno` implémente l'énumeration [TypeEffetTechno](../Geostandards-risques-commun/Document.md#enumeration-typeeffettechno) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(20) |
+|-|-|
+| 01 | Effet thermique  |
+| 02 | Effet de surpression |
+| 03 | Effet toxique |
+| 04 | Effet de projection |
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeeffettechno).
+
+
+##### Table d'enumeration `typeintensitetechno`
+
+La table `typeintensitetechno` implémente l'énumeration [TypeIntensiteTechno](../Geostandards-risques-commun/Document.md#enumeration-typeintensitetechno) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(20) |
+|-|-|
+| Z1 | Extrèmement grave |
+| Z2 | Très grave |
+| Z3 | Grave |
+| Z4 | Significatif |
+| Z5 | Indirect |
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeintensitetechno).
+
+
+##### Table d'enumeration `typeclasseprobatechno`
+
+La table `typeclasseprobatechno` implémente l'énumeration [TypeClasseProbaTechno](../Geostandards-risques-commun/Document.md#enumeration-typeclasseprobatechno) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(50) |
+|-|-|
+| A | Evènement courant |
+| B | Evènement probable |
+| C | Evènement improbable |
+| D | Evènement très improbable |
+| E | Evènement possible mais extrêment peu probable |
+
+La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-table-denumeration-typeclasseprobatechno).
 
 
 #### Métadonnées de la livraison
@@ -2551,7 +2675,7 @@ La classe ZoneAleaReference est implémentée par la table [[TypePPR]\_[CodeGASP
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
 |`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
 |`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
-|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurence)|
+|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
 **Cas particulier des PPR multirisques**
@@ -2567,7 +2691,7 @@ Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes 
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
 |`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|CODERISQUE|
 |`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
-|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurence)|
+|`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NOMRISQUE|
 
 
@@ -3321,6 +3445,101 @@ INSERT INTO gpkg_geometry_columns VALUES
  ;
 ```
 
+## Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
+
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeatechnorapide_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2) NOT NULL,
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2),
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnorapide_codealea_s','features','typeppr_codegaspar_zonealeatechnorapide_codealea_s','Table Zone Alea Technologique Rapide Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnorapide_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
+ ;
+```
+
+
+## Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s`
+
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeatechnolent_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2) NOT NULL,
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnolent_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnolent_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnolent_codealea_s','features','typeppr_codegaspar_zonealeatechnolent_codealea_s','Table Zone Alea technologique Lent Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnolent_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
+ ;
+```
+
+## Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
+
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_zonealeatechnoprojection_codealea_s ( 
+  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(16) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  effet TEXT(2) NOT NULL,
+  intensite TEXT(2) NOT NULL,
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnoprojection_codealea_s','features','typeppr_codegaspar_zonealeatechnoprojection_codealea_s','Table Zone Alea Technologique Projection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnoprojection_codealea_s','geom','POLYGON',/*srs_id*/2154,0,0)
+ ;
+```
+
+
 ## Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
 
 
@@ -3925,6 +4144,70 @@ INSERT INTO typereglementfoncier VALUES
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
   ('typereglementfoncier','attributes','typereglementfoncier','Enumeration valeurs possibles de types de reglementation foncières',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
+## Création de la table d'enumeration `typeeffettechno`
+
+
+``` SQL
+CREATE TABLE typeeffettechno (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeeffettechno VALUES 
+  ('01','Effet thermique'),
+  ('02','Effet de surpression'),
+  ('03','Effet toxique'),
+  ('04','Effet de projection')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeeffettechno','attributes','typeeffettechno','Enumeration valeurs possibles de types d''effet technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+## Création de la table d'enumeration `typeintensitetechno`
+
+
+``` SQL
+CREATE TABLE typeintensitetechno (
+  code TEXT(2) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeintensitetechno VALUES 
+  ('Z1','Extrèmement grave'),
+  ('Z2','Très grave'),
+  ('Z3','Grave'),
+  ('Z4','Significatif'),
+  ('Z5','Indirect')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeintensitetechno','attributes','typeintensitetechno','Enumeration valeurs possibles de types d''instensité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
+## Création de la table d'enumeration `typeclasseprobatechno`
+
+
+``` SQL
+CREATE TABLE typeclasseprobatechno (
+  code TEXT(1) NOT NULL PRIMARY KEY,
+  libelle TEXT(30) NOT NULL
+);
+INSERT INTO typeclasseprobatechno VALUES 
+  ('A','Evènement courant'),
+  ('B','Evènement probable'),
+  ('C','Evènement improbable'),
+  ('D','Evènement très improbable'),
+  ('E','Evènement possible mais extrêment peu probable')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeclasseprobatechno','attributes','typeclasseprobatechno','Enumeration valeurs possibles de classes de probabilité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 
