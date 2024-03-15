@@ -1978,7 +1978,7 @@ La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-
 
 ##### Table d'enumeration `typeeffettechno`
 
-La table `typeeffettechno` implémente l'énumeration [TypeEffetTechno](../Geostandards-risques-commun/Document.md#enumeration-typeeffettechno) définie dans le modèle commun.
+La table `typeeffettechno` implémente l'énumeration [TypeEffetTechno](#enumeration-typeeffettechno) définie dans ce profil applicatif.
 
 Elle a la structure et le contenu suivants :
 
@@ -1994,7 +1994,7 @@ La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-
 
 ##### Table d'enumeration `typeintensitetechno`
 
-La table `typeintensitetechno` implémente l'énumeration [TypeIntensiteTechno](../Geostandards-risques-commun/Document.md#enumeration-typeintensitetechno) définie dans le modèle commun.
+La table `typeintensitetechno` implémente l'énumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno) définie dans ce profil applicatif.
 
 Elle a la structure et le contenu suivants :
 
@@ -2011,7 +2011,7 @@ La définition de la table en SQL est précisée en [ANNEXE E](#création-de-la-
 
 ##### Table d'enumeration `typeclasseprobatechno`
 
-La table `typeclasseprobatechno` implémente l'énumeration [TypeClasseProbaTechno](../Geostandards-risques-commun/Document.md#enumeration-typeclasseprobatechno) définie dans le modèle commun.
+La table `typeclasseprobatechno` implémente l'énumeration [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) définie dans ce profil applicatif.
 
 Elle a la structure et le contenu suivants :
 
