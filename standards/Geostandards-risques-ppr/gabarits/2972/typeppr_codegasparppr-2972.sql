@@ -643,6 +643,39 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonereglementairefoncier_p','geom','POINT',2972,0,0)
  ;
 
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+  */
+
+
+CREATE TABLE typeppr_codegaspar_zoneregmultialea (
+  typealea TEXT(3) NOT NULL,
+  idzonereglementaire_u_s TEXT(8), 
+  idzonereglementaire_u_l TEXT(8), 
+  idzonereglementaire_u_p TEXT(8), 
+  idzonereglementaire_f_s TEXT(8), 
+  idzonereglementaire_f_l TEXT(8), 
+  idzonereglementaire_f_p TEXT(8), 
+  CONSTRAINT fk_zoneregmultialea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zoneregmultialea_zonereg_us FOREIGN KEY (idzonereglementaire_u_s) REFERENCES typeppr_codegaspar_zonereglementaireurba_s(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_ul FOREIGN KEY (idzonereglementaire_u_l) REFERENCES typeppr_codegaspar_zonereglementaireurba_l(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_up FOREIGN KEY (idzonereglementaire_u_p) REFERENCES typeppr_codegaspar_zonereglementaireurba_p(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fs FOREIGN KEY (idzonereglementaire_f_s) REFERENCES typeppr_codegaspar_zonereglementairefoncier_s(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fl FOREIGN KEY (idzonereglementaire_f_l) REFERENCES typeppr_codegaspar_zonereglementairefoncier_l(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fp FOREIGN KEY (idzonereglementaire_f_p) REFERENCES typeppr_codegaspar_zonereglementairefoncier_p(idzonereglementaire),
+  CHECK (
+    (idzonereglementaire_u_s IS NOT NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NOT NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NOT NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NOT NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NOT NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NOT NULL )
+  )
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zoneregmultialea','attributes','typeppr_codegaspar_zoneregmultialea','Table des zonages reglementaires multi aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 
 
 /**

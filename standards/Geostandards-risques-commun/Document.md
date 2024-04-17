@@ -832,7 +832,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 **Titre** : Zone réglementaire
 
-**Définition** : La classe d'objets Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les spécialisations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
+**Définition** : La classe d'objets Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les spécialisations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit. 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
@@ -846,6 +846,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 | codeZoneReglement | Code attribué à la zone dans le cadre du règlement qui s'applique. La définition du code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
 | libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. La définition du libellé associé au code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
 | typeReglement | Type de règlement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
+| typeAlea | Type(s) d'aléa(s) étant à l'origine de la zone réglementaire | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération. | 0..\* |
 
 
 

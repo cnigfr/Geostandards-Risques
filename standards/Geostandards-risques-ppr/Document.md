@@ -488,6 +488,7 @@ Pour chacun de ces types de zonages une liste de valeurs possibles est établie 
 * [TypeReglementUrba](#enumeration-typereglementurba) pour caractériser les zones décrites par la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) ;
 * [TypeReglementFoncier](#enumeration-typereglementfoncier) pour caractériser les zones décrites par la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) ;
 
+
 **Fig. *xx* Modèle UML des classes relatives au zonage réglementaire dans le cadre des PPR.**
 
 ![Modele UML ZoneReg PPR](./ressources/UML-ZoneReg-PPR.png)
@@ -815,8 +816,10 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. | [TypeReglementUrba](#enumeration-typereglementurba) | Les valeurs possibles de l'énumération | 1..1 |
+| typeAlea | Type(s) d'aléa(s) étant à l'origine de la zone réglementaire. Ce champ est à utiliser dans le cadre des PPR Multirisques, ce qui permet de différencier les zonages en fonction des aléas d'origine | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération. | 0..\* |
 | mesuresObligatoires | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | 0..1 |
 
+Par ailleurs, le champ typeAlea hérité de la classe commune ZoneReglementaire permet de d'indiquer 
 
 #### Classe d'objets ZoneReglementaireFoncier
 
@@ -834,6 +837,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | typeReglement | Nature de la mesure foncière qui peut s'appliquer sur la zone. | [TypeReglementFoncier](#enumeration-typereglementfoncier) | Les valeurs possibles de l'énumération | 1..1 |
+| typeAlea | Type(s) d'aléa(s) étant à l'origine de la zone réglementaire. Ce champ est à utiliser dans le cadre des PPR Multirisques, ce qui permet de différencier les zonages en fonction des aléas d'origine | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération. | 0..\* |
 
 
 #### Enumeration *TypeReglementUrba*
@@ -1408,6 +1412,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` | `features` | `POLYGON` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` | `features` | `LINESTRING` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
 | C | `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` | `features` | `POINT` | Classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) |
+| O | `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` | `attributes` | N.A. | Implementation de l'attribut multiple typeAlea des classes [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) et Classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) |
 | F | `typeprocedure` | `attributes` | N.A. | Enumeration [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) |
 | F | `typeetatprocedure` | `attributes` | N.A. | Enumeration [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) |
 | F | `typereference` | `attributes` | N.A. | Enumeration [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) |
@@ -1734,7 +1739,7 @@ La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définie dans ce profil applicatif. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
@@ -1746,6 +1751,25 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 | **`geom`** | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de ces tables en SQL est précisée en [ANNEXE E](#création-des-tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp).
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut à valeurs multiples typeAlea des classes [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) et [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définies dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone reglementaire. |
+| `idzonereglementaire_us` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_ul` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_up` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` auquel se rattache le type d'alea. |
+| `idzonereglementaire_fs` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_fl` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_fp` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` auquel se rattache le type d'alea. |
+
+A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_ul`, `idzonereglementaire_up`, `idzonereglementaire_fs`, `idzonereglementaire_fl` ou `idzonereglementaire_fp` doit être renseignée.
+
+La définition de cette table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zoneregmultialea).
+
 
 
 ##### Table d'enumeration `typeprocedure`
@@ -3881,6 +3905,54 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonereglementairefoncier_p','geom','POINT',/*srs_id*/2154,0,0)
  ;
 ```
+
+
+## Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+
+
+``` SQL
+CREATE TABLE typeppr_codegaspar_zoneregmultialea (
+  typealea TEXT(3) NOT NULL,
+  idzonereglementaire_u_s TEXT(8), 
+  idzonereglementaire_u_l TEXT(8), 
+  idzonereglementaire_u_p TEXT(8), 
+  idzonereglementaire_f_s TEXT(8), 
+  idzonereglementaire_f_l TEXT(8), 
+  idzonereglementaire_f_p TEXT(8), 
+  CONSTRAINT fk_zoneregmultialea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zoneregmultialea_zonereg_us FOREIGN KEY (idzonereglementaire_u_s) REFERENCES typeppr_codegaspar_zonereglementaireurba_s(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_ul FOREIGN KEY (idzonereglementaire_u_l) REFERENCES typeppr_codegaspar_zonereglementaireurba_l(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_up FOREIGN KEY (idzonereglementaire_u_p) REFERENCES typeppr_codegaspar_zonereglementaireurba_p(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fs FOREIGN KEY (idzonereglementaire_f_s) REFERENCES typeppr_codegaspar_zonereglementairefoncier_s(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fl FOREIGN KEY (idzonereglementaire_f_l) REFERENCES typeppr_codegaspar_zonereglementairefoncier_l(idzonereglementaire),
+  CONSTRAINT fk_zoneregmultialea_zonereg_fp FOREIGN KEY (idzonereglementaire_f_p) REFERENCES typeppr_codegaspar_zonereglementairefoncier_p(idzonereglementaire),
+  CHECK (
+    (idzonereglementaire_u_s IS NOT NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NOT NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NOT NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NOT NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NOT NULL AND idzonereglementaire_f_p IS NULL ) OR
+    (idzonereglementaire_u_s IS NULL AND idzonereglementaire_u_l IS NULL AND idzonereglementaire_u_p IS NULL AND idzonereglementaire_f_s IS NULL AND idzonereglementaire_f_l IS NULL AND idzonereglementaire_f_p IS NOT NULL )
+  )
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zoneregmultialea','attributes','typeppr_codegaspar_zoneregmultialea','Table des zonages reglementaires multi aléas',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonereglementaire`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaire[foncier|urba]_s|l|p` auquel se rattache le type d'alea. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'alea associé à la zone reglementaire. |
+| **`uf`** | TEXT(1) | Valeurs à prendre parmi `u` et `f` pour indiquer si l'objet zonereglementaire est dans la table zonereglementaireurba (`u`) ou zonereglementairefoncier (`f`) | Type de zone reglementaire associé. |
+| **`slp`** | TEXT(1) | Valeurs à prendre parmi `s`, `l` et `p` pour indiquer si le type de géométrie (et donc la table où il se trouve) de l'objet zonereglementaire | Type de géométrie de l'objet zonereglementaire. |
+
+La définition de cette table en SQL est précisée en [ANNEXE E](#création-de-la-table-typeppr_codegasparcomplet_zoneregmultialea).
 
 
 ## Création de la table d'enumeration `typeprocedure`
