@@ -2998,7 +2998,14 @@ Les Plans de prévention des risques naturels peuvent être définis relativemen
 
 ## Identification d'un PPRN Multirisques
 
+Un PPRN est considéré comme multirisques lorsqu'il est défini relativement à plusieurs types d'aléas ET qu'au moins deux de ces types d'aléas diffèrent au niveau 2 de la hiérarchie de la [nomenclature des risques définie par GASPAR](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). 
+
+Par exemple :
+_ un PPR établi relativement à des aléas "Risque naturel inondation" et "Risque naturel avalanche" EST considéré comme multirisques ;
+- un PPR établi relativement uniquement à des aléas "risque naturel inondation par submersion marine" et "Risque naturel inondation par une crue à débordement lent de cours d'eau" N'est PAS considéré comme multirisques.
+
 Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `typeppr_codegaspar_procedure` à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques".
+
 
 ## Identification des zones d'aléas multirisques
 
@@ -3016,9 +3023,16 @@ Cette implémentation permet d'obtenir aisément les délimitations des zones sp
 
 La table `typeppr_codegaspar_perimetre_s` ne porte pas d'information sur le ou les aléas traités. Le ou les périmètres décrits par cette table concernent l'ensemble des aléas traités par le PPR s'il est multirisques. 
 
+
 ## Zonage réglementaire des PPRN Multirisques
 
-Les tables de zonage réglementaire de ce standard ne comportent pas de champ permettant d'indiquer à partir de quel(s) aléa(s) une zone réglementaire a été définie. De ce fait ces tables décrivent le zonage réglementaire relatif à tous les risques du PPRN Multirisques.
+Afin d'indiquer quels sont les aléas qui ont engendré quelles zones réglementaires dans un PPR multirisques, cette nouvelle version du standard introduit un nouveau champ multiple "typeAlea" au niveau des zones réglementaires.
+
+![Modele UML ZoneRegMulti PPR](./ressources/UML-ZoneReg-PPRNMultiRisques.png)
+
+Ce champ multiple est implémenté par une table `zoneregmultialea` qui fait l'association entre les tables de zonage reglementaire urbain et foncier et la table implémentant la nomenclature des risques de GASPAR `typealea`. Il est de ce fait possible de faire des sélections du zonage réglementaire en fonction du type d'aléa.
+
+![Geopackage ZoneRegMulti PPR](./ressources/Geopackage-PPRN-Multirisques-View.png)
 
 
 # ANNEXE D - Nomenclatures détaillées des enjeux
