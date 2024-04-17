@@ -2692,53 +2692,94 @@ La classe Perimetre est implémentée par la table [[TypePPR]\_[CodeGASPARComple
 
 La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence. 
 
-Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : ZoneAleaReference, ZoneAleaEcheance100ans et ZoneAleaExceptionnel. Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard.
+Dans le cadre du profil applicatif PPR des nouveaux standards, elle est spécialisée par des classes spécifiques en fonction du type de zone d'aléa que l'on veut renseigner : 
+- ZoneAleaReference, ZoneAleaEcheance100ans et ZoneAleaExceptionnel pour les zones d'aléa naturels
+- ZoneAleaTechnoRapide, ZoneAleaTechnoLent et ZoneAleaTechnoProjection pour les zones d'aléas liées aux risques industriels. 
+
+Ce sont ces classes qui seront remplies à partir des objets de la classe ZoneAleaPPR de l'ancien standard.
 
 
-## Remplissage des objets de la classe ZoneAleaReference
+### Remplissage des objets de la classe ZoneAleaReference
 
-L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence et un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
+L'ancien standard ne définissait qu'une classe pour les zones d'aléas. Par défaut, on considère que les objets de la classe ZoneAleaPPR décrivent l'aléa de référence dans le cadre des PPR Naturels.  Dans ce cas, un objet de l'ancienne classe ZoneAleaPPR sera converti en un objet de la classe ZoneAleaReference. Les exceptions seront précisées pour chacune des classes du nouveau standard.
 
 La classe ZoneAleaReference est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeareference\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeareference_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
-|`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
-|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
-|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
+|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
 |`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
-|`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
+|`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
 **Cas particulier des PPR multirisques**
 
-Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eu un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]. 
+Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eu un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]. 
 
 Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes les zones d'aléas qui y sont décrites sont mono risques. La transcription des zones d'aléa multirisques dans le nouveau standard nécessitera donc de créer une zone d'aléa par risque avec la géométrie de la zone multirisques et les propriétés des objets de la table MULTIALEA selon les règles de passage suivantes :
 
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
-|`idZoneAlea`|"20120001R000003"| N.A. | N.A. |
-|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|CODERISQUE|
-|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
+|`idzonealea`|"20120001R000003"| N.A. | N.A. |
+|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|CODERISQUE|
+|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
 |`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
-|`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPR[NT]\_[AAAANNNN]\_[DDD]|NOMRISQUE|
+|`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NOMRISQUE|
 
 
-## Remplissage des objets de la classe ZoneAleaEcheance100ans
+### Remplissage des objets de la classe ZoneAleaEcheance100ans
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa à échéance 100 ans. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
 
-Cette classe est implépmentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeaecheance100ans\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de typealea vaudra systématiquement "117" (aléa submersion marine)
+Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeaecheance100ans\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeaecheance100ans_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de typealea vaudra systématiquement "117" (aléa submersion marine)
 
 
-## Remplissage des objets de la classe ZoneAleaExceptionnel
+### Remplissage des objets de la classe ZoneAleaExceptionnel
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa exceptionnel pour le risque avalanche. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
 
-Cette classe est implépmentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeaexceptionnel\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches) et celle de `niveaualea` systématiquement "08" (exceptionnel).
+Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeaexceptionnel\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les même correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches) et celle de `niveaualea` systématiquement "08" (exceptionnel).
+
+
+### Remplissage des objets de la classe ZoneAleaTechnoRapide
+
+L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoRapide si des éléments permettent de les identifier comme des zones d'aléa à cinétique rapide.
+
+La classe ZoneAleaTechnoRapide est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnorapide\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnorapide_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
+
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|-|-|-|
+|`idzonealea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
+|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
+|`typealea`|"211" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`occurrence`| - |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
+|`effet`| - |N.A.|N.A. (Pas de correspondance pour l'effet)|
+|`intensite`| - |N.A.|N.A. (Pas de correspondance pour l'intensite)|
+|`description`| - |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
+
+A noter que certains attributs obligatoires dans le nouveau standard tels que `effet` ne pourra être rensigné automatiquement à partir d'un champ de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter cet élément et rendre les informations de la table conformes au exigences du novueau standard.
+
+
+### Remplissage des objets de la classe ZoneAleaTechnoLent
+
+L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoLent si des éléments permettent de les identifier comme des zones d'aléa à cinétique lente.
+
+La classe ZoneAleaTechnoLent est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnolent\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
+
+A noter que certains attributs obligatoires dans le nouveau standard tels que `effet` et `intensite` ne pourront être rensignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes au exigences du nouveau standard.
+
+### Remplissage des objets de la classe ZoneAleaTechnoProjection
+
+L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoProjection si des éléments permettent de les identifier comme des zones d'aléa à cinétique rapide à effet de projection.
+
+La classe ZoneAleaTechnoProjection est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnoprojection\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnoprojection_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
+
+A noter que certains attributs obligatoires dans le nouveau standard tels que `effet` et `intensite` ne pourront être rensignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes au exigences du nouveau standard.
 
 
 
@@ -2768,7 +2809,7 @@ Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zon
 
 Dans le cadre du profil applicatif PPR des nouveaux standards, la classe ZoneReglementaire est spécialisée par des classes spécifiques en fonction du type de règlement que l'on veut renseigner : ZoneReglementaireUrba ou ZoneRegelementaireFoncier. Ce sont ces classes qui seront remplies à partir des objets de la classe ZonePPR de l'ancien standard. 
 
-## Remplissage des objets de la classe ZoneReglementaireUrba
+### Remplissage des objets de la classe ZoneReglementaireUrba
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : 'Interdiction stricte", "Interdiction", "Prescriptions" ou "Prescriptions hors zone d'aléa".
 
@@ -2778,16 +2819,15 @@ Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
-|`idZoneReglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
-|`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
-|`codeZoneReglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
-|`libelleZoneReglement`|"prescription - Inondation par remontee de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typeReglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`idzonereglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
+|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
+|`codezonereglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
+|`libellezonereglement`|"prescription - Inondation par remontee de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
+|`typereglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
 | `mesuresobligatoires`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
-## Remplissage des objets de la classe ZoneReglementaireFoncier
-
+### Remplissage des objets de la classe ZoneReglementaireFoncier
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
@@ -2795,11 +2835,18 @@ Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementairefonc
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|:-:|:-:|:-:|
-|`idZoneReglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
-|`codeProcedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
-|`codeZoneReglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
-|`libelleZoneReglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typeReglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`idzonereglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
+|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
+|`codezonereglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
+|`libellezonereglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
+|`typereglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+
+
+### Remplissage des objets de la table zoneregmultialea
+
+Le nouveau standard introduit la possibilité d'associer des types d'aléas aux zones réglementaires dans le cas des PPR Multirisques. Cela s'implémente à l'aide d'une table [[TypePPR]\_[CodeGASPARComplet]\_zoneregmultialea](#tables-typeppr_codegasparcomplet_zoneregmultialea) qui fait le lien entre les objets des tables du zonage réglementaire et la classification des aléa.
+
+Dans le cadre de la transformation d'un PPR Multirisques COVADIS vers le nouveau standard, cette table ne pourra pas être générée à partir du fichier COVADIS qui ne porte pas cette information.
 
 
 
