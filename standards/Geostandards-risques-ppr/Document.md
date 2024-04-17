@@ -3009,12 +3009,7 @@ Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `t
 
 ## Identification des zones d'aléas multirisques
 
-A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multialéas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacunes dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type comme montré sur la figure suivante illustrant un ensemble de tables zonealeareference pour plusieurs types d'aléa inondation.
-
-**Fig. *xx* Implémentation du multirisque avec les tables mono-aléa**
-
-![Tables ZonAleaReference QGIS](./ressources/ZonesAleasMultirisques.png)
-
+A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multialéas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacunes dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type.
 
 Cette implémentation permet d'obtenir aisément les délimitations des zones spécifiques à chacun des aléas en calculant l'enveloppe de chaque table.
 
@@ -3028,9 +3023,13 @@ La table `typeppr_codegaspar_perimetre_s` ne porte pas d'information sur le ou l
 
 Afin d'indiquer quels sont les aléas qui ont engendré quelles zones réglementaires dans un PPR multirisques, cette nouvelle version du standard introduit un nouveau champ multiple "typeAlea" au niveau des zones réglementaires.
 
+**Fig. *xx* Modèle UML des zones réglementaires multirisques**
+
 ![Modele UML ZoneRegMulti PPR](./ressources/UML-ZoneReg-PPRNMultiRisques.png)
 
 Ce champ multiple est implémenté par une table `zoneregmultialea` qui fait l'association entre les tables de zonage reglementaire urbain et foncier et la table implémentant la nomenclature des risques de GASPAR `typealea`. Il est de ce fait possible de faire des sélections du zonage réglementaire en fonction du type d'aléa.
+
+**Fig. *xx* Implémentation des tables de zones réglementaires multirisques**
 
 ![Geopackage ZoneRegMulti PPR](./ressources/Geopackage-PPRN-Multirisques-View.png)
 
