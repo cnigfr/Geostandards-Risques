@@ -1105,12 +1105,12 @@ Il s'agit de recommandations à appliquer pour une représentation synthétique 
 
 ## Représentation des niveaux d'aléas
 
-Le tableau suivant présente les couleurs, en code RVB (Rouge Vert Bleu), à appliquer pour une représentation des différents niveaux d'aléas de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) en fonction du type de PPR. 
+Le tableau suivant présente les couleurs, en code RVB (Rouge Vert Bleu), à appliquer pour une représentation des différents niveaux d'aléas de l'énumération [TypeNiveauAlea](#enumeration-typeniveaualea) en fonction du type de PPR. Il s'applique aux différentes zones d'aléas des PPRN et aux zones d'aléas technologiques rapides des PPRT.
 
 Ces couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
 
-| Niveau d'aléa | PPRN | PPRT | 
+| Niveau d'aléa | PPRN | PPRT ([ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide))| 
 |-|-|-|
 | Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  |
 | Moyen ou Modéré | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) | R135 V206 B250 ![StyleAleaMoyenPPRNT](./ressources/couleur-alea-pprnt-02-m.png) |
@@ -1119,9 +1119,17 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 | Fort plus | N.A. | R238 V221 B130 ![StyleAleaFortPlusPPRT](./ressources/couleur-alea-pprt-05-fplus.png) | 
 | Très fort ou Majeur| R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | 
 | Très fort plus ou aggravé |  R240 V128 B128 ![StyleAleaTresFortPlusPPRN](./ressources/couleur-alea-pprt-07-tfplus.png)  | R240 V128 B128 ![StyleAleaTresFortPlusPPRT](./ressources/couleur-alea-pprt-07-tfplus.png) | 
-| Exceptionnel | Contour jaune. (Cf. [Note ARE DGPR:2022](https://www.georisques.gouv.fr/sites/default/files/2022-09/note_ARE_janvier_2022_version_finale.pdf))   | N.A. | 
+| Exceptionnel | Contour jaune (R255 V255 B000).  ![StyleAleaExceptionnelPPRN](./ressources/couleur-alea-pprn-08-ae.png) (Cf. [Note ARE DGPR:2022](https://www.georisques.gouv.fr/sites/default/files/2022-09/note_ARE_janvier_2022_version_finale.pdf))   | N.A. | 
 
 
+Le tableau suivant précise, dans le cadre des PPRT, les règles de représentations des zones d'aléa à cinétique lente et celles à cinétique rapide dans le cas particulier des effets de projection. Il s'agit des recommandations du [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf).
+
+
+| Type Zone Alea Technologique  | Représentation | 
+|-|-|
+| [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent). Courbe enveloppe des effets irréversibles (zone "Z4") | ![StyleAleaTechnoLentZ4](./ressources/couleur-alea-technolent-z4.png) | 
+| [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) Courbe enveloppe des effets graves de projection (zone "Z3") | ![StyleAleaTechnoProjZ3](./ressources/couleur-alea-techno-proj-z3.png) | 
+| [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) Courbe enveloppe des effets indirects de projection (zone "Z5") | ![StyleAleaTechnoProjZ3](./ressources/couleur-alea-techno-proj-z5.png) | 
 
 
 ## Représentations des types de réglementations standardisés
