@@ -299,7 +299,7 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   idzoneprotegee TEXT(8) NOT NULL PRIMARY KEY, 
   codeprocedure TEXT(16) NOT NULL, 
   typealea TEXT(3) NOT NULL,
-  niveauprotection FLOAT,
+  niveauprotection TEXT,
   occurrence TEXT, 
   description TEXT, 
   idouvrageprotection_s TEXT(20),
