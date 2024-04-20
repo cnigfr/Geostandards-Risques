@@ -15,7 +15,7 @@ Plans de prévention des risques (PPR)
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - Date*
+*Version 0.2 - 22 avril 2024*
 
 
 
@@ -26,11 +26,11 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
-| **Version du document** | *0.2 - jj mois aaaa (date de publication)*  |
+| **Version du document** | *0.2 - 22 avril 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR) Naturels et Technologiques. |
 | **Etendue d'application** | Territoire national français |
-| **Resolution spatiale** | Entre le 1:5000 et le 1:25000 |
-| **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
+| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | A venir : PDF sur internet (site du CNIG) |
 | **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.1.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
@@ -51,7 +51,7 @@ Groupe de travail refonte des Géostandards Risques
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
-| 0.2 | xx/xx/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : xxx  |
+| 0.2 | 22/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Retrait des PPR Miniers du périmètre d'application du document. Prise en compte de l'aléa exceptionnel avalanches. Ajout des spécificités des risques technologiques industriels. Simplification du système de catégorisation des enjeux. Prise en compte du multirisques au niveau du zonage réglementaire. Ajout d'une annexe clarifiant la gestion des PPRN multirisques. Modifications éditoriales pour apporter plus de clarté : ajouts d'un schéma d'ensemble et mise en valeur des spécificités avec le modèle commun, ajout d'un schéma des tables d'implémentation et mise en valeur du caractère obligatoire ou non des éléments. Mise en annexes du code SQL et des nomenclatures d’enjeux. |
 
 ##  Participation à l'écriture
 
@@ -70,7 +70,8 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohann | Cerema |
 
-> *liste à compléter et actualiser*
+
+> *Liste à compléter et actualiser*
 
 
 #  Présentation du document
@@ -197,55 +198,35 @@ L'[arrêté du 29 septembre 2005 dit PCIG](https://www.legifrance.gouv.fr/jorf/i
 ###  Abréviations
 
 
-**BRGM** Bureau de recherches géologiques et minières
-
-**BRIL** Bureau des risques d'inondation et littoraux (DGPR)
-
-**BRIEC** Bureau des risques des industries de l’énergie et de la chimie (DGPR)
-
-**Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
-
-**COVADIS** Commission de validation des données pour l'information spatialisée
-
-**CNIG** Comité national de l'information géolocalisée
-
-**DAGSI** Département des affaires générales et des systèmes d’information (DGPR)
-
-**DDT** Direction départementale des territoires 
-
-**DDTM** Direction départementale des territoires et de la mer 
-
-**DGPR** Direction générale de la prévention des risques
-
-**DREAL** Direction régionale de l'environnement, de l'aménagement et du logement
-
-**ERP** Établissement recevant du public
-
-**GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
-
-**IGN** Institut national de l'information géographique et forestière
-
-**MTECT** Ministère de la transition écologique et de la cohésion des territoires 
-
-**OGC** Open Geospatial Consortium
-
-**ONF** Office national des forêts
-
-**PPRN** Plan de prévention des risques naturels
-
-**PPRT** Plan de prévention des risques technologiques
-
-**RTM** Service de restauration des terrains en montagne de l'ONF
-
-**SIG** Système d'information géographique
-
-**SUP** Servitude d'utilité publique
-
-**WKT** Well-known text
-
-**URI** Uniform Resource Identifier
-
-**URL** Uniform Resource Locator
+| Sigle | Signification |
+|-|-|
+| BRGM | Bureau de recherches géologiques et minières |
+| BRIL | Bureau des risques d'inondation et littoraux (DGPR) |
+| BRIEC | Bureau des risques des industries de l’énergie et de la chimie (DGPR) |
+| Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
+| COVADIS | Commission de validation des données pour l'information spatialisée |
+| CNIG | Comité national de l'information géolocalisée |
+| DAGSI | Département des affaires générales et des systèmes d’information (DGPR) |
+| DDT | Direction départementale des territoires  |
+| DDTM | Direction départementale des territoires et de la mer  |
+| DGPR | Direction générale de la prévention des risques |
+| DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
+| ERP | Établissement recevant du public |
+| ERRIAL | État des risques réglementés pour l’information des acquéreurs et des locataires |
+| GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| ICPE | Installation classée pour la protection de l'environnement |
+| IGN | Institut national de l'information géographique et forestière |
+| MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
+| OGC | Open Geospatial Consortium |
+| ONF | Office national des forêts |
+| PPRN | Plan de prévention des risques naturels |
+| PPRT | Plan de prévention des risques technologiques |
+| RTM | Service de restauration des terrains en montagne de l'ONF |
+| SIG | Système d'information géographique |
+| SUP | Servitude d'utilité publique |
+| WKT | Well-known text |
+| URI | Uniform Resource Identifier |
+| URL | Uniform Resource Locator |
 
 
 
@@ -820,7 +801,6 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 | typeAlea | Type(s) d'aléa(s) étant à l'origine de la zone réglementaire. Ce champ est à utiliser dans le cadre des PPR Multirisques, ce qui permet de différencier les zonages en fonction des aléas d'origine | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération. | 0..\* |
 | mesuresObligatoires | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. | Booléen | Oui ou non. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | 0..1 |
 
-Par ailleurs, le champ typeAlea hérité de la classe commune ZoneReglementaire permet de d'indiquer 
 
 #### Classe d'objets ZoneReglementaireFoncier
 
@@ -1069,7 +1049,7 @@ Les éléments de métadonnées [relatifs à la conformité](#eléments-de-méta
 
 Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
 
-- [Non conformité aux règles du schéma conceptuel](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nonConfConceptuelle) ;
+- [Non-conformité aux règles du schéma conceptuel](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nonConfConceptuelle) ;
 - [Taux de conformité au domaine de valeurs](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txConfDomVal) ;
 - [Taux de valeurs d’attributs correctes](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxValAttOk) ;
 - [Taux d’erreur de formatage](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxErrFormat) ;
@@ -1080,15 +1060,15 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 ## Les différents états d'une procédure de Plan de Prévention des risques
 
-Les données relatives au plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) et [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). On peut les résumer ici en quatre états majeurs qui sont reflétés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
+Les données relatives aux plans de prévention des risques sont constituées, numérisées et publiées pendant la durée de vie de la procédure administrative. Les différentes étapes sont exposées en détail dans chacun des guides relatifs aux différents types de PPR ([Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf), [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) et [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). On peut les résumer ici en quatre états majeurs qui sont reflétés par les différents [états d'une procédure GASPAR](../Geostandards-risques-commun/Document.md#etats-dune-procédure-gaspar) et qui correspondent aussi à des états juridiques différents pour le PPR :
 
-- un état "Programmation et montage" pendant lequel l'opportunité de prescrire un PPR est à l'étude et correspond à une phase de recueil de données et d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade. 
+- un état "Programmation et montage" pendant lequel l'opportunité de prescrire un PPR est à l'étude et correspond à une phase de recueil de données et d'évaluation. Les données décrites par ce standard peuvent servir à la saisie de certains éléments mais elles ne sont pas publiées à ce stade ; 
 
 - un état "Prescrit", signé par le préfet où le périmètre du PPR est défini mais le zonage réglementaire non encore complètement établi. Cet état a des conséquences réglementaires et les données du PPR décrites par ce standard peuvent être saisies et publiées (au moins partiellement) ;
 
-- un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le préfet. Les données du PPR décrites par ce standard doivent être publiées. À ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [Annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards).
+- un état "Opposable", lorsque le PPR complet, avec le zonage réglementaire, est approuvé par le préfet. Les données du PPR décrites par ce standard doivent être publiées. À ce stade le PPR vaut Servitude d'Utilité Publique (SUP) et les données peuvent être dérivées dans le format décrit par le Standard dédié à ce type de données (cf. [Annexe B](#annexe-b---correspondances-avec-le-standard-cnig-sup-pour-les-sup-pm1-et-pm3) sur les règles de conversion entre les deux standards) ;
 
-- un état "Caduque" lorsque le PPR n'est plus opposable : déprescrit, abrogé, ou rendu obsolète par une procédure de révision.
+- un état "Caduque" lorsque le PPR n'est plus opposable : dé-prescrit, abrogé, ou rendu obsolète par une procédure de révision.
 
 
 ##  Maintenance
@@ -1194,7 +1174,7 @@ Le modèle physique implémenté avec GeoPackage est un modèle de données rela
 - les tables implémentant les données décrites dans ce standard.
 
 **Exigence**
-La granularité d'une livraison est celle d'une procédure associée à un plan de prévention des risques (un code de procédure). Autrement dit une livraison comprend l'ensemble des tables associées à une procédure identifée dans GASPAR par son code procédure.
+La granularité d'une livraison est celle d'une procédure associée à un plan de prévention des risques (un code de procédure). Autrement dit une livraison comprend l'ensemble des tables associées à une procédure identifiée dans GASPAR par son code procédure.
 
 
 ####  Nom du fichier de livraison
@@ -1226,7 +1206,7 @@ Le format GeoPackage définit un certain nombre de tables "système" qui lui per
 
 Les tables `gpkg_contents`, `gpkg_geometry_columns` et `gpkg_spatial_ref_sys` permettent de décrire les tables de données métier du GeoPackage et d'en gérer l'aspect géographique.
 
-Les tables `gpkg_metadata` et `gpkg_metadata_reference` permettent d'associer des informations de métadonnées relatives aux données métiers du GeoPackage à différent niveau de granularité. L'implementation des éléments de métadonnées décrits au paragraphe [Métadonnées](#métadonnées) peut être ainsi être embarquée dans le fichier GeoPackage.
+Les tables `gpkg_metadata` et `gpkg_metadata_reference` permettent d'associer des informations de métadonnées relatives aux données métiers du GeoPackage à différent niveau de granularité. L'implémentation des éléments de métadonnées décrits au paragraphe [Métadonnées](#métadonnées) peut être ainsi être embarquée dans le fichier GeoPackage.
 
 La structure et le contenu de ces tables sont définis dans les paragraphes qui suivent.
 
@@ -1271,7 +1251,7 @@ La livraison en GeoPackage d'un Plan de Prévention des Risques doit contenir un
 
 
 **Exigence**
-Toutes les tables de la livraison listées dans la table `gpkg_geometry_columns` n'ont pas de composante altimétrique ni temporelle. Les valeurs de `z` et `m` pour ces tables sont égales `0`.
+Toutes les tables de la livraison listées dans la table `gpkg_geometry_columns` n'ont pas de composante altimétrique ni temporelle. Les valeurs de `z` et `m` pour ces tables sont égales à `0`.
 
 
 
@@ -1462,7 +1442,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Proced
 |-|-|-|-|
 | **`codeprocedure`** | TEXT(16) | **Clef primaire** | Code identifiant de la procédure dans GASPAR |
 | **`libelleprocedure`** | TEXT | Pas de restriction | Nom de la procédure lisible par un être humain. | 
-| **`typeprocedure`** | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'enumeration [typeprocedure](#table-denumeration-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
+| **`typeprocedure`** | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'énumération [typeprocedure](#table-dénumération-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
 
 La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-typeppr_codegasparcomplet_procedure).
@@ -1489,7 +1469,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Peri
 |-|-|-|-|
 | **`idperimetre`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet périmètre. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`etatprocedure`** | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table [typeetatprocedure](#table-denumeration-typeetatprocedure) | Etat d'avancement de la procédure référencée par `codeprocedure` sur le périmètre. |
+| **`etatprocedure`** | TEXT(10) | Valeurs à prendre parmi les valeurs de `code` de la table [typeetatprocedure](#table-dénumération-typeetatprocedure) | Etat d'avancement de la procédure référencée par `codeprocedure` sur le périmètre. |
 | **`dateetat`** | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. |
 | **`geom`** | MULTIPOLYGON | (Multi)polygone du périmètre |  |
 
@@ -1502,10 +1482,10 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| **`adresse`** | TEXT | **Clef primaire**. La valeur de ce champ doit respecter le formalisme d'une URL ([RFC:3986]) | identifiant de l'objet reference internet. |
+| **`adresse`** | TEXT | **Clef primaire**. La valeur de ce champ doit respecter le formalisme d'une URL ([RFC:3986]) | Identifiant de l'objet referenceinternet. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure objet de la référence internet. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `nomressource` | TEXT | Saisie libre | Nom de la ressource référencée sur Internet |
-| **`typereference`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-denumeration-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
+| **`typereference`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-dénumération-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
 | `description` | TEXT | Saisie libre | Description de la ressource internet. |
 
 
@@ -1520,8 +1500,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeareference. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
@@ -1537,8 +1517,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaecheance100ans. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur est toujours `117` (aléa submersion marine) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur est toujours `117` (aléa submersion marine) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
@@ -1555,8 +1535,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeaexceptionnel. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur est toujours `14` (aléa avalanches) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). Ici la valeur est toujours `08` (exceptionnel) | Caractérisation du niveau de l'aléa. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur est toujours `14` (aléa avalanches) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). Ici la valeur est toujours `08` (exceptionnel) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa. Selon le type d'aléa. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
@@ -1573,12 +1553,12 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` impl�
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnorapide. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
-| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
-| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). | Type d'effet du risque industriels |
-| `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-dénumération-typeeffettechno). | Type d'effet du risque industriels |
+| `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 
@@ -1593,12 +1573,12 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` implém
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnolent. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
-| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
-| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). | Type d'effet du risque industriels |
-| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-dénumération-typeeffettechno). | Type d'effet du risque industriels |
+| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 
@@ -1613,12 +1593,12 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` i
 |-|-|-|-|
 | **`idzonealea`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonealeatechnoprojection. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
-| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea). | Caractérisation du niveau de l'aléa. |
-| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-denumeration-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
-| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-denumeration-typeeffettechno). Ici la valeur correspond à l'effet de projection (`04`). | Type d'effet du risque industriels |
-| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-denumeration-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+| **`effet`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeeffettechno](#table-dénumération-typeeffettechno). Ici la valeur correspond à l'effet de projection (`04`). | Type d'effet du risque industriels |
+| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 
@@ -1633,7 +1613,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 |-|-|-|-|
 | **`idzoneprotegee`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zoneprotegee. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone protégée. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
 | `niveauprotection` | TEXT | Domaine de valeurs en fonction du type zone. | Niveau de protection de la zone. Par exemple pour une zone protégée par un système d'endiguement, il s'agit de la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
 | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
@@ -1654,9 +1634,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 |-|-|-|-|
 | **`idzonedanger`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonedangerspecifique. |
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone de danger spécifique. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
-| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-denumeration-typeniveaualea) | Caractérisation du niveau de l'aléa. |
-| **`typesuralea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-denumeration-typesuralea) | Type de de zone de danger spécifique. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
+| **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
+| **`typesuralea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-dénumération-typesuralea) | Type de de zone de danger spécifique. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
 | `idouvrageprotection_s` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
 | `idouvrageprotection_l` | TEXT(20) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
@@ -1673,9 +1653,9 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` im
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 | **`idrefexterne`** | TEXT(20) | **Clef primaire** | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
-| **`refexterne`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-denumeration-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
+| **`refexterne`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-dénumération-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
 | `refexterneautre` | TEXT | Saisie libre. La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refexterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
-| `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-denumeration-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
+| `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-dénumération-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
 | **`geom`** | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
 La définition de ces tables en SQL est précisée en [annexe E](#création-des-tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp).
@@ -1739,7 +1719,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire urba. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | **`codezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
 | **`libellezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
-| **`typereglement`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-denumeration-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
+| **`typereglement`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-dénumération-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
 | `mesuresobligatoires` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. |
 | **`geom`** | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
@@ -1756,7 +1736,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 | **`codeprocedure`** | TEXT(16) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire foncier. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | **`codezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
 | **`libellezonereglement`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
-| **`typereglement`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-denumeration-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
+| **`typereglement`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-dénumération-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
 | **`geom`** | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 La définition de ces tables en SQL est précisée en [annexe E](#création-des-tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp).
@@ -1767,21 +1747,21 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'aléa associé à la zone réglementaire. |
-| `idzonereglementaire_us` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` auquel se rattache le type d'alea. |
-| `idzonereglementaire_ul` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` auquel se rattache le type d'alea. |
-| `idzonereglementaire_up` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` auquel se rattache le type d'alea. |
-| `idzonereglementaire_fs` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` auquel se rattache le type d'alea. |
-| `idzonereglementaire_fl` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` auquel se rattache le type d'alea. |
-| `idzonereglementaire_fp` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` auquel se rattache le type d'alea. |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone réglementaire. |
+| `idzonereglementaire_u_s` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_u_l` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_u_p` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_s` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_l` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_p` | TEXT(8) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` auquel se rattache le type d'alea. |
 
-A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_ul`, `idzonereglementaire_up`, `idzonereglementaire_fs`, `idzonereglementaire_fl` ou `idzonereglementaire_fp` doit être renseignée.
+A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_u_l`, `idzonereglementaire_u_p`, `idzonereglementaire_f_s`, `idzonereglementaire_f_l` ou `idzonereglementaire_f_p` doit être renseignée.
 
 La définition de cette table en SQL est précisée en [annexe E](#création-de-la-table-typeppr_codegasparcomplet_zoneregmultialea).
 
 
 
-##### Table d'enumeration `typeprocedure`
+##### Table d'énumération `typeprocedure`
 
 La table d'énumération `typeprocedure` implémente l'énumération [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
 
@@ -1804,10 +1784,10 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeprocedure).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeprocedure).
 
 
-##### Table d'enumeration `typeetatprocedure`
+##### Table d'énumération `typeetatprocedure`
 
 La table `typeetatprocedure` implémente l'énumération [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) définie dans le modèle commun.
 
@@ -1826,10 +1806,10 @@ Elle a la structure et le contenu suivants :
 | ABROGE | Abrogé |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeetatprocedure).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeetatprocedure).
 
 
-##### Table d'enumeration `typereference`
+##### Table d'énumération `typereference`
 
 La table `typereference` implémente l'énumération [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) définie dans le modèle commun.
 
@@ -1844,10 +1824,10 @@ Elle a la structure et le contenu suivants :
 | 99 | Autres |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typereference).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typereference).
 
 
-##### Table d'enumeration `typealea`
+##### Table d'énumération `typealea`
 
 La table `typealea` implémente l'énumération [TypeAlea](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typealea) définie dans le modèle commun
 
@@ -1899,10 +1879,10 @@ Elle a la structure et le contenu suivants :
 | 34 | Risque minier ; Echauffement des terrains de dépôts |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typealea).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typealea).
 
 
-##### Table d'enumeration `typeniveaualea`
+##### Table d'énumération `typeniveaualea`
 
 La table `typeniveaualea` implémente l'énumération [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) définie dans le modèle commun.
 
@@ -1921,10 +1901,10 @@ Elle a la structure et le contenu suivants :
 | 08 | Exceptionnel |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeniveaualea).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeniveaualea).
 
 
-##### Table d'enumeration `typesuralea`
+##### Table d'énumération `typesuralea`
 
 La table `typesuralea` implémente l'énumération [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) définie dans le modèle commun.
 
@@ -1938,11 +1918,11 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typesuralea).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typesuralea).
 
 
 
-##### Table d'enumeration `typeouvrageprotection`
+##### Table d'énumération `typeouvrageprotection`
 
 La table `typeouvrageprotection` implémente l'énumération [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) définie dans le modèle commun.
 
@@ -1955,10 +1935,10 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeouvrageprotection).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeouvrageprotection).
 
 
-##### Table d'enumeration `typerefexterneouvrage`
+##### Table d'énumération `typerefexterneouvrage`
 
 La table `typerefexterneouvrage` implémente l'énumération [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) définie dans le modèle commun.
 
@@ -1971,10 +1951,10 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typerefexterneouvrage).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typerefexterneouvrage).
 
 
-##### Table d'enumeration `typereglementurba`
+##### Table d'énumération `typereglementurba`
 
 La table `typereglementurba` implémente l'énumération [TypeReglementUrba](#enumeration-typereglementurba) définie dans ce profil applicatif.
 
@@ -1992,10 +1972,10 @@ Elle a la structure et le contenu suivants :
 
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typereglementurba).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typereglementurba).
 
 
-##### Table d'enumeration `typereglementfoncier`
+##### Table d'énumération `typereglementfoncier`
 
 La table `typereglementfoncier` implémente l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier) définie dans ce profil applicatif.
 
@@ -2006,10 +1986,10 @@ Elle a la structure et le contenu suivants :
 | 01 | Délaissement possible |
 | 02 | Expropriation possible |
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typereglementfoncier).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typereglementfoncier).
 
 
-##### Table d'enumeration `typeeffettechno`
+##### Table d'énumération `typeeffettechno`
 
 La table `typeeffettechno` implémente l'énumération [TypeEffetTechno](#enumeration-typeeffettechno) définie dans ce profil applicatif.
 
@@ -2022,10 +2002,10 @@ Elle a la structure et le contenu suivants :
 | 03 | Effet toxique |
 | 04 | Effet de projection |
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeeffettechno).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeeffettechno).
 
 
-##### Table d'enumeration `typeintensitetechno`
+##### Table d'énumération `typeintensitetechno`
 
 La table `typeintensitetechno` implémente l'énumération [TypeIntensiteTechno](#enumeration-typeintensitetechno) définie dans ce profil applicatif.
 
@@ -2039,10 +2019,10 @@ Elle a la structure et le contenu suivants :
 | Z4 | Significatif |
 | Z5 | Indirect |
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeintensitetechno).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeintensitetechno).
 
 
-##### Table d'enumeration `typeclasseprobatechno`
+##### Table d'énumération `typeclasseprobatechno`
 
 La table `typeclasseprobatechno` implémente l'énumération [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) définie dans ce profil applicatif.
 
@@ -2056,7 +2036,7 @@ Elle a la structure et le contenu suivants :
 | D | Evènement très improbable |
 | E | Evènement possible mais extrêment peu probable |
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-denumeration-typeclasseprobatechno).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeclasseprobatechno).
 
 
 #### Métadonnées de la livraison
@@ -2089,20 +2069,20 @@ Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter p
 
 ##### Métadonnées des tables du PPR
 
-Il est possible de rajouter d'autres ensembles d'éléments de métadonnées relatifs à des thématiques particulières (ici des tables de la livraison). Pour chacun de ces élements, il faut créer une ligne dans les tables `gpkg_metadata` et `gpkg_metadata_reference` de la manière suivantes, par exemple pour la table "pprn_76ddtm20120001_zonealeareference_112_s" :
+Il est possible de rajouter d'autres ensembles d'éléments de métadonnées relatifs à des thématiques particulières (ici des tables de la livraison). Pour chacun de ces éléments, il faut créer une ligne dans les tables `gpkg_metadata` et `gpkg_metadata_reference` de la manière suivante, par exemple pour la table "pprn_76ddtm20120001_zonealeareference_112_s" :
 
 - Dans la table `gpkg_metadata` :
 
 |`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
 |-|-|-|-|-|
-| 2 (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
+| `2` (*automatique*) | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML selon la norme ISO 19115* |
 
 
 - Dans la table `gpkg_metadata_reference` :
 
 | `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
 |-|-|-|-|-|-|-|
-| 'table' | 'pprn_76ddtm20120001_zonealeareference_112_s' | NULL | NULL | *date des métadonnées* | 2 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | 1 *(identifiant de la métadonnée du PPR)* |
+| `table` | `pprn_76ddtm20120001_zonealeareference_112_s` | NULL | NULL | *date des métadonnées* | `2` *(identifiant des métadonnées dans la table `gpkg_metadata`)* | `1` *(identifiant de la métadonnée du PPR)* |
 
 
 Un exemple d'insertion de ces métadonnées dans les tables en SQL (à adapter pour le contenu des métadonnées) est indiqué en  [annexe E](#exemple-dinsertion-de-métadonnées-de-table). 
@@ -2129,7 +2109,7 @@ D'autre références sont aussi d'utilité pour l'élaboration et la validation 
 
 ###  Périmètre INSPIRE
 
-Les données des Plans de Prévention des Risques sont référencées par INSPIRE. 
+Les données des plans de prévention des risques sont référencées par INSPIRE. 
 
 Les catégories thématiques INSPIRE sont les suivantes (ANNEXE III) :
 
@@ -2143,7 +2123,7 @@ Les catégories thématiques INSPIRE sont les suivantes (ANNEXE III) :
 
 Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner les données de prévention des risques conformément à la directive INSPIRE et à plusieurs niveaux de granularité :
 
-- les métadonnées décrivant les Plans de Prévention des Risques en général : un seul fichier de métadonnées (niveau "series" - "ensemble de séries de données géographiques") ;
+- les métadonnées décrivant les plans de prévention des risques en général : un seul fichier de métadonnées (niveau "series" - "ensemble de séries de données géographiques") ;
 - les métadonnées décrivant un PPR en particulier avec ses caractéristiques propres : un fichier de métadonnées par PPR (niveau "dataset" - "série de données") ;
 - le cas échéant, les métadonnées accompagnant une thématique particulière (par exemple le zonage réglementaire) d'un PPR donné : un fichier de métadonnées décrivant une table d'un PPR (niveau "dataset" - "série de données").
 
@@ -2260,8 +2240,8 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 #### Encodage
 
 - Description : Le champ est à remplir avec les valeurs suivantes :
-  - format d'échange (format de distribution)
-  - version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »
+  - format d'échange (format de distribution) ;
+  - version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue ».
 
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `distributionInfo/*/distributionFormat/*/name` et `distributionInfo/*/distributionFormat/*/version`
@@ -2383,7 +2363,6 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
 #### Dates de référence
 
 - Description : Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données. Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.
-
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date`
 
@@ -2403,13 +2382,12 @@ Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées 
   - la version du standard de référence ;
   - le numéro de version du lot et sa durée de vie ;
   - etc.
-
 - Obligation : Saisie obligatoire
-- XPath ISO 19115 : `dataQualityInfo/*/lineage/*/statement` Note : L’élément scope>level doit être fixé à « dataset » dans le cas d’une série, « series » pour un ensemble de séries.
+- XPath ISO 19115 : `dataQualityInfo/*/lineage/*/statement` Note : L’élément "scope>level" doit être fixé à `dataset` dans le cas d’une série, `series` pour un ensemble de séries.
 
 | Niveau de granularité | Valeur ou consigne de saisie  |
 |-|-|
-| Métadonnées générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : si(1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'œuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'œuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques préexistantes comme un part de numérisation.  |
+| Métadonnées générales | *Reprise et adaptation des éléments généraux COVADIS* : "Trois généalogies sont possibles pour obtenir la série de données constitutive d'un PPR : (1) L'élaboration du PPR est intervenue a posteriori de la publication du présent standard. Le maître d'œuvre du PPR a pu tenir compte des spécifications techniques du standard PPR dès le lancement de la procédure. (2) L'élaboration du PPR et la publication du présent standard sont concomitants. Les données géographiques ont dû faire l'objet d'une standardisation « à chaud » en cours de procédure, profitant de la connaissance de toutes les parties prenantes du dossier. (3) La publication du standard est intervenue après l'adoption de la procédure PPR ou la publication au format COVADIS. Le maître d'œuvre responsable de la gestion du PPR a décidé de reprendre le dossier pour produire les données au format CNIG. Cette production peut comporter de la reprise de données géographiques préexistantes comme un part de numérisation.  |
 | Métadonnées d'un PPR | *Indiquer les étapes de constitution du jeu de données PPR, les traitements effectués, les éventuelles validations reçues, ainsi que les référentiels sources utilisés. Si le PPR a fait l'objet d'une conversion du format COVADIS vers ce nouveau Standard, reprendre les éléments de Généalogie de l'ancien PPR et rajouter la mention de la conversion de format et les éventuels traitements effectués depuis.* |
 | Métadonnées d'une thématique | *Cf. ligne précédente.* |
 
@@ -2450,7 +2428,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 - Description : Il s'agit du résultat de la mesure qualité effectuée sur le jeu de données. Le champ est à remplir avec les sous éléments suivants :
   - Type de valeur : Type du résultat (Integer pour un résultat numérique, Double pour un nombre flottant et String pour une chaîne de caractère)
-  - Unité de mesure : Unité de mesure du résultat ("Unity" pour un nombre sans unités, "meter" pour un résultat en mètres, "percent" pour un pourcentage)
+  - Unité de mesure : Unité de mesure du résultat (`Unity` pour un nombre sans unités, `meter` pour un résultat en mètres, `percent` pour un pourcentage)
   - Valeur : Valeur du résultat (Par exemple pour un taux d’exhaustivité de 85,5%, la valeur sera 85,5)
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/valueType`, `dataQualityInfo/*/report/*/result/*/valueUnit` et `dataQualityInfo/*/report/*/result/*/value`
@@ -2485,7 +2463,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 #### Degré
 
-- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : "true" (en cas de conformité) / "false" (en cas de non-conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
+- Description : Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : `true` (en cas de conformité) ou `false` (en cas de non-conformité). La balise est laissée vide en cas de non évaluation de la conformité.  Le degré est considéré comme « non évalué » si le champ n’est pas présent.
 - Obligation : Saisie optionnelle
 - XPath ISO 19115 : `dataQualityInfo/*/report/*/result/*/pass`
 
@@ -2523,7 +2501,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 
 - Description : Le champ est à remplir avec :
   - l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée. ;
-  - Le rôle de cet organisme : `owner` (traduction de « propriétaire »).
+  - le rôle de cet organisme : `owner` (traduction de « propriétaire »).
 
 - Obligation : Saisie obligatoire
 - XPath ISO 19115 : `identificationInfo[1]/*/pointOfContact/*/organisationName`, `identificationInfo[1]/*/pointOfContact/*/contactInfo/*/address/*/electronicMailAddress` et `identificationInfo[1]/*/pointOfContact/*/role`
@@ -2562,7 +2540,7 @@ Pour chaque mesure de la qualité (cf. Partie [Qualité des données](#qualité)
 - Description : Le champ est à remplir avec le nom de l’organisation :
   - l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource) ;
   - une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée ;
-  - La nature de cette adresse : `pointOfcontact` (traduction de « Point de contact »).
+  - la nature de cette adresse : `pointOfcontact` (traduction de « Point de contact »).
 - Obligation : Saisie obligatoire 
 - XPath ISO 19115 : `contact*/organisationName`, `contact/*/address/*/electronicMailAddress` et `contact/*/role`
 
@@ -2644,15 +2622,15 @@ Le tableau suivant indique comment composer les parties du nom d'une table GeoPa
 ## Remplissage des objets de la classe Procedure
 
 
-Les objets de la classe Procedure sont créés à partir de ceux de la classe "DocumentPPR" avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procédure. 
+Les objets de la classe Procedure sont créés à partir de ceux de la classe DocumentPPR avec une correspondance exacte : un objet de la classe DocumentPPR génère un objet de la classe Procedure. 
 
-Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
+Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_procedure](#table-typeppr_codegasparcomplet_procedure). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|
+|-|-|-|-|
 |`codeprocedure`|"76DDTM20120001"| N\_DOCUMENT\_PPR[NT]\_S\_[DDD]| ID\_GASPAR |
 |`libelleProcedure`|"Plan de Prévention des Risques Naturels du bassin versant  de la Scie"|N\_DOCUMENT\_PPR[NT]\_S\_[DDD]|NOM |
-|`typeprocedure`| "PPRN-I" (Valeur à prendre parmi celles de l'énumération [TypeProcedure](#table-denumeration-typeprocedure))|N.A.|N.A.|
+|`typeprocedure`| "PPRN-I" (Valeur à prendre parmi celles de l'énumération [TypeProcedure](#table-dénumération-typeprocedure))|N.A.|N.A.|
 
 
 
@@ -2663,12 +2641,12 @@ La classe ReferenceInternet n'existait pas dans l'ancien standard, elle a été 
 Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_referenceinternet](#table-typeppr_codegasparcomplet_referenceinternet). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
-|-|:-:|:-:|:-:|
+|-|-|-|-|
 |`codeprocedure`|"76DDTM20120001"| N\_DOCUMENT\_PPR[NT]\_S\_[DDD]| ID\_GASPAR|
 |`adresse`| "http://www.seine-maritime.gouv.fr/Publications/Information-des-acquereurs-et-locataires-sur-les-risques-majeurs/Recherche-par-Plan-de-Prévention-des-Risques-PPR/PPRN-Bassin-versant-de-la-SCIE" | N\_DOCUMENT\_PPR[NT]\_S\_[DDD] | SITE\_WEB |
 |`nomressource` |  "PPRN Bassin Versant de la SCIE" |N.A.|N.A.|
 |`description`| "Site internet de la préfecture de la Seine-Maritime" |N.A.|N.A.|
-|`typereference`| Valeur à prendre parmi celles de code de la table [typereference](#table-denumeration-typereference) | N.A.|N.A.|
+|`typereference`| Valeur à prendre parmi celles de code de la table [typereference](#table-dénumération-typereference) | N.A.|N.A.|
 
 
 ## Remplissage des objets de la classe Perimetre
@@ -2681,7 +2659,7 @@ A noter que dans l'ancien standard, l'avancement de la procédure était porté 
 La classe Perimetre est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_perimetre_s](#table-typeppr_codegasparcomplet_perimetre_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|
+|-|-|-|-|
 |`idperimetre` | "1" | N.A. | N.A. (pas de correspondance pour l'identification du périmètre) |
 |`codeProcedure`| "76DDTM20120001" | N\_PERIMETRE\_PPR[NT]\_[AAAANNNN]S[DDD] | idGASPAR (ID\_GASPAR)|
 |`etatProcedure` |"APPROUVE" si ETAT= "Approuvé" (02); PRECRIT si ETAT="Prescrit" (01); ABROGE si ETAT ="Abrogé" (03); ANTICIPE si ETAT = "Anticipe" (04)" |N\_DOCUMENT\_PPR[NT]\_S\_[DDD] | ETAT |
@@ -2710,8 +2688,8 @@ La classe ZoneAleaReference est implémentée par la table [\[TypePPR\]\_\[CodeG
 |-|-|-|-|
 |`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
-|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
 |`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
@@ -2726,8 +2704,8 @@ Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes 
 |-|-|-|-|
 |`idzonealea`|"20120001R000003"| N.A. | N.A. |
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|CODERISQUE|
-|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
+|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|CODERISQUE|
+|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NIVALEA\_ST|
 |`occurrence`| "Q30" |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NOMRISQUE|
 
@@ -2743,34 +2721,34 @@ Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones d'aléas relatives à l'aléa exceptionnel pour le risque avalanche. Cette table ne sera donc générée lors de la transposition d'un ancien PPR vers le nouveau modèle que s'il est indiqué que les objets de la classe ZoneAleaPPR décrivent en particulier cet aléa. 
 
-Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeaexceptionnel\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les mêmes correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches) et celle de `niveaualea` systématiquement "08" (exceptionnel).
+Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonealeaexceptionnel\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonealeaexceptionnel_codealea_s). Ses attributs sont renseignés selon les mêmes correspondances que pour ZoneAleaReference. La valeur de `typealea` vaudra systématiquement "14" (aléa avalanches) et celle de `niveaualea` systématiquement "08" (exceptionnel).
 
 
 ### Remplissage des objets de la classe ZoneAleaTechnoRapide
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoRapide si des éléments permettent de les identifier comme des zones d'aléa à cinétique rapide.
 
-La classe ZoneAleaTechnoRapide est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnorapide\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnorapide_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
+La classe ZoneAleaTechnoRapide est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonealeatechnorapide\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonealeatechnorapide_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
 |`idzonealea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"211" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
-|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`typealea`|"211" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
 |`occurrence`| - |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`effet`| - |N.A.|N.A. (Pas de correspondance pour l'effet)|
-|`intensite`| - |N.A.|N.A. (Pas de correspondance pour l'intensite)|
+|`intensite`| - |N.A.|N.A. (Pas de correspondance pour l'intensité)|
 |`description`| - |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
-A noter que certains attributs obligatoires dans le nouveau standard tels que "effet" ne pourra être renseigné automatiquement à partir d'un champ de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter cet élément et rendre les informations de la table conformes aux exigences du nouveau standard.
+A noter que certains attributs obligatoires dans le nouveau standard tels que "effet" ne pourront être renseigné automatiquement à partir d'un champ de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter cet élément et rendre les informations de la table conformes aux exigences du nouveau standard.
 
 
 ### Remplissage des objets de la classe ZoneAleaTechnoLent
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoLent si des éléments permettent de les identifier comme des zones d'aléa à cinétique lente.
 
-La classe ZoneAleaTechnoLent est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnolent\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
+La classe ZoneAleaTechnoLent est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonealeatechnolent\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
 
 A noter que certains attributs obligatoires dans le nouveau standard tels que "effet" et "intensite" ne pourront être renseignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes aux exigences du nouveau standard.
 
@@ -2778,7 +2756,7 @@ A noter que certains attributs obligatoires dans le nouveau standard tels que "e
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoProjection si des éléments permettent de les identifier comme des zones d'aléa à cinétique rapide à effet de projection.
 
-La classe ZoneAleaTechnoProjection est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonealeatechnoprojection\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonealeatechnoprojection_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
+La classe ZoneAleaTechnoProjection est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonealeatechnoprojection\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonealeatechnoprojection_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
 
 A noter que certains attributs obligatoires dans le nouveau standard tels que "effet" et "intensite" ne pourront être renseignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes aux exigences du nouveau standard.
 
@@ -2794,14 +2772,14 @@ Dans l'ancien standard PPR, les zones protégées n'étaient pas représentées.
 
 L'ancien Standard COVADIS PPR n'identifie pas en tant que telles les zones de danger spécifiques. Cependant, certains objets de la classe ZoneAleaPPR peuvent représenter de telles zones avec une indication en ce sens dans le champ "description" de la table. Lorsque c'est le cas, ces objets particuliers de la classe ZoneAleaPPR permettront de générer les objets de la classe ZoneDangerSpecifique. 
 
-Cette classe est implémentée par la table [[TypePPR]\_[CodeGASPARComplet]\_zonedangerspecifique\_[CodeAlea]\_s](#table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
+Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonedangerspecifique\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s). Ses attributs sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS|
 |-|-|-|-|
 |`idzonedanger`|"20120001R000002"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|"76DDTM20120001"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"117" (valeur à prendre parmi les codes de l'énumération [typealea](#table-denumeration-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
-|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-denumeration-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
+|`typealea`|"117" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_ST|
 |`description`|"Secteur soumis aux chocs de vagues et de projection"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 |`typeSuralea`| "02" (Bande particulière) |N.A.|N.A.|
 
@@ -2816,15 +2794,15 @@ L'ancien standard ne définissait qu'une classe pour les zones réglementaires. 
 
 La propriété "mesuresobligatoires" ne pourra pas être renseignée automatiquement car l'information n'était pas indiquée dans l'ancien Standard. Elle pourra être laissée non renseignée, signifiant ainsi que l'existence ou non d'obligation d'application de mesures de réduction de la vulnérabilité est inconnue sur la zone.
 
-Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba\_[slp]](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
+Les attributs de la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonereglementaireurba\_\[slp\]](#tables-typeppr_codegasparcomplet_zonereglementaireurba_slp) qui implémente la classe ZoneReglementaireUrba sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|
+|-|-|-|-|
 |`idzonereglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
 |`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
 |`codezonereglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
 |`libellezonereglement`|"prescription - Inondation par remontée de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typereglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-denumeration-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`typereglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-dénumération-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
 | `mesuresobligatoires`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
@@ -2832,20 +2810,20 @@ Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementaireurba
 
 L'ancien standard ne définissait qu'une classe pour les zones réglementaires. Les objets de la classe ZoneReglementaireUrba seront créés à partir des objets de la classe ZonePPR dont l'attribut typeReglementStandardise porte une valeur représentant une réglementation en matière d'urbanisme, à savoir : "Délaissement possible" ou "Expropriation possible".
 
-Les attributs de la table [[TypePPR]\_[CodeGASPARComplet]\_zonereglementairefoncier\_[slp]](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp) qui implémente la classe ZoneReglementaireFoncier sont renseignés selon les correspondances suivantes :
+Les attributs de la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonereglementairefoncier\_\[slp\]](#tables-typeppr_codegasparcomplet_zonereglementairefoncier_slp) qui implémente la classe ZoneReglementaireFoncier sont renseignés selon les correspondances suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
-|-|:-:|:-:|:-:|
+|-|-|-|-|
 |`idzonereglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
 |`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
 |`codezonereglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
 |`libellezonereglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typereglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-denumeration-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`typereglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-dénumération-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
 
 
 ### Remplissage des objets de la table zoneregmultialea
 
-Le nouveau standard introduit la possibilité d'associer des types d'aléas aux zones réglementaires dans le cas des PPR Multirisques. Cela s'implémente à l'aide d'une table [[TypePPR]\_[CodeGASPARComplet]\_zoneregmultialea](#tables-typeppr_codegasparcomplet_zoneregmultialea) qui fait le lien entre les objets des tables du zonage réglementaire et la classification des aléa.
+Le nouveau standard introduit la possibilité d'associer des types d'aléas aux zones réglementaires dans le cas des PPR Multirisques. Cela s'implémente à l'aide d'une table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zoneregmultialea](#tables-typeppr_codegasparcomplet_zoneregmultialea) qui fait le lien entre les objets des tables du zonage réglementaire et la classification des aléa.
 
 Dans le cadre de la transformation d'un PPR Multirisques COVADIS vers le nouveau standard, cette table ne pourra pas être générée à partir du fichier COVADIS qui ne porte pas cette information.
 
@@ -2858,7 +2836,7 @@ Le Standard COVADIS définit une classe EnjeuPPR, permettant d'identifier de tel
 
 Les objets de la classe Enjeu seront créés à partir de ceux de la classe COVADIS EnjeuPPR, un objet de cette dernière générant un objet de la classe Enjeu du nouveau Standard. Dans le contexte d'une transformation d'un PPR COVADIS existant on utilisera systématiquement la nomenclature COVADIS pour classer les nouveaux objets d'enjeux créés.
 
-La classe Enjeu est implémentée par les tables [[TypePPR]\_[CodeGASPARComplet]\_enjeu\_[slp]](#tables-typeppr_codegasparcomplet_enjeu_slp) en fonction du type de géométrie des enjeux représentés. Les règles correspondantes avec le standard COAVDIS pour les propriétés sont les suivantes :
+La classe Enjeu est implémentée par les tables [\[TypePPR\]\_\[CodeGASPARComplet\]\_enjeu\_\[slp\]](#tables-typeppr_codegasparcomplet_enjeu_slp) en fonction du type de géométrie des enjeux représentés. Les règles correspondantes avec le standard COAVDIS pour les propriétés sont les suivantes :
 
 
 | Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
@@ -2878,9 +2856,9 @@ La classe Enjeu est implémentée par les tables [[TypePPR]\_[CodeGASPARComplet]
 
 Le Standard COVADIS définit une classe équivalente OrigineRisque avec les caractéristiques suivantes : un nom ("NOM"), le nom du système d'information ou de la base de données externe qui gère l'objet à l'origine du risque ("NOM_SI_EXT") et l'identifiant à utiliser pour faire référence à l'objet du SI externe correspondant l'entité à l'origine du risque ("ID_SI_EXT").
 
-Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Les règles de correspondances pour les propriétés des tables [[TypePPR]\_[CodeGASPARComplet]\_originerisque\_[slp]](#tables-typeppr_codegasparcomplet_originerisque_slp) qui l'implémentent selon le type de géométrie des objets représentés sont les suivantes :
+Les objets de la classe OrigineRisque seront créés à partir de ceux de la classe COVADIS OrigineRisque, un objet de cette dernière générant un objet de la classe OrigineRisque du nouveau Standard. Les règles de correspondances pour les propriétés des tables [\[TypePPR\]\_\[CodeGASPARComplet\]\_originerisque\_\[slp\]](#tables-typeppr_codegasparcomplet_originerisque_slp) qui l'implémentent selon le type de géométrie des objets représentés sont les suivantes :
 
-| Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS) |
+| Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
 | `codeprocedure` | "76DDTM20120001" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | ID_GASPAR |
 | `nom` | "La Scie" | N\_ORIG\_RISQ\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD] | NOM |
@@ -3066,7 +3044,7 @@ Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `t
 
 ## Identification des zones d'aléas multirisques
 
-A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multialéas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacunes dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type.
+A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multi aléas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacune dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type.
 
 Cette implémentation permet d'obtenir aisément les délimitations des zones spécifiques à chacun des aléas en calculant l'enveloppe de chaque table.
 
@@ -3105,36 +3083,36 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /espaceUrba | espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| espaceUrba/centreUrbain | centres urbains | espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaceUrba/horsCentreUrbain | espaces urbanisés hors centres urbains | espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
-| /espaceNonUrba | espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
-| /espaceSpecifique | espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes. Les sous-catégories suivantes permettent d'en caractériser certains |
-| /espaceSpecifique/expansionCrues | zones d’expansion des crues | espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
-| /espaceSpecifique/atterrisement | zones d’atterrissement | espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
-| /espaceSpecifique/interfaceHabitatForet | zones d’interfaces habitat-forêt | espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| /espaceSpecifique/maintienForet | zones de maintien d’une forêt | espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| /projetCollectivite | projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /espaceUrba | Espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| espaceUrba/centreUrbain | Centres urbains | Espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| espaceUrba/horsCentreUrbain | Espaces urbanisés hors centres urbains | Espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
+| /espaceNonUrba | Espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
+| /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes. Les sous-catégories suivantes permettent d'en caractériser certains |
+| /espaceSpecifique/expansionCrues | Zones d’expansion des crues | Espaces spécifiques au type d’aléa étudié | Zones d’expansion des crues pour les inondations |
+| /espaceSpecifique/atterrisement | Zones d’atterrissement | Espaces spécifiques au type d’aléa étudié | Zones d'atterrissement pour les crues torrentielles. |
+| /espaceSpecifique/interfaceHabitatForet | Zones d’interfaces habitat-forêt | Espaces spécifiques au type d’aléa étudié | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /espaceSpecifique/maintienForet | Zones de maintien d’une forêt | Espaces spécifiques au type d’aléa étudié | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| /projetCollectivite | Projets des collectivités | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
 
 ### Enjeux complémentaires
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /habitat | zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
-| /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
-| /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| /activite | zone d'activité | - | typologie du bâti |  Zone de typologie de bâti homogène destinée à l'activité professionnelle |
-| /activite/industrie | zone d'industrie | zone d'activité | typologie du bâti | Zone de typologie de bâti homogène destinée à l'industrie |
-| /activite/service | service | zone d'activité | Zone de typologie de bâti homogène destinée au service |
-| /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
-| /equipementParticulier | infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/gestionCrise | équipements nécessaires à la gestion de crise | infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/collectifsPublicsOuverts | équipements collectifs ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/campings | campings et hôtellerie de plein air | infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
-| /equipementParticulier/infraTransport | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/reseauxSensibles | réseaux et équipements sensibles | infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| /patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+| /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
+| /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
+| /habitat/collectif | Zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| /activite | Zone d'activité | - | Typologie du bâti |  Zone de typologie de bâti homogène destinée à l'activité professionnelle |
+| /activite/industrie | Zone d'industrie | Zone d'activité | Typologie du bâti | Zone de typologie de bâti homogène destinée à l'industrie |
+| /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
+| /activite/artisanat | Artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
+| /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/gestionCrise | Equipements nécessaires à la gestion de crise | Infrastructures et équipements particuliers | Par exemple : centres de secours, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/campings | Campings et hôtellerie de plein air | Infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| /equipementParticulier/infraTransport | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| /patrimoineEnvironement | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
 ## NomenclatureEnjeuPPRL
@@ -3148,35 +3126,35 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /espaceUrba | espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| espaceUrba/centreUrbain | centres urbains | espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaceUrba/horsCentreUrbain | espaces urbanisés hors centres urbains | espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
-| /espaceNonUrba | espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
-| /espaceSpecifique | espaces spécifiques au type d’aléa étudié | - | Espaces support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
-| /espaceSpecifique/portuaireBalneaire | ports, zones d’activités portuaires et d’activités balnéaires | espaces spécifiques au type d’aléa étudié | Les ports, zones d’activités portuaires et d’activités balnéaires |
-| /espaceSpecifique/campings | campings et hôtellerie de plein air | espaces spécifiques au type d’aléa étudié | Campings et hôtellerie de plein air |
-| /espaceSpecifique/activiteAgricoles | zones d'activités agricoles spécifiques | espaces spécifiques au type d’aléa étudié | Par exemple : les élevages sur prés salés et les marais salants |
-| /espaceSpecifique/propagationAlea | espaces participants à la propagation des aléas | espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
+| /espaceUrba | Espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| espaceUrba/centreUrbain | Centres urbains | Espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| espaceUrba/horsCentreUrbain | Espaces urbanisés hors centres urbains | Espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
+| /espaceNonUrba | Espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
+| /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| /espaceSpecifique/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Espaces spécifiques au type d’aléa étudié | Les ports, zones d’activités portuaires et d’activités balnéaires |
+| /espaceSpecifique/campings | Campings et hôtellerie de plein air | Espaces spécifiques au type d’aléa étudié | Campings et hôtellerie de plein air |
+| /espaceSpecifique/activiteAgricoles | Zones d'activités agricoles spécifiques | Espaces spécifiques au type d’aléa étudié | Par exemple : les élevages sur prés salés et les marais salants |
+| /espaceSpecifique/propagationAlea | Espaces participants à la propagation des aléas | Espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
 
 
 ### Enjeux complémentaires
 
 | Code | Libellé | Libellé Parent | Définition |
 |-|-|-|-|
-| /projetCollectivite | projets d'aménagement futurs du territoire | - | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-| /equipementParticulier | infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| /equipementParticulier/sensibleCrise | établissements sensibles ou difficilement évacuables | infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/collectifERPPublicOuverts | équipements collectifs de type ERP ou espaces publics ouverts | infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/transports | infrastructures de transport | infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| patrimoineEnvironement | enjeux patrimoniaux, culturels et environnementaux | - | Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
-| /habitat | zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
-| /habitat/individuel | zone d'habitat individuel | zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
-| /habitat/collectif | zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| /activite | zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
-| /activite/industrie | zone d'industrie | zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
-| /activite/service | service | zone d'activité | Zone de typologie de bâti homogène destinée au service |
-| /activite/artisanat | artisanat | zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
-| /gestionCrise | enjeux stratégiques pour la gestion de crise | -  | Autres éléments de contextes - Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /projetCollectivite | Projets d'aménagement futurs du territoire | - | Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires... Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/collectifERPPublicOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| /equipementParticulier/transports | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| patrimoineEnvironement | Enjeux patrimoniaux, culturels et environnementaux | - | Enjeux pour lesquels des mesures de prévention, de protection ou de sauvegarde peuvent être prescrites. Notamment, certains espaces naturels pouvant jouer un rôle et limiter l’effet de l’aléa (dune, étang, marais, …). |
+| /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
+| /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
+| /habitat/collectif | Zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
+| /activite/industrie | Zone d'industrie | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
+| /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
+| /activite/artisanat | artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
+| /gestionCrise | Enjeux stratégiques pour la gestion de crise | -  | Autres éléments de contextes - Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
 
 
 ## NomenclatureEnjeuPPRT
@@ -3215,16 +3193,16 @@ La colonne "Code" propose une codification hiérarchique du type d'enjeu permett
 | /infraTransport/voiesNavigables | Voies navigables  | Infrastructures de transports | Voies navigables | |
 | /infraTransport/itiTMD | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | Infrastructures de transports | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | |
 | /infraTransport/aeroports | Aéroports | Infrastructures de transports | Aéroports | |
-| //infraTransport/gares | Gares (routières, ferroviaires, portuaires) | Infrastructures de transports | gares (routières, ferroviaires, portuaires)  | |
+| //infraTransport/gares | Gares (routières, ferroviaires, portuaires) | Infrastructures de transports | Gares (routières, ferroviaires, portuaires)  | |
 | /infraTransport/transportsDoux | Modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | Modes doux de déplacement (piétons, vélos) | |
-| /infraTransport/collectif | Transports collectifs (bus, métros, etc.)  | Infrastructures de transports | transports collectifs (bus, métros, etc.) | |
+| /infraTransport/collectif | Transports collectifs (bus, métros, etc.)  | Infrastructures de transports | Transports collectifs (bus, métros, etc.) | |
 | /espacesPublicsOuverts | Espaces publics ouverts | - | Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous-catégories ci-dessous | Nombre de personnes pouvant être rassemblées |
 | /espacesPublicsOuverts/permanents | Espaces à usage permanent | Espaces publics ouverts | Equipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
 | /espacesPublicsOuverts/occasionnel | Espaces à usage périodique ou occasionnel | Espaces publics ouverts | Voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
 | /ouvrageInteretGeneral | Ouvrages et équipements d’intérêt général | - | Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous-catégories suivantes identifient certains de ces types d'ouvrages | |
 | /ouvrageInteretGeneral/posteElectrique | Poste EDF | Ouvrages et équipements d’intérêt général | Poste EDF | |
-| /ouvrageInteretGeneral/centralTelephone | Central téléphonique | Ouvrages et équipements d’intérêt général | central téléphonique | |
-| /ouvrageInteretGeneral/posteDetenteGaz | Poste de détente GDF | Ouvrages et équipements d’intérêt général | poste de détente GDF | |
+| /ouvrageInteretGeneral/centralTelephone | Central téléphonique | Ouvrages et équipements d’intérêt général | Central téléphonique | |
+| /ouvrageInteretGeneral/posteDetenteGaz | Poste de détente GDF | Ouvrages et équipements d’intérêt général | Poste de détente GDF | |
 | /ouvrageInteretGeneral/antenneTelMobile | Antenne de téléphonie mobile | Ouvrages et équipements d’intérêt général | Antenne de téléphonie mobile | |
 | /ouvrageInteretGeneral/captageEau | Point de captage d’eau | Ouvrages et équipements d’intérêt général | Point de captage d’eau | |
 | /ouvrageInteretGeneral/reservoirEau | Château d’eau, réservoir | Ouvrages et équipements d’intérêt général | Château d’eau, réservoir | |
@@ -4012,20 +3990,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
-
-
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-| **`idzonereglementaire`** | TEXT(8) | **Clef primaire** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaire[foncier|urba]_s|l|p` auquel se rattache le type d'alea. |
-| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-denumeration-typealea) | Type de l'aléa associé à la zone reglementaire. |
-| **`uf`** | TEXT(1) | Valeurs à prendre parmi `u` et `f` pour indiquer si l'objet zonereglementaire est dans la table zonereglementaireurba (`u`) ou zonereglementairefoncier (`f`) | Type de zone reglementaire associé. |
-| **`slp`** | TEXT(1) | Valeurs à prendre parmi `s`, `l` et `p` pour indiquer si le type de géométrie (et donc la table où il se trouve) de l'objet zonereglementaire | Type de géométrie de l'objet zonereglementaire. |
-
-La définition de cette table en SQL est précisée en [annexe E](#création-de-la-table-typeppr_codegasparcomplet_zoneregmultialea).
-
-
-## Création de la table d'enumeration `typeprocedure`
+## Création de la table d'énumération `typeprocedure`
 
 
 ``` SQL
@@ -4054,7 +4019,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typeetatprocedure`
+## Création de la table d'énumération `typeetatprocedure`
 
 
 ``` SQL
@@ -4080,7 +4045,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typereference`
+## Création de la table d'énumération `typereference`
 
 
 ``` SQL
@@ -4102,7 +4067,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typealea`
+## Création de la table d'énumération `typealea`
 
 
 ``` SQL
@@ -4161,7 +4126,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typeniveaualea`
+## Création de la table d'énumération `typeniveaualea`
 
 
 ``` SQL
@@ -4187,7 +4152,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typesuralea`
+## Création de la table d'énumération `typesuralea`
 
 
 ``` SQL
@@ -4207,7 +4172,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typeouvrageprotection`
+## Création de la table d'énumération `typeouvrageprotection`
 
 La définition de la table en SQL est la suivante :
 
@@ -4228,7 +4193,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typerefexterneouvrage`
+## Création de la table d'énumération `typerefexterneouvrage`
 
 
 ``` SQL
@@ -4248,7 +4213,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typereglementurba`
+## Création de la table d'énumération `typereglementurba`
 
 
 ``` SQL
@@ -4271,7 +4236,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 ```
 
-## Création de la table d'enumeration `typereglementfoncier`
+## Création de la table d'énumération `typereglementfoncier`
 
 
 ``` SQL
@@ -4290,7 +4255,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typeeffettechno`
+## Création de la table d'énumération `typeeffettechno`
 
 
 ``` SQL
@@ -4310,7 +4275,7 @@ INSERT INTO gpkg_contents VALUES
  ;
 ```
 
-## Création de la table d'enumeration `typeintensitetechno`
+## Création de la table d'énumération `typeintensitetechno`
 
 
 ``` SQL
@@ -4332,7 +4297,7 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'enumeration `typeclasseprobatechno`
+## Création de la table d'énumération `typeclasseprobatechno`
 
 
 ``` SQL
