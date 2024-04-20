@@ -25,14 +25,14 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Modèle Commun |
-| **Version du document** | *0.2 - jj mois aaaa (date de publication)*  |
+| **Version du document** | *0.2 - 29 avril 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières. |
 | **Etendue d'application** | Territoire national français. |
-| **Resolution spatiale** | entre le 1:5000 et le 1:25000 |
-| **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
+| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | *A venir : PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.1.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
+| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.2.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
 | **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
 | **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org |
@@ -51,7 +51,7 @@ Groupe de travail refonte des Géostandards Risques
 | Version | Date | Raison |
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
-| 0.2 | xx/xx/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux.  |
+| 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Légères modifications du modèle en cohérence avec le modèle du profil PPR. |
 
 
 ##  Participation à l'écriture
@@ -89,7 +89,7 @@ Ce document constitue le socle commun de ces Géostandards en définissant les c
 
 Ce document s'adresse :
 
-- aux services de l'État ou assimilés, chargés de produire ces données, les entretenir les diffuser.
+- aux services de l'État ou assimilés, chargés de produire ces données, les entretenir les diffuser ;
 - aux utilisateurs de ces données : collectivités locales, bureaux d'études, ou grand public.
 
 
@@ -114,7 +114,7 @@ Cette partie cite les références documentaires et réglementaires sur lesquell
 Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous. 
 
 
-| Accronyme | Titre | Auteur | Année |
+| Acronyme | Titre | Auteur | Année |
 |-|-|-|-|
 | [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) | Géostandards Risques - Profil Applicatif Plan de Prévention des Risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement) | Description des ouvrages faisant obstacle à l’écoulement v1.2 | SANDRE | 2014 |
@@ -154,11 +154,11 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 
 | Terme | Définition|
 |-|-|
-| Aléa | De manière générale un aléa est un phénomène caractérisé par sa probalité d'occurrence et son intensité. Pour les **risques naturels**, le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) précise qu'il s'agir d'un phénomène naturel (inondation, mouvement de terrain, séisme, avalanche, incendies de forêts...) d'occurrence et d'intensité données ; le [Guide Ineris:2018](https://www.ineris.fr/sites/ineris.fr/files/contribution/Documents/Ineris-Guide_Aleas_miniers_0.pdf) le définit ainsi pour les **risques d'origine minière** : l’aléa correspond à la probabilité qu’un phénomène (d’origine minière dans le cas présent) se produise sur un site, au cours d’une période de référence, en atteignant une intensité qualifiable ou quantifiable. La caractérisation d’un aléa repose classiquement sur le croisement de l’intensité prévisible du phénomène avec sa probabilité d’occurrence. Le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) définit quand à lui la notion d'**aléa technologique**. *On notera que ces définitions appliquées par la DGPR diffèrent de celle utilisée dans ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) : Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.* | 
+| Aléa | De manière générale un aléa est un phénomène caractérisé par sa probabilité d'occurrence et son intensité. Pour les **risques naturels**, le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) précise qu'il s'agir d'un phénomène naturel (inondation, mouvement de terrain, séisme, avalanche, incendies de forêts...) d'occurrence et d'intensité données ; le [Guide Ineris:2018](https://www.ineris.fr/sites/ineris.fr/files/contribution/Documents/Ineris-Guide_Aleas_miniers_0.pdf) le définit ainsi pour les **risques d'origine minière** : l’aléa correspond à la probabilité qu’un phénomène (d’origine minière dans le cas présent) se produise sur un site, au cours d’une période de référence, en atteignant une intensité qualifiable ou quantifiable. La caractérisation d’un aléa repose classiquement sur le croisement de l’intensité prévisible du phénomène avec sa probabilité d’occurrence. Le [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) définit quand à lui la notion d'**aléa technologique**. *On notera que ces définitions appliquées par la DGPR diffèrent de celle utilisée dans ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de [UNISDR:2009](https://reliefweb.int/attachments/a0ed6b9c-713e-349f-ae9f-d3d8ff336b1f/Rapport_complet.pdf)) : Un phénomène dangereux, une substance, activité humaine ou condition pouvant causer des pertes de vies humaines, des blessures ou d’autres effets sur la santé, des dommages aux biens, des pertes de moyens de subsistance et des services, des perturbations socio-économiques, ou des dommages à l’environnement.* | 
 | Aléa technologique | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) L’aléa technologique est une composante du risque industriel. Il désigne la probabilité qu’un phénomène dangereux produise, en un point donné du territoire, des effets d’une intensité physique définie. | 
 | Enjeux | Les différents Guides PPR ([Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf)], [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf), [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) et [Guide PPRM:2019](http://www.ecologique-solidaire.gouv.fr/sites/default/files/Guide%20m%C3%A9thodologique%20d%27%C3%A9laboration%20des%20Plans%20de%20pr%C3%A9vention%20des%20risques%20miniers%20%28version%20de%20juillet%202019%29.pdf)) définissent les enjeux comme étant les personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. |
 | Opposable | Un document juridique est opposable aux tiers quand tout le monde doit le respecter, même les personnes qui ne l'ont pas signé. Dans le cadre de la prévention des risques, ce terme s'applique aux documents d'une procédure qui définissent des contraintes réglementaires, notamment en terme d'urbanisme, lorsqu'ils sont validés par une autorité publique. |
-| Risque | La définition générale du risque appliquée par la DGPR dans le cadre de la prévention des risques et qui s'applique pour ce standard est reprise du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) : Le risque résulte du croisement de l’**aléa** et d’un **enjeu** **vulnérable**. Les défintions qui suivent précisent cette définition dans le cadre des risques naturels et industriels. *Il est important de noter que cette définition diffère de celle utilisée dans ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un **risque** est la combinaison d'un événement (**Aléa**) et la probabilité de son occurrence.* |
+| Risque | La définition générale du risque appliquée par la DGPR dans le cadre de la prévention des risques et qui s'applique pour ce standard est reprise du [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) : Le risque résulte du croisement de l’**aléa** et d’un **enjeu** **vulnérable**. Les définitions qui suivent précisent cette définition dans le cadre des risques naturels et industriels. *Il est important de noter que cette définition diffère de celle utilisée dans ([INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) reprise de ISO 31010 - Management du risque) : Un **risque** est la combinaison d'un événement (**Aléa**) et la probabilité de son occurrence.* |
 | Risque industriel | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) Le risque industriel est un concept intégrant des composantes techniques, économiques et sociales. Il résulte de la présence, sur un territoire, d’une installation manipulant des substances ou procédés susceptibles d’être à l’origine de phénomènes dangereux, face à des enjeux socio-économiques et environnementaux. |
 | Risque naturel | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) Pertes probables en vies humaines, en biens et en activités consécutives à la survenance d'un aléa naturel. |
 | Risque naturel prévisible | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) Risque susceptible de survenir à l'échelle de temps d’une vie humaine.|
@@ -168,46 +168,28 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 
 ###  Abréviations
 
-
-**BRGM** Bureau de recherches géologiques et minières
-
-**BRIL** Bureau des risques d'inondation et littoraux (DGPR)
-
-**BRIEC** Bureau des risques des industries de l’énergie et de la chimie (DGPR)
-
-**Cerema** Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement
-
-**CNIG** Comité national de l'information géolocalisée
-
-**DAGSI** Département des affaires générales et des systèmes d’information (DGPR)
-
-**DDT(M)** Direction départementale des territoires (et de la mer) 
-
-**DGPR** Direction générale de la prévention des risques
-
-**D(R)EAL** Direction (régionale) de l'environnement, de l'aménagement et du logement
-
-**DRIEAT** Direction régionale et interdépartementale de l’environnement, de l’aménagement et des transports (d'Île de France)
-
-**GASPAR** Base nationale de gestion assistée des procédures administratives relatives aux risques
-
-**GEMET** General multilingual environmental thesaurus
-
-**IGN** Institut national de l'information géographique et forestière
-
-**MTECT** Ministère de la transition écologique et de la cohésion des territoires 
-
-**PPRM** Plan de prévention des risques miniers
-
-**PPRN** Plan de prévention des risques naturels
-
-**PPRT** Plan de prévention des risques technologiques
-
-**SIOUH** Système d'information sur les ouvrages hydrauliques
-
-**TRI** Territoire à risque important d'inondation
-
-**UML** Unified modeling language 
+| Sigle | Signification |
+|-|-|
+| BRGM | Bureau de recherches géologiques et minières |
+| BRIL | Bureau des risques d'inondation et littoraux (DGPR) |
+| BRIEC | Bureau des risques des industries de l’énergie et de la chimie (DGPR) |
+| Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
+| CNIG | Comité national de l'information géolocalisée |
+| DAGSI | Département des affaires générales et des systèmes d’information (DGPR) |
+| DDT(M) | Direction départementale des territoires (et de la mer)  |
+| DGPR | Direction générale de la prévention des risques |
+| D(R)EAL | Direction (régionale) de l'environnement, de l'aménagement et du logement |
+| DRIEAT | Direction régionale et interdépartementale de l’environnement, de l’aménagement et des transports (d'Île de France) |
+| GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| GEMET | General multilingual environmental thesaurus |
+| IGN | Institut national de l'information géographique et forestière |
+| MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
+| PPRM | Plan de prévention des risques miniers |
+| PPRN | Plan de prévention des risques naturels |
+| PPRT | Plan de prévention des risques technologiques |
+| SIOUH | Système d'information sur les ouvrages hydrauliques |
+| TRI | Territoire à risque important d'inondation |
+| UML | Unified modeling language  |
 
 
 #  Concepts généraux
@@ -236,7 +218,7 @@ Les types de risques couverts par ce standard et ses profils applicatifs sont ce
 
 ##  Les acteurs et rôles concernés 
 
-Les acteurs concernés peuvent varier selon les différentes procédures de préventions des risques référencées dans la [partie introductive du document](#objectif-et-raison-dêtre-du-standard). De manière générale, on va retrouver cependant le shéma suivant :
+Les acteurs concernés peuvent varier selon les différentes procédures de préventions des risques référencées dans la [partie introductive du document](#objectif-et-raison-dêtre-du-standard). De manière générale, on va retrouver cependant le schéma suivant :
 
 | Nom du rôle | Caractéristiques |
 |-|-|
@@ -286,11 +268,11 @@ La liste des types de procédures prises en charge par ce standard correspond à
 
 Un objet de la classe [Procedure](#classe-dobjets-procedure) correspond à une procédure saisie dans GASPAR. Le champ "codeProcedure" contient la valeur de l'identifiant de la procédure dans GASPAR et permet ainsi de faire le lien entre les données de ce système.
 
-Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est réprésenté par l'association ["revise"](#associations-de-la-classe-procedure).
+Une procédure peut être la révision d'une ou de plusieurs anciennes procédures. Elle peut aussi faire l'objet d'une ou plusieurs autres procédures de révision. Ce lien potentiel entre différentes procédures est représenté par l'association ["revise"](#associations-de-la-classe-procedure).
 
 A une procédure donnée peuvent être associés plusieurs périmètres sur lesquels l'état d'avancement de la procédure peut être différent. La classe ["Perimetre"](#classe-dobjets-perimetre) permet de les décrire. La liste des états d'avancement possibles pour une procédure sur un périmètre est établie par le type énuméré [TypeEtatProcedure](#enumeration-typeetatprocedure) et correspond aux différents états d'avancements d'une procédure identifiés dans GASPAR.
 
-Les ressources internet liées à une procédure donnée (par exemple la publications d'un PPRI sur le site de la préfecture concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet, le nom et la description de la ressource.  
+Les ressources internet liées à une procédure donnée (par exemple la publication d'un PPRI sur le site de la préfecture concernée) sont décrites l'aide d'objets de la classe [Reference Internet](#classe-dobjets-referenceinternet) qui permet d'indiquer l'adresse internet, le nom et la description de la ressource.  
 
 
 **Fig. *xx* Modèle UML des classes relatives aux procédures et périmètres.**
@@ -318,9 +300,9 @@ La classe ([ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les 
 
 Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (par exemple, le référentiel des obstacles à l'écoulement [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet d'intégrer des objets de ces référentiels lorsqu'ils sont inclus dans une cartographie de prévention des risques et d'indiquer de quel type ils sont [TypeOuvrageProtection](#enumeration-typeouvrageprotection) et le référentiel dont ils sont extraits [TypeRefExterneProtection](#enumeration-typerefexterneprotection).
 
-Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les zones d'iso classe de hauteur d'eau permettant de déterminer les surfaces inondables pour les territoires à risque important d'inondation. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et catactériser leur intensité et leur probabilité. 
+Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les zones d'iso-classes de hauteur d'eau permettant de déterminer les surfaces inondables pour les territoires à risque important d'inondation. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et caractériser leur intensité et leur probabilité. 
 
-Les deux figures suivantes montrent le Modèle UML des classes relatives aux aleéas et la classe d'énumération des Types d'aléas issus de GASPAR.
+Les deux figures suivantes montrent le Modèle UML des classes relatives aux aléas et la classe d'énumération des Types d'aléas issus de GASPAR.
 
 **Fig. *xx* Modèle UML des classes relatives aux aléas.**
 
@@ -335,7 +317,7 @@ Les deux figures suivantes montrent le Modèle UML des classes relatives aux ale
 
 ### Thématique Origine du Risque
 
-La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de prévention. par exemple, les tronçons d'un cours d'eau à l'origine du risque inondation, l'enceinte d'une installation classée pour la protection de l'environnement (ICPE) pour le risque technologique ou la localisation d'un puit de mine pour le risque minier.
+La thématique Origine du risque permet de décrire les entités génératrices du risque à l'origine de la procédure de prévention. Par exemple, les tronçons d'un cours d'eau à l'origine du risque inondation, l'enceinte d'une installation classée pour la protection de l'environnement (ICPE) pour le risque technologique ou la localisation d'un puit de mine pour le risque minier.
 
 Elle définit une classe [OrigineRisque](#classe-dobjets-originerisque) qui porte les informations minimales permettant d'intégrer les entités issues de référentiels externes variés dans une cartographie des risques.
 
@@ -363,9 +345,9 @@ La définition des nomenclatures possibles sera proposée dans les profils appli
 
 ### Thématique Zonage réglementaire
 
-La thématique "Zonage reglementaire" permet de définir les zones sur lesquelles un règlement spécifique s'applique. Il peut s'agir de zones exposées aux risques ou de zones qui n'y sont pas directement exposées mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
+La thématique "Zonage réglementaire" permet de définir les zones sur lesquelles un règlement spécifique s'applique. Il peut s'agir de zones exposées aux risques ou de zones qui n'y sont pas directement exposées mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
 
-Au niveau du modèle commun cette thématique définit une classe [ZoneReglementaire](#classe-dobjets-zonereglementaire) qui permet de décrire les élements génériques d'une zone réglementaire. Cette classe sera spécialisée spécifiquement selon les profils applicatifs.
+Au niveau du modèle commun cette thématique définit une classe [ZoneReglementaire](#classe-dobjets-zonereglementaire) qui permet de décrire les éléments génériques d'une zone réglementaire. Cette classe sera spécialisée spécifiquement selon les profils applicatifs.
 
 Il est à noter que certaines procédures n'impliquent pas obligatoirement la mise en place d'un zonage réglementaire et cette classe pourra ne pas être implémentée dans certains profils applicatifs.
 
@@ -394,7 +376,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR. Elle est rappellée en [ANNEXE B](#nomenclature-des-identifiants-dans-gaspar). | 1..1  |
+| codeProcedure | Identifiant de la procédure dans le système GASPAR. | CharacterString | La syntaxe d'un code de procédure est déterminée par le système GASPAR. Elle est rappelée en [ANNEXE B](#nomenclature-des-identifiants-dans-gaspar). | 1..1  |
 | libelleProcedure | Nom de la procédure. | CharacterString | La syntaxe du libellé d'une procédure est déterminée par le système GASPAR. | 1..1  |
 | typeProcedure | Type de procédure selon la classification dans le système GASPAR | Enumeration [TypeProcedure](#enumeration-typeprocedure) | Celles de l'énumération | 1..1 |
 
@@ -426,7 +408,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 |-|-|-|-|-|
 | codeProcedure | Identifiant de la procédure décrite par le périmètre. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété *codeProcedure* de la classe [Procedure](#classe-dobjets-procedure). | 1..1 |
 | etatProcedure | État d'avancement de la procédure référencée par *codeProcedure* sur le périmètre | Enumeration [TypeÉtatProcedure](#enumeration-typeetatprocedure) | Celles de l'énumération | 1..1 |
-| dateÉtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
+| dateEtat | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. | Date | Valeur représentant une date : jour(optionnel), mois(optionnel), année | 1..1 |
 
 
 #### Classe d'objets *ReferenceInternet*
@@ -444,7 +426,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| adresse | Adresse internet de la ressource (URL) | CharacterString | formalisme d'URL à respecter | 1..1 | 
+| adresse | Adresse internet de la ressource (URL) | CharacterString | Formalisme d'URL à respecter | 1..1 | 
 | nomRessource | Nom de la ressource référencée sur Internet | CharacterString | Saisie Libre | 0..1 (Saisie recommandée) |
 | typeReference | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures | Enumeration [TypeReference](#enumeration-typereference) | Celles de l'énumération | 1..1 |
 | description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
@@ -468,14 +450,14 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Plan de Prévention des Risques Naturels Cyclone | Ce type de procédure couvre les risques naturels liés à l'activité cyclonique |
 | Plan de Prévention des Risques Naturels Radon | Ce type de procédure couvre les risques liés aux émanations du gaz radon en fonction du contexte naturel (formations géologiques, failles, sources hydrothermales) ou minier | 
 | Plan de Prévention des Risques Technologiques | Ce type de procédure couvre les risques liés aux risques nucléaire, industriels, de transport de matières dangereuses et de rupture de barrage |
-| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril , l'émission de gaz de mine , la pollution des sols et des eaux et l'inondation en lien avec les anciennes exploitations minières |
+| Plan de Prévention des Risques Miniers | Ce type de procédure couvre les risques liés aux mouvements de terrains en lien avec les ouvrages souterrains ou les ouvrages de surface, l'échauffement / la combustion de terril, l'émission de gaz de mine, la pollution des sols et des eaux et l'inondation en lien avec les anciennes exploitations minières |
 | Territoires à Risque Important d’Inondations |Ce type de procédure couvre le risque inondation. Il est lié à la mise en œuvre de la Directive Inondation |
 | Porter à Connaissance | Ce type de procédure concerne le "Porter à Connaissance" (PAC) auprès des collectivités locales hors procédures TRI et PPR (couvertes par les précédentes) |
 
 
 #### Enumeration *TypeEtatProcedure*
 
-Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisés dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
+Le tableau suivant liste les différents états possibles d'une procédure applicable sur un périmètre donné. Les correspondances de ces états avec les états possibles gérés dans GASPAR sont précisées dans le [paragraphe dédié](#etats-dune-procédure-gaspar).
 
 
 | Libellé État | Description |
@@ -484,7 +466,7 @@ Le tableau suivant liste les différents états possibles d'une procédure appli
 | Montage | Période de réflexion du service instructeur sur la mise en place de la procédure |
 | Prescrit | La procédure a fait l'objet d'un arrêté préfectoral de prescription |
 | Porté à connaissance | La procédure a été portée à connaissance des collectivités |
-| Prorogé | La durée de validité de la procédure est prolongée au delà de la date initialement fixée |
+| Prorogé | La durée de validité de la procédure est prolongée au-delà de la date initialement fixée |
 | Anticipé | La procédure a fait l'objet d'un arrêté préfectoral portant mise en application anticipée |
 | Approuvé | La procédure fait l'objet d'un arrêté préfectoral portant approbation |
 | Annulé | La procédure a fait l'objet d'une décision d'une juridiction portant annulation |
@@ -499,7 +481,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | Libellé | Description |
 |-|-|
 | Règlement signé | Le document est un règlement approuvé (Utilisation dans le cadre d'un PPR) |
-| Zonage réglementaire signé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cdre d'un PPR) |
+| Zonage réglementaire signé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cadre d'un PPR) |
 | Carte signée | Le document est une carte approuvée (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
 | Autre carte | Le document est une carte additionnelle (Utilisation dans toutes les procédures) |
 | Autre | Tout autre document (Utilisation dans toutes les procédures) |
@@ -525,7 +507,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | idZoneAlea | Identifiant unique d'un objet zone d'aléa | CharacterString | Deux objets de la classe ZoneAlea ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
 | codeProcedure | Identifiant de la procédure pour laquelle la zone d'aléas a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | typeAlea | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
-| niveauAlea | Caractérisation du niveau de l'aléa. Les régles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad'hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | CharacterString | Saisie libre au niveau du modèle commun, pourra être restreinte par les profils applicatifs. | 1..1 |
+| niveauAlea | Caractérisation du niveau de l'aléa. Les règles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | CharacterString | Saisie libre au niveau du modèle commun, pourra être restreinte par les profils applicatifs. | 1..1 |
 | occurrence | Ce champ permet d'indiquer l'occurrence de survenue de l'aléa. Sa caractérisation dépend du type d'aléa, il pourra s'agir par exemple d'une période de retour ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
 | description | Description textuelle de la zone d'aléa | CharacterString | Saisie libre | 0..1 |
 
@@ -619,7 +601,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 |-|-|-|-|-|
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet | Énumération [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage) | Celles de l'énumération | 1..1 | 
-| refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambigue un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
+| refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
 | typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtection](#enumeration-typeouvrageprotection) | Celles de l'énumération | 0..1 |
 
 
@@ -643,7 +625,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 #### Enumeration *TypeAlea*
 
-Le tableau suivant liste les différents types d'aléas applicables les zones d'aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que les libellés intègrent la hiérarchisation à trois niveaux proposée par la nomenclature GASPAR.
+Le tableau suivant liste les différents types d'aléas applicables pour les zones d'aléas. Les correspondances avec la nomenclature définie dans GASPAR sont précisées dans le [paragraphe dédié](#nomenclature-des-risques-et-de-leurs-codes-dans-gaspar). A noter que les libellés intègrent la hiérarchisation à trois niveaux proposée par la nomenclature GASPAR.
 
 | Libellé Aléa |
 |-|
@@ -666,8 +648,8 @@ Le tableau suivant liste les différents types d'aléas applicables les zones d'
 | Risque naturel ; Phénomène lié à l'atmosphère ; Cyclone / Ouragan |
 | Risque naturel ; Phénomène lié à l'atmosphère ; Tempête et grains (vent) |
 | Risque naturel ; Phénomène lié à l'atmosphère ; Foudre |
-| Risque naturel ; Phénomène lié à l'atmosphère; Grêle |
-| Risque naturel ; Phénomène lié à l'atmosphère; Neige et pluies verglaçantes |
+| Risque naturel ; Phénomène lié à l'atmosphère ; Grêle |
+| Risque naturel ; Phénomène lié à l'atmosphère ; Neige et pluies verglaçantes |
 | Risque naturel ; Radon  |
 | Risque technologique ; Risque industriel ; Effet thermique |
 | Risque technologique ; Risque industriel ; Effet de surpression |
@@ -743,7 +725,8 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 **Titre** : Enjeu
 
-**Définition** : La classe Enjeu permet de faire état des objets d'enjeu qui sont représentés dans le cadre de la procédure de prévention des risques. Elle permet d'intégrer des objets issus de référentiels externes ou saisis spécifiquement en indiquant à minima un nom, le rattachement à une ou plusieurs nomenclatures d'enjeu, une date de collecte, une plusieurs éventuelle(s) information(s) sur les vulnérabilités de l'enjeu et une géométrie, en précisant le cas échéant le nom du référentiel d'origine et l'identifiant de l'objet dans ce référentiel. 
+**Définition** : La classe Enjeu permet de faire état des objets d'enjeu qui sont représentés dans le cadre de la procédure de prévention des risques. Elle permet d'intégrer des objets issus de référentiels externes ou saisis spécifiquement en indiquant à minima un nom, le rattachement à une nomenclature d'enjeu, une date de collecte, une ou plusieurs éventuelle(s) information(s) sur les vulnérabilités de l'enjeu et une géométrie. Si l'objet d'enjeu est issu d'un référentiel externe aux géostandards risques, le nom de ce référentiel d'origine et l'identifiant de l'objet dans ce référentiel peuvent être aussi renseignés. 
+
 
 **Modélisation géométrique** : Les objets de la classe Enjeu peuvent porter tout type de géométrie selon leurs types et la façon dont ils sont représentés.
 
@@ -756,7 +739,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait, si c'est le cas. | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 0..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet, si c'est le cas. | CharacterString | Saisie Libre. Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 0..1 | 
 | nomEnjeu | Nom de l'objet d'enjeu. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
-| typeEnjeu | classifications de l'enjeu dans une nomenclature d'enjeu. | [TypeEnjeu](#type-de-données-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..1 |
+| typeEnjeu | Classification de l'enjeu dans une nomenclature d'enjeu. | [TypeEnjeu](#type-de-données-typeenjeu) | Valeurs déterminées par les nomenclatures disponibles. | 1..1 |
 | vulnerabilite | Information sur les vulnérabilités de l'enjeu | [TypeVulnerabilite](#type-de-données-typevulnerabilite) | Valeurs selon les types de vulnérabilités dont on veut attester. | 0..\* |
 | dateEnjeu | Date de collecte de l'objet d'enjeu. | Date | Valeur représentant une date : jour(optionnel), mois(optionnel), année. | 1..1 |
 
@@ -765,14 +748,14 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 **Nom du type de données** : TypeEnjeu
 
-**Définition** : Le type de données TypeEnjeu permet de définir un type d'enjeu à l'aide d'un nom ("codeEnjeu" : identifiant ou libellé) faisant partie d'une nomenclature particulière identifiée grace au champ "nomenclatureEnjeu".
+**Définition** : Le type de données TypeEnjeu permet de définir un type d'enjeu à l'aide d'un nom ("codeEnjeu" : identifiant ou libellé) faisant partie d'une nomenclature particulière identifiée grâce au champ "nomenclatureEnjeu".
 
 **Propriétés** : 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
 | codeEnjeu | Désignation du type d'enjeu dans la nomenclature référencée par la propriété "nomenclatureEnjeu" | CharacterString | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature à laquelle appartient le code. | 1..1 | 
-| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguité cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des élémetns exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
+| nomenclatureEnjeu | Référence à une nomenclature établie définissant des types d'enjeux. | CharacterString | La référence à la nomenclature doit permettre d'identifier sans ambiguïté cette dernière (par exemple l'URI d'un registre (Par exemple : "https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue" pour la classification INSPIRE des éléments exposés). Une restriction sur les référentiels à utiliser pourra être faite dans les profils applicatifs | 1..1 | 
 
 
 #### Type de données *TypeVulnerabilite*
@@ -786,9 +769,9 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| nom | nom de la vulnérabilité relatée | CharacterString | Saisie libre pouvant être restreinte par les profils applicatifs selon les types de vulnérabilité qui doivent y être représentées. | 1..1 | 
+| nom | Nom de la vulnérabilité relatée | CharacterString | Saisie libre pouvant être restreinte par les profils applicatifs selon les types de vulnérabilité qui doivent y être représentées. | 1..1 | 
 | description | Description de la vulnérabilité relatée. | CharacterString | Saisie libre pouvant être contrainte par les profils applicatifs selon les types de vulnérabilité qui doivent y être représentées. | 0..1 |
-| valeur | valeur quantitative ou qualitative de la vulnérabilité | Tout type possible à ce stade | Saisie libre. Le type et les éventuelles restrictions de valeurs seront précisés en fonction des vulnérabilités que l'on souhaite représenter dans les profils applicatifs. | 
+| valeur | Valeur quantitative ou qualitative de la vulnérabilité | Tout type possible à ce stade | Saisie libre. Le type et les éventuelles restrictions de valeurs seront précisés en fonction des vulnérabilités que l'on souhaite représenter dans les profils applicatifs. | 
 
 
 #### Liste de codes ExposedElementCategoryValue
@@ -816,11 +799,11 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 | [personnes](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/people) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Présence d'êtres humains. |
 | [politique](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/political) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Tout objet concernant les affaires politiques. |
 | [service social](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/socialService) | [social](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/social) | Tout service fourni à des personnes. |
-| [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | - | Tout objet concernant des biens ou lié à l'économie ou à la finance. |
-| [activité économique](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economicActivity) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet représentant une activité économique tel qu'une industrie. |
-| [bien](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/property) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet susceptible d'appropriation, comme une maison. |
-| [infrastructure](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/infrastructure) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet considéré comme une structure fournissant un service tel qu'une route, un pont, une installation militaire, etc. |
-| [utilisation des terres rurales](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/ruralLandUse) | [economique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet non urbain destiné à une utilisation donnée, quelle qu’elle soit. |
+| [économique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | - | Tout objet concernant des biens ou lié à l'économie ou à la finance. |
+| [activité économique](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economicActivity) | [économique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet représentant une activité économique tel qu'une industrie. |
+| [bien](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/property) | [économique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet susceptible d'appropriation, comme une maison. |
+| [infrastructure](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/infrastructure) | [économique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet considéré comme une structure fournissant un service tel qu'une route, un pont, une installation militaire, etc. |
+| [utilisation des terres rurales](https://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/ruralLandUse) | [économique](http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/economic) | Tout objet non urbain destiné à une utilisation donnée, quelle qu’elle soit. |
 
 
 
@@ -832,7 +815,7 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 **Titre** : Zone réglementaire
 
-**Définition** : La classe d'objets Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les spécialisations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit.
+**Définition** : La classe d'objets Zone Réglementaire permet de décrire les zones sur lesquelles s'appliquent des règlements du fait de la procédure à laquelle elles sont rattachées. Les spécialisations de cette classe vont dépendre du type de la procédure concernée et du cadre réglementaire dans lequel elle s'inscrit. 
 
 **Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives classiques : (Multi)polygone, Polyligne, Point.
 
@@ -841,11 +824,12 @@ Elle accessible dans le [Système de publication de registres pour INSPIRE](http
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| idZoneReglementaire | Identifiant unique d'un objet zone réglementaire | CharacterString | Deux objets de la classe ZoneRéglementaire ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
+| idZoneReglementaire | Identifiant unique d'un objet zone réglementaire | CharacterString | Deux objets de la classe ZoneReglementaire ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
 | codeProcedure | Identifiant de la procédure pour laquelle la zone réglementaire a été définie. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
-| codeZoneReglement | Code attribué à la zone dans le cadre du règlement qui s'applique. La définition du code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
-| libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. La définition du libellé associé au code est propre au réglement qui s'applique dans le cadre de la procédure. Ce réglement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le réglement associé | 1..1 |
-| typeReglement | Type de règlement caractérisant la nature de la réglementation sur la zone selon le réglement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
+| codeZoneReglement | Code attribué à la zone dans le cadre du règlement qui s'applique. La définition du code est propre au règlement qui s'applique dans le cadre de la procédure. Ce règlement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le règlement associé | 1..1 |
+| libelleZoneReglement | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. La définition du libellé associé au code est propre au règlement qui s'applique dans le cadre de la procédure. Ce règlement doit être référencé dans les métadonnées qui accompagnent le jeu de données et aussi faire partie des [références internet](#classe-dobjets-referenceinternet) associées à la classe [Procédure](#classe-dobjets-procedure) | CharacterString | Celles définies dans le règlement associé | 1..1 |
+| typeReglement | Type de règlement caractérisant la nature de la réglementation sur la zone selon le règlement concerné. Le type de valeur pour cet attribut sera spécialisé en fonction du type de procédure. | CharacterString | A définir en fonction du type de procédure | 1..1 |
+| typeAlea | Type(s) d'aléa(s) étant à l'origine de la zone réglementaire | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération. | 0..\* |
 
 
 
@@ -910,7 +894,7 @@ Les tableaux présentés ici sont un résumé à un haut niveau des correspondan
 
 La description de la thématique "Usage des sols" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/lu) est la suivante : "Territoire caractérisé selon sa dimension fonctionnelle prévue ou son objet socioéconomique actuel et futur (par exemple, résidentiel, industriel, commercial, agricole, forestier, récréatif)."
 
-Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandards Risques :
 
 | Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
 |-|-|-|
@@ -927,7 +911,7 @@ Les tables de correspondances avec le thème 4 Usage des sols de l'annexe III so
 
 La description de la thématique "Lieux de production et sites industriels" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/pf) est la suivante : "Sites de production industrielle, y compris les installations couvertes par la directive 96/61/CE du Conseil du 24 septembre 1996 relative à la prévention et à la réduction intégrées de la pollution (1) et les installations de captage d'eau, d'extraction minière et de stockage."
 
-Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandards Risques :
 
 | Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
 |-|-|-|
@@ -941,7 +925,7 @@ Les tables de correspondances avec le thème 8 Lieux de production et sites indu
 
 La description de la thématique "Zones de gestion, de restriction ou de réglementation et unités de déclaration" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/am) est la suivante : "Zones gérées, réglementées ou utilisées pour les rapports aux niveaux international, européen, national, régional et local. Sont inclus les décharges, les zones restreintes aux alentours des sources d'eau potable, les zones vulnérables aux nitrates, les chenaux réglementés en mer ou les eaux intérieures importantes, les zones destinées à la décharge de déchets, les zones soumises à limitation du bruit, les zones faisant l'objet de permis d'exploration et d'extraction minière, les districts hydrographiques, les unités correspondantes utilisées pour les rapports et les zones de gestion du littoral."
 
-Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandards Risques :
 
 | Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes |
 |-|-|-|
@@ -955,14 +939,14 @@ Les tables de correspondances avec le thème 11 Zones de gestion, de restriction
 
 La description de la thématique "Zones de risque naturel" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/nz) est la suivante : "Zones sensibles caractérisées en fonction des risques naturels (tous les phénomènes atmosphériques, hydrologiques, sismiques, volcaniques, ainsi que les feux de friche qui peuvent, en raison de leur situation, de leur gravité et de leur fréquence, nuire gravement à la société), tels qu'inondations, glissements et affaissements de terrain, avalanches, incendies de forêts, tremblements de terre et éruptions volcaniques."
 
-Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandard Risques :
+Le tableau suivant résume les correspondances possibles des classes de cette thématique avec les entités du modèle commun des Géostandards Risques :
 
 | Classe INSPIRE | Définition | Entité(s) Modèle Commun correspondantes | 
 |-|-|-|
-| Observed Event | *A natural phenomenon relevant to the study of natural hazards which occurred and which has been observed.* | [ZoneAlea](#classe-dobjets-zonealea) représentant un aléa s'étant déjà produit (exemple : crue centenale de 1910). Le cas échéant, la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) peut aussi être porteuse de cette information. |
+| Observed Event | *A natural phenomenon relevant to the study of natural hazards which occurred and which has been observed.* | [ZoneAlea](#classe-dobjets-zonealea) représentant un aléa s'étant déjà produit (exemple : crue centennale de 1910). Le cas échéant, la classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) peut aussi être porteuse de cette information. |
 | Hazard Area | *An area affected by a natural hazard. A natural hazard is a natural process or phenomenon that may cause loss of life, injury or other impacts, property damage, loss livelihoods and services, social and economic disruption, or environmental damage.* | [ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) ou [ZoneProtegee](#classe-dobjets-zoneprotegee). |
 | Risk Zone | *A risk zone is the spatial extent of a combination of the consequences of an event (hazard) and the associated probability/likelihood of its occurrence.* | [ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) ou [ZoneProtegee](#classe-dobjets-zoneprotegee) en lien direct avec des enjeux. |
-| Exposed Element | *People, property, systems, or other elements present in hazard zones that are thereby subject to potential losses.* | [Enjeu](#classe-dobjets-enjeu) tels que généralement définis dans le cadre du Géostandard risque. NB : la nomenclature des enjeux INSPIRE peut ne pas être en corresondance directe avec les nomenclatures d'enjeux spécifiques aux profils applicatifs. |
+| Exposed Element | *People, property, systems, or other elements present in hazard zones that are thereby subject to potential losses.* | [Enjeu](#classe-dobjets-enjeu) tels que généralement définis dans le cadre du Géostandard risque. NB : la nomenclature des enjeux INSPIRE peut ne pas être en correspondance directe avec les nomenclatures d'enjeux spécifiques aux profils applicatifs. |
 
 
 Les tables de correspondances avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls)
@@ -972,12 +956,12 @@ Les tables de correspondances avec le thème 12 Zones de risque naturel de l'ann
 
 ### Nomenclature des identifiants dans GASPAR
 
-Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
+Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
 
 Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
 
 - numéro de département [ddd]
-- nom du service instructeur `PREF`, `DDT`, `DDTM`, `DREAL`, `DEAL`ou `DRIEAT`
+- nom du service instructeur `PREF`, `DDT`, `DDTM`, `DREAL`, `DEAL` ou `DRIEAT`
 - année de prescription : [AAAA]
 - numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
 
@@ -988,7 +972,7 @@ A titre d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM
 
 GASPAR propose une nomenclature des risques hiérarchisée sur trois niveaux croissants de spécialisation du risque, avec une codification correspondante preséntée dans le tableau suivant. 
 
-L'énumération [TypeAlea](#enumeration-typealea) définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les libellés de l'énumération correspondants aggrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
+L'énumération [TypeAlea](#enumeration-typealea) définie dans ce standard, s'appuie sur cette nomenclature, __en utilisant uniquement les codes de niveau hiérarchique le plus haut__, comme c'est la règle dans l'application GASPAR. Les libellés de l'énumération correspondants agrègent les libellés des niveaux hiérarchiques inférieurs lorsqu'il y en a. 
 
 Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" est : "Risque naturel ; Inondation ; Par ruissellement et coulée de boue" car il est hiérarchisé ainsi dans la nomenclature :
 
@@ -1053,7 +1037,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 |-|-|
 | PAC | Porter à Connaissance |
 | PPRN | Plan de Prévention des Risques Naturels |
-| PPRN-I | Plan de Prévention des Risques Naturels Innondation |
+| PPRN-I | Plan de Prévention des Risques Naturels Inondation |
 | PPRN-L | Plan de Prévention des Risques Naturels Littoral |
 | PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
 | PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
