@@ -15,7 +15,7 @@ Plans de prévention des risques (PPR)
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - 22 avril 2024*
+*Version 0.2 - 23 avril 2024*
 
 
 
@@ -26,7 +26,7 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
-| **Version du document** | *0.2 - 22 avril 2024 (date de publication)*  |
+| **Version du document** | *0.2 - 23 avril 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR) Naturels et Technologiques. |
 | **Etendue d'application** | Territoire national français |
 | **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
@@ -1356,7 +1356,7 @@ La figure suivante représente l'ensemble des tables du standard pouvant faire p
 
 **Fig. xx Diagramme complet des tables du standard**
 
-![Diagramme tables PPR](./ressources/GeoPackage-PPR-view.png)
+![Diagramme tables PPR](./ressources/Geopackage-PPR-view.png)
 
 
 ##### Dictionnaire des tables
@@ -3066,7 +3066,7 @@ Ce champ multiple est implémenté par une table `zoneregmultialea` qui fait l'a
 
 **Fig. *xx* Implémentation des tables de zones réglementaires multirisques**
 
-![GeoPackage ZoneRegMulti PPR](./ressources/GeoPackage-PPRN-Multirisques-View.png)
+![GeoPackage ZoneRegMulti PPR](./ressources/Geopackage-PPRN-Multirisques-View.png)
 
 
 # ANNEXE D - Nomenclatures détaillées des enjeux
