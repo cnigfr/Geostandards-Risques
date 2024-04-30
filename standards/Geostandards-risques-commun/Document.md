@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - Date*
+*Version 0.2 - 29 avril 2024*
 
 
 #  Fiche analytique
