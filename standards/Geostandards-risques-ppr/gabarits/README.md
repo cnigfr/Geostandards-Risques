@@ -1,4 +1,4 @@
-# Gabarits Geopackage PPR
+# Gabarits GeoPackage PPR
 
 Ce dossier contient les gabarits Geopackage du standard PPR pour chaque zone de projection couverte :
 
