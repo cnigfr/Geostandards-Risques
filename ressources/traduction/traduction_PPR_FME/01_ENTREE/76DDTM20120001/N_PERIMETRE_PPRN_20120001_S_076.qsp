@@ -1,0 +1,479 @@
+[intitule]
+type = QLineEdit
+text = [DDTM 76] Limite des périmètres des PPRN dans le département de la Seine-Maritime
+
+[resume]
+type = myTextEdit
+text = n_perimetre_pprn_s_076 : Pour les PPR naturels, le code de l'environnement définit deux catégories de zones (L562-1) : les zones exposées aux risques et les zones qui ne sont pas directement exposées aux risques mais sur lesquelles des mesures peuvent être prévues pour éviter d'aggraver le risque.
+	En fonction du niveau d'aléa, chaque zone fait l'objet d'un règlement opposable. Les règlements distinguent généralement trois types de zones :
+	1- les « zones d'interdiction de construire », dites « zones rouges », lorsque le niveau d'aléa est fort et que la règle générale est l'interdiction de construire ;
+	2- les « zones soumises à prescriptions », dites « zones bleues », lorsque le niveau d'aléa est moyen et que les projets sont soumis à des prescriptions adaptées au type d'enjeu ;
+	3- les zones non directement exposées aux risques mais où des constructions, des ouvrages, des aménagements ou des exploitations agricoles, forestières, artisanales, commerciales ou industrielles pourraient aggraver des risques ou en provoquer de nouveaux, soumises à interdictions ou prescriptions (cf. article L562-1 du Code de l'environnement) . Cette dernière catégorie ne s'applique qu'aux PPR naturels
+
+[typedata]
+type = QComboBox
+itemcount = 16
+item_0 = attribute
+item_1 = attributeType
+item_2 = collectionHardware
+item_3 = collectionSession
+item_4 = dataset
+item_5 = dimensionGroup
+item_6 = feature
+item_7 = featureType
+item_8 = fieldSession
+item_9 = model
+item_10 = nonGeographicDataset
+item_11 = propertyType
+item_12 = series
+item_13 = service
+item_14 = software
+item_15 = tile
+index = 4
+
+[tablelocalisator]
+type = myTableWidget
+zrows = 2
+zcols = 2
+zwidget_0 = MyWidgetLineEdit|0|4
+zwidget_1 = MySimpleWidgetLineEdit|-1|0
+zrow_0 = http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-045f2490-17cd-42cc-ba9f-d57e4cb5a266|Vue HTML des métadonnées sur internet
+zrow_1 = http://catalogue.geo-ide.developpement-durable.gouv.fr/catalogue/srv/fre/catalog.search#/metadata/fr-120066022-jdd-045f2490-17cd-42cc-ba9f-d57e4cb5a266|Vue xml des métadonnées sur internet
+
+[identificator]
+type = QLineEdit
+text = fr-120066022-jdd-045f2490-17cd-42cc-ba9f-d57e4cb5a266
+
+[tablelangues]
+type = QTableView
+itemcount = 24
+item_0 = bul|bulgare
+item_1 = cze|tchèque
+item_2 = dan|danois
+item_3 = deu|allemand
+item_4 = dut|néerlandais; flamand
+item_5 = eng|anglais
+item_6 = est|estonien
+item_7 = fin|finnois
+item_8 = fre|français
+item_9 = ger|allemand
+item_10 = gle|irlandais
+item_11 = gre|grec
+item_12 = hun|hongrois
+item_13 = ita|italien
+item_14 = lav|letton
+item_15 = lit|lituanien
+item_16 = mlt|maltais
+item_17 = pol|polonais
+item_18 = por|portugais
+item_19 = rum|roumain; moldave
+item_20 = slo|slovaque
+item_21 = slv|slovène
+item_22 = spa|espagnol
+item_23 = swe|suédois
+indexes = 8
+
+[tableformats]
+type = myTableWidget
+zrows = 1
+zcols = 3
+zwidget_0 = MyWidgetLineEdit|0|6
+zwidget_1 = QPushButton|1|-1
+zwidget_2 = MySimpleWidgetLineEdit|-1|0
+zrow_0 = ESRI Shapefile (SHP)|action|None
+
+[tablecarac]
+type = QComboBox
+itemcount = 28
+item_0 = 8859part1
+item_1 = 8859part10
+item_2 = 8859part11
+item_3 = 8859part13
+item_4 = 8859part14
+item_5 = 8859part15
+item_6 = 8859part16
+item_7 = 8859part2
+item_8 = 8859part3
+item_9 = 8859part4
+item_10 = 8859part5
+item_11 = 8859part6
+item_12 = 8859part7
+item_13 = 8859part8
+item_14 = 8859part9
+item_15 = GB2312
+item_16 = big5
+item_17 = ebcdic
+item_18 = eucJP
+item_19 = eucKR
+item_20 = jis
+item_21 = shiftJIS
+item_22 = ucs2
+item_23 = ucs4
+item_24 = usAscii
+item_25 = utf16
+item_26 = utf7
+item_27 = utf8
+index = 27
+
+[tablecategories]
+type = QTableView
+itemcount = 34
+item_0 = Annexe 1|Référentiel de coordonnées|Au choix (choice)
+item_1 = Annexe 1|Système de maillage géographique|Au choix (choice)
+item_2 = Annexe 1|Dénominations géographiques|Localisation (location)
+item_3 = Annexe 1|Unités administratives|Limites (boundaries)
+item_4 = Annexe 1|Adresses|Localisation (location)
+item_5 = Annexe 1|Parcelles cadastrales|Planification/Cadastre (planningCadastre)
+item_6 = Annexe 1|Réseaux de transport|Transport (transportation)
+item_7 = Annexe 1|Hydrographie|Eaux intérieures (inlandWaters)
+item_8 = Annexe 1|Sites protégés|Environnement (environnement)
+item_9 = Annexe 2|Altitude|Altitude (elevation)
+item_10 = Annexe 2|Occupation des terres|Imageries/Cartes de base/Occupation des terres (imageryBaseMapsEarthCover)
+item_11 = Annexe 2|Ortho-imagerie|Imageries/Cartes de base/Occupation des terres (imageryBaseMapsEarthCover)
+item_12 = Annexe 2|Géologie|Informations géoscientifiques (geoscientificInformation)
+item_13 = Annexe 3|Unités statistiques|Limites (boundaries)
+item_14 = Annexe 3|Bâtiments|Structures (structure)
+item_15 = Annexe 3|Sols|Informations géoscientifiques (geoscientificInformation)
+item_16 = Annexe 3|Usage des sols|Planification/Cadastre (planningCadastre)
+item_17 = Annexe 3|Santé et sécurité des personnes|Santé (health)
+item_18 = Annexe 3|Services d'utilité publique et services publics|Services d'utilité publique/Communication (utilitiesCommunication)
+item_19 = Annexe 3|Installations de suivi environnemental|Structure (structure)
+item_20 = Annexe 3|Installation agricoles et aquacoles|Agriculture (farming)
+item_21 = Annexe 3|Répartition de la population - Démographie|Société (society)
+item_22 = Annexe 3|Zones de gestion, de restriction ou de réglementation et unités de déclaration|Planification/Cadastre (planningCadastre)
+item_23 = Annexe 3|Zones à risque naturel|Informations géoscientifiques (geoscientificInformation)
+item_24 = Annexe 3|Conditions atmosphériques|Climatologie/Météorologie/Atmosphère (climatologyMeteorologyAtmosphere)
+item_25 = Annexe 3|Caractéristiques géographiques météorologiques|Climatologie/Météorologie/Atmosphère (climatologyMeteorologyAtmosphere)
+item_26 = Annexe 3|Caractéristiques géographiques océanographiques|Climatologie/Météorologie/Atmosphère (climatologyMeteorologyAtmosphere)
+item_27 = Annexe 3|Régions maritimes|Océans (oceans)
+item_28 = Annexe 3|Régions biogéographiques|Biote (biota)
+item_29 = Annexe 3|Répartition des espèces|Biote (biota)
+item_30 = Annexe 3|Habitats et biotopes|Biote (biota)
+item_31 = Annexe 3|Lieux de production et sites industriels|Economie (economy)
+item_32 = Annexe 3|Sources d'énergie|Economie (economy)
+item_33 = Annexe 3|Ressources minérales|Economie (economy)
+indexes = 5|12
+
+[tablemotsclefso]
+type = myTableWidget
+zrows = 2
+zcols = 2
+zwidget_0 = myComboBox|2|1
+zwidget_1 = myComboBox|2|-1
+zrow_0 = 0|15
+zrow_1 = 0|7
+
+[tablemotsclefsf]
+type = myTableWidget
+zrows = 4
+zcols = 5
+zwidget_0 = MySimpleWidgetLineEdit|-1|0
+zwidget_1 = myCheckBox|6|0
+zwidget_2 = MySimpleWidgetLineEdit|-1|0
+zwidget_3 = MyWidgetLineEdit|0|5
+zwidget_4 = myComboBox|2|2
+zrow_0 = Risque/Zonages Risque naturel|2|Arborescence thématique de la COVADIS|2009-04-06|2
+zrow_1 = inondation|0|None|--|0
+zrow_2 = ppri|0|None|--|0
+zrow_3 = données ouvertes|0|None|--|0
+
+[tableemprises]
+type = myTableWidget
+zrows = 1
+zcols = 5
+zwidget_0 = mySpinBox|3|0
+zwidget_1 = mySpinBox|3|0
+zwidget_2 = mySpinBox|3|0
+zwidget_3 = mySpinBox|3|0
+zwidget_4 = QPushButton|5|0
+zrow_0 = 49.92002786|49.6189647|0.99441369|4.21403672|action
+
+[tablescr]
+type = myTableWidget
+zrows = 3
+zcols = 2
+zwidget_0 = MyWidgetLineEdit|0|3
+zwidget_1 = QPushButton|1|-1
+zrow_0 = EPSG:3949|action
+zrow_1 = EPSG:2154|action
+zrow_2 = EPSG:3857|action
+
+[tableetenduetemporelle]
+type = myTableWidget
+zrows = 0
+zcols = 1
+zwidget_0 = standard
+
+[tabledatepubdata]
+type = myTableWidget
+zrows = 1
+zcols = 1
+zwidget_0 = MyWidgetLineEdit|0|5
+zrow_0 = 2015-12-30
+
+[datecredata]
+type = QgsDateTimeEdit
+date = 2015-12-30
+
+[daterevdata]
+type = QgsDateTimeEdit
+date = 2020-03-04
+
+[sysreftemp]
+type = QComboBox
+itemcount = 5
+item_0 = Ethiopian
+item_1 = Gregorian
+item_2 = Hegirian
+item_3 = Persan
+item_4 = Vikram Samvat
+index = 1
+
+[genealogie]
+type = myTextEdit
+text = Le périmètre d'un PPR prescrit est généralement fourni dans l'arrêté de prescription pris par le préfet. Le périmètre d'exposition aux risques - ou périmètre réglementé - correspond quant à lui à l'agrégation géométrique de l'ensemble des zones réglementées figurant dans un même PPR. Le périmètre d'étude correspond à l'enveloppe dans laquelle ont été étudiés les aléas.
+
+[grouperesolutionscale]
+type = QGroupBox
+radio = 0
+subtype = myTableWidget
+zrows = 1
+zcols = 1
+zrow_0 = 10000.0
+index = 0
+
+[coherence]
+type = myTextEdit
+text = {'TopologyLevelCode':'abstract', 'GeometricObjectTypeCode':'surface'}
+
+[topo_coherence]
+type = myButton
+
+[tablespecifications]
+type = myTableWidget
+zrows = 1
+zcols = 4
+zwidget_0 = MySimpleWidgetLineEdit|-1|0
+zwidget_1 = MyWidgetLineEdit|0|5
+zwidget_2 = myComboBox|2|2
+zwidget_3 = myComboBox|2|3
+zrow_0 = Règlement (UE) No 1088/2010|2010-11-23|2|1
+
+[groupedroits]
+type = QGroupBox
+radio = 0
+subtype = QTableView
+itemcount = 8
+item_0 = Article 13.1.a| L124-4-I-1 du code de l'environnement : La confidentialité des travaux des autorités publiques, lorsque cette confidentialité est prévue par la loi.
+item_1 = Article 13.1.b| L124-5-II-1 du code de l'environnement : Les relations internationales, la sécurité publique ou la défense nationale.
+item_2 = Article 13.1.c| L124-5-II-2 du code de l'environnement : La bonne marche de la justice, la possibilité pour toute personne d'être jugée équitablement ou la capacité d'une autorité publique d'effectuer une enquête d'ordre pénal ou disciplinaire.
+item_3 = Article 13.1.d| L124-4-I-1 du code de l'environnement : La confidentialité des informations commerciales ou industrielles, lorsque cette confidentialité est prévue par la législation nationale ou communautaire afin de protéger un intérêt économique légitime, notamment l'intérêt public lié à la préservation de la confidentialité des statistiques et du secret fiscal.
+item_4 = Article 13.1.e| L124-5-II-3 du code de l'environnement : Les droits de propriété intellectuelle.
+item_5 = Article 13.1.f| L124-4-I-1 du code de l'environnement : La confidentialité des données à caractère personnel et/ou des fichiers concernant une personne physique lorsque cette personne n'a pas consenti à la divulgation de ces informations au public, lorsque la confidentialité de ce type d'information est prévue par la législation nationale ou communautaire.
+item_6 = Article 13.1.g| L124-4-I-3 du code de l'environnement : Les intérêts ou la protection de toute personne qui a fourni les informations demandées sur une base volontaire sans y être contrainte par la loi ou sans que la loi puisse l'y contraindre, à moins que cette personne n'ait consenti à la divulgation de ces données.
+item_7 = Article 13.1.h| L124-4-I-2 du code de l'environnement : La protection de l'environnement auquel ces informations ont trait, comme par exemple la localisation d'espèces rares.
+indexes = 
+
+[licence]
+type = myTextEdit
+text = Licence Ouverte 1.0 http://www.data.gouv.fr/Licence-Ouverte-Open-Licence.
+
+[tableroles]
+type = myTableWidget
+zrows = 3
+zcols = 10
+zwidget_0 = myComboBox|2|0
+zwidget_1 = MySimpleWidgetLineEdit|-1|0
+zwidget_2 = MySimpleWidgetLineEdit|-1|0
+zwidget_3 = myComboBox|2|5
+zwidget_4 = MyWidgetLineEdit|0|2
+zwidget_5 = MySimpleWidgetLineEdit|-1|0
+zwidget_6 = MyWidgetLineEdit|0|0
+zwidget_7 = MySimpleWidgetLineEdit|-1|0
+zwidget_8 = MySimpleWidgetLineEdit|-1|0
+zwidget_9 = MyWidgetLineEdit|0|4
+zrow_0 = 2|DDTM 76||France|76032||ddtm@seine-maritime.gouv.fr|||
+zrow_1 = 6|DDTM de Seine-Maritime|2, Rue Saint Sever Cedex 01|France|76032|Rouen|ddtm@seine-maritime.gouv.fr|0235585327||http://www.seine-maritime.gouv.fr/Les-services-de-l-Etat/Presentation-des-services/L-Etat-en-Seine-Maritime/Les-territoires-et-la-mer
+zrow_2 = 4|DDTM76 SPERIC BRNT|2, rue Saint-Sever BP 76001|France|76032||ddtm-speric-brnt@seine-maritime.gouv.fr|||
+
+[datemetada]
+type = QgsDateTimeEdit
+date = 2020-03-04
+
+[langmetada]
+type = QComboBox
+itemcount = 24
+item_0 = bul
+item_1 = cze
+item_2 = dan
+item_3 = ger
+item_4 = dut
+item_5 = eng
+item_6 = est
+item_7 = fin
+item_8 = fre
+item_9 = ger
+item_10 = gle
+item_11 = gre
+item_12 = hun
+item_13 = ita
+item_14 = lav
+item_15 = lit
+item_16 = mlt
+item_17 = pol
+item_18 = por
+item_19 = rum
+item_20 = slo
+item_21 = slv
+item_22 = spa
+item_23 = swe
+index = 8
+
+[namelayer]
+type = QLineEdit
+text = N_PERIMETRE_PPRN_20120001_S_076
+
+[typelayer]
+type = QLineEdit
+text = vector
+
+[metadata]
+type = myTextEdit
+text = Information du fournisseur
+	
+	Nom
+	N_PERIMETRE_PPRN_20120001_S_076
+	Chemin
+	P:\RISQUE\N_ZONAGES_RISQUE_NATUREL\76DDTM20120001\N_PERIMETRE_PPRN_20120001_S_076.shp
+	Stockage
+	ESRI Shapefile
+	Commentaire
+	
+	Encodage
+	System
+	Géométrie
+	Polygon (MultiPolygon)
+	SCR
+	EPSG:3949 - RGF93 / CC49 - Projeté
+	Emprise
+	1555980.1000000000931323,8270352.0000000000000000 : 1570960.3000000000465661,8304222.4000000003725290
+	Unité
+	mètres
+	Décompte d'entités
+	1
+	
+	
+	
+	Identification
+	
+	Identifier
+	
+	Parent Identifier
+	
+	Title
+	
+	Type
+	
+	Language
+	
+	Abstract
+	
+	Categories
+	
+	Keywords
+	
+	
+	
+	
+	Emprise
+	
+	CRS
+	
+	Spatial Extent
+	
+	Temporal Extent
+	
+	
+	
+	
+	Accès
+	
+	Fees
+	
+	Licenses
+	
+	Rights
+	
+	Constraints
+	
+	
+	
+	
+	Champs
+	
+	Compte
+	4
+	
+	
+	Champ
+	Type
+	Longueur
+	Précision
+	Commentaire
+	ID_GASPAR
+	String
+	18
+	0
+	
+	LIBELLE
+	String
+	100
+	0
+	
+	TYPE
+	String
+	2
+	0
+	
+	DATEVALID
+	Date
+	10
+	0
+	
+	
+	
+	
+	Contacts
+	
+	No contact yet.
+	
+	
+	
+	Liens
+	
+	No links yet.
+	
+	
+	
+	Historique
+	
+	No history yet.
+	
+	
+	
+
+[tabledico]
+type = myTableWidget
+zrows = 4
+zcols = 6
+zwidget_0 = standard
+zwidget_1 = standard
+zwidget_2 = standard
+zwidget_3 = standard
+zwidget_4 = standard
+zwidget_5 = standard
+zrow_0 = 0|ID_GASPAR|String|18|0|
+zrow_1 = 1|LIBELLE|String|100|0|
+zrow_2 = 2|TYPE|String|2|0|
+zrow_3 = 3|DATEVALID|Date|10|0|
+
