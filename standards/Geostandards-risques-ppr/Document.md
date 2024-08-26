@@ -1,3 +1,4 @@
+
 | | |
 |-|-|
 | ![Logo CNIG](./ressources/logo-cnig.png)| ![Logo DGPR](./ressources/ministere-de-la-transition-ecologique-et-solidaire_logo.png) |
@@ -15,7 +16,7 @@ Plans de prévention des risques (PPR)
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - 29 avril 2024*
+*Version 0.3 - xx septembre 2024*
 
 
 
@@ -26,11 +27,11 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
-| **Version du document** | *0.2 - 29 avril 2024 (date de publication)*  |
+| **Version du document** | *0.3 - xx septembre 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR) Naturels et Technologiques. |
 | **Etendue d'application** | Territoire national français |
-| **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
-| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Résolution spatiale** | Entre le 1:2000 et le 1:25000 |
+| **Statut du document** | ~~Projet~~ - ~~Appel à commentaires~~ - Proposé à la commission des Standards du CNIG - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | A venir : PDF sur internet (site du CNIG) |
 | **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.2.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
@@ -52,6 +53,7 @@ Groupe de travail refonte des Géostandards Risques
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Retrait des PPR Miniers du périmètre d'application du document. Prise en compte de l'aléa exceptionnel avalanches. Ajout des spécificités des risques technologiques industriels. Simplification du système de catégorisation des enjeux. Prise en compte du multirisques au niveau du zonage réglementaire. Ajout d'une annexe clarifiant la gestion des PPRN multirisques. Modifications éditoriales pour apporter plus de clarté : ajouts d'un schéma d'ensemble et mise en valeur des spécificités avec le modèle commun, ajout d'un schéma des tables d'implémentation et mise en valeur du caractère obligatoire ou non des éléments. Mise en annexes du code SQL et des nomenclatures d’enjeux. |
+| 0.3 | xx/09/2024 | Version tenant compte des commentaires reçus, soumise au CNIG pour validation. |
 
 ##  Participation à l'écriture
 
@@ -136,10 +138,9 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 |-|-|-|-|
 | [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 | 
 | [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) | Plans de prévention des risques naturels prévisibles (PPRN) - Guide général | Direction Générale de la Prévention des Risques (DGPR) - Cerema | 2016 |
-| [Decret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf) | Modalités d’application du décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine » (Décret PPRi) | Ministère de la Transition écologique et solidaire (MTES) | 2019 | 
-| [Guide PPRi:2021](https://www.ecologie.gouv.fr/sites/default/files/Addenda_guide%20PPRI_DGPR_Mars2021%281%29.pdf) | Addenda au [Guide Méthodologique PPRi de 1999](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPRi_1999.pdf) | Cerema - DGPR | 2021 |
+| [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques d’inondation par débordement de cours d’eau (hors cours d’eau torrentiels) | DGPR - Cerema | 2021 |
 | [Guide PPRRuis:2004](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPR%20Ruissellement_2004.pdf) | Guide Méthodologique PPR Ruissellement | Direction de la Prévention des Pollutions et des Risques (DPPR) | 2004 |
-| [Guide PPRiCet:2023](https://www.ecologie.gouv.fr/sites/default/files/Addenda_GuidePPRICET_102023.pdf) | Addenda au [Guide Méthodologique PPRi des cours d'eau torrentiels](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | DGPR | 2023 |
+| [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | Guide Méthodologique PPRi des cours d'eau torrentiels | DGPR | 2023 |
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf) | Guide Méthodologique PPRN Avalanches | ONF-RTM, DGPR | 2015 |
 | [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) | Le plan de prévention des risques technologiques (PPRT) Guide méthodologique | Ministère de l'écologie, du développement et de l'aménagement durables (MEDAD) / Direction de la Prévention des Pollutions et des Risques (DPPR) - Direction Générale de l'Urbanisme de l'Habitat et de la Construction (DGUHC) | 2007 |
@@ -542,7 +543,7 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Titre** : Zone d'aléa à échéance 100 ans.
 
-**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques d'**aléa de submersion marine à échéance 100 ans** déterminées selon les modalités du [Decret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf). Elle a les mêmes propriétés que la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous
+**Définition** : La classe Zone d'aléa à échéance 100 ans permet de décrire des zones géographiques d'**aléa de submersion marine à échéance 100 ans** déterminées selon les modalités du [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). Elle a les mêmes propriétés que la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) mais impose des restrictions pour les valeurs de certaines propriétés précisées ci-dessous
 
 **Modélisation géométrique** : Cf. modélisation géométrique de la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel).
 
@@ -1817,10 +1818,12 @@ Elle a la structure et le contenu suivants :
 
 | `code` TEXT(2) | `libelle` TEXT(20) |
 |-|-|
-| 01 | Règlement signé |
-| 02 | Zonage réglementaire signé |
-| 03 | Cartes signées |
-| 98 | Autres cartes |
+| 01 | Règlement non approuvé |
+| 02 | Règlement approuvé |
+| 03 | Zonage réglementaire non approuvé |
+| 04 | Zonage réglementaire approuvé |
+| 05 | Cartes approuvées |
+| 06 | Autres cartes |
 | 99 | Autres |
 
 
@@ -4054,10 +4057,12 @@ CREATE TABLE typereference (
   libelle TEXT(20) NOT NULL
 );
 INSERT INTO typereference VALUES 
-  ('01','Règlement signé'),
-  ('02','Zonage réglementaire signé'),
-  ('03','Cartes signées'),
-  ('98','Autres cartes'),
+  ('01','Règlement non approuvé'),
+  ('02','Règlement approuvé'),
+  ('03','Zonage réglementaire non approuvé'),
+  ('04','Zonage réglementaire approuvé'),
+  ('05','Cartes approuvées'),
+  ('06','Autres cartes'),
   ('99','Autres')
  ;
 /* Ajout à la table gpkg_contents */

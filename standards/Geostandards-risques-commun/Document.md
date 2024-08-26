@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - 29 avril 2024*
+*Version 0.3 - xx septembre 2024*
 
 
 #  Fiche analytique
@@ -25,11 +25,11 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Modèle Commun |
-| **Version du document** | *0.2 - 29 avril 2024 (date de publication)*  |
+| **Version du document** | *0.3 - xx septembre 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières. |
 | **Etendue d'application** | Territoire national français. |
-| **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
-| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Résolution spatiale** | Entre le 1:2000 et le 1:25000 |
+| **Statut du document** | ~~Projet~~ - ~~Appel à commentaires~~ - Proposé à la commission des Standards du CNIG - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
 | **Diffusion** | *A venir : PDF sur internet  (site du CNIG)* |
 | **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.2.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
@@ -52,6 +52,7 @@ Groupe de travail refonte des Géostandards Risques
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Légères modifications du modèle en cohérence avec le modèle du profil PPR. |
+| 0.3 | xx/09/2024 | Version tenant compte des commentaires reçus, soumise au CNIG pour validation. |
 
 
 ##  Participation à l'écriture
@@ -237,13 +238,13 @@ Cette section définit, à l'aide du langage UML, le [modèle conceptuel de donn
 
 Les données décrites dans le cadre de ce standard se répartissent dans cinq grandes thématiques :
 
-- La thématique [procédures et périmètres](#thématique-procédures-et-périmètres) relate de l'aspect administratif et de l'état d'avancement de la procédure en lien avec le système GASPAR (gestion assistée des procédures administratives relatives aux risques) du MTECT dans lequel elles sont recensées. Toutes les entités des autres thématiques y sont rattachées ;
+- La thématique [procédures et périmètres](#thématique-procédures-et-périmètres) traite de l'aspect administratif et de l'état d'avancement de la procédure en lien avec le système GASPAR (gestion assistée des procédures administratives relatives aux risques) du MTECT dans lequel elles sont recensées. Toutes les entités des autres thématiques y sont rattachées ;
 
 - La thématique [aléas](#thématique-aléas) comprend les entités permettant de décrire les phénomènes objets du risque à l'origine de la procédure, leur localisation, leurs probabilités et leurs intensités ;
 
-- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, activités, éléments de patrimoine culturel ou environnemental, susceptibles d'être affectés par les aléas. 
+- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, activités, éléments de patrimoine culturel ou environnemental, susceptibles d'être affectés par les aléas ; 
 
-- La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention.
+- La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention ;
 
 - La thématique [zonage réglementaire](#thématique-zonage-réglementaire) permet de décrire le zonage réglementaire déduit du croisement des objets de la thématique aléa et de ceux de la thématique enjeux.
 
@@ -283,7 +284,7 @@ Les ressources internet liées à une procédure donnée (par exemple la publica
 
 ### Thématique Aléas
 
-La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et leurs intensités.
+La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et les niveaux d'aléas associés.
 
 Dans cette thématique sont définies : 
 
@@ -292,7 +293,7 @@ Dans cette thématique sont définies :
 * une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) ;
 * trois énumérations permettant de classifier les types d'aléas ([TypeAlea](#enumeration-typealea)), les types d'ouvrage de protection ([TypeOuvrageProtection](#enumeration-typeouvrageprotection)) et les référentiels externes d'ouvrages de protection ([TypeRefExterneProtection](#enumeration-typerefexterneprotection)) ;
 
-La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau d'intensité et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
+La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau d'aléa et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
 
 La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau d'intensité et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)). 
 
@@ -432,7 +433,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
 
 
-#### Énumeration *TypeProcedure*
+#### Enumeration *TypeProcedure*
 
 Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites. Les correspondances avec les types de procédures gérés dans GASPAR sont précisées dans le [paragraphe dédié](#types-de-procédures-gaspar).
 
@@ -440,7 +441,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Libellé | Description |
 |-|-|
 | Plan de Prévention des Risques Naturels Inondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine ou par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de côte ou à la submersion marine |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés à la submersion marine, à la migration dunaire. Certains PPRL anciens traitent de l’aléa recul du trait de côte et de falaises |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge ou au retrait-gonflement des argiles |
 | Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure concerne les plans de prévention des risques couvrant plusieurs types de risques naturels |
 | Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés au zonage sismique de la France, aux effets de site (amplification par rapport au mouvement de référence) et aux effets induits (mouvements de terrain, liquéfaction des sols, tsunamis) |
@@ -480,9 +481,11 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Libellé | Description |
 |-|-|
-| Règlement signé | Le document est un règlement approuvé (Utilisation dans le cadre d'un PPR) |
-| Zonage réglementaire signé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cadre d'un PPR) |
-| Carte signée | Le document est une carte approuvée (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
+| Règlement non approuvé | Le document est un règlement qui n’a pas fait l’objet d’une approbation (utilisation dans le cadre d’un PPR ou d’un PAC) |
+| Règlement approuvé | Le document est un règlement approuvé (Utilisation dans le cadre d'un PPR) |
+| Zonage réglementaire non approuvé | Le document est un zonage réglementaire qui n’a pas fait l’objet d’une approbation (utilisation dans le cadre d’un PPR ou d’un PAC) |
+| Zonage réglementaire approuvé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cadre d'un PPR) |
+| Carte approuvée | Le document est une carte approuvée (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
 | Autre carte | Le document est une carte additionnelle (Utilisation dans toutes les procédures) |
 | Autre | Tout autre document (Utilisation dans toutes les procédures) |
 
@@ -497,7 +500,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence.
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 **Propriétés** : 
 
@@ -528,7 +531,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 **Propriétés** : 
 
@@ -559,7 +562,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)).
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 
 **Propriétés** : 
@@ -956,7 +959,7 @@ Les tables de correspondances avec le thème 12 Zones de risque naturel de l'ann
 
 ### Nomenclature des identifiants dans GASPAR
 
-Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
+Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR. A ce titre, ces identifiants doivent être utilisés tels quels sans aucune modification.
 
 Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
 

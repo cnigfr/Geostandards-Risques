@@ -748,10 +748,12 @@ CREATE TABLE typereference (
   libelle TEXT(20) NOT NULL
 );
 INSERT INTO typereference VALUES 
-  ('01','Règlement signé'),
-  ('02','Zonage réglementaire signé'),
-  ('03','Cartes signées'),
-  ('98','Autres cartes'),
+  ('01','Règlement non approuvé'),
+  ('02','Règlement approuvé'),
+  ('03','Zonage réglementaire non approuvé'),
+  ('04','Zonage réglementaire approuvé'),
+  ('05','Cartes approuvées'),
+  ('06','Autres cartes'),
   ('99','Autres')
  ;
 /* Ajout à la table gpkg_contents */
