@@ -119,7 +119,7 @@ CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s (
   codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -147,7 +147,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s (
   codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -174,8 +174,8 @@ CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s (
   idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
   codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  niveaualea TEXT(2),
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -204,14 +204,12 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnorapide_codealea_s (
   niveaualea TEXT(2) NOT NULL,
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnorapide_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnorapide_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -236,14 +234,12 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnolent_codealea_s (
   niveaualea TEXT(2),
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnolent_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnolent_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -267,14 +263,12 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnoprojection_214_s (
   niveaualea TEXT(2),
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnoprojection_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -368,6 +362,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotection TEXT(2), 
+  roleProtection BOOLEAN,
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
   CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
@@ -378,6 +373,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotection TEXT(2), 
+  roleProtection BOOLEAN,
   geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
   CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
@@ -388,6 +384,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotection TEXT(2), 
+  roleprotection BOOLEAN,
   geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
   CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
@@ -842,8 +839,7 @@ INSERT INTO typeniveaualea VALUES
   ('04','Fort'),
   ('05','Fort plus'),
   ('06','Très fort ou Majeur'),
-  ('07','Très fort plus ou aggravé'),
-  ('08','Exceptionnel')
+  ('07','Très fort plus ou aggravé')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -864,8 +860,9 @@ CREATE TABLE typesuralea (
 );
 INSERT INTO typesuralea VALUES 
   ('01','bande de précaution'), 
-  ('02','Bande particulière chocs de vagues'),
-  ('03','Bande particulière projection de matériaux'),
+  ('02','Bande particulière'),
+  ('03','Bande particulière chocs de vagues'),
+  ('04','Bande particulière projection de matériaux'),
   ('99','autre')
  ;
 /* Ajout à la table gpkg_contents */
@@ -881,13 +878,20 @@ INSERT INTO gpkg_contents VALUES
 
 
 CREATE TABLE typeouvrageprotection (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(50) NOT NULL
+  code TEXT(3) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
 );
 INSERT INTO typeouvrageprotection VALUES 
-  ('01','Barrage'), 
-  ('02','Digue'), 
-  ('99','autre')
+  ('1','Ouvrage ou installation pouvant influencer les inondations'), 
+  ('11','Ouvrage de protection contre les inondations'),
+  ('111','Ouvrage appartenant à un systeme d''endiguement'), 
+  ('112','Amenagement hydraulique'), 
+  ('113','Autre ouvrage de protection contre les inondations'), 
+  ('12','Ouvrage ou installation influencant les ecoulements sans fonction de protection'), 
+  ('2','Ouvrage ou installation pouvant influencer les mouvements de terrain'), 
+  ('3','Ouvrage ou installation pouvant influencer les chutes de blocs'), 
+  ('4','Ouvrage ou installation pouvant influencer les avalanches'), 
+  ('999','Autre ouvrage ou installation pouvant influencer les aléas') 
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -908,7 +912,7 @@ CREATE TABLE typerefexterneouvrage (
 );
 INSERT INTO typerefexterneouvrage VALUES 
   ('01','ROE'), 
-  ('02','SIOUH'), 
+  ('02','SIOUH II'), 
   ('99','autre')
  ;
 /* Ajout à la table gpkg_contents */
@@ -962,27 +966,6 @@ INSERT INTO gpkg_contents VALUES
   ('typereglementfoncier','attributes','typereglementfoncier','Enumeration valeurs possibles de types de reglementation foncières',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
-
-
-/** 
-  * Création de la table d'enumeration `typeeffettechno`
-  */
-
-
-CREATE TABLE typeeffettechno (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(50) NOT NULL
-);
-INSERT INTO typeeffettechno VALUES 
-  ('01','Effet thermique'),
-  ('02','Effet de surpression'),
-  ('03','Effet toxique'),
-  ('04','Effet de projection')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeeffettechno','attributes','typeeffettechno','Enumeration valeurs possibles de types d''effet technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
 
 
 /** 

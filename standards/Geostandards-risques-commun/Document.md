@@ -182,6 +182,7 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 | D(R)EAL | Direction (régionale) de l'environnement, de l'aménagement et du logement |
 | DRIEAT | Direction régionale et interdépartementale de l’environnement, de l’aménagement et des transports (d'Île de France) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
 | GEMET | General multilingual environmental thesaurus |
 | IGN | Institut national de l'information géographique et forestière |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
@@ -593,7 +594,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Ouvrage de protection
 
-**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOUH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
+**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques II (SIOUH II), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
 **Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
@@ -606,6 +607,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | refExterne | Référentiel externe d'où est extrait l'objet | Énumération [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage) | Celles de l'énumération | 1..1 | 
 | refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
 | typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtection](#enumeration-typeouvrageprotection) | Celles de l'énumération | 0..1 |
+| roleProtection | Ce champ permet d'indiquer si l'ouvrage ou l'installation a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement égal ou supérieur au scénario de référence du PPR. Le scénario de référence traduit l'évènement dont on cherche à se prévenir via le PPR (par exemple : la crue centennale du cours d'eau). | Booléen | 0 si l'ouvrage n'est pas conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de référence du PPR (soit parce qu'il est conçu et entretenu pour se protéger d'un évènement moins important, soit parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). 1 si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de référence du PPR. | 0..1 |
 
 
 #### Classe d'objets *ElementCaracterisationAlea*
@@ -676,14 +678,21 @@ Le tableau suivant liste les différents types d'aléas applicables pour les zon
 
 
 #### Enumeration *TypeOuvrageProtection*
-
-Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection.
+ 
+Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection. Les valeurs proposées ont une organisation hiérarchique qui permettent de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
 
 | Libellé référentiel | Description |
 |-|-|
-| Barrage | Ouvrage, composé éventuellement de plusieurs tronçons, construit en élévation du terrain naturel, afin de retenir de l'eau de manière permanente ou temporaire (SIOUH) |
-| Digue | Ouvrage, composé éventuellement de plusieurs tronçons, dont au moins une partie est construite en élévation du terrain naturel afin de protéger des zones naturellement inondables (SIOUH) |
-| Autre | Autre type d'ouvrage ne figurant pas dans la liste ci-dessus |
+| Ouvrage ou installation pouvant influencer les inondations | Ouvrage ou installation pouvant faire obstacle aux écoulements d'une inondation, ou de manière générale, les influencer. |
+| Ouvrage de protection contre les inondations | Ouvrages de protection contre les inondations, c'est à dire conçu et géré pour protéger un secteur contre les inondations. |
+| Ouvrage appartenant à un systeme d'endiguement | Ouvrage de protection contre les inondations appartenant à un système d'endiguement au sens de l'article [R. 562-13 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038160601) (digue, vanne, etc.). |
+| Amenagement hydraulique | Ouvrage de protection contre les inondations appartenant à un aménagement hydraulique au sens de l'article [R. 562-18 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039001323) (seuils, barrage, etc.). |
+| Autre ouvrage de protection contre les inondations | Autres ouvrage géré pour sa fonction de protection contre les inondations (géré dans le cadre de la mise en oeuvre de la GEMAPI). Il peut notamment s'agir des bassins de stockage trop petits pour être autorisés au titre de la rubrique 3.2.6.0 de la nomenclature définie à l'article [R. 214-1 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048136763). |
+| Ouvrage ou installation influencant les ecoulements sans fonction de protection | Installation, ouvrage ou remblai faisant obstacle aux écoulements et n'ayant pas de fonction de protection (et en particulier, non intégré dans un système d'endiguement et non géré dans le cadre de la mise en oeuvre de la GEMAPI). Il s'agit par exemple de remblais routier, remblais ferroviaires, merlons, plages de dépôt, etc. |
+| Ouvrage ou installation pouvant influencer les mouvements de terrain | Ouvrage ou installation pouvant influencer les mouvements de terrain. |
+| Ouvrage ou installation pouvant influencer les chutes de blocs | Ouvrage ou installation pouvant influencer les chutes de blocs. |
+| Ouvrage ou installation pouvant influencer les avalanches | Ouvrage ou installation pouvant influencer les avalanches. || Ouvrage ou installation pouvant influencer les feux de foret | Ouvrage ou installation pouvant influencer les feux de foret. |
+| Autre ouvrage ou installation pouvant influencer les aléas | Autre ouvrage ou installation pouvant influencer les aléas non décrit par les valeurs précédentes. |
 
 
 #### Enumeration *TypeRefExterneOuvrage*
@@ -693,7 +702,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 | Libellé référentiel | Description |
 |-|-|
 | ROE | Référentiel des obstacles à l'écoulement - Thème : Ouvrages - Dernière version applicable version 1.2 - 2014|
-| SIOUH | Système d'Information des Ouvrages Hydrauliques - dernière version applicable version 4 - 2017 |
+| SIOUH II | Système d'Information des Ouvrages Hydrauliques II |
 | Autre | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 
