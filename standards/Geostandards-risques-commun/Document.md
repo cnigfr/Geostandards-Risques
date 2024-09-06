@@ -679,12 +679,12 @@ Le tableau suivant liste les différents types d'aléas applicables pour les zon
 
 #### Enumeration *TypeOuvrageProtection*
  
-Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection. Les valeurs proposées ont une organisation hiérarchique qui permettent de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
+Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection. Les valeurs proposées ont une organisation hiérarchique qui permet de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
 
 | Libellé référentiel | Description |
 |-|-|
 | Ouvrage ou installation pouvant influencer les inondations | Ouvrage ou installation pouvant faire obstacle aux écoulements d'une inondation, ou de manière générale, les influencer. |
-| Ouvrage de protection contre les inondations | Ouvrages de protection contre les inondations, c'est à dire conçu et géré pour protéger un secteur contre les inondations. |
+| Ouvrage de protection contre les inondations | Ouvrage de protection contre les inondations, c'est à dire conçu et géré pour protéger un secteur contre les inondations. |
 | Ouvrage appartenant à un systeme d'endiguement | Ouvrage de protection contre les inondations appartenant à un système d'endiguement au sens de l'article [R. 562-13 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038160601) (digue, vanne, etc.). |
 | Amenagement hydraulique | Ouvrage de protection contre les inondations appartenant à un aménagement hydraulique au sens de l'article [R. 562-18 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039001323) (seuils, barrage, etc.). |
 | Autre ouvrage de protection contre les inondations | Autres ouvrage géré pour sa fonction de protection contre les inondations (géré dans le cadre de la mise en oeuvre de la GEMAPI). Il peut notamment s'agir des bassins de stockage trop petits pour être autorisés au titre de la rubrique 3.2.6.0 de la nomenclature définie à l'article [R. 214-1 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048136763). |
