@@ -993,8 +993,6 @@ INSERT INTO gpkg_contents VALUES
 /** 
   * Création de la table d'enumeration `typeclasseprobatechno`
   */
-
-
 CREATE TABLE typeclasseprobatechno (
   code TEXT(1) NOT NULL PRIMARY KEY,
   libelle TEXT(50) NOT NULL
@@ -1011,6 +1009,193 @@ INSERT INTO gpkg_contents VALUES
   ('typeclasseprobatechno','attributes','typeclasseprobatechno','Enumeration valeurs possibles de classes de probabilité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
+/**
+  * Création de la table d'énumération `typeenjeupprn`
+  */
+CREATE TABLE typeenjeupprn (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprn VALUES 
+  ('010000','Espaces urbanisés'),
+  ('010100','Centres urbains'),
+  ('010200','Espaces urbanisés hors centres urbains'),
+  ('020000','Espaces non urbanisés'), 
+  ('030000','Espaces spécifiques au type d''aléa étudié'),
+  ('030100','Espaces spécifiques d''activités'),
+  ('030101','Ports, zones d''activités portuaires et d''activités balnéaires'),
+  ('030102','Campings et hôtellerie de plein air'),
+  ('030103','Zones d''activités agricoles spécifiques'),
+  ('030200','Espaces participants à la limitation des aléas'),
+  ('030201','Zones d''expansion des crues'),
+  ('030202','Zones d''atterrissement'),
+  ('030203','Zones d''interfaces habitat-forêt'),
+  ('030204','Zones de maintien d''une forêt'),
+  ('040000','Projets d''aménagement futurs du territoire'),
+  ('050000','Zone d''habitat'),
+  ('050100','Zone d''habitat individuel'),
+  ('050200','Zone d''habitat collectif'),
+  ('060100','Zone d''activité'),
+  ('060101','Zone d''industrie'),
+  ('060102','Service'),
+  ('060103','Artisanat'),
+  ('070000','Infrastructures et équipements particuliers'),
+  ('070100','Etablissements sensibles ou difficilement évacuables'),
+  ('070200','Equipements stratégiques pour la gestion de crise'),
+  ('070300','Equipements collectifs de type ERP ou espaces publics ouverts'),
+  ('070400','Campings et hôtellerie de plein air'),
+  ('070500','Infrastructures de transport'),
+  ('070600','Réseaux et équipements sensibles'),
+  ('080000','Enjeux patrimoniaux, culturels et environnementaux') 
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprn','attributes','typeenjeupprn','Enumeration valeurs possibles nomenclature enjeux PPRN',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+/**
+  * Table d'énumération `typeenjeupprt`
+  */
+CREATE TABLE typeenjeupprt (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprt VALUES 
+  ('010000','Urbanisation existante'),
+  ('010100','Habitats'),
+  ('010200','Activités'),
+  ('010300','Etablissements à l''origine du risque'),
+  ('010400','Espaces non urbanisés'),
+  ('010500','Espaces agricoles'),
+  ('020000','Etablissements recevant du public (ERP)'),
+  ('020100','Services de secours'),
+  ('020200','Bâtiments d''enseignement'),
+  ('020300','Bâtiments de services publics'),
+  ('020400','Bâtiments et équipements de loisirs'),
+  ('020500','Bâtiments de soins'),
+  ('020600','Grands centres commerciaux'),
+  ('020700','Petits commerces et services aux particuliers'),
+  ('020800','Bâtiments religieux'),
+  ('030000','Infrastructures de transports'),
+  ('030100','Routes'),
+  ('030101','Grandes voies structurantes'),
+  ('030102','Autres voies structurantes'),
+  ('030103','Voies de dessertes'),
+  ('030200','Voies ferrées'),
+  ('030300','Voies navigables '),
+  ('030400','Itinéraires et stationnements de TMD (Transport de Matières Dangereuses)'),
+  ('030500','Aéroports'),
+  ('030600','Gares (routières, ferroviaires, portuaires)'),
+  ('030700','Modes doux de déplacement (piétons, vélos) '),
+  ('030800','Transports collectifs (bus, métros, etc.) '),
+  ('040000','Espaces publics ouverts'),
+  ('040100','Espaces à usage permanent'),
+  ('040200','Espaces à usage périodique ou occasionnel'),
+  ('050000','Ouvrages et équipements d''intérêt général'),
+  ('050100','Poste EDF'),
+  ('050200','Central téléphonique'),
+  ('050300','Poste de détente GDF'),
+  ('050400','Antenne de téléphonie mobile'),
+  ('050500','Point de captage d’eau'),
+  ('050600','Château d''eau, réservoir'),
+  ('060000','Projets de développement de la commune'),
+  ('070000','Enjeux environnementaux et patrimoniaux')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprt','attributes','typeenjeupprt','Enumeration valeurs possibles nomenclature enjeux technologiques',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+
+/**
+  * Table d'énumération `typeenjeucovadis`
+  */
+CREATE TABLE typeenjeucovadis (
+  code TEXT(5) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeucovadis VALUES 
+  ('0100','Espace urbanisé'),
+  ('0101','Espace urbanisé - habitat dense'),
+  ('0102','Espace urbanisé - habitat peu dense'),
+  ('0103','Espace urbanisé - habitat diffus'),
+  ('0104','Espace urbanisé - projet d''urbanisation future'),
+  ('0105','Espace urbanisé - réserve foncière'),
+  ('0200','Établissement recevant du public (ERP) '),
+  ('0201c','ERP J : Structures d''accueil pour personnes âgées et handicapées'),
+  ('0202c','ERP L : Salles à usage d''audition, de conférences, de réunions, de spectacles'),
+  ('0203c','ERP M : Magasins de vente, centres commerciaux'),
+  ('0204c','ERP N : Restaurants et débits de boissons'),
+  ('0205c','ERP O : Hôtels et pensions de famille'),
+  ('0206c','ERP P : Salles de danse et salles de jeux'),
+  ('0207c','ERP R : Établissements d''enseignement, colonies de vacances'),
+  ('0208c','ERP S : Bibliothèques, centres de documentation et de consultation d''archives'),
+  ('0209c','ERP T : Salles d''expositions'),
+  ('0210c','ERP U : Établissements de soins'),
+  ('0211c','ERP V : Établissements de culte'),
+  ('0212c','ERP W : Administrations, banques, bureaux'),
+  ('0213c','ERP X : Établissements sportifs couverts'),
+  ('0214c','ERP Y : Musées'),
+  ('0215c','ERP PA : Établissements de plein air'),
+  ('0216c','ERP CST : Chapiteaux, tentes et structures'),
+  ('0217c','ERP CG : Structures gonflables'),
+  ('0218c','ERP OA : Hôtels, restaurants d''altitude'),
+  ('0219c','ERP REF : Refuges de montagne'),
+  ('0220c','ERP PS : Parcs de stationnement couverts'),
+  ('0221c','ERP GA : Gares accessibles au public'),
+  ('0222c','ERP EF : Établissements flottants'),
+  ('0300','Espace économique'),
+  ('0301','Espace économique - zone d''activité industrielle'),
+  ('0302','Espace économique - zone d''activité commerciale'),
+  ('0303','Espace économique - zone d''activité future'),
+  ('0304','Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture'),
+  ('0305','Espace économique - zone de camping, mobil-home'),
+  ('0306','Espace économique - zone aéroportuaire, portuaire'),
+  ('0307','Espace économique - carrière, gravière'),
+  ('0308','Établissement employeur'),
+  ('0400','Espace ouvert recevant du public'),
+  ('0401','Espace ouvert recevant du public - sport'),
+  ('0402','Espace ouvert recevant du public - tourisme'),
+  ('0403','Espace ouvert recevant du public - parking'),
+  ('0404','Espace ouvert recevant du public - parc d''exposition, foires, rassemblements divers'),
+  ('0405','Espace ouvert recevant du public - cimetière'),
+  ('0500','Infrastructure de transport de personnes ou de marchandise'),
+  ('0501','Infrastructure linéaire - route, voie ferrée, canal'),
+  ('0502','Infrastructure linéaire en projet'),
+  ('0503','Infrastructure linéaire - ligne de bus'),
+  ('0504','Infrastructure linéaire - piste cyclable, voie verte'),
+  ('0505','Infrastructure linéaire - ligne électrique'),
+  ('0506','Infrastructure surfacique - gare, aéroport, aérodrome, port'),
+  ('0507','Infrastructure ponctuelle - gare, arrêt, stationnement TMD'),
+  ('0600','Ouvrage ou équipement d''intérêt général'),
+  ('0601','Ouvrage ou équipement d''intérêt général - zone, station de captage'),
+  ('0602','Ouvrage ou équipement d''intérêt général - station de pompage'),
+  ('0603','Ouvrage ou équipement d''intérêt général - réservoir, château d''eau'),
+  ('0604','Ouvrage ou équipement d''intérêt général - canalisation eau'),
+  ('0605','Ouvrage ou équipement d''intérêt général - poste de relèvement'),
+  ('0606','Ouvrage ou équipement d''intérêt général - station de traitement, de lagunage'),
+  ('0607','Ouvrage ou équipement d''intérêt général - barrage, vanne, écluse'),
+  ('0608','Ouvrage ou équipement d''intérêt général - poste de transformation EDF'),
+  ('0609','Ouvrage ou équipement d''intérêt général - canalisation matière dangereuse'),
+  ('0610','Ouvrage ou équipement d''intérêt général - téléphonique, relai, antenne'),
+  ('0611','Ouvrage ou équipement d''intérêt général - caserne de pompier'),
+  ('0612','Ouvrage ou équipement d''intérêt général - poste de détente gaz'),
+  ('0613','Ouvrage ou équipement d''intérêt général - station hydrocarbure'),
+  ('0614','Ouvrage ou équipement d''intérêt général - décharge, usine d''incinération'),
+  ('0700','Enjeu environnemental ou patrimonial'),
+  ('0701','Zone naturelle protégée'),
+  ('0702','Monument inscrit ou classé au répertoire des monuments historiques'),
+  ('0703','Parc naturel national, régional'),
+  ('0704','Zone d''expansion des crues pour les inondations'),
+  ('0705','Zone naturelle de mouvements de terrain'),
+  ('9999','Autre enjeu : nature à préciser')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeucovadis','attributes','typeenjeucovadis','Enumeration valeurs possibles nomenclature enjeux COVADIS',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 
 
 /**

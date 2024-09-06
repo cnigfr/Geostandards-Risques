@@ -2018,6 +2018,186 @@ Elle a la structure et le contenu suivants :
 La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeclasseprobatechno).
 
 
+##### Table d'énumération `typeenjeupprn`
+
+La table `typeenjeupprn` implémente l'énumération [NomenclatureEnjeuPPRN](#nomenclatureenjeupprn) définie en annexe D de ce profil applicatif.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(6) | `libelle` TEXT(100) |
+|-|-|
+| 010000 | Espaces urbanisés |
+| 010100 | Centres urbains |
+| 010200 | Espaces urbanisés hors centres urbains |
+| 020000 | Espaces non urbanisés | 
+| 030000 | Espaces spécifiques au type d’aléa étudié |
+| 030100 | Espaces spécifiques d'activités |
+| 030101 | Ports, zones d’activités portuaires et d’activités balnéaires |
+| 030102 | Campings et hôtellerie de plein air |
+| 030103 | Zones d'activités agricoles spécifiques |
+| 030200 | Espaces participants à la limitation des aléas |
+| 030201 | Zones d’expansion des crues |
+| 030202 | Zones d’atterrissement |
+| 030203 | Zones d’interfaces habitat-forêt |
+| 030204 | Zones de maintien d’une forêt |
+| 040000 | Projets d'aménagement futurs du territoire |
+| 050000 | Zone d'habitat |
+| 050100 | Zone d'habitat individuel |
+| 050200 | Zone d'habitat collectif |
+| 060100 | Zone d'activité |
+| 060101 | Zone d'industrie |
+| 060102 | Service |
+| 060103 | Artisanat |
+| 070000 | Infrastructures et équipements particuliers |
+| 070100 | Etablissements sensibles ou difficilement évacuables |
+| 070200 | Equipements stratégiques pour la gestion de crise |
+| 070300 | Equipements collectifs de type ERP ou espaces publics ouverts |
+| 070400 | Campings et hôtellerie de plein air |
+| 070500 | Infrastructures de transport |
+| 070600 | Réseaux et équipements sensibles |
+| 080000 | Enjeux patrimoniaux, culturels et environnementaux | 
+
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeenjeupprn).
+
+
+##### Table d'énumération `typeenjeupprt`
+
+La table `typeenjeupprt` implémente l'énumération [NomenclatureEnjeuPPRT](#nomenclatureenjeupprt) définie en annexe D de ce profil applicatif.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(6) | `libelle` TEXT(100) |
+|-|-|
+| 010000 | Urbanisation existante |
+| 010100 | Habitats |
+| 010200 | Activités |
+| 010300 | Etablissements à l’origine du risque |
+| 010400 | Espaces non urbanisés |
+| 010500 | Espaces agricoles |
+| 020000 | Etablissements recevant du public (ERP) |
+| 020100 | Services de secours |
+| 020200 | Bâtiments d’enseignement |
+| 020300 | Bâtiments de services publics |
+| 020400 | Bâtiments et équipements de loisirs |
+| 020500 | Bâtiments de soins |
+| 020600 | Grands centres commerciaux |
+| 020700 | Petits commerces et services aux particuliers |
+| 020800 | Bâtiments religieux |
+| 030000 | Infrastructures de transports |
+| 030100 | Routes |
+| 030101 | Grandes voies structurantes |
+| 030102 | Autres voies structurantes |
+| 030103 | Voies de dessertes |
+| 030200 | Voies ferrées |
+| 030300 | Voies navigables  |
+| 030400 | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) |
+| 030500 | Aéroports |
+| 030600 | Gares (routières, ferroviaires, portuaires) |
+| 030700 | Modes doux de déplacement (piétons, vélos)  |
+| 030800 | Transports collectifs (bus, métros, etc.)  |
+| 040000 | Espaces publics ouverts |
+| 040100 | Espaces à usage permanent |
+| 040200 | Espaces à usage périodique ou occasionnel |
+| 050000 | Ouvrages et équipements d’intérêt général |
+| 050100 | Poste EDF |
+| 050200 | Central téléphonique |
+| 050300 | Poste de détente GDF |
+| 050400 | Antenne de téléphonie mobile |
+| 050500 | Point de captage d’eau |
+| 050600 | Château d’eau, réservoir |
+| 060000 | Projets de développement de la commune |
+| 070000 | Enjeux environnementaux et patrimoniaux |
+
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeenjeupprt).
+
+
+##### Table d'énumération `typeenjeucovadis`
+
+La table `typeenjeucovadis` implémente l'énumération [NomenclatureEnjeuCovadis](#nomenclatureenjeucovadis) définie en annexe D de ce profil applicatif.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(6) | `libelle` TEXT(100) |
+|-|-|
+|0100|Espace urbanisé|
+|0101|Espace urbanisé - habitat dense|
+|0102|Espace urbanisé - habitat peu dense|
+|0103|Espace urbanisé - habitat diffus|
+|0104|Espace urbanisé - projet d'urbanisation future|
+|0105|Espace urbanisé - réserve foncière|
+|0200|Établissement recevant du public (ERP) |
+|0201c|ERP J : Structures d'accueil pour personnes âgées et handicapées|
+|0202c|ERP L : Salles à usage d'audition, de conférences, de réunions, de spectacles|
+|0203c|ERP M : Magasins de vente, centres commerciaux|
+|0204c|ERP N : Restaurants et débits de boissons|
+|0205c|ERP O : Hôtels et pensions de famille|
+|0206c|ERP P : Salles de danse et salles de jeux|
+|0207c|ERP R : Établissements d'enseignement, colonies de vacances|
+|0208c|ERP S : Bibliothèques, centres de documentation et de consultation d'archives|
+|0209c|ERP T : Salles d'expositions|
+|0210c|ERP U : Établissements de soins|
+|0211c|ERP V : Établissements de culte|
+|0212c|ERP W : Administrations, banques, bureaux|
+|0213c|ERP X : Établissements sportifs couverts|
+|0214c|ERP Y : Musées|
+|0215c|ERP PA : Établissements de plein air|
+|0216c|ERP CST : Chapiteaux, tentes et structures|
+|0217c|ERP CG : Structures gonflables|
+|0218c|ERP OA : Hôtels, restaurants d'altitude|
+|0219c|ERP REF : Refuges de montagne|
+|0220c|ERP PS : Parcs de stationnement couverts|
+|0221c|ERP GA : Gares accessibles au public|
+|0222c|ERP EF : Établissements flottants|
+|0300|Espace économique|
+|0301|Espace économique - zone d'activité industrielle|
+|0302|Espace économique - zone d'activité commerciale|
+|0303|Espace économique - zone d'activité future|
+|0304|Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture|
+|0305|Espace économique - zone de camping, mobil-home|
+|0306|Espace économique - zone aéroportuaire, portuaire|
+|0307|Espace économique - carrière, gravière|
+|0308|Établissement employeur|
+|0400|Espace ouvert recevant du public|
+|0401|Espace ouvert recevant du public - sport|
+|0402|Espace ouvert recevant du public - tourisme|
+|0403|Espace ouvert recevant du public - parking|
+|0404|Espace ouvert recevant du public - parc d'exposition, foires, rassemblements divers|
+|0405|Espace ouvert recevant du public - cimetière|
+|0500|Infrastructure de transport de personnes ou de marchandise|
+|0501|Infrastructure linéaire - route, voie ferrée, canal|
+|0502|Infrastructure linéaire en projet|
+|0503|Infrastructure linéaire - ligne de bus|
+|0504|Infrastructure linéaire - piste cyclable, voie verte|
+|0505|Infrastructure linéaire - ligne électrique|
+|0506|Infrastructure surfacique - gare, aéroport, aérodrome, port|
+|0507|Infrastructure ponctuelle - gare, arrêt, stationnement TMD|
+|0600|Ouvrage ou équipement d'intérêt général|
+|0601|Ouvrage ou équipement d'intérêt général - zone, station de captage|
+|0602|Ouvrage ou équipement d'intérêt général - station de pompage|
+|0603|Ouvrage ou équipement d'intérêt général - réservoir, château d'eau|
+|0604|Ouvrage ou équipement d'intérêt général - canalisation eau|
+|0605|Ouvrage ou équipement d'intérêt général - poste de relèvement|
+|0606|Ouvrage ou équipement d'intérêt général - station de traitement, de lagunage|
+|0607|Ouvrage ou équipement d'intérêt général - barrage, vanne, écluse|
+|0608|Ouvrage ou équipement d'intérêt général - poste de transformation EDF|
+|0609|Ouvrage ou équipement d'intérêt général - canalisation matière dangereuse|
+|0610|Ouvrage ou équipement d'intérêt général - téléphonique, relai, antenne|
+|0611|Ouvrage ou équipement d'intérêt général - caserne de pompier|
+|0612|Ouvrage ou équipement d'intérêt général - poste de détente gaz|
+|0613|Ouvrage ou équipement d'intérêt général - station hydrocarbure|
+|0614|Ouvrage ou équipement d'intérêt général - décharge, usine d'incinération|
+|0700|Enjeu environnemental ou patrimonial|
+|0701|Zone naturelle protégée|
+|0702|Monument inscrit ou classé au répertoire des monuments historiques|
+|0703|Parc naturel national, régional|
+|0704|Zone d'expansion des crues pour les inondations|
+|0705|Zone naturelle de mouvements de terrain|
+|9999|Autre enjeu : nature à préciser|
+
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeenjeucovadis).
+
+
+
 #### Métadonnées de la livraison
 
 Cette partie traite de l'intégration des métadonnées décrivant un PPR dans une livraison GeoPackage. Le contenu de ces métadonnées est défini dans la partie [Éléments de métadonnées](#eléments-de-métadonnées).
@@ -3054,105 +3234,112 @@ Cette annexe rassemble les définitions complètes des différentes nomenclature
 
 La liste de codes "NomenclatureEnjeuPPRN" expose et fusionne les classifications des enjeux définies par [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf) et [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/Guide%20PPRL%20-%20version%20finale%20mai%202014.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les autres éléments de contexte. 
 
-La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRN"+*code*.
+La colonne "Chemin" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRN"+*Chemin*.
+
+La colonne "Code" propose une implémentation numérique sur 6 chiffres de cette hiérarchie en affectant deux chiffres pour encoder un niveau de la hiérarchie.
 
 ### Enjeux incontournables
 
-| Code | Libellé | Libellé Parent | Définition |
-|-|-|-|-|
-| /espaceUrba | Espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
-| espaceUrba/centreUrbain | Centres urbains | Espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| espaceUrba/horsCentreUrbain | Espaces urbanisés hors centres urbains | Espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
-| /espaceNonUrba | Espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
-| /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes ou support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
-| /espaceSpecifique/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Espaces spécifiques au type d’aléa étudié | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires |
-| /espaceSpecifique/campings | Campings et hôtellerie de plein air | Espaces spécifiques au type d’aléa étudié | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air |
-| /espaceSpecifique/activiteAgricoles | Zones d'activités agricoles spécifiques | Espaces spécifiques au type d’aléa étudié | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants |
-| /espaceSpecifique/limitationAlea | Espaces participants à la limitation des aléas | Espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
-| /espaceSpecifique/limitationAlea/expansionCrues | Zones d’expansion des crues | Espaces participants à la limitation des aléas | Zones d’expansion des crues pour les inondations |
-| /espaceSpecifique/limitationAlea/atterrisement | Zones d’atterrissement | Espaces participants à la limitation des aléas | Zones d'atterrissement pour les crues torrentielles. |
-| /espaceSpecifique/limitationAlea/interfaceHabitatForet | Zones d’interfaces habitat-forêt | Espaces participants à la limitation des aléas | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| /espaceSpecifique/limitationAlea/maintienForet | Zones de maintien d’une forêt | Espaces participants à la limitation des aléas | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| /projetCollectivite | Projets d'aménagement futurs du territoire | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+| Code | Chemin | Libellé | Libellé Parent | Définition |
+|-|-|-|-|-|
+| 010000 | /espaceUrba | Espaces urbanisés | -  | La définition de ces espaces se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. |
+| 010100 | /espaceUrba/centreUrbain | Centres urbains | Espaces urbanisés | Au sein de l’espace urbanisé, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| 010200 | /espaceUrba/horsCentreUrbain | Espaces urbanisés hors centres urbains | Espaces urbanisés | Cette sous-catégorie d'espace urbanisés permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
+| 020000 | /espaceNonUrba | Espaces non urbanisés | - | Espaces se définissant par opposition aux espaces urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
+| 030000 | /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes ou support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| 030100 | /espaceSpecifique/activite | Espaces spécifiques d'activités | Espaces spécifiques au type d’aléa étudié | Espace d'activités spécifiques particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| 030101 | /espaceSpecifique/activite/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires |
+| 030102 | /espaceSpecifique/activite/campings | Campings et hôtellerie de plein air | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air |
+| 030103 | /espaceSpecifique/activite/activiteAgricoles | Zones d'activités agricoles spécifiques | Espaces spécifiques d'activités | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants |
+| 030200 | /espaceSpecifique/limitationAlea | Espaces participants à la limitation des aléas | Espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
+| 030201 | /espaceSpecifique/limitationAlea/expansionCrues | Zones d’expansion des crues | Espaces participants à la limitation des aléas | Zones d’expansion des crues pour les inondations |
+| 030202 | /espaceSpecifique/limitationAlea/atterrisement | Zones d’atterrissement | Espaces participants à la limitation des aléas | Zones d'atterrissement pour les crues torrentielles. |
+| 030203 | /espaceSpecifique/limitationAlea/interfaceHabitatForet | Zones d’interfaces habitat-forêt | Espaces participants à la limitation des aléas | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| 030204 | /espaceSpecifique/limitationAlea/maintienForet | Zones de maintien d’une forêt | Espaces participants à la limitation des aléas | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| 040000 | /projetCollectivite | Projets d'aménagement futurs du territoire | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
 
 
 ### Enjeux complémentaires
 
-| Code | Libellé | Libellé Parent | Définition |
-|-|-|-|-|
-| /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
-| /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
-| /habitat/collectif | Zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
-| /activite/industrie | Zone d'industrie | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
-| /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
-| /activite/artisanat | Artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
-| /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Infrastructures et équipements particuliers | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/campings | Campings et hôtellerie de plein air | Infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
-| /equipementParticulier/transports | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| /patrimoineEnvironement | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
+| Code | Chemin | Libellé | Libellé Parent | Définition |
+|-|-|-|-|-|
+| 050000 | /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
+| 050100 | /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
+| 050200 | /habitat/collectif | Zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| 060100 | /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
+| 060101 | /activite/industrie | Zone d'industrie | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
+| 060102 | /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
+| 060103 | /activite/artisanat | Artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
+| 070000 | /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| 070100 | /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| 070200 | /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Infrastructures et équipements particuliers | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| 070300 | /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| 070400 | /equipementParticulier/campings | Campings et hôtellerie de plein air | Infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| 070500 | /equipementParticulier/transports | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| 070600 | /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| 080000 | /patrimoineEnvironement | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
 
 ## NomenclatureEnjeuPPRT
 
 La liste de codes "NomenclatureEnjeuPPRT" expose la classification des enjeux définie par [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf). Il s'agit d'une classification hiérarchique qui s'appuie sur les trois grandes catégories d'enjeux définies dans le guide : les enjeux incontournables, les enjeux complémentaires et les enjeux connexes disponibles. Il est aussi indiqué à titre informatif le type d'éléments de vulnérabilité qui peut être rattachée à un objet Enjeu selon certaines de ces classifications.
 
-La colonne "Code" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRT"+*code*.
+Dans le cadre des PPRT, les enjeux complémentaires cités dans [Guide PPRT:2007](https://www.ecologie.gouv.fr/sites/default/files/Guide_PPRT_tbd_complet.pdf) correspondent à des caractéristiques complémentaires des enjeux incontournables. A ce titre, ils sont déclinés en éléments de vulnérabilités associés et non pas comme classe d'enjeux à part entière.
+
+La colonne "Chemin" propose une codification hiérarchique du type d'enjeu permettant de l'identifier de manière unique sous forme d'une URI en le préfixant avec un nom de domaine commun lié à la nomenclature. Par exemple, dans le système de publication de registres du Géocatalogue : "https://data.geocatalogue.fr/ncl/NomenclatureEnjeuPPRN"+*Chemin*.
+
+La colonne "Code" propose une implémentation numérique sur 6 chiffres de cette hiérarchie en affectant deux chiffres pour encoder un niveau de la hiérarchie.
 
 
 ### Enjeux incontournables
 
 
-| Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
-|-|-|-|-|-|
-| /urbaExistante | Urbanisation existante | -  | Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous-catégories qui suivent. | |
-| /urbaExistante/habitat | Habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
-| /urbaExistante/activite | Activités | Urbanisation existante | Activités (industrielles, etc.) | Nombre d'emplois |
-| /urbaExistante/origineRisque | Etablissements à l’origine du risque | Urbanisation existante | Etablissements à l’origine du risque | |
-| /urbaExistante/espaceNonUrba | Espaces non urbanisés | Urbanisation existante | Espaces non urbanisés | |
-| /urbaExistante/agricole | Espaces agricoles | Urbanisation existante | Espaces agricoles | |
-| /erp | Etablissements recevant du public (ERP) | - | Établissements recevant du public, à caractère public ou privé, dédiés le plus souvent à un usage permanent. Les sous-catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. | Classification des ERP selon leur capacité d'accueil. Cf. [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
-| /erp/secours | Services de secours | Etablissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. | |
-| /erp/enseignement | Bâtiments d’enseignement | Etablissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. | |
-| /erp/servicePublic | Bâtiments de services publics | Etablissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. | |
-| /erp/loisirs | Bâtiments et équipements de loisirs | Etablissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. | |
-| /erp/soins | Bâtiments de soins | Etablissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. | |
-| /erp/centreCommerce | Grands centres commerciaux | Etablissements recevant du public (ERP)  | Grande surface commerciale, etc. | |
-| /erp/petitCommerce | Petits commerces et services aux particuliers | Etablissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. | |
-| /erp/religieux | Bâtiments religieux | Etablissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc. | |
-| /infraTransport | Infrastructures de transports | - | Infrastructures de transports (routier, fluvial, maritime, ferroviaire et aérien) exposées aux risques, pouvant être utilisées pour acheminer les secours et évacuer les populations exposées ou en lien les installations à l'origine du PPRT. Les sous-catégories qui suivent permettent de classifier ces infrastructures. | Traffic connu pour chaque infrastructure |
-| /infraTransport/routes | Routes | Infrastructures de transports | Routes. Celles-ci peuvent être distinguées en trois sous-catégories, énoncées ci-après. | |
-| /infraTransport/routes/grandeVoiesStruct | Grandes voies structurantes | Routes | Grandes voies structurantes | |
-| /infraTransport/routes/autresVoiesStruct | Autres voies structurantes | Routes | Autres voies structurantes | |
-| /infraTransport/routes/dessertes | Voies de dessertes | Routes | Voies de desserte | |
-| /infraTransport/voiesFerrees | Voies ferrées | Infrastructures de transports | Voies ferrées | |
-| /infraTransport/voiesNavigables | Voies navigables  | Infrastructures de transports | Voies navigables | |
-| /infraTransport/itiTMD | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | Infrastructures de transports | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | |
-| /infraTransport/aeroports | Aéroports | Infrastructures de transports | Aéroports | |
-| //infraTransport/gares | Gares (routières, ferroviaires, portuaires) | Infrastructures de transports | Gares (routières, ferroviaires, portuaires)  | |
-| /infraTransport/transportsDoux | Modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | Modes doux de déplacement (piétons, vélos) | |
-| /infraTransport/collectif | Transports collectifs (bus, métros, etc.)  | Infrastructures de transports | Transports collectifs (bus, métros, etc.) | |
-| /espacesPublicsOuverts | Espaces publics ouverts | - | Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous-catégories ci-dessous | Nombre de personnes pouvant être rassemblées |
-| /espacesPublicsOuverts/permanents | Espaces à usage permanent | Espaces publics ouverts | Equipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
-| /espacesPublicsOuverts/occasionnel | Espaces à usage périodique ou occasionnel | Espaces publics ouverts | Voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
-| /ouvrageInteretGeneral | Ouvrages et équipements d’intérêt général | - | Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous-catégories suivantes identifient certains de ces types d'ouvrages | |
-| /ouvrageInteretGeneral/posteElectrique | Poste EDF | Ouvrages et équipements d’intérêt général | Poste EDF | |
-| /ouvrageInteretGeneral/centralTelephone | Central téléphonique | Ouvrages et équipements d’intérêt général | Central téléphonique | |
-| /ouvrageInteretGeneral/posteDetenteGaz | Poste de détente GDF | Ouvrages et équipements d’intérêt général | Poste de détente GDF | |
-| /ouvrageInteretGeneral/antenneTelMobile | Antenne de téléphonie mobile | Ouvrages et équipements d’intérêt général | Antenne de téléphonie mobile | |
-| /ouvrageInteretGeneral/captageEau | Point de captage d’eau | Ouvrages et équipements d’intérêt général | Point de captage d’eau | |
-| /ouvrageInteretGeneral/reservoirEau | Château d’eau, réservoir | Ouvrages et équipements d’intérêt général | Château d’eau, réservoir | |
+| Code | Chemin | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
+|-|-|-|-|-|-|
+| 010000 | /urbaExistante | Urbanisation existante | -  | Caractérisation des types d'occupation des sols selon des ensembles homogènes. Cette caractérisation est définie par les sous-catégories qui suivent. | |
+| 010100 | /urbaExistante/habitat | Habitats | Urbanisation existante | Zones d'habitation individuelles, collectives.  | Nombre d'habitants |
+| 010200 | /urbaExistante/activite | Activités | Urbanisation existante | Activités (industrielles, etc.) | Nombre d'emplois |
+| 010300 | /urbaExistante/origineRisque | Etablissements à l’origine du risque | Urbanisation existante | Etablissements à l’origine du risque | |
+| 010400 | /urbaExistante/espaceNonUrba | Espaces non urbanisés | Urbanisation existante | Espaces non urbanisés | |
+| 010500 | /urbaExistante/agricole | Espaces agricoles | Urbanisation existante | Espaces agricoles | |
+| 020000 | /erp | Etablissements recevant du public (ERP) | - | Établissements recevant du public, à caractère public ou privé, dédiés le plus souvent à un usage permanent. Les sous-catégories qui suivent permettent d'en préciser le type. Elles peuvent aussi être affinées à l'aide de la nomenclature COVADIS. | Classification des ERP selon leur capacité d'accueil. Cf. [Art. R. 143-19 du code de la construction et de l’habitat (CCH)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818977#:~:text=Version%20en%20vigueur%20depuis%20le%2001%20juillet%202021,-Cr%C3%A9%C3%A9%20par%20D%C3%A9cret&text=L%27effectif%20du%20public%20est,l%27ensemble%20de%20ces%20indications.) |
+| 020100 | /erp/secours | Services de secours | Etablissements recevant du public (ERP) | Caserne de pompiers, bâtiment de la sécurité civile, gendarmerie, commissariat de police, etc. | |
+| 020200 | /erp/enseignement | Bâtiments d’enseignement | Etablissements recevant du public (ERP) | École, collège, lycée, université, grandes écoles, etc. | |
+| 020300 | /erp/servicePublic | Bâtiments de services publics | Etablissements recevant du public (ERP) | Mairie, poste, bâtiment administratif des ministères et des collectivités locales, etc. | |
+| 020400 | /erp/loisirs | Bâtiments et équipements de loisirs | Etablissements recevant du public (ERP) | Stade (lieu de pratiques sportives en extérieur), piscine, gymnase, lieu de concert et de spectacle, bibliothèque, cinéma, etc. | |
+| 020500 | /erp/soins | Bâtiments de soins | Etablissements recevant du public (ERP)  | Hôpital, clinique, maison de retraite, etc. | |
+| 020600 | /erp/centreCommerce | Grands centres commerciaux | Etablissements recevant du public (ERP)  | Grande surface commerciale, etc. | |
+| 020700 | /erp/petitCommerce | Petits commerces et services aux particuliers | Etablissements recevant du public (ERP)  | Tous les petits commerces hors grandes surfaces commerciales et services aux particuliers type médecin, vétérinaire, etc. | |
+| 020800 | /erp/religieux | Bâtiments religieux | Etablissements recevant du public (ERP) | Église, mosquée, synagogue, temple, autres lieux de culte, etc. | |
+| 030000 | /infraTransport | Infrastructures de transports | - | Infrastructures de transports (routier, fluvial, maritime, ferroviaire et aérien) exposées aux risques, pouvant être utilisées pour acheminer les secours et évacuer les populations exposées ou en lien les installations à l'origine du PPRT. Les sous-catégories qui suivent permettent de classifier ces infrastructures. | Traffic connu pour chaque infrastructure |
+| 030100 | /infraTransport/routes | Routes | Infrastructures de transports | Routes. Celles-ci peuvent être distinguées en trois sous-catégories, énoncées ci-après. | |
+| 030101 | /infraTransport/routes/grandeVoiesStruct | Grandes voies structurantes | Routes | Grandes voies structurantes | |
+| 030102 | /infraTransport/routes/autresVoiesStruct | Autres voies structurantes | Routes | Autres voies structurantes | |
+| 030103 | /infraTransport/routes/dessertes | Voies de dessertes | Routes | Voies de desserte | |
+| 030200 | /infraTransport/voiesFerrees | Voies ferrées | Infrastructures de transports | Voies ferrées | |
+| 030300 | /infraTransport/voiesNavigables | Voies navigables  | Infrastructures de transports | Voies navigables | |
+| 030400 | /infraTransport/itiTMD | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | Infrastructures de transports | Itinéraires et stationnements de TMD (Transport de Matières Dangereuses) | |
+| 030500 | /infraTransport/aeroports | Aéroports | Infrastructures de transports | Aéroports | |
+| 030600 | /infraTransport/gares | Gares (routières, ferroviaires, portuaires) | Infrastructures de transports | Gares (routières, ferroviaires, portuaires)  | |
+| 030700 | /infraTransport/transportsDoux | Modes doux de déplacement (piétons, vélos)  | Infrastructures de transports | Modes doux de déplacement (piétons, vélos) | |
+| 030800 | /infraTransport/collectif | Transports collectifs (bus, métros, etc.)  | Infrastructures de transports | Transports collectifs (bus, métros, etc.) | |
+| 040000 | /espacesPublicsOuverts | Espaces publics ouverts | - | Localisation des espaces publics ouverts utilisés de façon temporaire ou permanente et susceptibles de rassembler un nombre important de personnes. A répartir dans les sous-catégories ci-dessous | Nombre de personnes pouvant être rassemblées |
+| 040100 | /espacesPublicsOuverts/permanents | Espaces à usage permanent | Espaces publics ouverts | Equipements recevant du public à caractère public ou privé (stades, parkings construits, parcs urbains, terrains de camping, etc.) | |
+| 040200 | /espacesPublicsOuverts/occasionnel | Espaces à usage périodique ou occasionnel | Espaces publics ouverts | Voies et places publiques utilisées pour les marchés hebdomadaires, les ventes de voitures, les brocantes, les manifestations (foires, expositions, rassemblements musicaux, défilés), etc. | |
+| 050000 | /ouvrageInteretGeneral | Ouvrages et équipements d’intérêt général | - | Cette catégorie rassemble les ouvrages et équipements d’intérêt général pouvant avoir un effet indirect sur la sécurité des personnes. Les sous-catégories suivantes identifient certains de ces types d'ouvrages | |
+| 050100 | /ouvrageInteretGeneral/posteElectrique | Poste EDF | Ouvrages et équipements d’intérêt général | Poste EDF | |
+| 050200 | /ouvrageInteretGeneral/centralTelephone | Central téléphonique | Ouvrages et équipements d’intérêt général | Central téléphonique | |
+| 050300 | /ouvrageInteretGeneral/posteDetenteGaz | Poste de détente GDF | Ouvrages et équipements d’intérêt général | Poste de détente GDF | |
+| 050400 | /ouvrageInteretGeneral/antenneTelMobile | Antenne de téléphonie mobile | Ouvrages et équipements d’intérêt général | Antenne de téléphonie mobile | |
+| 050500 | /ouvrageInteretGeneral/captageEau | Point de captage d’eau | Ouvrages et équipements d’intérêt général | Point de captage d’eau | |
+| 050600 | /ouvrageInteretGeneral/reservoirEau | Château d’eau, réservoir | Ouvrages et équipements d’intérêt général | Château d’eau, réservoir | |
 
 ### Éléments connexes disponibles
 
 | Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
 |-|-|-|-|-|
-| /projetCollectivite | Projets de développement de la commune | - | Éléments connexes disponibles | |
-| /patrimoineEnvironement | Enjeux environnementaux et patrimoniaux | - | Éléments connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
+| 060000 | /projetCollectivite | Projets de développement de la commune | - | Éléments connexes disponibles | |
+| 070000 | /patrimoineEnvironement | Enjeux environnementaux et patrimoniaux | - | Éléments connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
 
 
 
@@ -4245,6 +4432,198 @@ INSERT INTO gpkg_contents VALUES
  ;
 ```
 
+## Création de la table d'énumération `typeenjeupprn`
+
+
+``` SQL
+CREATE TABLE typeenjeupprn (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprn VALUES 
+  ('010000','Espaces urbanisés'),
+  ('010100','Centres urbains'),
+  ('010200','Espaces urbanisés hors centres urbains'),
+  ('020000','Espaces non urbanisés'), 
+  ('030000','Espaces spécifiques au type d'’aléa étudié'),
+  ('030100','Espaces spécifiques d''activités'),
+  ('030101','Ports, zones d’'activités portuaires et d’'activités balnéaires'),
+  ('030102','Campings et hôtellerie de plein air'),
+  ('030103','Zones d''activités agricoles spécifiques'),
+  ('030200','Espaces participants à la limitation des aléas'),
+  ('030201','Zones d'’expansion des crues'),
+  ('030202','Zones d’'atterrissement'),
+  ('030203','Zones d’'interfaces habitat-forêt'),
+  ('030204','Zones de maintien d'’une forêt'),
+  ('040000','Projets d'aménagement futurs du territoire'),
+  ('050000','Zone d''habitat'),
+  ('050100','Zone d''habitat individuel'),
+  ('050200','Zone d''habitat collectif'),
+  ('060100','Zone d''activité'),
+  ('060101','Zone d''industrie'),
+  ('060102','Service'),
+  ('060103','Artisanat'),
+  ('070000','Infrastructures et équipements particuliers'),
+  ('070100','Etablissements sensibles ou difficilement évacuables'),
+  ('070200','Equipements stratégiques pour la gestion de crise'),
+  ('070300','Equipements collectifs de type ERP ou espaces publics ouverts'),
+  ('070400','Campings et hôtellerie de plein air'),
+  ('070500','Infrastructures de transport'),
+  ('070600','Réseaux et équipements sensibles'),
+  ('080000','Enjeux patrimoniaux, culturels et environnementaux') 
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprn','attributes','typeenjeupprn','Enumeration valeurs possibles nomenclature enjeux PPRN',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
+##### Table d'énumération `typeenjeupprt`
+
+
+``` SQL
+CREATE TABLE typeenjeupprt (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprt VALUES 
+  ('010000','Urbanisation existante'),
+  ('010100','Habitats'),
+  ('010200','Activités'),
+  ('010300','Etablissements à l'’origine du risque'),
+  ('010400','Espaces non urbanisés'),
+  ('010500','Espaces agricoles'),
+  ('020000','Etablissements recevant du public (ERP)'),
+  ('020100','Services de secours'),
+  ('020200','Bâtiments d'’enseignement'),
+  ('020300','Bâtiments de services publics'),
+  ('020400','Bâtiments et équipements de loisirs'),
+  ('020500','Bâtiments de soins'),
+  ('020600','Grands centres commerciaux'),
+  ('020700','Petits commerces et services aux particuliers'),
+  ('020800','Bâtiments religieux'),
+  ('030000','Infrastructures de transports'),
+  ('030100','Routes'),
+  ('030101','Grandes voies structurantes'),
+  ('030102','Autres voies structurantes'),
+  ('030103','Voies de dessertes'),
+  ('030200','Voies ferrées'),
+  ('030300','Voies navigables '),
+  ('030400','Itinéraires et stationnements de TMD (Transport de Matières Dangereuses)'),
+  ('030500','Aéroports'),
+  ('030600','Gares (routières, ferroviaires, portuaires)'),
+  ('030700','Modes doux de déplacement (piétons, vélos) '),
+  ('030800','Transports collectifs (bus, métros, etc.) '),
+  ('040000','Espaces publics ouverts'),
+  ('040100','Espaces à usage permanent'),
+  ('040200','Espaces à usage périodique ou occasionnel'),
+  ('050000','Ouvrages et équipements d’'intérêt général'),
+  ('050100','Poste EDF'),
+  ('050200','Central téléphonique'),
+  ('050300','Poste de détente GDF'),
+  ('050400','Antenne de téléphonie mobile'),
+  ('050500','Point de captage d’'eau'),
+  ('050600','Château d'’eau, réservoir'),
+  ('060000','Projets de développement de la commune'),
+  ('070000','Enjeux environnementaux et patrimoniaux')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprt','attributes','typeenjeupprt','Enumeration valeurs possibles nomenclature enjeux technologiques',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
+
+
+
+##### Table d'énumération `typeenjeucovadis`
+
+``` SQL
+CREATE TABLE typeenjeucovadis (
+  code TEXT(5) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeucovadis VALUES 
+  ('0100','Espace urbanisé'),
+  ('0101','Espace urbanisé - habitat dense'),
+  ('0102','Espace urbanisé - habitat peu dense'),
+  ('0103','Espace urbanisé - habitat diffus'),
+  ('0104','Espace urbanisé - projet d''urbanisation future'),
+  ('0105','Espace urbanisé - réserve foncière'),
+  ('0200','Établissement recevant du public (ERP) '),
+  ('0201c','ERP J : Structures d''accueil pour personnes âgées et handicapées'),
+  ('0202c','ERP L : Salles à usage d''audition, de conférences, de réunions, de spectacles'),
+  ('0203c','ERP M : Magasins de vente, centres commerciaux'),
+  ('0204c','ERP N : Restaurants et débits de boissons'),
+  ('0205c','ERP O : Hôtels et pensions de famille'),
+  ('0206c','ERP P : Salles de danse et salles de jeux'),
+  ('0207c','ERP R : Établissements d''enseignement, colonies de vacances'),
+  ('0208c','ERP S : Bibliothèques, centres de documentation et de consultation d''archives'),
+  ('0209c','ERP T : Salles d''expositions'),
+  ('0210c','ERP U : Établissements de soins'),
+  ('0211c','ERP V : Établissements de culte'),
+  ('0212c','ERP W : Administrations, banques, bureaux'),
+  ('0213c','ERP X : Établissements sportifs couverts'),
+  ('0214c','ERP Y : Musées'),
+  ('0215c','ERP PA : Établissements de plein air'),
+  ('0216c','ERP CST : Chapiteaux, tentes et structures'),
+  ('0217c','ERP CG : Structures gonflables'),
+  ('0218c','ERP OA : Hôtels, restaurants d''altitude'),
+  ('0219c','ERP REF : Refuges de montagne'),
+  ('0220c','ERP PS : Parcs de stationnement couverts'),
+  ('0221c','ERP GA : Gares accessibles au public'),
+  ('0222c','ERP EF : Établissements flottants'),
+  ('0300','Espace économique'),
+  ('0301','Espace économique - zone d''activité industrielle'),
+  ('0302','Espace économique - zone d''activité commerciale'),
+  ('0303','Espace économique - zone d''activité future'),
+  ('0304','Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture'),
+  ('0305','Espace économique - zone de camping, mobil-home'),
+  ('0306','Espace économique - zone aéroportuaire, portuaire'),
+  ('0307','Espace économique - carrière, gravière'),
+  ('0308','Établissement employeur'),
+  ('0400','Espace ouvert recevant du public'),
+  ('0401','Espace ouvert recevant du public - sport'),
+  ('0402','Espace ouvert recevant du public - tourisme'),
+  ('0403','Espace ouvert recevant du public - parking'),
+  ('0404','Espace ouvert recevant du public - parc d''exposition, foires, rassemblements divers'),
+  ('0405','Espace ouvert recevant du public - cimetière'),
+  ('0500','Infrastructure de transport de personnes ou de marchandise'),
+  ('0501','Infrastructure linéaire - route, voie ferrée, canal'),
+  ('0502','Infrastructure linéaire en projet'),
+  ('0503','Infrastructure linéaire - ligne de bus'),
+  ('0504','Infrastructure linéaire - piste cyclable, voie verte'),
+  ('0505','Infrastructure linéaire - ligne électrique'),
+  ('0506','Infrastructure surfacique - gare, aéroport, aérodrome, port'),
+  ('0507','Infrastructure ponctuelle - gare, arrêt, stationnement TMD'),
+  ('0600','Ouvrage ou équipement d''intérêt général'),
+  ('0601','Ouvrage ou équipement d''intérêt général - zone, station de captage'),
+  ('0602','Ouvrage ou équipement d''intérêt général - station de pompage'),
+  ('0603','Ouvrage ou équipement d''intérêt général - réservoir, château d''eau'),
+  ('0604','Ouvrage ou équipement d''intérêt général - canalisation eau'),
+  ('0605','Ouvrage ou équipement d''intérêt général - poste de relèvement'),
+  ('0606','Ouvrage ou équipement d''intérêt général - station de traitement, de lagunage'),
+  ('0607','Ouvrage ou équipement d''intérêt général - barrage, vanne, écluse'),
+  ('0608','Ouvrage ou équipement d''intérêt général - poste de transformation EDF'),
+  ('0609','Ouvrage ou équipement d''intérêt général - canalisation matière dangereuse'),
+  ('0610','Ouvrage ou équipement d''intérêt général - téléphonique, relai, antenne'),
+  ('0611','Ouvrage ou équipement d''intérêt général - caserne de pompier'),
+  ('0612','Ouvrage ou équipement d''intérêt général - poste de détente gaz'),
+  ('0613','Ouvrage ou équipement d''intérêt général - station hydrocarbure'),
+  ('0614','Ouvrage ou équipement d''intérêt général - décharge, usine d''incinération'),
+  ('0700','Enjeu environnemental ou patrimonial'),
+  ('0701','Zone naturelle protégée'),
+  ('0702','Monument inscrit ou classé au répertoire des monuments historiques'),
+  ('0703','Parc naturel national, régional'),
+  ('0704','Zone d''expansion des crues pour les inondations'),
+  ('0705','Zone naturelle de mouvements de terrain'),
+  ('9999','Autre enjeu : nature à préciser')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeucovadis','attributes','typeenjeucovadis','Enumeration valeurs possibles nomenclature enjeux COVADIS',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+```
 
 ## Exemple d'insertion de métadonnées de PPR
 
