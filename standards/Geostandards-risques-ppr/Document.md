@@ -1132,9 +1132,9 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 #  Livraison
 
-Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie qui suit en précise les modalités.
+Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie [Livraison en GeoPackage](#livraison_en_geopackage) en précise les modalités.
 
-Une partie livraison en Shapefile est néanmoins proposée en annexe pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage.
+Une livraison en Shapefile est néanmoins possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage. Elle s'appuie sur la même structure de tables que celle décrite dans la partie [dictionnaire des tables](#dictionnaire-des-tables) de la livraison en GeoPackage ; les spécificités liées au format Shapefile comme le nom court des champs sont indiquées dans une colonne spécifique pour chaque table.
 
 ##  Livraison en GeoPackage
 
@@ -1352,7 +1352,7 @@ La figure suivante représente l'ensemble des tables du standard pouvant faire p
 Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livraison en précisant :
 
 - le caractère obligatoire (O), conditionnel (C) ou facultatif (F) de la présence de la table dans la livraison ;
-- le nom de la table (valeur de `table_name` dans la table `gpkg_contents`) ;
+- le nom de la table : valeur de `table_name` dans la table `gpkg_contents` (livraison GeoPackage) ou nom du fichier shapefile correspondant (livraison Shapefile) ;
 - le type de la table selon la nomenclature de GeoPackage (valeur de `data_type` dans la table `gpkg_contents`) ;
 - le type de Géométrie de la table dans la nomenclature de GeoPackage (valeur de `geometry_type_name` dans la table `gpkg_geometry_columns`). Les types de Géométries possibles sont précisés dans [les spécifications du format GeoPackage](https://www.geopackage.org/spec131/#geometry_types) ;
 - Les références aux entités du modèle conceptuel implémentées par la table.
@@ -1412,24 +1412,24 @@ Les tables du standard présentes dans la livraison GeoPackage ayant pour type `
 
 Les paragraphes qui suivent précisent pour chacune de ces tables :
 - les noms des colonnes. Les noms **en gras** désignent les colonnes à valeur nulle interdite ;
+- les noms courts des colonnes dans le cas d'une livraison en Shapefile ;
 - le type des colonnes selon la [nomenclature GeoPackage](https://www.geopackage.org/spec131/#table_column_data_types) ;
 - les éventuelles restrictions sur les valeurs possibles pour chaque colonne ;
 - les éventuelles précisions par rapport à la définition des propriétés correspondantes du modèle conceptuel ;
-- leur définition en SQL pour la livraison en GeoPackage.
 
 **Exigence** 
-Les tables du standard présentes dans la livraison GeoPackage doivent respecter les structures déclarées pour chacune d'elles dans les clauses suivantes.
+Les tables du standard présentes dans la livraison GeoPackage ou Shapefile doivent respecter les structures déclarées pour chacune d'elles dans les clauses suivantes.
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
 La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) définie dans le modèle commun. Elle a la structure suivante :
 
-| Nom colonne | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
-| **`codeprocedure`** | TEXT(18) | **Clef primaire** | Code identifiant de la procédure dans GASPAR |
-| **`libelleprocedure`** | TEXT | Pas de restriction | Nom de la procédure lisible par un être humain. | 
-| **`typeprocedure`** | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'énumération [typeprocedure](#table-dénumération-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef primaire** | Code identifiant de la procédure dans GASPAR |
+| **`libelleprocedure`** | **`libproc`** | TEXT | Pas de restriction | Nom de la procédure lisible par un être humain. | 
+| **`typeprocedure`** | **`typproc`** | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'énumération [typeprocedure](#table-dénumération-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
 
 La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-typeppr_codegasparcomplet_procedure).
@@ -4648,15 +4648,4 @@ INSERT INTO gpkg_metadata_reference VALUES (
   'table', 'pprn_76ddtm20120001_zonealeareference_112_s', NULL, NULL, (datetime('now')), 2, 1
 );
 ```
-
-# ANNEXE F - Livraison en Shapefile
-
-
-##  Contenu de la livraison
-
-### Fichiers Shapefile
-
-### Dictionnaire des tables
-
-Cf. Dictionnaire des tables GeoPackage
 
