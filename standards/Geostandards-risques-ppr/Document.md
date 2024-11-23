@@ -1164,6 +1164,7 @@ Le modèle physique implémenté avec GeoPackage est un modèle de données rela
 **Exigence**
 La granularité d'une livraison est celle d'une procédure associée à un plan de prévention des risques (un code de procédure). Autrement dit une livraison comprend l'ensemble des tables associées à une procédure identifiée dans GASPAR par son code procédure.
 
+Des gabarits au format GeoPackage implémentant la stucture des tables décrites par ce standard sont diponibles sur le [dépot github des geostandards risques](https://github.com/cnigfr/Geostandards-Risques/tree/v1.0-cnig/standards/Geostandards-risques-ppr/gabarits).
 
 ####  Nom du fichier de livraison
 
