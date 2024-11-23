@@ -290,17 +290,17 @@ La thématique aléas porte sur la description des phénomènes, leur localisati
 Dans cette thématique sont définies : 
 
 * trois classes pour décrire des zones définies relativement aux aléas ([ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) et [ZoneProtegee](#classe-dobjets-zoneprotegee)) ;
-* une classe pour décrire les ouvrages de protection [OuvrageProtection](#classe-dobjets-ouvrageprotection) ;  
+* une classe pour décrire les ouvrages protecteurs [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) contre les aléas ;  
 * une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) ;
-* trois énumérations permettant de classifier les types d'aléas ([TypeAlea](#enumeration-typealea)), les types d'ouvrage de protection ([TypeOuvrageProtection](#enumeration-typeouvrageprotection)) et les référentiels externes d'ouvrages de protection ([TypeRefExterneProtection](#enumeration-typerefexterneprotection)) ;
+* trois énumérations permettant de classifier les types d'aléas ([TypeAlea](#enumeration-typealea)), les types d'ouvrage de protecteurs ([TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur)) et les référentiels externes d'ouvrages de protecteurs ([TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage)) ;
 
 La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau d'aléa et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
 
-La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau d'intensité et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)). 
+La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau d'intensité et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)). 
 
-La classe ([ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+La classe ([ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les zones protégées par un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage protecteur.
 
-Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (par exemple, le référentiel des obstacles à l'écoulement [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet d'intégrer des objets de ces référentiels lorsqu'ils sont inclus dans une cartographie de prévention des risques et d'indiquer de quel type ils sont [TypeOuvrageProtection](#enumeration-typeouvrageprotection) et le référentiel dont ils sont extraits [TypeRefExterneProtection](#enumeration-typerefexterneprotection).
+Les ouvrages protecteurs sont déjà décrits dans d'autres référentiels plus ou moins normatifs (par exemple, le référentiel des obstacles à l'écoulement [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)). Ce Standard propose seulement une classe [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) qui permet d'intégrer des objets de ces référentiels lorsqu'ils sont inclus dans une cartographie de prévention des risques et d'indiquer de quel type ils sont [TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur) et le référentiel dont ils sont extraits [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage).
 
 Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les zones d'iso-classes de hauteur d'eau permettant de déterminer les surfaces inondables pour les territoires à risque important d'inondation. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et caractériser leur intensité et leur probabilité. 
 
@@ -530,7 +530,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Zone Protégée
 
-**Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+**Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage protecteur.
 
 **Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
@@ -552,7 +552,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'ouvrage protecteur qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) (1..1) |
 
 
 #### Classe d'objets *ZoneDangerSpecifique*
@@ -561,7 +561,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Zone de danger spécifique
 
-**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)).
+**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)).
 
 **Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
@@ -584,19 +584,19 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone de danger spécifique avec un ouvrage de protection qui la génère. | [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (0..1) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone de danger spécifique avec un ouvrage protecteur qui la génère. | [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) (0..\*) |  [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) (0..1) |
 
 
 
-#### Classe d'objets *OuvrageProtection*
+#### Classe d'objets *OuvrageProtecteur*
 
-**Nom de la classe** : OuvrageProtection
+**Nom de la classe** : OuvrageProtecteur
 
-**Titre** : Ouvrage de protection
+**Titre** : Ouvrage protecteur
 
-**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques II (SIOUH II), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
+**Définition** : La classe Ouvrage protecteur permet de faire état des ouvrages qui ont un rôle protecteur contre les aléas (par exemple des digues en prévention des risques d'inondation), qu'ils aient été réalisés dans ce but ou non. La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques II (SIOUH II), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
-**Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
+**Modélisation géométrique** : Les objets de la classe ouvrage protecteur peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
 **Propriétés** : 
 
@@ -606,9 +606,9 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet | Énumération [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage) | Celles de l'énumération | 1..1 | 
 | refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
-| typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtection](#enumeration-typeouvrageprotection) | Celles de l'énumération | 0..1 |
-| roleProtection | Ce champ permet d'indiquer si l'ouvrage ou l'installation a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement égal ou supérieur au scénario de référence du PPR. Le scénario de référence traduit l'évènement dont on cherche à se prévenir via le PPR (par exemple : la crue centennale du cours d'eau). | Booléen | 0 si l'ouvrage n'est pas conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de référence du PPR (soit parce qu'il est conçu et entretenu pour se protéger d'un évènement moins important, soit parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). 1 si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de référence du PPR. | 0..1 |
-
+| typeOuvrageProtecteur | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur) | Celles de l'énumération | 0..1 |
+| roleProtection | Ce champ permet d'indiquer si l'ouvrage ou l'installation a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | Booléen | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | 0..1 |
+| occurrence | Ce champ permet de préciser l'occurrence de survenue de l'aléa contre lequel l'ouvrage a été conçu est est entretenu pour se prévenir. | CharacterString | Le type et les contraintes sur les valeurs pour caractériser l'occurrence seront précisés par le profil applicatif, en fonction notamment du type d'aléa (naturel ou technologique). | 0..1 | Cette valeur n'est pas renseignée si le champ "roleProtection" vaut `false`. | 
 
 #### Classe d'objets *ElementCaracterisationAlea*
 
@@ -677,9 +677,9 @@ Le tableau suivant liste les différents types d'aléas applicables pour les zon
 | Risque minier ; Echauffement des terrains de dépôts |
 
 
-#### Enumeration *TypeOuvrageProtection*
+#### Enumeration *TypeOuvrageProtecteur*
  
-Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection. Les valeurs proposées ont une organisation hiérarchique qui permet de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
+Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage protecteur. Les valeurs proposées ont une organisation hiérarchique qui permet de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
 
 | Libellé référentiel | Description |
 |-|-|
@@ -697,7 +697,7 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un type d
 
 #### Enumeration *TypeRefExterneOuvrage*
 
-Le tableau suivant liste les valeurs possibles permettant de désigner un référentiel dont est issu un ouvrage de protection. 
+Le tableau suivant liste les valeurs possibles permettant de désigner un référentiel dont est issu un ouvrage protecteur. 
 
 | Libellé référentiel | Description |
 |-|-|

@@ -580,7 +580,7 @@ Cette section précise l'utilisation et les spécialisations du modèle de donn�
 
 **Titre** : Zone de danger spécifique 
 
-**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas dans le cadre des PPRI, ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues eti/ou projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf), ces deux types de bandes particulières pouvant aussi être différenciés. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)), notamment lorsqu'il s'agit d'une bande de protection.
+**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas dans le cadre des PPRI, ces zones de danger particulières peuvent être de deux types : les **bandes de précaution** à l'arrière des systèmes d'endiguement et les **bandes particulières** liées aux chocs mécaniques des vagues eti/ou projection des matériaux telles que définies dans le [Décret PPRI:2019](https://www.ecologie.gouv.fr/sites/default/files/Modalit%C3%A9s%20d%E2%80%99application%20du%20d%C3%A9cret%20PPRi%20%E2%80%93%20Novembre%202019.pdf), ces deux types de bandes particulières pouvant aussi être différenciés. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau ([TypeNiveauAlea](#enumeration-typeniveaualea)) et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)), notamment lorsqu'il s'agit d'une bande de protection.
 
 **Modélisation géométrique** : Polygone simple de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
 
@@ -1373,9 +1373,9 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` (NB: [CodeAlea]==214) | `features` | `POLYGON` | Classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
-| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
-| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_l` | `features` | `MULTILINESTRING` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
-| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_p` | `features` | `MULTIPOINT` | Classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_l` | `features` | `MULTILINESTRING` | Classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) |
+| F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_p` | `features` | `MULTIPOINT` | Classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) |
 | F | `[TypePPR]_[CodeGASPARComplet]_originerisque_s` | `features` | `MULTIPOLYGON` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
 | F | `[TypePPR]_[CodeGASPARComplet]_originerisque_l` | `features` | `MULTILINESTRING` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
 | F | `[TypePPR]_[CodeGASPARComplet]_originerisque_p` | `features` | `MULTIPOINT` | Classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) |
@@ -1397,7 +1397,7 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | F | `typeniveaualea` | `attributes` | N.A. | Enumeration [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) |
 | F | `typesuralea` | `attributes` | N.A. | Enumeration [TypeSurAlea](../Geostandards-risques-commun/Document.md#enumeration-typesuralea) |
 | F | `typerefexterneouvrage` | `attributes` | N.A. | Enumeration [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) |
-| F | `typeouvrageprotection` | `attributes` | N.A. | Enumeration [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) |
+| F | `typeouvrageprotecteur` | `attributes` | N.A. | Enumeration [TypeOuvrageProtecteur](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotecteur) |
 | F | `typereglementurba` | `attributes` | N.A. | Enumeration [TypeReglementUrba](#enumeration-typereglementurba) |
 | F | `typereglementfoncier` | `attributes` | N.A. | Enumeration [TypeReglementFoncier](#enumeration-typereglementfoncier) |
 | F | `typeintensitetechno` | `attributes` | N.A. | Enumeration [TypeIntensiteTechno](#enumeration-typeintensitetechno) |
@@ -1601,9 +1601,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | `niveauprotection` | TEXT | Domaine de valeurs en fonction du type zone. | Niveau de protection de la zone. Par exemple pour une zone protégée par un système d'endiguement, il s'agit de la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
 | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
-| `idouvrageprotection_s` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
-| `idouvrageprotection_l` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
-| `idouvrageprotection_p` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
+| `idouvrageprotecteur_s` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
+| `idouvrageprotecteur_l` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
+| `idouvrageprotecteur_p` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 
@@ -1622,28 +1622,29 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | **`typesuralea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-dénumération-typesuralea) | Type de de zone de danger spécifique. |
 | `description` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
-| `idouvrageprotection_s` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
-| `idouvrageprotection_l` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
-| `idouvrageprotection_p` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotection_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
+| `idouvrageprotecteur_s` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
+| `idouvrageprotecteur_l` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
+| `idouvrageprotecteur_p` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-typeppr_codegasparcomplet_zonedangerspecifique_codealea_s).
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
 
-Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p` implémentent la classe [OuvrageProtection](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotection) définie dans le modèle commun. Elles ont la structure suivante :
+Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p` implémentent la classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) définie dans le modèle commun. Elles ont la structure suivante :
 
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 | **`idrefexterne`** | TEXT(50) | **Clef primaire** | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
 | **`refexterne`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-dénumération-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
 | `refexterneautre` | TEXT | Saisie libre. La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refexterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
-| `typeouvrageprotection` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotection](#table-dénumération-typeouvrageprotection) | Désignation du type d'ouvrage que représente cet objet. | 
-| `roleProtection` | BOOLEAN | 0 (non) ou 1 (oui) | Indique si l'ouvrage a été construit et est entretenu pour se prémunir du scénario de référence de l'aléa. |  
+| `typeouvrageprotecteur` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotecteur](#table-dénumération-typeouvrageprotecteur) | Désignation du type d'ouvrage que représente cet objet. | 
+| `roleprotection` | BOOLEAN | 0 (non) ou 1 (oui) | Indique si l'ouvrage a été construit et est entretenu pour se prémunir du scénario de référence de l'aléa. |
+| `occurrence` | TEXT |  Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
 | **`geom`** | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
-La définition de ces tables en SQL est précisée en [annexe E](#création-des-tables-typeppr_codegasparcomplet_ouvrageprotection_codealea_slp).
+La définition de ces tables en SQL est précisée en [annexe E](#création-des-tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_slp).
 
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
@@ -1909,9 +1910,9 @@ La définition de la table en SQL est précisée en [annexe E](#création-de-la-
 
 
 
-##### Table d'énumération `typeouvrageprotection`
+##### Table d'énumération `typeouvrageprotecteur`
 
-La table `typeouvrageprotection` implémente l'énumération [TypeOuvrageProtection](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotection) définie dans le modèle commun.
+La table `typeouvrageprotecteur` implémente l'énumération [TypeOuvrageProtecteur](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotecteur) définie dans le modèle commun.
 
 Elle a la structure et le contenu suivants :
 
@@ -1921,7 +1922,7 @@ Elle a la structure et le contenu suivants :
 | 11  | Ouvrage de protection contre les inondations |
 | 111 | Ouvrage appartenant à un systeme d'endiguement | 
 | 112 | Amenagement hydraulique | 
-| 113 | Autre ouvrage de protection contre les inondations | 
+| 119 | Autre ouvrage de protection contre les inondations | 
 | 12  | Ouvrage ou installation influencant les ecoulements sans fonction de protection | 
 | 2   | Ouvrage ou installation pouvant influencer les mouvements de terrain | 
 | 3   | Ouvrage ou installation pouvant influencer les chutes de blocs | 
@@ -1929,7 +1930,7 @@ Elle a la structure et le contenu suivants :
 | 999 | Autre ouvrage ou installation pouvant influencer les aléas | 
 
 
-La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeouvrageprotection).
+La définition de la table en SQL est précisée en [annexe E](#création-de-la-table-dénumération-typeouvrageprotecteur).
 
 
 ##### Table d'énumération `typerefexterneouvrage`
@@ -2921,7 +2922,7 @@ A noter que certains attributs obligatoires dans le nouveau standard tel que "in
 
 ## Remplissage des objets de la classe ZoneProtegee
 
-La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection (OuvrageProtection) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa (TypeAlea), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection (OuvrageProtecteur) lorsque le niveau de protection de ce dernier est au moins égal à l'aléa de référence. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa (TypeAlea), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
 
 Dans l'ancien standard PPR, les zones protégées n'étaient pas représentées. Cette table ne sera donc pas générée lors de la transposition d'un ancien PPR vers le nouveau modèle. 
 
@@ -3744,14 +3745,14 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   niveauprotection TEXT,
   occurrence TEXT, 
   description TEXT, 
-  idouvrageprotection_s TEXT(50),
-  idouvrageprotection_l TEXT(50),
-  idouvrageprotection_p TEXT(50),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_s(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_l(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_p(idrefexterne),
   CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -3775,16 +3776,16 @@ CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s (
   niveaualea TEXT(2) NOT NULL,
   typesuralea TEXT(2) NOT NULL,
   description TEXT, 
-  idouvrageprotection_s TEXT(50),
-  idouvrageprotection_l TEXT(50),
-  idouvrageprotection_p TEXT(50),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_s(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_l(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_p(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_s(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_l(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_p(idrefexterne),
   CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -3797,54 +3798,54 @@ INSERT INTO gpkg_geometry_columns VALUES
  ;
 ```
 
-## Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+## Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
 
 
 ``` SQL
 /* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
-  roleProtection BOOLEAN,
+  typeouvrageprotecteur TEXT(2), 
+  roleprotection BOOLEAN,
   geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Linestring */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_l ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
-  roleProtection BOOLEAN,
+  typeouvrageprotecteur TEXT(2), 
+  roleprotection BOOLEAN,
   geom MULTILINESTRING NOT NULL,
- CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+ CONSTRAINT fk_ouvrageprotecteur_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Point */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_p ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
   roleprotection BOOLEAN,
   geom MULTIPOINT NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','features','typeppr_codegaspar_ouvrageprotection_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','features','typeppr_codegaspar_ouvrageprotection_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','features','typeppr_codegaspar_ouvrageprotection_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','features','typeppr_codegaspar_ouvrageprotecteur_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','features','typeppr_codegaspar_ouvrageprotecteur_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','features','typeppr_codegaspar_ouvrageprotecteur_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,/*srs_id*/2154)
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','MULTILINESTRING',/*srs_id*/2154,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','MULTIPOINT',/*srs_id*/2154,0,0)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','geom','MULTIPOLYGON',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','geom','MULTILINESTRING',/*srs_id*/2154,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','geom','MULTIPOINT',/*srs_id*/2154,0,0)
  ;
 ```
 
@@ -4299,21 +4300,21 @@ INSERT INTO gpkg_contents VALUES
 ```
 
 
-## Création de la table d'énumération `typeouvrageprotection`
+## Création de la table d'énumération `typeouvrageprotecteur`
 
 La définition de la table en SQL est la suivante :
 
 ``` SQL
-CREATE TABLE typeouvrageprotection (
+CREATE TABLE typeouvrageprotecteur (
   code TEXT(3) NOT NULL PRIMARY KEY,
   libelle TEXT(100) NOT NULL
 );
-INSERT INTO typeouvrageprotection VALUES 
+INSERT INTO typeouvrageprotecteur VALUES 
   ('1','Ouvrage ou installation pouvant influencer les inondations'), 
   ('11','Ouvrage de protection contre les inondations'),
   ('111','Ouvrage appartenant à un systeme d'endiguement'), 
   ('112','Amenagement hydraulique'), 
-  ('113','Autre ouvrage de protection contre les inondations'), 
+  ('119','Autre ouvrage de protection contre les inondations'), 
   ('12','Ouvrage ou installation influencant les ecoulements sans fonction de protection'), 
   ('2','Ouvrage ou installation pouvant influencer les mouvements de terrain'), 
   ('3','Ouvrage ou installation pouvant influencer les chutes de blocs'), 
@@ -4322,7 +4323,7 @@ INSERT INTO typeouvrageprotection VALUES
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
-  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+  ('typeouvrageprotecteur','attributes','typeouvrageprotecteur','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 ```
 

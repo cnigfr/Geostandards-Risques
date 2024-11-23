@@ -296,14 +296,14 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   niveauprotection TEXT,
   occurrence TEXT, 
   description TEXT, 
-  idouvrageprotection_s TEXT(50),
-  idouvrageprotection_l TEXT(50),
-  idouvrageprotection_p TEXT(50),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_s(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_l(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_p(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idrefexterne),
   CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -328,16 +328,16 @@ CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s (
   niveaualea TEXT(2) NOT NULL,
   typesuralea TEXT(2) NOT NULL,
   description TEXT, 
-  idouvrageprotection_s TEXT(50),
-  idouvrageprotection_l TEXT(50),
-  idouvrageprotection_p TEXT(50),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_s(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_l(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_p(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idrefexterne),
   CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -351,55 +351,58 @@ INSERT INTO gpkg_geometry_columns VALUES
 
 
 /**
- * Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+ * Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
  */
 
 
 
 /* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
   roleProtection BOOLEAN,
+  occurrence TEXT,
   geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Linestring */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_l ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
   roleProtection BOOLEAN,
+  occurrence TEXT,
   geom MULTILINESTRING NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Point */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_p ( 
   idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
   roleprotection BOOLEAN,
+  occurrence TEXT,
   geom MULTIPOINT NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','features','typeppr_codegaspar_ouvrageprotection_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','features','typeppr_codegaspar_ouvrageprotection_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','features','typeppr_codegaspar_ouvrageprotection_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','features','typeppr_codegaspar_ouvrageprotecteur_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','features','typeppr_codegaspar_ouvrageprotecteur_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','features','typeppr_codegaspar_ouvrageprotecteur_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,$SRS_ID)
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',$SRS_ID,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','MULTILINESTRING',$SRS_ID,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','MULTIPOINT',$SRS_ID,0,0)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','geom','MULTIPOLYGON',$SRS_ID,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','geom','MULTILINESTRING',$SRS_ID,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','geom','MULTIPOINT',$SRS_ID,0,0)
  ;
 
 
@@ -873,20 +876,20 @@ INSERT INTO gpkg_contents VALUES
 
 
 /**
- * Création de la table d'enumeration `typeouvrageprotection`
+ * Création de la table d'enumeration `typeouvrageprotecteur`
  */
 
 
-CREATE TABLE typeouvrageprotection (
+CREATE TABLE typeouvrageprotecteur (
   code TEXT(3) NOT NULL PRIMARY KEY,
   libelle TEXT(100) NOT NULL
 );
-INSERT INTO typeouvrageprotection VALUES 
+INSERT INTO typeouvrageprotecteur VALUES 
   ('1','Ouvrage ou installation pouvant influencer les inondations'), 
   ('11','Ouvrage de protection contre les inondations'),
   ('111','Ouvrage appartenant à un systeme d''endiguement'), 
   ('112','Amenagement hydraulique'), 
-  ('113','Autre ouvrage de protection contre les inondations'), 
+  ('119','Autre ouvrage de protection contre les inondations'), 
   ('12','Ouvrage ou installation influencant les ecoulements sans fonction de protection'), 
   ('2','Ouvrage ou installation pouvant influencer les mouvements de terrain'), 
   ('3','Ouvrage ou installation pouvant influencer les chutes de blocs'), 
@@ -895,7 +898,7 @@ INSERT INTO typeouvrageprotection VALUES
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
-  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+  ('typeouvrageprotecteur','attributes','typeouvrageprotecteur','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
 
