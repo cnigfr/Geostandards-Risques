@@ -67,9 +67,6 @@ INSERT INTO gpkg_contents VALUES
  * 
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
  */
- 
-
-
 CREATE TABLE typeppr_codegaspar_perimetre_s ( 
   idperimetre TEXT(15) NOT NULL PRIMARY KEY, 
   codeprocedure TEXT(18) NOT NULL, 
@@ -86,6 +83,30 @@ INSERT INTO gpkg_contents VALUES
 /* Ajout à la table gpkg_geometry_columns - exemple en EPSG:2154 */
 INSERT INTO gpkg_geometry_columns VALUES 
   ('typeppr_codegaspar_perimetre_s','geom','MULTIPOLYGON',2972,0,0)
+ ;
+
+
+/**
+ * 
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s`
+ */
+
+CREATE TABLE typeppr_codegaspar_perimetreetude_s ( 
+  idperimetre TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  etatprocedure TEXT(10) NOT NULL, 
+  dateetat DATE NOT NULL,
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_perimetreetude_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_perimetreetude_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES typeetatprocedure(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_perimetreetude_s','features','typeppr_codegaspar_perimetreetude_s','Table PerimetreEtude Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2972)
+ ;
+/* Ajout à la table gpkg_geometry_columns - exemple en EPSG:2154 */
+INSERT INTO gpkg_geometry_columns VALUES 
+  ('typeppr_codegaspar_perimetreetude_s','geom','MULTIPOLYGON',2972,0,0)
  ;
 
 /**
