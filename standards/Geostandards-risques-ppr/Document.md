@@ -369,7 +369,7 @@ Dans ce contexte, les entités [Procedure](https://github.com/cnigfr/Geostandard
 
 Une restriction sur l'énumération [TypeProcedure](#enumeration-typeprocedure) est précisée dans ce document pour n'intégrer que les valeurs relatives aux PPR.
 
-Ce document définit un nouveau type de périmètre : [PerimetreEtude](#classe-dobjets-perimetreetude) qui est une spécialisation de la classe Perimetre permettant de distinguer le périmètre d'étude du PPR et le périmètre prescrit.
+Ce document définit un nouveau type de périmètre : [PerimetreEtude](#classe-dobjets-perimetreetude) qui est une spécialisation de la classe [Perimetre](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) permettant de distinguer le périmètre d'étude du PPR et le périmètre prescrit.
 
 La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR pour la thématique Procédures et périmètres.
 
