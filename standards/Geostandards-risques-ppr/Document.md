@@ -699,6 +699,7 @@ Le tableau suivant liste les valeurs possibles et communes pour caractériser l'
 | 05 | Fort plus | PPRT |
 | 06 | Très fort ou Majeur | Tous PPRN et PPRT. Le terme "Majeur" peut-être utilisé pour les PPR Mouvement de terrain |
 | 07 | Très fort plus ou aggravé | PPRT (Très fort plus) ou PPR Inondation de cours d'eau torrentiel (Très fort Aggravé)|
+| 99 | Autre | Tous PPRN, à appliquer exceptionnellement pour des types de niveaux d'aléas spécifiques : zone inondable historique ou zone d'aggravation potentielle de glissement de terrain. |  
 
 
 #### Enumeration *TypeSurAlea*
@@ -1085,7 +1086,6 @@ Le tableau suivant présente les couleurs, en code RVB (Rouge Vert Bleu), à app
 
 Ces couleurs sont à appliquer à une trame hachurée transparente et un contour de même couleur.
 
-
 | Niveau d'aléa | PPRN | PPRT ([ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide))| 
 |-|-|-|
 | Faible | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png) | R143 V188 B143 ![StyleAleaFaiblePPR](./ressources/couleur-alea-pprntm-01-faible.png)  |
@@ -1096,6 +1096,7 @@ Ces couleurs sont à appliquer à une trame hachurée transparente et un contour
 | Très fort ou Majeur| R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | R233 V150 B122 ![StyleAleaTresFortPPRNT](./ressources/couleur-alea-pprnt-06-tf.png) | 
 | Très fort plus ou aggravé |  R240 V128 B128 ![StyleAleaTresFortPlusPPRN](./ressources/couleur-alea-pprt-07-tfplus.png)  | R240 V128 B128 ![StyleAleaTresFortPlusPPRT](./ressources/couleur-alea-pprt-07-tfplus.png) | 
 
+Dans le cadre des PPRN, étant donné le caractère exceptionnel et particulier des zones d'aléas à niveau d'aléa "Autre", la représentation de ces dernières est laissée à la discrétion du producteur.
 
 ### Représentation de la zone d'aléa exceptionnel avalanche
 
@@ -1853,6 +1854,7 @@ Elle a la structure et le contenu suivants :
 | 05 | Fort plus |
 | 06 | Très fort ou Majeur |
 | 07 | Très fort plus ou aggravé |
+| 99 | Autre |
 
 
 ##### Table d'énumération `typesuralea`
