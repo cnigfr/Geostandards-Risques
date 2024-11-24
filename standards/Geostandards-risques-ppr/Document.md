@@ -2001,7 +2001,8 @@ Elle a la structure et le contenu suivants :
 | 070400 | Campings et hôtellerie de plein air |
 | 070500 | Infrastructures de transport |
 | 070600 | Réseaux et équipements sensibles |
-| 080000 | Enjeux patrimoniaux, culturels et environnementaux | 
+| 080000 | Enjeux patrimoniaux, culturels et environnementaux |
+| 999999 | Autre enjeu : nature à préciser  
 
 
 ##### Table d'énumération `typeenjeupprt`
@@ -2051,6 +2052,7 @@ Elle a la structure et le contenu suivants :
 | 050600 | Château d’eau, réservoir |
 | 060000 | Projets de développement de la commune |
 | 070000 | Enjeux environnementaux et patrimoniaux |
+| 999999 | Autre enjeu : nature à préciser |
 
 
 ##### Table d'énumération `typeenjeucovadis`
@@ -3225,6 +3227,12 @@ La colonne "Code" propose une implémentation numérique sur 6 chiffres de cette
 | 070600 | /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
 | 080000 | /patrimoineEnvironement | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes.|
 
+### Autre enjeu
+
+| Code | Chemin | Libellé | Libellé Parent | Définition | 
+|-|-|-|-|-|
+| 999999 | /autre | Autre | - | Autre enjeu non catégorisé |
+
 
 ## NomenclatureEnjeuPPRT
 
@@ -3282,10 +3290,16 @@ La colonne "Code" propose une implémentation numérique sur 6 chiffres de cette
 
 ### Éléments connexes disponibles
 
-| Code | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
-|-|-|-|-|-|
-| 060000 | /projetCollectivite | Projets de développement de la commune | - | Éléments connexes disponibles | |
-| 070000 | /patrimoineEnvironement | Enjeux environnementaux et patrimoniaux | - | Éléments connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | |
+| Code | Chemin | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
+|-|-|-|-|-|-|
+| 060000 | /projetCollectivite | Projets de développement de la commune | - |Éléments connexes disponibles - Projets de développement de la commune | - |
+| 070000 | /patrimoineEnvironement | Enjeux environnementaux et patrimoniaux | - | Éléments connexes disponibles - zones de réglementation particulières pouvant affecter les éléments d'occupation du sol. Par exemple : Zone de Protection Particulière en Architecture Urbanisme et Patrimoine (ZPPAUP) ou Plan de Sauvegarde et de Mise en Valeur (PSMV) | - |
+
+### Autre enjeu
+
+| Code | Chemin | Libellé | Libellé Parent | Définition | Exemple de vulnérabilité associée |
+|-|-|-|-|-|-|
+| 999999 | /autre | Autre | - | Autre enjeu non catégorisé | - |
 
 
 

@@ -1007,7 +1007,8 @@ INSERT INTO typeenjeupprn VALUES
   ('070400','Campings et hôtellerie de plein air'),
   ('070500','Infrastructures de transport'),
   ('070600','Réseaux et équipements sensibles'),
-  ('080000','Enjeux patrimoniaux, culturels et environnementaux') 
+  ('080000','Enjeux patrimoniaux, culturels et environnementaux'),
+  ('999999','Autre') 
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -1061,7 +1062,8 @@ INSERT INTO typeenjeupprt VALUES
   ('050500','Point de captage d’eau'),
   ('050600','Château d''eau, réservoir'),
   ('060000','Projets de développement de la commune'),
-  ('070000','Enjeux environnementaux et patrimoniaux')
+  ('070000','Enjeux environnementaux et patrimoniaux'),
+  ('999999','Autre')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
