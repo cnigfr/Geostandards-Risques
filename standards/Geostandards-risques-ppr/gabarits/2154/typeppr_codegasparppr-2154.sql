@@ -168,7 +168,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s (
   occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaecheance100ans_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
@@ -193,7 +193,7 @@ CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s (
   occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaexceptionnel_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
@@ -204,6 +204,48 @@ INSERT INTO gpkg_contents VALUES
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','POLYGON',2154,0,0)
+ ;
+
+/**
+ *
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s`
+ */
+CREATE TABLE typeppr_codegaspar_zonealeanaturelsynthese_s ( 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence INTEGER, 
+  description TEXT, 
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeanaturelsynthese_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeanaturelsynthese_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeanaturelsynthese_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeanaturelsynthese_s','features','typeppr_codegaspar_zonealeanaturelsynthese_s','Table Zone Alea Naturel Synthese Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeanaturelsynthese_s','geom','POLYGON',2154,0,0)
+ ;
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel`
+  */
+CREATE TABLE typeppr_codegaspar_zonemultialeanaturel (
+  typealea TEXT(3) NOT NULL,
+  idzonealea TEXT(15) NOT NULL, 
+  niveaualea TEXT(2),
+  occurrence INTEGER, 
+  CONSTRAINT fk_zonemultialeanaturel_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonemultialeanaturel_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeanaturelsynthese_s(idzonealea),
+  CONSTRAINT fk_zonemultialeanaturel_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zonemultialeanaturel','attributes','typeppr_codegaspar_zonemultialeanaturel','Table des aléas naturels multiples',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
 
@@ -220,7 +262,7 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnorapide_codealea_s (
   description TEXT, 
   intensite TEXT(2),
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnorapide_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
@@ -250,7 +292,7 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnolent_codealea_s (
   description TEXT, 
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnolent_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnolent_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
@@ -278,7 +320,7 @@ CREATE TABLE typeppr_codegaspar_zonealeatechnoprojection_214_s (
   description TEXT, 
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
@@ -292,6 +334,56 @@ INSERT INTO gpkg_contents VALUES
 INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonealeatechnoprojection_214_s','geom','POLYGON',2154,0,0)
  ;
+
+/**
+ *
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s`
+ */
+CREATE TABLE typeppr_codegaspar_zonealeatechnosynthese_s ( 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  intensite TEXT(2),
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeatechnosynthese_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnosynthese_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnosynthese_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnosynthese_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnosynthese_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnosynthese_s','features','typeppr_codegaspar_zonealeatechnosynthese_s','Table Zone Alea Technologique Synthese Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2154)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnosynthese_s','geom','POLYGON',2154,0,0)
+ ;
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno`
+  */
+CREATE TABLE typeppr_codegaspar_zonemultialeatechno (
+  typealea TEXT(3) NOT NULL,
+  idzonealea TEXT(15) NOT NULL, 
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  intensite TEXT(2),
+  CONSTRAINT fk_zonemultialeatechno_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonemultialeatechno_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeatechnosynthese_s(idzonealea),
+  CONSTRAINT fk_zonemultialeatechno_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonemultialeatechno_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonemultialeatechno_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zonemultialeatechno','attributes','typeppr_codegaspar_zonemultialeatechno','Table des aléas technologiques multiples',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
 
 
 
@@ -792,7 +884,8 @@ INSERT INTO typealea VALUES
   ('321','Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface'),
   ('322','Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols'),
   ('33','Risque minier ; Emissions en surface de gaz de mine'),
-  ('34','Risque minier ; Echauffement des terrains de dépôts')
+  ('34','Risque minier ; Echauffement des terrains de dépôts'),
+  ('999','Risques multiples')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 

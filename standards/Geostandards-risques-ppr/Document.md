@@ -1568,7 +1568,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel` permet de précise
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa. |
-| **`idzonealea_s`** | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) auquel se rattache le type d'alea. |
+| **`idzonealea`** | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) auquel se rattache le type d'alea. |
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | INTEGER |  Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. |
 
@@ -1642,7 +1642,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno` permet de préciser
 | Nom colonne | Type GPKG | Valeurs | Définition |
 |-|-|-|-|
 | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa. |
-| **`idzonealea_s`** | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) auquel se rattache le type d'alea. |
+| **`idzonealea`** | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) auquel se rattache le type d'alea. |
 | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
 | `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
@@ -2855,26 +2855,27 @@ La classe ZoneAleaReference est implémentée par la table [\[TypePPR\]\_\[CodeG
 |-|-|-|-|
 |`idZoneAlea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea))|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
 |`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_STD|
 |`occurrence`| 30 |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`description`|Inondation - Par submersion marine|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 
-**Cas particulier des PPR multirisques**
+**Cas particulier des PPR naturels multirisques**
 
 Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eux un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]. 
 
-Le nouveau standard ne reprend pas ce mécanisme de zones multirisques : toutes les zones d'aléas qui y sont décrites sont mono risques. La transcription des zones d'aléa multirisques dans le nouveau standard nécessitera donc de créer une zone d'aléa par risque avec la géométrie de la zone multirisques et les propriétés des objets de la table MULTIALEA selon les règles de passage suivantes :
+Le nouveau standard reprend aussi ce mécanisme de zones multirisques en proposant des tables permettant de représenter une synthèse des zones d'aléas : 
+* [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) et 
+* [[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel](#table-typeppr_codegasparcomplet_zonemultialeanaturel)
 
+La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table multialeanaturel est à remplir selon les règles de passage suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
-|`idzonealea`|"20120001R000003"| N.A. | N.A. |
-|`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRN\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"127" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|CODERISQUE|
-|`niveaualea`|"01" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NIVALEA\_STD|
+|`idZoneAlea`|"20120001R000003"|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|ID\_ZONE|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea))|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|CODERISQUE|
+|`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NIVALEA\_STD|
 |`occurrence`| 30 |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
-|`description`|"Mouvement de terrain - Tassements différentiels"|N\_MULTIALEA\_PPRN\_[AAAANNNN]\_[DDD]|NOMRISQUE|
 
 
 ### Remplissage des objets de la classe ZoneAleaEcheance100ans
@@ -2901,7 +2902,7 @@ La classe ZoneAleaTechnoRapide est implémentée par la table [\[TypePPR\]\_\[Co
 |-|-|-|-|
 |`idzonealea`|"20120001R000003"|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|76DDTM20120001|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"211" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`typealea`|"211" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea))|N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
 |`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_STD|
 |`occurrence`| - |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
 |`intensite`| - |N.A.|N.A. (Pas de correspondance pour l'intensité)|
@@ -2925,6 +2926,25 @@ La classe ZoneAleaTechnoProjection est implémentée par la table [\[TypePPR\]\_
 
 A noter que certains attributs obligatoires dans le nouveau standard tel que "intensite" ne pourront être renseignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes aux exigences du nouveau standard.
 
+**Cas particulier des PPR technologiques multiples**
+
+Le standard COVADIS permet de décrire des zones d'aléas "multirisques", c'est à dire des zones sur lesquelles plusieurs types d'aléas s'appliquent avec pour chacun d'eux un niveau d'aléa particulier. Ces zones d'aléas sont identifiées dans la table N\_ZONE\_ALEA\_PPRT\_[AAAANNNN]\_S\_[DDD] par un CODERISQUE égal à 999999, la description des risques particuliers associés à ces zones étant gérées dans une table N\_MULTIALEA\_PPRX\_[AAAANNNN]\_[DDD]. 
+
+Le nouveau standard reprend aussi ce mécanisme de zones multirisques en proposant des tables permettant de représenter une synthèse des zones d'aléas : 
+* [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) et 
+* [[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno](#table-typeppr_codegasparcomplet_zonemultialeatechno) pour les risques technologiques multiples ;
+
+La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table multialeatechno est à remplir selon les règles de passage suivantes :
+
+|Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
+|-|-|-|-|
+|`idzonealea`|"20120001R000003"|N\_MULTIALEA\_PPRX\_[AAAANNNN]\_[DDD]|CODERISQUE|ID\_ZONE|
+|`typealea`|"112" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea))|N\_MULTIALEA\_PPRX\_[AAAANNNN]\_[DDD]|CODERISQUE|
+|`niveaualea`|"04" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_MULTIALEA\_PPRX\_[AAAANNNN]\_[DDD]|NIVALEA\_STD|
+|`occurrence`| A |N.A.|N.A. (Pas de correspondance pour l'occurrence)|
+|`intensite`| Z2 |N.A.|N.A. (Pas de correspondance pour l'intensité)|
+
+
 
 
 ## Remplissage des objets de la classe ZoneProtegee
@@ -2943,7 +2963,7 @@ Cette classe est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\
 |-|-|-|-|
 |`idzonedanger`|"20120001R000002"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_ZONE|
 |`codeprocedure`|"76DDTM20120001"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|ID\_GASPAR|
-|`typealea`|"117" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea)|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
+|`typealea`|"117" (valeur à prendre parmi les codes de l'énumération [typealea](#table-dénumération-typealea))|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|CODERISQUE|
 |`niveaualea`|"06" (valeur à prendre parmi les codes de l'énumération [typeniveaualea](#table-dénumération-typeniveaualea)) |N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|NIVALEA\_STD|
 |`description`|"Secteur soumis aux chocs de vagues et de projection"|N\_ZONE\_ALEA\_PPR[NT]\_[AAAANNNN]\_S\_[DDD]|DESCRIPT|
 |`typeSuralea`| "02" (Bande particulière) |N.A.|N.A.|
@@ -3209,10 +3229,11 @@ Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `t
 
 ## Identification des zones d'aléas multirisques
 
-A la différence du standard COVADIS PPR, cette nouvelle version du standard n'identifie pas de zones multi aléas en tant que telles : les tables de zones d'aléas sont par définition mono-aléas et portent chacune dans leur nom le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type.
+Cette nouvelle version du standard propose une implémentation des tables de zones d'aléas mono-aléas (une table par type d'aléa) portant chacune dans leur nom, le code de l'aléa qu'elles implémentent. De ce fait, un PPRN Multirisques comportera plusieurs tables d'aléas dédiées chacune à un alea d'un même type.
 
-Cette implémentation permet d'obtenir aisément les délimitations des zones spécifiques à chacun des aléas en calculant l'enveloppe de chaque table.
+Cependant, ce standard permet aussi de réunir l'ensemble des zones d'aléas du PPR dans une table de synthèse [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) avec la possibilité d'attribuer un type d'aléa "multirisques" (code : `999`) aux zones exposées à plusieurs types d'aléas et d'en détailler les types à l'aide de la table [[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel](#table-typeppr_codegasparcomplet_zonemultialeanaturel).
 
+Ce mécanisme est aussi accessible pour les PPR Technologiques faisant l'objet de différents types d'aléas technologiques avec les tables [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) pour la synthèse des zones d'aléas et [[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno](#table-typeppr_codegasparcomplet_zonemultialeatechno) pour le détail des aléas sur les zones d'aléas multiples.
 
 ## Périmètre(s) des PPRN Multirisques
 
