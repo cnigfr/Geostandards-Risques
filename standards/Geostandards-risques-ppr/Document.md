@@ -399,7 +399,11 @@ Dans le cadre de l'élaboration des **plans de prévention des risques naturels*
 
 Dans le cas particulier de l'aléa **inondation par submersion marine**, des zones d'**aléas à échéance 100 ans** doivent aussi être déterminées et qualifiées selon des modalités précisées par l'arrêté du ministre chargé de la prévention des risques majeurs ([Art. R562-11-5 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006177007/#LEGISCTA000006177007)). A ce titre, la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) est spécialisée par la classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) permettant de représenter les zones d'aléas correspondant à l'aléa à échéance 100 ans. L'implémentation de cette classe n'est obligatoire que dans le cadre de l'aléa submersion marine.
 
-Dans le cas particulier des **PPR Avalanches**, des zones d'aléa correspondant à un **aléa de référence exceptionnel** peuvent être définies selon les modalités précisées dans [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf) caractérisés par une période de retour exceptionnellement grande, voire inconnue. La classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) spécialise la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) pour mettre en œuvre ces zones d'aléa exceptionnels.
+Dans le cas particulier des **PPR Avalanches** : 
+
+* des zones d'aléa correspondant à un **aléa de référence exceptionnel** peuvent être définies selon les modalités précisées dans [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf) caractérisés par une période de retour exceptionnellement grande, voire inconnue. La classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) spécialise la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) pour mettre en œuvre ces zones d'aléa exceptionnels.
+
+* Une énumération [TypeAleaAvalanche](#enumeration-typealeaavalanche) permettant de décrire les avalanches selon le type d'écoulement est proposée. Elle permet d'ajouter une information supplémentaire sur les zones d'aléas relatives aux PPR avalanches à l'aide du champ description. Cette énumération est proposée seulement à un niveu informatif.
 
 
 ##### Définition des zones de danger spécifiques pour l'aléa inondation
@@ -713,6 +717,18 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les z
 | Bande particulière chocs de vagues | Il s'agit de zones soumises aux chocs mécaniques des vagues (uniquement) telles que définies dans le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) |
 | Bande particulière projection de matériaux | Il s'agit de zones soumises à des projections de matériaux (uniquement) telles que définies dans le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) |
 | Autre | Si le type de zone de danger spécifique ne fait pas partie des valeurs précédentes. |
+
+#### Enumeration *TypeAleaAvalanche*
+
+Le tableau suivant liste les valeurs possibles et communes pour décrire les avalanches selon leur type d'écoulement. Elle permet d'ajouter une information supplémentaire sur les zones d'aléas relatives aux PPR avalanches à l'aide du champ description de la classe. Cette énumération, issue des définitions de [Guide PPRNAv:2015](https://www.ecologie.gouv.fr/sites/default/files/guide%20PPR%20avalanches-correctif%20f%C3%A9vrier%202022%281%29.pdf), est proposée seulement à un niveu informatif : il n'y a pas d'obligation d'utiliser ces valeurs pour le champs description.
+
+
+| Libellé | Description |
+|-|-|
+| Coulante | Type d'avalanche qui a tendance à s’écouler selon une trajectoire très dépendante du relief local, avec de possibles changements brutaux de direction (ex. : le long d’une route). Elle peut aussi s’étaler largement dans les secteurs à faible pente. |
+| Aérosol | Nuage turbulent de particules de neige en suspension dans l’air qui tend à aller, selon la ligne générale de la plus grande pente, en s’affranchissant souvent des variations topographiques locales. |
+| Mixte | Type d'avalanche combinant les deux types précédent. |
+
 
 
 #### Enumeration *TypeIntensiteTechno*
@@ -2914,7 +2930,7 @@ La classe ZoneAleaTechnoRapide est implémentée par la table [\[TypePPR\]\_\[Co
 
 L'ancien standard ne définissait qu'une classe pour les zones d'aléas, que le PPR soit Naturel ou technologique. Dans le cas où la zone d'aléa décrit un risque technologique industriel (coderisque de type "21xxxx") les objets de la table ZONE\_ALEA\_PPRT correspondants peuvent être convertis en objets de la table ZoneAleaTechnoLent si des éléments permettent de les identifier comme des zones d'aléa à cinétique lente.
 
-La classe ZoneAleaTechnoLent est implémentée par la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonealeatechnolent\_\[CodeAlea\]\_s](#table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
+La classe ZoneAleaTechnoLent est implémentée par la table [[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s](#table-typeppr_codegasparcomplet_zonealeatechnolent_codealea_s). Ses attributs sont les mêmes que ceux de la table ZoneAleaTechnoRapide et les règles de passage identiques s'appliquent.
 
 A noter que certains attributs obligatoires dans le nouveau standard tel que "intensite" ne pourront être renseignés automatiquement à partir de champs de l'ancien standard. Une reprise manuelle de cette table devra être réalisée afin de compléter ces éléments et rendre les informations de la table conformes aux exigences du nouveau standard.
 
