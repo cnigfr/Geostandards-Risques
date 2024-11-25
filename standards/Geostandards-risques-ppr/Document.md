@@ -3224,7 +3224,7 @@ Par exemple :
 - un PPR établi relativement à des aléas "Risque naturel inondation" (code risque GASPAR : 11x) et "Risque naturel avalanche" (code risque GASPAR : 14) EST considéré comme multirisques ;
 - un PPR établi relativement uniquement à des aléas "Risque naturel inondation par submersion marine" (code risque GASPAR : 117) et "Risque naturel inondation par une crue à débordement lent de cours d'eau" (code risque GASPAR : 112) N'est PAS considéré comme multirisques.
 
-Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `typeppr_codegaspar_procedure` à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques".
+Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `typeppr_codegaspar_procedure` à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques". Cependant, les considérations de cette partie sont aussi applicables aux PPR Litoraux (`PPR-L`) qui peuvent couvrir plusieurs risques naturels qui diffèrent au niveau 2 de la nomenclature GASPAR. Par exemple : Risque naturel inondation par submersion marine (code risque GASPAR : 112) et Risque naturel mouvement de terrain : avancée dunaire (code risque GASPAR : 125).
 
 
 ## Identification des zones d'aléas multirisques
@@ -3234,6 +3234,12 @@ Cette nouvelle version du standard propose une implémentation des tables de zon
 Cependant, ce standard permet aussi de réunir l'ensemble des zones d'aléas du PPR dans une table de synthèse [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) avec la possibilité d'attribuer un type d'aléa "multirisques" (code : `999`) aux zones exposées à plusieurs types d'aléas et d'en détailler les types à l'aide de la table [[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel](#table-typeppr_codegasparcomplet_zonemultialeanaturel).
 
 Ce mécanisme est aussi accessible pour les PPR Technologiques faisant l'objet de différents types d'aléas technologiques avec les tables [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) pour la synthèse des zones d'aléas et [[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno](#table-typeppr_codegasparcomplet_zonemultialeatechno) pour le détail des aléas sur les zones d'aléas multiples.
+
+
+**Fig. *xx* Implémentation des tables de synthèse des zones d'aléas multirisques**
+
+![GeoPackage ZonesAlea Syntheses](./ressources/GeoPackage-PPR-Multialeas-View.png)
+
 
 ## Périmètre(s) des PPRN Multirisques
 
