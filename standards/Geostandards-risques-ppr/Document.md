@@ -2266,23 +2266,23 @@ Il est possible de rajouter d'autres ensembles d'éléments de métadonnées rel
 
 Une livraison au format Shapefile est possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage. 
 
-### Nom des fichiers shapefile
+### Nom des fichiers Shapefile
 
-Les noms des fichiers shapefile associés à chaque table de la livraison suivent la même nomenclature que les noms des tables décrits dans la partie [Nomenclature des tables](#nomenclature-des-tables) de la livraison en GeoPackage.
+Les noms des fichiers Shapefile associés à chaque table de la livraison suivent la même nomenclature que les noms des tables décrits dans la partie [Nomenclature des tables](#nomenclature-des-tables) de la livraison en GeoPackage.
 
 À titre d'exemples :
 
-* les fichiers shapefile décrivant le périmetre du PPRN du Bassin versant de la Scie (code gaspar : `76ddtm20120001` ) auront pour nom : 
-  - pprn_76ddtm20120001_perimetre_s.shp ;
-  - pprn_76ddtm20120001_perimetre_s.dbf ;
-  - pprn_76ddtm20120001_perimetre_s.prj ;
-  - (et autres fichiers additionnels éventuels .shx, .cpg, ...)
+* les fichiers Shapefile décrivant le périmetre du PPRN du Bassin versant de la Scie (code gaspar : `76ddtm20120001` ) auront pour nom : 
+  - `pprn_76ddtm20120001_perimetre_s.shp` ;
+  - `pprn_76ddtm20120001_perimetre_s.dbf` ;
+  - `pprn_76ddtm20120001_perimetre_s.prj` ;
+  - (et autres fichiers additionnels éventuels `.shx`, `.cpg`, ...)
 
 * les fichiers shapefile implémentant la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : 
-  - pprn_76ddtm20120001_zonealeareference_117_s.shp ;
-  - pprn_76ddtm20120001_zonealeareference_117_s.dbf ;
-  - pprn_76ddtm20120001_zonealeareference_117_s.prj ;
-  - (et autres fichiers additionnels éventuels .shx, .cpg, ...)
+  - `pprn_76ddtm20120001_zonealeareference_117_s.shp` ;
+  - `pprn_76ddtm20120001_zonealeareference_117_s.dbf` ;
+  - `pprn_76ddtm20120001_zonealeareference_117_s.prj` ;
+  - (et autres fichiers additionnels éventuels `.shx`, `.cpg`, ...)
 
 ### Structure des tables 
 
@@ -2291,9 +2291,9 @@ La strucuture des tables attributaires s'appuie sur la même structure de tables
 
 ### Métadonnées de la livraison Shapefile
 
-Les métadonnées accompagnant la livraison shapefile sont fournies dans des fichiers XML portant :
-- le nom du PPR pour les métadonnées du PPR  : [TypePPR]_[CodeGASPARComplet].xml
-- le nom de la table pour des métadonnées spécifiques associées à une table. Par exemple : pprn_76ddtm20120001_zonealeareference_117_s.xml
+Les métadonnées accompagnant la livraison Shapefile sont fournies dans des fichiers XML portant :
+- le nom du PPR pour les métadonnées du PPR  : `[TypePPR]_[CodeGASPARComplet].xml`
+- le nom de la table pour des éventuelles métadonnées spécifiques associées à une table. Par exemple : `pprn_76ddtm20120001_zonealeareference_117_s.xml` pour les métadonnées de la table `zonealeareference` du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine".
 
 
 #  Métadonnées
