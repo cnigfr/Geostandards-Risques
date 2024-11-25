@@ -3224,7 +3224,7 @@ Par exemple :
 - un PPR établi relativement à des aléas "Risque naturel inondation" (code risque GASPAR : 11x) et "Risque naturel avalanche" (code risque GASPAR : 14) EST considéré comme multirisques ;
 - un PPR établi relativement uniquement à des aléas "Risque naturel inondation par submersion marine" (code risque GASPAR : 117) et "Risque naturel inondation par une crue à débordement lent de cours d'eau" (code risque GASPAR : 112) N'est PAS considéré comme multirisques.
 
-Les PPRN multirisques sont identifiés en tant que tels au niveau de la table `typeppr_codegaspar_procedure` à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques". Cependant, les considérations de cette partie sont aussi applicables aux PPR Litoraux (`PPR-L`) qui peuvent couvrir plusieurs risques naturels qui diffèrent au niveau 2 de la nomenclature GASPAR. Par exemple : Risque naturel inondation par submersion marine (code risque GASPAR : 112) et Risque naturel mouvement de terrain : avancée dunaire (code risque GASPAR : 125).
+Les PPRN multirisques sont identifiés en tant que tels au niveau de la table [[TypePPR]_[CodeGASPARComplet]_procedure](#table-typeppr_codegasparcomplet_procedure) à l'aide de l'attribut `typeprocedure` qui doit prendre dans ce cas la valeur `PPRN-Multi` correspondant aux "Plans de Prévention des Risques Naturels Multirisques". Cependant, les considérations de cette partie sont aussi applicables aux PPR Litoraux (`PPR-L`) qui peuvent couvrir plusieurs risques naturels qui diffèrent au niveau 2 de la nomenclature GASPAR. Par exemple : Risque naturel inondation par submersion marine (code risque GASPAR : 112) et Risque naturel mouvement de terrain : avancée dunaire (code risque GASPAR : 125).
 
 
 ## Identification des zones d'aléas multirisques
@@ -3243,7 +3243,7 @@ Ce mécanisme est aussi accessible pour les PPR Technologiques faisant l'objet d
 
 ## Périmètre(s) des PPRN Multirisques
 
-La table `typeppr_codegaspar_perimetre_s` ne porte pas d'information sur le ou les aléas traités. Le ou les périmètres décrits par cette table concernent l'ensemble des aléas traités par le PPR s'il est multirisques. 
+La table [[TypePPR]_[CodeGASPARComplet]_perimetre_s](#table-typeppr_codegasparcomplet_perimetre_s) ne porte pas d'information sur le ou les aléas traités. Le ou les périmètres décrits par cette table concernent l'ensemble des aléas traités par le PPR s'il est multirisques. 
 
 
 ## Zonage réglementaire des PPRN Multirisques
@@ -3254,7 +3254,7 @@ Afin d'indiquer quels sont les aléas qui ont engendré quelles zones réglement
 
 ![Modele UML ZoneRegMulti PPR](./ressources/UML-ZoneReg-PPRNMultiRisques.png)
 
-Ce champ multiple est implémenté par une table `zoneregmultialea` qui fait l'association entre les tables de zonage règlementaire urbain et foncier et la table implémentant la nomenclature des risques de GASPAR `typealea`. Il est de ce fait possible de faire des sélections du zonage réglementaire en fonction du type d'aléa.
+Ce champ multiple est implémenté par une table [Table [TypePPR]_[CodeGASPARComplet]_zoneregmultialea](#table-typeppr_codegasparcomplet_zoneregmultialea) qui fait l'association entre les tables de zonage règlementaire urbain et foncier et la table implémentant la nomenclature des risques de GASPAR [typealea](#table-dénumération-typealea). Il est de ce fait possible de faire des sélections du zonage réglementaire en fonction du type d'aléa.
 
 **Fig. *xx* Implémentation des tables de zones réglementaires multirisques**
 
