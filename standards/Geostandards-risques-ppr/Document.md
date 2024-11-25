@@ -169,6 +169,8 @@ Le [décret n°2019-715 du 5 juillet 2019 relatif aux plans de prévention des r
 
 L'[article R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) précise la définition du niveau de protection d'une zone protégée par un système d'endiguement.
 
+L'[Instruction Instruction du Gouvernement du 28 septembre 2015 relative à la mise en oeuvre des plans de prévention des risques naturels (PPRN) Avalanches](https://www.legifrance.gouv.fr/download/pdf/circ?id=40103), précise les modalités de mise en oeuvre de l'aléa de référence exceptionnel avalanches.
+
 ####  Cadre réglementaire des Plans de Prévention des Risques Technologiques
 
 La mise en œuvre des Plans de prévention des risques technologiques est définie dans le code de l'environnement par :
@@ -1117,6 +1119,23 @@ Dans le cadre des PPRN, étant donné le caractère exceptionnel et particulier 
 ### Représentation de la zone d'aléa exceptionnel avalanche
 
 Dans le cadre de l'aléa avalanche, il est recommandé d'appliquer aux zones d'aléa exceptionnel un contour jaune (R255 V255 B000).  ![StyleAleaExceptionnelPPRN](./ressources/couleur-alea-pprn-08-ae.png) (Cf. [Note ARE DGPR:2022](https://www.georisques.gouv.fr/sites/default/files/2022-09/note_ARE_janvier_2022_version_finale.pdf))  
+
+
+### Représentation des zones de danger spécifique
+
+Les zones de danger spécifique caractérisées par les valeurs de l'énumération [TypeSurAlea](#enumeration-typesuralea) doivent être aussi représentées en fonction de la valeur de leur niveau d'aléa selon le tableau [ci-dessus](#représentations-des-niveaux-daléas). D'après le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) et le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf), les niveaux d'aléas suivants peuvent s'appliquer en fonction dy type de suraléa :
+
+| Type Suralea | Niveau d'aléa |
+|-|-|
+| Bande de précaution | Très fort |
+| Zones soumises à des chocs mécaniques de vagues |  Aléa fort à très fort |
+| Zones soumises à des projections | Aléa modéré à très fort |
+
+
+### Représentation des zones protégées
+
+Le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) indique que les zones protégées par un système d'endiguement doivent aussi être cartographiées à titre informatif. La représentation préconisée est de les représenter sous forme de hachures se superposant à la représentation des niveaux d'aléas précisées [ci-dessus](#représentations-des-niveaux-daléas).
+
 
 
 ### Représentation des zones d'aléas technologiques à cinetique lente ou à effet de projection
