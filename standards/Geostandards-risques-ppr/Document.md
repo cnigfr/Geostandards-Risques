@@ -1166,7 +1166,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie [Livraison en GeoPackage](#livraison_en_geopackage) en précise les modalités.
 
-Une [livraison au format Shapefile](#livraison_au_format_shapefile) est néanmoins possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage.
+Une [livraison au format Shapefile](#livraison-au-format-shapefile) est néanmoins possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage.
 
 ##  Livraison en GeoPackage
 
