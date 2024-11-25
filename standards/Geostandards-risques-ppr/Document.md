@@ -1383,9 +1383,13 @@ Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie 
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` (NB: [CodeAlea]==1xx) | `features` | `POLYGON` | Classe [ZoneAleaReference](#classe-dobjets-zonealeareference) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` (NB: [CodeAlea]==117) | `features` | `POLYGON` | Classe [ZoneAleaEcheance100ans](#classe-dobjets-zonealeaecheance100ans) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` (NB: [CodeAlea]==14) | `features` | `POLYGON` | Classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) |
+| F | `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` | `features` | `POLYGON` | Classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) pour les PPR multirisques naturels |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel` | `attributes` | N.A. | Description des différents types d'aléas pour les zones multirisques de la table [zonealeanaturelsynthese](#table-typeppr-codegasparcomplet-zonealeanaturelsynthese-s) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` (NB: [CodeAlea]==21x) | `features` | `POLYGON` | Classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` (NB: [CodeAlea]==21x) | `features` | `POLYGON` | Classe [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` (NB: [CodeAlea]==214) | `features` | `POLYGON` | Classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) |
+| F | `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` | `features` | `POLYGON` | Classe [ZoneAleaTechnologique](classe-dobjets-zonealeatechnologique) pour les PPR multirisques technologiques |
+| C | `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno` | `attributes` | N.A. | Description des différents types d'aléas pour les zones multirisques de la table [zonealeatechnosynthese](#table-typeppr-codegasparcomplet-zonealeatechnosynthese-s) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) |
 | F | `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` | `features` | `POLYGON` | Classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique) |
 | F | `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s` | `features` | `MULTIPOLYGON` | Classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) |
@@ -1542,6 +1546,33 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 | **`geom`** | POLYGON | Polygone de la zone |  |
 
 
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` implémente la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) définie dans ce profil applicatif et a pour but de représenter les zones d'aléas d'un PPR multirisques naturels. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonealea`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonealeasynthese. |
+| **`codeprocedure`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea naturel (`1xx`) ou multirisques (`999`) si la zone est concernée par plusieurs types d'aléas | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). Si la zone est concernées par plusieurs types d'aléas, le niveau d'aléa le plus important est à retenir | Caractérisation du niveau de l'aléa. |
+| `occurrence` | INTEGER |  Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. Si la zone est concernée par plusieurs aléas, la période de retour la plus courte est à privilégier. |
+| `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| **`geom`** | POLYGON | Polygone de la zone |  |
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel` permet de préciser les différents types d'aléas pour les zones multialéas des tables [zonealeanaturelsynthese](#table-typeppr-codegasparcomplet-zonealeanaturelsynthese-s) et [zonealeatechnosynthese](#table-typeppr-codegasparcomplet-zonealeatechnosynthese-s). Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa. |
+| `idzonealea_s` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` auquel se rattache le type d'alea. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | INTEGER |  Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. |
+
+
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) définie dans ce profil applicatif. Elle a la structure suivante :
@@ -1588,6 +1619,34 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` i
 | `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | POLYGON | Polygone de la zone |  |
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` implémente la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique) définie dans ce profil applicatif et a pour but de représenter les zones d'aléas d'un PPR couvrant plusieurs risques technologiques. Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`idzonealea`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonealeasynthese. |
+| **`codeprocedure`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la zone d'aléa. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea technologique (`2xx`) ou multirisques (`999`) si la zone est concernée par plusieurs types d'aléas | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). Si la zone est concernées par plusieurs types d'aléas, le niveau d'aléa le plus important est à retenir | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. Si la zone est concernée par plusieurs aléas, la probabilité la plus élevée est à privilégier. |
+| `description` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. Si la zone est concernée par plusieurs aléas, l'intensité la plus élevée est à privilégier. |
+| **`geom`** | POLYGON | Polygone de la zone |  |
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno` permet de préciser les différents types d'aléas pour les zones multialéas de la table [zonealeatechnosynthese](#table-typeppr-codegasparcomplet-zonealeatechnosynthese-s). Elle a la structure suivante :
+
+| Nom colonne | Type GPKG | Valeurs | Définition |
+|-|-|-|-|
+| **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa. |
+| `idzonealea_s` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonealea dans la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` auquel se rattache le type d'alea. |
+| `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
+| `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
+| `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
+
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
@@ -1836,6 +1895,7 @@ Elle a la structure et le contenu suivants :
 | 322	| Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols |
 | 33 | Risque minier ; Emissions en surface de gaz de mine |
 | 34 | Risque minier ; Echauffement des terrains de dépôts |
+| 999 | Risque multiple |
 
 
 ##### Table d'énumération `typeniveaualea`
