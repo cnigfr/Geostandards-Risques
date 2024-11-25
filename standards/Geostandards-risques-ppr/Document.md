@@ -805,7 +805,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Définition** : La classe ZoneReglementaireUrba définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière d'Urbanisme. Elle spécialise la classe ZoneReglementaire et précise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementUrba](#enumeration-typereglementurba). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives simples classiques : Polygone, Ligne, Point.
+**Modélisation géométrique** : Les zones réglementaires sont représentées par des Polygones simples. L'utilisation de primitives de type Ligne ou Point est possible uniquement pour des anciens PPR COVADIS utilisant ce type de primitives.
 
 **Propriétés** : La classe hérite des propriétés définies pour la classe [ZoneReglementaire](#classe-dobjets-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -825,7 +825,7 @@ Les entités définies dans le modèle commun s'appliquent pour PPR.
 
 **Définition** : La classe ZoneReglementaireFoncier définit les zones sur lesquelles s'applique un règlement particulier dans le cadre des Plans de Prévention des Risques en matière de mesures foncières. Elle spécialise la classe ZoneReglementaire et précise les valeurs possibles pour l'attribut typeReglement à l'aide de l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier). 
 
-**Modélisation géométrique** : Les zones réglementaires peuvent être représentées par toutes les primitives simples classiques : polygone, Ligne, Point.
+**Modélisation géométrique** : Les zones réglementaires sont représentées par des Polygones simples. L'utilisation de primitives de type Ligne ou Point est possible uniquement pour des anciens PPR COVADIS utilisant ce type de primitives.
 
 **Propriétés** : La classe hérite des propriétés définies pour la classe [ZoneReglementaire](#classe-dobjets-zonereglementaire). Les propriétés ci-dessous sont celles qui s'ajoutent ou sont modifiées.
 
@@ -1134,7 +1134,7 @@ Les zones de danger spécifique caractérisées par les valeurs de l'énumérati
 
 ### Représentation des zones protégées
 
-Le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) indique que les zones protégées par un système d'endiguement doivent aussi être cartographiées à titre informatif. La représentation préconisée est de les représenter sous forme de hachures se superposant à la représentation des niveaux d'aléas précisées [ci-dessus](#représentations-des-niveaux-daléas).
+Le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) indique que les zones protégées par un système d'endiguement doivent aussi être cartographiées à titre informatif. La représentation préconisée est de les représenter sous forme de hachures se superposant à la représentation des niveaux d'aléas précisée [ci-dessus](#représentations-des-niveaux-daléas).
 
 
 
