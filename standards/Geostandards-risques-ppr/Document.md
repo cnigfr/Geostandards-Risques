@@ -1166,7 +1166,7 @@ Ces couleurs sont à appliquer à une trame pleine transparente et un contour é
 
 Le format de livraison des données des plans de prévention des risques est le format GeoPackage. La partie [Livraison en GeoPackage](#livraison_en_geopackage) en précise les modalités.
 
-Une livraison au format Shapefile est néanmoins possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage. Elle s'appuie sur la même structure de tables que celle décrite dans la partie [dictionnaire des tables](#dictionnaire-des-tables) de la livraison en GeoPackage ; les spécificités liées au format Shapefile comme le nom court des champs sont indiquées dans une colonne spécifique pour chaque table.
+Une [livraison au format Shapefile](#livraison_au_format_shapefile) est néanmoins possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage.
 
 ##  Livraison en GeoPackage
 
@@ -2260,6 +2260,40 @@ Il est possible de rajouter d'autres ensembles d'éléments de métadonnées rel
 | `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
 |-|-|-|-|-|-|-|
 | `table` | `pprn_76ddtm20120001_zonealeareference_112_s` | NULL | NULL | *date des métadonnées* | `2` *(identifiant des métadonnées dans la table `gpkg_metadata`)* | `1` *(identifiant de la métadonnée du PPR)* |
+
+
+## Livraison au format Shapefile
+
+Une livraison au format Shapefile est possible pour des raisons de compatibilité avec le système Geo-IDE qui est encore utilisé pour le partage de données PPR et ne supporte pas actuellement l'import de données GeoPackage. 
+
+### Nom des fichiers shapefile
+
+Les noms des fichiers shapefile associés à chaque table de la livraison suivent la même nomenclature que les noms des tables décrits dans la partie [Nomenclature des tables](#nomenclature-des-tables) de la livraison en GeoPackage.
+
+À titre d'exemples :
+
+* les fichiers shapefile décrivant le périmetre du PPRN du Bassin versant de la Scie (code gaspar : `76ddtm20120001` ) auront pour nom : 
+  - pprn_76ddtm20120001_perimetre_s.shp ;
+  - pprn_76ddtm20120001_perimetre_s.dbf ;
+  - pprn_76ddtm20120001_perimetre_s.prj ;
+  - (et autres fichiers additionnels éventuels .shx, .cpg, ...)
+
+* les fichiers shapefile implémentant la table zonealeareference du PPRN du Bassin versant de la Scie pour l'aléa "Inondation par submersion marine" (code "117") aura pour nom : 
+  - pprn_76ddtm20120001_zonealeareference_117_s.shp ;
+  - pprn_76ddtm20120001_zonealeareference_117_s.dbf ;
+  - pprn_76ddtm20120001_zonealeareference_117_s.prj ;
+  - (et autres fichiers additionnels éventuels .shx, .cpg, ...)
+
+### Structure des tables 
+
+La strucuture des tables attributaires s'appuie sur la même structure de tables que celle décrite dans la partie [dictionnaire des tables](#dictionnaire-des-tables) de la livraison en GeoPackage ; les spécificités liées au format Shapefile comme le nom court des champs sont indiquées dans une colonne spécifique pour chaque table.
+
+
+### Métadonnées de la livraison Shapefile
+
+Les métadonnées accompagnant la livraison shapefile sont fournies dans des fichiers XML portant :
+- le nom du PPR pour les métadonnées du PPR  : [TypePPR]_[CodeGASPARComplet].xml
+- le nom de la table pour des métadonnées spécifiques associées à une table. Par exemple : pprn_76ddtm20120001_zonealeareference_117_s.xml
 
 
 #  Métadonnées
