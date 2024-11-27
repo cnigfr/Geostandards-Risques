@@ -738,6 +738,7 @@ INSERT INTO gpkg_geometry_columns VALUES
   * Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
   */
 CREATE TABLE typeppr_codegaspar_zoneregmultialea (
+  idzoneregmultialea INTEGER NOT NULL,
   typealea TEXT(3) NOT NULL,
   idzonereglementaire_u_s TEXT(15), 
   idzonereglementaire_u_l TEXT(15), 
