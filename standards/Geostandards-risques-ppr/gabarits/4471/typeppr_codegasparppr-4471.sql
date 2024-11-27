@@ -402,9 +402,9 @@ CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s (
   idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idouvrageprotecteur),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idouvrageprotecteur),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idouvrageprotecteur),
   CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -433,9 +433,9 @@ CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s (
   CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idouvrageprotecteur),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idouvrageprotecteur),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idouvrageprotecteur),
   CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -454,7 +454,8 @@ INSERT INTO gpkg_geometry_columns VALUES
 
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotecteur TEXT(2), 
@@ -466,7 +467,8 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s (
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_l ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotecteur TEXT(2), 
@@ -478,7 +480,8 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_l (
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_p ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotecteur TEXT(2), 
@@ -508,27 +511,30 @@ INSERT INTO gpkg_geometry_columns VALUES
 
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_originerisque_s ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_originerisque_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_originerisque_l ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_originerisque_p ( 
-  idrefexterne TEXT(50) NOT NULL PRIMARY KEY, 
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)

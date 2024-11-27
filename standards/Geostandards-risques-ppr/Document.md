@@ -1702,9 +1702,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | `niveauprotection` | `nivprotect` | TEXT | Domaine de valeurs en fonction du type zone. | Niveau de protection de la zone. Par exemple pour une zone protégée par un système d'endiguement, il s'agit de la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
 | `occurrence` | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
 | `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
-| `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
-| `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
-| `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
+| `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
+| `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
+| `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1720,9 +1720,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | **`typesuralea`** | **`typesurale`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-dénumération-typesuralea) | Type de de zone de danger spécifique. |
 | `description` | `description` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
-| `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
-| `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
-| `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idrefexterne` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
+| `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
+| `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
+| `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1732,7 +1732,8 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p` im
 
 | Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
 |-|-|-|-|-|
-| **`idrefexterne`** | **`idrefext`** | TEXT(50) | **Clef primaire** | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
+| **`idouvrageprotecteur`** | **`idouvprot`** | TEXT(15) | **Clef primaire** | Identifiant de l'ouvrage protecteur. |
+| `idrefexterne` | `idrefext` | TEXT(50) | Valeur de l'identifiant dans le référentiel externe. | Identifiant de l'ouvrage de protection dans le référentiel externe d'où il est extrait. |
 | **`refexterne`** | **`refexterne`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typerefexterneouvrage](#table-dénumération-typerefexterneouvrage) | Référentiel externe d'où est extrait l'objet. |
 | `refexterneautre` | `refextaut` | TEXT | Saisie libre. La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refexterne. | Nom du référentiel externe d'où est extrait l'ouvrage si la valeur autre (code '99') a été renseignée pour le champ `refexterne`. |
 | `typeouvrageprotecteur` | `typeouvpro` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeouvrageprotecteur](#table-dénumération-typeouvrageprotecteur) | Désignation du type d'ouvrage que représente cet objet. | 
@@ -1747,11 +1748,12 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la 
 
 | Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
 |-|-|-|-|-|
-| **`idrefexterne`** | **`idrefext`** | TEXT(50) | **Clef primaire** | Identifiant de l'objet origine du risque dans le référentiel externe d'où il est extrait. |
+| **`idoriginerisque`** | **`idorigrisq`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet origine du risque. |
 | **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à l'objet origine du risque. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`refexterne`** | **`refexterne`** | TEXT | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
+| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet origine du risque dans le référentiel externe d'où il est extrait. |
+| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
 | **`nom`** | **`nom`** | TEXT |  Saisie libre. | Nom de l'objet origine du risque. | 
-| **`geom`** | NA. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
+| **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
 
 ##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
 
@@ -1760,12 +1762,12 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 | Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
 |-|-|-|-|-|
 | **`idenjeu`** | **`idenjeu`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet enjeu. |
-| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe) | Identifiant de l'objet d'enjeu dans le référentiel externe d'où il est extrait. |
-| `refexterne` | `refexterne` | TEXT | Saisie libre. | Référentiel externe d'où est extrait l'objet. |
+| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet d'enjeu dans le référentiel externe d'où il est extrait. |
+| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
 | **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la collecte de cet objet enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | **`nomenjeu`** | **`nomenjeu`** | TEXT | Saisie libre. | Nom de l'objet d'enjeu. |
 | **`codeenjeu`** | **`codeenjeu`** | TEXT | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureenjeu`. |
-| **`nomenclatureenjeu`** | **`typesenjeu`** | TEXT | La référence à la nomenclature doit permettre d'identifier sans ambiguïté cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
+| **`nomenclatureenjeu`** | **`nomencjeu`** | TEXT | La référence à la nomenclature doit permettre d'identifier sans ambiguïté cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
 | **`dateenjeu`** | **`dateenjeu`** | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
 | **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
