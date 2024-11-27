@@ -16,7 +16,7 @@ Plans de prévention des risques (PPR)
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.3 - xx septembre 2024*
+*Version 0.3 - 27 novembre 2024*
 
 
 
@@ -27,14 +27,14 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Profil applicatif Plans de Prévention des Risques |
-| **Version du document** | *0.3 - xx septembre 2024 (date de publication)*  |
+| **Version du document** | *0.3 - 27 novembre 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux Plans de Prévention des Risques (PPR) Naturels et Technologiques. |
 | **Etendue d'application** | Territoire national français |
 | **Résolution spatiale** | Entre le 1:2000 et le 1:25000 |
 | **Statut du document** | ~~Projet~~ - ~~Appel à commentaires~~ - Proposé à la commission des Standards du CNIG - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| **Diffusion** | A venir : PDF sur internet (site du CNIG) |
-| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.2.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
+| **Diffusion** | [PDF sur internet](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.3.pdf) |
+| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.3.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-ppr/Document.md) |
 | **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
 | **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org |
@@ -53,7 +53,7 @@ Groupe de travail refonte des Géostandards Risques
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Retrait des PPR Miniers du périmètre d'application du document. Prise en compte de l'aléa exceptionnel avalanches. Ajout des spécificités des risques technologiques industriels. Simplification du système de catégorisation des enjeux. Prise en compte du multirisques au niveau du zonage réglementaire. Ajout d'une annexe clarifiant la gestion des PPRN multirisques. Modifications éditoriales pour apporter plus de clarté : ajouts d'un schéma d'ensemble et mise en valeur des spécificités avec le modèle commun, ajout d'un schéma des tables d'implémentation et mise en valeur du caractère obligatoire ou non des éléments. Mise en annexes du code SQL et des nomenclatures d’enjeux. |
-| 0.3 | xx/09/2024 | Version tenant compte des commentaires reçus, soumise au CNIG pour validation. |
+| 0.3 | 27/11/2024 | Version tenant compte des commentaires reçus lors de la consultation publique et soumise au CNIG pour validation. Principales modifications : Consignes pour livraison en Shapefile. Rajout de couches de synthèse multi aléas. Enrichissement du modèle pour les ouvrages protecteurs. Rajout du périmètre d’étude. Fusion des nomenclatures enjeux PPRL et PPRN. Retrait de l’annexe de code SQL. |
 
 ##  Participation à l'écriture
 
@@ -69,7 +69,6 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) et Alison Lenain (IGN) 
 | Boudesseul Nicolas | DREAL Pays de la Loire |
 | Chrétien Guillaume | DDTM de la Seine Maritime (76) |
 | Coignon Bastien | MTECT / DGPR / SRNH / SdCAP / BRIL |
-| Di Salvo Magali | DREAL Auvergne Rhone Alpes |
 | Evain Yohann | Cerema |
 
 
@@ -855,7 +854,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 | Prescriptions | Réglementation faisant prévaloir le principe d'autorisation assorti de l'obligation de respect de prescriptions. |
 | Interdiction | Réglementation faisant prévaloir le principe d'interdiction mais où certaines constructions peuvent être autorisées sous réserve du respect de prescriptions strictes ou relevant d'exceptions spécifiques. |
 | Interdiction stricte | Réglementation imposant une interdiction stricte. |
-| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'aménagement pour les projets futurs uniquement. |
+| Recommandations | Réglementation appliquant des recommandations (non obligatoires) en termes d'aménagement pour les projets futurs uniquement. |
 | Zones grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout bâtiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
 | Zones d'aléa exceptionnel (AE) | Zones couvertes par l'[aléa de référence exceptionnel](#classe-dobjets-zonealeaexceptionnel) pour les avalanches pour lesquelles des mesures de prescriptions urbanistiques spécifiques peuvent s'appliquer visant notamment les équipements nécessaires à l’organisation d’évacuation et plus généralement à la gestion des situations dangereuses. |
 
@@ -1490,7 +1489,7 @@ La figure suivante représente les tables du standard pouvant faire partie de la
 
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
+###### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
 La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1501,7 +1500,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Proced
 | **`typeprocedure`** | **`typproc`** | TEXT(10) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table d'énumération [typeprocedure](#table-dénumération-typeprocedure) | Type de procédure selon la classification dans le système GASPAR |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_revise`
+###### Table `[TypePPR]_[CodeGASPARComplet]_revise`
 
 La table `[TypePPR]_[CodeGASPARComplet]_revise` implémente l'associtation [Revise](../Geostandards-risques-commun/Document.md#associations-de-la-classe-procedure) de la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure)  définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1512,7 +1511,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_revise` implémente l'associtation [Revi
 
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Perimetre](../Geostandards-risques-commun/Document.md#classe-dobjets-perimetre) définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1524,7 +1523,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetre_s` implémente la classe [Peri
 | **`dateetat`** | **`dateetat`** | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date à partir de laquelle l'état d'avancement de la procédure sur ce périmètre est effectif. |
 | **`geom`** | N.A. | MULTIPOLYGON | (Multi)polygone du périmètre |  |
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s` implémente la classe [PerimetreEtude](#classe-dobjets-perimetreetude). Elle a la structure suivante :
 
@@ -1538,7 +1537,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s` implémente la classe 
 
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
+###### Table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
 
 La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe [ReferenceInternet](../Geostandards-risques-commun/Document.md#classe-dobjets-referenceinternet) définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1550,7 +1549,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 | **`typereference`** | **`typeref`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-dénumération-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
 | `description` | `desc` | TEXT | Saisie libre | Description de la ressource internet. |
 
-##### Table d'énumération `typeprocedure`
+###### Table d'énumération `typeprocedure`
 
 La table d'énumération `typeprocedure` implémente l'énumération [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
 
@@ -1572,7 +1571,7 @@ Elle a la structure et le contenu suivants :
 | PPRT | Plan de Prévention des Risques Technologiques |
 
 
-##### Table d'énumération `typeetatprocedure`
+###### Table d'énumération `typeetatprocedure`
 
 La table `typeetatprocedure` implémente l'énumération [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) définie dans le modèle commun.
 
@@ -1591,7 +1590,7 @@ Elle a la structure et le contenu suivants :
 | ABROGE | Abrogé |
 
 
-##### Table d'énumération `typereference`
+###### Table d'énumération `typereference`
 
 La table `typereference` implémente l'énumération [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) définie dans le modèle commun.
 
@@ -1619,7 +1618,7 @@ La figure suivante représente les tables du standard pouvant faire partie de la
 ![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-Alea-View.png)
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` implémente la classe [ZoneAleaReference](#classe-dobjets-zonealeareference) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1634,7 +1633,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` implémente la classe [ZoneAleaEcheance100ans](#classe-dobjets-ZoneAleaEcheance100ans) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1649,7 +1648,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` implémente la classe [ZoneAleaExceptionnel](#classe-dobjets-zonealeaexceptionnel) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1664,7 +1663,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` implémente la classe [ZoneAleaNaturel](#classe-dobjets-zonealeanaturel) définie dans ce profil applicatif et a pour but de représenter les zones d'aléas d'un PPR multirisques naturels. Elle a la structure suivante :
 
@@ -1679,19 +1678,19 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` implémente l
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel` permet de préciser les différents types d'aléas pour les zones multialéas de la table [zonealeanaturelsynthese](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s). Elle a la structure suivante :
 
 | Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|
+|-|-|-|-|-|
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère** et partie de la **Clef primaire**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa. |
 | **`idzonealea`** | **`idzonealea`** | TEXT(15) | **Clef étrangère** et partie de la **Clef primaire** | Identifiant de l'objet zonealea dans la table [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) auquel se rattache le type d'alea. |
 | `niveaualea` | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | INTEGER |  Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoRapide](#classe-dobjets-zonealeatechnorapide) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1707,7 +1706,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` impl�
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoLent](#classe-dobjets-zonealeatechnolent) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1723,7 +1722,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` implém
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` implémente la classe [ZoneAleaTechnoProjection](#classe-dobjets-zonealeatechnoprojection) définie dans ce profil applicatif. Elle a la structure suivante :
 
@@ -1738,7 +1737,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` i
 | **`intensite`** | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s`
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` implémente la classe [ZoneAleaTechnologique](#classe-dobjets-zonealeatechnologique) définie dans ce profil applicatif et a pour but de représenter les zones d'aléas d'un PPR couvrant plusieurs risques technologiques. Elle a la structure suivante :
 
@@ -1753,7 +1753,8 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` implémente la
 | **`intensite`** | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. Si la zone est concernée par plusieurs aléas, l'intensité la plus élevée est à privilégier. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno`
+
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno` permet de préciser les différents types d'aléas pour les zones multialéas de la table [zonealeatechnosynthese](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s). Elle a la structure suivante :
 
@@ -1766,8 +1767,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno` permet de préciser
 | `intensite` | `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 
 
-
-##### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente la classe [ZoneProtegee](../Geostandards-risques-commun/Document.md#classe-dobjets-zoneprotegee) définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1785,7 +1785,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` implémente la classe [ZoneDangerSpecifique](../Geostandards-risques-commun/Document.md#classe-dobjets-zonedangerspecifique)  définie dans le modèle commun. Elle a la structure suivante :
 
@@ -1803,7 +1803,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
+###### Tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p` implémentent la classe [OuvrageProtecteur](../Geostandards-risques-commun/Document.md#classe-dobjets-ouvrageprotecteur) définie dans le modèle commun. Elles ont la structure suivante :
 
@@ -1819,7 +1819,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p` im
 | **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
 
-##### Table d'énumération `typealea`
+###### Table d'énumération `typealea`
 
 La table `typealea` implémente l'énumération [TypeAlea](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typealea) définie dans le modèle commun
 
@@ -1872,7 +1872,7 @@ Elle a la structure et le contenu suivants :
 | 999 | Risques multiples |
 
 
-##### Table d'énumération `typeniveaualea`
+###### Table d'énumération `typeniveaualea`
 
 La table `typeniveaualea` implémente l'énumération [TypeNiveauAlea](../Geostandards-risques-commun/Document.md#enumeration-typeniveaualea) définie dans le modèle commun.
 
@@ -1891,7 +1891,7 @@ Elle a la structure et le contenu suivants :
 | 99 | Autre |
 
 
-##### Table d'énumération `typesuralea`
+###### Table d'énumération `typesuralea`
 
 La table `typesuralea` implémente l'énumération [TypeSurAlea](#enumeration-typesuralea) définie dans le modèle conceptuel.
 
@@ -1906,7 +1906,7 @@ Elle a la structure et le contenu suivants :
 | 99 | Autre |
 
 
-##### Table d'énumération `typeouvrageprotecteur`
+###### Table d'énumération `typeouvrageprotecteur`
 
 La table `typeouvrageprotecteur` implémente l'énumération [TypeOuvrageProtecteur](../Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotecteur) définie dans le modèle commun.
 
@@ -1926,7 +1926,7 @@ Elle a la structure et le contenu suivants :
 | 999 | Autre ouvrage ou installation pouvant influencer les aléas | 
 
 
-##### Table d'énumération `typerefexterneouvrage`
+###### Table d'énumération `typerefexterneouvrage`
 
 La table `typerefexterneouvrage` implémente l'énumération [TypeRefExterneOuvrage](../Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage) définie dans le modèle commun.
 
@@ -1939,7 +1939,7 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-##### Table d'énumération `typeintensitetechno`
+###### Table d'énumération `typeintensitetechno`
 
 La table `typeintensitetechno` implémente l'énumération [TypeIntensiteTechno](#enumeration-typeintensitetechno) définie dans ce profil applicatif.
 
@@ -1954,7 +1954,7 @@ Elle a la structure et le contenu suivants :
 | Z5 | Indirect |
 
 
-##### Table d'énumération `typeclasseprobatechno`
+###### Table d'énumération `typeclasseprobatechno`
 
 La table `typeclasseprobatechno` implémente l'énumération [TypeClasseProbaTechno](#enumeration-typeclasseprobatechno) définie dans ce profil applicatif.
 
@@ -1980,7 +1980,7 @@ La figure suivante représente les tables du standard pouvant faire partie de la
 ![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-OrigRisque-View.png)
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
+###### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) définie dans le modèle commun. Elles ont la structure suivante :
 
@@ -2004,7 +2004,7 @@ La figure suivante représente les tables du standard pouvant faire partie de la
 ![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-Enjeu-View.png)
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
+###### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) définie dans le modèle commun. Elles ont la structure suivante :
 
@@ -2021,7 +2021,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [
 | **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
+###### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
 
 La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) défini dans le modèle commun. Elle a la structure suivante :
 
@@ -2034,7 +2034,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 
 
 
-##### Table d'énumération `typeenjeupprn`
+###### Table d'énumération `typeenjeupprn`
 
 La table `typeenjeupprn` implémente l'énumération [NomenclatureEnjeuPPRN](#nomenclatureenjeupprn) définie en annexe D de ce profil applicatif.
 
@@ -2075,7 +2075,7 @@ Elle a la structure et le contenu suivants :
 | 999999 | Autre enjeu : nature à préciser  
 
 
-##### Table d'énumération `typeenjeupprt`
+###### Table d'énumération `typeenjeupprt`
 
 La table `typeenjeupprt` implémente l'énumération [NomenclatureEnjeuPPRT](#nomenclatureenjeupprt) définie en annexe D de ce profil applicatif.
 
@@ -2125,7 +2125,7 @@ Elle a la structure et le contenu suivants :
 | 999999 | Autre enjeu : nature à préciser |
 
 
-##### Table d'énumération `typeenjeucovadis`
+###### Table d'énumération `typeenjeucovadis`
 
 La table `typeenjeucovadis` implémente l'énumération [NomenclatureEnjeuCovadis](#nomenclatureenjeucovadis) définie en annexe D de ce profil applicatif.
 
@@ -2219,7 +2219,7 @@ La figure suivante représente les tables du standard pouvant faire partie de la
 ![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-ZonReg-View.png)
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
+###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémentent la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
 
@@ -2234,7 +2234,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémen
 | **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
+###### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
 
 Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définie dans ce profil applicatif. Elles ont la structure suivante :
 
@@ -2248,7 +2248,7 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implé
 | **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
 
 
-##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+###### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
 
 La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut à valeurs multiples typeAlea des classes [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) et [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définies dans ce profil applicatif. Elle a la structure suivante :
 
@@ -2265,7 +2265,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut
 A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_u_l`, `idzonereglementaire_u_p`, `idzonereglementaire_f_s`, `idzonereglementaire_f_l` ou `idzonereglementaire_f_p` doit être renseignée.
 
 
-##### Table d'énumération `typereglementurba`
+###### Table d'énumération `typereglementurba`
 
 La table `typereglementurba` implémente l'énumération [TypeReglementUrba](#enumeration-typereglementurba) définie dans ce profil applicatif.
 
@@ -2282,7 +2282,7 @@ Elle a la structure et le contenu suivants :
 | 07 | Zones d'aléa exceptionnel (AE) |
 
 
-##### Table d'énumération `typereglementfoncier`
+###### Table d'énumération `typereglementfoncier`
 
 La table `typereglementfoncier` implémente l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier) définie dans ce profil applicatif.
 
@@ -2347,7 +2347,7 @@ Les noms des fichiers Shapefile associés à chaque table de la livraison suiven
 
 À titre d'exemples :
 
-* les fichiers Shapefile décrivant le périmetre du PPRN du Bassin versant de la Scie (code gaspar : `76ddtm20120001` ) auront pour nom : 
+* les fichiers Shapefile décrivant le périmetre du PPRN du Bassin versant de la Scie (code GASPAR : `76ddtm20120001` ) auront pour nom : 
   - `pprn_76ddtm20120001_perimetre_s.shp` ;
   - `pprn_76ddtm20120001_perimetre_s.dbf` ;
   - `pprn_76ddtm20120001_perimetre_s.prj` ;
@@ -2361,7 +2361,7 @@ Les noms des fichiers Shapefile associés à chaque table de la livraison suiven
 
 ### Structure des tables 
 
-La strucuture des tables attributaires s'appuie sur la même structure de tables que celle décrite dans la partie [dictionnaire des tables](#dictionnaire-des-tables) de la livraison en GeoPackage ; les spécificités liées au format Shapefile comme le nom court des champs sont indiquées dans une colonne spécifique pour chaque table.
+La structure des tables attributaires s'appuie sur la même structure de tables que celle décrite dans la partie [dictionnaire des tables](#dictionnaire-des-tables) de la livraison en GeoPackage ; les spécificités liées au format Shapefile comme le nom court des champs sont indiquées dans une colonne spécifique pour chaque table.
 
 
 ### Métadonnées de la livraison Shapefile
@@ -2998,7 +2998,7 @@ Le nouveau standard reprend aussi ce mécanisme de zones multirisques en proposa
 * [[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s](#table-typeppr_codegasparcomplet_zonealeanaturelsynthese_s) et 
 * [[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel](#table-typeppr_codegasparcomplet_zonemultialeanaturel)
 
-La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table multialeanaturel est à remplir selon les règles de passage suivantes :
+La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table [[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel](#table-typeppr_codegasparcomplet_zonemultialeanaturel) est à remplir selon les règles de passage suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
@@ -3064,7 +3064,7 @@ Le nouveau standard reprend aussi ce mécanisme de zones multirisques en proposa
 * [[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s](#table-typeppr_codegasparcomplet_zonealeatechnosynthese_s) et 
 * [[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno](#table-typeppr_codegasparcomplet_zonemultialeatechno) pour les risques technologiques multiples ;
 
-La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table multialeatechno est à remplir selon les règles de passage suivantes :
+La table de synthèse est à remplir selon les mêmes règles que pour les tables de zones d'aléas précédentes. La table [[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno](#table-typeppr_codegasparcomplet_zonemultialeatechno) est à remplir selon les règles de passage suivantes :
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
@@ -3113,11 +3113,11 @@ Les attributs de la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonereglementaire
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
-|`idzonereglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
-|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
-|`codezonereglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
+|`idzonereglementaire`|"18"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|ID\_ZONE|
+|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|ID\_GASPAR|
+|`codezonereglement`|"Bir"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|CODEZONE|
 |`libellezonereglement`|"prescription - Inondation par remontée de nappe"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typereglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-dénumération-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`typereglement`|"04" (valeur à prendre parmi les codes de l'énumération [typereglementurba](#table-dénumération-typereglementurba))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|TYPEREG|
 | `existemesuresobligatoires`| NULL | N.A. | N.A. (Pas de correspondance avec le standard COVADIS)|  
 
 
@@ -3129,16 +3129,16 @@ Les attributs de la table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zonereglementaire
 
 |Nom Attribut|Exemple de valeur|Table COVADIS| Nom attribut COVADIS |
 |-|-|-|-|
-|`idzonereglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_ZONE|
-|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|ID\_GASPAR|
-|`codezonereglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|CODEZONE|
-|`libellezonereglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|NOM|
-|`typereglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-dénumération-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_L\_[DDD]|TYPEREG|
+|`idzonereglementaire`|"9"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|ID\_ZONE|
+|`codeprocedure`|"76DDTM20120001"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|ID\_GASPAR|
+|`codezonereglement`|"Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|CODEZONE|
+|`libellezonereglement`|"Secteur d'expropriation possible - Ex5"|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|NOM|
+|`typereglement`|"02" (valeur à prendre parmi les codes de l'énumération [typereglementfoncier](#table-dénumération-typereglementfoncier))|N\_ZONE\_REG\_PPR[NT]\_[AAAANNNN]\_[SLP]\_[DDD]|TYPEREG|
 
 
 ### Remplissage des objets de la table zoneregmultialea
 
-Le nouveau standard introduit la possibilité d'associer des types d'aléas aux zones réglementaires dans le cas des PPR Multirisques. Cela s'implémente à l'aide d'une table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zoneregmultialea](#tables-typeppr_codegasparcomplet_zoneregmultialea) qui fait le lien entre les objets des tables du zonage réglementaire et la classification des aléa.
+Le nouveau standard introduit la possibilité d'associer des types d'aléas aux zones réglementaires dans le cas des PPR Multirisques. Cela s'implémente à l'aide d'une table [\[TypePPR\]\_\[CodeGASPARComplet\]\_zoneregmultialea](#tables-typeppr_codegasparcomplet_zoneregmultialea) qui fait le lien entre les objets des tables du zonage réglementaire et la classification des aléas.
 
 Dans le cadre de la transformation d'un PPR Multirisques COVADIS vers le nouveau standard, cette table ne pourra pas être générée à partir du fichier COVADIS qui ne porte pas cette information.
 
@@ -3430,7 +3430,7 @@ La colonne "Code" propose une implémentation numérique sur 6 chiffres de cette
 |-|-|-|-|-|
 | 050000 | /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
 | 050100 | /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
-| 050200 | /habitat/collectif | Zone d'habitat collectif |  zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| 050200 | /habitat/collectif | Zone d'habitat collectif |  Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
 | 060100 | /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
 | 060101 | /activite/industrie | Zone d'industrie | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
 | 060102 | /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
