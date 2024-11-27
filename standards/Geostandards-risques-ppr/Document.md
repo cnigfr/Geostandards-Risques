@@ -1400,16 +1400,6 @@ Les valeurs possibles pour `[TypePPR]` sont :
 **Exigence** 
 Les tables du standard présentes dans la livraison GeoPackage doivent respecter la nomenclature énoncée ci-dessus.
 
-##### Schéma physique des tables
-
-La figure suivante représente l'ensemble des tables du standard pouvant faire partie de la livraison à l'exception des tables intrinsèques à GeoPackage. Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
-
-
-**Fig. xx Diagramme complet des tables du standard**
-
-![Diagramme tables PPR](./ressources/Geopackage-PPR-view.png)
-
-
 ##### Dictionnaire des tables
 
 Le tableau suivant liste l'ensemble des tables du standard pouvant faire partie de la livraison en précisant :
@@ -1489,6 +1479,17 @@ Les paragraphes qui suivent précisent pour chacune de ces tables :
 Les tables du standard présentes dans la livraison GeoPackage ou Shapefile doivent respecter les structures déclarées pour chacune d'elles dans les clauses suivantes.
 
 
+##### Tables de la thématique Procédures et prérimètres
+
+La figure suivante représente les tables du standard pouvant faire partie de la livraison GeoPackage implémentant la thématique "Procédures et périmètres". Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme des tables de la thématique Procédures et périmètres**
+
+![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-Procedure-View.png)
+
+
+
 ##### Table `[TypePPR]_[CodeGASPARComplet]_procedure`
 
 La table `[TypePPR]_[CodeGASPARComplet]_procedure` implémente la classe [Procedure](../Geostandards-risques-commun/Document.md#classe-dobjets-procedure) définie dans le modèle commun. Elle a la structure suivante :
@@ -1548,6 +1549,74 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 | `nomressource` | **`nomres`** | TEXT | Saisie libre | Nom de la ressource référencée sur Internet |
 | **`typereference`** | **`typeref`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-dénumération-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
 | `description` | `desc` | TEXT | Saisie libre | Description de la ressource internet. |
+
+##### Table d'énumération `typeprocedure`
+
+La table d'énumération `typeprocedure` implémente l'énumération [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(80) |
+|-|-|
+| PPRN | Plan de Prévention des Risques Naturels |
+| PPRN-I | Plan de Prévention des Risques Naturels Inondation |
+| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
+| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
+| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
+| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
+| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
+| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
+| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
+| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
+| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
+| PPRT | Plan de Prévention des Risques Technologiques |
+
+
+##### Table d'énumération `typeetatprocedure`
+
+La table `typeetatprocedure` implémente l'énumération [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(10) | `libelle` TEXT(25) |
+|-|-|
+| DEB_PRG | Programmation |
+| DEB_MTG | Montage |
+| PRECRIT | Prescrit |
+| PAC | Porté à connaissance |
+| PROROGE | Prorogé |
+| ANTICIPE | Anticipé |
+| APPROUVE | Approuvé |
+| ANNULE | Annulé |
+| ABROGE | Abrogé |
+
+
+##### Table d'énumération `typereference`
+
+La table `typereference` implémente l'énumération [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) définie dans le modèle commun.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(50) |
+|-|-|
+| 01 | Règlement non approuvé |
+| 02 | Règlement approuvé |
+| 03 | Zonage réglementaire non approuvé |
+| 04 | Zonage réglementaire approuvé |
+| 05 | Cartes approuvées |
+| 06 | Autres cartes |
+| 99 | Autres |
+
+
+
+##### Tables de la thématique Aléas
+
+La figure suivante représente les tables du standard pouvant faire partie de la livraison GeoPackage implémentant la thématique "Aléas". Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme des tables de la thématique Aléas**
+
+![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-Alea-View.png)
 
 
 ##### Table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s`
@@ -1750,152 +1819,6 @@ Les tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p` im
 | **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'ouvrage|  |
 
 
-##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
-
-Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) définie dans le modèle commun. Elles ont la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| **`idoriginerisque`** | **`idorigrisq`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet origine du risque. |
-| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à l'objet origine du risque. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet origine du risque dans le référentiel externe d'où il est extrait. |
-| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
-| **`nom`** | **`nom`** | TEXT |  Saisie libre. | Nom de l'objet origine du risque. | 
-| **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
-
-##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
-
-Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) définie dans le modèle commun. Elles ont la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| **`idenjeu`** | **`idenjeu`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet enjeu. |
-| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet d'enjeu dans le référentiel externe d'où il est extrait. |
-| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
-| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la collecte de cet objet enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`nomenjeu`** | **`nomenjeu`** | TEXT | Saisie libre. | Nom de l'objet d'enjeu. |
-| **`codeenjeu`** | **`codeenjeu`** | TEXT | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureenjeu`. |
-| **`nomenclatureenjeu`** | **`nomencjeu`** | TEXT | La référence à la nomenclature doit permettre d'identifier sans ambiguïté cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
-| **`dateenjeu`** | **`dateenjeu`** | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
-| **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
-
-
-##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
-
-La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) défini dans le modèle commun. Elle a la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| `idenjeu` | `idenjeu` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
-| **`nom`** | **`nom`** | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
-| `description` | `desc` | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
-| **`valeur`** | **`valeur`** | TEXT | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
-
-
-##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
-
-Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémentent la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| **`idzonereglementaire`** | **`idzonereg`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
-| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire urba. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`codezonereglement`** | **`codzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
-| **`libellezonereglement`** | **`libzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
-| **`typereglement`** | **`typereg`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-dénumération-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
-| `existemesuresobligatoires` | `existoblig` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. |
-| **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
-
-
-##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
-
-Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définie dans ce profil applicatif. Elles ont la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| **`idzonereglementaire`** | **`idzonereg`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
-| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire foncier. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
-| **`codezonereglement`** | **`codzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
-| **`libellezonereglement`** | **`libzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
-| **`typereglement`** | **`typereg`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-dénumération-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
-| **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
-
-
-##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
-
-La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut à valeurs multiples typeAlea des classes [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) et [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définies dans ce profil applicatif. Elle a la structure suivante :
-
-| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
-|-|-|-|-|-|
-| **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone réglementaire. |
-| `idzonereglementaire_u_s` | `idzonregus` | TEXT(15) | **Clef étrangère** et partie de la **Clef primaire**. | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` auquel se rattache le type d'alea. |
-| `idzonereglementaire_u_l` | `idzonregul` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` auquel se rattache le type d'alea. |
-| `idzonereglementaire_u_p` | `idzonregup` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` auquel se rattache le type d'alea. |
-| `idzonereglementaire_f_s` | `idzonregfs` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` auquel se rattache le type d'alea. |
-| `idzonereglementaire_f_l` | `idzonregfl`| TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` auquel se rattache le type d'alea. |
-| `idzonereglementaire_f_p` | `idzonregfp` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` auquel se rattache le type d'alea. |
-
-A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_u_l`, `idzonereglementaire_u_p`, `idzonereglementaire_f_s`, `idzonereglementaire_f_l` ou `idzonereglementaire_f_p` doit être renseignée.
-
-
-##### Table d'énumération `typeprocedure`
-
-La table d'énumération `typeprocedure` implémente l'énumération [TypeProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeprocedure) définie dans le modèle commun.
-
-Elle a la structure et le contenu suivants :
-
-| `code` TEXT(10) | `libelle` TEXT(80) |
-|-|-|
-| PPRN | Plan de Prévention des Risques Naturels |
-| PPRN-I | Plan de Prévention des Risques Naturels Inondation |
-| PPRN-L | Plan de Prévention des Risques Naturels Littoral |
-| PPRN-Mvt | Plan de Prévention des Risques Naturels Mouvement de Terrain |
-| PPRN-Multi | Plan de Prévention des Risques Naturels Multirisques |
-| PPRN-S | Plan de Prévention des Risques Naturels Séisme |
-| PPRN-Av | Plan de Prévention des Risques Naturels Avalanches |
-| PPRN-Ev | Plan de Prévention des Risques Naturels Eruption volcanique |
-| PPRN-If | Plan de Prévention des Risques Naturels Incendie de forêt |
-| PPRN-Cy | Plan de Prévention des Risques Naturels Cyclone |
-| PPRN-Rad | Plan de Prévention des Risques Naturels Radon |
-| PPRT | Plan de Prévention des Risques Technologiques |
-
-
-##### Table d'énumération `typeetatprocedure`
-
-La table `typeetatprocedure` implémente l'énumération [TypeEtatProcedure](../Geostandards-risques-commun/Document.md#enumeration-typeetatprocedure) définie dans le modèle commun.
-
-Elle a la structure et le contenu suivants :
-
-| `code` TEXT(10) | `libelle` TEXT(25) |
-|-|-|
-| DEB_PRG | Programmation |
-| DEB_MTG | Montage |
-| PRECRIT | Prescrit |
-| PAC | Porté à connaissance |
-| PROROGE | Prorogé |
-| ANTICIPE | Anticipé |
-| APPROUVE | Approuvé |
-| ANNULE | Annulé |
-| ABROGE | Abrogé |
-
-
-##### Table d'énumération `typereference`
-
-La table `typereference` implémente l'énumération [TypeReference](../Geostandards-risques-commun/Document.md#enumeration-typereference) définie dans le modèle commun.
-
-Elle a la structure et le contenu suivants :
-
-| `code` TEXT(2) | `libelle` TEXT(50) |
-|-|-|
-| 01 | Règlement non approuvé |
-| 02 | Règlement approuvé |
-| 03 | Zonage réglementaire non approuvé |
-| 04 | Zonage réglementaire approuvé |
-| 05 | Cartes approuvées |
-| 06 | Autres cartes |
-| 99 | Autres |
-
-
 ##### Table d'énumération `typealea`
 
 La table `typealea` implémente l'énumération [TypeAlea](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typealea) définie dans le modèle commun
@@ -2016,35 +1939,6 @@ Elle a la structure et le contenu suivants :
 | 99 | autre |
 
 
-##### Table d'énumération `typereglementurba`
-
-La table `typereglementurba` implémente l'énumération [TypeReglementUrba](#enumeration-typereglementurba) définie dans ce profil applicatif.
-
-Elle a la structure et le contenu suivants :
-
-| `code` TEXT(2) | `libelle` TEXT(40) |
-|-|-|
-| 01 | Prescriptions hors zone d'aléa |
-| 02 | Prescriptions |
-| 03 | Interdiction |
-| 04 | Interdiction stricte |
-| 05 | Recommandations |
-| 06 | Zones grisées |
-| 07 | Zones d'aléa exceptionnel (AE) |
-
-
-##### Table d'énumération `typereglementfoncier`
-
-La table `typereglementfoncier` implémente l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier) définie dans ce profil applicatif.
-
-Elle a la structure et le contenu suivants :
-
-| `code` TEXT(2) | `libelle` TEXT(30) |
-|-|-|
-| 01 | Délaissement possible |
-| 02 | Expropriation possible |
-
-
 ##### Table d'énumération `typeintensitetechno`
 
 La table `typeintensitetechno` implémente l'énumération [TypeIntensiteTechno](#enumeration-typeintensitetechno) définie dans ce profil applicatif.
@@ -2073,6 +1967,71 @@ Elle a la structure et le contenu suivants :
 | C | Evènement improbable |
 | D | Evènement très improbable |
 | E | Evènement possible mais extrêment peu probable |
+
+
+
+##### Tables de la thématique Origine du Risque
+
+La figure suivante représente les tables du standard pouvant faire partie de la livraison GeoPackage implémentant la thématique "Origine du Risque". Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme des tables de la thématique Origine du Risque**
+
+![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-OrigRisque-View.png)
+
+
+##### Tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p` implémentent la classe [OrigineRisque](../Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) définie dans le modèle commun. Elles ont la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`idoriginerisque`** | **`idorigrisq`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet origine du risque. |
+| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à l'objet origine du risque. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet origine du risque dans le référentiel externe d'où il est extrait. |
+| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
+| **`nom`** | **`nom`** | TEXT |  Saisie libre. | Nom de l'objet origine du risque. | 
+| **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet origine du risque |  |
+
+
+##### Tables de la thématique Enjeux
+
+La figure suivante représente les tables du standard pouvant faire partie de la livraison GeoPackage implémentant la thématique "Enjeux". Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme des tables de la thématique Enjeux**
+
+![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-Enjeu-View.png)
+
+
+##### Tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_enjeu_s|l|p` implémentent la classe [Enjeu](../Geostandards-risques-commun/Document.md#classe-dobjets-enjeu) définie dans le modèle commun. Elles ont la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`idenjeu`** | **`idenjeu`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet enjeu. |
+| `idrefexterne` | `idrefext` | TEXT(50) | Saisie optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Identifiant de l'objet d'enjeu dans le référentiel externe d'où il est extrait. |
+| `refexterne` | `refexterne` | TEXT | Saisie libre et optionnelle (uniquement si l'enjeu est extrait d'un référentiel externe). | Référentiel externe d'où est extrait l'objet. |
+| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée à la collecte de cet objet enjeu. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`nomenjeu`** | **`nomenjeu`** | TEXT | Saisie libre. | Nom de l'objet d'enjeu. |
+| **`codeenjeu`** | **`codeenjeu`** | TEXT | Les valeurs sont contraintes selon les valeurs possibles définies dans la nomenclature (désignée par `nomenclatureenjeu`) à laquelle appartient le code. | Désignation du type d'enjeu dans la nomenclature référencée par la colonne `nomenclatureenjeu`. |
+| **`nomenclatureenjeu`** | **`nomencjeu`** | TEXT | La référence à la nomenclature doit permettre d'identifier sans ambiguïté cette dernière (par exemple l'URI d'un registre) | Référence à une nomenclature établie définissant des types d'enjeux. |
+| **`dateenjeu`** | **`dateenjeu`** | DATE | Date au format ISO-8601 sous la forme d'une chaine de caractères `AAAA-MM-JJ` | Date de collecte de l'objet enjeu. |
+| **`geom`** | N.A. | MULTIPOLYGON ou MULTILINESTRING ou MULTIPOINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet enjeu. |  |
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
+
+La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type de données [TypeVulnerabilite](../Geostandards-risques-commun/Document.md#type-de-données-typevulnerabilite) défini dans le modèle commun. Elle a la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| `idenjeu` | `idenjeu` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_slp](#tables-typeppr_codegasparcomplet_enjeu_slp). |
+| **`nom`** | **`nom`** | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
+| `description` | `desc` | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
+| **`valeur`** | **`valeur`** | TEXT | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
+
 
 
 ##### Table d'énumération `typeenjeupprn`
@@ -2248,6 +2207,92 @@ Elle a la structure et le contenu suivants :
 |0704|Zone d'expansion des crues pour les inondations|
 |0705|Zone naturelle de mouvements de terrain|
 |9999|Autre enjeu : nature à préciser|
+
+
+##### Tables de la thématique Zonage Réglementaire
+
+La figure suivante représente les tables du standard pouvant faire partie de la livraison GeoPackage implémentant la thématique "Zonage Réglementaire". Les champs en gras sont les champs dont le renseignement est obligatoire lorsque la table est présente dans la livraison.
+
+
+**Fig. xx Diagramme des tables de la thématique Zonage Réglementaire**
+
+![Diagramme tables Procedures Perimetres](./ressources/Geopackage-PPR-ZonReg-View.png)
+
+
+##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p` implémentent la classe [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) définie dans ce profil applicatif. Elles ont la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`idzonereglementaire`** | **`idzonereg`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
+| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire urba. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`codezonereglement`** | **`codzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
+| **`libellezonereglement`** | **`libzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
+| **`typereglement`** | **`typereg`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementurba](#table-dénumération-typereglementurba) | Nature du règlement en matière d'urbanisme s'appliquant sur la zone. |
+| `existemesuresobligatoires` | `existoblig` | BOOLEAN | Saisie optionnelle. Si la valeur n'est pas renseignée, alors la nature obligatoire est inconnue. | Indique si l'application de certaines mesures pour réduire la vulnérabilité du foncier sur la zone est rendue obligatoire. |
+| **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
+
+
+##### Tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
+
+Les tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p` implémentent la classe [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définie dans ce profil applicatif. Elles ont la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`idzonereglementaire`** | **`idzonereg`** | TEXT(15) | **Clef primaire** | Identifiant de l'objet zonereglementaire. |
+| **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure associée au zonage réglementaire foncier. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
+| **`codezonereglement`** | **`codzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. |  Code attribué à la zone dans le cadre du règlement qui s'applique.|
+| **`libellezonereglement`** | **`libzonereg`** | TEXT | Saisie libre en fonction de la codification définie par le règlement associé au zonage et à la procédure. | Libellé correspondant au code de la zone dans le cadre du règlement qui s'applique. |
+| **`typereglement`** | **`typereg`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereglementfoncier](#table-dénumération-typereglementfoncier) | Nature de la mesure foncière s'appliquant sur la zone. |
+| **`geom`** | N.A. | POLYGON ou LINESTRING ou POINT | Géométrie surfacique, linéaire ou ponctuelle de l'objet de zonage réglementaire. |  |
+
+
+##### Table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
+
+La table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea` implémente l'attribut à valeurs multiples typeAlea des classes [ZoneReglementaireUrba](#classe-dobjets-zonereglementaireurba) et [ZoneReglementaireFoncier](#classe-dobjets-zonereglementairefoncier) définies dans ce profil applicatif. Elle a la structure suivante :
+
+| Nom colonne | Nom court | Type GPKG | Valeurs | Définition |
+|-|-|-|-|-|
+| **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone réglementaire. |
+| `idzonereglementaire_u_s` | `idzonregus` | TEXT(15) | **Clef étrangère** et partie de la **Clef primaire**. | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_u_l` | `idzonregul` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_u_p` | `idzonregup` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_p` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_s` | `idzonregfs` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_l` | `idzonregfl`| TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_l` auquel se rattache le type d'alea. |
+| `idzonereglementaire_f_p` | `idzonregfp` | TEXT(15) | **Clef étrangère** | Identifiant de l'objet zonereglementaire dans la table `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_p` auquel se rattache le type d'alea. |
+
+A noter que pour une ligne de la table seule une des colonnes `idzonereglementaire_u_l`, `idzonereglementaire_u_p`, `idzonereglementaire_f_s`, `idzonereglementaire_f_l` ou `idzonereglementaire_f_p` doit être renseignée.
+
+
+##### Table d'énumération `typereglementurba`
+
+La table `typereglementurba` implémente l'énumération [TypeReglementUrba](#enumeration-typereglementurba) définie dans ce profil applicatif.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(40) |
+|-|-|
+| 01 | Prescriptions hors zone d'aléa |
+| 02 | Prescriptions |
+| 03 | Interdiction |
+| 04 | Interdiction stricte |
+| 05 | Recommandations |
+| 06 | Zones grisées |
+| 07 | Zones d'aléa exceptionnel (AE) |
+
+
+##### Table d'énumération `typereglementfoncier`
+
+La table `typereglementfoncier` implémente l'énumération [TypeReglementFoncier](#enumeration-typereglementfoncier) définie dans ce profil applicatif.
+
+Elle a la structure et le contenu suivants :
+
+| `code` TEXT(2) | `libelle` TEXT(30) |
+|-|-|
+| 01 | Délaissement possible |
+| 02 | Expropriation possible |
+
 
 
 #### Métadonnées de la livraison
