@@ -238,7 +238,8 @@ CREATE TABLE typeppr_codegaspar_zonemultialeanaturel (
   typealea TEXT(3) NOT NULL,
   idzonealea TEXT(15) NOT NULL, 
   niveaualea TEXT(2),
-  occurrence INTEGER, 
+  occurrence INTEGER,
+  PRIMARY KEY (typealea,idzonealea), 
   CONSTRAINT fk_zonemultialeanaturel_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonemultialeanaturel_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeanaturelsynthese_s(idzonealea),
   CONSTRAINT fk_zonemultialeanaturel_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
@@ -372,6 +373,7 @@ CREATE TABLE typeppr_codegaspar_zonemultialeatechno (
   niveaualea TEXT(2),
   occurrence TEXT(1), 
   intensite TEXT(2),
+  PRIMARY KEY (typealea,idzonealea), 
   CONSTRAINT fk_zonemultialeatechno_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonemultialeatechno_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeatechnosynthese_s(idzonealea),
   CONSTRAINT fk_zonemultialeatechno_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
