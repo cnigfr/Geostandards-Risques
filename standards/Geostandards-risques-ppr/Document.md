@@ -845,7 +845,7 @@ Le tableau suivant liste les différents types de réglementations possibles pou
 |-|-|
 | Prescriptions hors zone d'aléa | Réglementation appliquant des prescriptions à une zone non directement exposée à l'aléa pour ne pas aggraver le risque sur d'autres secteurs ou créer de nouveaux risques. Ce type de réglementation n'existe pas dans les PPRT |
 | Prescriptions | Réglementation faisant prévaloir le principe d'autorisation assorti de l'obligation de respect de prescriptions. |
-| Interdiction | Réglementation faisant prévaloir le principe d'interdiction mais où certaines constructions peuvent être autorisées sous réserve du respect de prescriptions strictes |
+| Interdiction | Réglementation faisant prévaloir le principe d'interdiction mais où certaines constructions peuvent être autorisées sous réserve du respect de prescriptions strictes ou relevant d'exceptions spécifiques. |
 | Interdiction stricte | Réglementation imposant une interdiction stricte. |
 | Recommandations | Réglementation appliquant des recommandations (non obligatoires) en terme d'aménagement pour les projets futurs uniquement. |
 | Zones grisées | Les zones grisées sont définies dans le contexte des PPRT et représentent l'emprise foncière des installations objet du PPRT qui correspondent à une zone d'interdiction de tout bâtiment ou activité ou usage non liés aux installations. Ces interdictions ne sont  pas motivées par l’aléa mais sont destinées à enclencher une révision du PPRT si l’exploitant venait à se séparer de tout ou partie de son terrain. | 
@@ -1156,6 +1156,7 @@ Les tableaux suivants présentent les couleurs (en code RVB) préconisées à ap
 
 Ces couleurs sont à appliquer à une trame pleine transparente et un contour épais de même couleur.
 
+Ces recommandations permettent de représenter une synthèse du zonage réglementaire du PPR en fonction des différentes catégories du réglement standardisé. Elles peuvent être affinées à la discrétion des services producteurs s'il y a besoin de représenter des nuances relatives, par exemple, aux zones d'enjeux concernées.
 
 ### Représentation des types de réglementations en matière d'urbanisme
 
