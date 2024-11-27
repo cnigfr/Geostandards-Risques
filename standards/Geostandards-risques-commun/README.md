@@ -13,5 +13,5 @@ Ce répertoire contient les éléments constitutifs du standard définissant le 
 Avec l'outil [pandoc](https://pandoc.org/index.html), la ligne de commande suivante permet de générer le standard au format .docx en s'appuyant sur les styles du modèle de document : ModeleV3.docx
 
 ````
-$ pandoc -s -f gfm -t docx -o Document.docx --reference-doc=./modele/ModeleV3-commun.docx Document.md
+$ pandoc -s -f gfm -t docx -o Geostandards-Risques-Modele-Commun-vx.y.docx --reference-doc=./modele/ModeleV3-commun.docx Document.md
 ````

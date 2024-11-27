@@ -34,7 +34,7 @@ INSERT INTO gpkg_spatial_ref_sys VALUES
  
 
 CREATE TABLE typeppr_codegaspar_procedure ( 
-  codeprocedure TEXT(16) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL PRIMARY KEY, 
   libelleprocedure TEXT NOT NULL, 
   typeprocedure TEXT(10) NOT NULL,
   CONSTRAINT fk_procedure_typeprocedure FOREIGN KEY (typeprocedure) REFERENCES typeprocedure(code)
@@ -52,8 +52,8 @@ INSERT INTO gpkg_contents VALUES
 
 
 CREATE TABLE typeppr_codegaspar_revise ( 
-  codeprocrevisante TEXT(16) NOT NULL, 
-  codeprocrevisee TEXT(16) NOT NULL,
+  codeprocrevisante TEXT(18) NOT NULL, 
+  codeprocrevisee TEXT(18) NOT NULL,
   CONSTRAINT pk_revise PRIMARY KEY (codeprocrevisante,codeprocrevisee),
   CONSTRAINT fk_revise_codeprocrevisante FOREIGN KEY (codeprocrevisante) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_revise_codeprocrevisee FOREIGN KEY (codeprocrevisee) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -67,12 +67,9 @@ INSERT INTO gpkg_contents VALUES
  * 
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_perimetre_s`
  */
- 
-
-
 CREATE TABLE typeppr_codegaspar_perimetre_s ( 
-  idperimetre TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idperimetre TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   etatprocedure TEXT(10) NOT NULL, 
   dateetat DATE NOT NULL,
   geom MULTIPOLYGON NOT NULL,
@@ -88,15 +85,39 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_perimetre_s','geom','MULTIPOLYGON',2975,0,0)
  ;
 
+
 /**
- * /**
+ * 
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_perimetreetude_s`
+ */
+
+CREATE TABLE typeppr_codegaspar_perimetreetude_s ( 
+  idperimetre TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  etatprocedure TEXT(10) NOT NULL, 
+  dateetat DATE NOT NULL,
+  geom MULTIPOLYGON NOT NULL,
+  CONSTRAINT fk_perimetreetude_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_perimetreetude_s_etatprocedure FOREIGN KEY (etatprocedure) REFERENCES typeetatprocedure(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_perimetreetude_s','features','typeppr_codegaspar_perimetreetude_s','Table PerimetreEtude Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975)
+ ;
+/* Ajout à la table gpkg_geometry_columns - exemple en EPSG:2154 */
+INSERT INTO gpkg_geometry_columns VALUES 
+  ('typeppr_codegaspar_perimetreetude_s','geom','MULTIPOLYGON',2975,0,0)
+ ;
+
+/**
+ * 
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_referenceinternet`
  */
 
 
 CREATE TABLE typeppr_codegaspar_referenceinternet ( 
   adresse TEXT NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  codeprocedure TEXT(18) NOT NULL, 
   nomressource TEXT, 
   typereference TEXT(2) NOT NULL,
   description TEXT, 
@@ -115,11 +136,11 @@ INSERT INTO gpkg_contents VALUES
 
 
 CREATE TABLE typeppr_codegaspar_zonealeareference_codealea_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
@@ -136,21 +157,18 @@ INSERT INTO gpkg_geometry_columns VALUES
  ;
 
 /**
- * /**
+ *
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s`
  */
-
-
-
 CREATE TABLE typeppr_codegaspar_zonealeaecheance100ans_117_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaecheance100ans_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaecheance100ans_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
@@ -164,21 +182,18 @@ INSERT INTO gpkg_geometry_columns VALUES
  ;
 
 /**
- * /**
+ *
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s`
  */
-
-
-
 CREATE TABLE typeppr_codegaspar_zonealeaexceptionnel_14_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
-  niveaualea TEXT(2) NOT NULL,
-  occurrence TEXT, 
+  niveaualea TEXT(2),
+  occurrence INTEGER, 
   description TEXT, 
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeaexceptionnel_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeaexceptionnel_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
 );
@@ -191,27 +206,67 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonealeaexceptionnel_14_s','geom','POLYGON',2975,0,0)
  ;
 
+/**
+ *
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s`
+ */
+CREATE TABLE typeppr_codegaspar_zonealeanaturelsynthese_s ( 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence INTEGER, 
+  description TEXT, 
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeanaturelsynthese_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeanaturelsynthese_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeanaturelsynthese_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeanaturelsynthese_s','features','typeppr_codegaspar_zonealeanaturelsynthese_s','Table Zone Alea Naturel Synthese Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeanaturelsynthese_s','geom','POLYGON',2975,0,0)
+ ;
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonemultialeanaturel`
+  */
+CREATE TABLE typeppr_codegaspar_zonemultialeanaturel (
+  typealea TEXT(3) NOT NULL,
+  idzonealea TEXT(15) NOT NULL, 
+  niveaualea TEXT(2),
+  occurrence INTEGER,
+  PRIMARY KEY (typealea,idzonealea), 
+  CONSTRAINT fk_zonemultialeanaturel_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonemultialeanaturel_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeanaturelsynthese_s(idzonealea),
+  CONSTRAINT fk_zonemultialeanaturel_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code)
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zonemultialeanaturel','attributes','typeppr_codegaspar_zonemultialeanaturel','Table des aléas naturels multiples',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
 
 
 /** 
   * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s`
   */
-
 CREATE TABLE typeppr_codegaspar_zonealeatechnorapide_codealea_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2),
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnorapide_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnorapide_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnorapide_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnorapide_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -230,20 +285,18 @@ INSERT INTO gpkg_geometry_columns VALUES
   */
 
 CREATE TABLE typeppr_codegaspar_zonealeatechnolent_codealea_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2),
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnolent_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnolent_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnolent_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnolent_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -259,22 +312,19 @@ INSERT INTO gpkg_geometry_columns VALUES
 /**
   * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s`
   */
-
 CREATE TABLE typeppr_codegaspar_zonealeatechnoprojection_214_s ( 
-  idzonealea TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2),
   occurrence TEXT(1), 
   description TEXT, 
-  effet TEXT(2) NOT NULL,
   intensite TEXT(2) NOT NULL,
   geom POLYGON NOT NULL,
-  CONSTRAINT fk_zonealeareference_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnoprojection_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
-  CONSTRAINT fk_zonealeatechnoprojection_codealea_effet FOREIGN KEY (effet) REFERENCES typeeffettechno(code),
   CONSTRAINT fk_zonealeatechnoprojection_codealea_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -286,30 +336,77 @@ INSERT INTO gpkg_geometry_columns VALUES
   ('typeppr_codegaspar_zonealeatechnoprojection_214_s','geom','POLYGON',2975,0,0)
  ;
 
+/**
+ *
+ * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s`
+ */
+CREATE TABLE typeppr_codegaspar_zonealeatechnosynthese_s ( 
+  idzonealea TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
+  typealea TEXT(3) NOT NULL,
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  description TEXT, 
+  intensite TEXT(2),
+  geom POLYGON NOT NULL,
+  CONSTRAINT fk_zonealeatechnosynthese_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
+  CONSTRAINT fk_zonealeatechnosynthese_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonealeatechnosynthese_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonealeatechnosynthese_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonealeatechnosynthese_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+);
+/* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
+INSERT INTO gpkg_contents VALUES
+  ('typeppr_codegaspar_zonealeatechnosynthese_s','features','typeppr_codegaspar_zonealeatechnosynthese_s','Table Zone Alea Technologique Synthese Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975)
+ ;
+/* Ajout à la table gpkg_geometry_columns */
+INSERT INTO gpkg_geometry_columns VALUES
+  ('typeppr_codegaspar_zonealeatechnosynthese_s','geom','POLYGON',2975,0,0)
+ ;
+
+/**
+  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonemultialeatechno`
+  */
+CREATE TABLE typeppr_codegaspar_zonemultialeatechno (
+  typealea TEXT(3) NOT NULL,
+  idzonealea TEXT(15) NOT NULL, 
+  niveaualea TEXT(2),
+  occurrence TEXT(1), 
+  intensite TEXT(2),
+  PRIMARY KEY (typealea,idzonealea), 
+  CONSTRAINT fk_zonemultialeatechno_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
+  CONSTRAINT fk_zonemultialeatechno_zonealea FOREIGN KEY (idzonealea) REFERENCES typeppr_codegaspar_zonealeatechnosynthese_s(idzonealea),
+  CONSTRAINT fk_zonemultialeatechno_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
+  CONSTRAINT fk_zonemultialeatechno_occurrence FOREIGN KEY (occurrence) REFERENCES typeclasseprobatechno(code),
+  CONSTRAINT fk_zonemultialeatechno_intensite FOREIGN KEY (intensite) REFERENCES typeintensitetechno(code)
+
+);
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeppr_codegaspar_zonemultialeatechno','attributes','typeppr_codegaspar_zonemultialeatechno','Table des aléas technologiques multiples',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
 
 
 /**
- * /**
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s`
  */
-
-
-
 CREATE TABLE typeppr_codegaspar_zoneprotegee_codealea_s ( 
-  idzoneprotegee TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzoneprotegee TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveauprotection TEXT,
   occurrence TEXT, 
   description TEXT, 
-  idouvrageprotection_s TEXT(20),
-  idouvrageprotection_l TEXT(20),
-  idouvrageprotection_p TEXT(20),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zoneprotegee_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_s(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_l(idrefexterne),
-  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_p(idrefexterne),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idouvrageprotecteur),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idouvrageprotecteur),
+  CONSTRAINT fk_zoneprotegee_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idouvrageprotecteur),
   CONSTRAINT fk_zoneprotegee_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -324,26 +421,23 @@ INSERT INTO gpkg_geometry_columns VALUES
 /**
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s`
  */
-
-
-
 CREATE TABLE typeppr_codegaspar_zonedangerspecifique_codealea_s ( 
-  idzonedanger TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonedanger TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   typealea TEXT(3) NOT NULL,
   niveaualea TEXT(2) NOT NULL,
   typesuralea TEXT(2) NOT NULL,
   description TEXT, 
-  idouvrageprotection_s TEXT(20),
-  idouvrageprotection_l TEXT(20),
-  idouvrageprotection_p TEXT(20),
+  idouvrageprotecteur_s TEXT(50),
+  idouvrageprotecteur_l TEXT(50),
+  idouvrageprotecteur_p TEXT(50),
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonedangerspecifique_codealea_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonedangerspecifique_codealea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zonedangerspecifique_codealea_niveaualea FOREIGN KEY (niveaualea) REFERENCES typeniveaualea(code),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_s FOREIGN KEY (idouvrageprotection_s) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_s(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_l FOREIGN KEY (idouvrageprotection_l) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_l(idrefexterne),
-  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotection_p FOREIGN KEY (idouvrageprotection_p) REFERENCES typeppr_codegaspar_ouvrageprotection_codealea_p(idrefexterne),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_s FOREIGN KEY (idouvrageprotecteur_s) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_s(idouvrageprotecteur),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_l FOREIGN KEY (idouvrageprotecteur_l) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_l(idouvrageprotecteur),
+  CONSTRAINT fk_zonedangerspecifique_codealea_idouvrageprotecteur_p FOREIGN KEY (idouvrageprotecteur_p) REFERENCES typeppr_codegaspar_ouvrageprotecteur_codealea_p(idouvrageprotecteur),
   CONSTRAINT fk_zonedangerspecifique_codealea_typesuralea FOREIGN KEY (typesuralea) REFERENCES typesuralea(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
@@ -357,52 +451,59 @@ INSERT INTO gpkg_geometry_columns VALUES
 
 
 /**
- * Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotection_[CodeAlea]_s|l|p`
+ * Création des tables `[TypePPR]_[CodeGASPARComplet]_ouvrageprotecteur_[CodeAlea]_s|l|p`
  */
 
-
-
 /* Table Multipolygon */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_s ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s ( 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
+  roleProtection BOOLEAN,
+  occurrence TEXT,
   geom MULTIPOLYGON NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_s_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Linestring */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_l ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_l ( 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
+  roleProtection BOOLEAN,
+  occurrence TEXT,
   geom MULTILINESTRING NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_l_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_l_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Table Point */
-CREATE TABLE typeppr_codegaspar_ouvrageprotection_codealea_p ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
+CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_p ( 
+  idouvrageprotecteur TEXT(15) NOT NULL PRIMARY KEY,
+  idrefexterne TEXT(50), 
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
-  typeouvrageprotection TEXT(2), 
+  typeouvrageprotecteur TEXT(2), 
+  roleprotection BOOLEAN,
+  occurrence TEXT,
   geom MULTIPOINT NOT NULL,
-  CONSTRAINT fk_ouvrageprotection_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
-  CONSTRAINT fk_ouvrageprotection_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotection) REFERENCES typeouvrageprotection(code)
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
+  CONSTRAINT fk_ouvrageprotecteur_codealea_p_typeouvrage FOREIGN KEY (typeouvrageprotecteur) REFERENCES typeouvrageprotecteur(code)
 );
 /* Ajout à la table gpkg_contents - exemple en EPSG:2154*/
 INSERT INTO gpkg_contents VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','features','typeppr_codegaspar_ouvrageprotection_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','features','typeppr_codegaspar_ouvrageprotection_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','features','typeppr_codegaspar_ouvrageprotection_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','features','typeppr_codegaspar_ouvrageprotecteur_codealea_s','Table Ouvrage de protection Surfacique PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','features','typeppr_codegaspar_ouvrageprotecteur_codealea_l','Table Ouvrage de protection Linéaire PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','features','typeppr_codegaspar_ouvrageprotecteur_codealea_p','Table Ouvrage de protection Ponctuel PPR : typeppr codegaspar',(datetime('now')),NULL,NULL,NULL,NULL,2975)
  ;
 /* Ajout à la table gpkg_geometry_columns */
 INSERT INTO gpkg_geometry_columns VALUES
-  ('typeppr_codegaspar_ouvrageprotection_codealea_s','geom','MULTIPOLYGON',2975,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_l','geom','MULTILINESTRING',2975,0,0),
-  ('typeppr_codegaspar_ouvrageprotection_codealea_p','geom','MULTIPOINT',2975,0,0)
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_s','geom','MULTIPOLYGON',2975,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_l','geom','MULTILINESTRING',2975,0,0),
+  ('typeppr_codegaspar_ouvrageprotecteur_codealea_p','geom','MULTIPOINT',2975,0,0)
  ;
 
 
@@ -410,31 +511,32 @@ INSERT INTO gpkg_geometry_columns VALUES
  * Création des tables `[TypePPR]_[CodeGASPARComplet]_originerisque_s|l|p`
  */
 
-
-
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_originerisque_s ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
+  codeprocedure TEXT(18) NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_originerisque_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_originerisque_l ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
+  codeprocedure TEXT(18) NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_originerisque_p ( 
-  idrefexterne TEXT(20) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL,
-  refexterne TEXT NOT NULL,
+  idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
+  codeprocedure TEXT(18) NOT NULL,
+  idrefexterne TEXT(50), 
+  refexterne,
   nom TEXT NOT NULL, 
   geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -459,10 +561,10 @@ INSERT INTO gpkg_geometry_columns VALUES
 
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_enjeu_s ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
+  idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(50), 
   refexterne TEXT NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
+  codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
   nomenclatureenjeu TEXT NOT NULL,
@@ -472,10 +574,10 @@ CREATE TABLE typeppr_codegaspar_enjeu_s (
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_enjeu_l ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
+  idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(50), 
   refexterne TEXT NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
+  codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
   nomenclatureenjeu TEXT NOT NULL,
@@ -485,10 +587,10 @@ CREATE TABLE typeppr_codegaspar_enjeu_l (
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_enjeu_p ( 
-  idenjeu TEXT(8) NOT NULL PRIMARY KEY, 
-  idrefexterne TEXT(20), 
+  idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
+  idrefexterne TEXT(50), 
   refexterne TEXT NOT NULL,
-  codeprocedure TEXT(16) NOT NULL,
+  codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
   nomenclatureenjeu TEXT NOT NULL,
@@ -514,13 +616,10 @@ INSERT INTO gpkg_geometry_columns VALUES
 /**
  * Création de la table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite`
  */
-
-
-
 CREATE TABLE typeppr_codegaspar_typevulnerabilite ( 
-  idenjeu_s TEXT(8), 
-  idenjeu_l TEXT(8), 
-  idenjeu_p TEXT(8), 
+  idenjeu_s TEXT(15), 
+  idenjeu_l TEXT(15), 
+  idenjeu_p TEXT(15), 
   nom TEXT NOT NULL, 
   description TEXT, 
   valeur TEXT NOT NULL,
@@ -538,41 +637,38 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création des tables `[TypePPR]_[CodeGASPARComplet]_zonereglementaireurba_s|l|p`
  */
-
-
-
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_zonereglementaireurba_s ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  mesuresobligatoires BOOLEAN, 
+  existemesuresobligatoires BOOLEAN, 
   geom POLYGON NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_s_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_zonereglementaireurba_l ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  mesuresobligatoires BOOLEAN, 
+  existemesuresobligatoires BOOLEAN, 
   geom LINESTRING NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_l_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_zonereglementaireurba_p ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
-  mesuresobligatoires BOOLEAN, 
+  existemesuresobligatoires BOOLEAN, 
   geom POINT NOT NULL,
   CONSTRAINT fk_zonereglementaireurba_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure),
   CONSTRAINT fk_zonereglementaireurba_p_typereglement FOREIGN KEY (typereglement) REFERENCES typereglementurba(code)
@@ -594,13 +690,10 @@ INSERT INTO gpkg_geometry_columns VALUES
 /**
  * Création des tables `[TypePPR]_[CodeGASPARComplet]_zonereglementairefoncier_s|l|p`
  */
-
-
-
 /* Table Multipolygon */
 CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_s ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
@@ -610,8 +703,8 @@ CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_s (
 );
 /* Table Linestring */
 CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_l ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
@@ -621,8 +714,8 @@ CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_l (
 );
 /* Table Point */
 CREATE TABLE typeppr_codegaspar_zonereglementairefoncier_p ( 
-  idzonereglementaire TEXT(8) NOT NULL PRIMARY KEY, 
-  codeprocedure TEXT(16) NOT NULL, 
+  idzonereglementaire TEXT(15) NOT NULL PRIMARY KEY, 
+  codeprocedure TEXT(18) NOT NULL, 
   codezonereglement TEXT NOT NULL, 
   libellezonereglement TEXT NOT NULL, 
   typereglement TEXT(2) NOT NULL,
@@ -646,16 +739,15 @@ INSERT INTO gpkg_geometry_columns VALUES
 /**
   * Création de la table `[TypePPR]_[CodeGASPARComplet]_zoneregmultialea`
   */
-
-
 CREATE TABLE typeppr_codegaspar_zoneregmultialea (
+  idzoneregmultialea INTEGER NOT NULL,
   typealea TEXT(3) NOT NULL,
-  idzonereglementaire_u_s TEXT(8), 
-  idzonereglementaire_u_l TEXT(8), 
-  idzonereglementaire_u_p TEXT(8), 
-  idzonereglementaire_f_s TEXT(8), 
-  idzonereglementaire_f_l TEXT(8), 
-  idzonereglementaire_f_p TEXT(8), 
+  idzonereglementaire_u_s TEXT(15), 
+  idzonereglementaire_u_l TEXT(15), 
+  idzonereglementaire_u_p TEXT(15), 
+  idzonereglementaire_f_s TEXT(15), 
+  idzonereglementaire_f_l TEXT(15), 
+  idzonereglementaire_f_p TEXT(15), 
   CONSTRAINT fk_zoneregmultialea_typealea FOREIGN KEY (typealea) REFERENCES typealea(code),
   CONSTRAINT fk_zoneregmultialea_zonereg_us FOREIGN KEY (idzonereglementaire_u_s) REFERENCES typeppr_codegaspar_zonereglementaireurba_s(idzonereglementaire),
   CONSTRAINT fk_zoneregmultialea_zonereg_ul FOREIGN KEY (idzonereglementaire_u_l) REFERENCES typeppr_codegaspar_zonereglementaireurba_l(idzonereglementaire),
@@ -681,16 +773,13 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typeprocedure`
  */
-
-
-
 CREATE TABLE typeprocedure (
   code TEXT(10) NOT NULL PRIMARY KEY,
   libelle TEXT(80) NOT NULL
 );
 INSERT INTO typeprocedure VALUES 
   ('PPRN','Plan de Prévention des Risques Naturels'),
-  ('PPRN-I','Plan de Prévention des Risques Naturels Innondation'),
+  ('PPRN-I','Plan de Prévention des Risques Naturels Inondation'),
   ('PPRN-L','Plan de Prévention des Risques Naturels Littoral'),
   ('PPRN-Mvt','Plan de Prévention des Risques Naturels Mouvement de Terrain'),
   ('PPRN-Multi','Plan de Prévention des Risques Naturels Multirisques'),
@@ -712,17 +801,14 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typeetatprocedure`
  */
-
-
-
 CREATE TABLE typeetatprocedure (
   code TEXT(10) NOT NULL PRIMARY KEY,
-  libelle TEXT(25) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typeetatprocedure VALUES 
   ('DEB_PRG','Programmation'),
   ('DEB_MTG','Montage'),
-  ('PRECRIT','Prescrit'),
+  ('PRESCRIT','Prescrit'),
   ('PAC','Porté à connaissance'),
   ('PROROGE','Prorogé'),
   ('ANTICIPE','Anticipé'),
@@ -736,22 +822,20 @@ INSERT INTO gpkg_contents VALUES
  ;
 
 
-
 /**
  * Création de la table d'enumeration `typereference`
  */
-
-
-
 CREATE TABLE typereference (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typereference VALUES 
-  ('01','Règlement signé'),
-  ('02','Zonage réglementaire signé'),
-  ('03','Cartes signées'),
-  ('98','Autres cartes'),
+  ('01','Règlement non approuvé'),
+  ('02','Règlement approuvé'),
+  ('03','Zonage réglementaire non approuvé'),
+  ('04','Zonage réglementaire approuvé'),
+  ('05','Cartes approuvées'),
+  ('06','Autres cartes'),
   ('99','Autres')
  ;
 /* Ajout à la table gpkg_contents */
@@ -760,16 +844,12 @@ INSERT INTO gpkg_contents VALUES
  ;
 
 
-
 /**
  * Création de la table d'enumeration `typealea`
  */
-
-
-
 CREATE TABLE typealea (
   code TEXT(3) NOT NULL PRIMARY KEY,
-  libelle TEXT(120) NOT NULL
+  libelle TEXT(150) NOT NULL
 );
 INSERT INTO typealea VALUES 
   ('112','Risque Naturel ; Inondation ; Par une crue à débordement lent de cours d''eau'),
@@ -813,7 +893,8 @@ INSERT INTO typealea VALUES
   ('321','Risque minier ; Inondations de terrains miniers ; Pollution des eaux souterraines et de surface'),
   ('322','Risque minier ; Inondations de terrains miniers ; Pollution des sédiments et des sols'),
   ('33','Risque minier ; Emissions en surface de gaz de mine'),
-  ('34','Risque minier ; Echauffement des terrains de dépôts')
+  ('34','Risque minier ; Echauffement des terrains de dépôts'),
+  ('999','Risques multiples')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -825,15 +906,12 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typeniveaualea`
  */
-
-
-
 CREATE TABLE typeniveaualea (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typeniveaualea VALUES 
-  ('00','Très faible ou nul'),
+  ('00','Nul ou négligeable'),
   ('01','Faible'),
   ('02','Moyen ou Modéré'),
   ('03','Moyen plus'),
@@ -841,7 +919,7 @@ INSERT INTO typeniveaualea VALUES
   ('05','Fort plus'),
   ('06','Très fort ou Majeur'),
   ('07','Très fort plus ou aggravé'),
-  ('08','Exceptionnel')
+  ('99','Autre')
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
@@ -853,16 +931,15 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typesuralea`
  */
-
-
-
 CREATE TABLE typesuralea (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typesuralea VALUES 
   ('01','bande de précaution'), 
-  ('02','bande particulière'),
+  ('02','Bande particulière'),
+  ('03','Bande particulière chocs de vagues'),
+  ('04','Bande particulière projection de matériaux'),
   ('99','autre')
  ;
 /* Ajout à la table gpkg_contents */
@@ -873,22 +950,27 @@ INSERT INTO gpkg_contents VALUES
 
 
 /**
- * Création de la table d'enumeration `typeouvrageprotection`
+ * Création de la table d'enumeration `typeouvrageprotecteur`
  */
-
-
-CREATE TABLE typeouvrageprotection (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(20) NOT NULL
+CREATE TABLE typeouvrageprotecteur (
+  code TEXT(3) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
 );
-INSERT INTO typeouvrageprotection VALUES 
-  ('01','Barrage'), 
-  ('02','Digue'), 
-  ('99','autre')
+INSERT INTO typeouvrageprotecteur VALUES 
+  ('1','Ouvrage ou installation pouvant influencer les inondations'), 
+  ('11','Ouvrage de protection contre les inondations'),
+  ('111','Ouvrage appartenant à un systeme d''endiguement'), 
+  ('112','Amenagement hydraulique'), 
+  ('119','Autre ouvrage de protection contre les inondations'), 
+  ('12','Ouvrage ou installation influencant les ecoulements sans fonction de protection'), 
+  ('2','Ouvrage ou installation pouvant influencer les mouvements de terrain'), 
+  ('3','Ouvrage ou installation pouvant influencer les chutes de blocs'), 
+  ('4','Ouvrage ou installation pouvant influencer les avalanches'), 
+  ('999','Autre ouvrage ou installation pouvant influencer les aléas') 
  ;
 /* Ajout à la table gpkg_contents */
 INSERT INTO gpkg_contents VALUES 
-  ('typeouvrageprotection','attributes','typeouvrageprotection','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+  ('typeouvrageprotecteur','attributes','typeouvrageprotecteur','Enumeration valeurs possibles de types d''ouvrages de protection',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
 
@@ -896,16 +978,13 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typerefexterneouvrage`
  */
-
-
-
 CREATE TABLE typerefexterneouvrage (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(10) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typerefexterneouvrage VALUES 
   ('01','ROE'), 
-  ('02','SIOUH'), 
+  ('02','SIOUH II'), 
   ('99','autre')
  ;
 /* Ajout à la table gpkg_contents */
@@ -918,12 +997,9 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typereglementurba`
  */
-
-
-
 CREATE TABLE typereglementurba (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(40) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typereglementurba VALUES 
   ('01','Prescriptions hors zone d''aléa'),
@@ -943,12 +1019,9 @@ INSERT INTO gpkg_contents VALUES
 /**
  * Création de la table d'enumeration `typereglementfoncier`
  */
-
-
-
 CREATE TABLE typereglementfoncier (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typereglementfoncier VALUES 
   ('01','Délaissement possible'),
@@ -960,36 +1033,12 @@ INSERT INTO gpkg_contents VALUES
  ;
 
 
-
-/** 
-  * Création de la table d'enumeration `typeeffettechno`
-  */
-
-
-CREATE TABLE typeeffettechno (
-  code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
-);
-INSERT INTO typeeffettechno VALUES 
-  ('01','Effet thermique'),
-  ('02','Effet de surpression'),
-  ('03','Effet toxique'),
-  ('04','Effet de projection')
- ;
-/* Ajout à la table gpkg_contents */
-INSERT INTO gpkg_contents VALUES 
-  ('typeeffettechno','attributes','typeeffettechno','Enumeration valeurs possibles de types d''effet technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
- ;
-
-
 /** 
   * Création de la table d'enumeration `typeintensitetechno`
   */
-
-
 CREATE TABLE typeintensitetechno (
   code TEXT(2) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typeintensitetechno VALUES 
   ('Z1','Extrèmement grave'),
@@ -1007,11 +1056,9 @@ INSERT INTO gpkg_contents VALUES
 /** 
   * Création de la table d'enumeration `typeclasseprobatechno`
   */
-
-
 CREATE TABLE typeclasseprobatechno (
   code TEXT(1) NOT NULL PRIMARY KEY,
-  libelle TEXT(30) NOT NULL
+  libelle TEXT(50) NOT NULL
 );
 INSERT INTO typeclasseprobatechno VALUES 
   ('A','Evènement courant'),
@@ -1025,13 +1072,200 @@ INSERT INTO gpkg_contents VALUES
   ('typeclasseprobatechno','attributes','typeclasseprobatechno','Enumeration valeurs possibles de classes de probabilité technologique',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
  ;
 
+/**
+  * Création de la table d'énumération `typeenjeupprn`
+  */
+CREATE TABLE typeenjeupprn (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprn VALUES 
+  ('010000','Espaces urbanisés'),
+  ('010100','Centres urbains'),
+  ('010200','Espaces urbanisés hors centres urbains'),
+  ('020000','Espaces non urbanisés'), 
+  ('030000','Espaces spécifiques au type d''aléa étudié'),
+  ('030100','Espaces spécifiques d''activités'),
+  ('030101','Ports, zones d''activités portuaires et d''activités balnéaires'),
+  ('030102','Campings et hôtellerie de plein air'),
+  ('030103','Zones d''activités agricoles spécifiques'),
+  ('030200','Espaces participants à la limitation des aléas'),
+  ('030201','Zones d''expansion des crues'),
+  ('030202','Zones d''atterrissement'),
+  ('030203','Zones d''interfaces habitat-forêt'),
+  ('030204','Zones de maintien d''une forêt'),
+  ('040000','Projets d''aménagement futurs du territoire'),
+  ('050000','Zone d''habitat'),
+  ('050100','Zone d''habitat individuel'),
+  ('050200','Zone d''habitat collectif'),
+  ('060100','Zone d''activité'),
+  ('060101','Zone d''industrie'),
+  ('060102','Service'),
+  ('060103','Artisanat'),
+  ('070000','Infrastructures et équipements particuliers'),
+  ('070100','Etablissements sensibles ou difficilement évacuables'),
+  ('070200','Equipements stratégiques pour la gestion de crise'),
+  ('070300','Equipements collectifs de type ERP ou espaces publics ouverts'),
+  ('070400','Campings et hôtellerie de plein air'),
+  ('070500','Infrastructures de transport'),
+  ('070600','Réseaux et équipements sensibles'),
+  ('080000','Enjeux patrimoniaux, culturels et environnementaux'),
+  ('999999','Autre') 
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprn','attributes','typeenjeupprn','Enumeration valeurs possibles nomenclature enjeux PPRN',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+/**
+  * Table d'énumération `typeenjeupprt`
+  */
+CREATE TABLE typeenjeupprt (
+  code TEXT(6) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeupprt VALUES 
+  ('010000','Urbanisation existante'),
+  ('010100','Habitats'),
+  ('010200','Activités'),
+  ('010300','Etablissements à l''origine du risque'),
+  ('010400','Espaces non urbanisés'),
+  ('010500','Espaces agricoles'),
+  ('020000','Etablissements recevant du public (ERP)'),
+  ('020100','Services de secours'),
+  ('020200','Bâtiments d''enseignement'),
+  ('020300','Bâtiments de services publics'),
+  ('020400','Bâtiments et équipements de loisirs'),
+  ('020500','Bâtiments de soins'),
+  ('020600','Grands centres commerciaux'),
+  ('020700','Petits commerces et services aux particuliers'),
+  ('020800','Bâtiments religieux'),
+  ('030000','Infrastructures de transports'),
+  ('030100','Routes'),
+  ('030101','Grandes voies structurantes'),
+  ('030102','Autres voies structurantes'),
+  ('030103','Voies de dessertes'),
+  ('030200','Voies ferrées'),
+  ('030300','Voies navigables '),
+  ('030400','Itinéraires et stationnements de TMD (Transport de Matières Dangereuses)'),
+  ('030500','Aéroports'),
+  ('030600','Gares (routières, ferroviaires, portuaires)'),
+  ('030700','Modes doux de déplacement (piétons, vélos) '),
+  ('030800','Transports collectifs (bus, métros, etc.) '),
+  ('040000','Espaces publics ouverts'),
+  ('040100','Espaces à usage permanent'),
+  ('040200','Espaces à usage périodique ou occasionnel'),
+  ('050000','Ouvrages et équipements d''intérêt général'),
+  ('050100','Poste EDF'),
+  ('050200','Central téléphonique'),
+  ('050300','Poste de détente GDF'),
+  ('050400','Antenne de téléphonie mobile'),
+  ('050500','Point de captage d’eau'),
+  ('050600','Château d''eau, réservoir'),
+  ('060000','Projets de développement de la commune'),
+  ('070000','Enjeux environnementaux et patrimoniaux'),
+  ('999999','Autre')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeupprt','attributes','typeenjeupprt','Enumeration valeurs possibles nomenclature enjeux technologiques',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
+
+
+
+/**
+  * Table d'énumération `typeenjeucovadis`
+  */
+CREATE TABLE typeenjeucovadis (
+  code TEXT(5) NOT NULL PRIMARY KEY,
+  libelle TEXT(100) NOT NULL
+);
+INSERT INTO typeenjeucovadis VALUES 
+  ('0100','Espace urbanisé'),
+  ('0101','Espace urbanisé - habitat dense'),
+  ('0102','Espace urbanisé - habitat peu dense'),
+  ('0103','Espace urbanisé - habitat diffus'),
+  ('0104','Espace urbanisé - projet d''urbanisation future'),
+  ('0105','Espace urbanisé - réserve foncière'),
+  ('0200','Établissement recevant du public (ERP) '),
+  ('0201c','ERP J : Structures d''accueil pour personnes âgées et handicapées'),
+  ('0202c','ERP L : Salles à usage d''audition, de conférences, de réunions, de spectacles'),
+  ('0203c','ERP M : Magasins de vente, centres commerciaux'),
+  ('0204c','ERP N : Restaurants et débits de boissons'),
+  ('0205c','ERP O : Hôtels et pensions de famille'),
+  ('0206c','ERP P : Salles de danse et salles de jeux'),
+  ('0207c','ERP R : Établissements d''enseignement, colonies de vacances'),
+  ('0208c','ERP S : Bibliothèques, centres de documentation et de consultation d''archives'),
+  ('0209c','ERP T : Salles d''expositions'),
+  ('0210c','ERP U : Établissements de soins'),
+  ('0211c','ERP V : Établissements de culte'),
+  ('0212c','ERP W : Administrations, banques, bureaux'),
+  ('0213c','ERP X : Établissements sportifs couverts'),
+  ('0214c','ERP Y : Musées'),
+  ('0215c','ERP PA : Établissements de plein air'),
+  ('0216c','ERP CST : Chapiteaux, tentes et structures'),
+  ('0217c','ERP CG : Structures gonflables'),
+  ('0218c','ERP OA : Hôtels, restaurants d''altitude'),
+  ('0219c','ERP REF : Refuges de montagne'),
+  ('0220c','ERP PS : Parcs de stationnement couverts'),
+  ('0221c','ERP GA : Gares accessibles au public'),
+  ('0222c','ERP EF : Établissements flottants'),
+  ('0300','Espace économique'),
+  ('0301','Espace économique - zone d''activité industrielle'),
+  ('0302','Espace économique - zone d''activité commerciale'),
+  ('0303','Espace économique - zone d''activité future'),
+  ('0304','Espace économique - zone agricole, ostréicole, mytiliculture, élevage, pisciculture'),
+  ('0305','Espace économique - zone de camping, mobil-home'),
+  ('0306','Espace économique - zone aéroportuaire, portuaire'),
+  ('0307','Espace économique - carrière, gravière'),
+  ('0308','Établissement employeur'),
+  ('0400','Espace ouvert recevant du public'),
+  ('0401','Espace ouvert recevant du public - sport'),
+  ('0402','Espace ouvert recevant du public - tourisme'),
+  ('0403','Espace ouvert recevant du public - parking'),
+  ('0404','Espace ouvert recevant du public - parc d''exposition, foires, rassemblements divers'),
+  ('0405','Espace ouvert recevant du public - cimetière'),
+  ('0500','Infrastructure de transport de personnes ou de marchandise'),
+  ('0501','Infrastructure linéaire - route, voie ferrée, canal'),
+  ('0502','Infrastructure linéaire en projet'),
+  ('0503','Infrastructure linéaire - ligne de bus'),
+  ('0504','Infrastructure linéaire - piste cyclable, voie verte'),
+  ('0505','Infrastructure linéaire - ligne électrique'),
+  ('0506','Infrastructure surfacique - gare, aéroport, aérodrome, port'),
+  ('0507','Infrastructure ponctuelle - gare, arrêt, stationnement TMD'),
+  ('0600','Ouvrage ou équipement d''intérêt général'),
+  ('0601','Ouvrage ou équipement d''intérêt général - zone, station de captage'),
+  ('0602','Ouvrage ou équipement d''intérêt général - station de pompage'),
+  ('0603','Ouvrage ou équipement d''intérêt général - réservoir, château d''eau'),
+  ('0604','Ouvrage ou équipement d''intérêt général - canalisation eau'),
+  ('0605','Ouvrage ou équipement d''intérêt général - poste de relèvement'),
+  ('0606','Ouvrage ou équipement d''intérêt général - station de traitement, de lagunage'),
+  ('0607','Ouvrage ou équipement d''intérêt général - barrage, vanne, écluse'),
+  ('0608','Ouvrage ou équipement d''intérêt général - poste de transformation EDF'),
+  ('0609','Ouvrage ou équipement d''intérêt général - canalisation matière dangereuse'),
+  ('0610','Ouvrage ou équipement d''intérêt général - téléphonique, relai, antenne'),
+  ('0611','Ouvrage ou équipement d''intérêt général - caserne de pompier'),
+  ('0612','Ouvrage ou équipement d''intérêt général - poste de détente gaz'),
+  ('0613','Ouvrage ou équipement d''intérêt général - station hydrocarbure'),
+  ('0614','Ouvrage ou équipement d''intérêt général - décharge, usine d''incinération'),
+  ('0700','Enjeu environnemental ou patrimonial'),
+  ('0701','Zone naturelle protégée'),
+  ('0702','Monument inscrit ou classé au répertoire des monuments historiques'),
+  ('0703','Parc naturel national, régional'),
+  ('0704','Zone d''expansion des crues pour les inondations'),
+  ('0705','Zone naturelle de mouvements de terrain'),
+  ('9999','Autre enjeu : nature à préciser')
+ ;
+/* Ajout à la table gpkg_contents */
+INSERT INTO gpkg_contents VALUES 
+  ('typeenjeucovadis','attributes','typeenjeucovadis','Enumeration valeurs possibles nomenclature enjeux COVADIS',(datetime('now')),NULL,NULL,NULL,NULL,NULL)
+ ;
 
 
 /**
  * Exemple d'insertion de métadonnées de PPR
  */
-
-
 INSERT INTO gpkg_metadata VALUES (
   1,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>'
 ) ;
@@ -1044,9 +1278,6 @@ INSERT INTO gpkg_metadata_reference VALUES (
 /**
  * Exemple d'insertion de métadonnées de table
  */
-
-
-
 INSERT INTO gpkg_metadata VALUES (
   2,'dataset','http://www.isotc211.org/2005/gmd', 'text/xml', '<gmd:MD_Metadata><!-- contenu des métadonnées --></gmd:MD_Metadata>') ;
 INSERT INTO gpkg_metadata_reference VALUES (

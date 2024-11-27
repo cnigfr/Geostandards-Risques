@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.2 - 29 avril 2024*
+*Version 0.3 - 27 novembre 2024*
 
 
 #  Fiche analytique
@@ -25,14 +25,14 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Modèle Commun |
-| **Version du document** | *0.2 - 29 avril 2024 (date de publication)*  |
+| **Version du document** | *0.3 - 27 novembre 2024 (date de publication)*  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières. |
 | **Etendue d'application** | Territoire national français. |
-| **Résolution spatiale** | Entre le 1:5000 et le 1:25000 |
-| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Résolution spatiale** | Entre le 1:2000 et le 1:25000 |
+| **Statut du document** | ~~Projet~~ - ~~Appel à commentaires~~ - Proposé à la commission des Standards du CNIG - ~~Validé~~ |
 | **Licence** | Le présent document est sous [Licence Ouverte (Open Licence) Etalab](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| **Diffusion** | *A venir : PDF sur internet  (site du CNIG)* |
-| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.2.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
+| **Diffusion** | [PDF sur internet](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.3.pdf) |
+| **Formats disponibles** | [MS Word - DOCX](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.3.docx) - [HTML/Markdown](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) |
 | **Thèmes** | (INSPIRE) "Usage des sols", "Lieux de production et sites industriels", "Zones de gestion, de restriction ou de réglementation et unités de déclaration", "Zones de risque naturel" |
 | **Mots-clés** | "Usage des sols" ; "prévention" ; "risque" ; "aléa" ; "aménagement" ; "urbanisme" ; "prescription" ; "servitude" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org |
@@ -52,6 +52,7 @@ Groupe de travail refonte des Géostandards Risques
 | - | - | - |
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Légères modifications du modèle en cohérence avec le modèle du profil PPR. |
+| 0.3 | 27/11/2024 | Version tenant compte des commentaires reçus lors de la consultation publique, soumise au CNIG pour validation. |
 
 
 ##  Participation à l'écriture
@@ -181,6 +182,7 @@ La mise en œuvre des Territoires à Risque Important d'Inondation est définie 
 | D(R)EAL | Direction (régionale) de l'environnement, de l'aménagement et du logement |
 | DRIEAT | Direction régionale et interdépartementale de l’environnement, de l’aménagement et des transports (d'Île de France) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
 | GEMET | General multilingual environmental thesaurus |
 | IGN | Institut national de l'information géographique et forestière |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
@@ -237,13 +239,13 @@ Cette section définit, à l'aide du langage UML, le [modèle conceptuel de donn
 
 Les données décrites dans le cadre de ce standard se répartissent dans cinq grandes thématiques :
 
-- La thématique [procédures et périmètres](#thématique-procédures-et-périmètres) relate de l'aspect administratif et de l'état d'avancement de la procédure en lien avec le système GASPAR (gestion assistée des procédures administratives relatives aux risques) du MTECT dans lequel elles sont recensées. Toutes les entités des autres thématiques y sont rattachées ;
+- La thématique [procédures et périmètres](#thématique-procédures-et-périmètres) traite de l'aspect administratif et de l'état d'avancement de la procédure en lien avec le système GASPAR (gestion assistée des procédures administratives relatives aux risques) du MTECT dans lequel elles sont recensées. Toutes les entités des autres thématiques y sont rattachées ;
 
 - La thématique [aléas](#thématique-aléas) comprend les entités permettant de décrire les phénomènes objets du risque à l'origine de la procédure, leur localisation, leurs probabilités et leurs intensités ;
 
-- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, activités, éléments de patrimoine culturel ou environnemental, susceptibles d'être affectés par les aléas. 
+- La thématique [enjeux](#thématique-enjeux) traite des biens, personnes, activités, éléments de patrimoine culturel ou environnemental, susceptibles d'être affectés par les aléas ; 
 
-- La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention.
+- La thématique [origine du risque](#thématique-origine-du-risque) permet de faire référence aux entités génératrices du risque à l'origine de la procédure de prévention ;
 
 - La thématique [zonage réglementaire](#thématique-zonage-réglementaire) permet de décrire le zonage réglementaire déduit du croisement des objets de la thématique aléa et de ceux de la thématique enjeux.
 
@@ -262,7 +264,7 @@ Le schéma suivant représente le schéma UML complet des classes décrites par 
 
 La thématique "Procédures et périmètre" regroupe les informations relatives au suivi administratif des procédures de prévention des risques et aux différents types de périmètres qui précèdent l'établissement du zonage réglementaire. Ces informations de suivi sont saisies et gérées par les services déconcentrés de l'État dans l'application GASPAR du MTE.
 
-Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données de standard et le modèle de données du système GASPAR sont précisées dans le [paragraphe dédié](#annexe-b---correspondances-avec-le-modèle-de-données-gaspar).
+Le modèle de données de ce standard ne reprend que les informations du système GASPAR qui permettent de faire le lien avec la procédure qui est concernée et de faire état de son actualité. Les correspondances entre les données ce de standard et le modèle de données du système GASPAR sont précisées [en annexe B](#annexe-b---correspondances-avec-le-modèle-de-données-gaspar).
 
 La liste des types de procédures prises en charge par ce standard correspond à des types de procédures gérés dans GASPAR. Elle est reprise par le type énuméré [TypeProcedure](#enumeration-typeprocedure).
 
@@ -283,22 +285,22 @@ Les ressources internet liées à une procédure donnée (par exemple la publica
 
 ### Thématique Aléas
 
-La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et leurs intensités.
+La thématique aléas porte sur la description des phénomènes, leur localisation, leurs probabilités et les niveaux d'aléas associés.
 
 Dans cette thématique sont définies : 
 
 * trois classes pour décrire des zones définies relativement aux aléas ([ZoneAlea](#classe-dobjets-zonealea), [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) et [ZoneProtegee](#classe-dobjets-zoneprotegee)) ;
-* une classe pour décrire les ouvrages de protection [OuvrageProtection](#classe-dobjets-ouvrageprotection) ;  
+* une classe pour décrire les ouvrages protecteurs [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) contre les aléas ;  
 * une classe générique permettant de décrire les éléments de détermination et de caractérisation des aléas [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) ;
-* trois énumérations permettant de classifier les types d'aléas ([TypeAlea](#enumeration-typealea)), les types d'ouvrage de protection ([TypeOuvrageProtection](#enumeration-typeouvrageprotection)) et les référentiels externes d'ouvrages de protection ([TypeRefExterneProtection](#enumeration-typerefexterneprotection)) ;
+* trois énumérations permettant de classifier les types d'aléas ([TypeAlea](#enumeration-typealea)), les types d'ouvrage de protecteurs ([TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur)) et les référentiels externes d'ouvrages de protecteurs ([TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage)).
 
-La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau d'intensité et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
+La classe [ZoneAlea](#classe-dobjets-zonealea) permet de décrire les zones soumises à des aléas, en indiquant le type d'aléa (classifié à l'aide de l'énumération [TypeAlea](#enumeration-typealea)) qui la concerne, son niveau d'aléa et sa probabilité d'occurrence. Les zones d'aléas sont définies par rapport à une procédure donnée.
 
-La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau d'intensité et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)). 
+La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) permet de représenter des zones de danger particulières superposables aux zones d'aléas décrites précédemment. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau d'intensité et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)). 
 
-La classe ([ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+La classe ([ZoneProtegee](#classe-dobjets-zoneprotegee)) permet de décrire les zones protégées par un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage protecteur.
 
-Les ouvrages de protection sont déjà décrits dans d'autres référentiels plus ou moins normatifs (par exemple, le référentiel des obstacles à l'écoulement [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)). Ce Standard propose seulement une classe [OuvrageProtection](#classe-dobjets-ouvrageprotection) qui permet d'intégrer des objets de ces référentiels lorsqu'ils sont inclus dans une cartographie de prévention des risques et d'indiquer de quel type ils sont [TypeOuvrageProtection](#enumeration-typeouvrageprotection) et le référentiel dont ils sont extraits [TypeRefExterneProtection](#enumeration-typerefexterneprotection).
+Les ouvrages protecteurs sont déjà décrits dans d'autres référentiels plus ou moins normatifs (par exemple, le référentiel des obstacles à l'écoulement [ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)). Ce Standard propose seulement une classe [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) qui permet d'intégrer des objets de ces référentiels lorsqu'ils sont inclus dans une cartographie de prévention des risques et d'indiquer de quel type ils sont [TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur) et le référentiel dont ils sont extraits [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage).
 
 Les zones d'aléas sont déterminées à partir d'éléments techniques, spécifiques aux types d'aléas décrits, par exemple les zones d'iso-classes de hauteur d'eau permettant de déterminer les surfaces inondables pour les territoires à risque important d'inondation. Ce standard ne définit pas spécifiquement chacun de ces éléments mais propose une classe générique [ElementCaracterisationAlea](#classe-dobjets-elementcaracterisationalea) qui pourra être spécialisée au besoin selon les profils applicatifs de façon à rattacher ces éléments aux zones d'aléas qu'ils permettent de déterminer et caractériser leur intensité et leur probabilité. 
 
@@ -432,7 +434,7 @@ Il est à noter que certaines procédures n'impliquent pas obligatoirement la mi
 | description | Description de la ressource référencée sur Internet. Ce champ peut permettre notamment d'indiquer le type de ressource (site web, page HTML, document PDF, ...) | CharacterString | Saisie libre | 0..1 |
 
 
-#### Énumeration *TypeProcedure*
+#### Enumeration *TypeProcedure*
 
 Le tableau suivant liste les différents types de procédures de prévention des risques pouvant être décrites. Les correspondances avec les types de procédures gérés dans GASPAR sont précisées dans le [paragraphe dédié](#types-de-procédures-gaspar).
 
@@ -440,7 +442,7 @@ Le tableau suivant liste les différents types de procédures de prévention des
 | Libellé | Description |
 |-|-|
 | Plan de Prévention des Risques Naturels Inondation | Ce type de procédure couvre les risques naturels liés aux inondations par ruissellement, par débordement de cours d'eau, par submersion marine ou par remontée de nappe |
-| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés aux retraits du trait de côte ou à la submersion marine |
+| Plan de Prévention des Risques Naturels Littoral | Ce type de procédure couvre les risques naturels liés à la submersion marine, à la migration dunaire. Certains PPRL anciens traitent de l’aléa recul du trait de côte et de falaises |
 | Plan de Prévention des Risques Naturels Mouvement de Terrain | Ce type de procédure couvre les risques naturels liés aux éboulements ou chutes de blocs rocheux, glissements de terrain, coulées boueuses, effondrements de cavités souterraines, l'érosion de berge ou au retrait-gonflement des argiles |
 | Plan de Prévention des Risques Naturels Multirisques | Ce type de procédure concerne les plans de prévention des risques couvrant plusieurs types de risques naturels |
 | Plan de Prévention des Risques Naturels Séisme | Ce type de procédure couvre les risques naturels liés au zonage sismique de la France, aux effets de site (amplification par rapport au mouvement de référence) et aux effets induits (mouvements de terrain, liquéfaction des sols, tsunamis) |
@@ -480,9 +482,11 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Libellé | Description |
 |-|-|
-| Règlement signé | Le document est un règlement approuvé (Utilisation dans le cadre d'un PPR) |
-| Zonage réglementaire signé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cadre d'un PPR) |
-| Carte signée | Le document est une carte approuvée (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
+| Règlement non approuvé | Le document est un règlement qui n’a pas fait l’objet d’une approbation (utilisation dans le cadre d’un PPR ou d’un PAC) |
+| Règlement approuvé | Le document est un règlement approuvé (Utilisation dans le cadre d'un PPR) |
+| Zonage réglementaire non approuvé | Le document est un zonage réglementaire qui n’a pas fait l’objet d’une approbation (utilisation dans le cadre d’un PPR ou d’un PAC) |
+| Zonage réglementaire approuvé | Le document est le zonage réglementaire d'un PPR approuvé (Utilisation dans le cadre d'un PPR) |
+| Carte approuvée | Le document est une carte approuvée (Utilisation dans le cadre d'un PPR ou de la Directive Inondation) |
 | Autre carte | Le document est une carte additionnelle (Utilisation dans toutes les procédures) |
 | Autre | Tout autre document (Utilisation dans toutes les procédures) |
 
@@ -497,7 +501,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Définition** : La classe Zone d'aléa permet de décrire des zones géographiques soumises à des aléas et d'en préciser le type d'aléa, son niveau, et sa probabilité d'occurrence.
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 **Propriétés** : 
 
@@ -507,7 +511,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 | idZoneAlea | Identifiant unique d'un objet zone d'aléa | CharacterString | Deux objets de la classe ZoneAlea ne peuvent pas avoir la même valeur pour cette propriété | 1..1 | 
 | codeProcedure | Identifiant de la procédure pour laquelle la zone d'aléas a été calculée. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
 | typeAlea | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR et reprise par l'énumération [TypeAlea](#enumeration-typealea) | Énumération [TypeAlea](#enumeration-typealea) | Celles de l'énumération | 1..1 |
-| niveauAlea | Caractérisation du niveau de l'aléa. Les règles de détermination d'un niveau d'aléa dépend du type d'aléa concerné et sont spécifiées dans des guides ad hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | CharacterString | Saisie libre au niveau du modèle commun, pourra être restreinte par les profils applicatifs. | 1..1 |
+| niveauAlea | Caractérisation du niveau de l'aléa. Les règles de détermination d'un niveau d'aléa dépendent du type d'aléa concerné et sont spécifiées dans des guides ad hoc dont il doit être fait mention dans les métadonnées accompagnant le jeu de données de prévention des risques. | CharacterString | Saisie libre au niveau du modèle commun, pourra être restreinte par les profils applicatifs. | 1..1 |
 | occurrence | Ce champ permet d'indiquer l'occurrence de survenue de l'aléa. Sa caractérisation dépend du type d'aléa, il pourra s'agir par exemple d'une période de retour ou d'un autre indicateur, à définir dans les profils applicatifs. | CharacterString | Saisie libre, éventuellement contrainte selon le type d'aléa | 0..1 |
 | description | Description textuelle de la zone d'aléa | CharacterString | Saisie libre | 0..1 |
 
@@ -526,9 +530,9 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Zone Protégée
 
-**Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage de protection.
+**Définition** : La classe Zone Protégée permet de décrire les zones protégées par un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)) relativement à un aléa. Ces zones sont superposables aux zones d'aléas. Elles sont caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)), un niveau de protection et une période de retour relatifs à l'ouvrage protecteur.
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 **Propriétés** : 
 
@@ -548,7 +552,7 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'ouvrage de protection qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (1..1) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone protégée avec l'ouvrage protecteur qui la protège. | [ZoneProtegee](#classe-dobjets-zoneprotegee) (0..\*) |  [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) (1..1) |
 
 
 #### Classe d'objets *ZoneDangerSpecifique*
@@ -557,9 +561,9 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 **Titre** : Zone de danger spécifique
 
-**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage de protection ([OuvrageProtection](#classe-dobjets-ouvrageprotection)).
+**Définition** : La classe Zone de danger spécifique permet de représenter des zones de danger particulières superposables aux zones d'aléas. Elles sont aussi caractérisées par le type d'aléa ([TypeAlea](#enumeration-typealea)) et son niveau et rattachées à une procédure donnée. Elles peuvent être aussi liées à un ouvrage protecteur ([OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur)).
 
-**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec un géométrie trop lourde et difficiles à manipuler en SIG.
+**Modélisation géométrique** : Multi polygone de façon à pouvoir matérialiser des géométries complexes. Il est cependant recommandé de restreindre la géométrie à des surfaces élémentaires dans la mesure du possible de façon à éviter des objets avec une géométrie trop lourde et difficile à manipuler en SIG.
 
 
 **Propriétés** : 
@@ -580,30 +584,32 @@ Le tableau suivant liste les différents types de documents qui peuvent être r�
 
 | Nom de l'association | Type | Définition | Classe de départ | Classe d'arrivée |
 |-|-|-|-|-|
-| **est engendré par** | Association | Relation sémantique permettant d'associer une zone de danger spécifique avec un ouvrage de protection qui la génère. | [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) (0..\*) |  [OuvrageProtection](#classe-dobjets-ouvrageprotection) (0..1) |
+| **est engendré par** | Association | Relation sémantique permettant d'associer une zone de danger spécifique avec un ouvrage protecteur qui la génère. | [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) (0..\*) |  [OuvrageProtecteur](#classe-dobjets-ouvrageprotecteur) (0..1) |
 
 
 
-#### Classe d'objets *OuvrageProtection*
+#### Classe d'objets *OuvrageProtecteur*
 
-**Nom de la classe** : OuvrageProtection
+**Nom de la classe** : OuvrageProtecteur
 
-**Titre** : Ouvrage de protection
+**Titre** : Ouvrage protecteur
 
-**Définition** : La classe Ouvrage de protection permet de faire état des ouvrages de protection contre les aléas (par exemple des digues en prévention des risques d'inondation). La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques (SIOUH), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
+**Définition** : La classe Ouvrage protecteur permet de faire état des ouvrages qui ont un rôle protecteur contre les aléas (par exemple des digues en prévention des risques d'inondation), qu'ils aient été réalisés dans ce but ou non. La caractérisation de ces ouvrages est décrite dans d'autres référentiels tels que, dans le cadre du risque inondation, le Référentiel des Obstacles à l'Ecoulement ([ROE 1.2:2014](https://www.sandre.eaufrance.fr/notice-doc/description-des-ouvrages-faisant-obstacle-%C3%A0-l%E2%80%99%C3%A9coulement)) ou le Système d'Information sur les Ouvrages Hydrauliques II (SIOUH II), cette classe permet de faire le lien avec des objets qui en sont issus sans avoir à en spécifier les caractéristiques. Elle impose cependant que ces objets soient porteurs d'une géométrie, de la référence au référentiel dont ils sont issus et d'une indication du type d'ouvrage qu'ils représentent.
 
-**Modélisation géométrique** : Les objets de la classe ouvrage de protection peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
+**Modélisation géométrique** : Les objets de la classe ouvrage protecteur peuvent porter tout type de géométrie selon le type d'ouvrage et la façon dont ils sont représentés dans leurs référentiels d'origine.
 
 **Propriétés** : 
 
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 1..1 | 
+| idOuvrageProtecteur | Identifiant unique de l'ouvrage protecteur | CharacterString | Deux objets de la classe OuvrageProtecteur ne peuvent avoir la même valeur | 1..1 | 
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe | 0..1 | 
 | refExterne | Référentiel externe d'où est extrait l'objet | Énumération [TypeRefExterneOuvrage](#enumeration-typerefexterneouvrage) | Celles de l'énumération | 1..1 | 
 | refExterneAutre | Nom du référentiel externe d'où est extrait l'objet si la valeur "autre" a été renseignée pour le champ refExterne. | CharacterString | La valeur doit désigner de manière non ambiguë un nom et une version du référentiel utilisé. Saisie obligatoire si la valeur "autre" est renseignée pour refExterne.  | 0..1 | 
-| typeOuvrageProtection | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtection](#enumeration-typeouvrageprotection) | Celles de l'énumération | 0..1 |
-
+| typeOuvrageProtecteur | Désignation du type d'ouvrage que représente cet objet. | [TypeOuvrageProtecteur](#enumeration-typeouvrageprotecteur) | Celles de l'énumération | 0..1 |
+| roleProtection | Ce champ permet d'indiquer si l'ouvrage ou l'installation a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | Booléen | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal au scenario de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | 0..1 |
+| occurrence | Ce champ permet de préciser l'occurrence de survenue de l'aléa contre lequel l'ouvrage a été conçu et est entretenu pour se protéger. | CharacterString | Le type et les contraintes sur les valeurs pour caractériser l'occurrence seront précisés par le profil applicatif, en fonction notamment du type d'aléa (naturel ou technologique). | 0..1 | Cette valeur n'est pas renseignée si le champ "roleProtection" vaut `false`. | 
 
 #### Classe d'objets *ElementCaracterisationAlea*
 
@@ -672,25 +678,32 @@ Le tableau suivant liste les différents types d'aléas applicables pour les zon
 | Risque minier ; Echauffement des terrains de dépôts |
 
 
-#### Enumeration *TypeOuvrageProtection*
-
-Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage de protection.
+#### Enumeration *TypeOuvrageProtecteur*
+ 
+Le tableau suivant liste les valeurs possibles permettant de désigner un type d'ouvrage protecteur. Les valeurs proposées ont une organisation hiérarchique qui permet de classer plus ou moins finement la fonction l'ouvrage relativement à l'aléa contre lequel il permet de se prémunir.
 
 | Libellé référentiel | Description |
 |-|-|
-| Barrage | Ouvrage, composé éventuellement de plusieurs tronçons, construit en élévation du terrain naturel, afin de retenir de l'eau de manière permanente ou temporaire (SIOUH) |
-| Digue | Ouvrage, composé éventuellement de plusieurs tronçons, dont au moins une partie est construite en élévation du terrain naturel afin de protéger des zones naturellement inondables (SIOUH) |
-| Autre | Autre type d'ouvrage ne figurant pas dans la liste ci-dessus |
+| Ouvrage ou installation pouvant influencer les inondations | Ouvrage ou installation pouvant faire obstacle aux écoulements d'une inondation, ou de manière générale, les influencer. |
+| Ouvrage de protection contre les inondations | Ouvrage de protection contre les inondations, c'est à dire conçu et géré pour protéger un secteur contre les inondations. |
+| Ouvrage appartenant à un système d'endiguement | Ouvrage de protection contre les inondations appartenant à un système d'endiguement au sens de l'article [R. 562-13 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038160601) (digue, vanne, etc.). |
+| Aménagement hydraulique | Ouvrage de protection contre les inondations appartenant à un aménagement hydraulique au sens de l'article [R. 562-18 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039001323) (seuils, barrage, etc.). |
+| Autre ouvrage de protection contre les inondations | Autre ouvrage géré pour sa fonction de protection contre les inondations (géré dans le cadre de la mise en œuvre de la GEMAPI). Il peut notamment s'agir des bassins de stockage trop petits pour être autorisés au titre de la rubrique 3.2.6.0 de la nomenclature définie à l'article [R. 214-1 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048136763). |
+| Ouvrage ou installation influencant les ecoulements sans fonction de protection | Installation, ouvrage ou remblai faisant obstacle aux écoulements et n'ayant pas de fonction de protection (et en particulier, non intégré dans un système d'endiguement et non géré dans le cadre de la mise en œuvre de la GEMAPI). Il s'agit par exemple de remblais routier, remblais ferroviaires, merlons, plages de dépôt, etc. |
+| Ouvrage ou installation pouvant influencer les mouvements de terrain | Ouvrage ou installation pouvant influencer les mouvements de terrain. |
+| Ouvrage ou installation pouvant influencer les chutes de blocs | Ouvrage ou installation pouvant influencer les chutes de blocs. |
+| Ouvrage ou installation pouvant influencer les avalanches | Ouvrage ou installation pouvant influencer les avalanches. || Ouvrage ou installation pouvant influencer les feux de foret | Ouvrage ou installation pouvant influencer les feux de foret. |
+| Autre ouvrage ou installation pouvant influencer les aléas | Autre ouvrage ou installation pouvant influencer les aléas, non décrit par les valeurs précédentes. |
 
 
 #### Enumeration *TypeRefExterneOuvrage*
 
-Le tableau suivant liste les valeurs possibles permettant de désigner un référentiel dont est issu un ouvrage de protection. 
+Le tableau suivant liste les valeurs possibles permettant de désigner un référentiel dont est issu un ouvrage protecteur. 
 
 | Libellé référentiel | Description |
 |-|-|
 | ROE | Référentiel des obstacles à l'écoulement - Thème : Ouvrages - Dernière version applicable version 1.2 - 2014|
-| SIOUH | Système d'Information des Ouvrages Hydrauliques - dernière version applicable version 4 - 2017 |
+| SIOUH II | Système d'Information des Ouvrages Hydrauliques II |
 | Autre | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 
@@ -710,11 +723,11 @@ Le tableau suivant liste les valeurs possibles permettant de désigner un réfé
 
 | Nom de la propriété | Définition | Type | Valeurs possibles | Contraintes |
 |-|-|-|-|-|
-| codeProcedure | Identifiant de la procédure pour laquelle l'objet origine du risque a été rapporté. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 |
-| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 1..1 | 
-| refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 1..1 | 
-| nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
-
+| idOrigineRisque | Identifiant unique de l'objet origine du risque | CharacterString | Deux objets de la classe OrigineRisque ne peuvent avoir la même valeur | 1..1 | 
+| codeProcedure | Identifiant de la procédure pour laquelle l'objet origine du risque a été rapporté. Ce champ permet de faire le lien avec l'objet correspondant de la classe [Procedure](#classe-dobjets-procedure) | CharacterString | La valeur de ce champ doit aussi exister comme valeur de la propriété codeProcedure d'un objet de la classe [Procedure](#classe-dobjets-procedure) | 1..1 || nom | Nom de l'objet origine du risque. | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | 1..1 |
+| idRefExterne | Identifiant de l'objet dans le référentiel externe d'où il est extrait | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | 0..1 | 
+| refExterne | Référentiel externe d'où est extrait l'objet. | CharacterString | Saisie Libre | 0..1 | 
+| nom | Nom de l'objet origine du risque | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | 1..1 |
 
 
 ### Thématique Enjeux
@@ -956,7 +969,7 @@ Les tables de correspondances avec le thème 12 Zones de risque naturel de l'ann
 
 ### Nomenclature des identifiants dans GASPAR
 
-Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR.
+Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR. A ce titre, ces identifiants doivent être utilisés tels quels sans aucune modification.
 
 Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
 
