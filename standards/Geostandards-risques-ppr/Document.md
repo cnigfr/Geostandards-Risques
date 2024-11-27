@@ -697,7 +697,7 @@ Le tableau suivant liste les valeurs possibles et communes pour caractériser l'
 
 | Code | Libellé niveau | Type PPR applicable |
 |-|-|-|
-| 00 | Très faible ou nul | PPR Avalanches ou PPR Incendies de forêt | 
+| 00 | Nul ou négligeable | Tous PPR | 
 | 01 | Faible | Tous PPR |
 | 02 | Moyen ou Modéré | Tous PPR. Le terme "Modéré" est appliqué dans certains PPRN  |
 | 03 | Moyen plus | PPRT |
@@ -1949,7 +1949,7 @@ Elle a la structure et le contenu suivants :
 
 | `code` TEXT(2) | `libelle` TEXT(30) |
 |-|-|
-| 00 | Très faible ou nul |
+| 00 | Nul ou négligeable |
 | 01 | Faible |
 | 02 | Moyen ou Modéré |
 | 03 | Moyen plus |

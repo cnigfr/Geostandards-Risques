@@ -908,7 +908,7 @@ CREATE TABLE typeniveaualea (
   libelle TEXT(50) NOT NULL
 );
 INSERT INTO typeniveaualea VALUES 
-  ('00','Très faible ou nul'),
+  ('00','Nul ou négligeable'),
   ('01','Faible'),
   ('02','Moyen ou Modéré'),
   ('03','Moyen plus'),
