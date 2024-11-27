@@ -316,7 +316,7 @@ Le cas d'utilisation "Publier un PPR" illustre les grandes étapes de la mise en
 |-|-|
 | Mettre en ligne les pièces écrites (du PPR) | Cette action, menée sous la responsabilité des DDT(M)s, vise à mettre en ligne les pièces écrites du dossier PPR. Elle se fait en général sur le site internet de la préfecture du département de la DDT(M) concernée. Les données décrites par le standard permettent de mentionner le lien vers ces pièces écrites une fois publiées. |
 | Valider les données SIG | Cette action permet de vérifier que les données SIG relatives au PPR sont conformes au modèle et aux exigences de ce standard. Elle est un préalable à leur publication. La mise en œuvre de cette action peut se faire sur le système de publication (ici, représenté par Géorisques). Des vérifications de cohérence avec le système GASPAR peuvent aussi être réalisées. |
-| Mettre en ligne les données SIG | Cette action est aussi au cœur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. |
+| Mettre en ligne les données SIG | Cette action est aussi au cœur de la cible de ce standard. Elle permet de rendre les données de PPR accessibles aux différents types d'utilisateurs mentionnés précédemment et de nourrir le cas d'utilisation suivant. La publication peut se faire sur le site internet de la préfecture du département de la DDT(M) concernée, mais elle a vocation à se faire sur la plateforme nationale de diffusion qu'est Géorisques. Cette action ne concerne pas la diffusion des servitudes d'utilité publique (SUP) dérivées des PPR et mise en oeuvre par le Geoportail de l'Urbanisme (cf. [Cas d'utilisation Exploiter un PPR](#cas-dutilisation-exploiter-un-ppr)). |
 
 
 La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
@@ -336,7 +336,7 @@ Le cas d'utilisation "Exploiter un PPR" illustre des utilisations "type" des PPR
 |-|-|
 | Consulter les données | Cette action est celle du grand public qui souhaite connaitre les risques sur un secteur. Elle est rendue possible par des interfaces de visualisation en ligne sur la plateforme nationale Géorisques ou éventuellement sur les sites web des préfectures qui mettent en œuvre de telles fonctionnalités. La consultation est aussi rendue possible grâce aux métadonnées qui vont permettre à l'utilisateur de retrouver et sélectionner la donnée qu'il souhaite consulter grâce à des mécanismes de catalogage. |
 | Télécharger les données SIG PPR | Cette action va de pair avec la précédente et est rendue possible par les mêmes plateformes. Elle peut concerner le grand public (avec un profil plutôt initié) mais aussi les collectivités territoriales ou des organismes de type bureaux d'études qui ont besoin de télécharger les données pour les traiter ou les intégrer dans leur système d'information. |
-| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des données SIG décrivant les Servitudes d'Utilité Publiques dérivées des PPR et mises en œuvre par les services de l'État ou l'utilisation des PPR dans le cadre de l'élaboration des plans locaux d'urbanisme par les collectivités territoriales. |
+| Dériver / enrichir les données | Cette action est aussi liée à la précédente. Elle est représentative des utilisations telles que la production des données SIG décrivant les servitudes d'utilité publiques (SUP), dérivées des PPR, mises en œuvre par les services de l'État ou l'utilisation des PPR dans le cadre de l'élaboration des plans locaux d'urbanisme par les collectivités territoriales. |
 | Publier les données dérivées | La publication des données dérivées mentionnées ci-dessus n'est pas couverte par le standard mais elle fait partie de la chaine aval de diffusion des données PPR. Elle est aussi facilitée par l'obtention de données respectant les critères de qualité énoncés par le standard PPR. |
 
 
@@ -411,6 +411,14 @@ Dans le cas particulier des **PPR Avalanches** :
 ##### Définition des zones de danger spécifiques pour l'aléa inondation
 
 La classe [ZoneDangerSpecifique](#classe-dobjets-zonedangerspecifique) est aussi spécialisée pour permettre de caractériser ces zones de danger spécifiques dans le cadre de l'aléa inondation en quatre types précisés par l'énumération [TypeSurAlea](#enumeration-typesuralea) : les **bandes de précaution** à l'arrière des systèmes d'endiguement, les **bandes particulières** soumises aux chocs mécaniques des vagues et/ou aux projections des matériaux telles que définies dans le [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf).
+
+
+##### Eléments de caractérisation d'aléas dans le cadre des PPR Naturels
+
+Dans le cadre des PPR Naturels, des informations telles que les plus hautes eaux connues (côtes PHEC) pour le risque inondation peuvent être rajoutées au contenu du PPR au titre des [élements de caracterisation d"aleas](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#classe-dobjets-elementcaracterisationalea) définis dans le modèle commun. 
+
+Le standard ne propose cependant pas de modélisation pour ce type de données dont la défintion fait l'objet d'autres documents.
+
 
 
 La figure suivante fait ressortir en jaune les modifications du modèle commun dans le cadre des PPR Naturels pour la thématique Aléas.
