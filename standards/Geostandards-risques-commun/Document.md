@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 1.0 - 5 décembre 2024*
+*Version 1.0 - 10 décembre 2024*
 
 
 #  Fiche analytique
@@ -25,7 +25,7 @@ Groupe de travail refonte des Géostandards Risques
 |-|-|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Modèle Commun |
-| **Version du document** | *1.0 - 5 décembre 2024 (date de publication)*  |
+| **Version du document** | 1.0 - 10 décembre 2024  |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Ce document constitue le socle commun de ces Géostandards en définissant les concepts communs qui sont ensuite précisés dans les profils applicatifs dédiés aux procédures particulières. |
 | **Etendue d'application** | Territoire national français. |
 | **Résolution spatiale** | Entre le 1:2000 et le 1:25000 |
@@ -53,7 +53,7 @@ Groupe de travail refonte des Géostandards Risques
 | 0.1 | 11/09/2023 | Première version pour relecture du Groupe de Travail |
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Légères modifications du modèle en cohérence avec le modèle du profil PPR. |
 | 0.3 | 27/11/2024 | Version tenant compte des commentaires reçus lors de la consultation publique, soumise au CNIG pour validation. |
-| 1.0 | 05/12/2024 | Version validée par le CNIG. |
+| 1.0 | 10/12/2024 | Version validée par le CNIG. |
 
 
 ##  Participation à l'écriture
