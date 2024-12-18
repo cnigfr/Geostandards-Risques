@@ -11,15 +11,13 @@ Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Info
 Les versions en cours des géostandards développés par ce groupe de travail sont accessibles ici :
 
 - **Géostandards risques - Modèle commun** :
-  - [Version 0.1 du 11/09/2023](./standards/Geostandards-risques-commun/diffusion/Geostandards-Risques-Modele-Commun-v0.1.docx) soumise à relecture du groupe de travail
-  - [Version 0.2 du 30/04/2024 soumise à consultation publique](./suivi/2024-05_06-Consultation-publique/Geostandards-Risques-Modele-Commun-v0.2.pdf)
-  - [Version 1.0 en cours de rédaction](./standards/Geostandards-risques-commun/Document.md)
+  - [Version 1.0 **publiée** sur le site du CNIG](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-modele-commun-v1_0.pdf)
+  - [Version en cours de rédaction](./standards/Geostandards-risques-commun/Document.md)
 
 
 - **Géostandards risques - Plans de prévention des risques (PPR)** :
-  - [Version 0.1 du 11/09/2023](./standards/Geostandards-risques-ppr/diffusion/Geostandards-Risques-PPR-v0.1.docx) soumise à relecture du groupe de travail
-  - [Version 0.2 du 30/04/2024 soumise à consultation publique](./suivi/2024-05_06-Consultation-publique/Geostandards-Risques-PPR-v0.2.pdf)
-  - [Version 1.0 en cours de rédaction](./standards/Geostandards-risques-ppr/Document.md)
+  - [Version 1.0 **publiée** sur le site du CNIG](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1_0.pdf)
+  - [Version en cours de rédaction](./standards/Geostandards-risques-ppr/Document.md)
 
 
 ## Organisation du dépot
