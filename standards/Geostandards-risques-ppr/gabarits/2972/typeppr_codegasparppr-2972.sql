@@ -461,7 +461,7 @@ CREATE TABLE typeppr_codegaspar_ouvrageprotecteur_codealea_s (
   refexterne TEXT(2) NOT NULL,
   refexterneautre TEXT,
   typeouvrageprotecteur TEXT(2), 
-  roleProtection BOOLEAN,
+  roleprotection BOOLEAN,
   occurrence TEXT,
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_ouvrageprotecteur_codealea_s_refexterne FOREIGN KEY (refexterne) REFERENCES typerefexterneouvrage(code),
@@ -516,7 +516,7 @@ CREATE TABLE typeppr_codegaspar_originerisque_s (
   idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
   idrefexterne TEXT(50), 
-  refexterne,
+  refexterne TEXT,
   nom TEXT NOT NULL, 
   geom MULTIPOLYGON NOT NULL,
   CONSTRAINT fk_originerisque_s_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -526,7 +526,7 @@ CREATE TABLE typeppr_codegaspar_originerisque_l (
   idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
   idrefexterne TEXT(50), 
-  refexterne,
+  refexterne TEXT,
   nom TEXT NOT NULL, 
   geom MULTILINESTRING NOT NULL,
   CONSTRAINT fk_originerisque_l_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -536,7 +536,7 @@ CREATE TABLE typeppr_codegaspar_originerisque_p (
   idoriginerisque TEXT(15) NOT NULL PRIMARY KEY,
   codeprocedure TEXT(18) NOT NULL,
   idrefexterne TEXT(50), 
-  refexterne,
+  refexterne TEXT,
   nom TEXT NOT NULL, 
   geom MULTIPOINT NOT NULL,
   CONSTRAINT fk_originerisque_p_codeprocedure FOREIGN KEY (codeprocedure) REFERENCES typeppr_codegaspar_procedure(codeprocedure)
@@ -563,7 +563,7 @@ INSERT INTO gpkg_geometry_columns VALUES
 CREATE TABLE typeppr_codegaspar_enjeu_s ( 
   idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
   idrefexterne TEXT(50), 
-  refexterne TEXT NOT NULL,
+  refexterne TEXT,
   codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
@@ -576,7 +576,7 @@ CREATE TABLE typeppr_codegaspar_enjeu_s (
 CREATE TABLE typeppr_codegaspar_enjeu_l ( 
   idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
   idrefexterne TEXT(50), 
-  refexterne TEXT NOT NULL,
+  refexterne TEXT,
   codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
@@ -589,7 +589,7 @@ CREATE TABLE typeppr_codegaspar_enjeu_l (
 CREATE TABLE typeppr_codegaspar_enjeu_p ( 
   idenjeu TEXT(15) NOT NULL PRIMARY KEY, 
   idrefexterne TEXT(50), 
-  refexterne TEXT NOT NULL,
+  refexterne TEXT,
   codeprocedure TEXT(18) NOT NULL,
   nomenjeu TEXT NOT NULL, 
   codeenjeu TEXT NOT NULL, 
