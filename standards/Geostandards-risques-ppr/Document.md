@@ -1548,7 +1548,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_referenceinternet` implémente la classe
 | **`codeprocedure`** | **`idproc`** | TEXT(18) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `codeprocedure` de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) | Identifiant de la procédure objet de la référence internet. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_procedure](#table-typeppr_codegasparcomplet_procedure) |
 | `nomressource` | **`nomres`** | TEXT | Saisie libre | Nom de la ressource référencée sur Internet |
 | **`typereference`** | **`typeref`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typereference](#table-dénumération-typereference) | Catégorisation de la ressource référencée sur Internet. Ce champ permet d'indiquer le type de document référencé en fonction des procédures. |
-| `description` | `desc` | TEXT | Saisie libre | Description de la ressource internet. |
+| `description` | `descript` | TEXT | Saisie libre | Description de la ressource internet. |
 
 ###### Table d'énumération `typeprocedure`
 
@@ -1630,7 +1630,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeareference_[CodeAlea]_s` impléme
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | INTEGER | Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1645,7 +1645,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaecheance100ans_[CodeAlea]_s` imp
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur est toujours `117` (aléa submersion marine) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | INTEGER | Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1660,7 +1660,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeaexceptionnel_[CodeAlea]_s` impl�
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur est toujours `14` (aléa avalanches) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | INTEGER | Nombre entier positif ou nul (occurrence inconnue) | Période de retour de l'aléa, exprimée en nombre d'années. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1675,7 +1675,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeanaturelsynthese_s` implémente l
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea naturel (`1xx`) ou multirisques (`999`) si la zone est concernée par plusieurs types d'aléas | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). Si la zone est concernées par plusieurs types d'aléas, le niveau d'aléa le plus important est à retenir | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | INTEGER |  Nombre entier positif | Période de retour de l'aléa, exprimée en nombre d'années. Si la zone est concernée par plusieurs aléas, la période de retour la plus courte est à privilégier. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
 
@@ -1702,7 +1702,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnorapide_[CodeAlea]_s` impl�
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | `intensite` | `intensite` | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
@@ -1718,7 +1718,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnolent_[CodeAlea]_s` implém
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`intensite`** | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
@@ -1734,7 +1734,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnoprojection_[CodeAlea]_s` i
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea insdustriel (`21x`) | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`intensite`** | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
@@ -1750,7 +1750,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonealeatechnosynthese_s` implémente la
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea). Ici la valeur correspond à un alea technologique (`2xx`) ou multirisques (`999`) si la zone est concernée par plusieurs types d'aléas | Type de l'aléa associé à la zone d'aléa, selon la nomenclature définie dans GASPAR. |
 | `niveaualea` | `niveaualea` | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea). Si la zone est concernées par plusieurs types d'aléas, le niveau d'aléa le plus important est à retenir | Caractérisation du niveau de l'aléa. |
 | `occurrence` | `occurrence` | TEXT(1) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeclasseprobatechno](#table-dénumération-typeclasseprobatechno). | Occurrence de survenue de l'aléa. Selon les classes de probabilité des risques industriels. Si la zone est concernée par plusieurs aléas, la probabilité la plus élevée est à privilégier. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone d'aléa. |
 | **`intensite`** | **`intensite`** | TEXT(2) |  **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeintensitetechno](#table-dénumération-typeintensitetechno). | Caractérisation du niveau d'intensité des effets pour le phénomène dangereux représenté. Si la zone est concernée par plusieurs aléas, l'intensité la plus élevée est à privilégier. |
 | **`geom`** | N.A. | POLYGON | Polygone de la zone |  |
 
@@ -1779,7 +1779,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zoneprotegee_[CodeAlea]_s` implémente l
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
 | `niveauprotection` | `nivprotect` | TEXT | Domaine de valeurs en fonction du type zone. | Niveau de protection de la zone. Par exemple pour une zone protégée par un système d'endiguement, il s'agit de la hauteur maximale que peut atteindre l'eau sans que cette zone soit inondée en raison du débordement, du contournement ou de la rupture des ouvrages de protection quand l'inondation provient directement du cours d'eau ou de la mer. |
 | `occurrence` | `occurrence` | TEXT | Saisie libre éventuellement contrainte par le type d'aléa | Occurrence de survenue de l'aléa correspondant au niveau de protection de l'ouvrage. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
 | `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone protégée. |
 | `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone protégée. |
 | `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone protégée. |
@@ -1797,7 +1797,7 @@ La table `[TypePPR]_[CodeGASPARComplet]_zonedangerspecifique_[CodeAlea]_s` impl�
 | **`typealea`** | **`typealea`** | TEXT(3) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typealea](#table-dénumération-typealea) | Type de l'aléa associé à la zone protégée, selon la nomenclature définie dans GASPAR. |
 | **`niveaualea`** | **`niveaualea`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typeniveaualea](#table-dénumération-typeniveaualea) | Caractérisation du niveau de l'aléa. |
 | **`typesuralea`** | **`typesurale`** | TEXT(2) | **Clef étrangère**. Valeurs à prendre parmi les valeurs de `code` de la table [typesuralea](#table-dénumération-typesuralea) | Type de de zone de danger spécifique. |
-| `description` | `desc` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
+| `description` | `descript` | TEXT | Saisie libre | Description textuelle de la zone protégée. |
 | `idouvrageprotecteur_s` | `idouvprots` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_s](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_s) | Lien vers l'ouvrage de protection surfacique qui engendre la zone de danger. |
 | `idouvrageprotecteur_l` | `idouvprotl` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_l](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_l) | Lien vers l'ouvrage de protection linéaire qui engendre la zone de danger. |
 | `idouvrageprotecteur_p` | `idouvprotp` | TEXT(50) | **Clef étrangère**. La valeur de ce champ, si elle est renseignée doit aussi exister comme valeur de la colonne `idouvrageprotecteur` de la table [typeppr_codegaspar_ouvrageprotecteur_codealea_p](tables-typeppr_codegasparcomplet_ouvrageprotecteur_codealea_p) | Lien vers l'ouvrage de protection ponctuel qui engendre la zone de danger. |
@@ -2030,9 +2030,9 @@ La table `[TypePPR]_[CodeGASPARComplet]_typevulnerabilite` implémente le type d
 |-|-|-|-|-|
 | `idenjeu_s` | `idenjeu_s` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_s](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_s](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | `idenjeu_l` | `idenjeu_l` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_l](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_l](#tables-typeppr_codegasparcomplet_enjeu_slp). |
-| `idenjeu` | `idenjeu_p` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_p](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_p](#tables-typeppr_codegasparcomplet_enjeu_slp). |
+| `idenjeu_p` | `idenjeu_p` | TEXT(15) | **Clef étrangère**. La valeur de ce champ doit aussi exister comme valeur de la colonne `idenjeu` de la table [typeppr_codegaspar_enjeu_p](#tables-typeppr_codegasparcomplet_enjeu_slp) | Identifiant de l'objet enjeu classifié par ce type de vulnérabilité. Ce champ permet de faire le lien avec l'objet correspondant de la table [typeppr_codegaspar_enjeu_p](#tables-typeppr_codegasparcomplet_enjeu_slp). |
 | **`nom`** | **`nom`** | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Nom de la vulnérabilité relatée pour l'enjeu. |
-| `description` | `desc` | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
+| `description` | `descript` | TEXT | Saisie libre pouvant être contrainte par les types de vulnérabilité que l'on veut relater. | Description de la vulnérabilité relatée pour l'enjeu. |
 | **`valeur`** | **`valeur`** | TEXT | Saisie libre. Le format texte autorise la saisie de n'importe quel type de valeur | Valeur de la vulnérabilité. |
 
 
