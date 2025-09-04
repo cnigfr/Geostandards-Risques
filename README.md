@@ -4,7 +4,7 @@ Dépôt central des documents et travaux du groupe de travail pour la refonte de
 
 ## Présentation
 
-Le Groupe de travail pour la refonte des Géostandards Risques a pour objectif de moderniser les géostandards COVADIS existants liés aux risques en prenant en compte les aspects liés à la diffusion, en cohérence avec les autres standards existants au niveau national et européen pour facilité l’interopérabilité entre systèmes, la consultation nationale, le croisement de données et le rapportage.
+Le Groupe de travail pour la refonte des Géostandards Risques a pour objectif de moderniser les géostandards COVADIS existants liés aux risques en prenant en compte les aspects liés à la diffusion, en cohérence avec les autres standards existants au niveau national et européen pour faciliter l’interopérabilité entre systèmes, la consultation nationale, le croisement de données et le rapportage.
 
 Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Information Géolocalisée** (CNIG). Le **mandat du Groupe de Travail** peut être consulté [ici](https://cnig.gouv.fr/IMG/documents_wordpress/2021/10/MandatModernisationStandardsRisque-vf.pdf). La page dédiée de ce groupe sur le **site du CNIG** est accessible [ici](http://cnig.gouv.fr/?page_id=25378).
 
@@ -47,3 +47,4 @@ Vous pouvez également utiliser les outils proposés par github :
 * Proposer des évolutions / corrections via les [Pull Requests](https://github.com/cnigfr/Geostandards-Risques/pulls)
 
   Pour plus d'informations sur ce mode de collaboration, vous pouvez vous référer à la [documentation Github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
+
