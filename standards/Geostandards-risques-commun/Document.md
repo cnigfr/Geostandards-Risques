@@ -15,7 +15,7 @@ Modèle Commun
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 1.0 - 10 décembre 2024*
+*Version 1.0.x - 2025*
 
 
 #  Fiche analytique
@@ -54,6 +54,7 @@ Groupe de travail refonte des Géostandards Risques
 | 0.2 | 29/04/2024 | Prise en compte de la relecture du Groupe de Travail. Version pour commentaires publics. Modifications : Application des définitions DGPR pour les risques, aléas et enjeux. Légères modifications du modèle en cohérence avec le modèle du profil PPR. |
 | 0.3 | 27/11/2024 | Version tenant compte des commentaires reçus lors de la consultation publique, soumise au CNIG pour validation. |
 | 1.0 | 10/12/2024 | Version validée par le CNIG. |
+| 1.0.x | 2025 | Evolutions depuis la v0.1 |
 
 
 ##  Participation à l'écriture
@@ -948,7 +949,6 @@ Le tableau suivant résume les correspondances possibles des classes de cette th
 
 Les tables de correspondances avec le thème 11 Zones de gestion, de restriction ou de réglementation et unités de déclaration de l'annexe III sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/AreaManagementRestrictionandRegulationZonesMappingTable.xls)
 
-
 ## Lien avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE.
 
 La description de la thématique "Zones de risque naturel" de la directive INSPIRE dans le [thésaurus GEMET](https://www.eionet.europa.eu/gemet/fr/inspire-theme/nz) est la suivante : "Zones sensibles caractérisées en fonction des risques naturels (tous les phénomènes atmosphériques, hydrologiques, sismiques, volcaniques, ainsi que les feux de friche qui peuvent, en raison de leur situation, de leur gravité et de leur fréquence, nuire gravement à la société), tels qu'inondations, glissements et affaissements de terrain, avalanches, incendies de forêts, tremblements de terre et éruptions volcaniques."
@@ -965,24 +965,58 @@ Le tableau suivant résume les correspondances possibles des classes de cette th
 
 Les tables de correspondances avec le thème 12 Zones de risque naturel de l'annexe III de la directive INSPIRE sont accessibles ici : [https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls](https://github.com/cnigfr/Geostandards-Risques/blob/main/ressources/INSPIRE/Mapping%20Tables/NaturalRiskZonesMappingTable.xls)
 
-
 # ANNEXE B - Correspondances avec le modèle de données GASPAR
 
-### Nomenclature des identifiants dans GASPAR
+## Nomenclature des identifiants dans GASPAR
 
 Les données décrites par ce standard font référence à des procédures identifiées et suivies avec le système GASPAR. Le lien entre ces données et la procédure concernée est assuré par la propriété `codeProcedure` qui porte la valeur de l'identifiant de cette dernière dans GASPAR. A ce titre, ces identifiants doivent être utilisés tels quels sans aucune modification.
 
-Cet identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
+Deux nomenclatures existent pour déterminer ces identifiants : la première s'applique aux procédures créées avant 2022 ; la seconde, issue de GASPAR Nouvelle Génération (NG) s'applique aux procédures créées à partir de 2022.
+
+### Nomenclature antérieure à GASPAR Nouvelle Génération (avant 2022)
+
+Pour les procédures antérieures à 2022, l'identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
 
 - numéro de département [ddd]
 - nom du service instructeur `PREF`, `DDT`, `DDTM`, `DREAL`, `DEAL` ou `DRIEAT`
 - année de prescription : [AAAA]
 - numéro incrémental à quatre chiffres remis à zéro chaque année [nnnn]
 
-A titre d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant : `76DDTM20120001`
+A titre d'exemple, la procédure PPRN du Bassin de la Scie instruite par la DDTM 76 et prescrite en 2012 porte l'identifiant suivant dans GASPAR : `76DDTM20120001`
 
+### Nomenclature des identifiants de GASPAR Nouvelle Génération (à partir de 2022)
 
-### Nomenclature des risques et de leurs codes dans GASPAR
+Pour les procédures créées à partir de 2022, l'identifiant est constitué par une chaine de caractères qui concatène les informations suivantes :
+
+> `[TypeProcedure]_[AAAA]_[nnnn]`
+
+Où :
+
+- `[TypeProcedure]` représente le type de procédure avec les valeurs possibles suivantes :
+
+  - `PPRN-I` pour un PPR naturel inondation ;
+  - `PPRN-L` pour un PPR naturel litoral ;
+  - `PPRN-Mvt` pour un PPR naturel mouvement de terrain ;
+  - `PPRN-Multi` pour un PPR naturel multirisques ;
+  - `PPRN-S` pour un PPR naturel séisme ;
+  - `PPRN-Av` pour un PPR naturel avalanche ;
+  - `PPRN-EV` pour un PPR naturel éruption volcanique ;
+  - `PPRN-Cy` pour un PPR naturel cyclonique ;
+  - `PPRN-RGA` pour un PPR naturel retrait gonflement des argiles ;
+  - `PPRN-IF` pour un PPR naturel feu de forêt ;
+  - `PPRT` pour les PPR technologiques ;
+  - `PPRM` pour les PPR miniers ;
+  - `PPR-Hybride` pour les PPR N+T+M ;
+  - `TRI` pour les territoires à risques d'inondation ;
+  - `PAC` pour les Porter à Connaissance.
+  - ... (D'autres valeurs associées à des procédures non couvertes par les géostandards risques sont possibles. Elles ne sont pas évoquées ici.)
+
+- `[AAAA]` est l'année de création de la procédure ;
+- `[nnnn]` est le numéro incrémental attribué à la procédure dans GASPAR dans l'année de création.
+
+A titre d'exemple, l'identifiant GASPAR du PPRN Mouvement de terrain (2022) du bassin du Puy-en-Velay a pour valeur : `PPRN-Mvt_2022_0001`
+
+## Nomenclature des risques et de leurs codes dans GASPAR
 
 GASPAR propose une nomenclature des risques hiérarchisée sur trois niveaux croissants de spécialisation du risque, avec une codification correspondante preséntée dans le tableau suivant. 
 
@@ -1020,6 +1054,7 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 | 175 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Grêle | 
 | 176 | 3 | Risque Naturel ; Phénomène lié à l'atmosphère ; Neige et pluies verglaçantes |
 | 18 | 2 | Risque Naturel ; Radon |
+| 19 | 2 | Risque Naturel ; Tsunami |
 | 211	| 3 | Risque technologique ; Risque Industriel ; Effet thermique |
 | 212	| 3 | Risque technologique ; Risque Industriel ; Effet de surpression | 
 | 213	| 3 | Risque technologique ; Risque Industriel ; Effet toxique  |
@@ -1040,12 +1075,9 @@ Par exemple, le libellé de l'énumération correspondant au code d'aléa "114" 
 | 33 | 2 | Risque minier ; Emissions en surface de gaz de mine |
 | 34 | 2 | Risque minier ; Echauffement des terrains de dépôts |
 
-
-
-### Types de procédures GASPAR
+## Types de procédures GASPAR
 
 Le tableau suivant liste les différents types de procédures gérées dans GASPAR, en lien avec les Géostandards risques. Les codes et libellés sont réutilisés comme base pour l'énumération [TypeProcedure](#enumeration-typeprocedure) qui restreint les valeurs de la propriété `typeProcedure` de la classe d'objets [Procedure](#classe-dobjets-procedure).
-
 
 | Code | Libellé |
 |-|-|
@@ -1065,9 +1097,7 @@ Le tableau suivant liste les différents types de procédures gérées dans GASP
 | PPRM | Plan de Prévention des Risques Miniers |
 | TRI | Territoires à Risque Important d’Inondations |
 
-
-
-### États d'une procédure GASPAR
+## États d'une procédure GASPAR
 
 Le tableau suivant liste les différents états et des sous-états d'une procédure administrative dans GASPAR. Les codes et libellés des sous-états sont réutilisés comme base pour l'énumération [TypeÉtatProcedure](#enumeration-typeetatprocedure) qui restreint les valeurs de la propriété `etatProcedure` de la classe d'objets [Perimetre](#classe-dobjets-perimetre).
 
@@ -1086,11 +1116,3 @@ Le tableau suivant liste les différents états et des sous-états d'une procéd
 | CADUQUE | Caduque | DEPRESCRIT | Déprescrit |
 | CADUQUE | Caduque | ANNULE | Annulé |
 | CADUQUE | Caduque | ABROGE | Abrogé |
-
-
-
-
-
-
- 
-
