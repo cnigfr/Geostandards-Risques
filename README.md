@@ -14,9 +14,12 @@ Les versions en cours des géostandards développés par ce groupe de travail so
   * [Version 1.0 **publiée** sur le site du CNIG](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-modele-commun-v1_0.pdf)
   * [Version en cours de rédaction](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md)
 
-* **Géostandards risques - Plans de prévention des risques (PPR)**, sur le dépot github spécifique de ce standard :
-  * [Version 1.0.1](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/diffusion/geostandards-risques-ppr-v1.0.1.pdf) en cours de publication sur le site du CNIG
+* **Géostandards risques - Plans de prévention des risques (PPR)**, sur le dépôt github spécifique de ce standard :
+  * [Version 1.0.2 **publiée** sur le site du CNIG](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf)
   * [Version en cours de rédaction](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md)
+
+* **Géostandards risques - Cartographies de la Directive Inondation**, sur le dépôt github spécifique de ce standard :
+  * [Version en cours de rédaction](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md)
 
 ## Organisation du dépôt
 
